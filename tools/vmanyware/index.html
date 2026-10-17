@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Define a Linux environment once, provision it on your own Proxmox, and reach it from desktop or phone. In development, phase 0." />
+    <meta name="theme-color" content="#050507" />
+    <title>VMAnyware — Your homelab. From anywhere.</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content="VMAnyware — Your homelab. From anywhere." />
+    <meta property="og:description" content="Define a Linux environment once, provision it on your own Proxmox, and reach it from desktop or phone. In development, phase 0." />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/omn/omn.css" />
+    <link rel="stylesheet" href="/src/toolpage/toolpage.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <canvas id="scene" aria-hidden="true"></canvas>
+    <header class="nav" id="nav"></header>
+    <main id="main"></main>
+    <footer id="footer"></footer>
+    <script type="module">
+      import { renderToolPage } from '/src/toolpage/render.js'
+      import page from '/src/toolpage/vmanyware.js'
+      renderToolPage(page)
+    </script>
+  </body>
+</html>

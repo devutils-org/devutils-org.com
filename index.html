@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="devutils — small Linux tools that show their work: observability, explanations, distro checks, packages and homelabs." />
+    <meta name="theme-color" content="#050507" />
+    <title>devutils — Small tools. Honest answers.</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content="devutils — Small tools. Honest answers." />
+    <meta property="og:description" content="Small Linux tools that show their work." />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <canvas id="scene" aria-hidden="true"></canvas>
+
+    <header class="nav">
+      <a class="logo" href="/" aria-label="devutils home"><img class="logo-icon" src="/mark.svg" alt="" /> devutils<span class="alpha">org</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#flow">Flow</a>
+        <a href="#tools">Tools</a>
+        <a href="#standard">Standard</a>
+      </nav>
+      <a class="github" data-org href="https://github.com/devutils-org">GitHub <span>↗</span></a>
+    </header>
+
+    <main id="main">
+      <section class="hero" data-scene="hero">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <a class="release" data-omn-site href="#">
+          <span class="signal-dot"></span> OMNISCIENT v0.1 <span class="release-divider">/</span> SEE BEYOND THE SURFACE →
+        </a>
+        <h1>Small tools.<br /><span>Honest answers.</span></h1>
+        <p class="hero-copy">Your machine already knows the answer.<br />Your tools should show their work.</p>
+        <p class="hero-product">
+          Observability, explanations, distro checks, packages and homelabs.<br />
+          Built for Linux. Read-only by default. Evidence beside every answer.
+        </p>
+        <div class="actions">
+          <a class="primary" href="#tools">Explore the tools <span>↓</span></a>
+          <a class="secondary" data-org href="https://github.com/devutils-org">Browse the org <span>↗</span></a>
+        </div>
+        <div class="stage" aria-hidden="true">
+          <span class="hud top-left">DEVUTILS.ORG<br /><b>FIVE TOOLS / ONE STANDARD</b></span>
+          <span class="hud bottom-right">RUST · LINUX · OPEN SOURCE<br /><b>THE MARK / IN ORBIT</b></span>
+          <img class="stage-fallback" src="/mark.svg" alt="" />
+          <div class="horizon"></div>
+        </div>
+        <div class="hero-caption">
+          <span>SHOW THE WORK</span><span>SAY WHAT WAS LOST</span><span>REFUSE RATHER THAN GUESS</span>
+        </div>
+      </section>
+
+      <section class="section" id="flow" data-scene="flow">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">FROM QUESTION TO MACHINE / FIVE HANDOFFS</p>
+            <h2>One machine.<br />Every question in view.</h2>
+          </div>
+          <p>Each tool owns one kind of question. Together they cover a Linux machine from the kernel counters to the VM it runs in.</p>
+        </div>
+        <div class="pipeline" id="pipeline"></div>
+        <div class="pipeline-detail">
+          <span class="signal-dot"></span>
+          <p id="explanation" role="status"></p>
+        </div>
+        <p class="fine">Five independent tools, not one suite · each installs and runs on its own · statuses below are copied from each repository.</p>
+      </section>
+
+      <section class="section" id="tools" data-scene="tools">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">THE TOOLS / FIVE INSTRUMENTS</p>
+            <h2>Pick the question.<br />Get the instrument.</h2>
+          </div>
+          <p>Every tool is young and says so. The status on each card is the one its README states — nothing rounded up.</p>
+        </div>
+        <div class="tool-grid" id="tool-grid"></div>
+      </section>
+
+      <section class="section" id="standard" data-scene="standard">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">THE STANDARD / IN PRACTICE</p>
+            <h2>Every claim<br />comes with a receipt.</h2>
+          </div>
+          <p>Four habits the tools share — each shown the way the tool actually prints or does it, not as a promise.</p>
+        </div>
+        <div class="receipts">
+          <article class="receipt glass reveal">
+            <small>01 / SAYS WHAT IT CANNOT SEE</small>
+            <h3>“Out of reach” is an answer too.</h3>
+            <p>Before measuring, omn checks what this machine can actually serve — and counts what it can’t, instead of leaving it out.</p>
+            <pre><span class="p">$</span> omn list | tail -n 3 | head -n 1
+101 sources: 92 usable here, 0 unverified,
+9 out of reach on this machine.</pre>
+            <span class="by">OMNISCIENT</span>
+          </article>
+          <article class="receipt glass reveal" style="--d: 0.08s">
+            <small>02 / REFUSES RATHER THAN GUESSES</small>
+            <h3>No answer to a different question.</h3>
+            <p>When a program declares no request boundary, omn won’t make one up from the connection: it refuses, and says how to get the real thing.</p>
+            <pre><span class="x">net.request was not served:</span>
+/usr/bin/sh declares no request […]
+Nothing is inferred from the connection
+instead -- see docs/scenarios/vertical.md</pre>
+            <span class="by">OMNISCIENT · OMN TOP</span>
+          </article>
+          <article class="receipt glass reveal">
+            <small>03 / LOOKS BEFORE IT TOUCHES</small>
+            <h3>Read first. Act on a plan.</h3>
+            <p>pkgx doesn’t install or remove straight away: it writes a plan you can read, save and dry-run, and only that plan is ever applied.</p>
+            <pre><span class="p">$</span> pkgx plan apt:curl --save preview.json --expires-in 300
+<span class="p">$</span> pkgx apply --plan preview.json --dry-run</pre>
+            <span class="by">PKGX</span>
+          </article>
+          <article class="receipt glass reveal" style="--d: 0.08s">
+            <small>04 / TIES A FAILURE TO ITS CAUSE</small>
+            <h3>Not just “it broke on Rocky 8”.</h3>
+            <p>distroproof runs your program on the real kernel of each distro, then compares the environments — so a failure arrives with the difference that explains it.</p>
+            <pre><span class="p">$</span> distroproof run --target rocky-8 -- envprobe --json &gt; rocky8.json
+<span class="p">$</span> envprobe diff local.json rocky8.json   <span class="p"># exit 1 if they differ</span></pre>
+            <span class="by">DISTROPROOF</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section start" id="start" data-scene="start">
+        <div class="stage stage-start" aria-hidden="true"></div>
+        <p class="eyebrow">OPEN SOURCE / BUILT FOR LINUX</p>
+        <h2>Ask your machine<br />a better question.</h2>
+        <p>Start with the tool that matches your question. Each one stands alone.</p>
+        <div class="actions">
+          <a class="primary" data-org href="https://github.com/devutils-org">Open devutils-org <span>↗</span></a>
+          <a class="secondary" href="#tools">Compare the tools</a>
+        </div>
+        <div class="command"><code id="cmd">gh repo list devutils-org</code><button data-copy="#cmd" type="button" aria-label="Copy command">Copy</button></div>
+        <small>Rust · Linux first · MIT / Apache-2.0 unless a repository states otherwise</small>
+      </section>
+    </main>
+
+    <footer>
+      <a class="logo" href="/"><img class="logo-icon" src="/mark.svg" alt="" /> devutils</a>
+      <span>Small tools. Open to inspection.</span>
+      <a data-org href="https://github.com/devutils-org">GitHub ↗</a>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Observe Linux workloads across CPU, GPU, memory, network and disk, with the evidence beside every number." />
+    <meta name="theme-color" content="#050507" />
+    <title>Omniscient — See beyond the surface.</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content="Omniscient — See beyond the surface." />
+    <meta property="og:description" content="Linux observability, direct from the kernel, with the evidence beside every number." />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/omn/omn.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <canvas id="scene" aria-hidden="true"></canvas>
+
+    <header class="nav">
+      <div class="logo">
+        <a class="crumb-home" href="/" aria-label="devutils home"><img class="logo-icon" src="/mark.svg" alt="" /><span>devutils</span></a>
+        <span class="crumb-sep">/</span>
+        <a href="/tools/omn/">omniscient</a><span class="alpha">v0.1</span>
+      </div>
+      <nav aria-label="Main navigation">
+        <a href="#families">Families</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#interface">Views</a>
+        <a data-repo="/tree/main/docs" href="#">Docs ↗</a>
+      </nav>
+      <a class="github" data-repo="" href="#">GitHub <span>↗</span></a>
+    </header>
+
+    <main id="main">
+      <section class="hero" data-scene="hero">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <a class="release" href="#interface">
+          <span class="signal-dot"></span> OMN TOP <span class="release-divider">/</span> TEN VIEWS OF ONE RUN →
+        </a>
+        <h1>See beyond<br /><span>the surface.</span></h1>
+        <p class="hero-copy">Your workload crosses boundaries.<br />Your understanding should, too.</p>
+        <p class="hero-product">
+          Linux observability across CPU, GPU, memory, network and disk.<br />
+          Direct from the kernel. With evidence beside every number.
+        </p>
+        <div class="actions">
+          <a class="primary" href="#start">Start observing <span>↓</span></a>
+          <a class="secondary" href="#families">Explore the families <span>→</span></a>
+        </div>
+        <div class="stage" aria-hidden="true">
+          <span class="hud top-left">SYS.OBSERVE<br /><b>ONE HOST / EVERY LAYER</b></span>
+          <span class="hud bottom-right">CPU · GPU · NET · I/O<br /><b>OBSERVATION CORE / OMN</b></span>
+          <img class="stage-fallback" src="/mark.svg" alt="" />
+          <div class="horizon"></div>
+        </div>
+        <div class="hero-caption">
+          <span>DIRECT KERNEL ACCESS</span><span>EXPLICIT EVIDENCE</span><span>REPLAYABLE SESSIONS</span>
+        </div>
+      </section>
+
+      <section class="section" data-scene="intro">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">ONE TOOL / A SHARED VOCABULARY</p>
+            <h2>Measure the system.<br />Keep the meaning.</h2>
+          </div>
+          <p><code>omn</code> measures a Linux program or machine. Profiles, counters, event streams and joins share one request model — and say what they can actually answer.</p>
+        </div>
+        <div class="request-axes glass">
+          <span><small>SOURCE</small>What happened?</span><i>→</i>
+          <span><small>TARGET</small>To whom?</span><i>→</i>
+          <span><small>MODE</small>How to observe?</span><i>→</i>
+          <span><small>EMIT</small>How to read it?</span><i>→</i>
+          <span><small>KEYS</small>How to group it?</span>
+        </div>
+        <div class="product-columns">
+          <article class="reveal">
+            <h3>Begin with a question.</h3>
+            <p>Use <code>omn cpu</code>, <code>omn mem</code> or <code>omn latency</code> to start an investigation. Name a source when you need precise control.</p>
+          </article>
+          <article class="reveal" style="--d: 0.08s">
+            <h3>See what is available here.</h3>
+            <p><code>omn list</code> probes this machine. Missing privilege, unsupported hardware and absent collectors come with explicit explanations.</p>
+          </article>
+          <article class="reveal" style="--d: 0.16s">
+            <h3>Take the evidence with you.</h3>
+            <p>Export results and profiles. Keep the resolved backend, machine conditions and observation cost alongside the numbers.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="families" data-scene="families">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">NINE FAMILIES / CONNECTED QUESTIONS</p>
+            <h2>Every layer has<br />a story to tell.</h2>
+          </div>
+          <p>Choose the part of the system you want to understand. Each guide connects a question to its sources, commands and limits.</p>
+        </div>
+        <div class="family-grid" id="family-grid"></div>
+      </section>
+
+      <section class="section" id="workflow" data-scene="workflow">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">FOLLOW THE SIGNAL / THE SUZANNE SCENARIO</p>
+            <h2>One request.<br />Every layer in view.</h2>
+          </div>
+          <p>Ask an engine to render Suzanne in 3D and save the result. Follow each handoff across the machine.</p>
+        </div>
+        <div class="pipeline four" id="pipeline">
+          <button class="node reveal" type="button" aria-pressed="false"><span class="node-icon">↙</span><small>01 / NETWORK</small><strong>Receive.</strong><code>HTTP → render request</code></button>
+          <button class="node reveal" style="--d: 0.08s" type="button" aria-pressed="false"><span class="node-icon">⌘</span><small>02 / CPU</small><strong>Prepare.</strong><code>Suzanne → draw commands</code></button>
+          <button class="node reveal" style="--d: 0.16s" type="button" aria-pressed="false"><span class="node-icon">◇</span><small>03 / GPU</small><strong>Render.</strong><code>geometry → frame</code></button>
+          <button class="node reveal" style="--d: 0.24s" type="button" aria-pressed="false"><span class="node-icon">▱</span><small>04 / DISK</small><strong>Persist.</strong><code>frame → suzanne.png</code></button>
+        </div>
+        <div class="pipeline-detail">
+          <span class="signal-dot"></span>
+          <p id="explanation" role="status"></p>
+        </div>
+        <p class="fine">Planned Linux capture scenario · this sequence is illustrative. One host; GPU attribution depends on the engine and driver. File writes and durable device completion are distinct.</p>
+      </section>
+
+      <section class="section evidence" data-scene="evidence">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">ENGINEERED FOR EVIDENCE</p>
+            <h2>Visibility is good.<br />Knowing why is better.</h2>
+          </div>
+          <p>A plausible number is not enough. Know what produced it, what was lost and what supports its attribution.</p>
+        </div>
+        <div class="bento">
+          <article class="bento-big">
+            <div class="evidence-scale"><span>IDENTITY</span><i></i><span>KEY</span><i></i><span>WAKEUP</span><i></i><span>TEMPORAL</span></div>
+            <h3>Correlation, with receipts.</h3>
+            <p>A propagated identity and two events close in time are different kinds of evidence. Omniscient tells you which one supports the connection.</p>
+            <a class="inline-link" data-repo="#the-number-no-single-source-can-give" href="#">Understand the evidence ↗</a>
+          </article>
+          <article>
+            <div class="mini-symbol">[ kernel ]<br /><span>↓</span><br />[ omn ]</div>
+            <h3>Direct by design.</h3>
+            <p>eBPF, perf_event_open, procfs, sysfs and netlink. No perf, bpftrace or bcc running underneath.</p>
+          </article>
+          <article>
+            <div class="mini-symbol">◴ <span>→</span> ◷</div>
+            <h3>Record. Revisit.</h3>
+            <p>Save a run and replay it in the terminal. Change the view, keep the context.</p>
+          </article>
+          <article class="refusal">
+            <code>scope: package<br /><span>target: process</span><br />↳ request refused</code>
+            <h3>Honest boundaries.</h3>
+            <p>If a source cannot answer a question, the validator explains why — instead of answering a different one.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section interface" id="interface" data-scene="interface">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">YOUR TERMINAL / MORE DIMENSIONS</p>
+            <h2>Same run.<br />A different perspective.</h2>
+          </div>
+          <p>Select a request and carry its focus across views. Inspect execution lanes or CPU call stacks — all drawn from one recorded run.</p>
+        </div>
+        <div class="capture-tabs glass" role="tablist" aria-label="Terminal views">
+          <button role="tab" aria-selected="true" aria-controls="capture-panel" data-view="request">Request</button>
+          <button role="tab" aria-selected="false" aria-controls="capture-panel" tabindex="-1" data-view="lanes">Lanes</button>
+          <button role="tab" aria-selected="false" aria-controls="capture-panel" tabindex="-1" data-view="flame">Flame</button>
+        </div>
+        <div class="terminal glass" id="capture-panel" role="tabpanel" tabindex="0">
+          <div class="terminal-header"><span>● ● ●</span><code id="terminal-label">omn top / request</code><span>120 × 40</span></div>
+          <div class="terminal-body"><pre class="tui" id="tui"></pre></div>
+          <p class="terminal-caption" id="capture-caption"></p>
+        </div>
+        <p class="fine capture-note">Snapshots of the <code>many-requests</code> fixture from the view gallery, drawn at 120×40 and held by <code>tests/view_snapshots.rs</code>. Colours mapped onto this page's palette.</p>
+
+        <div class="session-example">
+          <div>
+            <p class="eyebrow">REPRODUCIBLE INVESTIGATIONS</p>
+            <h3>Trace as code.</h3>
+            <p>Prototype a measurement in the shell, then keep it in a session file. YAML, JSON and TOML describe the same requests. The program is part of the request: launching it makes it both the target and the clock.</p>
+            <a class="inline-link" data-repo="/tree/main/examples" href="#">Browse the sessions ↗</a>
+          </div>
+          <pre class="glass"><code><i># omn -f examples/mem-rss-run.yml</i>
+name: resident memory of a launched program
+requests:
+  - label: rss
+    source: mem.rss
+    target:
+      launch: [python3, -c, "..."]
+    mode: poll@100ms
+    emit: [timeline, summary]
+    keys: [task, cgroup]</code></pre>
+        </div>
+      </section>
+
+      <section class="section start" id="start" data-scene="start">
+        <div class="stage stage-start" aria-hidden="true"></div>
+        <p class="eyebrow">OPEN SOURCE / BUILT FOR LINUX</p>
+        <h2>Ask your machine<br />a better question.</h2>
+        <p>Install the release or build from source, grant two capabilities, then open a workload in the TUI.</p>
+        <div class="actions">
+          <a class="primary" data-repo="/blob/main/docs/install.md" href="#">Install Omniscient <span>↗</span></a>
+          <a class="secondary" href="#families">Explore the families</a>
+        </div>
+        <div class="command"><code id="cmd">omn top -- ./your-program</code><button data-copy="#cmd" type="button" aria-label="Copy command">Copy</button></div>
+        <small>x86_64 release, glibc 2.34+ · Rust 1.82+ to build · each source states the kernel it needs</small>
+      </section>
+    </main>
+
+    <footer>
+      <a class="logo" href="/"><img class="logo-icon" src="/mark.svg" alt="" /> devutils</a>
+      <span>Omniscient · direct from the kernel, open to inspection.</span>
+      <a data-repo="#license" href="#">MIT / Apache-2.0 ↗</a>
+    </footer>
+
+    <script type="module" src="/src/omn/omn.js"></script>
+  </body>
+</html>

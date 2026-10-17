@@ -1,0 +1,30 @@
+/* The shape lab: temporary pages, one per proposal. */
+
+.lab-hero { min-height: calc(100vh - 72px); display: flex; align-items: center; max-width: 1120px; margin: 0 auto; padding: 60px 0; }
+.lab-copy { max-width: 440px; }
+.lab-copy h1 { font-size: clamp(56px, 6.4vw, 92px); margin: 18px 0 22px; }
+.lab-copy .idea { color: #d6d8e6; font-size: 17px; line-height: 1.7; margin: 0 0 26px; }
+.lab-why { border-radius: 16px; padding: 20px 22px; margin-bottom: 22px; }
+.lab-why p { color: var(--muted); font-size: 13px; line-height: 1.8; margin: 0; }
+.lab-why .eyebrow { margin-bottom: 10px; }
+.lab-hint { display: flex; align-items: center; gap: 12px; color: #b6b7c7; font: 11px/1.7 var(--mono); margin: 0 0 30px; }
+.lab-pager { display: flex; gap: 12px; flex-wrap: wrap; }
+.lab-pager a { gap: 14px; }
+.lab-pager b { font-weight: 500; }
+.lab-test { padding-top: 40px; }
+.lab-test .bento article { min-height: 200px; }
+.lab-index { padding-top: 70px; }
+.lab-index .family-card p { min-height: 70px; }
+.lab-index .family-card h3 { margin-top: 24px; }
+
+/* the behaviour picker, on proposals with variants */
+.lab-variants { margin: -8px 0 30px; }
+.lab-variants .capture-tabs { margin: 0 0 14px; flex-wrap: wrap; justify-content: flex-start; width: auto; border-radius: 22px; }
+.lab-variants .capture-tabs button { padding: 9px 14px; }
+.lab-variants small { color: #6d7184; font: 9px var(--mono); margin-right: 7px; }
+.lab-variant-text { color: #c6c8d8; font-size: 13px; line-height: 1.7; margin: 0; min-height: 44px; }
+
+@media (width < 800px) {
+  .lab-hero { padding: 58vh 16px 60px; min-height: 0; }
+  .lab-copy h1 { font-size: 52px; letter-spacing: -3px; }
+}

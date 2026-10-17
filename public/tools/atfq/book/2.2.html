@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2.2 Cores, threads and sockets · atfq</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#050507">
+<link rel="stylesheet" href="book.css">
+<script>try{var t=localStorage.getItem("atfq-theme");if(t)document.documentElement.dataset.theme=t;if(localStorage.getItem("atfq-sidebar")==="hidden"&&innerWidth>900)document.documentElement.classList.add("sidebar-hidden")}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to the page</a>
+<nav class="sidebar" id="sidebar" aria-label="Contents">
+<ol class="toc">
+<li class="ch"><a href="index.html">Introduction</a></li>
+<li class="part">I. How it works</li>
+<li class="ch"><a href="1.html"><b>1.</b> How the kernel works</a><button class="fold" type="button" aria-label="Show the cards of chapter 1" aria-expanded="false"></button><ol><li><a href="1.1.html"><b>1.1</b> What does the kernel do?</a></li><li><a href="1.2.html"><b>1.2</b> How the kernel shares the CPUs</a></li><li><a href="1.3.html"><b>1.3</b> How virtual memory works</a></li><li><a href="1.4.html"><b>1.4</b> Interrupts: how devices get attention</a></li><li><a href="1.5.html"><b>1.5</b> How a program starts: fork and exec</a></li></ol></li>
+<li class="ch open"><a href="2.html"><b>2.</b> How a CPU works</a><button class="fold" type="button" aria-label="Show the cards of chapter 2" aria-expanded="true"></button><ol><li><a href="2.1.html"><b>2.1</b> What a CPU does: instructions and architectures</a></li><li><a href="2.2.html" class="active" aria-current="page"><b>2.2</b> Cores, threads and sockets</a></li><li><a href="2.3.html"><b>2.3</b> CPU caches: why memory layout matters</a></li><li><a href="2.4.html"><b>2.4</b> Clock speed, turbo and power saving</a></li><li><a href="2.5.html"><b>2.5</b> Speculative execution and CPU flaws</a></li></ol></li>
+<li class="ch"><a href="3.html"><b>3.</b> How memory works</a><button class="fold" type="button" aria-label="Show the cards of chapter 3" aria-expanded="false"></button><ol><li><a href="3.1.html"><b>3.1</b> RAM and the memory hierarchy</a></li><li><a href="3.2.html"><b>3.2</b> NUMA: when some memory is closer</a></li><li><a href="3.3.html"><b>3.3</b> ECC and failing RAM</a></li></ol></li>
+<li class="ch"><a href="4.html"><b>4.</b> How storage works</a><button class="fold" type="button" aria-label="Show the cards of chapter 4" aria-expanded="false"></button><ol><li><a href="4.1.html"><b>4.1</b> Hard drives, SSDs and NVMe</a></li><li><a href="4.2.html"><b>4.2</b> Inside an SSD: flash, TRIM and wear</a></li><li><a href="4.3.html"><b>4.3</b> From write() to the disk: the block layer</a></li><li><a href="4.4.html"><b>4.4</b> IOPS, throughput and latency: how fast is a disk?</a></li><li><a href="4.5.html"><b>4.5</b> fsync: when is data really on disk?</a></li></ol></li>
+<li class="ch"><a href="5.html"><b>5.</b> How a GPU works</a><button class="fold" type="button" aria-label="Show the cards of chapter 5" aria-expanded="false"></button><ol><li><a href="5.1.html"><b>5.1</b> What a GPU does differently</a></li><li><a href="5.2.html"><b>5.2</b> GPU drivers: the kernel, Mesa and NVIDIA</a></li><li><a href="5.3.html"><b>5.3</b> How a picture reaches the screen: KMS, Wayland and X11</a></li><li><a href="5.4.html"><b>5.4</b> Computing on the GPU, and when your program can't see it</a></li></ol></li>
+<li class="ch"><a href="6.html"><b>6.</b> How networks work</a><button class="fold" type="button" aria-label="Show the cards of chapter 6" aria-expanded="false"></button><ol><li><a href="6.1.html"><b>6.1</b> Network layers: OSI and TCP/IP</a></li><li><a href="6.2.html"><b>6.2</b> What happens when you open a website</a></li><li><a href="6.3.html"><b>6.3</b> IP addresses, subnets and NAT</a></li><li><a href="6.4.html"><b>6.4</b> TCP, UDP and connections</a></li><li><a href="6.5.html"><b>6.5</b> Ethernet, MAC addresses and ARP</a></li></ol></li>
+<li class="ch"><a href="7.html"><b>7.</b> How containers and virtual machines work</a><button class="fold" type="button" aria-label="Show the cards of chapter 7" aria-expanded="false"></button><ol><li><a href="7.1.html"><b>7.1</b> What a container really is</a></li><li><a href="7.2.html"><b>7.2</b> Namespaces: a private view of the system</a></li><li><a href="7.3.html"><b>7.3</b> Images, layers and overlayfs</a></li><li><a href="7.4.html"><b>7.4</b> Virtual machines and hypervisors</a></li><li><a href="7.5.html"><b>7.5</b> Root in a container: users, capabilities and the docker group</a></li></ol></li>
+<li class="ch"><a href="8.html"><b>8.</b> How programs do several things at once</a><button class="fold" type="button" aria-label="Show the cards of chapter 8" aria-expanded="false"></button><ol><li><a href="8.1.html"><b>8.1</b> Processes, threads and async: doing several things at once</a></li><li><a href="8.2.html"><b>8.2</b> Race conditions, locks and atomics</a></li><li><a href="8.3.html"><b>8.3</b> Event loops: one thread, thousands of connections</a></li><li><a href="8.4.html"><b>8.4</b> Too many open files: limits on processes</a></li><li><a href="8.5.html"><b>8.5</b> How processes talk: sockets, shared memory and D-Bus</a></li></ol></li>
+<li class="ch"><a href="9.html"><b>9.</b> How filesystems work</a><button class="fold" type="button" aria-label="Show the cards of chapter 9" aria-expanded="false"></button><ol><li><a href="9.1.html"><b>9.1</b> How a filesystem stores a file</a></li><li><a href="9.2.html"><b>9.2</b> Journaling: how a filesystem survives a crash</a></li><li><a href="9.3.html"><b>9.3</b> Copy-on-write filesystems: snapshots and checksums</a></li><li><a href="9.4.html"><b>9.4</b> ext4, XFS, btrfs or ZFS?</a></li><li><a href="9.5.html"><b>9.5</b> The VFS: one interface for every filesystem</a></li></ol></li>
+<li class="ch"><a href="10.html"><b>10.</b> How time works</a><button class="fold" type="button" aria-label="Show the cards of chapter 10" aria-expanded="false"></button><ol><li><a href="10.1.html"><b>10.1</b> Wall clock and monotonic clock: measuring time right</a></li><li><a href="10.2.html"><b>10.2</b> Keeping the clock right: NTP</a></li><li><a href="10.3.html"><b>10.3</b> Time zones, UTC and daylight saving</a></li><li><a href="10.4.html"><b>10.4</b> Timestamps: Unix time, 2038 and leap seconds</a></li></ol></li>
+<li class="ch"><a href="11.html"><b>11.</b> How cryptography works</a><button class="fold" type="button" aria-label="Show the cards of chapter 11" aria-expanded="false"></button><ol><li><a href="11.1.html"><b>11.1</b> Hashes, encryption and signatures</a></li><li><a href="11.2.html"><b>11.2</b> Public-key cryptography</a></li><li><a href="11.3.html"><b>11.3</b> Certificates: how HTTPS proves who it is</a></li><li><a href="11.4.html"><b>11.4</b> Random numbers: /dev/urandom and entropy</a></li><li><a href="11.5.html"><b>11.5</b> Disk encryption: LUKS and the TPM</a></li></ol></li>
+<li class="ch"><a href="12.html"><b>12.</b> How text is stored</a><button class="fold" type="button" aria-label="Show the cards of chapter 12" aria-expanded="false"></button><ol><li><a href="12.1.html"><b>12.1</b> Bytes and characters: ASCII, Unicode and UTF-8</a></li><li><a href="12.2.html"><b>12.2</b> Locales: why sorting, dates and numbers change</a></li><li><a href="12.3.html"><b>12.3</b> Line endings, BOMs and invisible characters</a></li></ol></li>
+<li class="part">II. Your system</li>
+<li class="ch"><a href="13.html"><b>13.</b> Filesystem</a><button class="fold" type="button" aria-label="Show the cards of chapter 13" aria-expanded="false"></button><ol><li><a href="13.1.html"><b>13.1</b> The hierarchy in 2 minutes</a></li><li><a href="13.2.html"><b>13.2</b> /tmp vs /var/tmp</a></li><li><a href="13.3.html"><b>13.3</b> /proc and /sys</a></li><li><a href="13.4.html"><b>13.4</b> Links, inodes and &quot;disk full&quot;</a></li><li><a href="13.5.html"><b>13.5</b> fstab and mount options</a></li><li><a href="13.6.html"><b>13.6</b> /dev and udev</a></li></ol></li>
+<li class="ch"><a href="14.html"><b>14.</b> Disk</a></li>
+<li class="ch"><a href="15.html"><b>15.</b> Permissions</a><button class="fold" type="button" aria-label="Show the cards of chapter 15" aria-expanded="false"></button><ol><li><a href="15.1.html"><b>15.1</b> rwx, octal and umask</a></li><li><a href="15.2.html"><b>15.2</b> setuid, setgid and sticky bit</a></li><li><a href="15.3.html"><b>15.3</b> sudo and groups</a></li><li><a href="15.4.html"><b>15.4</b> ACLs and capabilities</a></li><li><a href="15.5.html"><b>15.5</b> SELinux and AppArmor</a></li></ol></li>
+<li class="ch"><a href="16.html"><b>16.</b> Processes &amp; scheduling</a><button class="fold" type="button" aria-label="Show the cards of chapter 16" aria-expanded="false"></button><ol><li><a href="16.1.html"><b>16.1</b> Process states and zombies</a></li><li><a href="16.2.html"><b>16.2</b> Signals</a></li><li><a href="16.3.html"><b>16.3</b> nice and priorities</a></li><li><a href="16.4.html"><b>16.4</b> cgroups</a></li></ol></li>
+<li class="ch"><a href="17.html"><b>17.</b> Memory</a><button class="fold" type="button" aria-label="Show the cards of chapter 17" aria-expanded="false"></button><ol><li><a href="17.1.html"><b>17.1</b> free vs available</a></li><li><a href="17.2.html"><b>17.2</b> The OOM killer</a></li><li><a href="17.3.html"><b>17.3</b> Swap and swappiness</a></li><li><a href="17.4.html"><b>17.4</b> The page cache</a></li></ol></li>
+<li class="ch"><a href="18.html"><b>18.</b> CPU</a><button class="fold" type="button" aria-label="Show the cards of chapter 18" aria-expanded="false"></button><ol><li><a href="18.1.html"><b>18.1</b> Load average</a></li></ol></li>
+<li class="ch"><a href="19.html"><b>19.</b> Network</a><button class="fold" type="button" aria-label="Show the cards of chapter 19" aria-expanded="false"></button><ol><li><a href="19.1.html"><b>19.1</b> Who listens on which port</a></li><li><a href="19.2.html"><b>19.2</b> DNS resolution</a></li><li><a href="19.3.html"><b>19.3</b> Interfaces and routes</a></li><li><a href="19.4.html"><b>19.4</b> nftables vs iptables vs ufw</a></li></ol></li>
+<li class="ch"><a href="20.html"><b>20.</b> Boot</a><button class="fold" type="button" aria-label="Show the cards of chapter 20" aria-expanded="false"></button><ol><li><a href="20.1.html"><b>20.1</b> From firmware to init</a></li><li><a href="20.2.html"><b>20.2</b> The kernel command line</a></li><li><a href="20.3.html"><b>20.3</b> GRUB vs systemd-boot vs UKI</a></li><li><a href="20.4.html"><b>20.4</b> systemd targets</a></li></ol></li>
+<li class="ch"><a href="21.html"><b>21.</b> Kernel</a><button class="fold" type="button" aria-label="Show the cards of chapter 21" aria-expanded="false"></button><ol><li><a href="21.1.html"><b>21.1</b> sysctl</a></li><li><a href="21.2.html"><b>21.2</b> Kernel modules</a></li><li><a href="21.3.html"><b>21.3</b> dmesg and the kernel log</a></li><li><a href="21.4.html"><b>21.4</b> syscalls and strace</a></li></ol></li>
+<li class="ch"><a href="22.html"><b>22.</b> systemd</a><button class="fold" type="button" aria-label="Show the cards of chapter 22" aria-expanded="false"></button><ol><li><a href="22.1.html"><b>22.1</b> Units and timers</a></li><li><a href="22.2.html"><b>22.2</b> Why a service won't start</a></li><li><a href="22.3.html"><b>22.3</b> Unit files and overrides</a></li></ol></li>
+<li class="ch"><a href="23.html"><b>23.</b> Libraries &amp; binaries</a><button class="fold" type="button" aria-label="Show the cards of chapter 23" aria-expanded="false"></button><ol><li><a href="23.1.html"><b>23.1</b> Dynamic linking and ldd</a></li><li><a href="23.2.html"><b>23.2</b> ELF and &quot;command not found&quot;</a></li><li><a href="23.3.html"><b>23.3</b> PATH and command resolution</a></li></ol></li>
+<li class="ch"><a href="24.html"><b>24.</b> Packages</a><button class="fold" type="button" aria-label="Show the cards of chapter 24" aria-expanded="false"></button><ol><li><a href="24.1.html"><b>24.1</b> Which package owns a file</a></li><li><a href="24.2.html"><b>24.2</b> Native packages vs Snap and Flatpak</a></li></ol></li>
+<li class="ch"><a href="25.html"><b>25.</b> GPU</a></li>
+<li class="ch"><a href="26.html"><b>26.</b> Logs</a><button class="fold" type="button" aria-label="Show the cards of chapter 26" aria-expanded="false"></button><ol><li><a href="26.1.html"><b>26.1</b> Reading the journal with journalctl</a></li><li><a href="26.2.html"><b>26.2</b> Where logs go: journald, syslog and /var/log</a></li><li><a href="26.3.html"><b>26.3</b> Log rotation and logs that fill the disk</a></li><li><a href="26.4.html"><b>26.4</b> Logging from your own programs and services</a></li></ol></li>
+<li class="part">III. Shell and commands</li>
+<li class="ch"><a href="27.html"><b>27.</b> Environment &amp; shell</a><button class="fold" type="button" aria-label="Show the cards of chapter 27" aria-expanded="false"></button><ol><li><a href="27.1.html"><b>27.1</b> Where environment variables come from</a></li><li><a href="27.2.html"><b>27.2</b> Shell startup files</a></li><li><a href="27.3.html"><b>27.3</b> Redirections and file descriptors</a></li><li><a href="27.4.html"><b>27.4</b> Exit codes</a></li></ol></li>
+<li class="ch"><a href="28.html"><b>28.</b> Finding and transforming</a><button class="fold" type="button" aria-label="Show the cards of chapter 28" aria-expanded="false"></button><ol><li><a href="28.1.html"><b>28.1</b> find</a></li><li><a href="28.2.html"><b>28.2</b> grep and regex</a></li><li><a href="28.3.html"><b>28.3</b> awk</a></li><li><a href="28.4.html"><b>28.4</b> sed</a></li><li><a href="28.5.html"><b>28.5</b> xargs</a></li><li><a href="28.6.html"><b>28.6</b> tar</a></li><li><a href="28.7.html"><b>28.7</b> rsync</a></li><li><a href="28.8.html"><b>28.8</b> jq</a></li><li><a href="28.9.html"><b>28.9</b> sort, uniq and cut</a></li></ol></li>
+<li class="ch"><a href="29.html"><b>29.</b> Remote work: SSH and tmux</a><button class="fold" type="button" aria-label="Show the cards of chapter 29" aria-expanded="false"></button><ol><li><a href="29.1.html"><b>29.1</b> SSH keys and the agent</a></li><li><a href="29.2.html"><b>29.2</b> ~/.ssh/config, jump hosts and host keys</a></li><li><a href="29.3.html"><b>29.3</b> SSH tunnels and port forwarding</a></li><li><a href="29.4.html"><b>29.4</b> tmux: sessions that survive a lost connection</a></li><li><a href="29.5.html"><b>29.5</b> Copying files over SSH: scp, sftp and rsync</a></li></ol></li>
+<li class="ch"><a href="30.html"><b>30.</b> Git</a><button class="fold" type="button" aria-label="Show the cards of chapter 30" aria-expanded="false"></button><ol><li><a href="30.1.html"><b>30.1</b> How git stores your work</a></li><li><a href="30.2.html"><b>30.2</b> Undoing things in git</a></li><li><a href="30.3.html"><b>30.3</b> Merge or rebase?</a></li><li><a href="30.4.html"><b>30.4</b> Remotes: fetch, pull and push</a></li><li><a href="30.5.html"><b>30.5</b> Configuring git</a></li></ol></li>
+</ol>
+</nav>
+<div class="page">
+<header class="bar">
+  <button class="icon" id="toggle-sidebar" type="button" aria-controls="sidebar" aria-expanded="true" title="Contents (t)">☰</button>
+  <button class="icon" id="toggle-theme" type="button" title="Theme">◐</button>
+  <button class="icon" id="toggle-search" type="button" aria-controls="search" title="Search (/ or s)">⌕</button>
+  <a class="book-title" href="index.html"><img src="/mark.svg" alt=""><span class="dim">devutils</span><span class="sep">/</span>ATFQ<span class="sep">/</span><span class="dim">book</span></a>
+  <a class="icon gh" href="../index.html" title="ATFQ">ATFQ</a>
+  <a class="icon" href="https://github.com/moha-bekh/atfq" title="Source">git</a>
+</header>
+<div class="search" id="search" hidden>
+  <input id="search-input" type="search" placeholder="Search 121 cards: a word, an alias, an error message…" autocomplete="off" spellcheck="false" aria-label="Search the book">
+  <ol id="search-results" class="results"></ol>
+</div>
+<main id="content" class="content">
+<p class="eyebrow">Part I · How it works</p><h1><span class="num">2.2</span> Cores, threads and sockets</h1><p class="aliases"><span>also</span><code>hyperthreading</code><code>hyper-threading</code><code>smt</code><code>threads per core</code><code>sockets</code><code>logical cpus</code><code>logical cpu</code><code>physical cores</code><code>p-cores</code><code>e-cores</code><code>big.little</code><code>nproc</code><code>lscpu</code><code>cpu topology</code><code>isolcpus</code></p><section class="tldr"><h2>TL;DR</h2><ul><li>A core is a complete processor. A chip (package, or socket) holds
+several; a server board can hold several chips.</li>
+<li>With SMT (Intel calls it Hyper-Threading), one core runs two hardware
+threads. Each shows up as a CPU, but the two share the core's units:
+expect far less than twice the speed.</li>
+<li>Logical CPUs = sockets × cores × threads per core. That's what <code>nproc</code>,
+<code>top</code> and the load average count.</li>
+</ul>
+<pre class="code"><code>lscpu | grep -E '^(CPU\(s\)|Thread|Core|Socket)'
+nproc                # CPUs this process may use
+</code></pre>
+</section><section class="machine"><h2>On your machine</h2><div class="term"><div class="term-bar"><span>alice@laptop</span><span>example</span></div><pre><span class="c">$</span> atfq 2.2
+  <span class="b">CPUs      </span>8 logical CPUs on 4 cores, up to 2 threads per core (SMT)</pre></div><p class="note">An example: Alice's laptop, one of the test machines. In your terminal, this block shows your own machine, read live.</p></section><h2>Pitfalls</h2><ul><li>A load average of 8 on &quot;8 CPUs&quot; that are 4 cores with SMT is a busier
+machine than it looks (<a class="ref" href="18.1.html">18.1</a>).</li>
+<li>In a container limited with <code>--cpus=2</code>, <code>nproc</code> still shows every CPU
+of the host: the limit is a time quota, not fewer CPUs.</li>
+<li>Recent Intel chips mix performance (P) and efficiency (E) cores, like
+ARM's big.LITTLE: the same task runs at different speeds depending on
+where the scheduler puts it.</li>
+<li>Benchmarks vary between runs partly because of this: pin them with
+<code>taskset -c 2 ./bench</code>.</li>
+</ul>
+<h2>Deep dive <small>2 questions</small></h2><div class="dive"><details><summary>What does SMT actually gain?</summary><div><p>A core has many execution units, and one thread rarely keeps them all
+busy: it waits for memory, or mispredicts a branch. A second thread fills
+the gaps. The gain is often 10 to 30 %, sometimes nothing when both
+threads compete for the same units or cache. Some recent Intel chips
+dropped it on their performance cores, and some clouds disable it, since
+two threads on one core can spy on each other (<a class="ref" href="2.5.html">2.5</a>).</p>
+</div></details><details><summary>Why would some CPUs be isolated?</summary><div><p><code>isolcpus=</code> on the kernel command line, or a CPU set in a cgroup, keeps
+the scheduler from placing ordinary tasks there. Real-time and trading
+systems, or virtual machine hosts, then pin one task to those CPUs, so
+nothing interrupts it and its caches stay warm.</p>
+</div></details></div><dl class="meta"><div><dt>Commands</dt><dd><code>nproc</code> <code>lscpu</code></dd></div><div><dt>Paths</dt><dd><code>/sys/devices/system/cpu/</code></dd></div><div><dt>See also</dt><dd><a href="18.html">18. CPU</a><br><a href="1.2.html">1.2 How the kernel shares the CPUs</a><br><a href="2.3.html">2.3 CPU caches: why memory layout matters</a><br><a href="3.2.html">3.2 NUMA: when some memory is closer</a></dd></div></dl>
+<nav class="pager" aria-label="Pages"><a class="pager-prev" rel="prev" href="2.1.html"><small>Previous</small><span>2.1 What a CPU does: instructions and architectures</span></a><a class="pager-next" rel="next" href="2.3.html"><small>Next</small><span>2.3 CPU caches: why memory layout matters</span></a></nav>
+</main>
+<a class="nav-prev" rel="prev" href="2.1.html" title="2.1 What a CPU does: instructions and architectures"><span aria-hidden="true">‹</span><span class="sr">prev: What a CPU does: instructions and architectures</span></a><a class="nav-next" rel="next" href="2.3.html" title="2.3 CPU caches: why memory layout matters"><span aria-hidden="true">›</span><span class="sr">next: CPU caches: why memory layout matters</span></a>
+</div>
+<script src="search-index.js"></script>
+<script src="book.js"></script>
+</body>
+</html>
