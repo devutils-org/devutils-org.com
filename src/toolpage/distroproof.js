@@ -3,6 +3,7 @@
 
 export default {
   id: 'distroproof',
+  shape: 'distroproof',
   nav: [['Why', '#why'], ['envprobe', '#envprobe'], ['Terminal', '#terminal'], ['Targets', '#targets']],
   hero: {
     pill: { href: '#targets', left: '13 DISTRO IMAGES', right: 'THEIR REAL KERNELS →' },

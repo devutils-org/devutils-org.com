@@ -80,6 +80,7 @@ tabs.forEach((t, i) => {
 show(tabs[0])
 
 await initPage({
+  shape: 'omn',
   scenes: {
     hero: { opacity: 1 },
     intro: { fx: 0.9, fy: 0.7, size: 0.25, opacity: 0.65 },

@@ -267,5 +267,5 @@ export async function renderToolPage(page) {
       // low and near the edge: behind the glass panels, clear of the headings
       scenes[s.scene] = i % 2 ? { fx: 0.1, fy: 0.7, size: 0.25, opacity: 0.7 } : { fx: 0.9, fy: 0.7, size: 0.25, opacity: 0.75 }
     })
-  await initPage({ scenes })
+  await initPage({ scenes, shape: page.shape ?? 'mark' })
 }

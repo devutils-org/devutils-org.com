@@ -3,6 +3,7 @@
 
 export default {
   id: 'pkgx',
+  shape: 'pkgx',
   nav: [['Inventory', '#inventory'], ['Commands', '#commands'], ['Terminal', '#terminal'], ['Status', '#status']],
   hero: {
     pill: { href: '#inventory', left: 'APT · PACMAN · RPM/DNF · FLATPAK · HOMEBREW', right: 'ONE INVENTORY →' },

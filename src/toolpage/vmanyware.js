@@ -3,6 +3,7 @@
 
 export default {
   id: 'vmanyware',
+  shape: 'vmanyware',
   nav: [['Idea', '#idea'], ['Today', '#today'], ['Definition', '#definition'], ['Status', '#status']],
   hero: {
     pill: { href: '#status', left: 'PHASE 0', right: 'FEASIBILITY IN PROGRESS →' },

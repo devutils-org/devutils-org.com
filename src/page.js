@@ -11,7 +11,8 @@ export const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt
 // scenes: { [data-scene name]: { fx, fy, size, opacity } } — where the mark
 // goes while that section holds the middle of the viewport. A section with a
 // .stage gets the mark on it; on narrow screens the others get it centred.
-export async function initPage({ scenes }) {
+// shape: which glass shape (src/shapes.js) the page shows.
+export async function initPage({ scenes, shape = 'mark' }) {
   $$('.section-heading, .bento article, .start > *').forEach((el) => el.classList.add('reveal'))
   $$('.bento article, .pipeline, .command').forEach((el) => el.classList.add('glass'))
 
@@ -48,7 +49,7 @@ export async function initPage({ scenes }) {
   let scene = null
   try {
     const { createScene } = await import('./scene.js')
-    scene = createScene({ canvas: $('#scene'), reducedMotion })
+    scene = createScene({ canvas: $('#scene'), shape, reducedMotion })
   } catch (err) {
     console.warn('3D scene unavailable:', err)
     document.documentElement.classList.add('no-webgl')

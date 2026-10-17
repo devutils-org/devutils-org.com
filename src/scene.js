@@ -1,10 +1,12 @@
 import * as THREE from 'three'
+import { shapes } from './shapes.js'
 
-// The atfq mark, raymarched as a slab of glass: a ring, a central disc, and
-// the ball that rides the ring. The ball drifts slowly round the ring; the
-// pointer over the mark pushes its blocks apart as bubbles, which come back
-// together a few seconds after it leaves. Behind it, two slow cyan and violet
-// lights that the glass refracts and the page's frosted panels blur.
+// A shape from shapes.js — the atfq mark by default — raymarched as glass.
+// It moves slowly on its own; the pointer over it raises uState, which each
+// shape turns into its own answer (the mark scatters, the rings focus…), and
+// a few seconds after the pointer leaves it slowly settles back. Behind it,
+// two slow cyan and violet lights that the glass refracts and the page's
+// frosted panels blur.
 //
 // The page drives it through setState({ anchor, fx, fy, size, opacity }):
 // the mark sits on `anchor` (an element, sized from its height) or at the
@@ -16,7 +18,7 @@ const vertexShader = /* glsl */ `
   }
 `
 
-const fragmentShader = /* glsl */ `
+const fragment = (shape) => /* glsl */ `
   precision highp float;
 
   uniform vec2 uCenter;   // mark centre, drawing-buffer px, origin bottom-left
@@ -51,61 +53,23 @@ const fragmentShader = /* glsl */ `
     return ((sc.y * p.x > sc.x * p.y) ? length(p - sc * ra) : abs(length(p) - ra)) - rb;
   }
 
-  // how far block i has gone as uState rises: staggered, eased
+  // how far part i has gone as uState rises: staggered, eased
   float amount(float i) {
     float k = clamp(uState * 1.7 - i * 0.12, 0.0, 1.0);
     return k * k * (3.0 - 2.0 * k);
   }
 
-  // where block i goes when the pointer pushes it: away from the pointer,
-  // further the nearer it is, floating a little
-  vec3 repel(float i, vec3 home, float s) {
-    vec3 v = home - vec3(uPointer, 0.0);
-    float L = max(length(v.xy), 0.15);
-    vec3 away = vec3(v.xy / L, 0.2);
-    float push = 0.2 + 0.6 * exp(-L * 1.2);
-    vec3 f = vec3(sin(uTime * 0.4 + i * 1.9), cos(uTime * 0.33 + i * 2.7), 0.0) * 0.03;
-    return (away * push * 0.55 + f) * s;
-  }
+  mat3 rotX(float a) { float c = cos(a), s = sin(a); return mat3(1, 0, 0, 0, c, s, 0, -s, c); }
+  mat3 rotY(float a) { float c = cos(a), s = sin(a); return mat3(c, 0, -s, 0, 1, 0, s, 0, c); }
+  mat3 rotZ(float a) { float c = cos(a), s = sin(a); return mat3(c, s, 0, -s, c, 0, 0, 0, 1); }
+  float sdTorus(vec3 p, float R, float r) { return length(vec2(length(p.xz) - R, p.y)) - r; }
+  float sdRoundBox(vec3 p, vec3 b, float r) { vec3 q = abs(p) - b + r; return length(max(q, 0.0)) + min(max(q.x, max(q.y, q.z)), 0.0) - r; }
+  float sdCapsule(vec3 p, vec3 a, vec3 b, float r) { vec3 pa = p - a, ba = b - a; float h = clamp(dot(pa, ba) / dot(ba, ba), 0.0, 1.0); return length(pa - ba * h) - r; }
 
-  // Proportions from the 62×62 logo: ring 26.35–31, ball 9.3 on the ring's
-  // midline, disc 21.7 with a 13.4 bite around the ball. Radius 31 → 1.
-  // The mark is six blocks — the ball, the ring as four arcs, the disc — that
-  // turn into bubbles and move apart as uState rises.
-  float map(vec3 pw, out float disc) {
-    vec3 p = uInvRot * pw;
-    // seams between the blocks: exact at rest, liquid while they move
-    float k = 0.001 + 0.12 * uState;
+  // the shape (src/shapes.js)
+  ${shape.glsl}
 
-    vec3 bh = vec3(0.925 * vec2(cos(uAngle), sin(uAngle)), 0.0);
-    float sb = amount(0.0);
-    vec3 bp = bh + repel(0.0, bh, sb);
-    float ball = mix(extrude(length(p.xy - bp.xy) - 0.3, p.z - bp.z, 0.11, 0.075), length(p - bp) - 0.3, sb);
-
-    // the ring, as four arcs meeting exactly at the diagonals' ends
-    float ring = 1e9;
-    for (int j = 0; j < 4; j++) {
-      float fj = float(j);
-      float a0 = 0.785 + fj * 1.5708;
-      vec3 home = vec3(0.925 * vec2(cos(a0), sin(a0)), 0.0);
-      float s = amount(1.0 + fj);
-      vec3 q = p - repel(1.0 + fj, home, s);
-      float c = cos(a0 - 1.5708), si = sin(a0 - 1.5708);
-      float arc = extrude(sdArc(mat2(c, -si, si, c) * q.xy, 0.7854, 0.925, 0.075), q.z, 0.11, 0.075);
-      ring = smin(ring, mix(arc, length(q - home) - 0.24, s), k);
-    }
-    // the ring swells round the ball, as in the logo
-    float d = smin(ring, ball, max(0.07, k));
-
-    // the disc, with its bite where the ball is
-    float sd = amount(5.0);
-    vec3 q = p - repel(5.0, vec3(0.0), sd);
-    float r = length(q.xy);
-    float core2 = mix(smax(r - 0.7, -(length(q.xy - bp.xy) - 0.432), 0.06), r - 0.7, sb);
-    float b = mix(extrude(core2, q.z, 0.065, 0.05), length(q) - 0.46, sd);
-    disc = step(b, d);
-    return smin(d, b, k);
-  }
+  float map(vec3 pw, out float id) { return shapeMap(uInvRot * pw, id); }
   float map(vec3 p) { float d; return map(p, d); }
 
   vec3 normalAt(vec3 p, float e) {
@@ -128,7 +92,7 @@ const fragmentShader = /* glsl */ `
 
   vec3 shade(vec3 p, vec3 rd, vec2 q, float px) {
     float isDisc;
-    map(p, isDisc);
+    map(p, isDisc); // the shape's id: a light tint on that part
     vec3 n = normalAt(p, max(0.001, 0.75 * px));
     float cosi = clamp(dot(n, -rd), 0.0, 1.0);
     float fr = pow(1.0 - cosi, 3.0);
@@ -166,7 +130,7 @@ const fragmentShader = /* glsl */ `
 
     // only march rays that meet the bounding sphere
     float bc = dot(ro, rd);
-    float disc0 = bc * bc - (dot(ro, ro) - 1.85 * 1.85);
+    float disc0 = bc * bc - (dot(ro, ro) - ${(shape.bound * shape.bound).toFixed(4)});
     if (disc0 > 0.0) {
       float t = -bc - sqrt(disc0);
       float tMax = -bc + sqrt(disc0);
@@ -196,7 +160,8 @@ const fragmentShader = /* glsl */ `
 
 const damp = (a, b, rate, dt) => a + (b - a) * (1 - Math.exp(-rate * dt))
 
-export function createScene({ canvas, reducedMotion = false }) {
+export function createScene({ canvas, shape: shapeName = 'mark', reducedMotion = false }) {
+  const shape = shapes[shapeName] ?? shapes.mark
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: false, powerPreference: 'high-performance' })
   const scene = new THREE.Scene()
   const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1)
@@ -213,10 +178,10 @@ export function createScene({ canvas, reducedMotion = false }) {
   // one triangle that covers the screen
   const geo = new THREE.BufferGeometry()
   geo.setAttribute('position', new THREE.Float32BufferAttribute([-1, -1, 0, 3, -1, 0, -1, 3, 0], 3))
-  scene.add(new THREE.Mesh(geo, new THREE.ShaderMaterial({ vertexShader, fragmentShader, uniforms, depthTest: false })))
+  scene.add(new THREE.Mesh(geo, new THREE.ShaderMaterial({ vertexShader, fragmentShader: fragment(shape), uniforms, depthTest: false })))
 
   const target = { anchor: null, fx: 0.5, fy: 0.5, size: 0.3, opacity: 1 }
-  const cur = { radius: 0, opacity: 1, rx: 0.12, ry: 0, state: 0, px: 0, py: 0 }
+  const cur = { radius: 0, opacity: 1, rx: shape.rot[0], ry: shape.rot[1], state: 0, px: 0, py: 0 }
   let lastHover = -1e9
   const slide = { x: 0, y: 0 } // offset left by the previous anchor, decays to 0
   const pointer = { x: 0, y: 0, px: -1e4, py: -1e4 }
@@ -288,14 +253,16 @@ export function createScene({ canvas, reducedMotion = false }) {
     uniforms.uState.value = cur.state
     uniforms.uPointer.value.set(cur.px, cur.py)
 
-    // the mark leans gently towards the pointer, nothing else turns it
+    // the shape leans gently towards the pointer, and turns slowly if it spins
+    const [rx0, ry0] = shape.rot
     if (!reducedMotion) {
-      cur.rx = damp(cur.rx, 0.12 + pointer.y * 0.16, 1.6, dt)
-      cur.ry = damp(cur.ry, pointer.x * 0.22, 1.6, dt)
+      cur.rx = damp(cur.rx, rx0 + pointer.y * 0.16, 1.6, dt)
+      cur.ry = damp(cur.ry, ry0 + pointer.x * 0.22, 1.6, dt)
     } else {
-      cur.rx = 0.12
+      cur.rx = rx0
+      cur.ry = ry0
     }
-    euler.set(cur.rx, cur.ry, 0)
+    euler.set(cur.rx, cur.ry + t * shape.spin, 0, 'XYZ')
     rot.makeRotationFromEuler(euler).invert()
     uniforms.uInvRot.value.setFromMatrix4(rot)
 

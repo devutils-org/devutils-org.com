@@ -16,6 +16,8 @@ npm run build    # static site in dist/
 ```
 
 - `src/tools.js` — the tools, their statuses and links. Every page reads it.
+- `src/shapes.js` — the glass shapes: the atfq mark (home, ATFQ), and one per
+  tool (`omn`, `distroproof`, `pkgx`, `vmanyware`), picked by a page's `shape`.
 - `src/scene.js` — the glass mark. The page drives it with `setState`
   (anchor element, or viewport position and size; opacity).
 - `src/main.js` — renders the content from `tools.js`, maps each section to a
