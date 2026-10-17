@@ -36,6 +36,21 @@ $('#family-grid').innerHTML = families
   )
   .join('')
 
+// Private repository destinations remain visible without leading to a 404.
+if (omn.repoPrivate) {
+  $$('[data-repo], .family-card').forEach((link) => {
+    const label = document.createElement('span')
+    label.className = `${link.className} repo-unavailable`
+    label.style.cssText = link.style.cssText
+    label.innerHTML = link.innerHTML
+    label.setAttribute('aria-disabled', 'true')
+    label.title = 'The repository is currently private'
+    const guide = label.querySelector('.family-link')
+    if (guide) guide.textContent = 'Guide · private repository'
+    link.replaceWith(label)
+  })
+}
+
 // ---------- the Suzanne scenario ----------
 
 pipeline({

@@ -22,6 +22,7 @@ export const tools = [
     license: 'MIT / Apache-2.0',
     command: 'omn top -- ./your-program',
     repo: 'omniscient',
+    repoPrivate: true,
     site: '/tools/omn/',
   },
   {

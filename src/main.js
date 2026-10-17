@@ -38,7 +38,7 @@ $('#tool-grid').innerHTML = tools
       ${t.command ? `<code class="cmd">${esc(t.command)}</code>` : ''}
       <p class="note">${t.statusNote}${t.license ? ` · ${t.license}` : ''}</p>
       <div class="tool-links">
-        <a href="${repoUrl(t)}">Repository ↗</a>
+        ${t.repoPrivate ? '<span class="repo-unavailable" aria-disabled="true" title="The repository is currently private">Repository · private</span>' : `<a href="${repoUrl(t)}">Repository ↗</a>`}
         ${landing}
       </div>
     </article>`
