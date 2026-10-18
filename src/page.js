@@ -36,6 +36,7 @@ export function renderFlowCards(steps, prefix = 'flow') {
 // shape: which glass shape (src/shapes.js) the page shows.
 export async function initPage({ scenes, shape = 'mark' }) {
   initExternalLinks()
+  initTopLinks()
   initFlowCards()
   $$('.section-heading, .bento article, .start > *').forEach((el) => el.classList.add('reveal'))
   $$('.bento article, .pipeline, .command').forEach((el) => el.classList.add('glass'))
@@ -92,6 +93,20 @@ export async function initPage({ scenes, shape = 'mark' }) {
   window.addEventListener('scroll', update, { passive: true })
   window.addEventListener('resize', update)
   update()
+}
+
+// A link to the page you are already on (the logo, on its own page) glides
+// back to the top instead of reloading it.
+function initTopLinks() {
+  $$('a[href]').forEach((a) => {
+    const url = new URL(a.href, location.href)
+    if (url.origin !== location.origin || url.pathname !== location.pathname || url.hash) return
+    a.addEventListener('click', (e) => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
+      e.preventDefault()
+      scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' })
+    })
+  })
 }
 
 // Shared, manually explored cards for home and tool workflows.
