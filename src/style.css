@@ -293,6 +293,7 @@ h2 { letter-spacing: -1.8px; margin: 0; font-size: 44px; font-weight: 500; line-
 
 /* pipeline (flow) */
 .flow-cards { --flow-inset-y: 30px; --flow-inset-x: 24px; display: grid; grid-template-columns: repeat(var(--flow-columns, 5), minmax(0, 1fr)); border-radius: 18px; }
+.flow-cards + .fine { margin-top: calc(var(--flow-inset-y, 30px) + 28px); }
 .flow-card { position: relative; min-width: 0; height: 330px; padding: 0; border: 0; border-radius: 16px; background: none; text-align: left; }
 .flow-card[aria-expanded="true"] { z-index: 3; }
 .flow-card-inner { display: block; position: relative; width: 100%; height: 100%; transition: transform .55s cubic-bezier(.22, 1, .36, 1); }
