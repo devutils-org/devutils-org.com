@@ -12,7 +12,7 @@ export const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt
 
 export function renderFlowCards(steps, prefix = 'flow') {
   return steps.map((step, i) => `
-    <button class="flow-card reveal" style="--tc:${step.color};--d:${i * 0.08}s" aria-expanded="false" aria-controls="${prefix}-${step.id ?? i}" aria-label="${esc(step.title)} ${esc(step.label)}" type="button">
+    <button class="flow-card reveal" style="--tc:${step.color};--d:${i * 0.08}s;--i:${i}" aria-expanded="false" aria-controls="${prefix}-${step.id ?? i}" aria-label="${esc(step.title)} ${esc(step.label)}" type="button">
       <span class="flow-card-inner">
         <span class="flow-front" aria-hidden="true">
           <span class="flow-glyph">${esc(step.glyph)}</span>
@@ -118,4 +118,29 @@ export function initFlowCards(root = document) {
       if (event.key === 'Escape') expandFlowCard(card, false)
     })
   })
+
+  // On phones the cards are a sticky stack: the one on top of the stack turns
+  // over by itself. Only a change of top card flips anything, so a tap still
+  // works in between.
+  const stacked = matchMedia('(width <= 600px)')
+  let top = null
+  function followScroll() {
+    if (!stacked.matches) return
+    const line = innerHeight * 0.55
+    const next = flowCards.findLast((card) => {
+      const r = card.getBoundingClientRect()
+      return r.top < line && r.bottom > 0
+    }) ?? null
+    if (next === top) return
+    top = next
+    if (top) expandFlowCard(top, true)
+    else flowCards.forEach((card) => expandFlowCard(card, false))
+  }
+  addEventListener('scroll', followScroll, { passive: true })
+  stacked.addEventListener('change', () => {
+    top = null
+    flowCards.forEach((card) => expandFlowCard(card, false))
+    followScroll()
+  })
+  followScroll()
 }

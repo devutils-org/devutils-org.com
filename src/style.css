@@ -341,7 +341,7 @@ h2 { letter-spacing: -1.8px; margin: 0; font-size: 44px; font-weight: 500; line-
 .pipeline-detail button { border: 1px solid var(--glass-line); white-space: nowrap; background: #ffffff0a; backdrop-filter: blur(14px); border-radius: 999px; padding: 10px 15px; font: 10px var(--mono); }
 .pipeline-detail button:hover { border-color: #ffffff40; }
 
-/* the standard: four habits, each with a real receipt */
+/* receipts: a claim beside the real output that backs it (tool pages) */
 .receipts { grid-template-columns: repeat(2, 1fr); gap: 14px; display: grid; }
 .receipt { border-radius: 18px; padding: 28px; display: flex; flex-direction: column; }
 .receipt small { color: #a3a5b8; letter-spacing: 1px; font: 10px var(--mono); }
@@ -457,13 +457,18 @@ footer a:hover { color: #fff; }
 }
 
 @media (width <= 600px) {
-  .flow-cards { grid-template-columns: 1fr; }
-  .flow-card .flow-front { border-right: 0; }
-  .flow-card:last-child .flow-front { border-bottom: 0; }
-  .flow-card { height: 360px; }
-  .flow-front, .flow-back { padding: 24px; }
-  .flow-front { justify-content: flex-start; }
-  .flow-cards { --flow-inset-y: 0px; --flow-inset-x: 0px; }
+  /* a stack: each card sticks under the nav, the next one slides over it,
+     and the card on top turns over on its own (initFlowCards) */
+  .flow-cards { --flow-inset-y: 0px; --flow-inset-x: 0px; grid-template-columns: 1fr; gap: 18px; background: none; border: 0; box-shadow: none; backdrop-filter: none; }
+  .flow-cards:after { display: none; }
+  .flow-card { position: sticky; top: calc(86px + var(--i) * 12px); height: auto; }
+  .flow-card[aria-expanded="true"] { z-index: auto; }
+  .flow-card-inner { display: grid; }
+  .flow-front, .flow-back { position: relative; grid-area: 1 / 1; inset: auto; min-height: 250px; padding: 24px; border-radius: 18px; }
+  :is(.home, .tool-page) .flow-back { min-height: 250px; }
+  .flow-back { clip-path: inset(0 round 18px); }
+  .flow-front, .flow-card .flow-front, .flow-card:nth-child(n) .flow-front { justify-content: flex-start; border: 1px solid var(--glass-line); background: radial-gradient(ellipse at 50% 0, color-mix(in srgb, var(--tc) 8%, transparent), transparent 75%), linear-gradient(135deg, #ffffff0f, #ffffff03 55%), #0a0b10a6; backdrop-filter: blur(24px) saturate(150%); box-shadow: inset 0 1px 0 #ffffff1c, 0 -18px 40px -24px #000e; }
+  .flow-glyph { margin-bottom: 20px; }
   :is(.home, .tool-page) .hero { padding-top: 32px; padding-bottom: 40px; }
   :is(.home, .tool-page) .hero h1 { font-size: clamp(42px, 10vw, 54px); }
   :is(.home, .tool-page) .hero .stage { height: 230px; }
