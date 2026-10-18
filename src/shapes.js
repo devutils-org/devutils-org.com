@@ -10,7 +10,7 @@
 // bound: radius of the sphere that contains it, whatever its state.
 // rot: resting tilt [x, y]; spin: slow turn about y, in rad/s.
 
-// The atfq mark, cut into six blocks — the ball, the ring as four arcs, the
+// The atfq mark, cut into six blocks — the ball (a sphere), the ring as four arcs, the
 // disc — that turn into bubbles and are pushed away from the pointer.
 const mark = {
   bound: 1.85,
@@ -37,7 +37,8 @@ const mark = {
       vec3 bh = vec3(0.925 * vec2(cos(uAngle), sin(uAngle)), 0.0);
       float sb = amount(0.0);
       vec3 bp = bh + repel(0.0, bh, sb);
-      float ball = mix(extrude(length(p.xy - bp.xy) - 0.3, p.z - bp.z, 0.11, 0.075), length(p - bp) - 0.3, sb);
+      // a full sphere even at rest, so it covers the ring where they meet
+      float ball = length(p - bp) - 0.3;
 
       // the ring, as four arcs meeting exactly at the diagonals' ends
       float ring = 1e9;
