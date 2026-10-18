@@ -28,10 +28,10 @@ $('#family-grid').innerHTML = families
   .map(
     ([glyph, id, name, text], i) => `
     <a class="family-card glass reveal" style="--d:${(i % 3) * 0.08}s" href="${repo}/blob/main/docs/families/${id}.md">
-      <div><span class="family-glyph">${glyph}</span><small>${String(i + 1).padStart(2, '0')} / ${id.toUpperCase()}</small><span class="family-arrow">↗</span></div>
+      <div><span class="family-glyph">${glyph}</span><small>${String(i + 1).padStart(2, '0')} / ${id.toUpperCase()}</small><span class="family-arrow"><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></div>
       <h3>${name}</h3>
       <p>${text}</p>
-      <span class="family-link">Read the ${id} guide <span>→</span></span>
+      <span class="family-link">Read the ${id} guide <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></span>
     </a>`,
   )
   .join('')

@@ -17,8 +17,8 @@ function hero(h, tool) {
       <p class="hero-copy">${h.copy}</p>
       <p class="hero-product">${h.product}</p>
       <div class="actions">
-        <a class="primary" href="#start">${h.primary} <span>↓</span></a>
-        ${h.secondary ? `<a class="secondary" href="${h.secondary[1]}">${h.secondary[0]} <span>→</span></a>` : `<a class="secondary" href="${repoUrl(tool)}">Read the source <span>↗</span></a>`}
+        <a class="primary" href="#start">${h.primary} <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-down"></use></svg></span></a>
+        ${h.secondary ? `<a class="secondary" href="${h.secondary[1]}">${h.secondary[0]} <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-right"></use></svg></span></a>` : `<a class="secondary" href="${repoUrl(tool)}">Read the source <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></a>`}
       </div>
       <div class="stage" aria-hidden="true">
         <span class="hud top-left">${h.hud[0][0]}<br /><b>${h.hud[0][1]}</b></span>
@@ -181,7 +181,7 @@ const sections = {
         )
         .join('')}
       <div class="actions">
-        ${s.actions ?? `<a class="primary" href="${repoUrl(tool)}">Open the repository <span>↗</span></a>\n        <a class="secondary" href="/">All devutils tools</a>`}
+        ${s.actions ?? `<a class="primary" href="${repoUrl(tool)}">Open the repository <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></a>\n        <a class="secondary" href="/">All devutils tools</a>`}
       </div>
       <small>${s.small}</small>
     </section>`,
@@ -217,14 +217,14 @@ export async function renderToolPage(page) {
       <a href="/tools/${tool.id}/">${tool.name}</a><span class="alpha">${tool.status}</span>
     </div>
     <nav aria-label="Sections">${page.nav.map(([label, href]) => `<a href="${href}">${label}</a>`).join('')}</nav>
-    <a class="github" href="${repo}">GitHub <span>↗</span></a>`
+    <a class="github" href="${repo}">GitHub <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></a>`
 
   $('#main').innerHTML = hero(page.hero, tool) + page.sections.map((s) => sections[s.type](s, tool)).join('')
 
   $('#footer').innerHTML = html`
     <a class="logo" href="/"><img class="logo-icon" src="/mark.svg" alt="" /> devutils</a>
     <span>${tool.name} · ${tool.line}</span>
-    ${tool.license ? `<a href="${repo}">${tool.license} ↗</a>` : `<a href="${repo}">Repository ↗</a>`}`
+    ${tool.license ? `<a href="${repo}">${tool.license} <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></a>` : `<a href="${repo}">Repository <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></a>`}`
 
   // flows
   for (const s of page.sections.filter((s) => s.type === 'flow')) {
