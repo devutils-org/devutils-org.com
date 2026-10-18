@@ -1,5 +1,5 @@
 import { tools, repoUrl } from '../tools.js'
-import { $, $$, initPage, pipeline } from '../page.js'
+import { $, $$, initPage, renderFlowCards } from '../page.js'
 import { ansiToHtml } from './ansi.js'
 import request from './captures/request.ansi?raw'
 import lanes from './captures/lanes.ansi?raw'
@@ -53,16 +53,12 @@ if (omn.repoPrivate) {
 
 // ---------- the Suzanne scenario ----------
 
-pipeline({
-  root: $('#pipeline'),
-  detail: $('#explanation'),
-  texts: [
-    'Mark the request boundary and propagate its identity into downstream work.',
-    'Inspect execution, scheduler delays and the threads preparing Suzanne.',
-    'Inspect rendering activity through the backend the device and engine expose.',
-    'Follow suzanne.png to write(); durable block-device completion is a separate measurement.',
-  ],
-})
+$('#pipeline').innerHTML = renderFlowCards([
+  { glyph: '↙', label: 'NETWORK', title: 'Receive.', code: 'HTTP → render request', text: 'Mark the request boundary and propagate its identity into downstream work.' },
+  { glyph: '⌘', label: 'CPU', title: 'Prepare.', code: 'Suzanne → draw commands', text: 'Inspect execution, scheduler delays and the threads preparing Suzanne.' },
+  { glyph: '◇', label: 'GPU', title: 'Render.', code: 'geometry → frame', text: 'Inspect rendering activity through the backend the device and engine expose.' },
+  { glyph: '▱', label: 'DISK', title: 'Persist.', code: 'frame → suzanne.png', text: 'Follow suzanne.png to write(); durable block-device completion is a separate measurement.' },
+].map((step) => ({ ...step, color: omn.color })), 'workflow')
 
 // ---------- terminal views: real snapshots ----------
 

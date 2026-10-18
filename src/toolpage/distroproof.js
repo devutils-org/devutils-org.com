@@ -1,5 +1,5 @@
-// distroproof's landing page. Facts and outputs from the distroproof README
-// (written in French; translated here, except the tool's own output).
+// distroproof's landing page. Facts and examples from the distroproof README;
+// the verdict example is translated into English for this site.
 
 export default {
   id: 'distroproof',
@@ -8,7 +8,7 @@ export default {
   hero: {
     pill: { href: '#targets', left: '13 DISTRO IMAGES', right: 'THEIR REAL KERNELS →' },
     title: ['Works on my machine.', 'Proven on theirs.'],
-    copy: 'distroless takes the distro out of your image.<br />distroproof checks your program holds on every distro.',
+    copy: 'Test your binary on real distro kernels.<br />See why it fails elsewhere.',
     product: 'Real QEMU/KVM VMs on official cloud images: the distro’s kernel, not the host’s.<br />Every failure tied to the difference that explains it.',
     primary: 'Build distroproof',
     hud: [['DISTRO.PROOF', 'ONE PROGRAM / EVERY KERNEL'], ['KERNELS 4.15 → 6.19 · GLIBC · MUSL', 'TARGET MATRIX / VM']],
@@ -73,11 +73,11 @@ export default {
         {
           name: 'Verdict',
           label: 'distroproof up',
-          caption: 'A failing target compared to the closest passing one. distroproof prints in French today.',
-          text: `[ubuntu-18.04] échec (code 1)
-  comparée à ubuntu-22.04 : 65 différences significatives
-  cause probable : btf.vmlinux : présent, 5286152 octets → indisponible (/sys/kernel/btf/vmlinux absent)
-  aussi : kernel.CONFIG_DEBUG_INFO_BTF : y → absente de la config`,
+          caption: 'A failing target compared to the closest passing one. Example translated into English.',
+          text: `[ubuntu-18.04] failed (exit code 1)
+  compared with ubuntu-22.04: 65 significant differences
+  likely cause: btf.vmlinux: present, 5286152 bytes → unavailable (/sys/kernel/btf/vmlinux missing)
+  also: kernel.CONFIG_DEBUG_INFO_BTF: y → missing from config`,
         },
         {
           name: 'Diff',
@@ -117,11 +117,11 @@ kernel_cmdline = "lockdown=confidentiality"
 
 [run]
 setup = "./scripts/install-deps.sh"   # as root, before the probe
-command = "./target/release/montool --selftest"
+command = "./target/release/mytool --selftest"
 as_user = "test"`,
         },
       ],
-      fine: 'Outputs and configuration from the distroproof README. The TUI adds a card per target, live serial logs, report diffs and an interactive console.',
+      fine: 'Examples adapted from the distroproof README, with the verdict translated into English. The TUI adds a card per target, live serial logs, report diffs and an interactive console.',
     },
     {
       type: 'table',

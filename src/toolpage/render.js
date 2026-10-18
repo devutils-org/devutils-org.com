@@ -1,32 +1,27 @@
 import { tools, repoUrl } from '../tools.js'
-import { $, $$, pad, esc, initPage, pipeline } from '../page.js'
+import { $, $$, pad, esc, initPage, renderFlowCards } from '../page.js'
 
 // A tool's landing page, built from its content file (src/toolpage/<id>.js)
 // on the composition of the Omniscient page: hero, intro, cards, an
-// auto-stepping flow, terminal captures, a status section, install.
+// interactive workflow, terminal captures, a status section, install.
 // Every section is optional; they render in the order given.
 
 const html = String.raw
 
-function hero(h, tool) {
+function hero(h, tool, overviewId) {
   return html`
     <section class="hero" data-scene="hero">
       <div class="hero-grid" aria-hidden="true"></div>
-      <a class="release" href="${h.pill.href}"><span class="signal-dot"></span> ${h.pill.left} <span class="release-divider">/</span> ${h.pill.right}</a>
       <h1>${h.title[0]}<br /><span>${h.title[1]}</span></h1>
       <p class="hero-copy">${h.copy}</p>
-      <p class="hero-product">${h.product}</p>
       <div class="actions">
-        <a class="primary" href="#start">${h.primary} <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-down"></use></svg></span></a>
-        ${h.secondary ? `<a class="secondary" href="${h.secondary[1]}">${h.secondary[0]} <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-right"></use></svg></span></a>` : `<a class="secondary" href="${repoUrl(tool)}">Read the source <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></a>`}
+        <a class="primary" href="#${overviewId}">Discover ${tool.name} <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#arrow-down"></use></svg></a>
+        <a class="secondary" href="#start">${h.primary}</a>
       </div>
       <div class="stage" aria-hidden="true">
-        <span class="hud top-left">${h.hud[0][0]}<br /><b>${h.hud[0][1]}</b></span>
-        <span class="hud bottom-right">${h.hud[1][0]}<br /><b>${h.hud[1][1]}</b></span>
         <img class="stage-fallback" src="/mark.svg" alt="" />
         <div class="horizon"></div>
       </div>
-      <div class="hero-caption">${h.caption.map((c) => `<span>${c}</span>`).join('')}</div>
     </section>`
 }
 
@@ -39,15 +34,17 @@ const heading = (s) => html`
 const open = (s) => `<section class="section" ${s.id ? `id="${s.id}"` : ''} data-scene="${s.scene}">`
 
 const sections = {
-  intro: (s) => html`${open(s)}
-    ${heading(s)}
-    <div class="request-axes glass">
-      ${s.axes.map(([k, v]) => `<span><small>${k}</small>${v}</span>`).join('<i>→</i>')}
-    </div>
-    <div class="product-columns">
-      ${s.columns.map(([t, p], i) => `<article class="reveal" style="--d:${i * 0.08}s"><h3>${t}</h3><p>${p}</p></article>`).join('')}
-    </div>
-  </section>`,
+  intro: (s) => html`
+    <section class="section overview" id="${s.id ?? 'overview'}" data-scene="${s.scene}" aria-labelledby="${s.scene}-title">
+      <div class="overview-heading">
+        <p class="eyebrow">${s.eyebrow}</p>
+        <h2 id="${s.scene}-title">${s.title[0]}<br />${s.title[1]}</h2>
+        <p>${s.text}</p>
+      </div>
+      <dl class="overview-facts">
+        ${s.columns.map(([title, text]) => `<div><dt>${title}</dt><dd>${text}</dd></div>`).join('')}
+      </dl>
+    </section>`,
 
   cards: (s) => html`${open(s)}
     ${heading(s)}
@@ -66,20 +63,12 @@ const sections = {
     </div>
   </section>`,
 
-  flow: (s) => html`${open(s)}
+  flow: (s, tool) => html`${open(s)}
     ${heading(s)}
-    <div class="pipeline" data-flow style="grid-template-columns: repeat(${s.steps.length}, 1fr)">
-      ${s.steps
-        .map(
-          (st, i) => html`
-        <button class="node reveal" style="--d:${i * 0.08}s" type="button" aria-pressed="false">
-          <span class="node-icon">${st.glyph}</span><small>${pad(i)} / ${st.label}</small><strong>${st.title}</strong><code>${esc(st.code)}</code>
-        </button>`,
-        )
-        .join('')}
+    <div class="flow-cards glass" style="--flow-columns:${s.steps.length}">
+      ${renderFlowCards(s.steps.map((step) => ({ ...step, color: tool.color })), s.scene)}
     </div>
-    <div class="pipeline-detail"><span class="signal-dot"></span><p role="status" data-flow-text></p></div>
-    ${s.fine ? `<p class="fine">${s.fine}</p>` : ''}
+    ${s.fine ? `<p class="fine capture-note">${s.fine}</p>` : ''}
   </section>`,
 
   terminal: (s) => html`${open(s)}
@@ -219,18 +208,12 @@ export async function renderToolPage(page) {
     <nav aria-label="Sections">${page.nav.map(([label, href]) => `<a href="${href}">${label}</a>`).join('')}</nav>
     <a class="github" href="${repo}">GitHub <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></a>`
 
-  $('#main').innerHTML = hero(page.hero, tool) + page.sections.map((s) => sections[s.type](s, tool)).join('')
+  $('#main').innerHTML = hero(page.hero, tool, page.sections.find((section) => section.type === 'intro')?.id ?? 'overview') + page.sections.map((s) => sections[s.type](s, tool)).join('')
 
   $('#footer').innerHTML = html`
     <a class="logo" href="/"><img class="logo-icon" src="/mark.svg" alt="" /> devutils</a>
     <span>${tool.name} · ${tool.line}</span>
     ${tool.license ? `<a href="${repo}">${tool.license} <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></a>` : `<a href="${repo}">Repository <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></a>`}`
-
-  // flows
-  for (const s of page.sections.filter((s) => s.type === 'flow')) {
-    const root = $(`[data-scene="${s.scene}"]`)
-    pipeline({ root: $('[data-flow]', root), detail: $('[data-flow-text]', root), texts: s.steps.map((st) => st.text) })
-  }
 
   // terminals
   for (const s of page.sections.filter((s) => s.type === 'terminal')) {

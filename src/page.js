@@ -1,5 +1,5 @@
 // What every devutils page shares: the frosted panels, the reveal on scroll,
-// the glass mark behind the page, the step-through pipelines and the copy
+// the glass mark behind the page, the interactive workflow cards and the copy
 // buttons. A page builds its content first, then calls initPage.
 
 import { initExternalLinks } from './external-links.js'
@@ -10,12 +10,33 @@ export const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matc
 export const pad = (i) => String(i + 1).padStart(2, '0')
 export const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
 
+export function renderFlowCards(steps, prefix = 'flow') {
+  return steps.map((step, i) => `
+    <button class="flow-card reveal" style="--tc:${step.color};--d:${i * 0.08}s" aria-expanded="false" aria-controls="${prefix}-${step.id ?? i}" aria-label="${esc(step.title)} ${esc(step.label)}" type="button">
+      <span class="flow-card-inner">
+        <span class="flow-front" aria-hidden="true">
+          <span class="flow-glyph">${esc(step.glyph)}</span>
+          <small>${pad(i)} / ${esc(step.label)}</small>
+          <strong>${esc(step.title)}</strong>
+        </span>
+        <span class="flow-back" id="${prefix}-${step.id ?? i}" aria-hidden="true">
+          <small>${esc(step.label)}</small>
+          <strong>${esc(step.title)}</strong>
+          <span class="flow-description">${esc(step.text)}</span>
+          ${step.detail ? `<span class="flow-detail">${esc(step.detail)}</span>` : ''}
+          ${step.code ? `<code class="flow-example">${esc(step.code)}</code>` : ''}
+        </span>
+      </span>
+    </button>`).join('')
+}
+
 // scenes: { [data-scene name]: { fx, fy, size, opacity } } — where the mark
 // goes while that section holds the middle of the viewport. A section with a
 // .stage gets the mark on it; on narrow screens the others get it centred.
 // shape: which glass shape (src/shapes.js) the page shows.
 export async function initPage({ scenes, shape = 'mark' }) {
   initExternalLinks()
+  initFlowCards()
   $$('.section-heading, .bento article, .start > *').forEach((el) => el.classList.add('reveal'))
   $$('.bento article, .pipeline, .command').forEach((el) => el.classList.add('glass'))
 
@@ -27,7 +48,7 @@ export async function initPage({ scenes, shape = 'mark' }) {
   $$('.reveal').forEach((el) => io.observe(el))
 
   // a soft light that follows the pointer across each frosted panel
-  $$('.glass').forEach((card) => {
+  $$('.glass, .flow-back').forEach((card) => {
     card.addEventListener('pointermove', (e) => {
       const r = card.getBoundingClientRect()
       card.style.setProperty('--mx', `${e.clientX - r.left}px`)
@@ -73,62 +94,28 @@ export async function initPage({ scenes, shape = 'mark' }) {
   update()
 }
 
-// A row of .node buttons inside `root`, one selected at a time, `texts[i]`
-// shown in `detail`. It steps through them on its own, slowly enough to read,
-// while it is on screen; hovering (or focusing) a step holds it there, and the
-// cycle resumes from it when the pointer leaves.
-export function pipeline({ root, detail, texts, interval = 8000 }) {
-  const nodes = $$('.node', root)
-  root.style.setProperty('--step', `${interval}ms`)
-  let i = 0
-  let timer = null
-  let held = false
-  let visible = false
-
-  function select(j) {
-    i = j
-    nodes.forEach((n, k) => {
-      n.classList.toggle('selected', k === j)
-      n.setAttribute('aria-pressed', String(k === j))
+// Shared, manually explored cards for home and tool workflows.
+export function initFlowCards(root = document) {
+  const flowCards = $$('.flow-card', root)
+  function expandFlowCard(card, expanded) {
+    if (expanded) flowCards.filter((other) => other !== card).forEach((other) => expandFlowCard(other, false))
+    card.setAttribute('aria-expanded', String(expanded))
+    $('.flow-back', card).setAttribute('aria-hidden', String(!expanded))
+  }
+  flowCards.forEach((card) => {
+    card.addEventListener('pointerenter', (event) => {
+      if (event.pointerType === 'mouse') expandFlowCard(card, true)
     })
-    // restart the progress bar
-    const bar = nodes[j]
-    bar.classList.remove('selected')
-    void bar.offsetWidth
-    bar.classList.add('selected')
-    detail.textContent = texts[j]
-  }
-  function schedule() {
-    clearTimeout(timer)
-    if (held || !visible || reducedMotion) return
-    timer = setTimeout(() => {
-      select((i + 1) % nodes.length)
-      schedule()
-    }, interval)
-  }
-  function hold(j) {
-    held = true
-    root.classList.add('held')
-    clearTimeout(timer)
-    select(j)
-  }
-  function release() {
-    held = false
-    root.classList.remove('held')
-    select(i)
-    schedule()
-  }
-  nodes.forEach((n, j) => {
-    n.addEventListener('pointerenter', () => hold(j))
-    n.addEventListener('pointerleave', release)
-    n.addEventListener('focus', () => hold(j))
-    n.addEventListener('blur', release)
-    n.addEventListener('click', () => (held ? select(j) : (select(j), schedule())))
+    card.addEventListener('pointerleave', (event) => {
+      if (event.pointerType === 'mouse' && !card.matches(':focus-visible')) expandFlowCard(card, false)
+    })
+    card.addEventListener('focus', () => {
+      if (card.matches(':focus-visible')) expandFlowCard(card, true)
+    })
+    card.addEventListener('blur', () => expandFlowCard(card, false))
+    card.addEventListener('click', () => expandFlowCard(card, card.getAttribute('aria-expanded') !== 'true'))
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') expandFlowCard(card, false)
+    })
   })
-  new IntersectionObserver(([e]) => {
-    visible = e.isIntersecting
-    if (visible && !held) select(i) // start the bar when it can be seen
-    schedule()
-  }).observe(root)
-  select(0)
 }

@@ -8,7 +8,7 @@ export default {
   hero: {
     pill: { href: '#status', left: 'IN DEVELOPMENT', right: 'PROVISIONING IN PROGRESS →' },
     title: ['Your homelab.', 'From anywhere.'],
-    copy: 'Define a Linux environment once, provision it on your own Proxmox,<br />and reach it from your desktop or your phone.',
+    copy: 'Your Proxmox homelab, from desktop or mobile.<br />Define a Linux environment once. Recreate it when needed.',
     product: 'A native client and a self-hosted control plane for reproducible environments.<br />Proxmox credentials stay on the control plane; SSH stays on your clients.',
     primary: 'Run it locally',
     hud: [['VM.ANYWARE', 'ONE DEFINITION / ANY DEVICE'], ['PROXMOX · TAURI · SSH', 'CONTROL PLANE / CLIENT']],

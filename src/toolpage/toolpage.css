@@ -76,6 +76,7 @@
 .spec td:last-child { color: var(--muted); }
 
 /* install */
+.start > .actions + small { display: block; max-width: 760px; margin: 24px auto 0; }
 .install { border-radius: 18px; max-width: 760px; margin: 0 auto 30px; text-align: left; overflow: hidden; }
 .install-head { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border-bottom: 1px solid var(--line); color: #a9abbb; font: 10px var(--mono); letter-spacing: 1px; }
 .install-head button { color: var(--muted); background: 0 0; border: 0; font-size: 11px; }

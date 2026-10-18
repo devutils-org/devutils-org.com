@@ -86,7 +86,7 @@ export default {
   hero: {
     pill: { href: 'book/', left: 'THE BOOK', right: 'EVERY CARD, IN YOUR BROWSER →' },
     title: ['Ask the question.', 'Your machine answers.'],
-    copy: 'Short answers first, your machine’s real state second,<br />the deep “why” only if you want it.',
+    copy: 'Understand Linux metrics in your terminal.<br />Short answers, backed by your machine’s live state.',
     product: '121 cards on how Linux works, each checked against what /proc and /sys say right now.<br />One binary for x86-64 and ARM64 Linux. Read-only, offline, no root.',
     primary: 'Install ATFQ',
     secondary: ['Read the book', 'book/'],
@@ -94,6 +94,19 @@ export default {
     caption: ['SHORT ANSWERS FIRST', 'YOUR MACHINE’S REAL STATE', 'THE WHY, IF YOU WANT IT'],
   },
   sections: [
+    {
+      type: 'intro',
+      id: 'overview',
+      scene: 'overview',
+      eyebrow: 'A LINUX COMPANION / IN YOUR TERMINAL',
+      title: ['Understand the number.', 'Keep your flow.'],
+      text: 'Get a practical answer without leaving the terminal. Read a short explanation, compare it with your machine, then go deeper when you need to.',
+      columns: [
+        ['Start with the answer.', 'Plain explanations for Linux metrics and everyday questions, with pitfalls and the deeper why alongside each card.'],
+        ['Read your machine.', 'Put explanations beside live system facts, from available memory to process states. No root required and no system changes.'],
+        ['Keep it within reach.', 'Use the CLI, browse the terminal interface or read the book in your browser. The binary embeds its content and works offline.'],
+      ],
+    },
     {
       type: 'terminal',
       id: 'terminal',

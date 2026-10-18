@@ -12,7 +12,7 @@
     <meta property="og:type" content="website" />
     <link rel="stylesheet" href="/src/style.css" />
   </head>
-  <body>
+  <body class="home">
     <a class="skip" href="#main">Skip to content</a>
 
     <canvas id="scene" aria-hidden="true"></canvas>
@@ -30,28 +30,38 @@
     <main id="main">
       <section class="hero" data-scene="hero">
         <div class="hero-grid" aria-hidden="true"></div>
-        <a class="release" data-omn-site href="#">
-          <span class="signal-dot"></span> OMNISCIENT v0.1 <span class="release-divider">/</span> SEE BEYOND THE SURFACE <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-right"></use></svg>
-        </a>
         <h1>Small tools.<br /><span>Honest answers.</span></h1>
-        <p class="hero-copy">Your machine already knows the answer.<br />Your tools should show their work.</p>
-        <p class="hero-product">
-          Observability, explanations, distro checks, packages and homelabs.<br />
-          Built for Linux. Read-only by default. Evidence beside every answer.
-        </p>
+        <p class="hero-copy">Developer tools for your Linux workflow.<br />Understand, debug and manage the machine you build on.</p>
         <div class="actions">
-          <a class="primary" href="#tools">Explore the tools <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-down"></use></svg></span></a>
-          <a class="secondary" data-org href="https://github.com/devutils-org">Browse the org <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></a>
+          <a class="primary" href="#overview">Discover devutils <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-down"></use></svg></span></a>
+          <a class="secondary" href="#tools">Browse the tools</a>
         </div>
         <div class="stage" aria-hidden="true">
-          <span class="hud top-left">DEVUTILS.ORG<br /><b>FIVE TOOLS / ONE STANDARD</b></span>
-          <span class="hud bottom-right">RUST · LINUX · OPEN SOURCE<br /><b>THE MARK / IN ORBIT</b></span>
           <img class="stage-fallback" src="/mark.svg" alt="" />
           <div class="horizon"></div>
         </div>
-        <div class="hero-caption">
-          <span>SHOW THE WORK</span><span>SAY WHAT WAS LOST</span><span>REFUSE RATHER THAN GUESS</span>
+      </section>
+
+      <section class="section overview" id="overview" aria-labelledby="overview-title">
+        <div class="overview-heading">
+          <p class="eyebrow">BUILT FOR YOUR DEV WORKFLOW</p>
+          <h2 id="overview-title">Less friction.<br />More building.</h2>
+          <p>Spend less time piecing together system output and more time working on your code. Five independent developer tools bring context to debugging, portability checks and local environments.</p>
         </div>
+        <dl class="overview-facts">
+          <div>
+            <dt>Debug with context</dt>
+            <dd>See where a workload spends its time, understand system metrics and compare what changes between distros.</dd>
+          </div>
+          <div>
+            <dt>Stay in your workflow</dt>
+            <dd>CLI commands, terminal views and readable output keep investigation close to your code. Pick one tool and use it on its own.</dd>
+          </div>
+          <div>
+            <dt>Make changes predictable</dt>
+            <dd>Review package plans before applying them. Keep environment definitions in files you can version, inspect and reuse.</dd>
+          </div>
+        </dl>
       </section>
 
       <section class="section" id="flow" data-scene="flow">
@@ -60,14 +70,9 @@
             <p class="eyebrow">FROM QUESTION TO MACHINE / FIVE HANDOFFS</p>
             <h2>One machine.<br />Every question in view.</h2>
           </div>
-          <p>Each tool owns one kind of question. Together they cover a Linux machine from the kernel counters to the VM it runs in.</p>
+          <p>Each tool owns one kind of question. Explore a tool to see what it does, from kernel activity to your homelab.</p>
         </div>
-        <div class="pipeline" id="pipeline"></div>
-        <div class="pipeline-detail">
-          <span class="signal-dot"></span>
-          <p id="explanation" role="status"></p>
-        </div>
-        <p class="fine">Five independent tools, not one suite · each installs and runs on its own · statuses below follow each repository’s README and current-state documents.</p>
+        <div class="flow-cards glass" id="pipeline"></div>
       </section>
 
       <section class="section" id="tools" data-scene="tools">
@@ -76,7 +81,7 @@
             <p class="eyebrow">THE TOOLS / FIVE INSTRUMENTS</p>
             <h2>Pick the question.<br />Get the instrument.</h2>
           </div>
-          <p>Every tool is young and says so. The status on each card is the one its README states — nothing rounded up.</p>
+          <p>Find the tool for your next task. Each card shows its current status and what you can try today.</p>
         </div>
         <div class="tool-grid" id="tool-grid"></div>
       </section>

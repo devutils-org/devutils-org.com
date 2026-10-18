@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/src/style.css" />
     <link rel="stylesheet" href="/src/omn/omn.css" />
   </head>
-  <body>
+  <body class="tool-page">
     <a class="skip" href="#main">Skip to content</a>
     <canvas id="scene" aria-hidden="true"></canvas>
 
@@ -35,59 +35,29 @@
     <main id="main">
       <section class="hero" data-scene="hero">
         <div class="hero-grid" aria-hidden="true"></div>
-        <a class="release" href="#interface">
-          <span class="signal-dot"></span> OMN TOP <span class="release-divider">/</span> TEN VIEWS OF ONE RUN <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-right"></use></svg>
-        </a>
         <h1>See beyond<br /><span>the surface.</span></h1>
-        <p class="hero-copy">Your workload crosses boundaries.<br />Your understanding should, too.</p>
-        <p class="hero-product">
-          Linux observability across CPU, GPU, memory, network and disk.<br />
-          Direct from the kernel. With evidence beside every number.
-        </p>
+        <p class="hero-copy">Observe Linux workloads, from CPU to disk.<br />Keep the evidence beside every number.</p>
         <div class="actions">
-          <a class="primary" href="#start">Start observing <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-down"></use></svg></span></a>
-          <a class="secondary" href="#families">Explore the families <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-right"></use></svg></span></a>
+          <a class="primary" href="#overview">Discover Omniscient <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-down"></use></svg></span></a>
+          <a class="secondary" href="#start">Start observing <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-right"></use></svg></span></a>
         </div>
         <div class="stage" aria-hidden="true">
-          <span class="hud top-left">SYS.OBSERVE<br /><b>ONE HOST / EVERY LAYER</b></span>
-          <span class="hud bottom-right">CPU · GPU · NET · I/O<br /><b>OBSERVATION CORE / OMN</b></span>
           <img class="stage-fallback" src="/mark.svg" alt="" />
           <div class="horizon"></div>
         </div>
-        <div class="hero-caption">
-          <span>DIRECT KERNEL ACCESS</span><span>EXPLICIT EVIDENCE</span><span>REPLAYABLE SESSIONS</span>
-        </div>
       </section>
 
-      <section class="section" data-scene="intro">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">ONE TOOL / A SHARED VOCABULARY</p>
-            <h2>Measure the system.<br />Keep the meaning.</h2>
-          </div>
-          <p><code>omn</code> measures a Linux program or machine. Profiles, counters, event streams and joins share one request model — and say what they can actually answer.</p>
+      <section class="section overview" id="overview" data-scene="intro" aria-labelledby="overview-title">
+        <div class="overview-heading">
+          <p class="eyebrow">ONE TOOL / A SHARED VOCABULARY</p>
+          <h2 id="overview-title">Measure the system.<br />Keep the meaning.</h2>
+          <p>Follow a workload from kernel activity to the time it spends waiting. Profiles, counters and events share one model, with their limits kept visible.</p>
         </div>
-        <div class="request-axes glass">
-          <span><small>SOURCE</small>What happened?</span><i>→</i>
-          <span><small>TARGET</small>To whom?</span><i>→</i>
-          <span><small>MODE</small>How to observe?</span><i>→</i>
-          <span><small>EMIT</small>How to read it?</span><i>→</i>
-          <span><small>KEYS</small>How to group it?</span>
-        </div>
-        <div class="product-columns">
-          <article class="reveal">
-            <h3>Begin with a question.</h3>
-            <p>Use <code>omn cpu</code>, <code>omn mem</code> or <code>omn latency</code> to start an investigation. Name a source when you need precise control.</p>
-          </article>
-          <article class="reveal" style="--d: 0.08s">
-            <h3>See what is available here.</h3>
-            <p><code>omn list</code> probes this machine. Missing privilege, unsupported hardware and absent collectors come with explicit explanations.</p>
-          </article>
-          <article class="reveal" style="--d: 0.16s">
-            <h3>Take the evidence with you.</h3>
-            <p>Export results and profiles. Keep the resolved backend, machine conditions and observation cost alongside the numbers.</p>
-          </article>
-        </div>
+        <dl class="overview-facts">
+          <div><dt>Begin with a question.</dt><dd>Use <code>omn cpu</code>, <code>omn mem</code> or <code>omn latency</code> to start an investigation. Name a source when you need precise control.</dd></div>
+          <div><dt>See what is available here.</dt><dd><code>omn list</code> probes this machine. Missing privilege, unsupported hardware and absent collectors come with explicit explanations.</dd></div>
+          <div><dt>Take the evidence with you.</dt><dd>Export results and profiles. Keep the resolved backend, machine conditions and observation cost alongside the numbers.</dd></div>
+        </dl>
       </section>
 
       <section class="section" id="families" data-scene="families">
@@ -109,16 +79,7 @@
           </div>
           <p>Ask an engine to render Suzanne in 3D and save the result. Follow each handoff across the machine.</p>
         </div>
-        <div class="pipeline four" id="pipeline">
-          <button class="node reveal" type="button" aria-pressed="false"><span class="node-icon">↙</span><small>01 / NETWORK</small><strong>Receive.</strong><code>HTTP → render request</code></button>
-          <button class="node reveal" style="--d: 0.08s" type="button" aria-pressed="false"><span class="node-icon">⌘</span><small>02 / CPU</small><strong>Prepare.</strong><code>Suzanne → draw commands</code></button>
-          <button class="node reveal" style="--d: 0.16s" type="button" aria-pressed="false"><span class="node-icon">◇</span><small>03 / GPU</small><strong>Render.</strong><code>geometry → frame</code></button>
-          <button class="node reveal" style="--d: 0.24s" type="button" aria-pressed="false"><span class="node-icon">▱</span><small>04 / DISK</small><strong>Persist.</strong><code>frame → suzanne.png</code></button>
-        </div>
-        <div class="pipeline-detail">
-          <span class="signal-dot"></span>
-          <p id="explanation" role="status"></p>
-        </div>
+        <div class="flow-cards glass" id="pipeline" style="--flow-columns:4"></div>
         <p class="fine">Planned Linux capture scenario · this sequence is illustrative. One host; GPU attribution depends on the engine and driver. File writes and durable device completion are distinct.</p>
       </section>
 
@@ -202,7 +163,7 @@ requests:
         <p>Install the release or build from source, grant two capabilities, then open a workload in the TUI.</p>
         <div class="actions">
           <a class="primary" data-repo="/blob/main/docs/install.md" href="#">Install Omniscient <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></a>
-          <a class="secondary" href="#families">Explore the families</a>
+          <a class="secondary" href="#start">Start observing</a>
         </div>
         <div class="command"><code id="cmd">omn top -- ./your-program</code><button data-copy="#cmd" type="button" aria-label="Copy command">Copy</button></div>
         <small>x86_64 release, glibc 2.34+ · Rust 1.82+ to build · each source states the kernel it needs</small>

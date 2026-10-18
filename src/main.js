@@ -1,23 +1,14 @@
 import { tools, ORG_URL, repoUrl } from './tools.js'
-import { $, $$, pad, esc, initPage, pipeline } from './page.js'
+import { $, $$, pad, esc, initPage, renderFlowCards } from './page.js'
 
 // ---------- content from tools.js ----------
 
 $$('[data-org]').forEach((a) => (a.href = ORG_URL))
-const omn = tools.find((t) => t.id === 'omn')
-$('[data-omn-site]').href = omn.site
 
-$('#pipeline').innerHTML = tools
-  .map(
-    (t, i) => `
-    <button class="node reveal" style="--d:${i * 0.08}s" data-i="${i}" aria-pressed="false" type="button">
-      <span class="node-icon">${t.glyph}</span>
-      <small>${pad(i)} / ${t.verb.toUpperCase()}</small>
-      <strong>${t.verb}.</strong>
-      <code>${t.id}</code>
-    </button>`,
-  )
-  .join('')
+$('#pipeline').innerHTML = renderFlowCards(tools.map((t) => ({
+  id: t.id, glyph: t.glyph, color: t.color, label: t.name,
+  title: `${t.verb}.`, text: t.step, detail: t.flowDetail,
+})))
 
 $('#tool-grid').innerHTML = tools
   .map((t, i) => {
@@ -44,8 +35,6 @@ ${t.repoPrivate ? '<span class="repo-unavailable" aria-disabled="true" title="Th
     </article>`
   })
   .join('')
-
-pipeline({ root: $('#pipeline'), detail: $('#explanation'), texts: tools.map((t) => t.step) })
 
 await initPage({
   scenes: {

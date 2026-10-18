@@ -17,6 +17,7 @@ export const tools = [
       'perf_event_open, eBPF, procfs, sysfs and netlink — no perf, bpftrace or bcc underneath. ' +
       'Every number says what it lost, how it was obtained and how far it can be trusted.',
     step: 'Measure a program or a whole machine across CPU, GPU, memory, network and disk — with the evidence beside every number.',
+    flowDetail: 'Follow a workload live or replay a recording. See where time goes, what was captured and which measurements are out of reach.',
     status: 'v0.1',
     statusNote: '115 sources · 9 families · Linux 5.15+',
     license: 'MIT / Apache-2.0',
@@ -36,6 +37,7 @@ export const tools = [
       'Short answers first, your machine’s real state second, the deep “why” only if you want it. ' +
       'Never runs your commands, never changes the system, never touches the network.',
     step: 'Ask what a number means — free vs available, a zombie, a swap storm — and read it against your machine’s live state.',
+    flowDetail: 'Get a short answer first, then explore the deeper explanation. The embedded Linux companion works offline and never changes your system.',
     status: 'v0.1',
     statusNote: 'x86_64 + aarch64 binaries',
     license: 'MIT / Apache-2.0',
@@ -54,6 +56,7 @@ export const tools = [
       'Boots VMs on the real kernel of each target distro, runs your program there, and ties every failure ' +
       'to the environment difference that explains it — musl, an old kernel, missing BTF, lockdown.',
     step: 'Run the same binary on the real kernel of every target distro, and trace each failure back to the difference that caused it.',
+    flowDetail: 'Compare kernels, libraries and permissions across a VM matrix. Read the environment differences alongside the test results instead of debugging a bare failure.',
     status: 'POC',
     statusNote: 'probe, VM matrix, reports and TUI implemented',
     license: 'MIT / Apache-2.0',
@@ -72,6 +75,7 @@ export const tools = [
       'Lists what is installed and why, explains dependencies, and reconciles a machine against a declarative ' +
       'TOML profile — through a plan you can read, save and dry-run first.',
     step: 'Know why each package is there, then converge the machine to a TOML profile through a plan you read before it runs.',
+    flowDetail: 'Inspect inventory and dependencies across five package providers. Save or dry-run the plan, then explicitly confirm changes before execution.',
     status: 'POC',
     statusNote: 'five native executors · platform validation ongoing',
     license: 'MIT',
@@ -90,6 +94,7 @@ export const tools = [
       'Define an environment once, provision it on Proxmox, then manage and reach it from desktop or mobile. ' +
       'A native client and a self-hosted control plane.',
     step: 'Describe an environment once, provision it on your own Proxmox host, and reach it over SSH from desktop or phone.',
+    flowDetail: 'In development: definitions and previews work locally, with isolated start/stop validation. End-to-end provisioning and real VM lifecycle validation are still in progress.',
     status: 'In development',
     statusNote: 'local lifecycle validated · provisioning in progress',
     license: null,

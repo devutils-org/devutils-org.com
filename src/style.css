@@ -141,6 +141,127 @@ h2 { letter-spacing: -1.8px; margin: 0; font-size: 44px; font-weight: 500; line-
 .section-heading > p { max-width: 355px; color: var(--muted); margin: 0; font-size: 14px; line-height: 1.8; }
 .fine { color: #9a9cad; max-width: 850px; margin: 0; font: 11px/1.8 var(--mono); }
 
+/* Shared page typography: descriptions, supporting text, metadata and labels. */
+:is(.home, .tool-page) {
+  --text-body: 16px;
+  --text-secondary: 14px;
+  --text-meta: 12px;
+  --text-label: 11px;
+}
+:is(.home, .tool-page) .overview-heading > p:last-child,
+:is(.home, .tool-page) .overview-facts dd,
+:is(.home, .tool-page) .section-heading > p,
+:is(.home, .tool-page) .tool-card .line,
+:is(.home, .tool-page) .tool-card p.body,
+:is(.home, .tool-page) .receipt p,
+:is(.home, .tool-page) .flow-description,
+:is(.home, .tool-page) .flow-detail,
+:is(.home, .tool-page) .start > p:not(.eyebrow) { font-size: var(--text-body); line-height: 1.7; }
+:is(.home, .tool-page) .overview-facts dt { font-size: var(--text-body); line-height: 1.5; }
+:is(.home, .tool-page) .hero-copy { font-size: 18px; }
+:is(.home, .tool-page) .nav nav,
+:is(.home, .tool-page) .github,
+:is(.home, .tool-page) .primary,
+:is(.home, .tool-page) .secondary,
+:is(.home, .tool-page) .tool-links,
+:is(.home, .tool-page) .command button,
+:is(.home, .tool-page) footer { font-size: var(--text-secondary); }
+:is(.home, .tool-page) .tool-card .cmd,
+:is(.home, .tool-page) .receipt pre,
+:is(.home, .tool-page) .command code { font-size: 13px; }
+:is(.home, .tool-page) .tool-card .note,
+:is(.home, .tool-page) .receipt .by,
+:is(.home, .tool-page) .start > small,
+:is(.home, .tool-page) footer > span { font-size: var(--text-meta); line-height: 1.7; }
+:is(.home, .tool-page) .eyebrow,
+:is(.home, .tool-page) .flow-card small,
+:is(.home, .tool-page) .tool-card small,
+:is(.home, .tool-page) .receipt small,
+:is(.home, .tool-page) .status { font-size: var(--text-label); line-height: 1.6; }
+:is(.home, .tool-page) .tool-card > div:first-child { flex-wrap: wrap; gap: 10px; }
+/* Let larger explanations determine their panel height without clipping. */
+:is(.home, .tool-page) .flow-back { bottom: auto; min-height: calc(100% + 2 * var(--flow-inset-y)); }
+
+/* Tool-specific components use the same typography scale. */
+.tool-page .product-columns p,
+.tool-page .family-card p,
+.tool-page .pipeline-detail p,
+.tool-page .bento p,
+.tool-page .session-example p:not(.eyebrow),
+.tool-page .layer p,
+.tool-page .split-text,
+.tool-page .facts .v,
+.tool-page .facts .v small,
+.tool-page .queries span,
+.tool-page .keys dd,
+.tool-page .install-note,
+.tool-page .spec { font-size: var(--text-body); line-height: 1.7; }
+.tool-page .hero-product,
+.tool-page .terminal-caption,
+.tool-page .request-axes > span,
+.tool-page .inline-link,
+.tool-page .family-link,
+.tool-page .capture-tabs button,
+.tool-page .install-head button { font-size: var(--text-secondary); line-height: 1.7; }
+.tool-page .fine,
+.tool-page .terminal-header,
+.tool-page .stat-row { font-size: var(--text-meta); line-height: 1.7; }
+.tool-page .family-card small,
+.tool-page .family-card .chip,
+.tool-page .request-axes small,
+.tool-page .node small,
+.tool-page .layer small,
+.tool-page .facts .k,
+.tool-page .spec thead th,
+.tool-page .release,
+.tool-page .hero-caption,
+.tool-page .alpha,
+.tool-page .install-head { font-size: var(--text-label); line-height: 1.6; }
+.tool-page .family-cmd,
+.tool-page .layer pre,
+.tool-page .queries code,
+.tool-page .keys kbd,
+.tool-page .layer kbd,
+.tool-page .spec tbody th code,
+.tool-page .install pre,
+.tool-page .session-example pre,
+.tool-page .tui,
+.tool-page .node code { font-size: 13px; }
+.tool-page .family-card { min-width: 0; }
+.tool-page .family-card > div { flex-wrap: wrap; gap: 10px; }
+.tool-page .request-axes > span { min-width: 0; overflow-wrap: anywhere; }
+.tool-page .capture-tabs { max-width: 100%; flex-wrap: wrap; border-radius: 20px; }
+.tool-page .terminal-header { flex-wrap: wrap; gap: 8px 16px; }
+.tool-page .terminal-header code { overflow-wrap: anywhere; }
+.tool-page .terminal-body { min-width: 0; }
+.tool-page .session-example { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); }
+.tool-page .layer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (width <= 950px) {
+  .tool-page .layer-grid { grid-template-columns: 1fr; }
+}
+@media (width <= 600px) {
+  .tool-page .session-example { grid-template-columns: minmax(0, 1fr); }
+  .tool-page .nav { height: auto; min-height: 70px; flex-wrap: wrap; padding-top: 14px; padding-bottom: 14px; }
+  .tool-page .nav nav { flex-wrap: wrap; gap: 12px; }
+  .tool-page .capture-tabs button { padding: 9px 12px; }
+  .tool-page .release { flex-wrap: wrap; justify-content: center; line-height: 1.7; }
+}
+
+/* Home hero and introduction. */
+:is(.home, .tool-page) .hero { padding-top: 48px; padding-bottom: 64px; border-bottom: 0; }
+:is(.home, .tool-page) .hero-grid { mask-image: linear-gradient(#000 60%, #0000); }
+:is(.home, .tool-page) .hero h1 { margin: 12px 0 20px; }
+:is(.home, .tool-page) .hero-copy { max-width: 560px; margin-bottom: 26px; }
+:is(.home, .tool-page) .hero .stage { height: 300px; }
+.overview { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; padding-top: 56px; padding-bottom: 56px; }
+.overview-heading .eyebrow { margin-bottom: 14px; }
+.overview-heading h2 { font-size: 32px; letter-spacing: -1px; }
+.overview-heading > p:last-child { color: var(--muted); max-width: 350px; margin: 16px 0 0; font-size: 14px; line-height: 1.8; }
+.overview-facts { display: grid; gap: 22px; margin: 0; }
+.overview-facts > div { border-left: 1px solid var(--glass-line); padding-left: 22px; }
+.overview-facts dt { font-size: 13px; font-weight: 500; }
+.overview-facts dd { color: var(--muted); margin: 7px 0 0; font-size: 12px; line-height: 1.7; }
+
 /* frosted glass: the WebGL lights show through, blurred */
 .glass {
   position: relative;
@@ -150,7 +271,7 @@ h2 { letter-spacing: -1.8px; margin: 0; font-size: 44px; font-weight: 500; line-
  
   box-shadow: inset 0 1px 0 #ffffff1c, 0 30px 80px -40px #000d;
 }
-.glass:after {
+.glass:after, .flow-back:after {
   content: '';
   position: absolute;
   inset: 0;
@@ -160,7 +281,7 @@ h2 { letter-spacing: -1.8px; margin: 0; font-size: 44px; font-weight: 500; line-
   transition: opacity .4s;
   pointer-events: none;
 }
-.glass:hover:after { opacity: 1; }
+.glass:hover:after, .flow-back:hover:after { opacity: 1; }
 
 /* reveal on scroll */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s cubic-bezier(.2, .7, .2, 1), transform .9s cubic-bezier(.2, .7, .2, 1); transition-delay: var(--d, 0s); }
@@ -171,6 +292,35 @@ h2 { letter-spacing: -1.8px; margin: 0; font-size: 44px; font-weight: 500; line-
 .start .stage-start { width: 100%; }
 
 /* pipeline (flow) */
+.flow-cards { --flow-inset-y: 30px; --flow-inset-x: 24px; display: grid; grid-template-columns: repeat(var(--flow-columns, 5), minmax(0, 1fr)); border-radius: 18px; }
+.flow-card { position: relative; min-width: 0; height: 330px; padding: 0; border: 0; border-radius: 16px; background: none; text-align: left; }
+.flow-card[aria-expanded="true"] { z-index: 3; }
+.flow-card-inner { display: block; position: relative; width: 100%; height: 100%; transition: transform .55s cubic-bezier(.22, 1, .36, 1); }
+.flow-card[aria-expanded="true"] .flow-card-inner { transform: translateY(-3px); }
+.flow-front, .flow-back { position: absolute; inset: 0; display: flex; flex-direction: column; padding: 26px 22px; }
+.flow-front { justify-content: center; border-right: 1px solid var(--line); background: radial-gradient(ellipse at 50% 0, color-mix(in srgb, var(--tc) 6%, transparent), transparent 75%); transition: opacity .35s ease, visibility 0s; }
+.flow-card:last-child .flow-front { border-right: 0; }
+.flow-glyph { color: var(--tc); font: 30px var(--mono); margin-bottom: 35px; text-shadow: 0 0 18px color-mix(in srgb, var(--tc) 50%, transparent); }
+.flow-card small { color: #a9abbb; font: 10px/1.6 var(--mono); letter-spacing: 1px; }
+.flow-card strong { display: block; margin: 14px 0 20px; font-size: 23px; font-weight: 400; }
+.flow-back { inset: calc(-1 * var(--flow-inset-y)) calc(-1 * var(--flow-inset-x)); opacity: 0; visibility: hidden; transform: translateY(6px); clip-path: inset(var(--flow-inset-y) var(--flow-inset-x) round 18px); pointer-events: none; border: 1px solid #ffffff25; border-radius: 18px; background: linear-gradient(135deg, #ffffff0f, #ffffff03 55%), #0a0b10dc; backdrop-filter: blur(24px) saturate(150%); box-shadow: inset 0 1px 0 #ffffff1c, 0 20px 50px -25px #000b; transition: opacity .45s ease, transform .55s cubic-bezier(.22, 1, .36, 1), clip-path .55s cubic-bezier(.22, 1, .36, 1), visibility 0s .55s; }
+.flow-card[aria-expanded="true"] .flow-front { opacity: 0; visibility: hidden; transition: opacity .3s ease, visibility 0s .3s; }
+.flow-card[aria-expanded="true"] .flow-back { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); clip-path: inset(0 round 18px); transition-delay: 0s; }
+.flow-back > * { opacity: 0; transform: translateY(5px); transition: opacity .3s ease, transform .4s ease; }
+.flow-card[aria-expanded="true"] .flow-back > * { opacity: 1; transform: none; transition-delay: .09s; }
+.flow-card[aria-expanded="true"] .flow-description { transition-delay: .14s; }
+.flow-card[aria-expanded="true"] .flow-detail { transition-delay: .19s; }
+.flow-back strong { margin: 10px 0 18px; }
+.flow-back { border-color: color-mix(in srgb, var(--tc) 40%, transparent); }
+.flow-back small { color: var(--tc); }
+.flow-back:after { background: radial-gradient(400px circle at var(--mx, 50%) var(--my, 0%), color-mix(in srgb, var(--tc) 9%, transparent), transparent 60%); }
+.flow-description { color: #e2e3ed; font-size: 16px; line-height: 1.6; }
+.flow-detail { color: #a9adbf; margin-top: 16px; font-size: 14px; line-height: 1.65; }
+.flow-example { color: var(--tc); font-size: 13px; line-height: 1.7; margin-top: 18px; overflow-wrap: anywhere; }
+@media (prefers-reduced-motion: reduce) {
+  .flow-card-inner, .flow-front, .flow-back, .flow-back > *, .flow-card[aria-expanded="true"] .flow-front { transition: none; }
+  .flow-card[aria-expanded="true"] .flow-card-inner { transform: none; }
+}
 .pipeline { border-radius: 18px; grid-template-columns: repeat(5, 1fr); display: grid; overflow: hidden; }
 .node { border: 0; border-right: 1px solid var(--line); text-align: left; background: none; padding: 28px 22px; position: relative; transition: background .4s, box-shadow .4s; }
 .node:last-child { border: 0; }
@@ -276,7 +426,18 @@ footer a:hover { color: #fff; }
   .evidence-scale span { padding: 8px; }
 }
 
+@media (width <= 1100px) {
+  .flow-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .flow-front { border-bottom: 1px solid var(--line); }
+  .flow-card:nth-child(3n) .flow-front { border-right: 0; }
+  .flow-cards { --flow-inset-y: 8px; --flow-inset-x: 8px; }
+}
+
 @media (width <= 950px) {
+  .flow-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .flow-card:nth-child(3n) .flow-front { border-right: 1px solid var(--line); }
+  .flow-card:nth-child(2n) .flow-front, .flow-card:last-child .flow-front { border-right: 0; }
+  .flow-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .pipeline { grid-template-columns: repeat(3, 1fr); }
   .node:nth-child(3) { border-right: 0; }
   .node:nth-child(-n+3) { border-bottom: 1px solid var(--line); }
@@ -284,6 +445,7 @@ footer a:hover { color: #fff; }
 }
 
 @media (width <= 850px) {
+  .overview { gap: 36px; }
   .section-heading { gap: 30px; }
   h2 { font-size: 36px; }
   .section-heading > p { max-width: 300px; font-size: 12px; }
@@ -294,6 +456,17 @@ footer a:hover { color: #fff; }
 }
 
 @media (width <= 600px) {
+  .flow-cards { grid-template-columns: 1fr; }
+  .flow-card .flow-front { border-right: 0; }
+  .flow-card:last-child .flow-front { border-bottom: 0; }
+  .flow-card { height: 360px; }
+  .flow-front, .flow-back { padding: 24px; }
+  .flow-front { justify-content: flex-start; }
+  .flow-cards { --flow-inset-y: 0px; --flow-inset-x: 0px; }
+  :is(.home, .tool-page) .hero { padding-top: 32px; padding-bottom: 40px; }
+  :is(.home, .tool-page) .hero h1 { font-size: clamp(42px, 10vw, 54px); }
+  :is(.home, .tool-page) .hero .stage { height: 230px; }
+  .overview { grid-template-columns: 1fr; gap: 28px; }
   .nav { height: 70px; padding: 0 18px; gap: 15px; }
   .nav nav { gap: 15px; margin-left: auto; font-size: 10px; }
   .github, .alpha { display: none; }
