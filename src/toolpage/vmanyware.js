@@ -1,12 +1,12 @@
-// VMAnyware's landing page. Phase 0: most of the product is planned, so the
-// page keeps the MVP (from VMAnyware.md) apart from what runs today (README).
+// VMAnyware's landing page. Current progress from STATE.md and README;
+// distinguish local validation from real infrastructure evidence.
 
 export default {
   id: 'vmanyware',
   shape: 'vmanyware',
   nav: [['Idea', '#idea'], ['Today', '#today'], ['Definition', '#definition'], ['Status', '#status']],
   hero: {
-    pill: { href: '#status', left: 'PHASE 0', right: 'FEASIBILITY IN PROGRESS →' },
+    pill: { href: '#status', left: 'IN DEVELOPMENT', right: 'PROVISIONING IN PROGRESS →' },
     title: ['Your homelab.', 'From anywhere.'],
     copy: 'Define a Linux environment once, provision it on your own Proxmox,<br />and reach it from your desktop or your phone.',
     product: 'A native client and a self-hosted control plane for reproducible environments.<br />Proxmox credentials stay on the control plane; SSH stays on your clients.',
@@ -38,11 +38,11 @@ export default {
       text: 'Each piece with what it is today — working locally, a prototype, or not built yet.',
       cards: [
         { glyph: '▤', label: 'DEFINITIONS', status: 'WORKS LOCALLY', tone: 'ok', title: 'YAML definitions', text: 'Edit, validate, save and reload reusable definitions without Proxmox. The server checks the schema and stores them in SQLite, without creating VMs.' },
-        { glyph: '◎', label: 'INVENTORY', status: 'READ-ONLY', tone: 'wip', title: 'Proxmox inventory', text: 'The native client connects to the local control plane and lists Proxmox nodes and templates, read-only. Default tests use localhost TLS fixtures.' },
+        { glyph: '◎', label: 'INVENTORY', status: 'READ-ONLY', tone: 'wip', title: 'Proxmox inventory', text: 'The native client lists Proxmox nodes and templates through the control plane. A read-only Rust probe has been verified against a disposable Proxmox lab; automated provider tests use localhost TLS fixtures.' },
         { glyph: '◇', label: 'PREVIEW', status: 'PREVIEW ONLY', tone: 'wip', title: 'Provisioning preview', text: 'An offline plan from your image-to-template catalog that never reserves or creates a VM, plus read-only preflight checks against Proxmox.' },
         { glyph: '⟳', label: 'OPERATIONS', status: 'WORKS LOCALLY', tone: 'ok', title: 'Background operations', text: 'Inventory refreshes run as persisted background operations, with status polling, idempotent requests and recovery after a restart.' },
         { glyph: '▥', label: 'SSH', status: 'PROTOTYPE · MACOS', tone: 'wip', title: 'SSH terminal', text: 'A graphical terminal on a bounded native PTY transport, with a persistent host-trust policy and an agent authentication check.' },
-        { glyph: '⏻', label: 'LIFECYCLE', status: 'NOT BUILT', tone: 'no', title: 'VM management', text: 'Creating, starting, stopping, snapshotting and restoring VMs is the MVP — not implemented yet.' },
+        { glyph: '⏻', label: 'LIFECYCLE', status: 'LOCALLY VALIDATED', tone: 'wip', title: 'Start and stop', text: 'Explicit confirmation, durable actions and monitoring for start and graceful shutdown pass an isolated Linux native UI/IPC walkthrough. Real VM lifecycle writes and snapshot/restore remain unverified; provisioning is in progress.' },
       ],
     },
     {
@@ -50,7 +50,7 @@ export default {
       scene: 'flow',
       eyebrow: 'THE MVP / AS THE ROADMAP STATES IT',
       title: ['From a definition', 'to a running VM.'],
-      text: 'What the first version is meant to do, end to end. This is the target, not what runs today.',
+      text: 'The end-to-end target: definitions and previews work locally, start/stop has isolated native validation, and provisioning and snapshots remain in development.',
       steps: [
         { glyph: '⇄', label: 'CONNECT', title: 'Connect.', code: 'control plane', text: 'Connect the app to your self-hosted control plane, and the control plane to one Proxmox VE host or cluster.' },
         { glyph: '▤', label: 'DEFINE', title: 'Define.', code: 'Environment', text: 'Create a Debian-based environment from a prepared Proxmox template, with its CPU, memory, disk and SSH public key.' },
@@ -58,7 +58,7 @@ export default {
         { glyph: '▶', label: 'USE', title: 'Use.', code: 'ssh', text: 'Start and stop the VM, and connect over SSH from desktop and mobile where the network allows.' },
         { glyph: '▣', label: 'KEEP', title: 'Keep.', code: 'snapshot', text: 'Create and restore snapshots; delete the instance while keeping its definition, then recreate it.' },
       ],
-      fine: 'The MVP outcome from VMAnyware.md. Phase 0 is checking that each of these is feasible on the target platforms.',
+      fine: 'The MVP outcome from VMAnyware.md; current implementation and validation boundaries are tracked in STATE.md.',
     },
     {
       type: 'terminal',
@@ -72,7 +72,7 @@ export default {
           name: 'Environment',
           label: 'examples/kernel-lab.yaml',
           caption: 'A Linux development environment: image, resources, cloud-init, packages and lifecycle.',
-          text: `apiVersion: pocketlab.dev/v1
+          text: `apiVersion: vmanyware.dev/v1
 kind: Environment
 metadata:
   name: kernel-lab
@@ -86,7 +86,7 @@ spec:
   provisioning:
     cloudInit: true
     sshAuthorizedKeys:
-      - ssh-ed25519 AAAAC3Nz… pocketlab-example
+      - ssh-ed25519 AAAAC3Nz… vmanyware-example
     packages:
       - build-essential
       - git
@@ -97,7 +97,7 @@ spec:
           name: 'Templates',
           label: 'examples/templates.yaml',
           caption: 'The explicit image-to-template catalog the provisioning preview reads. Example values, not verified against a real homelab.',
-          text: `apiVersion: pocketlab.dev/v1
+          text: `apiVersion: vmanyware.dev/v1
 kind: TemplateCatalog
 images:
   - image: debian-13
@@ -127,13 +127,13 @@ $ make check            # frontend build/tests, Rust fmt/clippy/tests`,
       type: 'receipts',
       id: 'status',
       scene: 'status',
-      eyebrow: 'STATUS / PHASE 0',
+      eyebrow: 'STATUS / IN DEVELOPMENT',
       title: ['Early,', 'and honest about it.'],
       text: 'What has been verified, what is pending, and what isn’t built — kept apart.',
       cards: [
-        { label: 'VERIFIED', title: 'Builds and passes locally.', text: 'The frontend build, the workspace Rust checks and tests, and the local control-plane HTTP smoke check pass on macOS arm64. The native bridge returns the real platform.' },
-        { label: 'PENDING', title: 'Real Proxmox, real guests.', text: 'Verification against a real Proxmox host, actual provisioning, and walkthroughs on real guests and the normal application are still to do.' },
-        { label: 'NOT BUILT', title: 'No VM management yet.', text: 'VM lifecycle is not implemented. No app signing, installers or mobile projects are generated yet.' },
+        { label: 'VERIFIED', title: 'Builds and passes locally.', text: 'Frontend and Rust checks have local evidence on macOS and Linux. An isolated Linux walkthrough exercises the real Tauri UI, IPC, Axum service and generated-HTTPS provider for start and graceful shutdown.' },
+        { label: 'PENDING', title: 'Real Proxmox, real guests.', text: 'Read-only lab probing is verified. Actual provisioning, real VM lifecycle writes, snapshot/restore and normal packaged startup remain unverified.' },
+        { label: 'IN PROGRESS', title: 'Provisioning and distribution.', text: 'Full-clone transport, durable provisioning intents and a journal have local test evidence. End-to-end VM creation is unfinished; signing, installers and mobile projects remain pending.' },
         { label: 'BY APPROVAL', title: 'Nothing changes on its own.', text: 'Further VM or credential changes on the lab require approval of their concrete target and operation. Tests never run destructively against an unconfirmed host.' },
       ],
     },

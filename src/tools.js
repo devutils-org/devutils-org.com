@@ -1,6 +1,6 @@
 // Single source of truth for the tools: the home page, the 3D scene and each
 // tool's landing page read from here. Statuses are copied from each repo's
-// README; keep them as blunt as the READMEs are.
+// README and current-state documents; keep validation limits explicit.
 
 export const ORG = 'devutils-org'
 export const ORG_URL = `https://github.com/${ORG}`
@@ -18,7 +18,7 @@ export const tools = [
       'Every number says what it lost, how it was obtained and how far it can be trusted.',
     step: 'Measure a program or a whole machine across CPU, GPU, memory, network and disk — with the evidence beside every number.',
     status: 'v0.1',
-    statusNote: 'x86_64 release · Linux 5.15+',
+    statusNote: '115 sources · 9 families · Linux 5.15+',
     license: 'MIT / Apache-2.0',
     command: 'omn top -- ./your-program',
     repo: 'omniscient',
@@ -55,7 +55,7 @@ export const tools = [
       'to the environment difference that explains it — musl, an old kernel, missing BTF, lockdown.',
     step: 'Run the same binary on the real kernel of every target distro, and trace each failure back to the difference that caused it.',
     status: 'POC',
-    statusNote: 'phases 0–6 implemented',
+    statusNote: 'probe, VM matrix, reports and TUI implemented',
     license: 'MIT / Apache-2.0',
     command: 'distroproof run --target rocky-8 -- envprobe --json',
     repo: 'distroproof',
@@ -72,8 +72,8 @@ export const tools = [
       'Lists what is installed and why, explains dependencies, and reconciles a machine against a declarative ' +
       'TOML profile — through a plan you can read, save and dry-run first.',
     step: 'Know why each package is there, then converge the machine to a TOML profile through a plan you read before it runs.',
-    status: 'v0.1',
-    statusNote: 'native APT execution experimental',
+    status: 'POC',
+    statusNote: 'five native executors · platform validation ongoing',
     license: 'MIT',
     command: 'pkgx plan -f system.toml',
     repo: 'pkgx',
@@ -90,8 +90,8 @@ export const tools = [
       'Define an environment once, provision it on Proxmox, then manage and reach it from desktop or mobile. ' +
       'A native client and a self-hosted control plane.',
     step: 'Describe an environment once, provision it on your own Proxmox host, and reach it over SSH from desktop or phone.',
-    status: 'phase 0',
-    statusNote: 'VM management not implemented yet',
+    status: 'In development',
+    statusNote: 'local lifecycle validated · provisioning in progress',
     license: null,
     command: null,
     repo: 'VMAnyware',

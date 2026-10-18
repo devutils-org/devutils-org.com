@@ -9,6 +9,7 @@
 import { execFileSync } from 'node:child_process'
 import { copyFileSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
 import { join, resolve } from 'node:path'
+import { initExternalLinks } from '../src/external-links.js'
 
 const root = resolve(import.meta.dirname, '..')
 const atfq = resolve(process.env.ATFQ_DIR ?? join(root, '..', 'atfq'))
@@ -17,6 +18,8 @@ const out = join(root, 'public', 'tools', 'atfq', 'book')
 rmSync(out, { recursive: true, force: true })
 execFileSync('cargo', ['run', '--quiet', '--example', 'book', '--', out], { cwd: atfq, stdio: 'inherit' })
 copyFileSync(join(root, 'src', 'atfq-book', 'book.css'), join(out, 'book.css'))
+const bookScript = join(out, 'book.js')
+writeFileSync(bookScript, readFileSync(bookScript, 'utf8') + `\n;(${initExternalLinks.toString()})();\n`)
 
 const fonts = /<link rel="preconnect" href="https:\/\/fonts\.googleapis\.com">\n<link rel="preconnect" href="https:\/\/fonts\.gstatic\.com" crossorigin>\n<link rel="stylesheet" href="https:\/\/fonts\.googleapis\.com[^"]*">\n/
 const title = /<a class="book-title" href="index\.html">[^\n]*?<\/a>/

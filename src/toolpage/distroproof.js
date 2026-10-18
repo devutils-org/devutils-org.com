@@ -154,7 +154,7 @@ cargo build --release --target x86_64-unknown-linux-musl
 # then
 distroproof run --target rocky-8 -- envprobe --json > rocky8.json
 distroproof up       # the matrix in distroproof.toml`,
-      small: 'POC complete, phases 0–6 · linked with rust-lld, so it also builds from arm64 · MIT / Apache-2.0',
+      small: 'POC: probe, VM matrix, reports and TUI · linked with rust-lld, so it also builds from arm64 · MIT / Apache-2.0',
     },
   ],
 }

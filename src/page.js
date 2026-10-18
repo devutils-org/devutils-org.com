@@ -2,6 +2,8 @@
 // the glass mark behind the page, the step-through pipelines and the copy
 // buttons. A page builds its content first, then calls initPage.
 
+import { initExternalLinks } from './external-links.js'
+
 export const $ = (s, el = document) => el.querySelector(s)
 export const $$ = (s, el = document) => [...el.querySelectorAll(s)]
 export const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -13,6 +15,7 @@ export const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt
 // .stage gets the mark on it; on narrow screens the others get it centred.
 // shape: which glass shape (src/shapes.js) the page shows.
 export async function initPage({ scenes, shape = 'mark' }) {
+  initExternalLinks()
   $$('.section-heading, .bento article, .start > *').forEach((el) => el.classList.add('reveal'))
   $$('.bento article, .pipeline, .command').forEach((el) => el.classList.add('glass'))
 
