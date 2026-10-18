@@ -1,5 +1,5 @@
-// pkgx's landing page. Facts and commands from the pkgx README; it shows no
-// command output, so neither does this page.
+// pkgx's landing page. Facts and commands from the pkgx README and
+// docs/manifest.md; it shows no command output, so neither does this page.
 
 export default {
   id: 'pkgx',
@@ -8,7 +8,7 @@ export default {
   hero: {
     pill: { href: '#inventory', left: 'APT · PACMAN · RPM/DNF · FLATPAK · HOMEBREW', right: 'ONE INVENTORY →' },
     title: ['Every package.', 'Every reason.'],
-    copy: 'Know what is installed and why.<br />Change it only through a plan you have read.',
+    copy: 'Know what is installed and why.<br />Change packages and dotfiles only through a plan you have read.',
     product: 'Native package inventory, provenance, conservative plans and declarative TOML reconciliation.<br />Inspection needs no root and never refreshes repositories.',
     primary: 'Build pkgx',
     hud: [['PKGX.INVENTORY', 'FIVE PROVIDERS / ONE VIEW'], ['PLAN · REVIEW · CONFIRM', 'NOTHING IMPLICIT']],
@@ -26,7 +26,7 @@ export default {
       columns: [
         ['Native, not guessed.', 'Consultation is implemented for APT, Pacman, RPM/DNF, Flatpak (default user and system) and Homebrew formulae and casks. There is no implicit fallback from one provider to another.'],
         ['Plans that expire.', 'A saved plan expires, and must match a fresh native plan before it runs — so you never apply a plan the system has moved past.'],
-        ['Declarative, additive.', 'TOML manifests with profiles and platform layers that compose deterministically. Unknown fields fail before execution; additive mode keeps software you didn’t declare.'],
+        ['Declarative, additive.', 'TOML manifests with profiles and platform layers that compose deterministically, for packages and home configuration files. Unknown fields fail before execution; additive mode keeps software you didn’t declare.'],
       ],
     },
     {
@@ -45,7 +45,7 @@ export default {
         { glyph: '▶', label: 'APPLY', title: 'Apply', text: 'APT, Pacman, DNF5, Flatpak and Homebrew formulae, after a preview and an interactive yes or an explicit <code>--yes</code>. Non-interactive without <code>--yes</code> is refused.', cmd: 'pkgx apply --plan preview.json --dry-run' },
         { glyph: '⌕', label: 'AUDIT', title: 'Audit & clean', text: 'Audit and dry-runs classify caches and orphans. Explicit cache cleanup and reviewed orphan removal are available for APT and Pacman; pkgx never deletes configuration, home data or unmanaged paths itself.', cmd: 'pkgx audit --provider apt' },
         { glyph: '▥', label: 'TUI', title: 'Terminal UI', text: 'Two panes after atfq, confidence cues after Omniscient. Read-only by default; <code>--allow-apply</code> enables experimental APT operations.', cmd: 'pkgx tui --provider apt' },
-        { glyph: '◎', label: 'DEMO', title: 'Demo', text: 'Five synthetic packages on Linux or macOS, with a DEMO banner. It doesn’t inspect your packages, touch the network or write a journal.', cmd: 'pkgx demo' },
+        { glyph: '◎', label: 'FILES · EXPERIMENTAL', title: 'Configuration files', text: 'Declare dotfiles under your home next to your packages. An existing file is never overwritten until you adopt it, with a private backup; local edits are reported as drift and refused. pkgx never deletes them.', cmd: 'pkgx file adopt ~/.tmux.conf --dry-run' },
       ],
     },
     {
@@ -55,11 +55,11 @@ export default {
       title: ['Nothing changes', 'without a plan.'],
       text: 'Reconciling a machine with a TOML manifest is a sequence of checks, each of which can stop it.',
       steps: [
-        { glyph: '▤', label: 'DECLARE', title: 'Declare.', code: 'system.toml', text: 'Describe the packages a machine should have, with profiles and platform layers. Unknown fields and incompatible operations fail before anything runs.' },
-        { glyph: '⇄', label: 'COMPARE', title: 'Compare.', code: 'pkgx diff -f', text: 'See how the machine differs from the manifest, read-only, without refreshing repositories.' },
+        { glyph: '▤', label: 'DECLARE', title: 'Declare.', code: 'system.toml', text: 'Describe the packages and home configuration files a machine should have, with profiles and platform layers. Unknown fields and incompatible operations fail before anything runs.' },
+        { glyph: '⇄', label: 'COMPARE', title: 'Compare.', code: 'pkgx diff -f', text: 'See how the machine differs from the manifest, read-only, without refreshing repositories. Each file is reported as missing, in sync, outdated or drifted.' },
         { glyph: '◇', label: 'PLAN', title: 'Plan.', code: '--save preview.json', text: 'Save the native plan with an expiry. Before it runs, it must still match a fresh native plan.' },
         { glyph: '✓', label: 'CONFIRM', title: 'Confirm.', code: 'yes / --yes', text: 'A preview and an interactive yes, or an explicit --yes. The plan is revalidated after confirmation; privileges only with an explicit --sudo.' },
-        { glyph: '▣', label: 'RECORD', title: 'Record.', code: 'journal', text: 'A private transaction journal records intent and verified results. A partial failure is reported as such — never as an implied rollback.' },
+        { glyph: '▣', label: 'RECORD', title: 'Record.', code: 'journal', text: 'A private transaction journal records intent and verified results, and each written file gets a receipt. A partial failure is reported as such — never as an implied rollback.' },
       ],
     },
     {
@@ -93,6 +93,22 @@ $ pkgx apply --plan preview.json --dry-run
 $ pkgx install apt:hello --sudo --dry-run   # privileges only when asked`,
         },
         {
+          name: 'Files',
+          label: 'system.toml · experimental',
+          caption: 'A dotfile declared beside its packages, adopted once, then written on apply with its own confirmation.',
+          text: `[packages.apt]
+install = ["tmux"]
+
+[files."~/.tmux.conf"]
+source = "dotfiles/tmux.conf"   # relative to the manifest
+mode = "0644"
+
+$ pkgx file adopt ~/.tmux.conf --dry-run
+$ pkgx file adopt ~/.tmux.conf      # keeps a private backup
+$ pkgx apply -f system.toml
+$ pkgx file forget ~/.tmux.conf     # drops the receipt, keeps the file`,
+        },
+        {
           name: 'Demo',
           label: 'pkgx demo',
           caption: 'Five synthetic packages, on Linux or macOS, without a native package manager.',
@@ -113,7 +129,7 @@ $ pkgx demo --snapshot --json   # the same, non-interactive
       text: 'pkgx changes packages, so it is explicit about what has been checked and what hasn’t.',
       cards: [
         { label: 'EXPERIMENTAL EXECUTION', title: 'Five native executors.', text: 'Reviewed execution is implemented for APT, Pacman, DNF5, Flatpak and Homebrew formulae. Provider-specific previews and revalidation remain explicit; other native executors are unsupported.' },
-        { label: 'DISPOSABLE VALIDATION', title: 'Tested in isolated roots.', text: 'APT, Pacman and DNF5 transactions have run in disposable roots. Flatpak and Linux Homebrew also have isolated native evidence. Host package transactions remain untested; configured CI runs and native macOS validation are pending.' },
+        { label: 'DISPOSABLE VALIDATION', title: 'Tested in isolated roots.', text: 'APT, Pacman and DNF5 transactions have run in disposable roots. Flatpak and Linux Homebrew also have isolated native evidence. Configuration files are tested only against temporary home directories. Host package transactions remain untested; configured CI runs and native macOS validation are pending.' },
         { label: 'PRIVILEGES ONLY WHEN ASKED', title: 'sudo is explicit.', text: 'Inspection never elevates. <code>--sudo</code> delegates only the reviewed APT or Pacman transaction; pkgx never reads a password from stdin, and dry-runs never authenticate.', pre: '$ pkgx install apt:hello --sudo --dry-run\n$ pkgx install apt:hello --sudo' },
         { label: 'NO ROLLBACK PROMISED', title: 'Failures stay visible.', text: 'Partial failures never imply rollback. The journal records what was intended and what was verified, so you can see exactly where it stopped.' },
       ],

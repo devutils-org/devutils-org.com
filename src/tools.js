@@ -72,8 +72,8 @@ export const tools = [
     color: '#aea0ff',
     line: 'Package inventory, provenance and conservative plans.',
     body:
-      'Lists what is installed and why, explains dependencies, and reconciles a machine against a declarative ' +
-      'TOML profile — through a plan you can read, save and dry-run first.',
+      'Lists what is installed and why, explains dependencies, and reconciles packages and dotfiles against a ' +
+      'declarative TOML profile — through a plan you can read, save and dry-run first.',
     step: 'Know why each package is there, then converge the machine to a TOML profile through a plan you read before it runs.',
     flowDetail: 'Inspect inventory and dependencies across five package providers. Save or dry-run the plan, then explicitly confirm changes before execution.',
     status: 'POC',
