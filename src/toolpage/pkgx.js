@@ -146,7 +146,7 @@ $ pkgx demo --snapshot --json   # the same, non-interactive
 # then
 pkgx demo
 pkgx list --provider apt --json`,
-      small: 'Try real transactions only in disposable environments · MIT',
+      small: 'Try real transactions only in disposable environments · MIT / Apache-2.0',
     },
   ],
 }

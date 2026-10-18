@@ -68,3 +68,8 @@ card links to it.
 Deploy: `.github/workflows/pages.yml` publishes `dist/` to GitHub Pages on
 each push to `main`. For the org root URL, the repository is
 `devutils-org/devutils-org.github.io`.
+
+## License
+
+[MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE), at your option, for original
+code, documentation and assets. Third-party material retains its own terms.
