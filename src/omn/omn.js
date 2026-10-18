@@ -1,6 +1,7 @@
 import { tools, repoUrl } from '../tools.js'
 import { $, $$, initPage, renderFlowCards } from '../page.js'
 import { ansiToHtml } from './ansi.js'
+import { families } from './families.js'
 import request from './captures/request.ansi?raw'
 import lanes from './captures/lanes.ansi?raw'
 import flame from './captures/flame.ansi?raw'
@@ -11,42 +12,81 @@ const repo = repoUrl(omn)
 // data-repo="<path>" → a link into the repository
 $$('[data-repo]').forEach((a) => (a.href = repo + a.dataset.repo))
 
-// ---------- families: each card opens its guide in docs/families ----------
+// ---------- families: each card opens into its story ----------
 
-const families = [
-  ['⌘', 'cpu', 'CPU', 'Go from a busy core to the call stacks, instructions and counter evidence behind it.'],
-  ['▥', 'mem', 'Memory', 'Separate resident pages, allocator activity, shared memory and the working set.'],
-  ['⇄', 'sched', 'Scheduler', 'Distinguish runnable time, blocked time, wakeups and lock contention.'],
-  ['▱', 'io', 'Storage & I/O', 'Separate syscall time, filesystem activity, queueing, device latency and durability.'],
-  ['↙', 'net', 'Network', 'Inspect connection setup, socket waits, traffic, retransmissions and declared request boundaries.'],
-  ['◇', 'gpu', 'GPU', 'Read device gauges and inspect program activity with the backend your hardware exposes.'],
-  ['⑂', 'proc', 'Processes', 'Inspect syscalls, execs, descriptors, threads and signals around a workload.'],
-  ['ϟ', 'power', 'Power', 'Measure package energy, frequency, idle residency, temperatures and throttling.'],
-  ['{ }', 'runtime', 'Runtimes', 'Read GC, JIT and custom runtime probes alongside system measurements.'],
-]
+const arrow = (name) => `<svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#${name}"></use></svg>`
+const familyLabel = (f, i) => `<small>${String(i + 1).padStart(2, '0')} / ${f.id.toUpperCase()}</small>`
+
 $('#family-grid').innerHTML = families
   .map(
-    ([glyph, id, name, text], i) => `
-    <a class="family-card glass reveal" style="--d:${(i % 3) * 0.08}s" href="${repo}/blob/main/docs/families/${id}.md">
-      <div><span class="family-glyph">${glyph}</span><small>${String(i + 1).padStart(2, '0')} / ${id.toUpperCase()}</small><span class="family-arrow"><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></div>
-      <h3>${name}</h3>
-      <p>${text}</p>
-      <span class="family-link">Read the ${id} guide <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></span>
-    </a>`,
+    (f, i) => `
+    <button class="family-card glass reveal" style="--d:${(i % 3) * 0.08}s" type="button" data-family="${i}" aria-haspopup="dialog">
+      <div><span class="family-glyph">${f.glyph}</span>${familyLabel(f, i)}<span class="family-arrow">${arrow('arrow-up-right')}</span></div>
+      <h3>${f.name}</h3>
+      <p>${f.text}</p>
+      <span class="family-link"><span>Read the story</span><span class="family-count">${f.sources} sources</span></span>
+    </button>`,
   )
   .join('')
 
+const story = $('#family-story')
+const guide = (f) => omn.repoPrivate
+  ? `<span class="family-guide repo-unavailable" aria-disabled="true" title="The repository is currently private">Full ${f.id} guide · private repository</span>`
+  : `<a class="family-guide" href="${repo}/blob/main/docs/families/${f.id}.md">Read the full ${f.id} guide ${arrow('arrow-up-right')}</a>`
+
+let opener = null
+function openStory(card) {
+  const i = Number(card.dataset.family)
+  const f = families[i]
+  $('.story-body', story).innerHTML = `
+    <div class="story-head"><span class="family-glyph">${f.glyph}</span>${familyLabel(f, i)}<span class="family-count">${f.sources} sources</span></div>
+    <p class="eyebrow">${f.name}</p>
+    <h3 id="family-story-title">${f.title}</h3>
+    <div class="story-grid">
+      <div class="story-text">
+        ${f.story.map((p) => `<p>${p}</p>`).join('')}
+        <ul class="story-sources">${f.highlights.map(([id, what]) => `<li><code>${id}</code><span>${what}</span></li>`).join('')}</ul>
+      </div>
+      <div class="story-proof">
+        <pre><code>${f.example.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[c])}</code></pre>
+        <p class="story-limit"><small>HONEST BOUNDARY</small>${f.limit}</p>
+        ${guide(f)}
+      </div>
+    </div>`
+  opener = card
+  story.showModal()
+  story.scrollTop = 0
+  // grow out of the card it was opened from
+  const from = card.getBoundingClientRect()
+  const to = story.getBoundingClientRect()
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    story.animate(
+      [
+        { transform: `translate(${from.left - to.left}px, ${from.top - to.top}px) scale(${from.width / to.width}, ${from.height / to.height})`, opacity: 0.4 },
+        { transform: 'none', opacity: 1 },
+      ],
+      { duration: 650, easing: 'cubic-bezier(.22, 1, .36, 1)' },
+    )
+  }
+}
+function closeStory() {
+  story.close()
+  opener?.focus()
+}
+$$('.family-card').forEach((card) => card.addEventListener('click', () => openStory(card)))
+$('.story-close', story).addEventListener('click', closeStory)
+story.addEventListener('click', (e) => e.target === story && closeStory())
+story.addEventListener('cancel', (e) => (e.preventDefault(), closeStory()))
+
 // Private repository destinations remain visible without leading to a 404.
 if (omn.repoPrivate) {
-  $$('[data-repo], .family-card').forEach((link) => {
+  $$('[data-repo]').forEach((link) => {
     const label = document.createElement('span')
     label.className = `${link.className} repo-unavailable`
     label.style.cssText = link.style.cssText
     label.innerHTML = link.innerHTML
     label.setAttribute('aria-disabled', 'true')
     label.title = 'The repository is currently private'
-    const guide = label.querySelector('.family-link')
-    if (guide) guide.textContent = 'Guide · private repository'
     link.replaceWith(label)
   })
 }
