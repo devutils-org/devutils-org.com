@@ -41,7 +41,6 @@ await initPage({
     hero: { opacity: 1 },
     flow: { fx: 0.9, fy: 0.7, size: 0.25, opacity: 0.85 },
     tools: { fx: 0.1, fy: 0.7, size: 0.25, opacity: 0.75 },
-    standard: { fx: 0.9, fy: 0.7, size: 0.25, opacity: 0.7 },
     start: { opacity: 1 },
   },
 })

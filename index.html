@@ -22,7 +22,6 @@
       <nav aria-label="Main navigation">
         <a href="#flow">Flow</a>
         <a href="#tools">Tools</a>
-        <a href="#standard">Standard</a>
       </nav>
       <a class="github" data-org href="https://github.com/devutils-org">GitHub <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></a>
     </header>
@@ -84,53 +83,6 @@
           <p>Find the tool for your next task. Each card shows its current status and what you can try today.</p>
         </div>
         <div class="tool-grid" id="tool-grid"></div>
-      </section>
-
-      <section class="section" id="standard" data-scene="standard">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">THE STANDARD / IN PRACTICE</p>
-            <h2>Every claim<br />comes with a receipt.</h2>
-          </div>
-          <p>Four habits the tools share — each shown the way the tool actually prints or does it, not as a promise.</p>
-        </div>
-        <div class="receipts">
-          <article class="receipt glass reveal">
-            <small>01 / SAYS WHAT IT CANNOT SEE</small>
-            <h3>“Out of reach” is an answer too.</h3>
-            <p>Before measuring, omn checks what this machine can actually serve — and counts what it can’t, instead of leaving it out.</p>
-            <pre><span class="p">$</span> omn list | tail -n 3 | head -n 1
-101 sources: 92 usable here, 0 unverified,
-9 out of reach on this machine.</pre>
-            <span class="by">OMNISCIENT</span>
-          </article>
-          <article class="receipt glass reveal" style="--d: 0.08s">
-            <small>02 / REFUSES RATHER THAN GUESSES</small>
-            <h3>No answer to a different question.</h3>
-            <p>When a program declares no request boundary, omn won’t make one up from the connection: it refuses, and says how to get the real thing.</p>
-            <pre><span class="x">net.request was not served:</span>
-/usr/bin/sh declares no request […]
-Nothing is inferred from the connection
-instead -- see docs/scenarios/vertical.md</pre>
-            <span class="by">OMNISCIENT · OMN TOP</span>
-          </article>
-          <article class="receipt glass reveal">
-            <small>03 / LOOKS BEFORE IT TOUCHES</small>
-            <h3>Read first. Act on a plan.</h3>
-            <p>pkgx doesn’t install or remove straight away: it writes a plan you can read, save and dry-run, and only that plan is ever applied.</p>
-            <pre><span class="p">$</span> pkgx plan apt:curl --save preview.json --expires-in 300
-<span class="p">$</span> pkgx apply --plan preview.json --dry-run</pre>
-            <span class="by">PKGX</span>
-          </article>
-          <article class="receipt glass reveal" style="--d: 0.08s">
-            <small>04 / TIES A FAILURE TO ITS CAUSE</small>
-            <h3>Not just “it broke on Rocky 8”.</h3>
-            <p>distroproof runs your program on the real kernel of each distro, then compares the environments — so a failure arrives with the difference that explains it.</p>
-            <pre><span class="p">$</span> distroproof run --target rocky-8 -- envprobe --json &gt; rocky8.json
-<span class="p">$</span> envprobe diff local.json rocky8.json   <span class="p"># exit 1 if they differ</span></pre>
-            <span class="by">DISTROPROOF</span>
-          </article>
-        </div>
       </section>
 
       <section class="section start" id="start" data-scene="start">
