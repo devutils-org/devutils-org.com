@@ -83,3 +83,16 @@ its source-availability checks and reference-tool comparisons have distinct
 results and limits. Kernel versions and timings are observations from that
 campaign, not fixed requirements or performance guarantees. Omniscient's
 repository links remain disabled while it is unavailable publicly.
+
+### In practice stories
+
+Every tool page has a target selector backed by `src/practice/cases.js`.
+Each entry names the target, type of evidence, problem, finding, result,
+limits and source document. Documented demonstrations and sandbox checks
+are labelled as such; they are not customer deployments. VMAnyware currently
+has one documented integration case. Add a target only when its evidence is
+available. Private Omniscient sources are cited by path without public links.
+
+`src/practice/practice.js` renders the shared section and handles its tabs;
+`practice.css` stacks the story on narrow screens. The old Distroproof
+`#case-study` anchor still points to its new section.

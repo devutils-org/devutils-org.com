@@ -1,3 +1,4 @@
+import { renderPractice, initPractice } from '../practice/practice.js'
 import { tools, repoUrl } from '../tools.js'
 import { $, $$, pad, esc, initPage, renderFlowCards } from '../page.js'
 
@@ -198,6 +199,7 @@ function shell(text) {
 export async function renderToolPage(page) {
   const tool = tools.find((t) => t.id === page.id)
   const repo = repoUrl(tool)
+  const nav = [...page.nav.filter(([, href]) => href !== '#case-study'), ['In practice', '#in-practice']]
 
   $('#nav').innerHTML = html`
     <div class="logo">
@@ -205,10 +207,10 @@ export async function renderToolPage(page) {
       <span class="crumb-sep">/</span>
       <a href="/tools/${tool.id}/">${tool.name}</a><span class="alpha">${tool.status}</span>
     </div>
-    <nav aria-label="Sections">${page.nav.map(([label, href]) => `<a href="${href}">${label}</a>`).join('')}</nav>
+    <nav aria-label="Sections">${nav.map(([label, href]) => `<a href="${href}">${label}</a>`).join('')}</nav>
     <a class="github" href="${repo}">GitHub <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></a>`
 
-  $('#main').innerHTML = hero(page.hero, tool, page.sections.find((section) => section.type === 'intro')?.id ?? 'overview') + page.sections.map((s) => sections[s.type](s, tool)).join('')
+  $('#main').innerHTML = hero(page.hero, tool, page.sections.find((section) => section.type === 'intro')?.id ?? 'overview') + page.sections.map((s) => (s.type === 'start' ? renderPractice(tool.id) : '') + sections[s.type](s, tool)).join('')
 
   $('#footer').innerHTML = html`
     <a class="logo" href="/"><img class="logo-icon" src="/mark.svg" alt="" /> devutils</a>
@@ -242,8 +244,10 @@ export async function renderToolPage(page) {
     show(tabs[0])
   }
 
+  initPractice()
+
   // the mark: on the stages, and alternating sides behind the other sections
-  const scenes = { hero: { opacity: 1 }, start: { opacity: 1 } }
+  const scenes = { hero: { opacity: 1 }, start: { opacity: 1 }, practice: { fx: 0.92, fy: 0.25, size: 0.16, opacity: 0.2 } }
   page.sections
     .filter((s) => s.type !== 'start')
     .forEach((s, i) => {

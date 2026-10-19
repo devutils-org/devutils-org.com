@@ -1,3 +1,4 @@
+import { renderPractice, initPractice } from '../practice/practice.js'
 import { tools, repoUrl } from '../tools.js'
 import { $, $$, initPage, renderFlowCards } from '../page.js'
 import { ansiToHtml } from './ansi.js'
@@ -8,6 +9,9 @@ import flame from './captures/flame.ansi?raw'
 
 const omn = tools.find((t) => t.id === 'omn')
 const repo = repoUrl(omn)
+
+$('#portability').insertAdjacentHTML('beforebegin', renderPractice('omn'))
+initPractice()
 
 // data-repo="<path>" → a link into the repository
 $$('[data-repo]').forEach((a) => (a.href = repo + a.dataset.repo))
@@ -107,7 +111,7 @@ const views = {
   lanes: { ansi: lanes, caption: 'Work across execution lanes — threads and devices side by side, in the same run.' },
   flame: { ansi: flame, caption: 'Find the busy stack — which CPU call stacks consumed the time, on and off the CPU.' },
 }
-const tabs = $$('[role=tab]')
+const tabs = $$('#interface [role=tab]')
 function show(tab) {
   tabs.forEach((t) => {
     t.setAttribute('aria-selected', String(t === tab))
@@ -139,6 +143,7 @@ await initPage({
     workflow: { fx: 0.9, fy: 0.7, size: 0.25, opacity: 0.8 },
     evidence: { fx: 0.1, fy: 0.7, size: 0.25, opacity: 0.7 },
     interface: { fx: 0.9, fy: 0.7, size: 0.25, opacity: 0.55 },
+    practice: { fx: 0.92, fy: 0.25, size: 0.16, opacity: 0.2 },
     portability: { fx: 0.1, fy: 0.7, size: 0.25, opacity: 0.6 },
     start: { opacity: 1 },
   },
