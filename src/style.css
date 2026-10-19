@@ -72,6 +72,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 2px s
 .nav nav { color: var(--muted); gap: 32px; font-size: 12px; display: flex; }
 .nav nav a:hover { color: #fff; }
 .github { background: #ffffff0a; border: 1px solid var(--glass-line); border-radius: 999px; padding: 10px 16px; font-size: 11px; }
+.github { transition: background .2s, box-shadow .2s; }
 .github span { margin-left: 16px; }
 
 /* ---------- hero ---------- */
@@ -106,7 +107,7 @@ h1 span { color: #0000; background: linear-gradient(110deg, #fff 10%, #b5c9ff 55
 .hero-copy { color: var(--muted); max-width: 460px; margin: 0 auto 15px; font-size: 17px; line-height: 1.7; }
 .hero-product { color: #b4b6c8; max-width: 620px; margin: 0 auto 28px; font: 12px/1.8 var(--mono); }
 .actions { justify-content: center; align-items: center; gap: 12px; display: flex; flex-wrap: wrap; }
-.primary, .secondary, .github { border-radius: 999px; justify-content: center; align-items: center; gap: 26px; padding: 13px 20px; font-size: 12px; display: inline-flex; transition: background .2s, box-shadow .2s; }
+.primary, .secondary { border-radius: 999px; justify-content: center; align-items: center; gap: 26px; padding: 13px 20px; font-size: 12px; display: inline-flex; transition: background .2s, box-shadow .2s; }
 .primary { color: #111; background: #ededf2; border: 1px solid #fff; box-shadow: 0 0 25px #ffffff08; }
 .primary:hover { background: #fff; box-shadow: 0 0 25px #ffffff20; }
 .secondary, .github { background: #ffffff0a; border: 1px solid var(--glass-line); backdrop-filter: blur(14px); }
