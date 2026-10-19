@@ -552,7 +552,13 @@ footer a:hover { color: #fff; }
 .nav a.github:is(:hover, :focus-visible) { border-color: #b7a0ff99; background: #b7a0ff18; box-shadow: 0 0 24px #b7a0ff22; transform: translateY(-2px); }
 .nav .github .link-icon { transition: transform .25s; }
 .nav a.github:is(:hover, :focus-visible) .link-icon { transform: translate(2px, -2px); }
-.overview-facts dd strong code { font-size: .95em; font-weight: 700; color: var(--fg); }
+/* Inline code follows the surrounding prose; terminal examples stay monospace. */
+:is(.home, .tool-page) :is(p, dd, dt, li, td, th, small, h2, h3) code:not(pre code, .terminal code, .command code, [class]) {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  color: inherit;
+}
 
 @media (width <= 1100px) {
   .nav { padding-inline: 24px; }
