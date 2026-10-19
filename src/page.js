@@ -36,6 +36,7 @@ export function renderFlowCards(steps, prefix = 'flow') {
 // shape: which glass shape (src/shapes.js) the page shows.
 export async function initPage({ scenes, shape = 'mark' }) {
   initExternalLinks()
+  initNavigation()
   initTopLinks()
   initFlowCards()
   $$('.section-heading, .bento article, .start > *').forEach((el) => el.classList.add('reveal'))
@@ -158,4 +159,49 @@ export function initFlowCards(root = document) {
     followScroll()
   })
   followScroll()
+}
+
+// Keep the same navigation links available on desktop and in the mobile menu.
+function initNavigation() {
+  const header = $('.nav')
+  const nav = $('nav', header)
+  if (!nav) return
+  const mobile = matchMedia('(width <= 1100px)')
+  const menu = document.createElement('div')
+  menu.className = 'nav-menu'
+  menu.id = 'navigation-menu'
+  header.insertBefore(menu, nav)
+  menu.append(nav)
+  const github = $('.github', header)
+  if (github) menu.append(github)
+  const toggle = document.createElement('button')
+  toggle.type = 'button'
+  toggle.className = 'nav-toggle'
+  toggle.setAttribute('aria-controls', menu.id)
+  toggle.innerHTML = '<span></span><span></span><span></span>'
+  header.append(toggle)
+  function setOpen(open) {
+    header.classList.toggle('menu-open', open)
+    toggle.setAttribute('aria-expanded', String(open))
+    toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation')
+    menu.inert = mobile.matches && !open
+  }
+  setOpen(false)
+  toggle.addEventListener('click', () => setOpen(!header.classList.contains('menu-open')))
+  menu.addEventListener('click', (event) => {
+    if (event.target.closest('a')) setOpen(false)
+  })
+  document.addEventListener('click', (event) => {
+    if (!header.contains(event.target)) setOpen(false)
+  })
+  header.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && header.classList.contains('menu-open')) {
+      setOpen(false)
+      toggle.focus()
+    }
+  })
+  header.addEventListener('focusout', (event) => {
+    if (!header.contains(event.relatedTarget)) setOpen(false)
+  })
+  mobile.addEventListener('change', () => setOpen(false))
 }
