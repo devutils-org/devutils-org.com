@@ -19,7 +19,7 @@ export const tools = [
     step: 'Measure a program or a whole machine across CPU, GPU, memory, network and disk — with the evidence beside every number.',
     flowDetail: 'Follow a workload live or replay a recording. See where time goes, what was captured and which measurements are out of reach.',
     status: 'In development',
-    statusNote: '9 families · Linux 5.15+ · repository not public yet',
+    statusNote: '9 families · tested on 16 distro images + 5 variants · repository not public yet',
     license: 'MIT / Apache-2.0',
     command: 'omn top -- ./your-program',
     repo: 'omniscient',
@@ -53,12 +53,12 @@ export const tools = [
     color: '#96b9ff',
     line: 'Check that your program holds on every distro.',
     body:
-      'Boots VMs on the real kernel of each target distro, runs your program there, and ties every failure ' +
-      'to the environment difference that explains it — musl, an old kernel, missing BTF, lockdown.',
-    step: 'Run the same binary on the real kernel of every target distro, and trace each failure back to the difference that caused it.',
+      'Boots VMs on the real kernel of each target distro, runs your program there, and compares failing targets ' +
+      'with passing ones using environment facts — libc, BTF, perf policy, lockdown and memlock limits.',
+    step: 'Run the same binary on the real kernel of every target distro, and investigate failures with a report of the environment beside each result.',
     flowDetail: 'Compare kernels, libraries and permissions across a VM matrix. Read the environment differences alongside the test results instead of debugging a bare failure.',
     status: 'POC',
-    statusNote: 'probe, VM matrix, reports and TUI implemented',
+    statusNote: '16 distro images · Omniscient case study: 16 defects found',
     license: 'MIT / Apache-2.0',
     command: 'distroproof run --target rocky-8 -- envprobe --json',
     repo: 'distroproof',

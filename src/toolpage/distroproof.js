@@ -1,18 +1,18 @@
-// distroproof's landing page. Facts and examples from the distroproof README;
+// Facts: distroproof REFERENCE.md and omniscient/docs/distroproof.md (October 2026);
 // the verdict example is translated into English for this site.
 
 export default {
   id: 'distroproof',
   shape: 'distroproof',
-  nav: [['Why', '#why'], ['envprobe', '#envprobe'], ['Terminal', '#terminal'], ['Targets', '#targets']],
+  nav: [['Why', '#why'], ['envprobe', '#envprobe'], ['Terminal', '#terminal'], ['Case study', '#case-study'], ['Targets', '#targets']],
   hero: {
-    pill: { href: '#targets', left: '13 DISTRO IMAGES', right: 'THEIR REAL KERNELS →' },
+    pill: { href: '#targets', left: '16 DISTRO IMAGES', right: 'THEIR REAL KERNELS →' },
     title: ['Works on my machine.', 'Proven on theirs.'],
     copy: 'Test your binary on real distro kernels.<br />See why it fails elsewhere.',
-    product: 'Real QEMU/KVM VMs on official cloud images: the distro’s kernel, not the host’s.<br />Every failure tied to the difference that explains it.',
+    product: 'Real QEMU/KVM VMs on official cloud images: the distro’s kernel, not the host’s.<br />Each result carries the environment facts; failing targets are compared with passing ones.',
     primary: 'Build distroproof',
-    hud: [['DISTRO.PROOF', 'ONE PROGRAM / EVERY KERNEL'], ['KERNELS 4.15 → 6.19 · GLIBC · MUSL', 'TARGET MATRIX / VM']],
-    caption: ['THE DISTRO’S OWN KERNEL', 'PROBED, NEVER INFERRED', 'EVERY FAILURE EXPLAINED'],
+    hud: [['DISTRO.PROOF', 'ONE PROGRAM / EVERY KERNEL'], ['KERNELS 4.15 → 7.2 · GLIBC · MUSL', 'TARGET MATRIX / VM']],
+    caption: ['THE DISTRO’S OWN KERNEL', 'PROBED, NEVER INFERRED', 'FACTS BESIDE EACH FAILURE'],
   },
   sections: [
     {
@@ -35,11 +35,11 @@ export default {
       scene: 'envprobe',
       eyebrow: 'ENVPROBE / THE PROBE UNDERNEATH',
       title: ['Everything that can', 'change a program.'],
-      text: '<code>envprobe</code> lists what can change how a userspace or kernel-facing program behaves. It works on its own, read-only, and never crashes: a missing or refused value comes with its reason.',
+      text: '<code>envprobe</code> lists what can change how a userspace or kernel-facing program behaves. It works on its own, read-only, and reports missing or refused values with their reasons.',
       cards: [
         { glyph: '◎', label: 'IDENTITY', title: 'Identity', text: 'Distro, family, architecture, virtualisation, container.' },
-        { glyph: '⌘', label: 'KERNEL', title: 'Kernel', text: 'Release, command line, config (<code>CONFIG_BPF*</code>, <code>KPROBES</code>, <code>DEBUG_INFO_BTF</code>…), modules.' },
-        { glyph: '⛉', label: 'SECURITY', title: 'Security & privileges', text: 'sysctls, LSM, SELinux, AppArmor, lockdown, Secure Boot, capabilities, seccomp, user namespaces.' },
+        { glyph: '⌘', label: 'KERNEL', title: 'Kernel', text: 'Release, command line, config (<code>CONFIG_BPF*</code>, <code>KPROBES</code>, <code>DEBUG_INFO_BTF</code>, <code>FUNCTION_TRACER</code> and dynamic ftrace…), modules.' },
+        { glyph: '⛉', label: 'SECURITY', title: 'Security & privileges', text: 'sysctls, LSM, SELinux, AppArmor, lockdown, Secure Boot, capabilities, seccomp, user namespaces and soft/hard <code>RLIMIT_MEMLOCK</code>.' },
         { glyph: '◇', label: 'BPF · PERF', title: 'BPF & perf', text: 'Program types, map types and helpers probed with real <code>bpf()</code> calls; software and hardware <code>perf_event_open</code>, PMU; tracefs, kallsyms, BTF.' },
         { glyph: '▤', label: 'USERSPACE', title: 'Userspace', text: 'libc and its version, common libraries, FHS (merged-usr, multiarch), <code>/bin/sh</code>, coreutils, init, package manager, cgroups, XDG.' },
         { glyph: '✓', label: 'STATUS', title: 'A status per entry', text: '<code>ok</code> with the value, <code>unavailable</code> with the reason, <code>denied</code> when access was refused — and <code>privileged</code> marks what changes with the process’s rights.' },
@@ -118,25 +118,43 @@ kernel_cmdline = "lockdown=confidentiality"
 [run]
 setup = "./scripts/install-deps.sh"   # as root, before the probe
 command = "./target/release/mytool --selftest"
-as_user = "test"`,
+as_user = "test"
+file_caps = { "target/release/mytool" = ["bpf", "perfmon"] }
+collect = ["results/*.json"]`,
         },
       ],
-      fine: 'Examples adapted from the distroproof README, with the verdict translated into English. The TUI adds a card per target, live serial logs, report diffs and an interactive console.',
+      fine: 'Examples adapted from the distroproof reference, with the verdict translated into English. <code>file_caps</code> grants capabilities to the installed binary after setup; <code>collect</code> brings result files back per target. Setup and command receive <code>DP_TARGET</code> and <code>DP_IMAGE</code>. The TUI adds live logs, report diffs and a console.',
+    },
+    {
+      type: 'receipts',
+      id: 'case-study',
+      scene: 'case-study',
+      eyebrow: 'IN PRACTICE / OMNISCIENT',
+      title: ['One working machine.', 'Sixteen hidden defects.'],
+      text: 'Omniscient talks directly to Linux through eBPF, perf, BTF and a preload shim. The October 2026 campaign ran its installed releases on 16 distro images and 5 variants — 21 targets, about 12 minutes with four VMs at a time.',
+      cards: [
+        { label: 'RELEASES', title: 'The archive would not start.', text: 'A release linked on the development machine failed on a third of the images. The fix lowered its glibc requirement to 2.17 and added a musl archive for Alpine.' },
+        { label: 'PERMISSIONS', title: 'The capabilities were there.', text: 'Debian’s perf policy still refused events; Linux 5.10 charged BPF maps to a 64 KiB memlock limit. envprobe supplied the policy and limit that explained the failures.' },
+        { label: 'FEATURES', title: 'Ask the kernel itself.', text: 'Alpine lacked the function tracer; RHEL backported features that version checks called absent. The campaign found 9 defects in the tool and 7 in its test suite.' },
+        { label: 'RESULTS & LIMITS', title: 'Refusals checked independently.', text: 'Initially, 158 source runs were advertised as usable but refused at start; the rerun had none. Refusal reasons agreed with envprobe on all 21 targets. Reference comparisons on six distros still have unresolved differences. <a href="/tools/omn/#portability">See Omniscient’s validation and limits</a>.' },
+      ],
     },
     {
       type: 'table',
       id: 'targets',
       scene: 'targets',
       eyebrow: 'TARGETS / THE KERNELS IT BOOTS',
-      title: ['Thirteen images.', 'Their own kernels.'],
-      text: 'Official cloud images, each running the kernel its distro ships — the same one your users have.',
+      title: ['Sixteen images.', 'Their own kernels.'],
+      text: 'Official cloud images on their own kernels. Versions below were observed in the October 2026 case study; rolling and daily images change.',
       head: ['Image', 'Kernel observed', 'Note'],
       rows: [
         ['debian-10 · 11 · 12 · 13', '4.19 · 5.10 · 6.1 · 6.12', '4.19 without BTF; 13 boots in UEFI'],
         ['ubuntu-18.04 · 20.04 · 22.04 · 24.04', '4.15 · 5.4 · 5.15 · 6.8', '4.15 without BTF'],
         ['rocky-8 · 9', '4.18 · 5.14', 'RHEL kernels with backports; 9 boots in UEFI'],
-        ['fedora-latest', '6.19 (Fedora 44)', 'latest release, resolved online'],
-        ['arch', 'rolling', ''],
+        ['debian-sid', '7.2.11', 'daily image; UEFI'],
+        ['fedora-previous · fedora-latest', '6.17 · 6.19 (Fedora 43 · 44)', 'releases resolved online'],
+        ['arch', '7.2.9 in the case study', 'rolling'],
+        ['gentoo', '6.18 dist-kernel', 'OpenRC; UEFI'],
         ['alpine', '6.18 virt', 'musl, busybox'],
       ],
       fine: 'Host needs <code>qemu-system-x86_64</code>, <code>qemu-img</code>, <code>curl</code>, KVM (falls back to TCG without <code>/dev/kvm</code>) and OVMF for the UEFI-only images.',

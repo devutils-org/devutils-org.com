@@ -73,3 +73,13 @@ each push to `main`. For the org root URL, the repository is
 
 [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE), at your option, for original
 code, documentation and assets. Third-party material retains its own terms.
+
+## Content sources
+
+The October 2026 Distroproof and Omniscient update follows
+`../omniscient/docs/distroproof.md`, `../omniscient/docs/install.md` and
+`../distroproof/REFERENCE.md`. The campaign covers 16 images and 5 variants;
+its source-availability checks and reference-tool comparisons have distinct
+results and limits. Kernel versions and timings are observations from that
+campaign, not fixed requirements or performance guarantees. Omniscient's
+repository links remain disabled while it is unavailable publicly.

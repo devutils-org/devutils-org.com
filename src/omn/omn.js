@@ -139,6 +139,7 @@ await initPage({
     workflow: { fx: 0.9, fy: 0.7, size: 0.25, opacity: 0.8 },
     evidence: { fx: 0.1, fy: 0.7, size: 0.25, opacity: 0.7 },
     interface: { fx: 0.9, fy: 0.7, size: 0.25, opacity: 0.55 },
+    portability: { fx: 0.1, fy: 0.7, size: 0.25, opacity: 0.6 },
     start: { opacity: 1 },
   },
 })

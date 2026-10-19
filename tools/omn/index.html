@@ -27,6 +27,7 @@
         <a href="#families">Families</a>
         <a href="#workflow">Workflow</a>
         <a href="#interface">Views</a>
+        <a href="#portability">Portability</a>
         <a data-repo="/tree/main/docs" href="#">Docs <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></a>
       </nav>
       <a class="github" data-repo="" href="#">GitHub <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></a>
@@ -160,17 +161,47 @@ requests:
         </div>
       </section>
 
+      <section class="section" id="portability" data-scene="portability" aria-labelledby="portability-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">TESTED WITH DISTROPROOF / OCTOBER 2026</p>
+            <h2 id="portability-title">Different kernels.<br />Explicit limits.</h2>
+          </div>
+          <p>The installed releases were tested on 16 distro images and 5 variants, spanning Linux 4.15 to 7.2, glibc and musl. The same binary listed 36 sources usable on Ubuntu 18.04 and 96 on Fedora — with a reason for each refusal.</p>
+        </div>
+        <div class="bento">
+          <article class="bento-big">
+            <h3>Availability checked against reality.</h3>
+            <p>The campaign found 16 defects: 9 in the tool and 7 in its tests. Initially, 158 source runs were listed usable but refused at start. After the fixes, none did. Every refusal reason agreed with envprobe’s independent reading of the same guest across all 21 targets.</p>
+            <a class="inline-link" href="/tools/distroproof/#case-study">Explore the distroproof case study →</a>
+          </article>
+          <article>
+            <h3>Features, beyond version numbers.</h3>
+            <p>Real probes catch Debian’s perf policy, BPF maps charged to memlock on 5.10, lockdown restrictions and Alpine’s missing function tracer. RHEL backports are detected as features rather than ruled out by kernel age.</p>
+          </article>
+          <article>
+            <h3>Two release archives.</h3>
+            <p>The glibc archive targets glibc 2.17+. Alpine has a native musl archive with a static engine and a musl preload shim. NVIDIA sources are unavailable in the static build because they need dynamic library loading.</p>
+          </article>
+          <article class="refusal">
+            <h3>What remains open.</h3>
+            <p>Reference comparisons against distro-packaged perf, bpftrace and other witnesses ran on six distributions; some still differ or skip. Fedora opensnoop and Rocky 9 lock contention remain open. This campaign does not cover aarch64, containers or NixOS.</p>
+            <a class="inline-link" data-repo="/blob/main/docs/distroproof.md" href="#">Read the findings and evidence →</a>
+          </article>
+        </div>
+      </section>
+
       <section class="section start" id="start" data-scene="start">
         <div class="stage stage-start" aria-hidden="true"></div>
         <p class="eyebrow">OPEN SOURCE / BUILT FOR LINUX</p>
         <h2>Ask your machine<br />a better question.</h2>
-        <p>Install the release or build from source, grant two capabilities, then open a workload in the TUI.</p>
+        <p>Choose the release for your C library or build from source. Run <code>omn list</code> to see what this machine can serve; eBPF sources need capabilities and suitable kernel settings.</p>
         <div class="actions">
           <a class="primary" data-repo="/blob/main/docs/install.md" href="#">Install Omniscient <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></a>
           <a class="secondary" href="#start">Start observing</a>
         </div>
         <div class="command"><code id="cmd">omn top -- ./your-program</code><button data-copy="#cmd" type="button" aria-label="Copy command">Copy</button></div>
-        <small>x86_64 release, glibc 2.34+ · Rust 1.82+ to build · each source states the kernel it needs</small>
+        <small>x86_64 archives: glibc 2.17+ or musl · Rust 1.82+ to build · availability is probed per source</small>
       </section>
     </main>
 
