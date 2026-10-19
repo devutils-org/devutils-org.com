@@ -13,7 +13,7 @@ export default defineConfig({
         omn: resolve(import.meta.dirname, 'tools/omn/index.html'),
         atfq: resolve(import.meta.dirname, 'tools/atfq/index.html'),
         distroproof: resolve(import.meta.dirname, 'tools/distroproof/index.html'),
-        pkgx: resolve(import.meta.dirname, 'tools/pkgx/index.html'),
+        xpac: resolve(import.meta.dirname, 'tools/xpac/index.html'),
         vmanyware: resolve(import.meta.dirname, 'tools/vmanyware/index.html'),
       },
     },

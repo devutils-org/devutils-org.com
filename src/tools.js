@@ -65,8 +65,8 @@ export const tools = [
     site: '/tools/distroproof/',
   },
   {
-    id: 'pkgx',
-    name: 'pkgx',
+    id: 'xpac',
+    name: 'xpac',
     glyph: '▥',
     verb: 'Reconcile',
     color: '#aea0ff',
@@ -79,9 +79,9 @@ export const tools = [
     status: 'POC',
     statusNote: 'five native executors · platform validation ongoing',
     license: 'MIT / Apache-2.0',
-    command: 'pkgx plan -f system.toml',
-    repo: 'pkgx',
-    site: '/tools/pkgx/',
+    command: 'xpac plan -f system.toml',
+    repo: 'xpac',
+    site: '/tools/xpac/',
   },
   {
     id: 'vmanyware',

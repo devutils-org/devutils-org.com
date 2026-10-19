@@ -135,9 +135,9 @@ const distroproof = {
     }`,
 }
 
-// pkgx: a dependency graph that becomes a plan. Five packages linked by rods,
+// xpac: a dependency graph that becomes a plan. Five packages linked by rods,
 // drifting; the pointer orders them into one neat stack and the rods let go.
-const pkgx = {
+const xpac = {
   bound: 1.3,
   rot: [0.42, 0.6],
   spin: 0.06,
@@ -204,4 +204,4 @@ const vmanyware = {
     }`,
 }
 
-export const shapes = { mark, omn, distroproof, pkgx, vmanyware }
+export const shapes = { mark, omn, distroproof, xpac, vmanyware }
