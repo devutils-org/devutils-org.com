@@ -1,0 +1,150 @@
+// Facts: omniscient/docs/distroproof.md, omniscient/distroproof-devutils.toml,
+// omniscient/scripts/distroproof/devutils/ (chain.py, setup.sh, packages.json),
+// omniscient/target/matrix/devutils*-summary.json (runs of 2026-10-19),
+// xpac/docs/distroproof.md, xpac/REFERENCE.md, atfq/DECISIONS.md.
+// Omniscient is private: its sources are cited by path, never linked.
+
+const arrow = '<svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg>'
+
+export default {
+  meta: {
+    id: 'together',
+    name: 'Together',
+    line: 'How the tools check each other.',
+    color: '#9cc8ff',
+    site: '/together/',
+    repoUrl: 'https://github.com/devutils-org',
+    license: 'MIT / Apache-2.0',
+  },
+  nav: [['Principle', '#principle'], ['Crossings', '#crossings'], ['The chain', '#chain'], ['Results', '#results'], ['Contract', '#contract']],
+  hero: {
+    title: ['Five tools.', 'Checking each other.'],
+    copy: 'distroproof proves Omniscient and xpac on real kernels. xpac installs what Omniscient compares against.<br />Omniscient measures VMAnyware while atfq is checked against procfs.',
+    primary: 'Run the chain',
+  },
+  sections: [
+    {
+      type: 'intro',
+      id: 'principle',
+      scene: 'principle',
+      eyebrow: 'THE PRINCIPLE',
+      title: ['No tool depends on another.', 'They meet through files.'],
+      text: 'None of the five links against another. They cross where one tool’s output is another’s input: a JSON report, a TOML matrix, an exit code, an MCP answer. Each crossing is a test that can fail.',
+      columns: [
+        ['One tool tests another.', 'distroproof boots the distros; Omniscient and xpac are what it runs there. Each campaign found defects the development machine never showed, and fed fixes back into distroproof.'],
+        ['Disposable machines only.', 'Every crossing runs inside a throwaway QEMU guest, as an ordinary user. Nothing installs packages on the host, and the chain does not touch Proxmox.'],
+        ['Evidence, not claims.', 'Each crossing compares a tool’s answer with an independent reading: envprobe against Omniscient’s refusals, <code>/proc/meminfo</code> against atfq, a second server against VMAnyware’s lock.'],
+      ],
+    },
+    {
+      type: 'receipts',
+      id: 'crossings',
+      scene: 'crossings',
+      eyebrow: 'THE CROSSINGS / ALREADY RUNNING',
+      title: ['What already crosses,', 'and what it found.'],
+      text: 'Six crossings are already in use. Each one names the tools it joins and what came out of it.',
+      cards: [
+        {
+          label: 'DISTROPROOF → OMNISCIENT',
+          title: 'A kernel tool proven on 33 targets.',
+          text: 'Omniscient’s installed releases ran on 17 distro images on their own kernels, 5 variants, 3 arm64 images and 8 rootless containers. distroproof found 27 defects: 13 in the tool, 14 in its tests. 158 source runs that Omniscient called usable were refused by the kernel at start in the first run, and none after the fixes. The latest run passed all 25 targets (33 cells), and every refusal reason matched envprobe’s reading of the same guest.',
+          pre: '$ distroproof up --no-tui --jobs 4 --json target/matrix/distroproof.json\n$ cargo test --test portability   # the judges, over every cell',
+        },
+        {
+          label: 'OMNISCIENT → DISTROPROOF',
+          title: 'The tested tool improved the tester.',
+          text: 'The campaign went both ways. distroproof gained 3 images (Gentoo, Debian sid, Fedora 43), 2 boot fixes and 3 <code>[run]</code> options, including <code>file_caps</code> and <code>collect</code>. envprobe gained 2 facts, the memlock limits and the function tracer configuration, because two Omniscient failures needed them to be explained.',
+          pre: '[run]\nfile_caps = { "/opt/omn/bin/omn" = ["bpf", "perfmon", "net_raw"] }\ncollect = ["cross-tools.json", "witnesses.json"]',
+        },
+        {
+          label: 'DISTROPROOF → XPAC',
+          title: 'A package manager tested on 16 images.',
+          text: 'xpac follows Omniscient’s installed-release matrix. Its GNU and musl releases are installed on 16 distro images, plus root and lockdown variants. Each guest sends back a <code>cell.json</code> for the host to check. Real installs and removals run only in new disposable overlays.',
+          pre: '$ distroproof up --no-tui --jobs 4 --json dist/matrix/inspection.json\n$ python3 scripts/distroproof/check.py dist/matrix/inspection.json',
+        },
+        {
+          label: 'XPAC → OMNISCIENT',
+          title: 'xpac installs the reference tools.',
+          text: 'Omniscient checks its numbers against perf, bpftrace, bcc, strace, sysstat and valgrind. In each chain guest, xpac installs these reference tools through the distro’s own package manager: APT, DNF, Pacman, apk or Portage. Each installation is recorded in <code>xpac-history.json</code>.',
+        },
+        {
+          label: 'OMNISCIENT → VMANYWARE',
+          title: 'A real server, measured live.',
+          text: 'The chain starts VMAnyware’s server, saves a definition, gets a 403 back for a write from a browser origin, and checks that a second server refuses the locked database. Omniscient attaches to the running server and records <code>mem.rss</code> every 100 ms, without new rights.',
+          pre: '$ omn mem.rss --pid $SERVER -m poll@100ms -e timeline,summary -d 1s --format json',
+        },
+        {
+          label: 'ATFQ ↔ PROCFS · MCP',
+          title: 'An explanation held to the machine.',
+          text: 'In each guest, <code>atfq probe mem.summary</code> must match <code>/proc/meminfo</code> byte for byte. The chain also starts <code>atfq mcp</code> and checks that its five tools are there and still declare <code>readOnlyHint</code>.',
+          pre: '$ atfq probe mem.summary --json\n$ atfq mcp   # lookup, search, toc, run_probe, list_probes',
+        },
+      ],
+    },
+    {
+      type: 'flow',
+      id: 'chain',
+      scene: 'chain',
+      eyebrow: 'THE CHAIN / ONE GUEST, FOUR TOOLS',
+      title: ['One matrix file.', 'Every tool installed as a user would.'],
+      text: 'The chain is one distroproof matrix, <code>distroproof-devutils.toml</code>, kept in Omniscient’s repository. Each guest gets frozen builds of the tools and runs them as an ordinary user.',
+      steps: [
+        { glyph: '▣', label: 'BUILD', title: 'Freeze.', code: 'devutils-build.sh', text: 'xpac, atfq and the VMAnyware server are built for glibc 2.17 and musl, next to Omniscient’s release. Each file in the payload gets a checksum.' },
+        { glyph: '⧉', label: 'DISTROPROOF', title: 'Boot.', code: 'distroproof up', text: 'One target at a time on its own kernel. Running three guests at once pushed the cache and scheduler measurements outside their bands.' },
+        { glyph: '▥', label: 'XPAC', title: 'Provision.', code: 'witnesses.sh', text: 'The guest checks the payload checksums, installs the archives, then lets xpac install the reference tools through the native provider.' },
+        { glyph: '◎', label: 'CHECK', title: 'Cross.', code: 'chain.py', text: 'xpac’s providers, atfq against procfs and over MCP, VMAnyware’s server observed by Omniscient, then Omniscient’s reference pairs.' },
+        { glyph: '⇄', label: 'COLLECT', title: 'Judge.', code: 'cross-tools.json', text: 'Every check is pass or fail with its error. The report, the xpac history and the reference log come back to the host.' },
+      ],
+    },
+    {
+      type: 'table',
+      id: 'results',
+      scene: 'results',
+      eyebrow: 'FIRST RUNS / 19 OCTOBER 2026',
+      title: ['Five targets through.', 'Four still open.'],
+      text: 'The chain is new. These are its first full runs, shown as they came out, with the targets that still fail.',
+      head: ['Target', 'Kernel', 'Installed by xpac', 'Reference pairs'],
+      rows: [
+        ['chain-debian-12', '6.1', '19 packages, APT', '67 held · 56 skipped'],
+        ['chain-debian-13', '6.12', '19 packages, APT', '71 held · 52 skipped'],
+        ['chain-ubuntu-24.04', '6.8', '20 packages, APT', '75 held · 48 skipped'],
+        ['chain-arch', '7.2.9', '18 packages, Pacman', '91 held · 34 skipped'],
+        ['chain-gentoo', '6.18', '13 packages, Portage', '46 held · 77 skipped'],
+        ['chain-rocky-9 · fedora-latest', '—', 'open', 'the guest run fails; under investigation'],
+        ['chain-ubuntu-18.04 · alpine', '—', 'open', 'the guest run fails; under investigation'],
+      ],
+      fine: 'A pair is held when Omniscient and the reference tool agree within the declared tolerance. A pair is skipped when the guest cannot serve it, and the skip names the reason. The skips differ between distros because their kernels and packaged tools differ.',
+    },
+    {
+      type: 'cards',
+      id: 'contract',
+      scene: 'contract',
+      eyebrow: 'THE SHARED CONTRACT',
+      title: ['What makes them', 'composable.'],
+      text: 'The crossings work because the tools follow the same rules, so the output of one can be checked by another.',
+      cards: [
+        { glyph: '{ }', label: 'JSON', title: 'Structured output', text: 'Every tool has a <code>--json</code> output. envprobe and the chain report carry a <code>schema_version</code>.', cmd: 'envprobe --json' },
+        { glyph: '⊘', label: 'REFUSALS', title: 'A refusal names its reason', text: 'An unavailable Omniscient source, a missing atfq probe, a <code>denied</code> envprobe value: each says why, so another tool can check that reason.' },
+        { glyph: '✓', label: 'REVIEW', title: 'Changes are explicit', text: 'xpac shows a plan before it runs. VMAnyware previews provisioning before creating anything. atfq and envprobe only read.' },
+        { glyph: '◇', label: 'MCP', title: 'Agents included', text: '<code>atfq mcp</code> and Omniscient’s <code>omn-mcp</code> serve read-only tools over stdio. An agent can ask atfq what a number means and Omniscient what it measured.' },
+        { glyph: '▥', label: 'LOOK & FEEL', title: 'One family of interfaces', text: 'xpac’s TUI takes its two panes from atfq and its confidence cues from Omniscient. atfq’s demo script follows the format of Omniscient’s.' },
+        { glyph: '⧉', label: 'DISPOSABLE', title: 'Tested where it can break', text: 'Package transactions, capabilities and kernel probes run in throwaway VMs on the distro’s own kernel, never on the developer’s host.' },
+      ],
+    },
+    {
+      type: 'start',
+      scene: 'start',
+      eyebrow: 'RUN THE CHAIN',
+      title: ['Four tools,', 'one command.'],
+      text: 'The chain lives in Omniscient’s repository, which is private for now. These are the commands it runs.',
+      installLabel: 'FROM AN OMNISCIENT CHECKOUT, WITH XPAC, ATFQ AND VMANYWARE BESIDE IT',
+      install: `sh scripts/distroproof/reference-build.sh
+sh scripts/distroproof/devutils-build.sh
+distroproof up -f distroproof-devutils.toml --no-tui --jobs 1 \\
+  --json target/matrix/devutils.json`,
+      actions: `<a class="primary" href="/tools/distroproof/">Start with distroproof <span>${arrow}</span></a>
+        <a class="secondary" href="/">All devutils tools</a>`,
+      small: 'First runs: 5 of 9 targets passed · Omniscient is private for now · MIT / Apache-2.0',
+    },
+  ],
+}

@@ -78,7 +78,7 @@ code, documentation and assets. Third-party material retains its own terms.
 
 The October 2026 Distroproof and Omniscient update follows
 `../omniscient/docs/distroproof.md`, `../omniscient/docs/install.md` and
-`../distroproof/REFERENCE.md`. The campaign covers 16 images and 5 variants;
+`../distroproof/REFERENCE.md`. The campaign covers 17 images and 5 variants, 3 arm64 images and 8 rootless containers;
 its source-availability checks and reference-tool comparisons have distinct
 results and limits. Kernel versions and timings are observations from that
 campaign, not fixed requirements or performance guarantees. Omniscient's

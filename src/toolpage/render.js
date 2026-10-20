@@ -6,6 +6,8 @@ import { $, $$, pad, esc, initPage, renderFlowCards } from '../page.js'
 // on the composition of the Omniscient page: hero, intro, cards, an
 // interactive workflow, terminal captures, a status section, install.
 // Every section is optional; they render in the order given.
+// A page that is not a tool's (the org's own pages) gives `meta` instead of
+// an id: name, line, color, site and repo, in the shape of a tools.js entry.
 
 const html = String.raw
 
@@ -113,6 +115,32 @@ const sections = {
     </div>
   </section>`,
 
+  // the mark, large, beside its parts: what each one stands for
+  logo: (s) => html`${open(s)}
+    ${heading(s)}
+    <div class="logo-anatomy">
+      <figure class="logo-figure glass reveal"><img src="${s.src}" alt="${s.alt}" /><figcaption>${s.caption}</figcaption></figure>
+      <ol class="logo-parts">
+        ${s.parts.map(([label, title, text], i) => `<li class="glass reveal" style="--d:${i * 0.08}s"><small>${pad(i)} / ${label}</small><h3>${title}</h3><p>${text}</p></li>`).join('')}
+      </ol>
+    </div>
+  </section>`,
+
+  // colour swatches, in groups: name, value, and what it is for
+  palette: (s) => html`${open(s)}
+    ${heading(s)}
+    ${s.groups
+      .map(
+        (g) => html`
+    <p class="palette-label">${g.label}</p>
+    <ul class="palette">
+      ${g.colors.map(([name, value, use]) => `<li class="glass reveal"><span class="swatch" style="background:${value}"></span><b>${name}</b><code>${value}</code><span>${use}</span></li>`).join('')}
+    </ul>`,
+      )
+      .join('')}
+    ${s.fine ? `<p class="fine capture-note">${s.fine}</p>` : ''}
+  </section>`,
+
   // a card, layer by layer: numbered columns, each with a sample screen
   layers: (s) => html`${open(s)}
     ${heading(s)}
@@ -197,15 +225,15 @@ function shell(text) {
 }
 
 export async function renderToolPage(page) {
-  const tool = tools.find((t) => t.id === page.id)
-  const repo = repoUrl(tool)
-  const nav = [...page.nav.filter(([, href]) => href !== '#case-study'), ['In practice', '#in-practice']]
+  const tool = page.meta ?? tools.find((t) => t.id === page.id)
+  const repo = tool.repoUrl ?? repoUrl(tool)
+  const nav = [...page.nav.filter(([, href]) => href !== '#case-study'), ...(renderPractice(tool.id) ? [['In practice', '#in-practice']] : [])]
 
   $('#nav').innerHTML = html`
     <div class="logo">
       <a class="crumb-home" href="/" aria-label="devutils home"><img class="logo-icon" src="/mark.svg" alt="" /><span>devutils</span></a>
       <span class="crumb-sep">/</span>
-      <a href="/tools/${tool.id}/">${tool.name}</a><span class="alpha">${tool.status}</span>
+      <a href="${tool.site ?? `/tools/${tool.id}/`}">${tool.name}</a>${tool.status ? `<span class="alpha">${tool.status}</span>` : ''}
     </div>
     <nav aria-label="Sections">${nav.map(([label, href]) => `<a href="${href}">${label}</a>`).join('')}</nav>
     <a class="github" href="${repo}">GitHub <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></a>`

@@ -15,6 +15,8 @@ export default defineConfig({
         distroproof: resolve(import.meta.dirname, 'tools/distroproof/index.html'),
         xpac: resolve(import.meta.dirname, 'tools/xpac/index.html'),
         vmanyware: resolve(import.meta.dirname, 'tools/vmanyware/index.html'),
+        together: resolve(import.meta.dirname, 'together/index.html'),
+        design: resolve(import.meta.dirname, 'design/index.html'),
       },
     },
   },

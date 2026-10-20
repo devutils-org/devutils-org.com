@@ -109,3 +109,31 @@
   .spec td:empty { display: none; }
   .install pre { font-size: 10.5px; padding: 16px; }
 }
+
+/* the org's pages: the mark and its parts */
+.logo-anatomy { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 14px; }
+.logo-figure { margin: 0; border-radius: var(--radius-panel); padding: 48px 32px 28px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; }
+.logo-figure img { width: min(100%, 240px); aspect-ratio: 1; filter: drop-shadow(0 0 40px #9b7eff55); }
+.logo-figure figcaption { color: var(--muted); font: 11px/1.7 var(--mono); text-align: center; }
+.logo-parts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.logo-parts li { border-radius: var(--radius-panel); padding: 24px; }
+.logo-parts small { color: #a3a5b8; letter-spacing: 1px; font: 10px var(--mono); }
+.logo-parts h3 { letter-spacing: -.5px; margin: 18px 0 8px; font-size: 19px; font-weight: 500; }
+.logo-parts p { color: var(--muted); font-size: 13px; line-height: 1.75; margin: 0; }
+
+/* the org's pages: colour swatches */
+.palette-label { color: #a9abbb; letter-spacing: 1px; font: 10px var(--mono); text-transform: uppercase; margin: 34px 0 14px; }
+.palette { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; }
+.palette li { border-radius: var(--radius-panel); padding: 16px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.palette .swatch { height: 64px; border-radius: var(--radius-control); border: 1px solid #ffffff1f; margin-bottom: 10px; }
+.palette b { font-weight: 500; font-size: 15px; }
+.palette code { color: #b9caff; font-size: 11px; }
+.palette li > span:last-child { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 4px; }
+
+@media (width <= 950px) {
+  .logo-anatomy { grid-template-columns: 1fr; }
+}
+@media (width <= 600px) {
+  .logo-parts { grid-template-columns: 1fr; }
+  .palette { grid-template-columns: 1fr 1fr; }
+}

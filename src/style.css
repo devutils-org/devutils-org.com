@@ -581,3 +581,7 @@ footer a:hover { color: #fff; }
 @media (prefers-reduced-motion: reduce) {
   .nav .github, .nav-toggle span { transition: none; }
 }
+
+/* home: the link under the flow, to the page on how the tools cross */
+.home #flow .inline-link { display: inline-block; margin-top: 20px; color: #c1c9e7; font-size: 13px; }
+.home #flow .inline-link:hover { color: #fff; }
