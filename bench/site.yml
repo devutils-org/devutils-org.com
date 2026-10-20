@@ -1,0 +1,32 @@
+# One visit of the devutils site (bench/browse.mjs), measured by Omniscient:
+# the browser's cpu time, the graphics card's energy and occupancy.
+#
+#   omn -f bench/site.yml --format json --program-stderr visit.err > visit.json
+#
+# Edit the launch line for the version and the conditions under test: the URL
+# of a build served locally (`npm run build && cd dist && python3 -m
+# http.server 4202`), `gpu` or `nogpu`, the screen size. The run of 20 October
+# 2026 is on the Together page, "The site, measured".
+#
+# cpu.oncpu_time is in count mode: this machine refused `trace` (tracefs is
+# not readable without CAP_SYS_ADMIN) and said so. The energy and occupancy
+# are the whole card's, shared with anything else drawing on it.
+name: one visit of the devutils site
+format: json
+
+requests:
+  - label: cpu
+    source: cpu.oncpu_time
+    target: {launch: [node, bench/browse.mjs, "http://localhost:4202/design/", gpu, 1920x1080]}
+    mode: count
+    emit: [summary]
+  - label: gpu-energy
+    source: gpu.power
+    target: {launch: [node, bench/browse.mjs, "http://localhost:4202/design/", gpu, 1920x1080]}
+    mode: count
+    emit: [summary, rate]
+  - label: gpu-busy
+    source: gpu.engine_busy
+    target: {launch: [node, bench/browse.mjs, "http://localhost:4202/design/", gpu, 1920x1080]}
+    mode: count
+    emit: [summary]

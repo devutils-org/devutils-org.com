@@ -92,7 +92,7 @@ const sections = {
     <div class="table-wrap glass">
       <table class="spec">
         <thead><tr>${s.head.map((h) => `<th>${h}</th>`).join('')}</tr></thead>
-        <tbody>${s.rows.map((r) => `<tr>${r.map((c, i) => (i === 0 ? `<th><code>${c}</code></th>` : `<td>${c}</td>`)).join('')}</tr>`).join('')}</tbody>
+        <tbody>${s.rows.map((r) => `<tr>${r.map((c, i) => (i === 0 ? `<th><code>${c}</code></th>` : `<td data-label="${s.head[i]}">${c}</td>`)).join('')}</tr>`).join('')}</tbody>
       </table>
     </div>
     ${s.fine ? `<p class="fine capture-note">${s.fine}</p>` : ''}

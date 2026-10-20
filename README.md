@@ -87,6 +87,20 @@ Deploy: `.github/workflows/pages.yml` publishes `dist/` to GitHub Pages on
 each push to `main`. For the org root URL, the repository is
 `devutils-org/devutils-org.github.io`.
 
+## Measuring the site
+
+`bench/browse.mjs` is one scripted visit of a page (load, rest, scroll down
+and up, rest) in Chromium, on the graphics card or in software; it prints the
+frame times the page saw. `bench/site.yml` runs that visit under Omniscient
+and counts the browser's cpu time and the card's energy. The before/after
+results are on the Together page (`#site`).
+
+```sh
+npm i --no-save playwright-core
+npm run build && (cd dist && python3 -m http.server 4202) &
+CHROME=/path/to/chromium omn -f bench/site.yml --format json --program-stderr visit.err > visit.json
+```
+
 ## License
 
 [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE), at your option, for original

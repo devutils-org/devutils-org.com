@@ -16,7 +16,7 @@ export default {
     repoUrl: 'https://github.com/devutils-org',
     license: 'MIT / Apache-2.0',
   },
-  nav: [['Principle', '#principle'], ['Crossings', '#crossings'], ['The chain', '#chain'], ['Results', '#results'], ['Contract', '#contract']],
+  nav: [['Principle', '#principle'], ['Crossings', '#crossings'], ['This site', '#site'], ['The chain', '#chain'], ['Results', '#results'], ['Contract', '#contract']],
   hero: {
     title: ['Five tools.', 'Checking each other.'],
     copy: 'distroproof proves Omniscient and xpac on real kernels. xpac installs what Omniscient compares against.<br />Omniscient measures VMAnyware while atfq is checked against procfs.',
@@ -42,7 +42,7 @@ export default {
       scene: 'crossings',
       eyebrow: 'THE CROSSINGS / ALREADY RUNNING',
       title: ['What already crosses,', 'and what it found.'],
-      text: 'Six crossings are already in use. Each one names the tools it joins and what came out of it.',
+      text: 'Seven crossings are already in use. Each one names the tools it joins and what came out of it.',
       cards: [
         {
           label: 'DISTROPROOF → OMNISCIENT',
@@ -79,7 +79,31 @@ export default {
           text: 'In each guest, <code>atfq probe mem.summary</code> must match <code>/proc/meminfo</code> byte for byte. The chain also starts <code>atfq mcp</code> and checks that its five tools are there and still declare <code>readOnlyHint</code>.',
           pre: '$ atfq probe mem.summary --json\n$ atfq mcp   # lookup, search, toc, run_probe, list_probes',
         },
+        {
+          label: 'OMNISCIENT → THIS SITE',
+          title: 'The front end, measured before and after.',
+          text: 'The same 28-second visit of the Design page, three times on the version before the front-end work and three times on the version after, while Omniscient counted the browser’s cpu time and the graphics card’s energy. It refused to trace the cpu time on this machine and said why (tracefs needs <code>CAP_SYS_ADMIN</code>), so the run counts it instead. The results are just below.',
+          pre: '$ omn -f bench/site.yml --format json --program-stderr visit.err > visit.json',
+        },
       ],
+    },
+    {
+      type: 'table',
+      id: 'site',
+      scene: 'site',
+      eyebrow: 'THIS SITE, MEASURED / 20 OCTOBER 2026',
+      title: ['Without GPU acceleration,', 'from 10 to 60 frames.'],
+      text: 'The version before the front-end work (<code>2e965bc</code>) against the one after (<code>3e96fca</code>), on the same machine. Without graphics acceleration, the old 3D ran in software and dragged the page down. On a fast graphics card, the two versions cannot be told apart.',
+      head: ['Measure', 'Before', 'After', 'Measured by'],
+      rows: [
+        ['no GPU · frames', '9–10 a second, a frame every 100 ms', '60 a second, a frame every 16.7 ms', 'the page’s own frame clock, 3 visits each'],
+        ['no GPU · cpu time', '262–268 s for a 28 s visit', '64–164 s', 'omn <code>cpu.oncpu_time</code>, count: the browser and all its processes'],
+        ['RTX 2080 Ti · frames', '60 a second', '60 a second', 'the page’s own frame clock'],
+        ['RTX 2080 Ti · energy', '33–34 W at 1080p, 40–42 W at 2560×1440 ×2', '33–34 W, 43–44 W', 'omn <code>gpu.power</code>: within the noise, single runs reached 60 W either way'],
+        ['load · Lighthouse', 'performance 66–70, 1.6–6.2 s blocked', '98–100, 0–40 ms blocked', 'Lighthouse, mobile profile'],
+        ['load · layout shift', '0.096 on the tool pages', '0', 'Lighthouse'],
+      ],
+      fine: 'Chromium driven by Playwright, headless, 1920×1080 unless stated; visits alternated between the two versions. The energy is the whole card’s, and the card changes its clock speed from one run to the next, so the energy cannot separate the two versions there. The smoother scrolling felt in Firefox was not measured here. Reproduce with <code>bench/browse.mjs</code> and <code>bench/site.yml</code> in the site’s repository.',
     },
     {
       type: 'flow',

@@ -107,6 +107,8 @@
   .spec tbody th, .spec td { display: block; padding: 2px 0; border: 0; white-space: normal; }
   .spec tbody th { margin-bottom: 4px; }
   .spec td:empty { display: none; }
+  /* the headings are hidden: each value says which column it is */
+  .spec td[data-label]::before { content: attr(data-label); display: block; color: #a9abbb; font: 10px var(--mono); letter-spacing: 1px; text-transform: uppercase; margin-top: 6px; }
   .install pre { font-size: 10.5px; padding: 16px; }
 }
 
