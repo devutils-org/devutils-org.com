@@ -155,7 +155,10 @@ function drawGlass(list) {
   gl.bindBuffer(gl.ARRAY_BUFFER, buffer)
   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 0, 3, -1, 0, -1, 3, 0]), gl.STATIC_DRAW)
   for (const s of list) {
-    const shape = shapes[look[s.id].shape]
+    let shape = shapes[look[s.id].shape]
+    // distroproof's bead floats higher over its target than on the site, so
+    // that it reads as a bead and not as part of the cube
+    if (s.id === 'distroproof') shape = { ...shape, glsl: shape.glsl.replace('0.34 + 0.4 * sin', '1.05 + 0.4 * sin') }
     const r = s.r * look[s.id].scale
     const prog = compile(gl, vertexShader, fragment(shape))
     gl.useProgram(prog)
