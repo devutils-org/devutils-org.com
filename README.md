@@ -39,7 +39,8 @@ Pages:
 Performance switches, on any page's URL:
 `?debug=fps,noblur,blur:10,nopanels,no3d,nolights,res:0.5,scrollres:0.75`
 (an FPS meter; no panel blur, or another radius; plain panels; no 3D; no
-lights behind it; a drawing-buffer resolution cap, always or while scrolling). They say which layer costs frames on a given
+lights behind it; a drawing-buffer resolution cap, always or while scrolling:
+0.75 by default, `scrollres:1` turns it off). They say which layer costs frames on a given
 browser.
 
 `src/page.js` is what every page shares (scene, frosted panels, reveal, copy

@@ -77,7 +77,7 @@ export async function initPage({ scenes, shape = 'mark' }) {
   try {
     if (debug.has('no3d')) throw new Error('turned off by ?debug=no3d')
     const { createScene } = await import('./scene.js')
-    scene = createScene({ canvas: $('#scene'), shape, reducedMotion, res: Number(debug.get('res')) || undefined, scrollRes: Number(debug.get('scrollres')) || 1, lights: !debug.has('nolights') })
+    scene = createScene({ canvas: $('#scene'), shape, reducedMotion, res: Number(debug.get('res')) || undefined, scrollRes: Number(debug.get('scrollres')) || 0.75, lights: !debug.has('nolights') })
   } catch (err) {
     console.warn('3D scene unavailable:', err)
     document.documentElement.classList.add('no-webgl')

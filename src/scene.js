@@ -252,7 +252,9 @@ export function createScene({ canvas, shape: shapeName = 'mark', reducedMotion =
     pointer.py = e.clientY
   }, { passive: true })
 
-  // while the page scrolls, the drawing buffer can be scaled by scrollRes
+  // While the page scrolls, the drawing buffer is scaled by scrollRes (0.75 by
+  // default, page.js): the shape is moving then, and full resolution comes
+  // back 150 ms after the scroll stops.
   let scrolledAt = -Infinity
   if (scrollRes !== 1) window.addEventListener('scroll', () => (scrolledAt = performance.now()), { passive: true })
   let prNow = pr
