@@ -222,15 +222,11 @@ export function createScene({ canvas, shape: shapeName = 'mark', reducedMotion =
   const rot = new THREE.Matrix4()
   const euler = new THREE.Euler()
   let t = 0
-  // Drawing every frame is only worth it while something moves fast: a slide,
-  // a resize, the pointer's answer. At rest the mark drifts slowly, so 30
-  // frames a second are enough; out of sight, or faded out, nothing is drawn.
+  // Out of sight, or faded out, nothing is drawn. (Drawing only 30 frames a
+  // second at rest was tried: the drift looked choppy.)
   let sinceDraw = Infinity
   let opacityShown = ''
   let slow = 0
-  let wasBusy = false
-  let pointerMoved = false
-  window.addEventListener('pointermove', () => (pointerMoved = true), { passive: true })
 
   function frame(time) {
     timer.update(time)
@@ -288,18 +284,14 @@ export function createScene({ canvas, shape: shapeName = 'mark', reducedMotion =
 
     const bound = cur.radius * shape.bound
     const visible = cur.opacity > 0.01 && x + bound > 0 && x - bound < w && y + bound > 0 && y - bound < h
-    const busy =
-      Math.hypot(slide.x, slide.y) > 0.5 ||
-      Math.abs(cur.radius - at.radius) > 0.5 ||
-      Math.abs(cur.opacity - target.opacity) > 0.005 ||
-      (cur.state > 0.002 && cur.state < 0.998) ||
-      pointerMoved
-    pointerMoved = false
-    sinceDraw += dt
-    if (!visible || (!busy && sinceDraw < 1 / 40)) return
+    if (!visible) {
+      sinceDraw = Infinity
+      return
+    }
 
-    // frames that keep coming late, while drawing every one: draw fewer pixels
-    if (busy && wasBusy) {
+    // frames that keep coming late: draw fewer pixels
+    if (sinceDraw !== Infinity) {
+      sinceDraw += dt
       slow = sinceDraw > 1 / 45 ? slow + 1 : Math.max(0, slow - 2)
       if (slow > 45 && pr > prFloor) {
         prCap = Math.max(prFloor, pr - 0.25)
@@ -307,7 +299,6 @@ export function createScene({ canvas, shape: shapeName = 'mark', reducedMotion =
         resize()
       }
     }
-    wasBusy = busy
     sinceDraw = 0
     renderer.render(scene, camera)
   }
