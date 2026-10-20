@@ -16,14 +16,14 @@ import { shapes } from './shapes.js'
 // the mark sits on `anchor` (an element, sized from its height) or at the
 // viewport fraction (fx, fy), sized `size` × min(width, height).
 
-const vertexShader = /* glsl */ `
+export const vertexShader = /* glsl */ `
   attribute vec3 position;
   void main() {
     gl_Position = vec4(position.xy, 0.0, 1.0);
   }
 `
 
-const fragment = (shape) => /* glsl */ `
+export const fragment = (shape) => /* glsl */ `
   precision highp float;
 
   uniform vec2 uCenter;   // mark centre, drawing-buffer px, origin bottom-left

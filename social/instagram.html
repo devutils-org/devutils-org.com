@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>devutils — Instagram grid</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=block" rel="stylesheet" />
+    <style>
+      html, body { margin: 0; background: #050507; }
+      #poster { position: relative; overflow: hidden; }
+      #poster canvas { position: absolute; inset: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="poster">
+      <canvas id="back"></canvas>
+      <canvas id="glass"></canvas>
+      <canvas id="front"></canvas>
+    </div>
+    <script type="module" src="./instagram.js"></script>
+  </body>
+</html>
