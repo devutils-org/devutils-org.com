@@ -84,6 +84,8 @@ export async function initPage({ scenes, shape = 'mark' }) {
     $('#scene').hidden = true
     return
   }
+  followGlass(scene)
+
   const sections = $$('[data-scene]')
   function update() {
     const mid = window.innerHeight * 0.5
@@ -241,4 +243,34 @@ function initDebug() {
     requestAnimationFrame(tick)
   }
   return flags
+}
+
+// Blur only the panels the 3D's square is under (style.css, .over-3d). Only
+// panels on screen are measured, once a frame.
+function followGlass(scene) {
+  const onScreen = new Set()
+  const io = new IntersectionObserver((entries) =>
+    entries.forEach((e) => {
+      if (e.isIntersecting) onScreen.add(e.target)
+      else {
+        onScreen.delete(e.target)
+        e.target.classList.remove('over-3d')
+      }
+    }),
+  )
+  $$('.glass, .flow-card').forEach((el) => io.observe(el))
+  const margin = 24
+  const tick = () => {
+    const box = scene.box
+    for (const el of onScreen) {
+      let over = false
+      if (box) {
+        const r = el.getBoundingClientRect()
+        over = r.right > box.x - box.half - margin && r.left < box.x + box.half + margin && r.bottom > box.y - box.half - margin && r.top < box.y + box.half + margin
+      }
+      if (over !== el.classList.contains('over-3d')) el.classList.toggle('over-3d', over)
+    }
+    requestAnimationFrame(tick)
+  }
+  requestAnimationFrame(tick)
 }

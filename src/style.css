@@ -271,14 +271,15 @@ h2 { letter-spacing: -1.8px; margin: 0; font-size: 44px; font-weight: 500; line-
 .overview-facts dt { font-size: 13px; font-weight: 500; }
 .overview-facts dd { color: var(--muted); margin: 7px 0 0; font-size: 12px; line-height: 1.7; }
 
-/* frosted glass: the WebGL lights show through, blurred */
+/* frosted glass: the lights show through. Blurring a smooth glow changes
+   nothing a reader can see, and redoing it on every frame is what made
+   scrolling slow, so only a panel over the 3D's square is blurred: page.js
+   gives it .over-3d while the square is under it. */
 .glass {
   border-radius: var(--radius-panel);
   position: relative;
   background: linear-gradient(135deg, #ffffff0f, #ffffff03 55%), #0a0b1033;
   border: 1px solid var(--glass-line);
-  backdrop-filter: var(--glass-blur);
- 
   box-shadow: inset 0 1px 0 #ffffff1c, 0 30px 80px -40px #000d;
 }
 .glass:after, .flow-back:after {
@@ -314,7 +315,7 @@ h2 { letter-spacing: -1.8px; margin: 0; font-size: 44px; font-weight: 500; line-
 .flow-glyph { color: var(--tc); font: 30px var(--mono); margin-bottom: 35px; text-shadow: 0 0 18px color-mix(in srgb, var(--tc) 50%, transparent); }
 .flow-card small { color: #a9abbb; font: 10px/1.6 var(--mono); letter-spacing: 1px; }
 .flow-card strong { display: block; margin: 14px 0 20px; font-size: 23px; font-weight: 400; }
-.flow-back { inset: calc(-1 * var(--flow-inset-y)) calc(-1 * var(--flow-inset-x)); opacity: 0; visibility: hidden; transform: translateY(6px); clip-path: inset(var(--flow-inset-y) var(--flow-inset-x) round var(--radius-panel)); pointer-events: none; border: 1px solid #ffffff25; border-radius: var(--radius-panel); background: linear-gradient(135deg, #ffffff0f, #ffffff03 55%), #0a0b10dc; backdrop-filter: var(--glass-blur); box-shadow: inset 0 1px 0 #ffffff1c, 0 20px 50px -25px #000b; transition: opacity .45s ease, transform .55s cubic-bezier(.22, 1, .36, 1), clip-path .55s cubic-bezier(.22, 1, .36, 1), visibility 0s .55s; }
+.flow-back { inset: calc(-1 * var(--flow-inset-y)) calc(-1 * var(--flow-inset-x)); opacity: 0; visibility: hidden; transform: translateY(6px); clip-path: inset(var(--flow-inset-y) var(--flow-inset-x) round var(--radius-panel)); pointer-events: none; border: 1px solid #ffffff25; border-radius: var(--radius-panel); background: linear-gradient(135deg, #ffffff0f, #ffffff03 55%), #0a0b10dc; box-shadow: inset 0 1px 0 #ffffff1c, 0 20px 50px -25px #000b; transition: opacity .45s ease, transform .55s cubic-bezier(.22, 1, .36, 1), clip-path .55s cubic-bezier(.22, 1, .36, 1), visibility 0s .55s; }
 .flow-card[aria-expanded="true"] .flow-front { opacity: 0; visibility: hidden; transition: opacity .3s ease, visibility 0s .3s; }
 .flow-card[aria-expanded="true"] .flow-back { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); clip-path: inset(0 round var(--radius-panel)); transition-delay: 0s; }
 .flow-back > * { opacity: 0; transform: translateY(5px); transition: opacity .3s ease, transform .4s ease; }
@@ -477,7 +478,7 @@ footer a:hover { color: #fff; }
   .flow-front, .flow-back { position: relative; grid-area: 1 / 1; inset: auto; min-height: 250px; padding: 24px; border-radius: var(--radius-panel); }
   :is(.home, .tool-page) .flow-back { min-height: 250px; }
   .flow-back { clip-path: inset(0 round var(--radius-panel)); }
-  .flow-front, .flow-card .flow-front, .flow-card:nth-child(n) .flow-front { justify-content: flex-start; border: 1px solid var(--glass-line); background: radial-gradient(ellipse at 50% 0, color-mix(in srgb, var(--tc) 8%, transparent), transparent 75%), linear-gradient(135deg, #ffffff0f, #ffffff03 55%), #0a0b10a6; backdrop-filter: var(--glass-blur); box-shadow: inset 0 1px 0 #ffffff1c, 0 -18px 40px -24px #000e; }
+  .flow-front, .flow-card .flow-front, .flow-card:nth-child(n) .flow-front { justify-content: flex-start; border: 1px solid var(--glass-line); background: radial-gradient(ellipse at 50% 0, color-mix(in srgb, var(--tc) 8%, transparent), transparent 75%), linear-gradient(135deg, #ffffff0f, #ffffff03 55%), #0a0b10a6; box-shadow: inset 0 1px 0 #ffffff1c, 0 -18px 40px -24px #000e; }
   .flow-glyph { margin-bottom: 20px; }
   :is(.home, .tool-page) .hero { padding-top: 32px; padding-bottom: 40px; }
   :is(.home, .tool-page) .hero h1 { font-size: clamp(42px, 10vw, 54px); }
@@ -600,3 +601,5 @@ footer a:hover { color: #fff; }
 /* ?debug= switches (page.js, initDebug) */
 .debug-fps { position: fixed; right: 12px; bottom: 12px; z-index: 100; padding: 6px 10px; border-radius: var(--radius-small); background: #000c; color: #9fe8c2; font: 12px var(--mono); pointer-events: none; }
 .debug-nopanels .glass, .debug-nopanels .flow-back, .debug-nopanels .flow-front { backdrop-filter: none !important; background: #0b0c12 !important; }
+
+.glass.over-3d, .over-3d .flow-back, .over-3d .flow-front { backdrop-filter: var(--glass-blur); }

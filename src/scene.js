@@ -337,8 +337,10 @@ export function createScene({ canvas, shape: shapeName = 'mark', reducedMotion =
     const half = cur.radius * shape.bound * 1.08 + 3
     if (cur.opacity < 0.01 || x + half < 0 || x - half > w || y + half < 0 || y - half > h) {
       sinceDraw = Infinity
+      api.box = null
       return
     }
+    api.box = { x, y, half }
     fit(cur.radius)
     canvas.style.transform = `translate3d(${(x - side / 2).toFixed(1)}px,${(y - side / 2).toFixed(1)}px,0)`
 
@@ -373,7 +375,9 @@ export function createScene({ canvas, shape: shapeName = 'mark', reducedMotion =
   }
   requestAnimationFrame(frame)
 
-  return {
+  const api = {
+    // the square the glass is drawn in, in CSS px, or null when nothing is drawn
+    box: null,
     setState({ anchor = null, fx = 0.5, fy = 0.5, size = 0.3, opacity = 1 }) {
       if (anchor !== target.anchor || fx !== target.fx || fy !== target.fy) {
         Object.assign(target, { anchor, fx, fy })
@@ -388,4 +392,5 @@ export function createScene({ canvas, shape: shapeName = 'mark', reducedMotion =
       target.opacity = opacity
     },
   }
+  return api
 }
