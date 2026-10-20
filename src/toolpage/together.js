@@ -42,7 +42,7 @@ export default {
       scene: 'crossings',
       eyebrow: 'THE CROSSINGS / ALREADY RUNNING',
       title: ['What already crosses,', 'and what it found.'],
-      text: 'Seven crossings are already in use. Each one names the tools it joins and what came out of it.',
+      text: 'Eight crossings are already in use. Each one names the tools it joins and what came out of it.',
       cards: [
         {
           label: 'DISTROPROOF → OMNISCIENT',
@@ -78,6 +78,12 @@ export default {
           title: 'An explanation held to the machine.',
           text: 'In each guest, <code>atfq probe mem.summary</code> must match <code>/proc/meminfo</code> byte for byte. The chain also starts <code>atfq mcp</code> and checks that its five tools are there and still declare <code>readOnlyHint</code>.',
           pre: '$ atfq probe mem.summary --json\n$ atfq mcp   # lookup, search, toc, run_probe, list_probes',
+        },
+        {
+          label: 'OMNISCIENT → ATFQ, XPAC, ENVPROBE',
+          title: 'The read-only promises, held to the kernel.',
+          text: 'Omniscient runs each tool and follows every process it starts, from the kernel. atfq’s nine hubs, xpac’s inventory and plan against Pacman, and <code>envprobe --json</code> each created, renamed, removed and synced no file. None opened a TCP connection, and none started a program other than its own. atfq opened no IPv4 or IPv6 socket at all: only netlink, to read the interfaces. All eleven checks passed on 21 October 2026.',
+          pre: '$ python3 scripts/devutils/promises.py\natfq      PASS  no file changed        1464 opens, 8084 reads\natfq      PASS  no IPv4/IPv6 socket    netlink only\nxpac      PASS  only its own programs  xpac, pacman, pacman-conf\nenvprobe  PASS  no TCP connection      19 ms of cpu',
         },
         {
           label: 'OMNISCIENT → THIS SITE',
