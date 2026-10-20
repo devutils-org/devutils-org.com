@@ -9,9 +9,6 @@
     "preview": "vite preview",
     "book:atfq": "node scripts/atfq-book.mjs"
   },
-  "dependencies": {
-    "three": "^0.186.1"
-  },
   "devDependencies": {
     "vite": "^8.3.4"
   },

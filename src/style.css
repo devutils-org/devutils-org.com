@@ -41,15 +41,19 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 2px s
 
 /* ---------- 3D layer ---------- */
 
-#scene {
+/* Two layers, both placed by scene.js with a transform: the lights (still CSS
+   gradients) and, over them, the canvas, only as large as the shape. */
+#scene, .scene-lights {
   position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 0;
+  left: 0;
   z-index: -1;
   display: block;
   pointer-events: none;
+  transform-origin: 0 0;
+  will-change: transform, opacity;
 }
+.scene-lights { transform-origin: 50% 50%; }
 .stage-fallback { display: none; position: absolute; left: 50%; top: 50%; width: 76%; max-width: 300px; transform: translate(-50%, -50%); opacity: .8; filter: drop-shadow(0 0 30px #9b7eff55); }
 .no-webgl .stage-fallback { display: block; }
 
