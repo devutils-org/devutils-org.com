@@ -162,10 +162,13 @@ function drawGlass(list) {
     gl.enableVertexAttribArray(0)
     gl.vertexAttribPointer(0, 3, gl.FLOAT, false, 0, 0)
     const u = (n) => gl.getUniformLocation(prog, n)
-    // a pose: a moment of each shape's own slow motion, tilted as on the site
-    const t = { omn: 0, mark: 0, distroproof: 5.3, xpac: 4.1, vmanyware: 3.6 }[look[s.id].shape]
+    // a pose: a moment of each shape's own slow motion, tilted as on the site.
+    // Omniscient at time 0, as in the LinkedIn visual; distroproof when its
+    // bead rests on the middle target (two seconds per target, 4 × 2.2 + 0.5).
+    const t = { omn: 0, mark: 0, distroproof: 9.3, xpac: 4.1, vmanyware: 3.6 }[look[s.id].shape]
     const [rx, ry] = shape.rot
-    const b = ry + t * shape.spin
+    // the turn of the earlier pose, which faces the grid square on
+    const b = ry + (look[s.id].shape === 'distroproof' ? 5.3 : t) * shape.spin
     const cx = Math.cos(rx), sx = Math.sin(rx), cy = Math.cos(b), sy = Math.sin(b)
     gl.uniform2f(u('uCenter'), s.x, H - s.y)
     gl.uniform1f(u('uScale'), r)
