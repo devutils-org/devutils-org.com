@@ -39,7 +39,6 @@ const order = ['omn', 'distroproof', 'atfq', 'xpac', 'vmanyware']
 const y = 730
 const scene = {
   tools: order.map((id, i) => ({ id, x: 324 + i * 648, y, r: 215 })),
-  horizon: y + 300,
   text: [{ t: 'DEVUTILS / SMALL TOOLS. HONEST ANSWERS.', x: W / 2, y: 240, font: `500 38px ${MONO}`, color: MUTED, spacing: 8 }],
 }
 
@@ -98,22 +97,9 @@ function lights(g, { x, y, r }) {
     g.fillStyle = grad
     g.fillRect(cx - 3.25 * r, cy - 3.25 * r, 6.5 * r, 6.5 * r)
   }
-  glow(x - 0.55 * r, y - 0.4 * r, CYAN, 0.15, 0.8)
-  glow(x + 0.65 * r, y + 0.35 * r, VIOLET, 0.17, 0.7)
-}
-
-function horizon(g, y) {
-  const line = g.createLinearGradient(0, 0, W, 0)
-  line.addColorStop(0, '#aacaff00')
-  line.addColorStop(0.15, '#aacaffaa')
-  line.addColorStop(0.85, '#c3a8ffaa')
-  line.addColorStop(1, '#c3a8ff00')
-  g.save()
-  g.shadowColor = '#9b7eff88'
-  g.shadowBlur = 40
-  g.fillStyle = line
-  g.fillRect(0, y, W, 3)
-  g.restore()
+  // at half the site's strength: on a still picture the halo reads heavier
+  glow(x - 0.55 * r, y - 0.4 * r, CYAN, 0.075, 0.8)
+  glow(x + 0.65 * r, y + 0.35 * r, VIOLET, 0.085, 0.7)
 }
 
 function spaced(g, t, x, y, spacing = 0, align = 'center') {
@@ -216,7 +202,6 @@ function compile(gl, vs, fs) {
 
 ground(back)
 for (const s of scene.tools) lights(back, s)
-horizon(back, scene.horizon)
 drawGlass(scene.tools)
 for (const s of scene.tools) label(front, s)
 for (const t of scene.text) text(front, t)
