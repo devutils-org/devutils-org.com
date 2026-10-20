@@ -3,7 +3,8 @@
 // previews, and with no layout shift when the scripts start. The scripts see
 // the content already there and only wire it up.
 //
-// Also adds to every page: the speculation rules that load a page the pointer
+// Also adds to every page: the link-preview tags (address and image), the
+// speculation rules that load a page the pointer
 // rests on, and the style that shows the reveal-on-scroll content when
 // scripts are off, with the still mark in place of the 3D.
 //
@@ -14,6 +15,22 @@ import { resolve } from 'node:path'
 import { pages } from '../.ssr/prerender.js'
 
 const dist = resolve(import.meta.dirname, '../dist')
+
+// The site's address, for the link-preview tags, which must be absolute. If
+// the site moves, this is the one line to change (or set SITE_URL).
+const SITE = (process.env.SITE_URL ?? 'https://devutils-org.github.io').replace(/\/$/, '')
+
+// The image a shared link shows: public/og/<name>.png, 1200 × 627, from the
+// LinkedIn pack (assets/devutils-linkedin-pages). Pages without their own
+// use the org's.
+const preview = {
+  'index.html': 'main',
+  'tools/omn/index.html': 'omniscient',
+  'tools/atfq/index.html': 'atfq',
+  'tools/distroproof/index.html': 'distroproof',
+  'tools/xpac/index.html': 'xpac',
+  'tools/vmanyware/index.html': 'vmanyware',
+}
 
 const head = `
     <script type="speculationrules">{"prerender":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/tools/atfq/book/*"}}]},"eagerness":"moderate"}]}</script>
@@ -34,7 +51,16 @@ for (const [file, { fill = {}, before = {} }] of Object.entries(pages)) {
     html = html.replace(marker, markup + marker)
   }
   if (!html.includes('</head>')) throw new Error(`${file}: no </head>`)
-  html = html.replace('</head>', head)
+  const url = `${SITE}/${file.replace(/index\.html$/, '')}`
+  const image = `${SITE}/og/${preview[file] ?? 'main'}.png`
+  const card = `
+    <link rel="canonical" href="${url}" />
+    <meta property="og:url" content="${url}" />
+    <meta property="og:image" content="${image}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+    <meta name="twitter:card" content="summary_large_image" />`
+  html = html.replace('</head>', card + head)
   await writeFile(path, html)
   console.log(`prerendered ${file}`)
 }
