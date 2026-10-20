@@ -77,7 +77,7 @@ export async function initPage({ scenes, shape = 'mark' }) {
   try {
     if (debug.has('no3d')) throw new Error('turned off by ?debug=no3d')
     const { createScene } = await import('./scene.js')
-    scene = createScene({ canvas: $('#scene'), shape, reducedMotion, res: Number(debug.get('res')) || undefined, lights: !debug.has('nolights') })
+    scene = createScene({ canvas: $('#scene'), shape, reducedMotion, res: Number(debug.get('res')) || undefined, scrollRes: Number(debug.get('scrollres')) || 1, lights: !debug.has('nolights') })
   } catch (err) {
     console.warn('3D scene unavailable:', err)
     document.documentElement.classList.add('no-webgl')
@@ -214,7 +214,8 @@ function initNavigation() {
 }
 
 // Switches for finding what costs frames on a given browser, from the URL:
-// ?debug=fps,noblur,no3d,nolights,nopanels,res:0.5 (comma-separated).
+// ?debug=fps,noblur,blur:10,no3d,nolights,nopanels,res:0.5,scrollres:0.75
+// (comma-separated).
 function initDebug() {
   const flags = new Map(
     (new URLSearchParams(location.search).get('debug') ?? '')
@@ -224,6 +225,7 @@ function initDebug() {
   )
   const root = document.documentElement
   if (flags.has('noblur')) root.style.setProperty('--glass-blur', 'none')
+  if (flags.has('blur')) root.style.setProperty('--glass-blur', `blur(${Number(flags.get('blur'))}px)`)
   if (flags.has('nopanels')) root.classList.add('debug-nopanels')
   if (flags.has('fps')) {
     const meter = document.createElement('output')

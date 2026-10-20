@@ -203,7 +203,7 @@ function program(gl, vs, fs) {
   return p
 }
 
-export function createScene({ canvas, shape: shapeName = 'mark', reducedMotion = false, res, lights: withLights = true }) {
+export function createScene({ canvas, shape: shapeName = 'mark', reducedMotion = false, res, scrollRes = 1, lights: withLights = true }) {
   const shape = shapes[shapeName] ?? shapes.mark
   const gl = canvas.getContext('webgl', { alpha: true, premultipliedAlpha: true, antialias: false, depth: false, stencil: false, powerPreference: 'high-performance' })
   if (!gl) throw new Error('WebGL unavailable')
@@ -252,14 +252,20 @@ export function createScene({ canvas, shape: shapeName = 'mark', reducedMotion =
     pointer.py = e.clientY
   }, { passive: true })
 
+  // while the page scrolls, the drawing buffer can be scaled by scrollRes
+  let scrolledAt = -Infinity
+  if (scrollRes !== 1) window.addEventListener('scroll', () => (scrolledAt = performance.now()), { passive: true })
+  let prNow = pr
+
   function fit(radius) {
     // the bounding sphere's silhouette, seen from the camera at D = 6, plus a pixel or two
     const half = radius * shape.bound * 1.08 + 3
     const need = Math.ceil((2 * half) / 32) * 32
-    if (need > side || need < side * 0.7) {
-      side = need
+    prNow = performance.now() - scrolledAt < 150 ? pr * scrollRes : pr
+    if (need > side || need < side * 0.7 || canvas.width !== Math.round(side * prNow)) {
+      if (need > side || need < side * 0.7) side = need
       canvas.style.width = canvas.style.height = `${side}px`
-      canvas.width = canvas.height = Math.round(side * pr)
+      canvas.width = canvas.height = Math.round(side * prNow)
       gl.viewport(0, 0, canvas.width, canvas.height)
     }
   }
@@ -362,9 +368,9 @@ export function createScene({ canvas, shape: shapeName = 'mark', reducedMotion =
     const cx = Math.cos(a), sx2 = Math.sin(a), cy = Math.cos(b), sy2 = Math.sin(b)
     invRot.set([cy, 0, sy2, sx2 * sy2, cx, -sx2 * cy, -cx * sy2, sx2, cx * cy])
 
-    const c = (side * pr) / 2
+    const c = canvas.width / 2
     gl.uniform2f(u.uCenter, c, c)
-    gl.uniform1f(u.uScale, cur.radius * pr)
+    gl.uniform1f(u.uScale, cur.radius * (canvas.width / side))
     gl.uniform1f(u.uTime, t)
     gl.uniform1f(u.uAngle, angle)
     gl.uniformMatrix3fv(u.uInvRot, false, invRot)
