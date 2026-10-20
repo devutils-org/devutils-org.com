@@ -131,8 +131,8 @@ export default {
       id: 'results',
       scene: 'results',
       eyebrow: 'LATEST RUNS / 19–21 OCTOBER 2026',
-      title: ['Nine targets.', 'Every check passed.'],
-      text: 'The latest run on each target: the ten checks of the chain, the packages xpac installed for the reference tools, and Omniscient’s reference pairs.',
+      title: ['Nine targets.', 'One open finding.'],
+      text: 'The latest run on each target: the ten checks of the chain, the packages xpac installed for the reference tools, and Omniscient’s reference pairs. Eight targets pass every check; Gentoo passes nine of ten.',
       head: ['Target', 'Kernel', 'Installed by xpac', 'Reference pairs'],
       rows: [
         ['chain-debian-12', '6.1', '19 packages, APT', '67 held · 61 skipped'],
@@ -143,9 +143,9 @@ export default {
         ['chain-rocky-9', '5.14', 'none: DNF4, which xpac does not drive, installs them', '78 held · 50 skipped'],
         ['chain-arch', '7.2.9', '18 packages, Pacman', '92 held · 36 skipped'],
         ['chain-alpine', '6.18', '19 packages, apk', '82 held · 46 skipped'],
-        ['chain-gentoo', '6.18', '12 packages, Portage; bpftrace refused (open)', '46 held · 85 skipped'],
+        ['chain-gentoo', '6.18', '13 packages, Portage', '46 held · 2 failed: Gentoo’s bcc does not load'],
       ],
-      fine: 'A pair is held when Omniscient and the reference tool agree within the declared tolerance; none failed. A pair is skipped when the guest cannot serve it, and the skip names the reason: kernels and packaged tools differ between distros. On Gentoo, xpac refuses to install bpftrace twice in a row with “plan is stale”: two successive <code>emerge --pretend</code> runs do not give the same plan. The chain counts that as a failed setup; it is an open xpac finding.',
+      fine: 'A pair is held when Omniscient and the reference tool agree within the declared tolerance. A pair is skipped when the guest cannot serve it, and the skip names the reason: kernels and packaged tools differ between distros. The chain found an xpac defect on Gentoo: two <code>emerge --pretend</code> runs list the same plan in a different order, and xpac refused bpftrace as a stale plan. Fixed in xpac, bpftrace now installs; but that binhost’s bcc was built against another LLVM and does not load, so two pairs fail without omn measuring wrong. An open finding.',
     },
     {
       type: 'cards',
@@ -176,7 +176,7 @@ distroproof up -f distroproof-devutils.toml --no-tui --jobs 1 \\
   --json target/matrix/devutils.json`,
       actions: `<a class="primary" href="/tools/distroproof/">Start with distroproof <span>${arrow}</span></a>
         <a class="secondary" href="/">All devutils tools</a>`,
-      small: 'Nine targets, every check passed · Omniscient is private for now · MIT / Apache-2.0',
+      small: 'Nine targets · one open finding on Gentoo · Omniscient is private for now · MIT / Apache-2.0',
     },
   ],
 }
