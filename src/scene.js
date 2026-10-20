@@ -203,7 +203,7 @@ function program(gl, vs, fs) {
   return p
 }
 
-export function createScene({ canvas, shape: shapeName = 'mark', reducedMotion = false }) {
+export function createScene({ canvas, shape: shapeName = 'mark', reducedMotion = false, res, lights: withLights = true }) {
   const shape = shapes[shapeName] ?? shapes.mark
   const gl = canvas.getContext('webgl', { alpha: true, premultipliedAlpha: true, antialias: false, depth: false, stencil: false, powerPreference: 'high-performance' })
   if (!gl) throw new Error('WebGL unavailable')
@@ -221,7 +221,7 @@ export function createScene({ canvas, shape: shapeName = 'mark', reducedMotion =
   lights.className = 'scene-lights'
   lights.setAttribute('aria-hidden', 'true')
   lights.style.cssText = `width:${2 * LIGHT_UNITS * UNIT}px;height:${2 * LIGHT_UNITS * UNIT}px;background:${lightsBackground()}`
-  canvas.before(lights)
+  if (withLights) canvas.before(lights)
 
   const target = { anchor: null, fx: 0.5, fy: 0.5, size: 0.3, opacity: 1 }
   const cur = { radius: 0, opacity: 1, rx: shape.rot[0], ry: shape.rot[1], state: 0, px: 0, py: 0 }
@@ -232,7 +232,7 @@ export function createScene({ canvas, shape: shapeName = 'mark', reducedMotion =
   let w = 1, h = 1, pr = 1
   // Resolution drops a step at a time while frames run late: the glass is
   // soft, so a lower drawing buffer scaled up by CSS costs little to the eye.
-  let prCap = Infinity
+  let prCap = res ?? Infinity
   const prFloor = 0.75
   // the canvas's side in CSS px, in steps of 32 so a gliding radius resizes it rarely
   let side = 0

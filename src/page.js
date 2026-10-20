@@ -35,6 +35,7 @@ export function renderFlowCards(steps, prefix = 'flow') {
 // .stage gets the mark on it; on narrow screens the others get it centred.
 // shape: which glass shape (src/shapes.js) the page shows.
 export async function initPage({ scenes, shape = 'mark' }) {
+  const debug = initDebug()
   initExternalLinks()
   initNavigation()
   initTopLinks()
@@ -74,8 +75,9 @@ export async function initPage({ scenes, shape = 'mark' }) {
   // the glass mark
   let scene = null
   try {
+    if (debug.has('no3d')) throw new Error('turned off by ?debug=no3d')
     const { createScene } = await import('./scene.js')
-    scene = createScene({ canvas: $('#scene'), shape, reducedMotion })
+    scene = createScene({ canvas: $('#scene'), shape, reducedMotion, res: Number(debug.get('res')) || undefined, lights: !debug.has('nolights') })
   } catch (err) {
     console.warn('3D scene unavailable:', err)
     document.documentElement.classList.add('no-webgl')
@@ -207,4 +209,36 @@ function initNavigation() {
     if (!header.contains(event.relatedTarget)) setOpen(false)
   })
   mobile.addEventListener('change', () => setOpen(false))
+}
+
+// Switches for finding what costs frames on a given browser, from the URL:
+// ?debug=fps,noblur,no3d,nolights,nopanels,res:0.5 (comma-separated).
+function initDebug() {
+  const flags = new Map(
+    (new URLSearchParams(location.search).get('debug') ?? '')
+      .split(',')
+      .filter(Boolean)
+      .map((f) => f.split(':')),
+  )
+  const root = document.documentElement
+  if (flags.has('noblur')) root.style.setProperty('--glass-blur', 'none')
+  if (flags.has('nopanels')) root.classList.add('debug-nopanels')
+  if (flags.has('fps')) {
+    const meter = document.createElement('output')
+    meter.className = 'debug-fps'
+    document.body.append(meter)
+    const times = []
+    let last = performance.now()
+    const tick = (now) => {
+      times.push(now - last)
+      last = now
+      if (times.length > 60) times.shift()
+      const sorted = [...times].sort((a, b) => a - b)
+      const avg = times.reduce((a, b) => a + b, 0) / times.length
+      meter.textContent = `${(1000 / avg).toFixed(0)} fps · worst ${sorted.at(-1).toFixed(0)} ms · ${[...flags.keys()].join(' ')}`
+      requestAnimationFrame(tick)
+    }
+    requestAnimationFrame(tick)
+  }
+  return flags
 }

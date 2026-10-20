@@ -57,7 +57,7 @@ export default {
       scene: 'glass',
       eyebrow: 'THE GLASS / RENDERED, NOT DRAWN',
       title: ['A mark you can', 'push around.'],
-      text: 'On the site, the mark is not an image. It is a slab of glass, raymarched in a Three.js shader and refracting the near-black page.',
+      text: 'On the site, the mark is not an image. It is a slab of glass, raymarched in a plain WebGL shader, drawn only in the square around it, and refracting the lights behind it.',
       cards: [
         { label: 'SIX BLOCKS', title: 'Cut into parts.', text: 'The shader builds the mark from six blocks: the ball, the ring in four arcs, and the disc. The ball orbits the ring, and the ring and disc reshape around it.' },
         { label: 'THE POINTER', title: 'It answers only up close.', text: 'Every shape moves slowly on its own. Near the pointer, the blocks turn into bubbles and drift away from it, then settle back.' },

@@ -596,3 +596,7 @@ footer a:hover { color: #fff; }
 @media (prefers-reduced-transparency: reduce) {
   :root { --glass-blur: none; }
 }
+
+/* ?debug= switches (page.js, initDebug) */
+.debug-fps { position: fixed; right: 12px; bottom: 12px; z-index: 100; padding: 6px 10px; border-radius: var(--radius-small); background: #000c; color: #9fe8c2; font: 12px var(--mono); pointer-events: none; }
+.debug-nopanels .glass, .debug-nopanels .flow-back, .debug-nopanels .flow-front { backdrop-filter: none !important; background: #0b0c12 !important; }

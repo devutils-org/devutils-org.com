@@ -4,7 +4,7 @@ The site of [devutils-org](https://github.com/devutils-org): the org's home page
 now, one landing page per tool next.
 
 Same art direction as the Omniscient site, in frosted glass. The 3D is the
-atfq mark, raymarched in a Three.js shader as a slab of glass: the ball orbits
+atfq mark, raymarched in a WebGL shader as a slab of glass: the ball orbits
 the ring, the ring and the disc reshape around it. It sits on the hero, slides
 behind the frosted panels as the page scrolls, and returns for the closing
 call to action.
@@ -35,6 +35,11 @@ Pages:
   terminal views are real snapshots from `omniscient/docs/view/gallery`
   (fixture `many-requests`), copied into `src/omn/captures/` and coloured by
   `src/omn/ansi.js`; refresh them by copying the `.ansi` files again.
+
+Performance switches, on any page's URL: `?debug=fps,noblur,nopanels,no3d,nolights,res:0.5`
+(an FPS meter; no panel blur; plain panels; no 3D; no lights behind it; a
+drawing-buffer resolution cap). They say which layer costs frames on a given
+browser.
 
 `src/page.js` is what every page shares (scene, frosted panels, reveal, copy
 buttons, step-through pipelines). The mark is `public/mark.svg`: use it, not a
