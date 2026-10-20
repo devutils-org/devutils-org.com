@@ -87,10 +87,10 @@ export default {
     pill: { href: 'book/', left: 'THE BOOK', right: 'EVERY CARD, IN YOUR BROWSER →' },
     title: ['Ask the question.', 'Your machine answers.'],
     copy: 'Understand Linux metrics in your terminal.<br />Short answers, backed by your machine’s live state.',
-    product: '121 cards on how Linux works, each checked against what /proc and /sys say right now.<br />One binary for x86-64 and ARM64 Linux. Read-only, offline, no root.',
+    product: '122 cards on how Linux works, each checked against what /proc and /sys say right now.<br />One binary for x86-64 and ARM64 Linux. Read-only, offline, no root.',
     primary: 'Install ATFQ',
     secondary: ['Read the book', 'book/'],
-    hud: [['ATFQ.ASK', 'A QUESTION / ITS ANSWER'], ['9 HUBS · 121 CARDS · 49 PROBES', 'READ-ONLY / OFFLINE']],
+    hud: [['ATFQ.ASK', 'A QUESTION / ITS ANSWER'], ['9 HUBS · 122 CARDS · 50 PROBES', 'READ-ONLY / OFFLINE']],
     caption: ['SHORT ANSWERS FIRST', 'YOUR MACHINE’S REAL STATE', 'THE WHY, IF YOU WANT IT'],
   },
   sections: [
@@ -158,7 +158,7 @@ export default {
     should I change it?`,
         },
       ],
-      stats: [['9', 'hubs'], ['121', 'cards'], ['30', 'chapters'], ['49', 'live probes']],
+      stats: [['9', 'hubs'], ['122', 'cards'], ['30', 'chapters'], ['50', 'live probes']],
       link: ['Read 17.1 in the book →', 'book/17.1.html'],
     },
     {
