@@ -28,7 +28,7 @@ const look = {
   atfq: { shape: 'mark', name: 'ATFQ', scale: 0.92 },
   distroproof: { shape: 'distroproof', name: 'distroproof', scale: 1.12 },
   xpac: { shape: 'xpac', name: 'xpac', scale: 1.12 },
-  vmanyware: { shape: 'vmanyware', name: 'VMAnyware', scale: 1.25 },
+  vmanyware: { shape: 'vmanyware', name: 'VMAnyware', scale: 0.95 },
 }
 
 // ---------- the composition ----------
@@ -173,7 +173,9 @@ function drawGlass(list) {
     gl.uniform1f(u('uAngle'), -Math.PI / 4)
     gl.uniformMatrix3fv(u('uInvRot'), false, new Float32Array([cy, 0, sy, sx * sy, cx, -sx * cy, -cx * sy, sx, cx * cy]))
     gl.uniform2f(u('uPointer'), 0, 0)
-    gl.uniform1f(u('uState'), 0)
+    // VMAnyware is shown with its instances out: the state the pointer
+    // brings on the site, where the definition buds its copies
+    gl.uniform1f(u('uState'), s.id === 'vmanyware' ? 1 : 0)
     const half = Math.ceil(r * shape.bound * 1.08 + 4)
     gl.scissor(Math.max(0, s.x - half), Math.max(0, H - s.y - half), half * 2, half * 2)
     gl.drawArrays(gl.TRIANGLES, 0, 3)
