@@ -163,7 +163,7 @@ function drawGlass(list) {
     gl.vertexAttribPointer(0, 3, gl.FLOAT, false, 0, 0)
     const u = (n) => gl.getUniformLocation(prog, n)
     // a pose: a moment of each shape's own slow motion, tilted as on the site
-    const t = { omn: 7.2, mark: 0, distroproof: 5.3, xpac: 4.1, vmanyware: 3.6 }[look[s.id].shape]
+    const t = { omn: 0, mark: 0, distroproof: 5.3, xpac: 4.1, vmanyware: 3.6 }[look[s.id].shape]
     const [rx, ry] = shape.rot
     const b = ry + t * shape.spin
     const cx = Math.cos(rx), sx = Math.sin(rx), cy = Math.cos(b), sy = Math.sin(b)
