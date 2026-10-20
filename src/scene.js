@@ -187,11 +187,15 @@ export function createScene({ canvas, shape: shapeName = 'mark', reducedMotion =
   const pointer = { x: 0, y: 0, px: -1e4, py: -1e4 }
   let last = null
   let w = 1, h = 1, pr = 1
+  // Resolution drops a step at a time while frames run late: the glass is
+  // soft, so a lower drawing buffer scaled up by CSS costs little to the eye.
+  let prCap = Infinity
+  const prFloor = 0.75
 
   function resize() {
     w = window.innerWidth
     h = window.innerHeight
-    pr = Math.min(window.devicePixelRatio, w < 600 ? 1.5 : 1.75)
+    pr = Math.min(window.devicePixelRatio, w < 600 ? 1.5 : 1.75, prCap)
     renderer.setPixelRatio(pr)
     renderer.setSize(w, h)
   }
@@ -218,6 +222,15 @@ export function createScene({ canvas, shape: shapeName = 'mark', reducedMotion =
   const rot = new THREE.Matrix4()
   const euler = new THREE.Euler()
   let t = 0
+  // Drawing every frame is only worth it while something moves fast: a slide,
+  // a resize, the pointer's answer. At rest the mark drifts slowly, so 30
+  // frames a second are enough; out of sight, or faded out, nothing is drawn.
+  let sinceDraw = Infinity
+  let opacityShown = ''
+  let slow = 0
+  let wasBusy = false
+  let pointerMoved = false
+  window.addEventListener('pointermove', () => (pointerMoved = true), { passive: true })
 
   function frame(time) {
     timer.update(time)
@@ -270,7 +283,32 @@ export function createScene({ canvas, shape: shapeName = 'mark', reducedMotion =
     uniforms.uScale.value = cur.radius * pr
     uniforms.uTime.value = t
 
-    canvas.style.opacity = cur.opacity.toFixed(3)
+    const opacity = cur.opacity.toFixed(3)
+    if (opacity !== opacityShown) canvas.style.opacity = opacityShown = opacity
+
+    const bound = cur.radius * shape.bound
+    const visible = cur.opacity > 0.01 && x + bound > 0 && x - bound < w && y + bound > 0 && y - bound < h
+    const busy =
+      Math.hypot(slide.x, slide.y) > 0.5 ||
+      Math.abs(cur.radius - at.radius) > 0.5 ||
+      Math.abs(cur.opacity - target.opacity) > 0.005 ||
+      (cur.state > 0.002 && cur.state < 0.998) ||
+      pointerMoved
+    pointerMoved = false
+    sinceDraw += dt
+    if (!visible || (!busy && sinceDraw < 1 / 40)) return
+
+    // frames that keep coming late, while drawing every one: draw fewer pixels
+    if (busy && wasBusy) {
+      slow = sinceDraw > 1 / 45 ? slow + 1 : Math.max(0, slow - 2)
+      if (slow > 45 && pr > prFloor) {
+        prCap = Math.max(prFloor, pr - 0.25)
+        slow = 0
+        resize()
+      }
+    }
+    wasBusy = busy
+    sinceDraw = 0
     renderer.render(scene, camera)
   }
   renderer.setAnimationLoop(frame)

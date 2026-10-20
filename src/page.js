@@ -91,8 +91,11 @@ export async function initPage({ scenes, shape = 'mark' }) {
     if (window.innerWidth < 700 && !state.anchor) Object.assign(state, { fx: 0.5, size: 0.42 })
     scene.setState(state)
   }
-  window.addEventListener('scroll', update, { passive: true })
-  window.addEventListener('resize', update)
+  // once per frame at most: each update reads every section's position
+  let queued = false
+  const schedule = () => queued || ((queued = true), requestAnimationFrame(() => ((queued = false), update())))
+  window.addEventListener('scroll', schedule, { passive: true })
+  window.addEventListener('resize', schedule)
   update()
 }
 
