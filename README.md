@@ -43,6 +43,17 @@ lights behind it; a drawing-buffer resolution cap, always or while scrolling:
 0.75 by default, `scrollres:1` turns it off). They say which layer costs frames on a given
 browser.
 
+The build writes each page's generated content into its HTML
+(`scripts/prerender.mjs`, from `src/prerender.js` built for Node with
+`vite build --ssr`): pages read without JavaScript, search engines and link
+previews see the text, and nothing shifts when the scripts start. A page's
+content lives in one function that returns its HTML as strings
+(`toolPageHtml` in `src/toolpage/render.js`, `homeHtml` in `src/home.js`,
+`omnHtml` in `src/omn/html.js`); the page's script fills an element only when
+the build has not, then wires it up. A new page goes in `src/prerender.js` too.
+The script also adds speculation rules (a page loads while the pointer rests
+on its link), and `style.css` cross-fades from one page to the next.
+
 `src/page.js` is what every page shares (scene, frosted panels, reveal, copy
 buttons, step-through pipelines). The mark is `public/mark.svg`: use it, not a
 copy, wherever the logo appears.

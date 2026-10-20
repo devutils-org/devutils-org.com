@@ -3,11 +3,12 @@ import { defineConfig } from 'vite'
 
 // One entry per page. Tool landing pages go in tools/<name>/index.html
 // and get added here.
-export default defineConfig({
+export default defineConfig(({ isSsrBuild }) => ({
   base: '/',
   build: {
     chunkSizeWarningLimit: 800,
-    rollupOptions: {
+    // the SSR build (src/prerender.js) takes its entry from the command line
+    rollupOptions: isSsrBuild ? {} : {
       input: {
         main: resolve(import.meta.dirname, 'index.html'),
         omn: resolve(import.meta.dirname, 'tools/omn/index.html'),
@@ -20,4 +21,4 @@ export default defineConfig({
       },
     },
   },
-})
+}))

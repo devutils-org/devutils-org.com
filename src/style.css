@@ -603,3 +603,11 @@ footer a:hover { color: #fff; }
 .debug-nopanels .glass, .debug-nopanels .flow-back, .debug-nopanels .flow-front { backdrop-filter: none !important; background: #0b0c12 !important; }
 
 .glass.over-3d, .over-3d .flow-back, .over-3d .flow-front { backdrop-filter: var(--glass-blur); }
+
+/* From one page to the next: a short cross-fade, the bar staying in place,
+   where the browser supports cross-document view transitions. */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  .nav { view-transition-name: site-nav; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .28s; }
+}

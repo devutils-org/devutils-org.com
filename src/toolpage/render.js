@@ -80,9 +80,9 @@ const sections = {
       ${s.tabs.map((t, i) => `<button role="tab" type="button" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}" data-tab="${i}">${t.name}</button>`).join('')}
     </div>
     <div class="terminal glass" role="tabpanel" tabindex="0">
-      <div class="terminal-header"><span>● ● ●</span><code data-term-label></code><span>LINUX</span></div>
-      <div class="terminal-body"><pre class="tui shell" data-term></pre></div>
-      <p class="terminal-caption" data-term-caption></p>
+      <div class="terminal-header"><span>● ● ●</span><code data-term-label>${s.tabs[0].label}</code><span>LINUX</span></div>
+      <div class="terminal-body"><pre class="tui shell" data-term>${s.tabs[0].html ?? shell(s.tabs[0].text)}</pre></div>
+      <p class="terminal-caption" data-term-caption>${s.tabs[0].caption}</p>
     </div>
     ${s.fine ? `<p class="fine capture-note">${s.fine}</p>` : ''}
   </section>`,
@@ -224,26 +224,37 @@ function shell(text) {
     .join('\n')
 }
 
-export async function renderToolPage(page) {
+// The page's HTML as strings, keyed by the element each one fills. The build
+// writes them into the page (scripts/prerender.mjs), so the content is there
+// before any script runs; renderToolPage fills them only if it is not.
+export function toolPageHtml(page) {
   const tool = page.meta ?? tools.find((t) => t.id === page.id)
   const repo = tool.repoUrl ?? repoUrl(tool)
   const nav = [...page.nav.filter(([, href]) => href !== '#case-study'), ...(renderPractice(tool.id) ? [['In practice', '#in-practice']] : [])]
 
-  $('#nav').innerHTML = html`
+  return {
+    nav: html`
     <div class="logo">
       <a class="crumb-home" href="/" aria-label="devutils home"><img class="logo-icon" src="/mark.svg" alt="" /><span>devutils</span></a>
       <span class="crumb-sep">/</span>
       <a href="${tool.site ?? `/tools/${tool.id}/`}">${tool.name}</a>${tool.status ? `<span class="alpha">${tool.status}</span>` : ''}
     </div>
     <nav aria-label="Sections">${nav.map(([label, href]) => `<a href="${href}">${label}</a>`).join('')}</nav>
-    <a class="github" href="${repo}">GitHub <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></a>`
+    <a class="github" href="${repo}">GitHub <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></a>`,
 
-  $('#main').innerHTML = hero(page.hero, tool, page.sections.find((section) => section.type === 'intro')?.id ?? 'overview') + page.sections.map((s) => (s.type === 'start' ? renderPractice(tool.id) : '') + sections[s.type](s, tool)).join('')
+    main: hero(page.hero, tool, page.sections.find((section) => section.type === 'intro')?.id ?? 'overview') + page.sections.map((s) => (s.type === 'start' ? renderPractice(tool.id) : '') + sections[s.type](s, tool)).join(''),
 
-  $('#footer').innerHTML = html`
+    footer: html`
     <a class="logo" href="/"><img class="logo-icon" src="/mark.svg" alt="" /> devutils</a>
     <span>${tool.name} · ${tool.line}</span>
-    ${tool.license ? `<a href="${repo}">${tool.license} <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></a>` : `<a href="${repo}">Repository <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></a>`}`
+    ${tool.license ? `<a href="${repo}">${tool.license} <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></a>` : `<a href="${repo}">Repository <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></a>`}`,
+  }
+}
+
+export async function renderToolPage(page) {
+  if (!$('#main').firstElementChild) {
+    for (const [id, markup] of Object.entries(toolPageHtml(page))) $(`#${id}`).innerHTML = markup
+  }
 
   // terminals
   for (const s of page.sections.filter((s) => s.type === 'terminal')) {

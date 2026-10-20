@@ -1,6 +1,7 @@
-import { renderPractice, initPractice } from '../practice/practice.js'
+import { initPractice } from '../practice/practice.js'
 import { tools, repoUrl } from '../tools.js'
-import { $, $$, initPage, renderFlowCards } from '../page.js'
+import { $, $$, initPage } from '../page.js'
+import { omnHtml, arrow, familyLabel } from './html.js'
 import { ansiToHtml } from './ansi.js'
 import { families } from './families.js'
 import request from './captures/request.ansi?raw'
@@ -10,28 +11,17 @@ import flame from './captures/flame.ansi?raw'
 const omn = tools.find((t) => t.id === 'omn')
 const repo = repoUrl(omn)
 
-$('#portability').insertAdjacentHTML('beforebegin', renderPractice('omn'))
+if (!$('#family-grid').firstElementChild) {
+  const parts = omnHtml()
+  for (const [id, markup] of Object.entries(parts.fill)) $(`#${id}`).innerHTML = markup
+  $('#portability').insertAdjacentHTML('beforebegin', parts.practice)
+}
 initPractice()
 
 // data-repo="<path>" → a link into the repository
 $$('[data-repo]').forEach((a) => (a.href = repo + a.dataset.repo))
 
 // ---------- families: each card opens into its story ----------
-
-const arrow = (name) => `<svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#${name}"></use></svg>`
-const familyLabel = (f, i) => `<small>${String(i + 1).padStart(2, '0')} / ${f.id.toUpperCase()}</small>`
-
-$('#family-grid').innerHTML = families
-  .map(
-    (f, i) => `
-    <button class="family-card glass reveal" style="--d:${(i % 3) * 0.08}s" type="button" data-family="${i}" aria-haspopup="dialog">
-      <div><span class="family-glyph">${f.glyph}</span>${familyLabel(f, i)}<span class="family-arrow">${arrow('arrow-up-right')}</span></div>
-      <h3>${f.name}</h3>
-      <p>${f.text}</p>
-      <span class="family-link"><span>Read the story</span><span class="family-count">${f.sources} sources</span></span>
-    </button>`,
-  )
-  .join('')
 
 const story = $('#family-story')
 const guide = (f) => omn.repoPrivate
@@ -94,15 +84,6 @@ if (omn.repoPrivate) {
     link.replaceWith(label)
   })
 }
-
-// ---------- the Suzanne scenario ----------
-
-$('#pipeline').innerHTML = renderFlowCards([
-  { glyph: '↙', label: 'NETWORK', title: 'Receive.', code: 'HTTP → render request', text: 'Mark the request boundary and propagate its identity into downstream work.' },
-  { glyph: '⌘', label: 'CPU', title: 'Prepare.', code: 'Suzanne → draw commands', text: 'Inspect execution, scheduler delays and the threads preparing Suzanne.' },
-  { glyph: '◇', label: 'GPU', title: 'Render.', code: 'geometry → frame', text: 'Inspect rendering activity through the backend the device and engine expose.' },
-  { glyph: '▱', label: 'DISK', title: 'Persist.', code: 'frame → suzanne.png', text: 'Follow suzanne.png to write(); durable block-device completion is a separate measurement.' },
-].map((step) => ({ ...step, color: omn.color })), 'workflow')
 
 // ---------- terminal views: real snapshots ----------
 

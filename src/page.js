@@ -6,7 +6,7 @@ import { initExternalLinks } from './external-links.js'
 
 export const $ = (s, el = document) => el.querySelector(s)
 export const $$ = (s, el = document) => [...el.querySelectorAll(s)]
-export const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches
+export const reducedMotion = typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches
 export const pad = (i) => String(i + 1).padStart(2, '0')
 export const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
 
@@ -76,6 +76,8 @@ export async function initPage({ scenes, shape = 'mark' }) {
   let scene = null
   try {
     if (debug.has('no3d')) throw new Error('turned off by ?debug=no3d')
+    // the text first: the 3D starts once the page has painted and is idle
+    await new Promise((done) => ('requestIdleCallback' in window ? requestIdleCallback(done, { timeout: 500 }) : setTimeout(done, 50)))
     const { createScene } = await import('./scene.js')
     scene = createScene({ canvas: $('#scene'), shape, reducedMotion, res: Number(debug.get('res')) || undefined, scrollRes: Number(debug.get('scrollres')) || 0.75, lights: !debug.has('nolights') })
   } catch (err) {

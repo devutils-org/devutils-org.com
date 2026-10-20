@@ -199,17 +199,27 @@ function program(gl, vs, fs) {
   gl.attachShader(p, compile(gl.FRAGMENT_SHADER, fs))
   gl.bindAttribLocation(p, 0, 'position')
   gl.linkProgram(p)
-  if (!gl.getProgramParameter(p, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(p))
+  // Linking the raymarcher takes a while. Where the driver can do it on its
+  // own thread, frames wait for it instead of the page freezing on it.
   return p
+}
+
+// A software rasteriser runs the shader on the CPU, frame after frame on the
+// main thread: the page would freeze. Such a machine gets the still SVG.
+function software(gl) {
+  const info = gl.getExtension('WEBGL_debug_renderer_info')
+  const name = info ? gl.getParameter(info.UNMASKED_RENDERER_WEBGL) : ''
+  return /swiftshader|llvmpipe|softpipe|software|basic render/i.test(name)
 }
 
 export function createScene({ canvas, shape: shapeName = 'mark', reducedMotion = false, res, scrollRes = 1, lights: withLights = true }) {
   const shape = shapes[shapeName] ?? shapes.mark
-  const gl = canvas.getContext('webgl', { alpha: true, premultipliedAlpha: true, antialias: false, depth: false, stencil: false, powerPreference: 'high-performance' })
-  if (!gl) throw new Error('WebGL unavailable')
+  const gl = canvas.getContext('webgl', { alpha: true, premultipliedAlpha: true, antialias: false, depth: false, stencil: false, powerPreference: 'high-performance', failIfMajorPerformanceCaveat: true })
+  if (!gl) throw new Error('no hardware-accelerated WebGL')
+  if (software(gl)) throw new Error('WebGL runs in software here')
   const prog = program(gl, vertexShader, fragment(shape))
-  gl.useProgram(prog)
-  const u = Object.fromEntries(['uCenter', 'uScale', 'uTime', 'uAngle', 'uInvRot', 'uPointer', 'uState'].map((n) => [n, gl.getUniformLocation(prog, n)]))
+  const parallel = gl.getExtension('KHR_parallel_shader_compile')
+  let u = null // uniform locations, once the program is linked
   // one triangle that covers the canvas
   gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer())
   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 0, 3, -1, 0, -1, 3, 0]), gl.STATIC_DRAW)
@@ -220,11 +230,13 @@ export function createScene({ canvas, shape: shapeName = 'mark', reducedMotion =
   const lights = document.createElement('div')
   lights.className = 'scene-lights'
   lights.setAttribute('aria-hidden', 'true')
-  lights.style.cssText = `width:${2 * LIGHT_UNITS * UNIT}px;height:${2 * LIGHT_UNITS * UNIT}px;background:${lightsBackground()}`
+  lights.style.cssText = `opacity:0;width:${2 * LIGHT_UNITS * UNIT}px;height:${2 * LIGHT_UNITS * UNIT}px;background:${lightsBackground()}`
   if (withLights) canvas.before(lights)
+  canvas.style.opacity = '0'
 
   const target = { anchor: null, fx: 0.5, fy: 0.5, size: 0.3, opacity: 1 }
-  const cur = { radius: 0, opacity: 1, rx: shape.rot[0], ry: shape.rot[1], state: 0, px: 0, py: 0 }
+  // opacity 0: the glass fades in once its program is ready
+  const cur = { radius: 0, opacity: 0, rx: shape.rot[0], ry: shape.rot[1], state: 0, px: 0, py: 0 }
   let lastHover = -1e9
   const slide = { x: 0, y: 0 } // offset left by the previous anchor, decays to 0
   const pointer = { x: 0, y: 0, px: -1e4, py: -1e4 }
@@ -287,9 +299,27 @@ export function createScene({ canvas, shape: shapeName = 'mark', reducedMotion =
   let shown = ''
   let sinceDraw = Infinity
   let slow = 0
+  let crawl = 0
+
+  let stopped = false
+  // give up on the 3D: the page shows the still mark instead
+  function fallback(reason) {
+    console.warn('3D scene off:', reason)
+    stopped = true
+    document.documentElement.classList.add('no-webgl')
+    canvas.hidden = true
+    lights.remove()
+  }
 
   function frame(now) {
+    if (stopped) return
     requestAnimationFrame(frame)
+    if (!u) {
+      if (parallel && !gl.getProgramParameter(prog, parallel.COMPLETION_STATUS_KHR)) return
+      if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) return fallback(gl.getProgramInfoLog(prog))
+      gl.useProgram(prog)
+      u = Object.fromEntries(['uCenter', 'uScale', 'uTime', 'uAngle', 'uInvRot', 'uPointer', 'uState'].map((n) => [n, gl.getUniformLocation(prog, n)]))
+    }
     const dt = then === null ? 0 : Math.min((now - then) / 1000, 0.05)
     then = now
     if (!reducedMotion) t += dt
@@ -356,11 +386,18 @@ export function createScene({ canvas, shape: shapeName = 'mark', reducedMotion =
     if (sinceDraw !== Infinity) {
       sinceDraw += dt
       slow = sinceDraw > 1 / 45 ? slow + 1 : Math.max(0, slow - 2)
+      // under 20 frames a second; a browser saving battery caps at 30
+      crawl = sinceDraw > 1 / 20 ? crawl + 1 : Math.max(0, crawl - 2)
       if (slow > 45 && pr > prFloor) {
         prCap = Math.max(prFloor, pr - 0.25)
         slow = 0
         resize()
         fit(cur.radius)
+      } else if (pr <= prFloor && crawl > 60) {
+        // under 20 frames a second at the lowest resolution, for seconds: this
+        // machine cannot keep up, and a page that stutters is worse than a
+        // still mark
+        return fallback('frames stay late at the lowest resolution')
       }
     }
     sinceDraw = 0
