@@ -43,9 +43,9 @@ test('rows follow the given order and name what installed the packages', () => {
   assert.throws(() => chainResults([rocky], { order: ['chain-arch'] }), /no run for chain-arch/)
 })
 
-test('the published snapshot: two targets rerun, no failure', () => {
+test('the published snapshot: every target on eleven checks, two with a failure', () => {
   const r = chainResults(snapshot, { newest: 'atfq and envprobe must describe the machine the same way' })
-  assert.deepEqual(r.title, ['Nine targets, no pair failed.', 'Two rerun with every check.'])
-  assert.equal(r.eyebrow, 'LATEST RUNS / 19–21 OCTOBER 2026')
-  assert.match(r.text, /Only Debian 13 and Gentoo have been rerun since, with all eleven checks and 132 pairs; the other seven latest runs predate it, with ten checks and 129 pairs\./)
+  assert.deepEqual(r.title, ['Nine targets.', 'Two with a failure.'])
+  assert.equal(r.eyebrow, 'LATEST RUNS / 21 OCTOBER 2026')
+  assert.match(r.text, /Every target has run all eleven checks, with 132 pairs\./)
 })
