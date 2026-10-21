@@ -5,21 +5,19 @@
     "kernel": "6.18.35-0-virt",
     "checks": {
       "total": 11,
-      "failed": [
-        "omn-reference-pairs"
-      ]
+      "failed": []
     },
     "packages": {
       "engine": "xpac",
       "provider": "apk",
-      "installed": 19
+      "installed": 20
     },
     "pairs": {
-      "held": 82,
-      "skipped": 47,
+      "held": 83,
+      "skipped": 48,
       "gaps": 1,
       "known": 0,
-      "failed": 2
+      "failed": 0
     }
   },
   {
@@ -145,11 +143,11 @@
       "installed": 15
     },
     "pairs": {
-      "held": 78,
+      "held": 80,
       "skipped": 50,
       "gaps": 1,
       "known": 0,
-      "failed": 3
+      "failed": 1
     }
   },
   {
@@ -158,9 +156,7 @@
     "kernel": "4.15.0-212-generic",
     "checks": {
       "total": 11,
-      "failed": [
-        "omn-reference-pairs"
-      ]
+      "failed": []
     },
     "packages": {
       "engine": "xpac",
@@ -168,8 +164,8 @@
       "installed": 18
     },
     "pairs": {
-      "held": 7,
-      "skipped": 44,
+      "held": 36,
+      "skipped": 95,
       "gaps": 1,
       "known": 0,
       "failed": 0
@@ -181,9 +177,7 @@
     "kernel": "6.8.0-147-generic",
     "checks": {
       "total": 11,
-      "failed": [
-        "omn-reference-pairs"
-      ]
+      "failed": []
     },
     "packages": {
       "engine": "xpac",
@@ -191,11 +185,11 @@
       "installed": 20
     },
     "pairs": {
-      "held": 76,
+      "held": 78,
       "skipped": 53,
       "gaps": 1,
       "known": 0,
-      "failed": 2
+      "failed": 0
     }
   }
 ]
