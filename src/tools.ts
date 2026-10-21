@@ -160,9 +160,9 @@ export const tools: Tool[] = [
       'Define an environment once, provision it on Proxmox, then manage and reach it from desktop or mobile. ' +
       'A native client and a self-hosted control plane.',
     step: 'Describe an environment once, provision it on your own Proxmox host, and reach it over SSH from desktop or phone.',
-    flowDetail: 'In development: definitions and previews work locally, with isolated start/stop validation. End-to-end provisioning and real VM lifecycle validation are still in progress.',
+    flowDetail: 'Native/generated-provider checks cover provisioning, lifecycle, SSH and recovery. Declared packages/final snapshots work through the API; native integration, current Android runtime and real homelab acceptance remain open.',
     status: 'In development',
-    statusNote: 'local lifecycle validated · provisioning in progress',
+    statusNote: 'native/API workflows tested · real homelab acceptance pending',
     license: 'MIT / Apache-2.0',
     command: null,
     repo: 'VMAnyware',
@@ -173,9 +173,9 @@ export const tools: Tool[] = [
         'Décrivez un environnement une fois, créez-le sur Proxmox, puis gérez-le et accédez-y depuis votre ordinateur ou votre téléphone. ' +
         'Une application native et un serveur de contrôle hébergé chez vous.',
       step: 'Décrire un environnement une fois, le créer sur votre propre serveur Proxmox, et s’y connecter en SSH depuis l’ordinateur ou le téléphone.',
-      flowDetail: 'En développement : les définitions et les aperçus fonctionnent en local, le démarrage et l’arrêt sont validés de façon isolée. La création complète des machines et la validation de leur cycle de vie réel sont encore en cours.',
+      flowDetail: 'Les parcours natifs et les tests avec fournisseur simulé couvrent création, cycle de vie, SSH et reprise. Les paquets et le snapshot final passent via l’API ; leur intégration au client, l’APK actuel et le homelab réel restent à valider.',
       status: 'En développement',
-      statusNote: 'cycle de vie validé en local · création des machines en cours',
+      statusNote: 'parcours natifs/API testés · validation réelle en attente',
     },
   },
 ]

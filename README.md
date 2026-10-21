@@ -168,3 +168,13 @@ than the rows show. After a new run of the chain:
 npm run chain:runs   # Omniscient beside devutils, or OMNISCIENT_DIR=...
 npm test
 ```
+
+### VMAnyware status synchronization
+
+The VMAnyware tool page and tool index distinguish native/generated-provider
+integration from real infrastructure acceptance. Source: VMAnyware STATE.md and
+ADRs 0074–0081, reviewed 2026-10-21. Current copy includes remote lifecycle/status,
+SSH, snapshots/deletion/recreation, durable recovery, API-only package/final-snapshot
+support and Linux/Android test artifacts. Native package controls, exact-current
+Android execution, real homelab/guest behavior and production/platform acceptance
+remain open. Do not infer an audited completion percentage or a release candidate.
