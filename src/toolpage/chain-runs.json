@@ -134,7 +134,7 @@
       "failed": []
     },
     "packages": {
-      "engine": "dnf4-bootstrap",
+      "engine": "xpac",
       "provider": "dnf",
       "installed": 16
     },
