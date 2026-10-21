@@ -131,12 +131,12 @@ export default {
       id: 'results',
       scene: 'results',
       eyebrow: 'LATEST RUNS / 19–21 OCTOBER 2026',
-      title: ['Nine targets.', 'One open finding.'],
-      text: 'The latest run on each target: the ten checks of the chain, the packages xpac installed for the reference tools, and Omniscient’s reference pairs. Eight targets pass every check; Gentoo passes nine of ten.',
+      title: ['Nine targets.', 'Two open findings.'],
+      text: 'The latest run on each target: the checks of the chain, the packages xpac installed for the reference tools, and Omniscient’s reference pairs. The chain now has eleven checks, the last one added on 21 October: atfq and envprobe must describe the machine the same way.',
       head: ['Target', 'Kernel', 'Installed by xpac', 'Reference pairs'],
       rows: [
         ['chain-debian-12', '6.1', '19 packages, APT', '67 held · 61 skipped'],
-        ['chain-debian-13', '6.12', '19 packages, APT', '71 held · 57 skipped'],
+        ['chain-debian-13', '6.12', '19 packages, APT', '71 held · 3 failed: two bcc tools do not run, one bucket off'],
         ['chain-ubuntu-24.04', '6.8', '20 packages, APT', '75 held · 53 skipped'],
         ['chain-ubuntu-18.04', '4.15', '18 packages, APT', '36 held · 92 skipped'],
         ['chain-fedora-latest', '6.19', '18 packages, DNF', '92 held · 36 skipped'],
@@ -145,7 +145,7 @@ export default {
         ['chain-alpine', '6.18', '19 packages, apk', '82 held · 46 skipped'],
         ['chain-gentoo', '6.18', '13 packages, Portage', '46 held · 2 failed: Gentoo’s bcc does not load'],
       ],
-      fine: 'A pair is held when Omniscient and the reference tool agree within the declared tolerance. A pair is skipped when the guest cannot serve it, and the skip names the reason: kernels and packaged tools differ between distros. The chain found an xpac defect on Gentoo: two <code>emerge --pretend</code> runs list the same plan in a different order, and xpac refused bpftrace as a stale plan. Fixed in xpac, bpftrace now installs; but that binhost’s bcc was built against another LLVM and does not load, so two pairs fail without omn measuring wrong. An open finding.',
+      fine: 'A pair is held when Omniscient and the reference tool agree within the declared tolerance. A pair is skipped when the guest cannot serve it, and the skip names the reason: kernels and packaged tools differ between distros. The chain found an xpac defect on Gentoo: two <code>emerge --pretend</code> runs list the same plan in a different order, and xpac refused bpftrace as a stale plan. Fixed in xpac, bpftrace now installs; but that binhost’s bcc was built against another LLVM and does not load, so two pairs fail without omn measuring wrong. The same two pairs, added after the other runs, fail on Debian 13 too, where bcc does not compile its programs: a tool that does not run still counts as a disagreement. Open findings.',
     },
     {
       type: 'cards',
@@ -176,7 +176,7 @@ distroproof up -f distroproof-devutils.toml --no-tui --jobs 1 \\
   --json target/matrix/devutils.json`,
       actions: `<a class="primary" href="/tools/distroproof/">Start with distroproof <span>${arrow}</span></a>
         <a class="secondary" href="/">All devutils tools</a>`,
-      small: 'Nine targets · one open finding on Gentoo · Omniscient is private for now · MIT / Apache-2.0',
+      small: 'Nine targets · two open findings · Omniscient is private for now · MIT / Apache-2.0',
     },
   ],
 }
