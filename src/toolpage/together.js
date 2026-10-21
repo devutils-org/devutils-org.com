@@ -1,12 +1,20 @@
 // Facts: omniscient/docs/distroproof.md, omniscient/distroproof-devutils.toml,
 // omniscient/scripts/distroproof/devutils/ (chain.py, setup.sh, packages.json),
-// omniscient/target/matrix/devutils*-summary.json (runs of 2026-10-19 and 20),
-// omniscient/target/matrix/devutils-broken.json (Debian 13 and Gentoo, 2026-10-21),
-// omniscient/.distroproof/collect/chain-*/reference.log (the tallies),
+// omniscient/.distroproof/collect/chain-*/ (the latest run on each target,
+// copied into chain-runs.json by scripts/chain-runs.mjs),
 // xpac/docs/distroproof.md, xpac/REFERENCE.md, atfq/DECISIONS.md.
 // Omniscient is private: its sources are cited by path, never linked.
 
-const arrow = '<svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg>'
+import { icon } from '../html.js'
+import { chainResults } from './chain-results.js'
+import runs from './chain-runs.json'
+
+const arrow = icon('arrow-up-right')
+
+const { summary, run, ...results } = chainResults(runs, {
+  order: ['chain-debian-12', 'chain-debian-13', 'chain-ubuntu-24.04', 'chain-ubuntu-18.04', 'chain-fedora-latest', 'chain-rocky-9', 'chain-arch', 'chain-alpine', 'chain-gentoo'],
+  newest: 'atfq and envprobe must describe the machine the same way',
+})
 
 export default {
   meta: {
@@ -132,22 +140,8 @@ export default {
       type: 'table',
       id: 'results',
       scene: 'results',
-      eyebrow: 'LATEST RUNS / 19–21 OCTOBER 2026',
-      title: ['Nine targets, no pair failed.', 'Two rerun with every check.'],
-      text: 'The latest run on each target: the checks of the chain, the packages xpac installed for the reference tools, and Omniscient’s reference pairs. The chain now has eleven checks, the last one added on 21 October: atfq and envprobe must describe the machine the same way. Only Debian 13 and Gentoo have been rerun since, with all eleven checks and 132 pairs; the other seven latest runs predate it, with ten checks and 129 pairs.',
-      head: ['Target', 'Run', 'Kernel', 'Installed by xpac', 'Reference pairs'],
-      rows: [
-        ['chain-debian-12', '19 Oct · 10 checks', '6.1', '19 packages, APT', '67 held · 61 skipped · 1 gap'],
-        ['chain-debian-13', '21 Oct · 11 checks', '6.12', '19 packages, APT', '72 held · 59 skipped · 1 gap'],
-        ['chain-ubuntu-24.04', '19 Oct · 10 checks', '6.8', '20 packages, APT', '75 held · 53 skipped · 1 gap'],
-        ['chain-ubuntu-18.04', '20 Oct · 10 checks', '4.15', '18 packages, APT', '36 held · 92 skipped · 1 gap'],
-        ['chain-fedora-latest', '20 Oct · 10 checks', '6.19', '18 packages, DNF', '92 held · 36 skipped · 1 gap'],
-        ['chain-rocky-9', '19 Oct · 10 checks', '5.14', 'none: DNF4, which xpac does not drive, installs them', '78 held · 50 skipped · 1 gap'],
-        ['chain-arch', '19 Oct · 10 checks', '7.2.9', '18 packages, Pacman', '92 held · 36 skipped · 1 gap'],
-        ['chain-alpine', '20 Oct · 10 checks', '6.18', '19 packages, apk', '82 held · 46 skipped · 1 gap'],
-        ['chain-gentoo', '21 Oct · 11 checks', '6.18', '13 packages, Portage', '46 held · 85 skipped · 1 gap'],
-      ],
-      fine: 'A pair is held when Omniscient and the reference tool agree within the declared tolerance. A pair is skipped when the guest cannot serve it, and the skip names the reason: kernels and packaged tools differ between distros. The gap, the same on every target, is a known difference rather than a failure: memleak counts memory mapped with <code>mmap</code>, and Omniscient’s heap measure does not. The chain found an xpac defect on Gentoo, now fixed: two <code>emerge --pretend</code> runs list the same plan in a different order, and xpac refused bpftrace as a stale plan. Two problems remain outside the tools. Gentoo’s binhost built bcc and bpftrace against another LLVM, so neither loads; on Debian 13, bcc does not compile its programs. Omniscient’s pairs used to count such a tool as a disagreement; they now skip it with its reason, which is why Gentoo skips 85 pairs, all of bpftrace’s among them. On Debian 13, a <code>biolatency</code> median one bucket outside its band in the previous run held on the rerun.',
+      ...results,
+      fine: `A pair is held when Omniscient and the reference tool agree within the declared tolerance. A pair is skipped when the guest cannot serve it, and the skip names the reason: kernels and packaged tools differ between distros. The gap, the same on every target, is a known difference rather than a failure: memleak counts memory mapped with <code>mmap</code>, and Omniscient’s heap measure does not. The chain found an xpac defect on Gentoo, now fixed: two <code>emerge --pretend</code> runs list the same plan in a different order, and xpac refused bpftrace as a stale plan. Two problems remain outside the tools. Gentoo’s binhost built bcc and bpftrace against another LLVM, so neither loads; on Debian 13, bcc does not compile its programs. Omniscient’s pairs used to count such a tool as a disagreement; they now skip it with its reason, which is why Gentoo skips ${run('chain-gentoo').pairs.skipped} pairs, all of bpftrace’s among them. On Debian 13, a <code>biolatency</code> median one bucket outside its band in the previous run held on the rerun.`,
     },
     {
       type: 'cards',
@@ -178,7 +172,7 @@ distroproof up -f distroproof-devutils.toml --no-tui --jobs 1 \\
   --json target/matrix/devutils.json`,
       actions: `<a class="primary" href="/tools/distroproof/">Start with distroproof <span>${arrow}</span></a>
         <a class="secondary" href="/">All devutils tools</a>`,
-      small: 'Nine targets, no pair failed · Omniscient is private for now · MIT / Apache-2.0',
+      small: `${summary} · Omniscient is private for now · MIT / Apache-2.0`,
     },
   ],
 }

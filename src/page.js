@@ -3,12 +3,11 @@
 // buttons. A page builds its content first, then calls initPage.
 
 import { initExternalLinks } from './external-links.js'
+import { esc, pad } from './html.js'
 
 export const $ = (s, el = document) => el.querySelector(s)
 export const $$ = (s, el = document) => [...el.querySelectorAll(s)]
 export const reducedMotion = typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches
-export const pad = (i) => String(i + 1).padStart(2, '0')
-export const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
 
 export function renderFlowCards(steps, prefix = 'flow') {
   return steps.map((step, i) => `

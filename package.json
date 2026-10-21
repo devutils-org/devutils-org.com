@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build && vite build --ssr src/prerender.js --outDir .ssr --emptyOutDir && node scripts/prerender.mjs",
     "preview": "vite preview",
-    "book:atfq": "node scripts/atfq-book.mjs"
+    "book:atfq": "node scripts/atfq-book.mjs",
+    "chain:runs": "node scripts/chain-runs.mjs",
+    "test": "node --test"
   },
   "devDependencies": {
     "vite": "^8.3.4"

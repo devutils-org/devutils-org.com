@@ -1,13 +1,20 @@
 import { renderPractice, initPractice } from '../practice/practice.js'
 import { tools, repoUrl } from '../tools.js'
-import { $, $$, pad, esc, initPage, renderFlowCards } from '../page.js'
+import { $, $$, initPage, renderFlowCards } from '../page.js'
+import { esc, pad, icon } from '../html.js'
+import { initTabs } from '../tabs.js'
 
-// A tool's landing page, built from its content file (src/toolpage/<id>.js)
-// on the composition of the Omniscient page: hero, intro, cards, an
-// interactive workflow, terminal captures, a status section, install.
-// Every section is optional; they render in the order given.
+// A tool's landing page, built from its content file (src/toolpage/<id>.js,
+// src/omn/page.js): hero, intro, cards, an interactive workflow, terminal
+// captures, a status section, install. Every section is optional; they render
+// in the order given. The tool's "In practice" stories go before `start`,
+// unless the page places a `practice` section itself.
 // A page that is not a tool's (the org's own pages) gives `meta` instead of
 // an id: name, line, color, site and repo, in the shape of a tools.js entry.
+//
+// Any section may also give `class` (beside "section"), `mark` (where the
+// glass mark goes behind it, over the default) and `wire(root)`, run once the
+// page is on screen. An `html` section is a heading over its own `body`.
 
 const html = String.raw
 
@@ -18,7 +25,7 @@ function hero(h, tool, overviewId) {
       <h1>${h.title[0]}<br /><span>${h.title[1]}</span></h1>
       <p class="hero-copy">${h.copy}</p>
       <div class="actions">
-        <a class="primary" href="#${overviewId}">Discover ${tool.name} <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/icons.svg#arrow-down"></use></svg></a>
+        <a class="primary" href="#${overviewId}">Discover ${tool.name} ${icon('arrow-down')}</a>
         <a class="secondary" href="#start">${h.primary}</a>
       </div>
       <div class="stage" aria-hidden="true">
@@ -34,7 +41,14 @@ const heading = (s) => html`
     <p>${s.text}</p>
   </div>`
 
-const open = (s) => `<section class="section" ${s.id ? `id="${s.id}"` : ''} data-scene="${s.scene}">`
+const open = (s) => `<section class="section${s.class ? ` ${s.class}` : ''}" ${s.id ? `id="${s.id}"` : ''} data-scene="${s.scene}">`
+
+// A link into the page's repository; while the repository is private, the
+// same label, shown as unavailable rather than leading to a 404.
+export function repoLink(tool, path, label, className = '') {
+  if (tool.repoPrivate) return `<span class="${className ? `${className} ` : ''}repo-unavailable" aria-disabled="true" title="The repository is currently private">${label}</span>`
+  return `<a${className ? ` class="${className}"` : ''} href="${tool.repoUrl ?? repoUrl(tool)}${path}">${label}</a>`
+}
 
 const sections = {
   intro: (s) => html`
@@ -80,12 +94,21 @@ const sections = {
       ${s.tabs.map((t, i) => `<button role="tab" type="button" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}" data-tab="${i}">${t.name}</button>`).join('')}
     </div>
     <div class="terminal glass" role="tabpanel" tabindex="0">
-      <div class="terminal-header"><span>● ● ●</span><code data-term-label>${s.tabs[0].label}</code><span>LINUX</span></div>
-      <div class="terminal-body"><pre class="tui shell" data-term>${s.tabs[0].html ?? shell(s.tabs[0].text)}</pre></div>
+      <div class="terminal-header"><span>● ● ●</span><code data-term-label>${s.tabs[0].label}</code><span>${s.size ?? 'LINUX'}</span></div>
+      <div class="terminal-body"><pre class="${s.pre ?? 'tui shell'}" data-term>${s.tabs[0].html ?? shell(s.tabs[0].text)}</pre></div>
       <p class="terminal-caption" data-term-caption>${s.tabs[0].caption}</p>
     </div>
     ${s.fine ? `<p class="fine capture-note">${s.fine}</p>` : ''}
+    ${s.after ?? ''}
   </section>`,
+
+  html: (s) => html`${open(s)}
+    ${heading(s)}
+    ${s.body}
+    ${s.fine ? `<p class="fine">${s.fine}</p>` : ''}
+  </section>`,
+
+  practice: (s, tool) => renderPractice(tool.id),
 
   table: (s) => html`${open(s)}
     ${heading(s)}
@@ -188,7 +211,7 @@ const sections = {
       <p class="eyebrow">${s.eyebrow}</p>
       <h2>${s.title[0]}<br />${s.title[1]}</h2>
       <p>${s.text}</p>
-      ${(s.installs ?? [{ label: s.installLabel, code: s.install }])
+      ${(s.command ? [] : s.installs ?? [{ label: s.installLabel, code: s.install }])
         .map(
           (b, i) => html`
       <div class="install glass">
@@ -199,8 +222,9 @@ const sections = {
         )
         .join('')}
       <div class="actions">
-        ${s.actions ?? `<a class="primary" href="${repoUrl(tool)}">Open the repository <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></a>\n        <a class="secondary" href="/">All devutils tools</a>`}
+        ${s.actions ?? `${repoLink(tool, '', `Open the repository <span>${icon('arrow-up-right')}</span>`, 'primary')}\n        <a class="secondary" href="/">All devutils tools</a>`}
       </div>
+      ${s.command ? `<div class="command"><code id="cmd">${esc(s.command)}</code><button data-copy="#cmd" type="button" aria-label="Copy command">Copy</button></div>` : ''}
       <small>${s.small}</small>
     </section>`,
 }
@@ -229,8 +253,10 @@ function shell(text) {
 // before any script runs; renderToolPage fills them only if it is not.
 export function toolPageHtml(page) {
   const tool = page.meta ?? tools.find((t) => t.id === page.id)
-  const repo = tool.repoUrl ?? repoUrl(tool)
-  const nav = [...page.nav.filter(([, href]) => href !== '#case-study'), ...(renderPractice(tool.id) ? [['In practice', '#in-practice']] : [])]
+  const placed = page.sections.some((s) => s.type === 'practice')
+  const nav = [...page.nav.filter(([, href]) => href !== '#case-study'), ...(!placed && renderPractice(tool.id) ? [['In practice', '#in-practice']] : [])]
+  // nav entries: [label, '#anchor'], or [label, { repo: path }] into the repository
+  const navLink = ([label, href]) => (href.repo === undefined ? `<a href="${href}">${label}</a>` : repoLink(tool, href.repo, `${label} ${icon('arrow-up-right')}`))
 
   return {
     nav: html`
@@ -239,15 +265,15 @@ export function toolPageHtml(page) {
       <span class="crumb-sep">/</span>
       <a href="${tool.site ?? `/tools/${tool.id}/`}">${tool.name}</a>${tool.status ? `<span class="alpha">${tool.status}</span>` : ''}
     </div>
-    <nav aria-label="Sections">${nav.map(([label, href]) => `<a href="${href}">${label}</a>`).join('')}</nav>
-    <a class="github" href="${repo}">GitHub <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></a>`,
+    <nav aria-label="Sections">${nav.map(navLink).join('')}</nav>
+    ${repoLink(tool, '', `GitHub <span>${icon('arrow-up-right')}</span>`, 'github')}`,
 
-    main: hero(page.hero, tool, page.sections.find((section) => section.type === 'intro')?.id ?? 'overview') + page.sections.map((s) => (s.type === 'start' ? renderPractice(tool.id) : '') + sections[s.type](s, tool)).join(''),
+    main: hero(page.hero, tool, page.sections.find((section) => section.type === 'intro')?.id ?? 'overview') + page.sections.map((s) => (s.type === 'start' && !placed ? renderPractice(tool.id) : '') + sections[s.type](s, tool)).join(''),
 
     footer: html`
     <a class="logo" href="/"><img class="logo-icon" src="/mark.svg" alt="" /> devutils</a>
-    <span>${tool.name} · ${tool.line}</span>
-    ${tool.license ? `<a href="${repo}">${tool.license} <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></a>` : `<a href="${repo}">Repository <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></a>`}`,
+    <span>${tool.name} · ${page.footer ?? tool.line}</span>
+    ${repoLink(tool, page.licensePath ?? '', `${tool.license ?? 'Repository'} ${icon('arrow-up-right')}`)}`,
   }
 }
 
@@ -259,39 +285,24 @@ export async function renderToolPage(page) {
   // terminals
   for (const s of page.sections.filter((s) => s.type === 'terminal')) {
     const root = $(`[data-scene="${s.scene}"]`)
-    const tabs = $$('[role=tab]', root)
-    const show = (tab) => {
-      tabs.forEach((t) => {
-        t.setAttribute('aria-selected', String(t === tab))
-        t.tabIndex = t === tab ? 0 : -1
-      })
-      const t = s.tabs[Number(tab.dataset.tab)]
+    initTabs($$('[role=tab]', root), (i) => {
+      const t = s.tabs[i]
       $('[data-term]', root).innerHTML = t.html ?? shell(t.text)
       $('[data-term-label]', root).textContent = t.label
       $('[data-term-caption]', root).textContent = t.caption
-    }
-    tabs.forEach((t, i) => {
-      t.addEventListener('click', () => show(t))
-      t.addEventListener('keydown', (e) => {
-        const step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0
-        if (!step) return
-        const next = tabs[(i + step + tabs.length) % tabs.length]
-        next.focus()
-        show(next)
-      })
-    })
-    show(tabs[0])
+    })(0)
   }
+  for (const s of page.sections.filter((s) => s.wire)) s.wire($(`[data-scene="${s.scene}"]`))
 
   initPractice()
 
   // the mark: on the stages, and alternating sides behind the other sections
   const scenes = { hero: { opacity: 1 }, start: { opacity: 1 }, practice: { fx: 0.92, fy: 0.25, size: 0.16, opacity: 0.2 } }
   page.sections
-    .filter((s) => s.type !== 'start')
+    .filter((s) => s.type !== 'start' && s.type !== 'practice')
     .forEach((s, i) => {
       // low and near the edge: behind the glass panels, clear of the headings
-      scenes[s.scene] = i % 2 ? { fx: 0.1, fy: 0.7, size: 0.25, opacity: 0.7 } : { fx: 0.9, fy: 0.7, size: 0.25, opacity: 0.75 }
+      scenes[s.scene] = { ...(i % 2 ? { fx: 0.1, fy: 0.7, size: 0.25, opacity: 0.7 } : { fx: 0.9, fy: 0.7, size: 0.25, opacity: 0.75 }), ...s.mark }
     })
   await initPage({ scenes, shape: page.shape ?? 'mark' })
 }

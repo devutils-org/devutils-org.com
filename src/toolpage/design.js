@@ -2,7 +2,9 @@
 // and "Logo Concept"), this repository's README, src/style.css, src/shapes.js,
 // src/tools.js and public/mark.svg.
 
-const arrow = '<svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg>'
+import { icon } from '../html.js'
+
+const arrow = icon('arrow-up-right')
 
 export default {
   meta: {

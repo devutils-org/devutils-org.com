@@ -1,5 +1,6 @@
 import { tools, repoUrl } from './tools.js'
-import { pad, esc, renderFlowCards } from './page.js'
+import { renderFlowCards } from './page.js'
+import { esc, pad, icon } from './html.js'
 
 // The home page's generated HTML, keyed by the element each one fills: written
 // into index.html by the build (scripts/prerender.mjs), and by main.js only
@@ -14,7 +15,7 @@ export function homeHtml() {
     'tool-grid': tools
       .map((t, i) => {
         const landing = t.site
-          ? `<a href="${t.site}">Landing page <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-right"></use></svg></a>`
+          ? `<a href="${t.site}">Landing page ${icon('arrow-right')}</a>`
           : `<span class="soon">Landing page · soon</span>`
         return `
     <article class="tool-card glass reveal${i === 0 ? ' featured' : ''}" style="--tc:${t.color};--d:${(i % 3) * 0.08}s" data-i="${i}">
@@ -30,7 +31,7 @@ export function homeHtml() {
       ${t.command ? `<code class="cmd">${esc(t.command)}</code>` : ''}
       <p class="note">${t.statusNote}${t.license ? ` · ${t.license}` : ''}</p>
       <div class="tool-links">
-${t.repoPrivate ? '<span class="repo-unavailable" aria-disabled="true" title="The repository is currently private">Repository · private</span>' : `<a href="${repoUrl(t)}">Repository <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></a>`}
+${t.repoPrivate ? '<span class="repo-unavailable" aria-disabled="true" title="The repository is currently private">Repository · private</span>' : `<a href="${repoUrl(t)}">Repository ${icon('arrow-up-right')}</a>`}
         ${landing}
       </div>
     </article>`

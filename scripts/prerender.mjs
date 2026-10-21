@@ -20,24 +20,12 @@ const dist = resolve(import.meta.dirname, '../dist')
 // the site moves, this is the one line to change (or set SITE_URL).
 const SITE = (process.env.SITE_URL ?? 'https://devutils-org.github.io').replace(/\/$/, '')
 
-// The image a shared link shows: public/og/<name>.png, 1200 × 627, from the
-// LinkedIn pack (assets/devutils-linkedin-pages). Pages without their own
-// use the org's.
-const preview = {
-  'index.html': 'main',
-  'tools/omn/index.html': 'omniscient',
-  'tools/atfq/index.html': 'atfq',
-  'tools/distroproof/index.html': 'distroproof',
-  'tools/xpac/index.html': 'xpac',
-  'tools/vmanyware/index.html': 'vmanyware',
-}
-
 const head = `
     <script type="speculationrules">{"prerender":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/tools/atfq/book/*"}}]},"eagerness":"moderate"}]}</script>
     <noscript><style>.reveal { opacity: 1; transform: none; } .stage-fallback { display: block; }</style></noscript>
   </head>`
 
-for (const [file, { fill = {}, before = {} }] of Object.entries(pages)) {
+for (const { file, fill, preview = 'main' } of pages) {
   const path = resolve(dist, file)
   let html = await readFile(path, 'utf8')
   for (const [id, markup] of Object.entries(fill)) {
@@ -46,13 +34,10 @@ for (const [file, { fill = {}, before = {} }] of Object.entries(pages)) {
     if (!empty.test(html)) throw new Error(`${file}: no empty element with id="${id}"`)
     html = html.replace(empty, (_, open, tag, close) => open + markup + close)
   }
-  for (const [marker, markup] of Object.entries(before)) {
-    if (!html.includes(marker)) throw new Error(`${file}: marker not found: ${marker}`)
-    html = html.replace(marker, markup + marker)
-  }
   if (!html.includes('</head>')) throw new Error(`${file}: no </head>`)
   const url = `${SITE}/${file.replace(/index\.html$/, '')}`
-  const image = `${SITE}/og/${preview[file] ?? 'main'}.png`
+  // the image a shared link shows, from the LinkedIn pack (assets/devutils-linkedin-pages)
+  const image = `${SITE}/og/${preview}.png`
   const card = `
     <link rel="canonical" href="${url}" />
     <meta property="og:url" content="${url}" />

@@ -3,6 +3,8 @@
 // examples, laid out in the devutils art direction. The book it links to is
 // generated from atfq by scripts/atfq-book.mjs.
 
+import { icon } from '../html.js'
+
 const cli = `<span class="c">$</span> atfq free
 <span class="b">17.1  free vs available</span>
 
@@ -225,7 +227,7 @@ install -m 755 atfq-x86_64-linux/atfq ~/.local/bin/`,
         { label: 'FROM SOURCE', note: 'With a Rust toolchain.', code: 'git clone https://github.com/devutils-org/atfq\ncd atfq\ncargo install --path .' },
         { label: 'FOR YOUR AI AGENT', note: 'Five read-only MCP tools over stdio.', code: 'claude mcp add atfq -- atfq mcp' },
       ],
-      actions: '<a class="primary" href="book/">Read the book <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-right"></use></svg></span></a>\n        <a class="secondary" href="https://github.com/devutils-org/atfq">Read the source <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></a>',
+      actions: `<a class="primary" href="book/">Read the book <span>${icon('arrow-right')}</span></a>\n        <a class="secondary" href="https://github.com/devutils-org/atfq">Read the source <span>${icon('arrow-up-right')}</span></a>`,
       small: 'atfq stands for “Ask The F*cking Question” · MIT OR Apache-2.0, code and content',
     },
   ],

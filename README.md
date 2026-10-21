@@ -48,20 +48,24 @@ The build writes each page's generated content into its HTML
 `vite build --ssr`): pages read without JavaScript, search engines and link
 previews see the text, and nothing shifts when the scripts start. A page's
 content lives in one function that returns its HTML as strings
-(`toolPageHtml` in `src/toolpage/render.js`, `homeHtml` in `src/home.js`,
-`omnHtml` in `src/omn/html.js`); the page's script fills an element only when
-the build has not, then wires it up. A new page goes in `src/prerender.js` too.
+(`toolPageHtml` in `src/toolpage/render.js`, `homeHtml` in `src/home.js`);
+the page's script fills an element only when the build has not, then wires it
+up. Every page is listed once, in `src/pages.js`: the build entries, the link
+previews and the social visuals come from there, and the build stops if a
+page has no content in `src/prerender.js`.
 The script also adds speculation rules (a page loads while the pointer rests
 on its link), and `style.css` cross-fades from one page to the next.
 
 `src/page.js` is what every page shares (scene, frosted panels, reveal, copy
-buttons, step-through pipelines). The mark is `public/mark.svg`: use it, not a
+buttons, step-through pipelines); `src/html.js` the escaping and icons every
+page's HTML uses, `src/tabs.js` the tab rows. The mark is `public/mark.svg`: use it, not a
 copy, wherever the logo appears.
 
 - `/tools/atfq/`, `/tools/distroproof/`, `/tools/xpac/`, `/tools/vmanyware/`
-  — one landing page per tool, on the same composition. Each page's content
-  is one file, `src/toolpage/<id>.js` (hero, then sections: `intro`, `cards`,
-  `flow`, `terminal`, `table`, `receipts`, `start`); `src/toolpage/render.js`
+  — one landing page per tool, on the same composition as Omniscient's. Each
+  page's content is one file, `src/toolpage/<id>.js` (`src/omn/page.js` for
+  Omniscient): hero, then sections (`intro`, `cards`, `flow`, `terminal`,
+  `table`, `receipts`, `html`, `practice`, `start`…); `src/toolpage/render.js`
   turns it into the page. Every fact, command and output in them comes from
   the tool's own README or examples — keep it that way when editing.
 
@@ -128,3 +132,14 @@ available. Private Omniscient sources are cited by path without public links.
 `src/practice/practice.js` renders the shared section and handles its tabs;
 `practice.css` stacks the story on narrow screens. The old Distroproof
 `#case-study` anchor still points to its new section.
+
+The Together page's results table comes from the latest run of the chain on
+each target, copied from an Omniscient checkout into
+`src/toolpage/chain-runs.json`; `src/toolpage/chain-results.js` turns it into
+the rows and the sentences that sum them up, so the headline cannot claim more
+than the rows show. After a new run of the chain:
+
+```sh
+npm run chain:runs   # Omniscient beside devutils, or OMNISCIENT_DIR=...
+npm test
+```

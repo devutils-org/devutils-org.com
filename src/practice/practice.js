@@ -1,7 +1,7 @@
 import { cases } from './cases.js'
+import { esc as escape } from '../html.js'
+import { initTabs } from '../tabs.js'
 import './practice.css'
-
-const escape = (value) => value.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c])
 
 export function renderPractice(toolId) {
   const stories = cases[toolId]
@@ -25,26 +25,7 @@ export function renderPractice(toolId) {
 
 export function initPractice(root = document) {
   root.querySelectorAll('.practice').forEach((section) => {
-    const tabs = [...section.querySelectorAll('[role="tab"]')]
     const panels = [...section.querySelectorAll('[role="tabpanel"]')]
-    const select = (index) => {
-      tabs.forEach((tab, i) => {
-        tab.setAttribute('aria-selected', String(i === index))
-        tab.tabIndex = i === index ? 0 : -1
-        panels[i].hidden = i !== index
-      })
-    }
-    tabs.forEach((tab, index) => {
-      tab.addEventListener('click', () => select(index))
-      tab.addEventListener('keydown', (event) => {
-        const next = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1
-          : event.key === 'ArrowRight' ? (index + 1) % tabs.length
-          : event.key === 'ArrowLeft' ? (index - 1 + tabs.length) % tabs.length : null
-        if (next === null) return
-        event.preventDefault()
-        select(next)
-        tabs[next].focus()
-      })
-    })
+    initTabs([...section.querySelectorAll('[role="tab"]')], (index) => panels.forEach((panel, i) => (panel.hidden = i !== index)))
   })
 }

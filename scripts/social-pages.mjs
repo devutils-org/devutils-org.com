@@ -1,5 +1,6 @@
 import { mkdir, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
+import { pages as site, route } from '../src/pages.js'
 
 // Supply PLAYWRIGHT_MODULE when Playwright is installed outside this project.
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || 'playwright-core')
@@ -9,26 +10,19 @@ const browser = await chromium.launch({
   headless: true,
   args: ['--no-sandbox', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'],
 })
-const pages = [
-  ['main', '/', 'mark'],
-  ['omniscient', '/tools/omn/', 'omn'],
-  ['atfq', '/tools/atfq/', 'mark'],
-  ['distroproof', '/tools/distroproof/', 'distroproof'],
-  ['xpac', '/tools/xpac/', 'xpac'],
-  ['vmanyware', '/tools/vmanyware/', 'vmanyware'],
-]
+// the pages of src/pages.js that have social visuals
+const pages = site.filter((p) => p.social).map((p) => [p.preview, route(p), p.social])
 const formats = [['linkedin-post', 1200, 627], ['social-square', 1080, 1080]]
 const manifest = []
 try {
   const page = await browser.newPage({ deviceScaleFactor: 1 })
   page.on('pageerror', error => { throw error })
-  for (const [id, route, shape] of pages) {
+  for (const [id, route, { brand, shape }] of pages) {
     await page.goto(base + route)
     await page.waitForSelector('.hero h1')
     const lines = await page.locator('.hero h1').innerText()
     const [line1, line2] = lines.split('\n').map(s => s.trim()).filter(Boolean)
     if (!line1 || !line2) throw new Error(`Missing slogan for ${id}`)
-    const brand = id === 'main' ? 'devutils' : ({ omniscient: 'Omniscient', atfq: 'ATFQ', distroproof: 'distroproof', xpac: 'xpac', vmanyware: 'VMAnyware' }[id])
     const directory = resolve('assets/pages', id)
     await mkdir(directory, { recursive: true })
     const files = []
