@@ -102,7 +102,7 @@ export async function initPage({ scenes, shape = 'mark' }: { scenes: Record<stri
     const mid = window.innerHeight * 0.5
     let active = sections[0]
     for (const s of sections) if (s.getBoundingClientRect().top <= mid) active = s
-    const state = { ...scenes[active.dataset.scene ?? ''], anchor: $('.stage', active) }
+    const state = { ...scenes[active.dataset.scene ?? ''], anchor: active.querySelector('.stage') }
     if (window.innerWidth < 700 && !state.anchor) Object.assign(state, { fx: 0.5, size: 0.42 })
     scene.setState(state)
   }

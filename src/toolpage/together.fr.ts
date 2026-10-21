@@ -108,7 +108,7 @@ export default {
       scene: 'site',
       eyebrow: 'CE SITE, MESURÉ / 20 OCTOBRE 2026',
       title: ['Sans accélération graphique,', 'de 10 à 60 images par seconde.'],
-      text: 'La version d’avant le travail sur le site (<code>2e965bc</code>) face à celle d’après (<code>3e96fca</code>), sur la même machine. Sans accélération graphique, l’ancienne 3D tournait en logiciel et ralentissait toute la page. Sur une carte graphique rapide, on ne peut pas distinguer les deux versions.',
+      text: 'La version d’avant le travail sur le site (<code>2e965bc</code>) face à celle d’après (<code>3e96fca</code>), sur la même machine. Sans accélération graphique, l’ancienne 3D tournait en logiciel et ralentissait toute la page. Sur une carte graphique rapide, on ne peut pas distinguer les deux versions. La version d’après fait toujours glisser le logo d’une section à l’autre pendant le défilement ; le passage à TypeScript (<code>628cf1f</code>) l’avait laissé sur l’accueil, et il glisse de nouveau depuis le 21 octobre 2026.',
       head: ['Mesure', 'Avant', 'Après', 'Mesuré par'],
       rows: [
         ['sans GPU · images', '9 à 10 par seconde, une image toutes les 100 ms', '60 par seconde, une image toutes les 16,7 ms', 'l’horloge d’images de la page elle-même, 3 visites chacune'],

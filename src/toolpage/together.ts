@@ -109,7 +109,7 @@ export default {
       scene: 'site',
       eyebrow: 'THIS SITE, MEASURED / 20 OCTOBER 2026',
       title: ['Without GPU acceleration,', 'from 10 to 60 frames.'],
-      text: 'The version before the front-end work (<code>2e965bc</code>) against the one after (<code>3e96fca</code>), on the same machine. Without graphics acceleration, the old 3D ran in software and dragged the page down. On a fast graphics card, the two versions cannot be told apart.',
+      text: 'The version before the front-end work (<code>2e965bc</code>) against the one after (<code>3e96fca</code>), on the same machine. Without graphics acceleration, the old 3D ran in software and dragged the page down. On a fast graphics card, the two versions cannot be told apart. The version after still glides the mark from section to section as the page scrolls; the move to TypeScript (<code>628cf1f</code>) left it on the hero, and it glides again as of 21 October 2026.',
       head: ['Measure', 'Before', 'After', 'Measured by'],
       rows: [
         ['no GPU · frames', '9–10 a second, a frame every 100 ms', '60 a second, a frame every 16.7 ms', 'the page’s own frame clock, 3 visits each'],
