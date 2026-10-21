@@ -8,10 +8,13 @@ const base = process.env.SOCIAL_BASE_URL || 'http://127.0.0.1:5174'
 const browser = await chromium.launch({
   executablePath: process.env.CHROME_PATH,
   headless: true,
-  args: ['--no-sandbox', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'],
+  // the glass needs a graphics card: src/scene.ts refuses to draw in software
+  args: ['--no-sandbox', '--use-angle=vulkan', '--enable-features=Vulkan', '--enable-gpu', '--ignore-gpu-blocklist'],
 })
-// the pages of src/pages.ts that have social visuals
-const pages = site.flatMap((p) => (p.preview && p.brand ? [[p.preview, route(p), { brand: p.brand, shape: p.shape }] as const] : []))
+// the pages of src/pages.ts that have social visuals, or those named on the
+// command line (`node scripts/social-pages.ts distroproof`)
+const only = process.argv.slice(2)
+const pages = site.flatMap((p) => (p.preview && p.brand && (!only.length || only.includes(p.preview)) ? [[p.preview, route(p), { brand: p.brand, shape: p.shape }] as const] : []))
 const formats = [['linkedin-post', 1200, 627], ['social-square', 1080, 1080]]
 const manifest: { id: string; brand: string; route: string; shape: string; slogan: string[]; files: string[] }[] = []
 try {
@@ -23,7 +26,7 @@ try {
     const lines = await page.locator('.hero h1').innerText()
     const [line1, line2] = (lines as string).split('\n').map((s) => s.trim()).filter(Boolean)
     if (!line1 || !line2) throw new Error(`Missing slogan for ${id}`)
-    const directory = resolve('assets/pages', id)
+    const directory = resolve('assets/devutils-linkedin-pages/pages', id)
     await mkdir(directory, { recursive: true })
     const files: string[] = []
     for (const [format, width, height] of formats) {
@@ -47,5 +50,5 @@ try {
   await browser.close()
 }
 await writeFile('out/output/social-pages/manifest.json', JSON.stringify(manifest, null, 2) + '\n')
-const cards = manifest.map(p => `<article><h2>${p.brand}</h2><p>${p.slogan.join(' ')}</p>${p.files.map(f => `<a href="../../../assets/pages/${p.id}/${f}"><img src="../../../assets/pages/${p.id}/${f}" alt="${p.brand}: ${p.slogan.join(' ')}"><small>${f}</small></a>`).join('')}</article>`).join('\n')
+const cards = manifest.map(p => `<article><h2>${p.brand}</h2><p>${p.slogan.join(' ')}</p>${p.files.map(f => `<a href="../../../assets/devutils-linkedin-pages/pages/${p.id}/${f}"><img src="../../../assets/devutils-linkedin-pages/pages/${p.id}/${f}" alt="${p.brand}: ${p.slogan.join(' ')}"><small>${f}</small></a>`).join('')}</article>`).join('\n')
 await writeFile('out/output/social-pages/index.html', `<!doctype html><html lang="fr"><meta charset="utf-8"><title>Devutils — LinkedIn par page</title><style>body{background:#08090d;color:#eee;font:16px system-ui;max-width:1400px;margin:40px auto;padding:24px}article{margin:48px 0}a{display:inline-block;vertical-align:top;width:46%;margin-right:2%;color:#9cf5ff}img{width:100%;display:block}small{display:block;margin:12px 0}</style><h1>Devutils — visuels par page</h1><p>Slogans et symboles 3D des pages actuelles. Cliquer sur une image pour ouvrir le PNG.</p>${cards}</html>`)
