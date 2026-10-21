@@ -48,7 +48,7 @@ export async function initPage({ scenes, shape = 'mark' }: { scenes: Record<stri
   initNavigation()
   initTopLinks()
   initFlowCards()
-  $$('.section-heading, .bento article, .start > *').forEach((el) => el.classList.add('reveal'))
+  revealBlocks()
   $$('.bento article, .command').forEach((el) => el.classList.add('glass'))
 
   // reveal on scroll
@@ -111,6 +111,24 @@ export async function initPage({ scenes, shape = 'mark' }: { scenes: Record<stri
   window.addEventListener('scroll', schedule, { passive: true })
   window.addEventListener('resize', schedule)
   update()
+}
+
+// What fades in as it scrolls into view, beside the cards that are written
+// with .reveal: headings, facts, terminals, tables, install blocks. Siblings
+// come one after another, 0.08 s apart, as the cards do.
+const revealed = [
+  '.section-heading', '.overview-heading', '.overview-facts > div', '.bento article',
+  '.capture-tabs', '.terminal', '.table-wrap', '.split-cols > div', '.facts li', '.queries li',
+  '.keys', '.palette li', '.stat-row li', '.practice-story', '.session-example > *', '.start > *',
+].join(', ')
+
+function revealBlocks() {
+  for (const el of $$(revealed)) {
+    el.classList.add('reveal')
+    if (el.style.getPropertyValue('--d')) continue
+    const siblings = [...(el.parentElement?.children ?? [])].filter((c) => c.matches(revealed))
+    el.style.setProperty('--d', `${(siblings.indexOf(el) % 6) * 0.08}s`)
+  }
 }
 
 // A link to the page you are already on (the logo, on its own page) glides

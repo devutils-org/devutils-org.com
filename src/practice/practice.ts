@@ -25,6 +25,10 @@ export function renderPractice(toolId: string) {
 export function initPractice(root: ParentNode = document) {
   root.querySelectorAll('.practice').forEach((section) => {
     const panels = [...section.querySelectorAll<HTMLElement>('[role="tabpanel"]')]
-    initTabs([...section.querySelectorAll<HTMLElement>('[role="tab"]')], (index) => panels.forEach((panel, i) => (panel.hidden = i !== index)))
+    // a story chosen by its tab shows at once, without waiting to fade in
+    initTabs([...section.querySelectorAll<HTMLElement>('[role="tab"]')], (index) => panels.forEach((panel, i) => {
+      panel.hidden = i !== index
+      if (i === index) panel.classList.add('in')
+    }))
   })
 }
