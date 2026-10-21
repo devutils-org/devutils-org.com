@@ -160,7 +160,7 @@ export const tools: Tool[] = [
       'Define an environment once, provision it on Proxmox, then manage and reach it from desktop or mobile. ' +
       'A native client and a self-hosted control plane.',
     step: 'Describe an environment once, provision it on your own Proxmox host, and reach it over SSH from desktop or phone.',
-    flowDetail: 'Native/generated-provider checks cover provisioning, lifecycle, SSH and recovery. Declared packages/final snapshots work through the API; native integration, current Android runtime and real homelab acceptance remain open.',
+    flowDetail: 'Native/generated-provider checks cover provisioning, lifecycle, SSH and recovery. Declared packages/final snapshots now pass joined Linux native journeys with explicit review. Current Android runtime and real homelab acceptance remain open.',
     status: 'In development',
     statusNote: 'native/API workflows tested · real homelab acceptance pending',
     license: 'MIT / Apache-2.0',
@@ -173,7 +173,7 @@ export const tools: Tool[] = [
         'Décrivez un environnement une fois, créez-le sur Proxmox, puis gérez-le et accédez-y depuis votre ordinateur ou votre téléphone. ' +
         'Une application native et un serveur de contrôle hébergé chez vous.',
       step: 'Décrire un environnement une fois, le créer sur votre propre serveur Proxmox, et s’y connecter en SSH depuis l’ordinateur ou le téléphone.',
-      flowDetail: 'Les parcours natifs et les tests avec fournisseur simulé couvrent création, cycle de vie, SSH et reprise. Les paquets et le snapshot final passent via l’API ; leur intégration au client, l’APK actuel et le homelab réel restent à valider.',
+      flowDetail: 'Les parcours natifs et les tests avec fournisseur simulé couvrent création, cycle de vie, SSH et reprise. Les paquets et le snapshot final passent les parcours Linux natifs avec revue explicite. L’APK actuel et le homelab réel restent à valider.',
       status: 'En développement',
       statusNote: 'parcours natifs/API testés · validation réelle en attente',
     },
