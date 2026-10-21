@@ -168,7 +168,7 @@ export default {
       installLabel: 'FROM AN OMNISCIENT CHECKOUT, WITH XPAC, ATFQ AND VMANYWARE BESIDE IT',
       install: `sh scripts/distroproof/reference-build.sh
 sh scripts/distroproof/devutils-build.sh
-distroproof up -f distroproof-devutils.toml --no-tui --jobs 1 \\
+distroproof up -f distroproof-devutils.toml --no-tui --pin-cache --jobs 4 \\
   --json target/matrix/devutils.json`,
       actions: `<a class="primary" href="/tools/distroproof/">Start with distroproof <span>${arrow}</span></a>
         <a class="secondary" href="/">All devutils tools</a>`,

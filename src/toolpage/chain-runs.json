@@ -15,11 +15,11 @@
       "installed": 19
     },
     "pairs": {
-      "held": 83,
+      "held": 82,
       "skipped": 47,
       "gaps": 1,
       "known": 0,
-      "failed": 1
+      "failed": 2
     }
   },
   {
@@ -101,11 +101,11 @@
       "installed": 18
     },
     "pairs": {
-      "held": 91,
+      "held": 93,
       "skipped": 37,
       "gaps": 1,
       "known": 0,
-      "failed": 3
+      "failed": 1
     }
   },
   {
