@@ -177,7 +177,7 @@ ADRs 0074–0087, reviewed 2026-10-21. Current copy includes remote lifecycle/st
 SSH, snapshots/deletion/recreation, durable recovery, joined Linux native package/final-snapshot
 support, safe provisioning failure messages, recorded stage views and refreshed
 Linux/Android test artifacts. The exact extracted server passes a joined native journey.
-Optional Linux Secret Service unlock-secret controls have isolated backend/SSH and
-separate browser evidence; joined WebView acceptance is pending. Existing artifacts
+Optional Linux Secret Service unlock-secret controls pass the complete owned
+WebView/production IPC/vault/terminal journey, plus backend and browser checks. Existing artifacts
 predate these vault commands. Exact-current Android execution, real homelab/guest behavior and production/platform acceptance
 remain open. Do not infer an audited completion percentage or a release candidate.
