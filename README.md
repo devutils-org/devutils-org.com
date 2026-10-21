@@ -173,8 +173,9 @@ npm test
 
 The VMAnyware tool page and tool index distinguish native/generated-provider
 integration from real infrastructure acceptance. Source: VMAnyware STATE.md and
-ADRs 0074–0084, reviewed 2026-10-21. Current copy includes remote lifecycle/status,
+ADRs 0074–0086, reviewed 2026-10-21. Current copy includes remote lifecycle/status,
 SSH, snapshots/deletion/recreation, durable recovery, joined Linux native package/final-snapshot
-support, safe provisioning failure messages and refreshed Linux/Android test artifacts.
+support, safe provisioning failure messages, recorded stage views and refreshed
+Linux/Android test artifacts. The exact extracted server passes a joined native journey.
 Exact-current Android execution, real homelab/guest behavior and production/platform acceptance
 remain open. Do not infer an audited completion percentage or a release candidate.
