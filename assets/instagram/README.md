@@ -1,6 +1,6 @@
 # Instagram triptych
 
-The five instruments from the front, rendered by `scripts/instagram.mjs`
+The five instruments from the front, rendered by `scripts/instagram.ts`
 from `social/instagram.html` with the site's own glass shader.
 
 `full.png` is the whole picture (3240 × 1440); `post-1.png` to `post-3.png`

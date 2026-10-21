@@ -71,7 +71,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 2px s
   z-index: 10;
   background: #05050759;
   backdrop-filter: blur(18px) saturate(140%);
- 
 }
 .logo { letter-spacing: -.7px; align-items: center; gap: 10px; font-size: 20px; font-weight: 600; display: flex; }
 .logo-icon { width: 24px; height: 24px; filter: drop-shadow(0 0 10px #a7b6ff55); }
@@ -103,16 +102,11 @@ main { position: relative; z-index: 1; }
   inset: 0;
   mask-image: linear-gradient(#000, #0000 90%);
 }
-.release { color: #b8b8c4; background: #ffffff04; border: 1px solid #ffffff20; border-radius: 999px; align-items: center; gap: 12px; padding: 9px 14px; font-size: 10px; display: inline-flex; }
-.release:hover { border-color: #ffffff40; color: #fff; }
-.signal-dot { background: var(--cyan); border-radius: 50%; flex-shrink: 0; width: 5px; height: 5px; display: inline-block; box-shadow: 0 0 10px #82e9ff88; animation: pulse 2.4s ease-in-out infinite; }
-.release-divider { color: #494951; margin: 0 4px; }
-@keyframes pulse { 50% { opacity: .35; box-shadow: 0 0 4px #82e9ff44; } }
 
 h1 { letter-spacing: -6px; margin: 32px 0 23px; font-size: clamp(66px, 7.8vw, 108px); font-weight: 600; line-height: 1.02; }
 h1 span { color: #0000; background: linear-gradient(110deg, #fff 10%, #b5c9ff 55%, #b78de6 90%) text; -webkit-background-clip: text; }
 .hero-copy { color: var(--muted); max-width: 460px; margin: 0 auto 15px; font-size: 17px; line-height: 1.7; }
-.hero-product { color: #b4b6c8; max-width: 620px; margin: 0 auto 28px; font: 12px/1.8 var(--mono); }
+
 .actions { justify-content: center; align-items: center; gap: 12px; display: flex; flex-wrap: wrap; }
 .primary, .secondary { border-radius: 999px; justify-content: center; align-items: center; gap: 26px; padding: 13px 20px; font-size: 12px; display: inline-flex; transition: background .2s, box-shadow .2s; }
 .primary { color: #111; background: #ededf2; border: 1px solid #fff; box-shadow: 0 0 25px #ffffff08; }
@@ -123,10 +117,7 @@ h1 span { color: #0000; background: linear-gradient(110deg, #fff 10%, #b5c9ff 55
 /* The stage is an empty box: the WebGL core is drawn behind it, centred on it. */
 .stage { width: 640px; max-width: 100%; height: 420px; margin: 0 auto; position: relative; }
 .hero .stage:after { content: ''; background: #aacaff; height: 1px; position: absolute; bottom: 23px; left: 30%; right: 30%; box-shadow: 0 0 20px 4px #9b7eff44; }
-.hud { z-index: 2; letter-spacing: 1px; color: #c3c6d4; text-align: left; font: 10px/1.9 var(--mono); position: absolute; }
-.hud b { color: #9296a8; letter-spacing: .7px; font: 9px/1.8 var(--mono); display: block; }
-.top-left { top: 50px; left: 0; }
-.bottom-right { bottom: 75px; right: -15px; }
+
 .horizon {
   background-image: linear-gradient(#9d98f712 1px, #0000 1px), linear-gradient(90deg, #9d98f712 1px, #0000 1px);
   background-size: 45px 30px;
@@ -140,7 +131,6 @@ h1 span { color: #0000; background: linear-gradient(110deg, #fff 10%, #b5c9ff 55
   box-shadow: 0 -15px 100px #9279ff1f;
   mask-image: linear-gradient(#0000, #000 10%, #0000);
 }
-.hero-caption { border-top: 1px solid var(--line); color: #b4b6c4; letter-spacing: 1.3px; justify-content: center; gap: 65px; margin: 0 -30px; padding: 24px; font: 11px var(--mono); display: flex; background: #ffffff04; backdrop-filter: blur(18px); }
 
 /* ---------- sections ---------- */
 
@@ -181,7 +171,6 @@ h2 { letter-spacing: -1.8px; margin: 0; font-size: 44px; font-weight: 500; line-
 :is(.home, .tool-page) .receipt pre,
 :is(.home, .tool-page) .command code { font-size: 13px; }
 :is(.home, .tool-page) .tool-card .note,
-:is(.home, .tool-page) .receipt .by,
 :is(.home, .tool-page) .start > small,
 :is(.home, .tool-page) footer > span { font-size: var(--text-meta); line-height: 1.7; }
 :is(.home, .tool-page) .eyebrow,
@@ -194,9 +183,7 @@ h2 { letter-spacing: -1.8px; margin: 0; font-size: 44px; font-weight: 500; line-
 :is(.home, .tool-page) .flow-back { bottom: auto; min-height: calc(100% + 2 * var(--flow-inset-y)); }
 
 /* Tool-specific components use the same typography scale. */
-.tool-page .product-columns p,
 .tool-page .family-card p,
-.tool-page .pipeline-detail p,
 .tool-page .bento p,
 .tool-page .session-example p:not(.eyebrow),
 .tool-page .layer p,
@@ -207,9 +194,7 @@ h2 { letter-spacing: -1.8px; margin: 0; font-size: 44px; font-weight: 500; line-
 .tool-page .keys dd,
 .tool-page .install-note,
 .tool-page .spec { font-size: var(--text-body); line-height: 1.7; }
-.tool-page .hero-product,
 .tool-page .terminal-caption,
-.tool-page .request-axes > span,
 .tool-page .inline-link,
 .tool-page .family-link,
 .tool-page .capture-tabs button,
@@ -219,13 +204,9 @@ h2 { letter-spacing: -1.8px; margin: 0; font-size: 44px; font-weight: 500; line-
 .tool-page .stat-row { font-size: var(--text-meta); line-height: 1.7; }
 .tool-page .family-card small,
 .tool-page .family-card .chip,
-.tool-page .request-axes small,
-.tool-page .node small,
 .tool-page .layer small,
 .tool-page .facts .k,
 .tool-page .spec thead th,
-.tool-page .release,
-.tool-page .hero-caption,
 .tool-page .alpha,
 .tool-page .install-head { font-size: var(--text-label); line-height: 1.6; }
 .tool-page .family-cmd,
@@ -236,11 +217,10 @@ h2 { letter-spacing: -1.8px; margin: 0; font-size: 44px; font-weight: 500; line-
 .tool-page .spec tbody th code,
 .tool-page .install pre,
 .tool-page .session-example pre,
-.tool-page .tui,
-.tool-page .node code { font-size: 13px; }
+.tool-page .tui { font-size: 13px; }
 .tool-page .family-card { min-width: 0; }
 .tool-page .family-card > div { flex-wrap: wrap; gap: 10px; }
-.tool-page .request-axes > span { min-width: 0; overflow-wrap: anywhere; }
+
 .tool-page .capture-tabs { max-width: 100%; flex-wrap: wrap; border-radius: var(--radius-panel); }
 .tool-page .terminal-header { flex-wrap: wrap; gap: 8px 16px; }
 .tool-page .terminal-header code { overflow-wrap: anywhere; }
@@ -253,7 +233,6 @@ h2 { letter-spacing: -1.8px; margin: 0; font-size: 44px; font-weight: 500; line-
 @media (width <= 600px) {
   .tool-page .session-example { grid-template-columns: minmax(0, 1fr); }
   .tool-page .capture-tabs button { padding: 9px 12px; }
-  .tool-page .release { flex-wrap: wrap; justify-content: center; line-height: 1.7; }
 }
 
 /* Home hero and introduction. */
@@ -333,24 +312,6 @@ h2 { letter-spacing: -1.8px; margin: 0; font-size: 44px; font-weight: 500; line-
   .flow-card-inner, .flow-front, .flow-back, .flow-back > *, .flow-card[aria-expanded="true"] .flow-front { transition: none; }
   .flow-card[aria-expanded="true"] .flow-card-inner { transform: none; }
 }
-.pipeline { border-radius: var(--radius-panel); grid-template-columns: repeat(5, 1fr); display: grid; overflow: hidden; }
-.node { border: 0; border-right: 1px solid var(--line); text-align: left; background: none; padding: 28px 22px; position: relative; transition: background .4s, box-shadow .4s; }
-.node:last-child { border: 0; }
-.node.selected { background: radial-gradient(at top, #a8c4ff1c, #0000 80%), #ffffff08; box-shadow: inset 0 1px #96daff33; }
-/* the selected step's progress: fills over --step, holds full while hovered */
-.node:after { content: ''; position: absolute; left: 0; top: 0; height: 1px; width: 0; background: linear-gradient(90deg, var(--cyan), var(--purple)); box-shadow: 0 0 10px #82e9ff88; }
-.node.selected:after { animation: step var(--step, 8s) linear forwards; }
-.pipeline.held .node.selected:after { animation: none; width: 100%; }
-@keyframes step { to { width: 100%; } }
-.node.selected .node-icon { color: var(--cyan); text-shadow: 0 0 20px #82e9ff66; }
-.node-icon { color: #717582; margin-bottom: 35px; font: 30px var(--mono); display: block; transition: color .4s, text-shadow .4s; }
-.node small { color: #a9abbb; letter-spacing: 1px; font: 10px var(--mono); display: block; }
-.node strong { margin: 14px 0; font-size: 23px; font-weight: 400; display: block; }
-.node code { color: #9a9fb3; font-size: 11px; }
-.pipeline-detail { align-items: center; gap: 12px; min-height: 75px; padding: 20px 0; display: flex; }
-.pipeline-detail p { color: #b6b7c7; flex: 1; font-size: 12px; line-height: 1.7; margin: 0; }
-.pipeline-detail button { border: 1px solid var(--glass-line); white-space: nowrap; background: #ffffff0a; backdrop-filter: blur(14px); border-radius: 999px; padding: 10px 15px; font: 10px var(--mono); }
-.pipeline-detail button:hover { border-color: #ffffff40; }
 
 /* receipts: a claim beside the real output that backs it (tool pages) */
 .receipts { grid-template-columns: repeat(2, 1fr); gap: 14px; display: grid; }
@@ -359,9 +320,6 @@ h2 { letter-spacing: -1.8px; margin: 0; font-size: 44px; font-weight: 500; line-
 .receipt h3 { letter-spacing: -.6px; margin: 22px 0 10px; font-size: 21px; font-weight: 500; }
 .receipt p { color: var(--muted); font-size: 13px; line-height: 1.8; margin: 0 0 20px; }
 .receipt pre { margin: auto 0 0; border: 1px solid var(--line); background: #00000040; border-radius: var(--radius-control); padding: 16px 18px; color: #c9ccd8; font: 11.5px/1.75 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; }
-.receipt pre .p { color: #8a8ca0; }
-.receipt pre .x { color: #f0b6c8; }
-.receipt .by { color: #a3a5b8; font: 10px var(--mono); letter-spacing: 1px; margin-top: 14px; }
 
 /* tool cards */
 .tool-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; display: grid; }
@@ -450,9 +408,7 @@ footer a:hover { color: #fff; }
   .flow-card:nth-child(3n) .flow-front { border-right: 1px solid var(--line); }
   .flow-card:nth-child(2n) .flow-front, .flow-card:last-child .flow-front { border-right: 0; }
   .flow-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
-  .pipeline { grid-template-columns: repeat(3, 1fr); }
-  .node:nth-child(3) { border-right: 0; }
-  .node:nth-child(-n+3) { border-bottom: 1px solid var(--line); }
+
   .tool-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -463,7 +419,7 @@ footer a:hover { color: #fff; }
   .section-heading > p { max-width: 300px; font-size: 12px; }
   .bento { grid-template-columns: repeat(2, 1fr); }
   .bento .bento-big, .bento .refusal { grid-column: span 2; }
-  .hero-caption { gap: 30px; font-size: 10px; }
+
   footer > span { display: none; }
 }
 
@@ -489,33 +445,22 @@ footer a:hover { color: #fff; }
   .github, .alpha { display: none; }
   .logo { font-size: 17px; }
   .hero { padding: 45px 16px 0; }
-  .release { gap: 7px; font-size: 9px; }
-  .release-divider { display: none; }
+
   h1 { letter-spacing: -3px; margin-top: 35px; font-size: 54px; }
   .hero-copy { font-size: 14px; }
-  .hero-product { font-size: 10px; line-height: 1.9; }
+
   .primary, .secondary { gap: 15px; padding: 12px 15px; font-size: 11px; }
   .stage { height: 320px; }
   .stage-start { height: 240px; }
-  .hud { letter-spacing: .5px; font-size: 9px; }
-  .hud b { font-size: 8px; }
-  .top-left { top: 25px; }
-  .bottom-right { bottom: 48px; right: 0; }
+
   .stage:after { bottom: 15px; }
-  .hero-caption { letter-spacing: .5px; gap: 8px 16px; flex-wrap: wrap; padding: 18px 10px; font-size: 9px; margin: 0 -16px; }
+
   .section { padding: 65px 0; margin-left: 16px; margin-right: 16px; }
   .section-heading { display: block; }
   .section-heading > p { max-width: none; margin-top: 22px; font-size: 13px; }
   .eyebrow { letter-spacing: 1.2px; font-size: 9px; }
   h2 { font-size: 34px; }
-  .pipeline { grid-template-columns: 1fr 1fr; }
-  .node { padding: 22px 16px; border-bottom: 1px solid var(--line); }
-  .node:nth-child(3) { border-right: 1px solid var(--line); }
-  .node:nth-child(2n) { border-right: 0; }
-  .node:last-child { grid-column: span 2; border-bottom: 0; }
-  .node-icon { margin-bottom: 22px; font-size: 26px; }
-  .pipeline-detail { flex-wrap: wrap; gap: 10px; }
-  .pipeline-detail p { flex-basis: 85%; font-size: 11px; }
+
   .fine { font-size: 10px; }
   .tool-grid, .bento, .receipts { grid-template-columns: 1fr; }
   .receipt { padding: 22px; }
@@ -538,7 +483,6 @@ footer a:hover { color: #fff; }
   html { scroll-behavior: auto; }
   *, *:before, *:after { transition: none !important; animation: none !important; }
   .reveal { opacity: 1; transform: none; }
-  .node.selected:after { width: 100%; }
 }
 
 /* Shared SVG navigation icons: stable across fonts and emoji renderers. */

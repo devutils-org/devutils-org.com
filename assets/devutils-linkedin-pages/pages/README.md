@@ -15,6 +15,6 @@ Galerie : `out/output/social-pages/index.html`.
 
 ## Régénérer
 
-Lancer Vite, installer `playwright-core` dans un environnement au choix, puis lancer `node scripts/social-pages.mjs`. Variables : `PLAYWRIGHT_MODULE` (module Playwright), `CHROME_PATH` (exécutable Chromium), `SOCIAL_BASE_URL` (par défaut http://127.0.0.1:5174). Le script lit les titres des pages, utilise `src/scene.js` et `src/shapes.js`, vérifie les débordements de texte et exporte les deux formats.
+Lancer Vite, puis lancer `node scripts/social-pages.ts`. Variables : `PLAYWRIGHT_MODULE` (module Playwright), `CHROME_PATH` (exécutable Chromium), `SOCIAL_BASE_URL` (par défaut http://127.0.0.1:5174). Le script lit les titres des pages, utilise `src/scene.ts` et `src/shapes.ts`, vérifie les débordements de texte et exporte les deux formats.
 
 Les contenus plus anciens de `out` mentionnent pkgx ; la page actuelle et ces exports utilisent xpac.

@@ -5,13 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vite build --ssr src/prerender.js --outDir .ssr --emptyOutDir && node scripts/prerender.mjs",
+    "build": "vite build && vite build --ssr src/prerender.ts --outDir .ssr --emptyOutDir && node scripts/prerender.ts",
     "preview": "vite preview",
-    "book:atfq": "node scripts/atfq-book.mjs",
-    "chain:runs": "node scripts/chain-runs.mjs",
-    "test": "node --test"
+    "book:atfq": "node scripts/atfq-book.ts",
+    "chain:runs": "node scripts/chain-runs.ts",
+    "test": "tsc -p . && node --test"
   },
   "devDependencies": {
+    "@types/node": "^24.10.1",
+    "playwright-core": "^1.56.1",
+    "typescript": "^5.9.3",
     "vite": "^8.3.4"
   },
   "license": "MIT OR Apache-2.0"

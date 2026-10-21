@@ -1,0 +1,123 @@
+// Editorial evidence, not customer testimonials. Paths are relative to sibling
+// repositories; keep observed results distinct from illustrative use cases.
+
+import { chainResults } from '../toolpage/chain-results.ts'
+import runs from '../toolpage/chain-runs.json' with { type: 'json' }
+
+export interface Case {
+  // the tab's label
+  target: string
+  kind: string
+  title: string
+  problem: string
+  finding: string
+  outcome: string
+  // what the story does not show
+  limit: string
+  evidence: string
+  // [href, label]
+  link?: [string, string]
+}
+
+const chain = chainResults(runs, {})
+
+export const cases: Record<string, Case[]> = {
+  distroproof: [
+    {
+      target: 'Omniscient', kind: 'Portability campaign',
+      title: 'It worked on Arch. The release failed elsewhere.',
+      problem: 'A kernel observability tool had been developed on one machine. Its release would not even start on a third of the distro images.',
+      finding: 'Running the installed archives on 17 images and 5 variants, 3 arm64 images and 8 rootless containers exposed 27 defects: 13 in the tool and 14 in its tests. The environment reports explained loader failures, Debian’s perf policy, a 64 KiB memlock limit and Alpine’s missing function tracer.',
+      outcome: 'The release gained glibc 2.17 and musl builds. Across the rerun, none of the 158 initially misadvertised source runs still refused at start; refusal reasons agreed with envprobe on all 21 targets. The latest run passed 25 of 25 targets, 33 cells.',
+      limit: `Omniscient’s reference pairs now run on the devutils chain: ${chain.summary.toLowerCase()} in the latest runs, with a pair skipping where a distro lacks its witness or the witness does not load. arm64 images are emulated on an x86_64 host.`,
+      evidence: 'Omniscient · docs/distroproof.md · October 2026',
+      link: ['/tools/omn/#portability', 'See Omniscient’s portability results'],
+    },
+    {
+      target: 'envprobe', kind: 'Feedback from the Omniscient campaign',
+      title: 'The report was missing the facts that explained the failure.',
+      problem: 'A BPF map failed despite the required capabilities. On another guest, fentry would not attach even though CONFIG_FTRACE was enabled.',
+      finding: 'The missing facts were the process’s memlock limit and CONFIG_FUNCTION_TRACER. CONFIG_FTRACE alone did not prove that functions had trampoline call sites.',
+      outcome: 'envprobe gained soft/hard memlock limits and function-tracer configuration. Comparing it with Omniscient also caught an incorrect “no ftrace” diagnosis on Debian 11.',
+      limit: 'These are two specific probe improvements from the same campaign, rather than a second deployment.',
+      evidence: 'Omniscient · docs/distroproof.md, findings 4 and 6 · distroproof PR #5',
+      link: ['https://github.com/devutils-org/distroproof/pull/5', 'Read the probe and collection changes'],
+    },
+  ],
+  omn: [
+    {
+      target: 'HTTP server', kind: 'Controlled validation workload',
+      title: 'A slow request, traced to the lock and its holder.',
+      problem: 'A request can wait in the application, the scheduler or the block layer. A total duration does not say which part delayed it.',
+      finding: 'A loopback server declared request identities through USDT and carried them into downstream work. A deliberately injected lock delay appeared in the request’s own row: 40.06 ms, with the holder thread named.',
+      outcome: 'The measurement attributed the wait using propagated identity. The injected delay supplied a known value to check the result against.',
+      limit: 'A controlled server scenario; this is not a production incident or the planned Suzanne rendering integration.',
+      evidence: 'Omniscient · STATE.md, vertical case · docs/briefs/wave-9-vertical.md',
+    },
+    {
+      target: 'CPU workload', kind: 'Controlled validation workload',
+      title: 'Where did one task’s wall time go?',
+      problem: 'CPU samples alone leave runnable and blocked time unexplained. Adding durations can also count the same wait twice.',
+      finding: 'Omniscient decomposed a task into 198.60 ms on CPU, 1.48 ms runnable and 161.68 ms blocked, against the program’s independently measured lifetime.',
+      outcome: 'The parts totalled 361.76 ms against 361.21 ms of lifetime. The −550.68 µs residue lay within the stated ±1.58 ms resolution.',
+      limit: 'These are the documented workload’s measurements, not accuracy guarantees for arbitrary programs.',
+      evidence: 'Omniscient · STATE.md, task wall-clock decomposition',
+    },
+  ],
+  atfq: [
+    {
+      target: 'Linux demo VM', kind: 'Documented walkthrough',
+      title: 'Low “free” memory did not mean the RAM was full.',
+      problem: 'The VM showed only 1.0 GiB completely free out of 3.9 GiB. Reading that column alone made the memory situation look worse than it was.',
+      finding: 'atfq free explained the distinction and read 2.6 GiB available on the same machine. The walkthrough checked both figures against free -h.',
+      outcome: 'The explanation pointed the reader to available memory and swap activity before treating page cache as a shortage.',
+      limit: 'A teaching walkthrough with recorded figures, not evidence of a memory leak being repaired.',
+      evidence: 'ATFQ · docs/demo.md, act 1',
+      link: ['https://github.com/devutils-org/atfq/blob/main/docs/demo.md', 'Read the walkthrough'],
+    },
+    {
+      target: 'Zombie fixture', kind: 'Controlled demonstration',
+      title: 'The dead process was waiting for its parent.',
+      problem: 'A deliberately created zombie remained in the process list. Trying to kill that already-exited process would not reap it.',
+      finding: 'atfq zombie identified the child and its parent. The walkthrough verified the same PIDs and Z state with ps.',
+      outcome: 'The card explained that the parent must reap the child and directed the reader toward fixing or restarting the parent.',
+      limit: 'The fixture supplies the known answer. ATFQ explains and inspects; it does not kill or restart processes.',
+      evidence: 'ATFQ · docs/demo.md, act 2',
+      link: ['https://github.com/devutils-org/atfq/blob/main/docs/demo.md', 'Read the zombie demonstration'],
+    },
+  ],
+  xpac: [
+    {
+      target: 'Debian / Ubuntu lab', kind: 'Disposable sandbox validation',
+      title: 'A familiar package name exposed an identity-parser bug.',
+      problem: 'Packages named apt, flatpak or dnf were misparsed or rejected by the APT identity parser.',
+      finding: 'Rootless Debian bookworm and Ubuntu noble runs exercised real package inventories and transactions in disposable roots, revealing the collision.',
+      outcome: 'The parser was corrected. The documented runs passed inspection, reviewed install/removal, idempotent reapply and stale-plan refusal checks.',
+      limit: 'Sandbox validation on Linux, not an external project deployment; host package databases were not transaction targets.',
+      evidence: 'xpac · docs/validation.md, rootless Debian, Ubuntu and Fedora roots',
+      link: ['https://github.com/devutils-org/xpac/blob/main/docs/validation.md', 'Read the validation record'],
+    },
+    {
+      target: 'Fedora lab', kind: 'Disposable sandbox validation',
+      title: 'One signed install broke the next inventory.',
+      problem: 'RPM inventories failed after the first signed package install because key headers appeared as gpg-pubkey entries.',
+      finding: 'The Fedora 44 sandbox exercised an install followed by inventory and reapply, exposing the unexpected header records.',
+      outcome: 'The inventory handling was corrected. The documented DNF5 run passed confirmed install, idempotent reapply, protected-package refusal and reviewed removal.',
+      limit: 'Observed in a disposable Fedora root; it does not establish macOS or every RPM distribution’s behavior.',
+      evidence: 'xpac · docs/validation.md, rootless Debian, Ubuntu and Fedora roots',
+      link: ['https://github.com/devutils-org/xpac/blob/main/docs/validation.md', 'Read the Fedora findings'],
+    },
+  ],
+  vmanyware: [
+    {
+      target: 'Linux native client', kind: 'Isolated integration validation',
+      title: 'A lost reply must not become a second VM action.',
+      problem: 'When a start request loses its reply, the client cannot safely assume failure and submit a fresh operation.',
+      finding: 'The lifecycle walkthrough exercised persisted request identity, lost replies and explicit resume. Native Linux validation connected the real Tauri UI and production commands to Axum and a generated HTTPS provider fixture.',
+      outcome: 'The documented validation checked start and graceful shutdown through the native stack. Retained operation identity makes an uncertain result reviewable and resumable.',
+      limit: 'The provider is a local fixture. Real Proxmox lifecycle writes and end-to-end provisioning remain unverified.',
+      evidence: 'VMAnyware · docs/lifecycle-execution.md, real Linux WebView/IPC evidence',
+      link: ['https://github.com/devutils-org/VMAnyware/blob/main/docs/lifecycle-execution.md', 'Read the integration evidence'],
+    },
+  ],
+}

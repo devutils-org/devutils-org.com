@@ -88,8 +88,6 @@
   .split-cols { grid-template-columns: 1fr; gap: 60px; }
   .keys { grid-template-columns: 1fr; }
   .keys div:nth-last-child(2) { border-bottom: 1px solid var(--line); }
-  .pipeline[data-flow] { grid-template-columns: repeat(2, 1fr) !important; }
-  .pipeline[data-flow] .node { border-bottom: 1px solid var(--line); }
 }
 @media (width <= 600px) {
   .split-cols h2 { font-size: 30px; }

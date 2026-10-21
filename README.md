@@ -1,7 +1,7 @@
 # devutils
 
-The site of [devutils-org](https://github.com/devutils-org): the org's home page
-now, one landing page per tool next.
+The site of [devutils-org](https://github.com/devutils-org): the org's home
+page, one landing page per tool, and the Together and Design pages.
 
 Same art direction as the Omniscient site, in frosted glass. The 3D is the
 atfq mark, raymarched in a WebGL shader as a slab of glass: the ball orbits
@@ -13,17 +13,27 @@ call to action.
 npm install
 npm run dev      # http://localhost:5173
 npm run build    # static site in dist/
+npm test         # types (tsc) and tests (node --test)
 ```
 
-- `src/tools.js` — the tools, their statuses and links. Every page reads it.
-- `src/shapes.js` — the glass shapes: the atfq mark (home, ATFQ), and one per
+TypeScript throughout, run as is: Vite builds the site, and Node runs the
+scripts and tests straight from the `.ts` files, so only erasable syntax is
+allowed (`tsconfig.json` checks it).
+
+- `src/tools.ts` — the tools, their statuses and links. Every page reads it.
+- `src/pages.ts` — every page: its file, title, descriptions, glass shape,
+  stylesheets and content module. `src/shell.ts` writes each page's `<head>`
+  from it, and a tool page's whole document: `tools/*/index.html`,
+  `together/` and `design/` are placeholders (`vite.config.ts` applies it).
+- `src/shapes.ts` — the glass shapes: the atfq mark (home, ATFQ), and one per
   tool (`omn`, `distroproof`, `xpac`, `vmanyware`), picked by a page's `shape`.
-- `src/scene.js` — the glass mark. The page drives it with `setState`
+- `src/scene.ts` — the glass mark. The page drives it with `setState`
   (anchor element, or viewport position and size; opacity).
-- `src/main.js` — renders the content from `tools.js`, maps each section to a
-  scene state, handles the flow and the cards.
+- `src/main.ts` — the home page: fills the content from `tools.ts` if the
+  build has not, and places the mark for each section (`scenes`).
 - A section that holds a `.stage` element gets the mark drawn on it; the
-  others place it with `SCENES` in `main.js`.
+  others place it with their scene state, the home page's in `main.ts`, a
+  tool page's from `src/toolpage/render.ts` (a section's `mark` moves it).
 - Frosted panels use the `.glass` class. Write `backdrop-filter` without the
   `-webkit-` twin: the CSS minifier adds the prefix itself, and given both it
   keeps only the prefixed one, which Chrome ignores.
@@ -31,10 +41,10 @@ npm run build    # static site in dist/
 Pages:
 
 - `/` — the org: the tools, how they fit together, the standard they share.
-- `/tools/omn/` — Omniscient, on the composition of its first site. The
-  terminal views are real snapshots from `omniscient/docs/view/gallery`
+- `/tools/omn/` — Omniscient, on the tool-page composition
+  (`src/omn/page.ts`, with its families' stories in a dialog). The terminal views are real snapshots from `omniscient/docs/view/gallery`
   (fixture `many-requests`), copied into `src/omn/captures/` and coloured by
-  `src/omn/ansi.js`; refresh them by copying the `.ansi` files again.
+  `src/omn/ansi.ts`; refresh them by copying the `.ansi` files again.
 
 Performance switches, on any page's URL:
 `?debug=fps,noblur,blur:10,nopanels,no3d,nolights,res:0.5,scrollres:0.75`
@@ -44,29 +54,33 @@ lights behind it; a drawing-buffer resolution cap, always or while scrolling:
 browser.
 
 The build writes each page's generated content into its HTML
-(`scripts/prerender.mjs`, from `src/prerender.js` built for Node with
+(`scripts/prerender.ts`, from `src/prerender.ts` built for Node with
 `vite build --ssr`): pages read without JavaScript, search engines and link
 previews see the text, and nothing shifts when the scripts start. A page's
 content lives in one function that returns its HTML as strings
-(`toolPageHtml` in `src/toolpage/render.js`, `homeHtml` in `src/home.js`);
+(`toolPageHtml` in `src/toolpage/render.ts`, `homeHtml` in `src/home.ts`);
 the page's script fills an element only when the build has not, then wires it
-up. Every page is listed once, in `src/pages.js`: the build entries, the link
+up. Every page is listed once, in `src/pages.ts`: the build entries, the link
 previews and the social visuals come from there, and the build stops if a
-page has no content in `src/prerender.js`.
+page has no content in `src/prerender.ts`.
 The script also adds speculation rules (a page loads while the pointer rests
 on its link), and `style.css` cross-fades from one page to the next.
 
-`src/page.js` is what every page shares (scene, frosted panels, reveal, copy
-buttons, step-through pipelines); `src/html.js` the escaping and icons every
-page's HTML uses, `src/tabs.js` the tab rows. The mark is `public/mark.svg`: use it, not a
+`src/page.ts` is what every page shares (scene, frosted panels, reveal, copy
+buttons, step-through pipelines); `src/html.ts` the escaping and icons every
+page's HTML uses, `src/tabs.ts` the tab rows. Styles: `src/style.css` for
+every page, `src/toolpage/components.css` for every tool page (cards,
+terminals, "In practice"), then `src/omn/omn.css` for Omniscient's own or
+`src/toolpage/toolpage.css` for the others'. The mark is `public/mark.svg`: use it, not a
 copy, wherever the logo appears.
 
 - `/tools/atfq/`, `/tools/distroproof/`, `/tools/xpac/`, `/tools/vmanyware/`
   — one landing page per tool, on the same composition as Omniscient's. Each
-  page's content is one file, `src/toolpage/<id>.js` (`src/omn/page.js` for
+  page's content is one file, `src/toolpage/<id>.ts` (`src/omn/page.ts` for
   Omniscient): hero, then sections (`intro`, `cards`, `flow`, `terminal`,
-  `table`, `receipts`, `html`, `practice`, `start`…); `src/toolpage/render.js`
-  turns it into the page. Every fact, command and output in them comes from
+  `table`, `receipts`, `html`, `practice`, `start`…); `src/toolpage/render.ts`
+  turns it into the page, and `src/toolpage/types.ts` says what a page may
+  hold: a field nothing renders does not type-check. Every fact, command and output in them comes from
   the tool's own README or examples — keep it that way when editing.
 
 - `/tools/atfq/book/` — atfq's book: every hub, chapter and card, generated
@@ -78,14 +92,14 @@ copy, wherever the logo appears.
   npm run book:atfq
   ```
 
-  The pages land in `public/tools/atfq/book/`; `scripts/atfq-book.mjs` swaps
+  The pages land in `public/tools/atfq/book/`; `scripts/atfq-book.ts` swaps
   in `src/atfq-book/book.css` and the devutils header, and stops with an
   error if the generator's header changes shape.
 
-A new tool page: copy one of `tools/<id>/index.html` and one of
-`src/toolpage/<id>.js`, add the page to `build.rollupOptions.input` in
-`vite.config.js`, and give the tool a `site` in `src/tools.js` so the home
-card links to it.
+A new tool page: write its content in `src/toolpage/<id>.ts` (copy one), add
+it to `src/pages.ts` and `src/prerender.ts`, and create `tools/<id>/index.html`
+as a one-line placeholder like the others. The home card links to it by
+itself; `npm test` says what is missing.
 
 Deploy: `.github/workflows/pages.yml` publishes `dist/` to GitHub Pages on
 each push to `main`. For the org root URL, the repository is
@@ -93,14 +107,13 @@ each push to `main`. For the org root URL, the repository is
 
 ## Measuring the site
 
-`bench/browse.mjs` is one scripted visit of a page (load, rest, scroll down
+`bench/browse.ts` is one scripted visit of a page (load, rest, scroll down
 and up, rest) in Chromium, on the graphics card or in software; it prints the
 frame times the page saw. `bench/site.yml` runs that visit under Omniscient
 and counts the browser's cpu time and the card's energy. The before/after
 results are on the Together page (`#site`).
 
 ```sh
-npm i --no-save playwright-core
 npm run build && (cd dist && python3 -m http.server 4202) &
 CHROME=/path/to/chromium omn -f bench/site.yml --format json --program-stderr visit.err > visit.json
 ```
@@ -122,20 +135,20 @@ repository links remain disabled while it is unavailable publicly.
 
 ### In practice stories
 
-Every tool page has a target selector backed by `src/practice/cases.js`.
+Every tool page has a target selector backed by `src/practice/cases.ts`.
 Each entry names the target, type of evidence, problem, finding, result,
 limits and source document. Documented demonstrations and sandbox checks
 are labelled as such; they are not customer deployments. VMAnyware currently
 has one documented integration case. Add a target only when its evidence is
 available. Private Omniscient sources are cited by path without public links.
 
-`src/practice/practice.js` renders the shared section and handles its tabs;
+`src/practice/practice.ts` renders the shared section and handles its tabs;
 `practice.css` stacks the story on narrow screens. The old Distroproof
 `#case-study` anchor still points to its new section.
 
 The Together page's results table comes from the latest run of the chain on
 each target, copied from an Omniscient checkout into
-`src/toolpage/chain-runs.json`; `src/toolpage/chain-results.js` turns it into
+`src/toolpage/chain-runs.json`; `src/toolpage/chain-results.ts` turns it into
 the rows and the sentences that sum them up, so the headline cannot claim more
 than the rows show. After a new run of the chain:
 

@@ -1,0 +1,73 @@
+/* The components every tool page is built from (src/toolpage/render.ts), on
+   top of the shared style.css: families of cards, terminal captures, the
+   "In practice" stories. Omniscient's own are in src/omn/omn.css, the other
+   tool pages' in toolpage.css. */
+
+.crumb-home { display: flex; align-items: center; gap: 10px; }
+.crumb-home span { color: var(--muted); font-weight: 500; transition: color .2s; }
+.crumb-home:hover span { color: #fff; }
+.crumb-sep { color: #494951; font-weight: 400; margin: 0 2px; }
+
+.inline-link { color: #c1c9e7; margin-top: 20px; font-size: 12px; display: inline-block; }
+.inline-link:hover { color: #fff; }
+p code { color: #bbc5e4; font-size: .9em; }
+
+/* families */
+.family-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; display: grid; }
+.family-card { border-radius: var(--radius-panel); padding: 25px; display: block; transition: border-color .25s; }
+.family-card:hover { border-color: #a3b6ff55; }
+.family-card > div { align-items: center; gap: 15px; display: flex; }
+.family-glyph { color: #b9caff; min-width: 29px; font: 22px var(--mono); text-shadow: 0 0 18px #a3b6ff55; }
+.family-card small { color: #a3a5b8; letter-spacing: 1px; font: 10px var(--mono); }
+.family-arrow { color: #86869d; margin-left: auto; font-size: 14px; transition: transform .25s, color .25s; }
+.family-card:hover .family-arrow { color: #fff; transform: translate(2px, -2px); }
+.family-card h3 { letter-spacing: -.4px; margin: 30px 0 10px; font-size: 20px; font-weight: 500; }
+.family-card p { color: var(--muted); min-height: 46px; font-size: 12px; line-height: 1.9; }
+
+/* terminal views */
+.capture-tabs { border-radius: 999px; justify-content: center; gap: 6px; width: max-content; margin: 35px auto 20px; padding: 5px; display: flex; }
+.capture-tabs button { color: var(--muted); background: 0 0; border: 0; border-radius: 999px; padding: 10px 25px; font-size: 11px; transition: background .25s, color .25s; }
+.capture-tabs button:hover { color: #fff; }
+.capture-tabs button[aria-selected=true] { color: #fff; background: #ffffff14; box-shadow: inset 0 1px 0 #ffffff1a; }
+.terminal { border-radius: var(--radius-panel); overflow: hidden; }
+.terminal-header { border-bottom: 1px solid var(--line); color: #a3a5b6; justify-content: space-between; align-items: center; padding: 16px 22px; font: 11px var(--mono); display: flex; }
+.terminal-header > span:first-child { letter-spacing: 4px; color: #444650; }
+.terminal-body { overflow-x: auto; padding: 22px; background: #03040699; }
+.tui { margin: 0 auto; width: max-content; color: #c9ccd8; font: 11px/1.36 var(--mono); }
+.tui span { color: var(--c, inherit); }
+.tui .b { font-weight: 600; }
+.tui .d { opacity: .5; }
+.tui .i { font-style: italic; }
+.tui .r { background: var(--c, #c9ccd8); color: #050507; }
+.terminal-caption { border-top: 1px solid var(--line); color: #b6b7c7; margin: 0; padding: 16px 22px; font-size: 12px; }
+.capture-note { margin-top: 16px; }
+
+@media (width <= 950px) {
+  .family-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (width <= 600px) {
+  .crumb-home span, .crumb-sep { display: none; }
+  .nav nav a:last-child { display: none; }
+  .family-grid { grid-template-columns: 1fr; }
+  .family-card p { min-height: 0; }
+  .capture-tabs button { padding: 9px 18px; }
+  .terminal-body { padding: 14px; }
+  .tui { font-size: 9px; }
+}
+
+/* "In practice": a tool's stories, one tab per target (src/practice/practice.ts) */
+.practice .capture-tabs { overflow-x: auto; flex-wrap: nowrap; justify-content: flex-start; }
+.practice .capture-tabs button { flex-shrink: 0; }
+.practice-story { border-radius: var(--radius-panel); padding: clamp(22px, 4vw, 48px); }
+.practice-story[hidden] { display: none; }
+.practice-story header small { color: var(--muted); font: 10px var(--mono); text-transform: uppercase; letter-spacing: 1.4px; }
+.practice-story h3 { font-size: clamp(23px, 3vw, 34px); line-height: 1.25; max-width: 850px; margin: 14px 0 30px; }
+.practice-story dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin: 0; }
+.practice-story dt { color: #9cf5ff; font: 11px var(--mono); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.practice-story dd { margin: 0; color: #c6c8d8; font-size: 14px; line-height: 1.8; }
+.practice .practice-evidence { display: block; padding: 24px 0 0; margin: 28px 0 0; border-top: 1px solid var(--line); }
+.practice-evidence p { color: var(--muted); font-size: 13px; line-height: 1.7; max-width: 900px; margin: 0 0 12px; }
+.practice-evidence small { display: block; color: var(--muted); font: 11px/1.7 var(--mono); }
+.practice-evidence a { display: inline-flex; margin-top: 14px; }
+@media (width <= 750px) { .practice-story dl { grid-template-columns: 1fr; gap: 22px; } }
