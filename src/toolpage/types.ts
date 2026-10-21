@@ -3,6 +3,7 @@
 // type error here, so a page cannot carry content that never shows.
 
 import type { Tool } from '../tools.ts'
+import type { Lang } from '../i18n.ts'
 
 // where the glass mark goes while a section holds the middle of the viewport
 export interface SceneState {
@@ -100,6 +101,8 @@ export type Section =
       })
 
 export interface Page {
+  // the language it is written in; English when not said
+  lang?: Lang
   // a tool of src/tools.ts, or `meta` for a page that is not a tool's
   id?: string
   meta?: PageMeta

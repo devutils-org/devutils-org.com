@@ -1,6 +1,7 @@
 import { renderPractice, initPractice } from '../practice/practice.ts'
-import { tools, repoUrl } from '../tools.ts'
-import { page as sitePage, route } from '../pages.ts'
+import { tools, repoUrl, inLang } from '../tools.ts'
+import { pageOf, route, translation } from '../pages.ts'
+import { words, type Lang } from '../i18n.ts'
 import { $, $$, initPage, renderFlowCards } from '../page.ts'
 import { esc, pad, icon } from '../html.ts'
 import { initTabs } from '../tabs.ts'
@@ -13,7 +14,11 @@ import type { Install, Page, PageMeta, Section, SceneState } from './types.ts'
 // go before `start`, unless the page places a `practice` section itself.
 
 // what the page needs of its tool, or of the page itself when it is not a tool's
-export type PageTool = PageMeta & { status?: string; repoPrivate?: boolean }
+// (in the page's language)
+export type PageTool = PageMeta & { status?: string; repoPrivate?: boolean; lang?: Lang }
+
+const wordsOf = (tool: PageTool) => words[tool.lang ?? 'en']
+const homeOf = (tool: PageTool) => route(pageOf('main', tool.lang))
 
 const html = String.raw
 
@@ -24,7 +29,7 @@ function hero(h: Page['hero'], tool: PageTool, overviewId: string) {
       <h1>${h.title[0]}<br /><span>${h.title[1]}</span></h1>
       <p class="hero-copy">${h.copy}</p>
       <div class="actions">
-        <a class="primary" href="#${overviewId}">Discover ${tool.name} ${icon('arrow-down')}</a>
+        <a class="primary" href="#${overviewId}">${wordsOf(tool).discover(tool.name)} ${icon('arrow-down')}</a>
         <a class="secondary" href="#start">${h.primary}</a>
       </div>
       <div class="stage" aria-hidden="true">
@@ -45,7 +50,7 @@ const open = (s: { id?: string; class?: string; scene: string }) => `<section cl
 // A link into the page's repository; while the repository is private, the
 // same label, shown as unavailable rather than leading to a 404.
 export function repoLink(tool: PageTool, path: string, label: string, className = '') {
-  if (tool.repoPrivate) return `<span class="${className ? `${className} ` : ''}repo-unavailable" aria-disabled="true" title="The repository is currently private">${label}</span>`
+  if (tool.repoPrivate) return `<span class="${className ? `${className} ` : ''}repo-unavailable" aria-disabled="true" title="${wordsOf(tool).repoPrivate}">${label}</span>`
   return `<a${className ? ` class="${className}"` : ''} href="${tool.repoUrl}${path}">${label}</a>`
 }
 
@@ -89,9 +94,9 @@ const sections: Renderers = {
     ${s.fine ? `<p class="fine capture-note">${s.fine}</p>` : ''}
   </section>`,
 
-  terminal: (s) => html`${open(s)}
+  terminal: (s, tool) => html`${open(s)}
     ${heading(s)}
-    <div class="capture-tabs glass" role="tablist" aria-label="Terminal captures">
+    <div class="capture-tabs glass" role="tablist" aria-label="${wordsOf(tool).terminalCaptures}">
       ${s.tabs.map((t, i) => `<button role="tab" type="button" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}" data-tab="${i}">${t.name}</button>`).join('')}
     </div>
     <div class="terminal glass" role="tabpanel" tabindex="0">
@@ -109,7 +114,7 @@ const sections: Renderers = {
     ${s.fine ? `<p class="fine">${s.fine}</p>` : ''}
   </section>`,
 
-  practice: (s, tool) => renderPractice(tool.id),
+  practice: (s, tool) => renderPractice(tool.id, tool.lang),
 
   table: (s) => html`${open(s)}
     ${heading(s)}
@@ -216,16 +221,16 @@ const sections: Renderers = {
         .map(
           (b, i) => html`
       <div class="install glass">
-        <div class="install-head"><span>${b.label}</span><button type="button" data-copy="#install-${i}">Copy</button></div>
+        <div class="install-head"><span>${b.label}</span><button type="button" data-copy="#install-${i}">${wordsOf(tool).copy}</button></div>
         ${b.note ? `<p class="install-note">${b.note}</p>` : ''}
         <pre id="install-${i}">${esc(b.code)}</pre>
       </div>`,
         )
         .join('')}
       <div class="actions">
-        ${s.actions ?? `${repoLink(tool, '', `Open the repository <span>${icon('arrow-up-right')}</span>`, 'primary')}\n        <a class="secondary" href="/">All devutils tools</a>`}
+        ${s.actions ?? `${repoLink(tool, '', `${wordsOf(tool).openRepo} <span>${icon('arrow-up-right')}</span>`, 'primary')}\n        <a class="secondary" href="${homeOf(tool)}">${wordsOf(tool).allTools}</a>`}
       </div>
-      ${s.command ? `<div class="command"><code id="cmd">${esc(s.command)}</code><button data-copy="#cmd" type="button" aria-label="Copy command">Copy</button></div>` : ''}
+      ${s.command ? `<div class="command"><code id="cmd">${esc(s.command)}</code><button data-copy="#cmd" type="button" aria-label="${wordsOf(tool).copyCommand}">${wordsOf(tool).copy}</button></div>` : ''}
       <small>${s.small}</small>
     </section>`,
 }
@@ -252,40 +257,44 @@ function shell(text: string) {
 // The page's HTML as strings, keyed by the element each one fills. The build
 // writes them into the page (scripts/prerender.ts), so the content is there
 // before any script runs; renderToolPage fills them only if it is not.
-// a tool of src/tools.ts, with its repository's address
-export function toolOf(id: string) {
+// a tool of src/tools.ts, in that language, with its repository's address
+export function toolOf(id: string, lang: Lang = 'en') {
   const tool = tools.find((t) => t.id === id)
   if (!tool) throw new Error(`no tool ${id} in src/tools.ts`)
-  return { ...tool, repoUrl: repoUrl(tool) }
+  return { ...inLang(tool, lang), repoUrl: repoUrl(tool), lang }
 }
 
 // the tool a page is about, or the page's own `meta`
-const pageTool = (page: Page): PageTool => page.meta ?? toolOf(page.id ?? '')
+const pageTool = (page: Page): PageTool => (page.meta ? { ...page.meta, lang: page.lang } : toolOf(page.id ?? '', page.lang))
 
 const render = (s: Section, tool: PageTool) => (sections[s.type] as (s: Section, tool: PageTool) => string)(s, tool)
 
 export function toolPageHtml(page: Page) {
   const tool = pageTool(page)
   const placed = page.sections.some((s) => s.type === 'practice')
-  const nav = [...page.nav.filter(([, href]) => href !== '#case-study'), ...(!placed && renderPractice(tool.id) ? [['In practice', '#in-practice'] as const] : [])]
+  const w = wordsOf(tool)
+  const here = pageOf(tool.id, tool.lang)
+  const other = translation(here)
+  const nav = [...page.nav.filter(([, href]) => href !== '#case-study'), ...(!placed && renderPractice(tool.id) ? [[w.practice.nav, '#in-practice'] as const] : [])]
   const navLink = ([label, href]: readonly [string, string | { repo: string }]) => (typeof href === 'string' ? `<a href="${href}">${label}</a>` : repoLink(tool, href.repo, `${label} ${icon('arrow-up-right')}`))
 
   return {
     nav: html`
     <div class="logo">
-      <a class="crumb-home" href="/" aria-label="devutils home"><img class="logo-icon" src="/mark.svg" alt="" /><span>devutils</span></a>
+      <a class="crumb-home" href="${homeOf(tool)}" aria-label="${w.home}"><img class="logo-icon" src="/mark.svg" alt="" /><span>devutils</span></a>
       <span class="crumb-sep">/</span>
-      <a href="${route(sitePage(tool.id))}">${tool.name}</a>${tool.status ? `<span class="alpha">${tool.status}</span>` : ''}
+      <a href="${route(here)}">${tool.name}</a>${tool.status ? `<span class="alpha">${tool.status}</span>` : ''}
     </div>
-    <nav aria-label="Sections">${nav.map(navLink).join('')}</nav>
+    <nav aria-label="${w.sections}">${nav.map(navLink).join('')}</nav>
+    <a class="lang-switch" href="${route(other)}" hreflang="${other.lang}" lang="${other.lang}" title="${w.other.title}">${w.other.label}</a>
     ${repoLink(tool, '', `GitHub <span>${icon('arrow-up-right')}</span>`, 'github')}`,
 
-    main: hero(page.hero, tool, page.sections.find((section) => section.type === 'intro')?.id ?? 'overview') + page.sections.map((s) => (s.type === 'start' && !placed ? renderPractice(tool.id) : '') + render(s, tool)).join(''),
+    main: hero(page.hero, tool, page.sections.find((section) => section.type === 'intro')?.id ?? 'overview') + page.sections.map((s) => (s.type === 'start' && !placed ? renderPractice(tool.id, tool.lang) : '') + render(s, tool)).join(''),
 
     footer: html`
-    <a class="logo" href="/"><img class="logo-icon" src="/mark.svg" alt="" /> devutils</a>
+    <a class="logo" href="${homeOf(tool)}"><img class="logo-icon" src="/mark.svg" alt="" /> devutils</a>
     <span>${tool.name} · ${page.footer ?? tool.line}</span>
-    ${repoLink(tool, page.licensePath ?? '', `${tool.license ?? 'Repository'} ${icon('arrow-up-right')}`)}`,
+    ${repoLink(tool, page.licensePath ?? '', `${tool.license ?? w.repository} ${icon('arrow-up-right')}`)}`,
   }
 }
 
@@ -317,5 +326,5 @@ export async function renderToolPage(page: Page) {
       // low and near the edge: behind the glass panels, clear of the headings
       scenes[s.scene] = { ...(i % 2 ? { fx: 0.1, fy: 0.7, size: 0.25, opacity: 0.7 } : { fx: 0.9, fy: 0.7, size: 0.25, opacity: 0.75 }), ...s.mark }
     })
-  await initPage({ scenes, shape: sitePage(pageTool(page).id).shape })
+  await initPage({ scenes, shape: pageOf(pageTool(page).id).shape })
 }

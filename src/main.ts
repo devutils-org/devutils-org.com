@@ -1,13 +1,14 @@
 import { ORG_URL } from './tools.ts'
 import { $, initPage } from './page.ts'
 import { homeHtml } from './home.ts'
+import { pageLang } from './i18n.ts'
 
 // ---------- content from tools.ts ----------
 
 document.querySelectorAll<HTMLAnchorElement>('[data-org]').forEach((a) => (a.href = ORG_URL))
 
 if (!$('#tool-grid').firstElementChild) {
-  for (const [id, markup] of Object.entries(homeHtml())) $(`#${id}`).innerHTML = markup
+  for (const [id, markup] of Object.entries(homeHtml(pageLang()))) $(`#${id}`).innerHTML = markup
 }
 
 await initPage({

@@ -4,6 +4,7 @@
 
 import { initExternalLinks } from './external-links.ts'
 import { esc, pad } from './html.ts'
+import { pageLang, words } from './i18n.ts'
 import type { ShapeName } from './shapes.ts'
 import type { FlowStep, SceneState } from './toolpage/types.ts'
 
@@ -72,11 +73,11 @@ export async function initPage({ scenes, shape = 'mark' }: { scenes: Record<stri
     btn.addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText($(btn.dataset.copy ?? '').textContent ?? '')
-        btn.textContent = 'Copied'
+        btn.textContent = words[pageLang()].copied
       } catch {
-        btn.textContent = 'Select it'
+        btn.textContent = words[pageLang()].selectIt
       }
-      setTimeout(() => (btn.textContent = 'Copy'), 1600)
+      setTimeout(() => (btn.textContent = words[pageLang()].copy), 1600)
     }),
   )
 
@@ -207,8 +208,8 @@ function initNavigation() {
   menu.id = 'navigation-menu'
   header.insertBefore(menu, nav)
   menu.append(nav)
-  const github = $('.github', header)
-  if (github) menu.append(github)
+  // the other language's page, then GitHub, follow the links into the menu
+  for (const el of header.querySelectorAll('.lang-switch, .github')) menu.append(el)
   const toggle = document.createElement('button')
   toggle.type = 'button'
   toggle.className = 'nav-toggle'
@@ -218,7 +219,7 @@ function initNavigation() {
   function setOpen(open: boolean) {
     header.classList.toggle('menu-open', open)
     toggle.setAttribute('aria-expanded', String(open))
-    toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation')
+    toggle.setAttribute('aria-label', open ? words[pageLang()].closeNav : words[pageLang()].openNav)
     menu.inert = mobile.matches && !open
   }
   setOpen(false)

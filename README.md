@@ -38,6 +38,18 @@ allowed (`tsconfig.json` checks it).
   `-webkit-` twin: the CSS minifier adds the prefix itself, and given both it
   keeps only the prefixed one, which Chrome ignores.
 
+The site is in English and in French, under `/fr/`, with a link to the
+other language in every header. `src/pages.ts` writes each page once, its
+French title beside the English; a tool page's French content is the module
+of the same name ending in `.fr.ts` (`src/toolpage/atfq.fr.ts`,
+`src/omn/page.fr.ts`), the home page's is `fr/index.html`, and the words the
+pages share (buttons, labels) are in `src/i18n.ts`. The tools, the "In
+practice" stories and Omniscient's families keep their French beside their
+English (`fr:` in `src/tools.ts`, `cases.ts`, `families.ts`). Commands,
+terminal captures and the atfq book stay as the programs print them, in
+English. `npm test` checks that each French page keeps its English page's
+sections, lists and commands, and links to French pages.
+
 Pages:
 
 - `/` — the org: the tools, how they fit together, the standard they share.

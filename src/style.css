@@ -501,6 +501,8 @@ footer a:hover { color: #fff; }
 .nav-menu { display: flex; align-items: center; justify-content: space-between; flex: 1; gap: 28px; margin-left: 24px; }
 .nav-menu nav { align-items: center; }
 .nav-menu > .github { flex-shrink: 0; display: inline-flex; align-items: center; }
+.lang-switch { flex-shrink: 0; margin-left: auto; margin-right: -12px; color: var(--muted); border: 1px solid var(--glass-line); border-radius: 999px; padding: 9px 12px; font: 11px var(--mono); letter-spacing: 1px; transition: color .2s, background .2s; }
+.lang-switch:hover { color: #fff; background: #ffffff0a; }
 .nav-toggle { display: none; }
 /* Inline code follows the surrounding prose; terminal examples stay monospace. */
 :is(.home, .tool-page) :is(p, dd, dt, li, td, th, small, h2, h3) code:not(pre code, .terminal code, .command code, [class]) {
@@ -521,6 +523,7 @@ footer a:hover { color: #fff; }
   .menu-open .nav-menu { display: flex; flex-direction: column; align-items: stretch; gap: 12px; }
   .nav .nav-menu nav { flex-direction: column; align-items: stretch; gap: 0; margin: 0; font-size: 14px; }
   .nav-menu nav a, .nav-menu nav .repo-unavailable { padding: 14px 12px; border-radius: var(--radius-control); }
+  .nav-menu > .lang-switch { margin: 0 12px; align-self: flex-start; }
   .nav-menu nav a:is(:hover, :focus-visible) { background: #ffffff08; }
   .nav-menu > .github { justify-content: space-between; padding: 14px 16px; }
   .nav .alpha { display: none; }

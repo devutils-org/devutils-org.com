@@ -1,79 +1,18 @@
 // Omniscient's landing page, on the same composition as the other tools'
 // (src/toolpage/render.ts). The nine families open into their story, in a
-// dialog; the terminal views are real snapshots from the view gallery.
+// dialog; the terminal views are real snapshots from the view gallery
+// (parts.ts, shared with the French page, page.fr.ts).
 
-import { $, $$ } from '../page.ts'
-import { esc, pad, icon } from '../html.ts'
+import { icon } from '../html.ts'
 import { repoLink, toolOf } from '../toolpage/render.ts'
-import { ansiToHtml } from './ansi.ts'
-import { families, type Family } from './families.ts'
+import { captures, familiesBody, wireFamilies } from './parts.ts'
 import { chainResults } from '../toolpage/chain-results.ts'
 import runs from '../toolpage/chain-runs.json' with { type: 'json' }
-import request from './captures/request.ansi?raw'
-import lanes from './captures/lanes.ansi?raw'
-import flame from './captures/flame.ansi?raw'
 import type { Page } from '../toolpage/types.ts'
 
 const omn = toolOf('omn')
 const chain = chainResults(runs, {})
 const more = (path: string, label: string) => repoLink(omn, path, label, 'inline-link')
-const familyLabel = (f: Family, i: number) => `<small>${pad(i)} / ${f.id.toUpperCase()}</small>`
-
-const familyCard = (f: Family, i: number) => `
-    <button class="family-card glass reveal" style="--d:${(i % 3) * 0.08}s" type="button" data-family="${i}" aria-haspopup="dialog">
-      <div><span class="family-glyph">${f.glyph}</span>${familyLabel(f, i)}<span class="family-arrow">${icon('arrow-up-right')}</span></div>
-      <h3>${f.name}</h3>
-      <p>${f.text}</p>
-      <span class="family-link"><span>Read the story</span><span class="family-count">${f.sources} sources</span></span>
-    </button>`
-
-const story = (f: Family, i: number) => `
-    <div class="story-head"><span class="family-glyph">${f.glyph}</span>${familyLabel(f, i)}<span class="family-count">${f.sources} sources</span></div>
-    <p class="eyebrow">${f.name}</p>
-    <h3 id="family-story-title">${f.title}</h3>
-    <div class="story-grid">
-      <div class="story-text">
-        ${f.story.map((p) => `<p>${p}</p>`).join('')}
-        <ul class="story-sources">${f.highlights.map(([id, what]) => `<li><code>${id}</code><span>${what}</span></li>`).join('')}</ul>
-      </div>
-      <div class="story-proof">
-        <pre><code>${esc(f.example)}</code></pre>
-        <p class="story-limit"><small>HONEST BOUNDARY</small>${f.limit}</p>
-        ${repoLink(omn, `/blob/main/docs/families/${f.id}.md`, omn.repoPrivate ? `Full ${f.id} guide · private repository` : `Read the full ${f.id} guide ${icon('arrow-up-right')}`, 'family-guide')}
-      </div>
-    </div>`
-
-// each card opens into its story, growing out of the card
-function wireFamilies(root: HTMLElement) {
-  const dialog = $('#family-story', root) as HTMLDialogElement
-  let opener: HTMLElement | null = null
-  function openStory(card: HTMLElement) {
-    const i = Number(card.dataset.family)
-    $('.story-body', dialog).innerHTML = story(families[i]!, i)
-    opener = card
-    dialog.showModal()
-    dialog.scrollTop = 0
-    const from = card.getBoundingClientRect()
-    const to = dialog.getBoundingClientRect()
-    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      dialog.animate(
-        [
-          { transform: `translate(${from.left - to.left}px, ${from.top - to.top}px) scale(${from.width / to.width}, ${from.height / to.height})`, opacity: 0.4 },
-          { transform: 'none', opacity: 1 },
-        ],
-        { duration: 650, easing: 'cubic-bezier(.22, 1, .36, 1)' },
-      )
-    }
-  }
-  function closeStory() {
-    dialog.close()
-    opener?.focus()
-  }
-  $$('.family-card', root).forEach((card) => card.addEventListener('click', () => openStory(card)))
-  $('.story-close', dialog).addEventListener('click', closeStory)
-  dialog.addEventListener('click', (e) => e.target === dialog && closeStory())
-  dialog.addEventListener('cancel', (e) => (e.preventDefault(), closeStory()))
-}
 
 export default {
   id: 'omn',
@@ -107,11 +46,7 @@ export default {
       eyebrow: 'NINE FAMILIES / CONNECTED QUESTIONS',
       title: ['Every layer has', 'a story to tell.'],
       text: 'Choose the part of the system you want to understand. Open a family to read its story: the question, its sources, a real run and its limits.',
-      body: `<div class="family-grid" id="family-grid">${families.map(familyCard).join('')}</div>
-    <dialog class="family-story glass" id="family-story" aria-labelledby="family-story-title">
-      <button class="story-close" type="button" aria-label="Close">×</button>
-      <div class="story-body"></div>
-    </dialog>`,
+      body: familiesBody('en'),
       wire: wireFamilies,
     },
     {
@@ -173,9 +108,9 @@ export default {
       pre: 'tui',
       size: '120 × 40',
       tabs: [
-        { name: 'Request', label: 'omn top / request', html: ansiToHtml(request), caption: 'A request, in focus — what one request costs, from arrival to reply. Carry its context into the other views.' },
-        { name: 'Lanes', label: 'omn top / lanes', html: ansiToHtml(lanes), caption: 'Work across execution lanes — threads and devices side by side, in the same run.' },
-        { name: 'Flame', label: 'omn top / flame', html: ansiToHtml(flame), caption: 'Find the busy stack — which CPU call stacks consumed the time, on and off the CPU.' },
+        { name: 'Request', label: 'omn top / request', html: captures.request, caption: 'A request, in focus — what one request costs, from arrival to reply. Carry its context into the other views.' },
+        { name: 'Lanes', label: 'omn top / lanes', html: captures.lanes, caption: 'Work across execution lanes — threads and devices side by side, in the same run.' },
+        { name: 'Flame', label: 'omn top / flame', html: captures.flame, caption: 'Find the busy stack — which CPU call stacks consumed the time, on and off the CPU.' },
       ],
       fine: 'Snapshots of the <code>many-requests</code> fixture from the view gallery, drawn at 120×40 and held by <code>tests/view_snapshots.rs</code>. Colours mapped onto this page\'s palette.',
       after: `<div class="session-example">

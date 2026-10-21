@@ -6,7 +6,7 @@
 import { icon } from '../html.ts'
 import type { Page } from './types.ts'
 
-const cli = `<span class="c">$</span> atfq free
+export const cli = `<span class="c">$</span> atfq free
 <span class="b">17.1  free vs available</span>
 
 <span class="b">TL;DR</span>
@@ -34,7 +34,7 @@ const cli = `<span class="c">$</span> atfq free
 
 <span class="c">$</span> <span class="cursor"> </span>`
 
-const tui = `<span class="c">╭</span> <span class="c b">Contents</span> <span class="c">──────────────╮╭</span> <span class="d">Memory</span> <span class="d">───────────────────────────╮</span>
+export const tui = `<span class="c">╭</span> <span class="c b">Contents</span> <span class="c">──────────────╮╭</span> <span class="d">Memory</span> <span class="d">───────────────────────────╮</span>
 <span class="c">│</span>  Disk                  <span class="c">│</span><span class="d">│</span><span class="b">17. Memory</span>  <span class="d">hub</span>                    <span class="d">│</span>
 <span class="c">│</span>  Permissions           <span class="c">│</span><span class="d">│</span>                                   <span class="d">│</span>
 <span class="c">│</span>  Processes &amp; schedulin…<span class="c">│</span><span class="d">│</span>How much RAM you have, who is      <span class="d">│</span>
@@ -58,7 +58,7 @@ const tui = `<span class="c">╭</span> <span class="c b">Contents</span> <span 
 <span class="c">╰────────────────────────╯</span><span class="d">╰───────────────────────────────────╯</span>
 <span class="badge"> NORMAL </span> <span class="b">q</span><span class="d"> quit  </span><span class="b">jk</span><span class="d"> move  </span><span class="b">tab</span><span class="d"> link  </span><span class="b">⏎</span><span class="d"> open  </span><span class="b">/</span><span class="d"> search</span>`
 
-const mcp = `<span class="c">$</span> claude mcp add atfq -- atfq mcp
+export const mcp = `<span class="c">$</span> claude mcp add atfq -- atfq mcp
 <span class="d">Added stdio MCP server atfq</span>
 
 <span class="d">The agent calls a read-only tool:</span>

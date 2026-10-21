@@ -12,6 +12,13 @@ import xpac from './toolpage/xpac.ts'
 import vmanyware from './toolpage/vmanyware.ts'
 import together from './toolpage/together.ts'
 import design from './toolpage/design.ts'
+import omnFr from './omn/page.fr.ts'
+import atfqFr from './toolpage/atfq.fr.ts'
+import distroproofFr from './toolpage/distroproof.fr.ts'
+import xpacFr from './toolpage/xpac.fr.ts'
+import vmanywareFr from './toolpage/vmanyware.fr.ts'
+import togetherFr from './toolpage/together.fr.ts'
+import designFr from './toolpage/design.fr.ts'
 
 const content: Record<string, Record<string, string>> = {
   main: homeHtml(),
@@ -22,6 +29,14 @@ const content: Record<string, Record<string, string>> = {
   vmanyware: toolPageHtml(vmanyware),
   together: toolPageHtml(together),
   design: toolPageHtml(design),
+  'main-fr': homeHtml('fr'),
+  'omn-fr': toolPageHtml(omnFr),
+  'atfq-fr': toolPageHtml(atfqFr),
+  'distroproof-fr': toolPageHtml(distroproofFr),
+  'xpac-fr': toolPageHtml(xpacFr),
+  'vmanyware-fr': toolPageHtml(vmanywareFr),
+  'together-fr': toolPageHtml(togetherFr),
+  'design-fr': toolPageHtml(designFr),
 }
 
 for (const name of Object.keys(content)) {
