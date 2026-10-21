@@ -1,11 +1,13 @@
 [
   {
     "target": "chain-alpine",
-    "date": "2026-10-20",
+    "date": "2026-10-21",
     "kernel": "6.18.35-0-virt",
     "checks": {
-      "total": 10,
-      "failed": []
+      "total": 11,
+      "failed": [
+        "omn-reference-pairs"
+      ]
     },
     "packages": {
       "engine": "xpac",
@@ -13,19 +15,19 @@
       "installed": 19
     },
     "pairs": {
-      "held": 82,
-      "skipped": 46,
+      "held": 83,
+      "skipped": 47,
       "gaps": 1,
       "known": 0,
-      "failed": 0
+      "failed": 1
     }
   },
   {
     "target": "chain-arch",
-    "date": "2026-10-19",
+    "date": "2026-10-21",
     "kernel": "7.2.9-arch1-1",
     "checks": {
-      "total": 10,
+      "total": 11,
       "failed": []
     },
     "packages": {
@@ -34,7 +36,7 @@
       "installed": 18
     },
     "pairs": {
-      "held": 92,
+      "held": 95,
       "skipped": 36,
       "gaps": 1,
       "known": 0,
@@ -43,10 +45,10 @@
   },
   {
     "target": "chain-debian-12",
-    "date": "2026-10-19",
+    "date": "2026-10-21",
     "kernel": "6.1.0-54-amd64",
     "checks": {
-      "total": 10,
+      "total": 11,
       "failed": []
     },
     "packages": {
@@ -55,8 +57,8 @@
       "installed": 19
     },
     "pairs": {
-      "held": 67,
-      "skipped": 61,
+      "held": 68,
+      "skipped": 63,
       "gaps": 1,
       "known": 0,
       "failed": 0
@@ -85,11 +87,13 @@
   },
   {
     "target": "chain-fedora-latest",
-    "date": "2026-10-20",
+    "date": "2026-10-21",
     "kernel": "6.19.10-300.fc44.x86_64",
     "checks": {
-      "total": 10,
-      "failed": []
+      "total": 11,
+      "failed": [
+        "omn-reference-pairs"
+      ]
     },
     "packages": {
       "engine": "xpac",
@@ -97,11 +101,11 @@
       "installed": 18
     },
     "pairs": {
-      "held": 92,
-      "skipped": 36,
+      "held": 91,
+      "skipped": 37,
       "gaps": 1,
       "known": 0,
-      "failed": 0
+      "failed": 3
     }
   },
   {
@@ -127,11 +131,13 @@
   },
   {
     "target": "chain-rocky-9",
-    "date": "2026-10-19",
+    "date": "2026-10-21",
     "kernel": "5.14.0-687.10.1.el9_8.0.1.x86_64",
     "checks": {
-      "total": 10,
-      "failed": []
+      "total": 11,
+      "failed": [
+        "omn-reference-pairs"
+      ]
     },
     "packages": {
       "engine": "dnf4-bootstrap",
@@ -143,16 +149,18 @@
       "skipped": 50,
       "gaps": 1,
       "known": 0,
-      "failed": 0
+      "failed": 3
     }
   },
   {
     "target": "chain-ubuntu-18.04",
-    "date": "2026-10-20",
+    "date": "2026-10-21",
     "kernel": "4.15.0-212-generic",
     "checks": {
-      "total": 10,
-      "failed": []
+      "total": 11,
+      "failed": [
+        "omn-reference-pairs"
+      ]
     },
     "packages": {
       "engine": "xpac",
@@ -160,8 +168,8 @@
       "installed": 18
     },
     "pairs": {
-      "held": 36,
-      "skipped": 92,
+      "held": 7,
+      "skipped": 44,
       "gaps": 1,
       "known": 0,
       "failed": 0
@@ -169,11 +177,13 @@
   },
   {
     "target": "chain-ubuntu-24.04",
-    "date": "2026-10-19",
+    "date": "2026-10-21",
     "kernel": "6.8.0-147-generic",
     "checks": {
-      "total": 10,
-      "failed": []
+      "total": 11,
+      "failed": [
+        "omn-reference-pairs"
+      ]
     },
     "packages": {
       "engine": "xpac",
@@ -181,11 +191,11 @@
       "installed": 20
     },
     "pairs": {
-      "held": 75,
+      "held": 76,
       "skipped": 53,
       "gaps": 1,
       "known": 0,
-      "failed": 0
+      "failed": 2
     }
   }
 ]

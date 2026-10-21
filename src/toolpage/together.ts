@@ -2,7 +2,7 @@
 // omniscient/scripts/distroproof/devutils/ (chain.py, setup.sh, packages.json),
 // omniscient/.distroproof/collect/chain-*/ (the latest run on each target,
 // copied into chain-runs.json by scripts/chain-runs.ts),
-// xpac/docs/distroproof.md, xpac/REFERENCE.md, atfq/DECISIONS.md.
+// xpac/docs/distroproof.md, xpac/REFERENCE.md, atfq/docs/DECISIONS.md.
 // Omniscient is private: its sources are cited by path, never linked.
 
 import { icon } from '../html.ts'
