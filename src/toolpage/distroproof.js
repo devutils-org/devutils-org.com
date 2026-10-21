@@ -37,7 +37,7 @@ export default {
       title: ['Everything that can', 'change a program.'],
       text: '<code>envprobe</code> lists what can change how a userspace or kernel-facing program behaves. It works on its own, read-only, and reports missing or refused values with their reasons.',
       cards: [
-        { glyph: '◎', label: 'IDENTITY', title: 'Identity', text: 'Distro, family, architecture, virtualisation, container.' },
+        { glyph: '◎', label: 'IDENTITY', title: 'Identity and machine', text: 'Distro, family, architecture, virtualisation, container; the hardware (CPU, cores, memory, GPUs, disks) and the toolchain (gcc, clang, rustc, go, python…).' },
         { glyph: '⌘', label: 'KERNEL', title: 'Kernel', text: 'Release, command line, config (<code>CONFIG_BPF*</code>, <code>KPROBES</code>, <code>DEBUG_INFO_BTF</code>, <code>FUNCTION_TRACER</code> and dynamic ftrace…), modules.' },
         { glyph: '⛉', label: 'SECURITY', title: 'Security & privileges', text: 'sysctls, LSM, SELinux, AppArmor, lockdown, Secure Boot, capabilities, seccomp, user namespaces and soft/hard <code>RLIMIT_MEMLOCK</code>.' },
         { glyph: '◇', label: 'BPF · PERF', title: 'BPF & perf', text: 'Program types, map types and helpers probed with real <code>bpf()</code> calls; software and hardware <code>perf_event_open</code>, PMU; tracefs, kallsyms, BTF.' },
