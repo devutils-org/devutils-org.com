@@ -139,9 +139,12 @@ $ xpac demo --snapshot --json   # the same, non-interactive
       scene: 'start',
       eyebrow: 'OPEN SOURCE / LINUX AND MACOS',
       title: ['Know your packages', 'before you touch them.'],
-      text: 'Build it, then start with the demo — no native package manager needed.',
-      installLabel: 'BUILD · FROM SOURCE',
-      install: `cargo build --release --locked -p xpac-cli
+      text: 'Download it, then start with the demo — no native package manager needed.',
+      installLabel: 'DOWNLOAD · STATIC LINUX X86_64 BINARY',
+      install: `v=v0.1.0 t=x86_64-unknown-linux-musl
+curl -LO https://github.com/devutils-org/xpac/releases/download/$v/xpac-$v-$t.tar.gz
+gh attestation verify xpac-$v-$t.tar.gz --repo devutils-org/xpac
+tar xzf xpac-$v-$t.tar.gz && install -m 755 xpac-$v-$t/xpac ~/.local/bin/
 
 # then
 xpac demo

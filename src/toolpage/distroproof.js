@@ -152,15 +152,17 @@ collect = ["results/*.json"]`,
       scene: 'start',
       eyebrow: 'OPEN SOURCE / BUILT FOR LINUX',
       title: ['Prove it holds', 'before they find out.'],
-      text: 'Build the static binaries, then run your first target.',
-      installLabel: 'BUILD · STATIC X86_64 BINARIES',
-      install: `rustup target add x86_64-unknown-linux-musl
-cargo build --release --target x86_64-unknown-linux-musl
+      text: 'Download the static binaries, then run your first target.',
+      installLabel: 'DOWNLOAD · STATIC X86_64 BINARIES',
+      install: `v=v0.1.0 t=x86_64-unknown-linux-musl
+curl -LO https://github.com/devutils-org/distroproof/releases/download/$v/distroproof-$v-$t.tar.gz
+gh attestation verify distroproof-$v-$t.tar.gz --repo devutils-org/distroproof
+tar xzf distroproof-$v-$t.tar.gz && export PATH="$PWD/distroproof-$v-$t:$PATH"
 
 # then
 distroproof run --target rocky-8 -- envprobe --json > rocky8.json
 distroproof up       # the matrix in distroproof.toml`,
-      small: 'POC: probe, VM matrix, reports and TUI · linked with rust-lld, so it also builds from arm64 · MIT / Apache-2.0',
+      small: 'v0.1: probe, VM matrix, reports and TUI · signed x86_64 and aarch64 releases · MIT / Apache-2.0',
     },
   ],
 }
