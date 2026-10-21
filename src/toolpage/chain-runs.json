@@ -52,11 +52,11 @@
     "packages": {
       "engine": "xpac",
       "provider": "apt",
-      "installed": 19
+      "installed": 20
     },
     "pairs": {
-      "held": 68,
-      "skipped": 63,
+      "held": 70,
+      "skipped": 61,
       "gaps": 1,
       "known": 0,
       "failed": 0
@@ -73,11 +73,11 @@
     "packages": {
       "engine": "xpac",
       "provider": "apt",
-      "installed": 19
+      "installed": 20
     },
     "pairs": {
-      "held": 72,
-      "skipped": 59,
+      "held": 74,
+      "skipped": 57,
       "gaps": 1,
       "known": 0,
       "failed": 0
@@ -89,21 +89,19 @@
     "kernel": "6.19.10-300.fc44.x86_64",
     "checks": {
       "total": 11,
-      "failed": [
-        "omn-reference-pairs"
-      ]
+      "failed": []
     },
     "packages": {
       "engine": "xpac",
       "provider": "dnf",
-      "installed": 18
+      "installed": 19
     },
     "pairs": {
-      "held": 93,
-      "skipped": 37,
+      "held": 95,
+      "skipped": 36,
       "gaps": 1,
       "known": 0,
-      "failed": 1
+      "failed": 0
     }
   },
   {
@@ -133,21 +131,19 @@
     "kernel": "5.14.0-687.10.1.el9_8.0.1.x86_64",
     "checks": {
       "total": 11,
-      "failed": [
-        "omn-reference-pairs"
-      ]
+      "failed": []
     },
     "packages": {
       "engine": "dnf4-bootstrap",
       "provider": "dnf",
-      "installed": 15
+      "installed": 16
     },
     "pairs": {
-      "held": 80,
+      "held": 81,
       "skipped": 50,
       "gaps": 1,
       "known": 0,
-      "failed": 1
+      "failed": 0
     }
   },
   {
@@ -182,11 +178,11 @@
     "packages": {
       "engine": "xpac",
       "provider": "apt",
-      "installed": 20
+      "installed": 21
     },
     "pairs": {
-      "held": 78,
-      "skipped": 53,
+      "held": 79,
+      "skipped": 52,
       "gaps": 1,
       "known": 0,
       "failed": 0
