@@ -13,7 +13,7 @@ import type { Page } from './types.ts'
 const arrow = icon('arrow-up-right')
 
 const { summary, run, ...results } = chainResults(runs, {
-  order: ['chain-debian-12', 'chain-debian-13', 'chain-ubuntu-24.04', 'chain-ubuntu-18.04', 'chain-fedora-latest', 'chain-rocky-9', 'chain-arch', 'chain-alpine', 'chain-gentoo'],
+  order: ['chain-debian-12', 'chain-debian-13', 'chain-ubuntu-24.04', 'chain-ubuntu-22.04', 'chain-ubuntu-20.04', 'chain-ubuntu-18.04', 'chain-fedora-latest', 'chain-rocky-9', 'chain-rocky-8', 'chain-arch', 'chain-alpine', 'chain-gentoo'],
   newest: 'atfq and envprobe must describe the machine the same way',
 })
 

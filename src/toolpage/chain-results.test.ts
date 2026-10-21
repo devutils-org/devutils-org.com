@@ -43,9 +43,9 @@ test('rows follow the given order and name what installed the packages', () => {
   assert.throws(() => chainResults([rocky], { order: ['chain-arch'] }), /no run for chain-arch/)
 })
 
-test('the published snapshot: every target on eleven checks, every check holding', () => {
+test('the published snapshot: twelve targets on eleven checks, one with a failure', () => {
   const r = chainResults(snapshot, { newest: 'atfq and envprobe must describe the machine the same way' })
-  assert.deepEqual(r.title, ['Nine targets.', 'Every check holds.'])
-  assert.equal(r.eyebrow, 'LATEST RUNS / 21 OCTOBER 2026')
+  assert.deepEqual(r.title, ['Twelve targets.', 'One with a failure.'])
+  assert.equal(r.eyebrow, 'LATEST RUNS / 22 OCTOBER 2026')
   assert.match(r.text, /Every target has run all eleven checks, with 132 pairs\./)
 })

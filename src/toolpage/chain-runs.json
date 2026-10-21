@@ -1,7 +1,7 @@
 [
   {
     "target": "chain-alpine",
-    "date": "2026-10-21",
+    "date": "2026-10-22",
     "kernel": "6.18.35-0-virt",
     "checks": {
       "total": 11,
@@ -22,7 +22,7 @@
   },
   {
     "target": "chain-arch",
-    "date": "2026-10-21",
+    "date": "2026-10-22",
     "kernel": "7.2.9-arch1-1",
     "checks": {
       "total": 11,
@@ -43,7 +43,7 @@
   },
   {
     "target": "chain-debian-12",
-    "date": "2026-10-21",
+    "date": "2026-10-22",
     "kernel": "6.1.0-54-amd64",
     "checks": {
       "total": 11,
@@ -64,7 +64,7 @@
   },
   {
     "target": "chain-debian-13",
-    "date": "2026-10-21",
+    "date": "2026-10-22",
     "kernel": "6.12.113+deb13-amd64",
     "checks": {
       "total": 11,
@@ -85,7 +85,7 @@
   },
   {
     "target": "chain-fedora-latest",
-    "date": "2026-10-21",
+    "date": "2026-10-22",
     "kernel": "6.19.10-300.fc44.x86_64",
     "checks": {
       "total": 11,
@@ -106,7 +106,7 @@
   },
   {
     "target": "chain-gentoo",
-    "date": "2026-10-21",
+    "date": "2026-10-22",
     "kernel": "6.18.57",
     "checks": {
       "total": 11,
@@ -126,8 +126,31 @@
     }
   },
   {
+    "target": "chain-rocky-8",
+    "date": "2026-10-22",
+    "kernel": "4.18.0-553.el8_10.x86_64",
+    "checks": {
+      "total": 11,
+      "failed": [
+        "omn-reference-pairs"
+      ]
+    },
+    "packages": {
+      "engine": "xpac",
+      "provider": "dnf",
+      "installed": 15
+    },
+    "pairs": {
+      "held": 53,
+      "skipped": 75,
+      "gaps": 1,
+      "known": 0,
+      "failed": 3
+    }
+  },
+  {
     "target": "chain-rocky-9",
-    "date": "2026-10-21",
+    "date": "2026-10-22",
     "kernel": "5.14.0-687.10.1.el9_8.0.1.x86_64",
     "checks": {
       "total": 11,
@@ -148,7 +171,7 @@
   },
   {
     "target": "chain-ubuntu-18.04",
-    "date": "2026-10-21",
+    "date": "2026-10-22",
     "kernel": "4.15.0-212-generic",
     "checks": {
       "total": 11,
@@ -168,8 +191,50 @@
     }
   },
   {
+    "target": "chain-ubuntu-20.04",
+    "date": "2026-10-22",
+    "kernel": "5.4.0-216-generic",
+    "checks": {
+      "total": 11,
+      "failed": []
+    },
+    "packages": {
+      "engine": "xpac",
+      "provider": "apt",
+      "installed": 19
+    },
+    "pairs": {
+      "held": 45,
+      "skipped": 86,
+      "gaps": 1,
+      "known": 0,
+      "failed": 0
+    }
+  },
+  {
+    "target": "chain-ubuntu-22.04",
+    "date": "2026-10-22",
+    "kernel": "5.15.0-198-generic",
+    "checks": {
+      "total": 11,
+      "failed": []
+    },
+    "packages": {
+      "engine": "xpac",
+      "provider": "apt",
+      "installed": 20
+    },
+    "pairs": {
+      "held": 66,
+      "skipped": 65,
+      "gaps": 1,
+      "known": 0,
+      "failed": 0
+    }
+  },
+  {
     "target": "chain-ubuntu-24.04",
-    "date": "2026-10-21",
+    "date": "2026-10-22",
     "kernel": "6.8.0-147-generic",
     "checks": {
       "total": 11,
