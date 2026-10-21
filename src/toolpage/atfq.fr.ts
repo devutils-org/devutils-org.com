@@ -136,13 +136,15 @@ export default {
       scene: 'start',
       eyebrow: '$ ATFQ --VERSION',
       title: ['Posez la question', 'à votre machine.'],
-      text: 'Linux uniquement, glibc 2.35 ou plus récent pour les binaires prêts à l’emploi. Chaque version publie ses sommes SHA-256.',
+      text: 'Linux uniquement. Les binaires prêts à l’emploi sont statiques : aucune libc particulière n’est requise, Alpine compris. Chaque archive est signée et publie sa somme SHA-256.',
       installs: [
         {
           label: 'PRÊT À L’EMPLOI',
           note: 'Exemple pour x86-64 ; utilisez <code>aarch64</code> sur ARM.',
-          code: `curl -LO https://github.com/devutils-org/atfq/releases/latest/download/atfq-x86_64-linux.tar.gz
+          code: `curl -fLO https://github.com/devutils-org/atfq/releases/latest/download/atfq-x86_64-linux.tar.gz
+gh attestation verify atfq-x86_64-linux.tar.gz --repo devutils-org/atfq
 tar xzf atfq-x86_64-linux.tar.gz
+mkdir -p ~/.local/bin
 install -m 755 atfq-x86_64-linux/atfq ~/.local/bin/`,
         },
         { label: 'DEPUIS LES SOURCES', note: 'Avec une chaîne de compilation Rust.', code: 'git clone https://github.com/devutils-org/atfq\ncd atfq\ncargo install --path .' },

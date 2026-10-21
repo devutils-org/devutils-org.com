@@ -139,9 +139,9 @@ $ xpac demo --snapshot --json   # the same, non-interactive
       text: 'Téléchargez-le, puis commencez par la démo — pas besoin de gestionnaire de paquets natif.',
       installLabel: 'TÉLÉCHARGER · BINAIRE STATIQUE LINUX X86_64',
       install: `v=v0.1.0 t=x86_64-unknown-linux-musl
-curl -LO https://github.com/devutils-org/xpac/releases/download/$v/xpac-$v-$t.tar.gz
+curl -fLO https://github.com/devutils-org/xpac/releases/download/$v/xpac-$v-$t.tar.gz
 gh attestation verify xpac-$v-$t.tar.gz --repo devutils-org/xpac
-tar xzf xpac-$v-$t.tar.gz && install -m 755 xpac-$v-$t/xpac ~/.local/bin/
+tar xzf xpac-$v-$t.tar.gz && mkdir -p ~/.local/bin && install -m 755 xpac-$v-$t/xpac ~/.local/bin/
 
 # then
 xpac demo

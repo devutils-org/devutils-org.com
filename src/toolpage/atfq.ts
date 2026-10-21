@@ -211,13 +211,15 @@ export default {
       scene: 'start',
       eyebrow: '$ ATFQ --VERSION',
       title: ['Ask your machine', 'the question.'],
-      text: 'Linux only, glibc 2.35 or later for the prebuilt binaries. Each release lists SHA-256 sums.',
+      text: 'Linux only. The prebuilt binaries are static: no particular libc needed, Alpine included. Each archive is signed and lists its SHA-256 sum.',
       installs: [
         {
           label: 'PREBUILT',
           note: 'x86-64 shown; use <code>aarch64</code> on ARM.',
-          code: `curl -LO https://github.com/devutils-org/atfq/releases/latest/download/atfq-x86_64-linux.tar.gz
+          code: `curl -fLO https://github.com/devutils-org/atfq/releases/latest/download/atfq-x86_64-linux.tar.gz
+gh attestation verify atfq-x86_64-linux.tar.gz --repo devutils-org/atfq
 tar xzf atfq-x86_64-linux.tar.gz
+mkdir -p ~/.local/bin
 install -m 755 atfq-x86_64-linux/atfq ~/.local/bin/`,
         },
         { label: 'FROM SOURCE', note: 'With a Rust toolchain.', code: 'git clone https://github.com/devutils-org/atfq\ncd atfq\ncargo install --path .' },

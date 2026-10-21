@@ -151,7 +151,7 @@ collect = ["results/*.json"]`,
       text: 'Download the static binaries, then run your first target.',
       installLabel: 'DOWNLOAD · STATIC X86_64 BINARIES',
       install: `v=v0.1.0 t=x86_64-unknown-linux-musl
-curl -LO https://github.com/devutils-org/distroproof/releases/download/$v/distroproof-$v-$t.tar.gz
+curl -fLO https://github.com/devutils-org/distroproof/releases/download/$v/distroproof-$v-$t.tar.gz
 gh attestation verify distroproof-$v-$t.tar.gz --repo devutils-org/distroproof
 tar xzf distroproof-$v-$t.tar.gz && export PATH="$PWD/distroproof-$v-$t:$PATH"
 
