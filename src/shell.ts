@@ -6,9 +6,7 @@ import { route, translation, type SitePage } from './pages.ts'
 import { esc } from './html.ts'
 import { words } from './i18n.ts'
 
-// The site's address, for the link-preview tags, which must be absolute. If
-// the site moves, this is the one line to change (or set SITE_URL).
-const SITE = (process.env.SITE_URL ?? 'https://devutils-org.github.io').replace(/\/$/, '')
+import { SITE } from './site.ts'
 
 // Also on every page: the speculation rules that load a page the pointer
 // rests on, and the style that shows the reveal-on-scroll content when
@@ -17,6 +15,14 @@ const SITE = (process.env.SITE_URL ?? 'https://devutils-org.github.io').replace(
 export function head(page: SitePage) {
   const url = `${SITE}${route(page)}`
   const other = translation(page)
+  const structured = [
+    { '@context': 'https://schema.org', '@type': 'Organization', '@id': `${SITE}/#organization`, name: 'devutils', url: `${SITE}/`, sameAs: ['https://github.com/devutils-org'] },
+    { '@context': 'https://schema.org', '@type': 'WebPage', '@id': url, url, name: page.title, description: page.description, inLanguage: page.lang, publisher: { '@id': `${SITE}/#organization` } },
+    ...(page.key === 'main' ? [] : [{ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'devutils', item: `${SITE}${page.lang === 'fr' ? '/fr/' : '/'}` },
+      { '@type': 'ListItem', position: 2, name: page.brand ?? page.title, item: url },
+    ] }]),
+  ]
   return `<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -24,14 +30,17 @@ export function head(page: SitePage) {
     <meta name="theme-color" content="#050507" />
     <title>${esc(page.title)}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script type="application/ld+json">${JSON.stringify(structured).replace(/</g, '\\u003c')}</script>
+    <meta property="og:site_name" content="devutils" />
     <meta property="og:title" content="${esc(page.title)}" />
     <meta property="og:description" content="${esc(page.ogDescription ?? page.description)}" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="${page.lang === 'fr' ? 'fr_FR' : 'en_US'}" />
-    <link rel="canonical" href="${url}" />
-    <link rel="alternate" hreflang="${page.lang}" href="${url}" />
+    <link rel="canonical" href="${esc(url)}" />
+    <link rel="alternate" hreflang="${page.lang}" href="${esc(url)}" />
     <link rel="alternate" hreflang="${other.lang}" href="${SITE}${route(other)}" />
-    <meta property="og:url" content="${url}" />
+    <link rel="alternate" hreflang="x-default" href="${esc(`${SITE}${route(page.lang === 'en' ? page : other)}`)}" />
+    <meta property="og:url" content="${esc(url)}" />
     <meta property="og:image" content="${SITE}/og/${page.preview ?? 'main'}.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="627" />

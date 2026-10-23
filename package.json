@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vite build --ssr src/prerender.ts --outDir .ssr --emptyOutDir && node scripts/prerender.ts",
+    "build": "vite build && vite build --ssr src/prerender.ts --outDir .ssr --emptyOutDir && node scripts/prerender.ts && node scripts/seo.ts",
     "preview": "vite preview",
     "book:atfq": "node scripts/atfq-book.ts",
     "chain:runs": "node scripts/chain-runs.ts",
