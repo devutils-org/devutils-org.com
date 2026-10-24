@@ -7,7 +7,7 @@ export function editorialNote(locale: 'en' | 'fr', route: string, title: string)
     title: `${fr ? 'Correction de contenu' : 'Content correction'}: ${title}`,
     body: `${fr ? 'Page' : 'Page'}: ${SITE}${route}\n\n${fr ? 'Passage concerné et problème observé' : 'Passage and observed problem'}:\n\n${fr ? 'Correction proposée et référence fiable' : 'Suggested correction and reliable reference'}:\n`,
   })
-  const report = `https://github.com/devutils-org/devutils-org.github.io/issues/new?${params}`
+  const report = `https://github.com/devutils-org/devutils-org.com/issues/new?${params}`
   return `<aside id="editorial-note" class="editorial-note glass" aria-labelledby="editorial-note-title" data-pagefind-ignore>
     <h2 id="editorial-note-title">${fr ? 'Contenu généré par IA, à améliorer ensemble' : 'AI-generated content, built to improve'}</h2>
     <p>${fr ? 'Cette encyclopédie utilise du contenu généré par IA pour poser une première base et offrir une vue d’ensemble de l’informatique, de la matière au logiciel. Le sommaire montre les domaines et leurs liens ; de nombreux sujets restent à développer.' : 'This encyclopedia uses AI-generated content to lay an initial foundation and offer a broad overview of computer science, from matter to software. The computing stack maps the topics and their connections; many subjects are still to be developed.'}</p>

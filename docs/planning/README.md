@@ -1,7 +1,7 @@
 # Devutils Knowledge — Agent Handoff
 
 ## Mission
-Build the foundations of a long-lived, bilingual computing encyclopedia inside the existing [devutils-org.github.io](https://github.com/devutils-org/devutils-org.github.io) repository. The central narrative is **from matter and information to software**. The encyclopedia has five interconnected surfaces: **Knowledge**, **History**, **Figures**, **Learning Paths**, and **Labs**. A future **Concept Graph** connects them.
+Build the foundations of a long-lived, bilingual computing encyclopedia inside the existing [devutils-org.com](https://github.com/devutils-org/devutils-org.com) repository. The central narrative is **from matter and information to software**. The encyclopedia has five interconnected surfaces: **Knowledge**, **History**, **Figures**, **Learning Paths**, and **Labs**. A future **Concept Graph** connects them.
 
 **This is an implementation brief, not permission to rewrite the site.** Start by auditing the checked-out repository and its current behavior. Preserve the landing pages, the existing art direction, the current publishing flow, and existing URLs.
 

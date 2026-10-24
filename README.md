@@ -119,7 +119,7 @@ itself; `npm test` says what is missing.
 
 Deploy: `.github/workflows/pages.yml` publishes `dist/` to GitHub Pages on
 each push to `main`. For the org root URL, the repository is
-`devutils-org/devutils-org.github.io`.
+`devutils-org/devutils-org.com`.
 
 ## Measuring the site
 

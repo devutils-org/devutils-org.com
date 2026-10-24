@@ -13,7 +13,7 @@ export default {
     name: 'Design',
     line: 'The mark, the glass and the light.',
     color: '#c9d4ff',
-    repoUrl: 'https://github.com/devutils-org/devutils-org.github.io',
+    repoUrl: 'https://github.com/devutils-org/devutils-org.com',
     license: 'MIT / Apache-2.0',
   },
   nav: [['Origin', '#origin'], ['The mark', '#mark'], ['Glass', '#glass'], ['Shapes', '#shapes'], ['Colour', '#colour'], ['Type', '#type']],

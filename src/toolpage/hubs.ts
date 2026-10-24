@@ -5,7 +5,7 @@ import { toolCardsHtml } from '../tool-cards.ts'
 export function hubPage(kind:'tools'|'about',lang:Lang):Page {
   const fr=lang==='fr',prefix=fr?'/fr':''
   const t=(en:string, french:string)=>fr?french:en
-  const meta={id:kind,name:kind==='tools'?t('Tools','Outils'):t('About','À propos'),line:t('Small tools. Honest answers.','Petits outils. Réponses honnêtes.'),color:'#b7a0ff',license:'MIT / Apache-2.0',repoUrl:'https://github.com/devutils-org/devutils-org.github.io'}
+  const meta={id:kind,name:kind==='tools'?t('Tools','Outils'):t('About','À propos'),line:t('Small tools. Honest answers.','Petits outils. Réponses honnêtes.'),color:'#b7a0ff',license:'MIT / Apache-2.0',repoUrl:'https://github.com/devutils-org/devutils-org.com'}
   if(kind==='tools')return {
     lang,meta,nav:[['Catalogue','#overview'],[t('Workflow','Parcours technique'),'#workflow'],[t('Working together','Ensemble'),'#start']],
     hero:{title:[t('One task.','Une tâche.'),t('The right tool.','Le bon outil.')],copy:t('Linux tools, in detail.<br />Commands, requirements and status.','Les outils Linux en détail.<br />Commandes, prérequis et avancement.'),primary:t('How they work together','Comment ils se complètent')},

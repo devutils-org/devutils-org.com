@@ -14,7 +14,7 @@ export default {
     name: 'Design',
     line: 'Le logo, le verre et la lumière.',
     color: '#c9d4ff',
-    repoUrl: 'https://github.com/devutils-org/devutils-org.github.io',
+    repoUrl: 'https://github.com/devutils-org/devutils-org.com',
     license: 'MIT / Apache-2.0',
   },
   nav: [['Origine', '#origin'], ['Le logo', '#mark'], ['Le verre', '#glass'], ['Formes', '#shapes'], ['Couleurs', '#colour'], ['Typographie', '#type']],
