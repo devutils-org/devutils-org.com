@@ -20,7 +20,7 @@ export default {
   nav: [['Origine', '#origin'], ['Le logo', '#mark'], ['Le verre', '#glass'], ['Formes', '#shapes'], ['Couleurs', '#colour'], ['Typographie', '#type']],
   hero: {
     title: ['Une question.', 'Taillée dans le verre.'],
-    copy: 'Le logo devutils est un Q devenu nœud de graphe.<br />Il a été dessiné pour ATFQ, et il est rendu ici en verre dans un shader.',
+    copy: 'Un Q devenu nœud de graphe.<br />Le logo devutils, rendu en verre.',
     primary: 'Utiliser le logo',
   },
   sections: [

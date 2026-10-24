@@ -88,7 +88,7 @@ export default {
   nav: [['Book', 'book/'], ['Cards', '#cards'], ['Keys', '#keys'], ['Install', '#start']],
   hero: {
     title: ['Ask the question.', 'Your machine answers.'],
-    copy: 'Understand Linux metrics in your terminal.<br />Short answers, backed by your machine’s live state.',
+    copy: 'Understand Linux metrics.<br />Answers grounded in your machine.',
     primary: 'Install ATFQ',
   },
   sections: [

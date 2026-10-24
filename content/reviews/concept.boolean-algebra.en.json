@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "id": "concept.boolean-algebra",
+  "locale": "en",
+  "contentHash": "b0c625c73609a24a4b9f08aabbda435f820dd32360927531be7b4a7dcaef9a70",
+  "assessedAt": "2026-10-24",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "operations",
+      "section": "article-three-operations",
+      "kind": "definition",
+      "statement": "The displayed two-state AND, inclusive OR and NOT rules use the stated truth convention.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "PDF pages 10–14, gate truth tables",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "The article’s own table is recomputed by an executable check."
+    },
+    {
+      "id": "switch-convention",
+      "section": "article-from-expressions-to-paths",
+      "kind": "historical",
+      "statement": "This article uses 1 for conduction, unlike Shannon’s hindrance convention.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Printed p. 472, Section II: Fundamental Definitions and Postulates; PDF page 2",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "The scanned page was inspected visually; Shannon assigns 1 to an open path. The article now states the difference explicitly."
+    },
+    {
+      "id": "limits",
+      "section": "article-what-the-model-leaves-out",
+      "kind": "model",
+      "statement": "A logical table alone is not an electrical or timing specification.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "PDF pages 58–70, transistor implementation and abstraction",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "This is the scope of the introductory model, not a physical circuit acceptance result."
+    }
+  ],
+  "examples": [
+    {
+      "check": "worked-exercises",
+      "result": "passed",
+      "scope": "Boolean table, access-rule substitutions and distributivity over all inputs.",
+      "checkedAt": "2026-10-24",
+      "evidenceHash": "9ec05be3161b8a19b4bfa494a3ae591b82bd9d42b69fd6f32c4df49533a122af"
+    }
+  ],
+  "limitations": [
+    "The access rule is a fictional teaching example, not a reviewed security policy.",
+    "The source comparison does not verify transistor timing or a hardware implementation."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

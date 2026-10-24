@@ -200,6 +200,7 @@ export function initFlowCards(root = document) {
 // Keep the same navigation links available on desktop and in the mobile menu.
 function initNavigation() {
   const header = $('.nav')
+  if (header.classList.contains('site-nav')) return
   const nav = $('nav', header)
   if (!nav) return
   const mobile = matchMedia('(width <= 1100px)')

@@ -10,7 +10,7 @@ export default {
   nav: [['Pourquoi', '#why'], ['envprobe', '#envprobe'], ['Terminal', '#terminal'], ['Étude de cas', '#case-study'], ['Cibles', '#targets']],
   hero: {
     title: ['Ça marche chez moi.', 'Prouvé chez eux.'],
-    copy: 'Testez votre programme sur les vrais noyaux des distributions.<br />Voyez pourquoi il échoue ailleurs.',
+    copy: 'Testez sur de vrais noyaux Linux.<br />Comprenez les échecs ailleurs.',
     primary: 'Installer distroproof',
   },
   sections: [

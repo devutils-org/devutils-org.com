@@ -1,6 +1,8 @@
 import { renderPractice, initPractice } from '../practice/practice.ts'
 import { tools, repoUrl, inLang } from '../tools.ts'
 import { pageOf, route, translation } from '../pages.ts'
+import { initSectionNavigation } from '../section-navigation.ts'
+import { globalNavigation, siteSection } from '../navigation.ts'
 import { words, type Lang } from '../i18n.ts'
 import { $, $$, initPage, renderFlowCards } from '../page.ts'
 import { esc, pad, icon } from '../html.ts'
@@ -22,16 +24,12 @@ const homeOf = (tool: PageTool) => route(pageOf('main', tool.lang))
 
 const html = String.raw
 
-function hero(h: Page['hero'], tool: PageTool, overviewId: string) {
+function hero(h: Page['hero']) {
   return html`
     <section class="hero" data-scene="hero">
       <div class="hero-grid" aria-hidden="true"></div>
       <h1>${h.title[0]}<br /><span>${h.title[1]}</span></h1>
       <p class="hero-copy">${h.copy}</p>
-      <div class="actions">
-        <a class="primary" href="#${overviewId}">${wordsOf(tool).discover(tool.name)} ${icon('arrow-down')}</a>
-        <a class="secondary" href="#start">${h.primary}</a>
-      </div>
       <div class="stage" aria-hidden="true">
         <img class="stage-fallback" src="/mark.svg" alt="" />
         <div class="horizon"></div>
@@ -89,7 +87,7 @@ const sections: Renderers = {
   flow: (s, tool) => html`${open(s)}
     ${heading(s)}
     <div class="flow-cards glass" style="--flow-columns:${s.steps.length}">
-      ${renderFlowCards(s.steps.map((step) => ({ ...step, color: tool.color })), s.scene)}
+      ${renderFlowCards(s.steps.map((step) => ({ ...step, color: step.color ?? tool.color })), s.scene)}
     </div>
     ${s.fine ? `<p class="fine capture-note">${s.fine}</p>` : ''}
   </section>`,
@@ -275,8 +273,18 @@ export function toolPageHtml(page: Page) {
   const w = wordsOf(tool)
   const here = pageOf(tool.id, tool.lang)
   const other = translation(here)
-  const nav = [...page.nav.filter(([, href]) => href !== '#case-study'), ...(!placed && renderPractice(tool.id) ? [[w.practice.nav, '#in-practice'] as const] : [])]
+  const nav = page.nav.filter(([, href]) => href !== '#case-study').slice()
+  if (!placed && renderPractice(tool.id)) {
+    const start = nav.findIndex(([,href]) => href === '#start')
+    nav.splice(start < 0 ? nav.length : start, 0, [w.practice.nav, '#in-practice'])
+  }
   const navLink = ([label, href]: readonly [string, string | { repo: string }]) => (typeof href === 'string' ? `<a href="${href}">${label}</a>` : repoLink(tool, href.repo, `${label} ${icon('arrow-up-right')}`))
+  const sectionLinks=nav.filter(([,href])=>typeof href==='string'&&href.startsWith('#')).map(([label,href])=>`<a data-section-link href="${href}">${label}</a>`).join('')
+  const resources=nav.filter(([,href])=>typeof href!=='string'||!href.startsWith('#')).map(navLink).join('')
+  const contentsTitle=tool.lang==='fr'?'Sur cette page':'On this page'
+  const contents=`<aside class="page-rail" aria-label="${contentsTitle}"><nav aria-label="${w.sections}">${sectionLinks}</nav>${resources?`<div class="page-rail-resources">${resources}</div>`:''}</aside>`
+  const mobileContents=`<nav class="page-contents" aria-label="${w.sections}">${sectionLinks}${resources}</nav>`
+
 
   return {
     nav: html`
@@ -285,15 +293,16 @@ export function toolPageHtml(page: Page) {
       <span class="crumb-sep">/</span>
       <a href="${route(here)}">${tool.name}</a>${tool.status ? `<span class="alpha">${tool.status}</span>` : ''}
     </div>
-    <nav aria-label="${w.sections}">${nav.map(navLink).join('')}</nav>
+    ${globalNavigation(tool.lang,siteSection(tool.id))}
     <a class="lang-switch" href="${route(other)}" hreflang="${other.lang}" lang="${other.lang}" title="${w.other.title}">${w.other.label}</a>
     ${repoLink(tool, '', `GitHub <span>${icon('arrow-up-right')}</span>`, 'github')}`,
 
-    main: hero(page.hero, tool, page.sections.find((section) => section.type === 'intro')?.id ?? 'overview') + page.sections.map((s) => (s.type === 'start' && !placed ? renderPractice(tool.id, tool.lang) : '') + render(s, tool)).join(''),
+    main: contents + hero(page.hero) + mobileContents + page.sections.map((s) => (s.type === 'start' && !placed ? renderPractice(tool.id, tool.lang) : '') + render(s, tool)).join(''),
 
     footer: html`
     <a class="logo" href="${homeOf(tool)}"><img class="logo-icon" src="/mark.svg" alt="" /> devutils</a>
     <span>${tool.name} · ${page.footer ?? tool.line}</span>
+    <a href="${tool.lang === 'fr' ? '/fr' : ''}/knowledge/">${tool.lang === 'fr' ? 'Bibliothèque' : 'Library'}</a>
     <a href="${route(pageOf('contributions', tool.lang))}">Contributions</a>
     ${repoLink(tool, page.licensePath ?? '', `${tool.license ?? w.repository} ${icon('arrow-up-right')}`)}`,
   }
@@ -317,6 +326,7 @@ export async function renderToolPage(page: Page) {
   }
   for (const s of page.sections) if (s.wire) s.wire($(`[data-scene="${s.scene}"]`))
 
+  initSectionNavigation()
   initPractice()
 
   // the mark: on the stages, and alternating sides behind the other sections

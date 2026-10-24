@@ -22,7 +22,7 @@ export function contributionsPage(lang: Lang): Page {
     nav: [[t('Projects', 'Projets'), '#projects'], [t('Approach', 'Démarche'), '#approach'], [t('Reports', 'Rapports'), '#start']],
     hero: {
       title: [t('Open-source projects.', 'Des projets libres.'), t('Measured contributions.', 'Des contributions vérifiables.')],
-      copy: t('Investigate a real workload. Explain a finding. Propose a change.<br />Reports, fixes and optimizations, with the evidence and upstream status beside them.', 'Analyser une charge réelle. Expliquer un constat. Proposer un changement.<br />Rapports, correctifs et optimisations, avec leurs preuves et leur statut en amont.'),
+      copy: t('Investigate, explain, improve.<br />Contributions with evidence.', 'Analyser, expliquer, améliorer.<br />Des contributions avec leurs preuves.'),
       primary: t('Read the reports', 'Lire les rapports'),
     },
     sections: [
@@ -53,7 +53,7 @@ export function rugPage(lang: Lang): Page {
     lang,
     meta: { id: 'contributions-rug', name: 'RUG', line: t('Analysis, fixes and measured optimizations.', 'Analyse, correctifs et optimisations mesurées.'), color: '#9cc8ff', repoUrl: evidence.repository, license: 'Apache-2.0' },
     nav: [[t('All projects', 'Tous les projets'), contributionsRoute(lang)], [t('Project', 'Projet'), '#project'], [t('Contributions', 'Contributions'), '#changes'], [t('Results', 'Résultats'), '#results'], [t('Reports', 'Rapports'), '#start']],
-    hero: { title: [t('RUG, investigated.', 'RUG, analysé.'), t('Three focused contributions.', 'Trois contributions ciblées.')], copy: t('A C++98 parser generator, tested across distributions and profiled on real workloads.<br />One diagnostic fix. Two independent performance optimizations. Evidence included.', 'Un générateur de parseurs C++98, testé sur plusieurs distributions et profilé sur des charges réelles.<br />Un correctif de diagnostic. Deux optimisations indépendantes. Les preuves à l’appui.'), primary: t('Read the report', 'Lire le rapport') },
+    hero: { title: [t('RUG, investigated.', 'RUG, analysé.'), t('Three focused contributions.', 'Trois contributions ciblées.')], copy: t('A C++98 parser generator.<br />Three contributions, with evidence.', 'Un générateur de parseurs C++98.<br />Trois contributions documentées.'), primary: t('Read the report', 'Lire le rapport') },
     sections: [
       { type: 'intro', id: 'project', scene: 'project', eyebrow: t('THE PROJECT / RUG', 'LE PROJET / RUG'), title: [t('ABNF in.', 'Une grammaire ABNF.'), t('A byte parser out.', 'Un parseur d’octets.')], text: t('RUG — Rug Understands Grammar — compiles ABNF into packed LALR(1) tables. Its immutable runtime image can be shared by incremental parsing sessions, with semantic callbacks and explicit workspace control.', 'RUG — Rug Understands Grammar — compile l’ABNF en tables LALR(1) compactées. Son image immuable est partageable entre sessions de parsing incrémental, avec callbacks sémantiques et contrôle explicite de la mémoire de travail.'), columns: [
         [t('Upstream', 'Dépôt d’origine'), `${link(evidence.repository, 'roman-starcevic/RUG')}<br />C++98 · Apache-2.0`],

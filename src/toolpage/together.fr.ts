@@ -28,7 +28,7 @@ export default {
   nav: [['Le principe', '#principle'], ['Croisements', '#crossings'], ['Ce site', '#site'], ['La chaîne', '#chain'], ['Résultats', '#results'], ['Le contrat', '#contract']],
   hero: {
     title: ['Cinq outils.', 'Qui se vérifient.'],
-    copy: 'distroproof éprouve Omniscient et xpac sur de vrais noyaux. xpac installe ce à quoi Omniscient se compare.<br />Omniscient mesure VMAnyware, et atfq est confronté à procfs.',
+    copy: 'Cinq outils Linux indépendants.<br />Des vérifications qui se croisent.',
     primary: 'Lancer la chaîne',
   },
   sections: [

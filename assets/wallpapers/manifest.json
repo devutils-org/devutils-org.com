@@ -1,0 +1,65 @@
+{
+  "renderer": "src/scene.ts + src/shapes.ts / Chromium WebGL SwiftShader",
+  "files": [
+    {
+      "file": "iphone-15-centre.png",
+      "width": 1179,
+      "height": 2556,
+      "variant": "centre"
+    },
+    {
+      "file": "iphone-15-ensemble.png",
+      "width": 1179,
+      "height": 2556,
+      "variant": "ensemble"
+    },
+    {
+      "file": "macbook-air-13-centre.png",
+      "width": 2560,
+      "height": 1664,
+      "variant": "centre"
+    },
+    {
+      "file": "macbook-air-13-ensemble.png",
+      "width": 2560,
+      "height": 1664,
+      "variant": "ensemble"
+    },
+    {
+      "file": "macbook-air-15-centre.png",
+      "width": 2880,
+      "height": 1864,
+      "variant": "centre"
+    },
+    {
+      "file": "macbook-air-15-ensemble.png",
+      "width": 2880,
+      "height": 1864,
+      "variant": "ensemble"
+    },
+    {
+      "file": "desktop-24-fhd-centre.png",
+      "width": 1920,
+      "height": 1080,
+      "variant": "centre"
+    },
+    {
+      "file": "desktop-24-fhd-ensemble.png",
+      "width": 1920,
+      "height": 1080,
+      "variant": "ensemble"
+    },
+    {
+      "file": "4k-centre.png",
+      "width": 3840,
+      "height": 2160,
+      "variant": "centre"
+    },
+    {
+      "file": "4k-ensemble.png",
+      "width": 3840,
+      "height": 2160,
+      "variant": "ensemble"
+    }
+  ]
+}

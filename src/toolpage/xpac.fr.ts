@@ -9,7 +9,7 @@ export default {
   nav: [['Inventaire', '#inventory'], ['Commandes', '#commands'], ['Terminal', '#terminal'], ['État', '#status']],
   hero: {
     title: ['Chaque paquet.', 'Chaque raison.'],
-    copy: 'Sachez ce qui est installé, et pourquoi.<br />Ne changez paquets et fichiers de configuration qu’à travers un plan que vous avez lu.',
+    copy: 'Comprenez vos logiciels installés.<br />Vérifiez chaque changement.',
     primary: 'Installer xpac',
   },
   sections: [

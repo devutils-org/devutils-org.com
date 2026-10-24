@@ -29,7 +29,7 @@ export default {
   nav: [['Principle', '#principle'], ['Crossings', '#crossings'], ['This site', '#site'], ['The chain', '#chain'], ['Results', '#results'], ['Contract', '#contract']],
   hero: {
     title: ['Five tools.', 'Checking each other.'],
-    copy: 'distroproof proves Omniscient and xpac on real kernels. xpac installs what Omniscient compares against.<br />Omniscient measures VMAnyware while atfq is checked against procfs.',
+    copy: 'Five independent Linux tools.<br />Shared checks, traceable evidence.',
     primary: 'Run the chain',
   },
   sections: [

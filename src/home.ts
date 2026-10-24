@@ -1,46 +1,27 @@
-import { tools, repoUrl, inLang } from './tools.ts'
-import { pages, route } from './pages.ts'
-import { words, type Lang } from './i18n.ts'
-import { renderFlowCards } from './page.ts'
-import { esc, pad, icon } from './html.ts'
+import { tools } from './tools.ts'
+import type { Lang } from './i18n.ts'
+import { esc, icon } from './html.ts'
 
-// The home page's generated HTML, keyed by the element each one fills: written
-// into index.html by the build (scripts/prerender.ts), and by main.js only
-// when it is not there.
-export function homeHtml(lang: Lang = 'en') {
-  const w = words[lang].card
-  const local = tools.map((t) => inLang(t, lang))
+interface Situation { id:string; tag:[string,string]; question:[string,string]; benefit:[string,string]; limit?:[string,string] }
+const situations:Situation[] = [
+  {id:'omn',tag:['A program slows down','Un programme ralentit'],question:['Where is the time going?','Qu’est-ce qui ralentit ?'],benefit:['See what a program is using while it runs, and follow the clues about where its time goes.','Observer ce qu’un programme utilise pendant qu’il tourne, pour orienter la recherche et décider quoi examiner.']},
+  {id:'atfq',tag:['An unfamiliar number','Un chiffre difficile à comprendre'],question:['Should I worry about this?','Est-ce inquiétant ?'],benefit:['Get an explanation of what your computer is reporting, put the number in context and learn what to inspect next.','Comprendre ce que votre ordinateur indique, remettre le chiffre dans son contexte et savoir quoi regarder ensuite.']},
+  {id:'distroproof',tag:['Software to share','Un programme à partager'],question:['Will it work elsewhere?','Ça marchera ailleurs ?'],benefit:['Try your program in different Linux setups. Compare what works, what fails and what changes between them.','Essayer votre programme sur différentes installations de Linux. Comparer ce qui fonctionne, ce qui échoue et ce qui change entre elles.']},
+  {id:'xpac',tag:['A computer that has grown messy','Un ordinateur qui s’est rempli'],question:['What is installed, and why?','Qu’ai-je installé, et pourquoi ?'],benefit:['See which software is there and what needs it. Review proposed changes before you apply them.','Voir quels logiciels sont présents et lesquels en ont besoin. Examiner les changements proposés avant de les appliquer.']},
+  {id:'vmanyware',tag:['A place to experiment','Un espace pour expérimenter'],question:['Can I set up a separate workspace?','Et si je testais dans un espace à part ?'],benefit:['A project for preparing a working environment on your own server and reaching it from another device.','Un projet pour préparer un environnement de travail sur votre propre serveur et le retrouver depuis un autre appareil.']},
+]
+
+// The home page starts with recognizable situations; specifications live in Tools.
+export function homeHtml(lang:Lang='en') {
+  const fr=lang==='fr',prefix=fr?'/fr':'',column=fr?1:0
   return {
-    pipeline: renderFlowCards(local.map((t) => ({
-      id: t.id, glyph: t.glyph, color: t.color, label: t.name,
-      title: `${t.verb}.`, text: t.step, detail: t.flowDetail,
-    }))),
-
-    'tool-grid': local
-      .map((t, i) => {
-        const page = pages.find((p) => p.key === t.id && p.lang === lang)
-        const landing = page
-          ? `<a href="${route(page)}">${w.landing} ${icon('arrow-right')}</a>`
-          : `<span class="soon">${w.soon}</span>`
-        return `
-    <article class="tool-card glass reveal${i === 0 ? ' featured' : ''}" style="--tc:${t.color};--d:${(i % 3) * 0.08}s" data-i="${i}">
-      <div>
-        <span class="tool-glyph">${t.glyph}</span>
-        <small>${pad(i)} / ${t.verb.toUpperCase()}</small>
-        <span class="status">${t.status}</span>
-      </div>
-      <h3>${t.name}</h3>
-      <p class="line">${esc(t.line)}</p>
-      <p class="body">${esc(t.body)}</p>
-      <span class="spacer"></span>
-      ${t.command ? `<code class="cmd">${esc(t.command)}</code>` : ''}
-      <p class="note">${t.statusNote}${t.license ? ` · ${t.license}` : ''}</p>
-      <div class="tool-links">
-${t.repoPrivate ? `<span class="repo-unavailable" aria-disabled="true" title="${words[lang].repoPrivate}">${w.repoPrivate}</span>` : `<a href="${repoUrl(t)}">${words[lang].repository} ${icon('arrow-up-right')}</a>`}
-        ${landing}
-      </div>
-    </article>`
-      })
-      .join(''),
+    'use-cases':situations.map((s,i)=>{
+      const tool=tools.find(t=>t.id===s.id)!
+      return `<article class="use-case glass reveal" style="--tc:${tool.color};--d:${i*.06}s">
+        <div class="use-case-top"><span class="tool-glyph" aria-hidden="true">${tool.glyph}</span><small>${esc(s.tag[column])}</small></div>
+        <h3>${esc(s.question[column])}</h3><p>${esc(s.benefit[column])}</p>
+        <div class="use-case-footer"><a href="${prefix}/tools/${tool.id}/">${fr?'Découvrir':'Explore'} ${esc(tool.name)} ${icon('arrow-right')}</a>${s.limit?`<small>${esc(s.limit[column])}</small>`:''}</div>
+      </article>`
+    }).join(''),
   }
 }

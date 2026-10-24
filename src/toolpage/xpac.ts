@@ -8,7 +8,7 @@ export default {
   nav: [['Inventory', '#inventory'], ['Commands', '#commands'], ['Terminal', '#terminal'], ['Status', '#status']],
   hero: {
     title: ['Every package.', 'Every reason.'],
-    copy: 'Know what is installed and why.<br />Change packages and dotfiles only through a plan you have read.',
+    copy: 'Know what is installed and why.<br />Review changes before applying them.',
     primary: 'Build xpac',
   },
   sections: [

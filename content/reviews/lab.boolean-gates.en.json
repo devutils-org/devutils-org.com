@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "id": "lab.boolean-gates",
+  "locale": "en",
+  "contentHash": "652d25e51269942f5ac5ac5ad8d109bc3e151e37a7e9a544604d185f4502879e",
+  "assessedAt": "2026-10-24",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "rules",
+      "section": "article-understand-the-result",
+      "kind": "definition",
+      "statement": "The lab’s four operations use the standard stated Boolean definitions.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "PDF pages 10–14 and 20–22, gate definitions",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "Truth-table and model tests validate the logical behavior only."
+    },
+    {
+      "id": "scope",
+      "section": "article-what-this-experiment-does-not-measure",
+      "kind": "model",
+      "statement": "The workbench is a logical simulation with no electrical measurements.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Printed pp. 471–472, logical network model",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "The absence of voltage/current/timing models is explicit in our implementation; it is not evidence about a physical device."
+    }
+  ],
+  "examples": [
+    {
+      "check": "gate-model",
+      "result": "passed",
+      "scope": "All AND/OR/XOR input combinations and NOT independence from B.",
+      "checkedAt": "2026-10-24",
+      "evidenceHash": "5ccfaf37c52ea383e043cf762db441fcda4221ce0477b39941800b26fdd0f251"
+    }
+  ],
+  "limitations": [
+    "The model does not simulate voltage, propagation delay, power or failure.",
+    "Browser interaction checks are separate from this recorded model check."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

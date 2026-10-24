@@ -13,7 +13,7 @@ export default {
   nav: [['Livre (EN)', '/tools/atfq/book/'], ['Fiches', '#cards'], ['Touches', '#keys'], ['Installer', '#start']],
   hero: {
     title: ['Posez la question.', 'Votre machine répond.'],
-    copy: 'Comprenez les chiffres de Linux dans votre terminal.<br />Des réponses courtes, appuyées sur l’état réel de votre machine.',
+    copy: 'Comprenez les chiffres de Linux.<br />Des réponses liées à votre machine.',
     primary: 'Installer ATFQ',
   },
   sections: [

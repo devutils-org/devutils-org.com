@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "id": "history.mathematical-theory-of-communication",
+  "locale": "en",
+  "contentHash": "954d2a19a9627a392cb4006c468123d9797ff0595f494dcde8ed171a5111e12e",
+  "assessedAt": "2026-10-24",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "publication",
+      "section": "article-a-different-engineering-question",
+      "kind": "historical",
+      "statement": "Bell Labs dates the publication to July 1948.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Publication heading: 01 July 1948",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        },
+        {
+          "source": 2,
+          "locator": "DOI 10.1002/j.1538-7305.1948.tb01338.x",
+          "access": "blocked",
+          "note": "Direct DOI access redirected to a robot-check page; publisher metadata was not directly re-read."
+        }
+      ],
+      "note": "The article now attributes the accessible publication date to Bell Labs and avoids pretending the blocked publisher page was read."
+    },
+    {
+      "id": "scope",
+      "section": "article-a-different-engineering-question",
+      "kind": "historical",
+      "statement": "The introduction discusses selected messages, noise and the distinction from semantic meaning.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Introduction paragraphs following the date",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "This entry summarizes the problem setting and does not validate the paper’s full mathematical results."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Bell Labs and the original publisher record refer to the same paper, not two independent discoveries.",
+    "The publisher endpoint was blocked during direct access.",
+    "Entropy, coding and capacity claims require separate technical treatment before expansion."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

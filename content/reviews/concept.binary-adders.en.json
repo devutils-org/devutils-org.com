@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "id": "concept.binary-adders",
+  "locale": "en",
+  "contentHash": "9cc45012d2296cb255bdc8deb39dcf14d84867da2e954a734dd4a923000affe1",
+  "assessedAt": "2026-10-24",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "full-adder",
+      "section": "article-include-an-incoming-carry",
+      "kind": "definition",
+      "statement": "The full-adder output satisfies A+B+Cin = S+2*Cout.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "PDF pages 39–42, 1-bit Full Adder and 4-bit Adder",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        },
+        {
+          "source": 1,
+          "locator": "Full-adder/ripple-carry notes",
+          "access": "blocked",
+          "note": "Direct PDF retrieval failed during this audit (HTTP 500); not counted as read."
+        }
+      ],
+      "note": "An arithmetic invariant independently checks all eight displayed rows."
+    },
+    {
+      "id": "carry",
+      "section": "article-follow-a-four-bit-sum",
+      "kind": "model",
+      "statement": "The four-bit teaching example retains the low bits and exposes an unsigned carry.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "PDF pages 41–43, cascaded adder and carry out",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "The 13+6 column trace is original and independently recomputed."
+    },
+    {
+      "id": "signed",
+      "section": "article-carry-is-not-signed-overflow",
+      "kind": "model",
+      "statement": "A signed interpretation differs from unsigned carry; the four-bit +7+1 example wraps to -8.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "PDF pages 44–48, two’s-complement arithmetic",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "The concrete interpretation is derived and recomputed; the cited slides provide the arithmetic context, not this exact worked example."
+    },
+    {
+      "id": "delay",
+      "section": "article-delay-and-alternatives",
+      "kind": "definition",
+      "statement": "Ripple carry has a serial carry dependency; other carry organizations trade structure and timing.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Carry-select and carry-lookahead sections",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "No measured speedup or technology-specific bound is asserted."
+    }
+  ],
+  "examples": [
+    {
+      "check": "digital-tables",
+      "result": "passed",
+      "scope": "Full-adder rows and all four carry-propagation columns.",
+      "checkedAt": "2026-10-24",
+      "evidenceHash": "0e6506f2b043710ecb5e43e8c91dc89624c549eeca81aa29e855d95a844c0f69"
+    },
+    {
+      "check": "worked-exercises",
+      "result": "passed",
+      "scope": "Unsigned wrap and four-bit signed interpretation.",
+      "checkedAt": "2026-10-24",
+      "evidenceHash": "9ec05be3161b8a19b4bfa494a3ae591b82bd9d42b69fd6f32c4df49533a122af"
+    }
+  ],
+  "limitations": [
+    "The first reference could not be re-read during this audit; accessible Cornell material supports the adder construction.",
+    "No physical adder timing, area or power was measured."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

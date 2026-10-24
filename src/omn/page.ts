@@ -21,7 +21,7 @@ export default {
   nav: [['Families', '#families'], ['Workflow', '#workflow'], ['Views', '#interface'], ['In practice', '#in-practice'], ['Portability', '#portability'], ['Docs', { repo: '/tree/main/docs' }]],
   hero: {
     title: ['See beyond', 'the surface.'],
-    copy: 'Observe Linux workloads, from CPU to disk.<br />Keep the evidence beside every number.',
+    copy: 'Observe Linux workloads.<br />Keep evidence beside every number.',
     primary: `Start observing <span>${icon('arrow-right')}</span>`,
   },
   sections: [

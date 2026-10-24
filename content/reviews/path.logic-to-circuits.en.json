@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "id": "path.logic-to-circuits",
+  "locale": "en",
+  "contentHash": "e919e8bf1c10458089f3abcc8fde20d054971b45a986bb7b398ba64e3854bb40",
+  "assessedAt": "2026-10-24",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "curriculum",
+      "section": "article-what-you-will-learn",
+      "kind": "interpretation",
+      "statement": "The short path uses Boolean rules and the historical switching-network connection.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Printed p. 471, Introduction",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        },
+        {
+          "source": 2,
+          "locator": "PDF pages 10–14, gate definitions",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "The path order and 30–45 minute study suggestion are original editorial choices, not measured outcomes."
+    }
+  ],
+  "examples": [
+    {
+      "check": "short-path",
+      "result": "passed",
+      "scope": "Published step references and OR/XOR completion condition.",
+      "checkedAt": "2026-10-24",
+      "evidenceHash": "3252388922db21a8ac379d15b90fb1294d5e468b12031638928dab36713eb519"
+    }
+  ],
+  "limitations": [
+    "Study duration is an estimate.",
+    "A path’s editorial order is not validated by the historical source."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

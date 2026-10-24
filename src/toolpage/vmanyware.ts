@@ -8,7 +8,7 @@ export default {
   nav: [['Idea', '#idea'], ['Today', '#today'], ['Definition', '#definition'], ['Status', '#status']],
   hero: {
     title: ['Your homelab.', 'From anywhere.'],
-    copy: 'Your Proxmox homelab, from desktop or mobile.<br />Define a Linux environment once. Recreate it when needed.',
+    copy: 'Manage your Proxmox homelab.<br />Describe, then recreate environments.',
     primary: 'Run it locally',
   },
   sections: [

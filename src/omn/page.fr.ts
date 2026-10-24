@@ -21,7 +21,7 @@ export default {
   nav: [['Familles', '#families'], ['Déroulé', '#workflow'], ['Vues', '#interface'], ['En pratique', '#in-practice'], ['Portabilité', '#portability'], ['Docs', { repo: '/tree/main/docs' }]],
   hero: {
     title: ['Voir au-delà', 'de la surface.'],
-    copy: 'Observez ce que font vos programmes sous Linux, du processeur au disque.<br />Gardez la preuve à côté de chaque chiffre.',
+    copy: 'Observez vos programmes Linux.<br />Chaque chiffre garde sa preuve.',
     primary: `Commencer à observer <span>${icon('arrow-right')}</span>`,
   },
   sections: [

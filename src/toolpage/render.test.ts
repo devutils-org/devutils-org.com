@@ -14,11 +14,15 @@ import xpacFr from './xpac.fr.ts'
 import vmanywareFr from './vmanyware.fr.ts'
 import togetherFr from './together.fr.ts'
 import designFr from './design.fr.ts'
+import toolsHub from './tools.ts'
+import toolsHubFr from './tools.fr.ts'
+import about from './about.ts'
+import aboutFr from './about.fr.ts'
 
 // src/omn/page.ts imports its terminal captures through Vite (`?raw`), so the
 // build checks it (src/prerender.ts) rather than these tests.
-const pages: Record<string, Page> = { atfq, distroproof, xpac, vmanyware, together, design }
-const french: Record<string, Page> = { atfq: atfqFr, distroproof: distroproofFr, xpac: xpacFr, vmanyware: vmanywareFr, together: togetherFr, design: designFr }
+const pages: Record<string, Page> = { atfq, distroproof, xpac, vmanyware, together, design, tools: toolsHub, about }
+const french: Record<string, Page> = { atfq: atfqFr, distroproof: distroproofFr, xpac: xpacFr, vmanyware: vmanywareFr, together: togetherFr, design: designFr, tools: toolsHubFr, about: aboutFr }
 
 const anchors = (html: string) => [...html.matchAll(/href="#([\w-]+)"/g)].map((m) => m[1])
 const ids = (html: string) => new Set([...html.matchAll(/\bid="([\w-]+)"/g)].map((m) => m[1]))
@@ -27,7 +31,9 @@ test('every section the navigation names is on the page', () => {
   for (const [name, page] of [...Object.entries(pages), ...Object.entries(french).map(([n, p]) => [`${n} (fr)`, p] as const)]) {
     const { nav, main } = toolPageHtml(page)
     const present = ids(main)
-    for (const anchor of anchors(nav)) assert.ok(present.has(anchor), `${name}: the navigation points to #${anchor}, which no section has`)
+    assert.equal(anchors(nav).length,0,`${name}: global navigation must link to pages`)
+    const contents=main.match(/<aside class="page-rail"[^>]*>([\s\S]*?)<\/aside>/)?.[1] ?? ''
+    for (const anchor of anchors(contents)) assert.ok(present.has(anchor), `${name}: the navigation points to #${anchor}, which no section has`)
   }
 })
 
@@ -59,7 +65,7 @@ test('a page without a tool links its own repository, and has no stories', () =>
 test('a private repository is named, never linked', () => {
   const html = toolPageHtml({ ...minimal([]), meta: undefined, id: 'omn', nav: [['Docs', { repo: '/tree/main/docs' }]] })
   assert.doesNotMatch(html.nav + html.footer, /github\.com\/devutils-org\/omniscient/)
-  assert.match(html.nav, /<span class="repo-unavailable" aria-disabled="true"[^>]*>Docs /)
+  assert.match(html.main, /<span class="repo-unavailable" aria-disabled="true"[^>]*>Docs /)
   assert.match(html.nav, /<span class="github repo-unavailable"/)
 })
 

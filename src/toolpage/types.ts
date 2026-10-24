@@ -42,6 +42,7 @@ interface Heading {
 }
 
 export interface FlowStep {
+  color?: string
   id?: string
   glyph: string
   label: string

@@ -19,7 +19,7 @@ export default {
   nav: [['Origin', '#origin'], ['The mark', '#mark'], ['Glass', '#glass'], ['Shapes', '#shapes'], ['Colour', '#colour'], ['Type', '#type']],
   hero: {
     title: ['One question.', 'Cut in glass.'],
-    copy: 'The devutils mark is a Q that became a graph node.<br />It was drawn for ATFQ, and here it is rendered as glass in a shader.',
+    copy: 'A Q turned into a graph node.<br />The devutils mark, rendered in glass.',
     primary: 'Use the mark',
   },
   sections: [

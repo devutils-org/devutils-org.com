@@ -49,10 +49,24 @@ const toolCss = ['/src/toolpage/components.css', '/src/toolpage/toolpage.css']
 
 const written: Page[] = [
   {
+    key: 'tools', file: 'tools/index.html', shape: 'mark', css: toolCss,
+    title: 'Tools — The devutils Linux toolbox',
+    description: 'Explore the devutils Linux tools and see how they work together.',
+    content: '/src/toolpage/tools.ts',
+    fr: { title: 'Outils — La boîte à outils Linux devutils', description: 'Découvrez les outils Linux devutils et comment ils se complètent.' },
+  },
+  {
+    key: 'about', file: 'about/index.html', shape: 'mark', css: toolCss,
+    title: 'About — The devutils project',
+    description: 'The devutils project: Linux tools, a computing library, open-source contributions and visual identity.',
+    content: '/src/toolpage/about.ts',
+    fr: { title: 'À propos — Le projet devutils', description: 'Le projet devutils : outils Linux, bibliothèque informatique, contributions open source et identité visuelle.' },
+  },
+  {
     key: 'main',
     file: 'index.html',
     title: 'devutils — Small tools. Honest answers.',
-    description: 'devutils — small Linux tools that show their work: observability, explanations, distro checks, packages and homelabs.',
+    description: 'Understand what your Linux computer is doing: explore slowdowns, make sense of its numbers and prepare software changes.',
     ogDescription: 'Small Linux tools that show their work.',
     shape: 'mark',
     css: [],
@@ -60,7 +74,7 @@ const written: Page[] = [
     brand: 'devutils',
     fr: {
       title: 'devutils — Petits outils. Réponses honnêtes.',
-      description: 'devutils — de petits outils Linux qui montrent leur travail : observation, explications, vérifications sur chaque distribution, paquets et homelabs.',
+      description: 'Comprendre ce que fait votre ordinateur Linux : explorer les ralentissements, donner du sens aux chiffres et préparer les changements logiciels.',
       ogDescription: 'De petits outils Linux qui montrent leur travail.',
     },
   },

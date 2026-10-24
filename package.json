@@ -5,18 +5,25 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/contributions-reports.ts && vite build && vite build --ssr src/prerender.ts --outDir .ssr --emptyOutDir && node scripts/prerender.ts && node scripts/seo.ts",
+    "build": "node scripts/contributions-reports.ts && vite build && vite build --ssr src/prerender.ts --outDir .ssr --emptyOutDir && node scripts/prerender.ts && node scripts/seo.ts && node scripts/search.ts && node scripts/check-links.ts",
     "preview": "vite preview",
     "book:atfq": "node scripts/atfq-book.ts",
     "chain:runs": "node scripts/chain-runs.ts",
     "test": "tsc -p . && node --test",
-    "contributions:reports": "node scripts/contributions-reports.ts"
+    "contributions:reports": "node scripts/contributions-reports.ts",
+    "check:links": "node scripts/check-links.ts",
+    "verify:content": "node scripts/verify-content.ts"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
+    "axe-core": "^4.14.0",
+    "marked": "^18.1.1",
+    "pagefind": "^1.5.2",
+    "parse5": "^8.0.1",
     "playwright-core": "^1.56.1",
     "typescript": "^5.9.3",
-    "vite": "^8.3.4"
+    "vite": "^8.3.4",
+    "yaml": "^2.9.1"
   },
   "license": "MIT OR Apache-2.0"
 }

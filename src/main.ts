@@ -3,11 +3,11 @@ import { $, initPage } from './page.ts'
 import { homeHtml } from './home.ts'
 import { pageLang } from './i18n.ts'
 
-// ---------- content from tools.ts ----------
+// ---------- plain-language situations, pre-rendered by the build ----------
 
 document.querySelectorAll<HTMLAnchorElement>('[data-org]').forEach((a) => (a.href = ORG_URL))
 
-if (!$('#tool-grid').firstElementChild) {
+if (!$('#use-cases').firstElementChild) {
   for (const [id, markup] of Object.entries(homeHtml(pageLang()))) $(`#${id}`).innerHTML = markup
 }
 

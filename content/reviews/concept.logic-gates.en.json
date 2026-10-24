@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "id": "concept.logic-gates",
+  "locale": "en",
+  "contentHash": "29a634bc34ac4fcc3e6b91878f5ab149ffef7b766e7aa3b1d0e924512bbcc91e",
+  "assessedAt": "2026-10-24",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "families",
+      "section": "article-read-the-gate-families",
+      "kind": "definition",
+      "statement": "NAND, NOR and XNOR negate AND, OR and XOR respectively.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "PDF pages 14 and 20–22, logic-gate definitions",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "The published complementary-gate table is checked for every input pair."
+    },
+    {
+      "id": "composition",
+      "section": "article-rebuild-a-rule-using-nand",
+      "kind": "model",
+      "statement": "Tying NAND inputs implements NOT; two NAND stages reconstruct AND.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "PDF pages 65–66, NAND/NOR universality",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "The specific substitutions are original and exhaustively recomputed."
+    },
+    {
+      "id": "electrical",
+      "section": "article-where-the-abstraction-stops",
+      "kind": "model",
+      "statement": "Truth-table equivalence does not establish electrical ranges or delay.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "CMOS lesson: static discipline and propagation/contamination delay sections",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "No voltage, delay or transistor-count measurement is claimed."
+    }
+  ],
+  "examples": [
+    {
+      "check": "digital-tables",
+      "result": "passed",
+      "scope": "Four rows of NAND, NOR and XNOR.",
+      "checkedAt": "2026-10-24",
+      "evidenceHash": "0e6506f2b043710ecb5e43e8c91dc89624c549eeca81aa29e855d95a844c0f69"
+    },
+    {
+      "check": "worked-exercises",
+      "result": "passed",
+      "scope": "NAND reconstruction and indicator-rule substitutions.",
+      "checkedAt": "2026-10-24",
+      "evidenceHash": "9ec05be3161b8a19b4bfa494a3ae591b82bd9d42b69fd6f32c4df49533a122af"
+    }
+  ],
+  "limitations": [
+    "The lab contains AND, OR, NOT and XOR; complementary gates are derived on paper.",
+    "No physical gate or fault-tolerant controller has been built or measured."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

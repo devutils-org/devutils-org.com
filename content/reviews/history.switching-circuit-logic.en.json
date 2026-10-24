@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "id": "history.switching-circuit-logic",
+  "locale": "en",
+  "contentHash": "e51d5254c4f05b968f6615f710833c9722ee9aec376a046441e7f1511340db52",
+  "assessedAt": "2026-10-24",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "problem",
+      "section": "article-the-problem",
+      "kind": "historical",
+      "statement": "The 1938 paper treats analysis, synthesis and equivalent switching networks.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Printed p. 471 (PDF page 1), Introduction",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "The scanned page was inspected visually."
+    },
+    {
+      "id": "notation",
+      "section": "article-the-connection",
+      "kind": "historical",
+      "statement": "Shannon states that the notation is drawn chiefly from symbolic logic.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Printed p. 471, final introduction paragraph",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "The article does not claim its conducting-path convention reproduces Shannon’s hindrance notation."
+    },
+    {
+      "id": "milestones",
+      "section": "article-why-two-dates-appear",
+      "kind": "historical",
+      "statement": "The article separates 1937 work, the 1938 paper and the 1940 degree award.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Claude Shannon biographical paragraph",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        },
+        {
+          "source": 2,
+          "locator": "Printed p. 471, publication and thesis footnotes",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        },
+        {
+          "source": 3,
+          "locator": "SM/PhD degree paragraph",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        },
+        {
+          "source": 4,
+          "locator": "Printed p. 8, opening memoir",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "The 1938 footnote directly establishes paper publication; it does not by itself establish a 1937 degree date."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "The timeline is selective and is not a chronology of every contributor.",
+    "Historical source assessment was performed by an assistant; independent human review is pending."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

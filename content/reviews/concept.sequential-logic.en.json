@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "id": "concept.sequential-logic",
+  "locale": "en",
+  "contentHash": "8e62ced9efd6d3cebd27276b7ba22d148b8e11a72530ea65b668ab4ec2e0b235",
+  "assessedAt": "2026-10-24",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "state",
+      "section": "article-behavior-with-a-past",
+      "kind": "definition",
+      "statement": "A sequential model combines state and a next-state function.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "The Need for State; Designing Larger Circuits",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "This article chooses a synchronous single-clock subset, not every possible sequential circuit."
+    },
+    {
+      "id": "feedback",
+      "section": "article-place-a-register-in-the-feedback-path",
+      "kind": "model",
+      "statement": "The register separates current state from the next combinational result.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Designing Larger Circuits, register/logic composition",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "The diagram is an original conceptual drawing."
+    },
+    {
+      "id": "counter",
+      "section": "article-specify-a-three-bit-counter",
+      "kind": "model",
+      "statement": "Reset has priority over enable and applies at a rising edge in this example.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Single-clock synchronous circuits; discrete-time model",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "The counter’s priority and modulo-8 rule are original explicit design choices, not requirements of all counters."
+    },
+    {
+      "id": "setup",
+      "section": "article-leave-time-for-the-next-state",
+      "kind": "model",
+      "statement": "Ignoring skew/uncertainty, setup timing includes clock-to-Q, logic propagation and setup time.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Timing in a single-clock system; REG1–logic–REG2 inequalities",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "The 0.7/3.4/0.5 ns values are fictional. Hold constraints remain separate."
+    }
+  ],
+  "examples": [
+    {
+      "check": "state-traces",
+      "result": "passed",
+      "scope": "Five published counter edges and reset/enable priority.",
+      "checkedAt": "2026-10-24",
+      "evidenceHash": "54ca46f11f718f0ce2a87f3ef33d1db2f8e61bc8e666ac841d76d1b747f997ac"
+    },
+    {
+      "check": "worked-exercises",
+      "result": "passed",
+      "scope": "Modulo wrap, completion sequence and illustrative timing sum.",
+      "checkedAt": "2026-10-24",
+      "evidenceHash": "9ec05be3161b8a19b4bfa494a3ae591b82bd9d42b69fd6f32c4df49533a122af"
+    }
+  ],
+  "limitations": [
+    "No HDL, circuit simulator, synthesis or hardware was used for timing validation.",
+    "Passing the illustrative setup inequality does not verify hold timing, clock skew or metastability behavior."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

@@ -8,14 +8,13 @@
 
     <canvas id="scene" aria-hidden="true"></canvas>
 
-    <header class="nav">
+    <header class="nav site-nav">
       <a class="logo" href="/" aria-label="devutils home"><img class="logo-icon" src="/mark.svg" alt="" /> devutils</a>
       <nav aria-label="Main navigation">
-        <a href="#flow">Flow</a>
-        <a href="#tools">Tools</a>
-        <a href="/together/">Together</a>
+        <a href="/tools/">Tools</a>
+        <a href="/knowledge/">Library</a>
         <a href="/contributions/">Contributions</a>
-        <a href="/design/">Design</a>
+        <a href="/about/">About</a>
       </nav>
       <a class="lang-switch" href="/fr/" hreflang="fr" lang="fr" title="Version française">FR</a>
       <a class="github" data-org href="https://github.com/devutils-org">GitHub <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></a>
@@ -25,73 +24,27 @@
       <section class="hero" data-scene="hero">
         <div class="hero-grid" aria-hidden="true"></div>
         <h1>Small tools.<br /><span>Honest answers.</span></h1>
-        <p class="hero-copy">Developer tools for your Linux workflow.<br />Understand, debug and manage the machine you build on.</p>
-        <div class="actions">
-          <a class="primary" href="#overview">Discover devutils <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-down"></use></svg></span></a>
-          <a class="secondary" href="#tools">Browse the tools</a>
-        </div>
-        <div class="stage" aria-hidden="true">
-          <img class="stage-fallback" src="/mark.svg" alt="" />
-          <div class="horizon"></div>
-        </div>
+        <p class="hero-copy">Understand your computer.<br />Find clues. Plan your next change.</p>
+        <p class="home-platform">Focused on Linux, a system used on computers and servers.</p>
+        <div class="stage" aria-hidden="true"><img class="stage-fallback" src="/mark.svg" alt="" /><div class="horizon"></div></div>
       </section>
-
       <section class="section overview" id="overview" aria-labelledby="overview-title">
-        <div class="overview-heading">
-          <p class="eyebrow">BUILT FOR YOUR DEV WORKFLOW</p>
-          <h2 id="overview-title">Less friction.<br />More building.</h2>
-          <p>Spend less time piecing together system output and more time working on your code. Five independent developer tools bring context to debugging, portability checks and local environments.</p>
-        </div>
-        <dl class="overview-facts">
-          <div>
-            <dt>Debug with context</dt>
-            <dd>See where a workload spends its time, understand system metrics and compare what changes between distros.</dd>
-          </div>
-          <div>
-            <dt>Stay in your workflow</dt>
-            <dd>CLI commands, terminal views and readable output keep investigation close to your code. Pick one tool and use it on its own.</dd>
-          </div>
-          <div>
-            <dt>Make changes predictable</dt>
-            <dd>Review package plans before applying them. Keep environment definitions in files you can version, inspect and reuse.</dd>
-          </div>
-        </dl>
+        <div class="overview-heading"><p class="eyebrow">START WITH A SITUATION</p><h2 id="overview-title">Familiar questions.<br />A way to investigate.</h2><p>A slow program. A number you do not understand. Software that works on your computer but fails elsewhere. devutils brings together tools for exploring these situations and deciding what to look at next.</p></div>
+        <dl class="overview-facts"><div><dt>Understand before changing</dt><dd>See what is happening and put the results in context before choosing what to change.</dd></div><div><dt>Use what you need</dt><dd>Each tool has its own role. You can start with one question and one tool.</dd></div><div><dt>Know what is ready</dt><dd>Some tools are still in development. Their pages explain what is available and what remains to be validated.</dd></div></dl>
       </section>
-
       <section class="section" id="flow" data-scene="flow">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">FROM QUESTION TO MACHINE / FIVE HANDOFFS</p>
-            <h2>One machine.<br />Every question in view.</h2>
-          </div>
-          <p>Each tool owns one kind of question. Explore a tool to see what it does, from kernel activity to your homelab.</p>
-        </div>
-        <div class="flow-cards glass" id="pipeline"></div>
-        <a class="inline-link" href="/together/">See how the tools already check each other →</a>
+        <div class="section-heading"><div><p class="eyebrow">WHAT COULD YOU DO?</p><h2>Start with your question.<br />Explore the possibilities.</h2></div><p>You do not need to know how a tool is built to understand what it is for. Choose a situation, then explore the details if it matches your needs.</p></div>
+        <div class="use-case-grid" id="use-cases"></div>
+        <a class="inline-link" href="/tools/">Want commands and implementation details? Open Tools →</a>
       </section>
-
       <section class="section" id="tools" data-scene="tools">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">THE TOOLS / FIVE INSTRUMENTS</p>
-            <h2>Pick the question.<br />Get the instrument.</h2>
-          </div>
-          <p>Find the tool for your next task. Each card shows its current status and what you can try today.</p>
-        </div>
-        <div class="tool-grid" id="tool-grid"></div>
+        <div class="section-heading"><div><p class="eyebrow">CHOOSE YOUR WAY IN</p><h2>Use an instrument.<br />Or explore an idea.</h2></div><p>The tools are one way into the project. You can also learn how computers work or read what happened in a documented investigation.</p></div>
+        <div class="home-routes"><a class="glass" href="/tools/"><small>For your next task</small><h3>Tools</h3><p>The detailed catalog: what each tool does, its commands, current status and links.</p><span aria-hidden="true">↗</span></a><a class="glass" href="/knowledge/"><small>To understand the bigger picture</small><h3>Library</h3><p>A growing map from matter to software, with articles, learning paths and small experiments.</p><span aria-hidden="true">↗</span></a><a class="glass" href="/contributions/"><small>To follow an investigation</small><h3>Contributions</h3><p>Read documented problems, proposed fixes, measured results and their limits.</p><span aria-hidden="true">↗</span></a></div>
       </section>
-
       <section class="section start" id="start" data-scene="start">
-        <div class="stage stage-start" aria-hidden="true"></div>
-        <p class="eyebrow">OPEN SOURCE / BUILT FOR LINUX</p>
-        <h2>Ask your machine<br />a better question.</h2>
-        <p>Start with the tool that matches your question. Each one stands alone.</p>
-        <div class="actions">
-          <a class="primary" data-org href="https://github.com/devutils-org">Explore on GitHub <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></a>
-          <a class="secondary" href="#tools">Compare the tools</a>
-        </div>
-        <div class="command"><code id="cmd">gh repo list devutils-org</code><button data-copy="#cmd" type="button" aria-label="Copy command">Copy</button></div>
-        <small>Rust · Linux first · MIT / Apache-2.0 · file-specific terms apply</small>
+        <div class="stage stage-start" aria-hidden="true"></div><p class="eyebrow">ONE QUESTION IS ENOUGH TO START</p><h2>Find your starting point.<br />Take a closer look.</h2><p>Choose a tool for the task in front of you, or follow a learning path to understand the ideas behind it.</p>
+        <div class="actions"><a class="primary" href="/tools/">Explore the tools ↗</a><a class="secondary" href="/knowledge/">Explore the library</a></div>
+        <small>Tools have different requirements and stages of development. Their individual pages explain the scope.</small>
       </section>
     </main>
 

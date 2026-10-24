@@ -8,7 +8,7 @@ export default {
   nav: [['Why', '#why'], ['envprobe', '#envprobe'], ['Terminal', '#terminal'], ['Case study', '#case-study'], ['Targets', '#targets']],
   hero: {
     title: ['Works on my machine.', 'Proven on theirs.'],
-    copy: 'Test your binary on real distro kernels.<br />See why it fails elsewhere.',
+    copy: 'Test on real Linux kernels.<br />Understand failures elsewhere.',
     primary: 'Build distroproof',
   },
   sections: [

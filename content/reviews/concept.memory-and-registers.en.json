@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "id": "concept.memory-and-registers",
+  "locale": "en",
+  "contentHash": "824ca8ed9fe52319ad4c8a902a97e27137d28be6895af69c5d9b26a73c9f3151",
+  "assessedAt": "2026-10-24",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "interfaces",
+      "section": "article-keep-something-after-the-input-changes",
+      "kind": "definition",
+      "statement": "A level-sensitive latch and an edge-triggered register have different timing interfaces.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "D latch, edge-triggered D register and timing sections",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "The article distinguishes an interface contract from a particular transistor implementation."
+    },
+    {
+      "id": "register",
+      "section": "article-define-a-small-register",
+      "kind": "model",
+      "statement": "The example register loads only at an enabled rising edge.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Edge-triggered D register section",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "Enable behavior and initial Q=0000 are specified by this original teaching example, not asserted as universal power-up behavior."
+    },
+    {
+      "id": "array",
+      "section": "article-give-words-addresses",
+      "kind": "definition",
+      "statement": "Address width identifies a word independently of the word’s data width.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "SRAM array organization: rows, columns, wordlines and address selection",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "Payload calculations exclude wiring and control overhead."
+    },
+    {
+      "id": "technology",
+      "section": "article-the-interface-does-not-name-the-technology",
+      "kind": "definition",
+      "statement": "SRAM and DRAM differ in cell/refresh mechanisms; these volatile memories need power.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "SRAM and DRAM sections, including DRAM refresh discussion",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "No universal latency, density or refresh-period number is imported."
+    }
+  ],
+  "examples": [
+    {
+      "check": "state-traces",
+      "result": "passed",
+      "scope": "All six displayed register events.",
+      "checkedAt": "2026-10-24",
+      "evidenceHash": "54ca46f11f718f0ce2a87f3ef33d1db2f8e61bc8e666ac841d76d1b747f997ac"
+    },
+    {
+      "check": "worked-exercises",
+      "result": "passed",
+      "scope": "Word/address counts and payload-byte calculations.",
+      "checkedAt": "2026-10-24",
+      "evidenceHash": "9ec05be3161b8a19b4bfa494a3ae591b82bd9d42b69fd6f32c4df49533a122af"
+    }
+  ],
+  "limitations": [
+    "Initial register state is chosen for the exercise.",
+    "Read-during-write and analog storage behavior are outside the example contract."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

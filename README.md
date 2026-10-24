@@ -30,7 +30,10 @@ allowed (`tsconfig.json` checks it).
   tool (`omn`, `distroproof`, `xpac`, `vmanyware`), picked by a page's `shape`.
 - `src/scene.ts` — the glass mark. The page drives it with `setState`
   (anchor element, or viewport position and size; opacity).
-- `src/main.ts` — the home page: fills the content from `tools.ts` if the
+- `src/home.ts` — bilingual, plain-language situations for the homepage.
+  The technical cards live in `src/tool-cards.ts` and are rendered on `/tools/`,
+  alongside the technical workflow. Their details still come from `src/tools.ts`.
+- `src/main.ts` — the home page: fills the content from `home.ts` if the
   build has not, and places the mark for each section (`scenes`).
 - A section that holds a `.stage` element gets the mark drawn on it; the
   others place it with their scene state, the home page's in `main.ts`, a
@@ -217,3 +220,41 @@ Run `npm test` and `npm run build`. For browser checks, start
 It checks desktop/mobile layouts, report downloads, language navigation, evidence
 links and pre-rendered content without JavaScript. Screenshots use the existing
 `?debug=no3d` fallback to inspect layout independently of GPU availability.
+
+
+## Knowledge library
+
+`/knowledge/` opens the reading library; `/knowledge/computing-stack/` is its full
+editorial table of contents. History, figures, learning paths and labs have
+section overviews. Twelve English-first records include six digital-logic concepts,
+a profile, two historical events, two learning paths and a Boolean-gate lab. A timeline, figure filters,
+static full-text search and per-article tables of contents connect them.
+Start with `/learn/digital-logic-foundations/` for the seven-step digital-logic block. Planned topics are
+shown as labels rather than empty article routes. French overviews link to the
+available English articles explicitly.
+
+Content lives in `content/**/*.md`. `src/knowledge/` validates metadata and links,
+renders Markdown safely, derives routes/backlinks and emits static HTML through
+a Vite plugin. It serves the same pages in development. Existing tool pages and
+their registry keep their original rendering pipeline. The reader reuses `src/style.css` for the site’s visual identity, with reading
+layouts in `src/knowledge/styles.css`. Ordinary articles need no application JavaScript or WebGL scene. Search loads
+Pagefind on demand; the lab and discovery controls use a small client module. The SEO stage includes generated routes in the sitemap.
+
+See [authoring instructions](docs/AUTHORING.md), the
+[architecture decision](docs/adr/knowledge-v1.md), and the
+[implementation roadmap](docs/planning/ROADMAP.md).
+
+`npm test` and `npm run build` validate the library, including the complete built
+site’s internal links. See [validation](docs/VALIDATION.md) and the
+[measured architecture review](docs/adr/knowledge-scale-review.md). With the preview server on
+port 5178, `CHROME_PATH=/path/to/chrome node bench/knowledge.ts` checks every new
+route on desktop/mobile without JavaScript and writes screenshots to
+`/tmp/devutils-knowledge-check` (override with `CHECK_OUTPUT`).
+
+`bench/roadmap.ts` checks search, filters, the lab, aliases and automated accessibility.
+`bench/knowledge-metrics.ts` records page/index sizes and a synthetic 1,000-page benchmark.
+
+Each article exposes a verification record with selected claims, exact source
+passages, reproducible checks and a separate human-review status. See
+[the editorial standard](docs/EDITORIAL.md). `npm run verify:content` records the
+allowlisted example checks; it does not approve sources or human review.

@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "id": "concept.combinational-logic",
+  "locale": "en",
+  "contentHash": "3fd247688fc1410097f9390ab88d8d09c2333ce101254d8cb25b5b600fa5e84f",
+  "assessedAt": "2026-10-24",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "function",
+      "section": "article-a-function-of-the-present-inputs",
+      "kind": "definition",
+      "statement": "The combinational model has current inputs and no stored history.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Combinational-logic lesson: functional specification and acyclic composition",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "Output settling time is explicitly separate from the logical function."
+    },
+    {
+      "id": "mux",
+      "section": "article-specify-a-one-bit-selector",
+      "kind": "definition",
+      "statement": "A two-input MUX selects D0 for S=0 and D1 for S=1.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Multiplexer section, paragraph beginning The truth table we have been using",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "The eight published rows are tested against selection, not copied from a diagram."
+    },
+    {
+      "id": "transition",
+      "section": "article-check-behavior-and-timing-separately",
+      "kind": "model",
+      "statement": "Stable-input truth-table checks do not verify transient behavior.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Timing analysis and combinational implementation discussion",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "The article states an acyclic model; feedback requires a separate storage model."
+    }
+  ],
+  "examples": [
+    {
+      "check": "digital-tables",
+      "result": "passed",
+      "scope": "All eight selector input combinations.",
+      "checkedAt": "2026-10-24",
+      "evidenceHash": "0e6506f2b043710ecb5e43e8c91dc89624c549eeca81aa29e855d95a844c0f69"
+    },
+    {
+      "check": "worked-exercises",
+      "result": "passed",
+      "scope": "Four-bit selector values and constant-input exercises.",
+      "checkedAt": "2026-10-24",
+      "evidenceHash": "9ec05be3161b8a19b4bfa494a3ae591b82bd9d42b69fd6f32c4df49533a122af"
+    }
+  ],
+  "limitations": [
+    "No gate-level timing simulation was executed.",
+    "The word selector is a conceptual composition; physical loading is not modeled."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

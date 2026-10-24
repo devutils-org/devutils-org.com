@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "id": "path.digital-logic-foundations",
+  "locale": "en",
+  "contentHash": "7f6d0dff0d84171e48b7008305bbee310ad9a9a8d0e1a2a0234064e7f03f06aa",
+  "assessedAt": "2026-10-24",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "curriculum",
+      "section": "article-follow-the-seven-steps",
+      "kind": "interpretation",
+      "statement": "The path progresses from logical primitives to arithmetic, storage and sequential behavior.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Course navigation: CMOS, Combinational Logic, Sequential Logic and Design Tradeoffs",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "This is an original editorial sequence; the reference is background, not proof that this exact sequence is optimal."
+    }
+  ],
+  "examples": [
+    {
+      "check": "path-order",
+      "result": "passed",
+      "scope": "Each prerequisite appears before its dependent step.",
+      "checkedAt": "2026-10-24",
+      "evidenceHash": "68ba1677970775e4d536b26ba7a7e5eb254e531062eacf8dec80b2be06a2e4ca"
+    },
+    {
+      "check": "worked-exercises",
+      "result": "passed",
+      "scope": "Completion answers for selection, addition, capacity and counter sequence.",
+      "checkedAt": "2026-10-24",
+      "evidenceHash": "9ec05be3161b8a19b4bfa494a3ae591b82bd9d42b69fd6f32c4df49533a122af"
+    }
+  ],
+  "limitations": [
+    "No pedagogical efficacy or completion-time study has been performed.",
+    "Completing the path does not certify hardware-design competence."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

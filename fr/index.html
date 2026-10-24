@@ -8,14 +8,13 @@
 
     <canvas id="scene" aria-hidden="true"></canvas>
 
-    <header class="nav">
+    <header class="nav site-nav">
       <a class="logo" href="/fr/" aria-label="Accueil devutils"><img class="logo-icon" src="/mark.svg" alt="" /> devutils</a>
       <nav aria-label="Navigation principale">
-        <a href="#flow">Parcours</a>
-        <a href="#tools">Outils</a>
-        <a href="/fr/together/">Ensemble</a>
+        <a href="/fr/tools/">Outils</a>
+        <a href="/fr/knowledge/">Bibliothèque</a>
         <a href="/fr/contributions/">Contributions</a>
-        <a href="/fr/design/">Design</a>
+        <a href="/fr/about/">À propos</a>
       </nav>
       <a class="lang-switch" href="/" hreflang="en" lang="en" title="English version">EN</a>
       <a class="github" data-org href="https://github.com/devutils-org">GitHub <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></a>
@@ -25,73 +24,27 @@
       <section class="hero" data-scene="hero">
         <div class="hero-grid" aria-hidden="true"></div>
         <h1>Petits outils.<br /><span>Réponses honnêtes.</span></h1>
-        <p class="hero-copy">Des outils de développement pour travailler sous Linux.<br />Comprendre, déboguer et gérer la machine sur laquelle vous construisez.</p>
-        <div class="actions">
-          <a class="primary" href="#overview">Découvrir devutils <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-down"></use></svg></span></a>
-          <a class="secondary" href="#tools">Voir les outils</a>
-        </div>
-        <div class="stage" aria-hidden="true">
-          <img class="stage-fallback" src="/mark.svg" alt="" />
-          <div class="horizon"></div>
-        </div>
+        <p class="hero-copy">Comprenez votre ordinateur.<br />Trouvez des pistes pour agir.</p>
+        <p class="home-platform">Centré sur Linux, un système utilisé sur des ordinateurs et des serveurs.</p>
+        <div class="stage" aria-hidden="true"><img class="stage-fallback" src="/mark.svg" alt="" /><div class="horizon"></div></div>
       </section>
-
       <section class="section overview" id="overview" aria-labelledby="overview-title">
-        <div class="overview-heading">
-          <p class="eyebrow">PENSÉ POUR LE TRAVAIL DES DÉVELOPPEURS</p>
-          <h2 id="overview-title">Moins de friction.<br />Plus de construction.</h2>
-          <p>Passez moins de temps à recoller les sorties du système et plus de temps sur votre code. Cinq outils de développement indépendants apportent du contexte au débogage, aux vérifications de portabilité et aux environnements locaux.</p>
-        </div>
-        <dl class="overview-facts">
-          <div>
-            <dt>Déboguer avec du contexte</dt>
-            <dd>Voyez où un programme passe son temps, comprenez les chiffres du système et comparez ce qui change d’une distribution à l’autre.</dd>
-          </div>
-          <div>
-            <dt>Rester dans votre façon de travailler</dt>
-            <dd>Des commandes, des vues dans le terminal et des sorties lisibles gardent l’enquête près de votre code. Choisissez un outil et utilisez-le seul.</dd>
-          </div>
-          <div>
-            <dt>Des changements prévisibles</dt>
-            <dd>Relisez les plans de paquets avant de les appliquer. Gardez les définitions d’environnements dans des fichiers que vous pouvez versionner, examiner et réutiliser.</dd>
-          </div>
-        </dl>
+        <div class="overview-heading"><p class="eyebrow">PARTIR D’UNE SITUATION</p><h2 id="overview-title">Des questions familières.<br />Des pistes pour comprendre.</h2><p>Un programme lent. Un chiffre que l’on ne comprend pas. Un logiciel qui fonctionne chez soi mais échoue ailleurs. devutils réunit des outils pour explorer ces situations et savoir quoi regarder ensuite.</p></div>
+        <dl class="overview-facts"><div><dt>Comprendre avant de changer</dt><dd>Observer ce qui se passe et remettre les résultats dans leur contexte avant de décider quoi modifier.</dd></div><div><dt>Utiliser ce dont on a besoin</dt><dd>Chaque outil a son rôle. Vous pouvez commencer par une seule question et un seul outil.</dd></div><div><dt>Savoir ce qui est prêt</dt><dd>Certains outils sont encore en développement. Leur page précise ce qui est disponible et ce qui reste à valider.</dd></div></dl>
       </section>
-
       <section class="section" id="flow" data-scene="flow">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">DE LA QUESTION À LA MACHINE / CINQ ÉTAPES</p>
-            <h2>Une machine.<br />Chaque question en vue.</h2>
-          </div>
-          <p>Chaque outil s’occupe d’un type de question. Explorez un outil pour voir ce qu’il fait, de l’activité du noyau jusqu’à votre homelab.</p>
-        </div>
-        <div class="flow-cards glass" id="pipeline"></div>
-        <a class="inline-link" href="/fr/together/">Voir comment les outils se vérifient déjà entre eux →</a>
+        <div class="section-heading"><div><p class="eyebrow">À QUOI CELA PEUT SERVIR</p><h2>Partir de votre question.<br />Explorer les possibilités.</h2></div><p>Pas besoin de connaître la fabrication d’un outil pour comprendre son utilité. Choisissez une situation, puis découvrez les détails si elle correspond à votre besoin.</p></div>
+        <div class="use-case-grid" id="use-cases"></div>
+        <a class="inline-link" href="/fr/tools/">Vous cherchez les commandes et les détails techniques ? Ouvrir Outils →</a>
       </section>
-
       <section class="section" id="tools" data-scene="tools">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">LES OUTILS / CINQ INSTRUMENTS</p>
-            <h2>Choisissez la question.<br />Prenez l’instrument.</h2>
-          </div>
-          <p>Trouvez l’outil pour votre prochaine tâche. Chaque carte montre son état actuel et ce que vous pouvez essayer aujourd’hui.</p>
-        </div>
-        <div class="tool-grid" id="tool-grid"></div>
+        <div class="section-heading"><div><p class="eyebrow">CHOISIR SON POINT D’ENTRÉE</p><h2>Utiliser un outil.<br />Ou explorer une idée.</h2></div><p>Les outils sont une porte d’entrée dans le projet. Vous pouvez aussi apprendre comment fonctionne un ordinateur ou suivre une enquête documentée.</p></div>
+        <div class="home-routes"><a class="glass" href="/fr/tools/"><small>Pour votre prochaine tâche</small><h3>Outils</h3><p>Le catalogue détaillé : rôle de chaque outil, commandes, état actuel et liens.</p><span aria-hidden="true">↗</span></a><a class="glass" href="/fr/knowledge/"><small>Pour comprendre l’ensemble</small><h3>Bibliothèque</h3><p>Une carte en construction, de la matière au logiciel, avec des articles, des parcours et de petites expériences.</p><span aria-hidden="true">↗</span></a><a class="glass" href="/fr/contributions/"><small>Pour suivre une enquête</small><h3>Contributions</h3><p>Des problèmes documentés, des correctifs proposés, des résultats mesurés et leurs limites.</p><span aria-hidden="true">↗</span></a></div>
       </section>
-
       <section class="section start" id="start" data-scene="start">
-        <div class="stage stage-start" aria-hidden="true"></div>
-        <p class="eyebrow">OPEN SOURCE / CONÇU POUR LINUX</p>
-        <h2>Posez à votre machine<br />une meilleure question.</h2>
-        <p>Commencez par l’outil qui correspond à votre question. Chacun fonctionne seul.</p>
-        <div class="actions">
-          <a class="primary" data-org href="https://github.com/devutils-org">Explorer sur GitHub <span><svg class="link-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><use href="/icons.svg#arrow-up-right"></use></svg></span></a>
-          <a class="secondary" href="#tools">Comparer les outils</a>
-        </div>
-        <div class="command"><code id="cmd">gh repo list devutils-org</code><button data-copy="#cmd" type="button" aria-label="Copier la commande">Copier</button></div>
-        <small>Rust · Linux d’abord · MIT / Apache-2.0 · certains fichiers ont leurs propres conditions</small>
+        <div class="stage stage-start" aria-hidden="true"></div><p class="eyebrow">UNE QUESTION SUFFIT POUR COMMENCER</p><h2>Trouvez votre point de départ.<br />Regardez de plus près.</h2><p>Choisissez un outil pour la tâche qui vous occupe, ou suivez un parcours pour comprendre les idées derrière.</p>
+        <div class="actions"><a class="primary" href="/fr/tools/">Découvrir les outils ↗</a><a class="secondary" href="/fr/knowledge/">Explorer la bibliothèque</a></div>
+        <small>Les outils ont des prérequis et des niveaux d’avancement différents. Leur page précise leur périmètre.</small>
       </section>
     </main>
 

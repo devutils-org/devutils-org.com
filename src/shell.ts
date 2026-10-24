@@ -60,7 +60,7 @@ export function toolPage(page: SitePage) {
   <body class="tool-page">
     <a class="skip" href="#main">${words[page.lang].skip}</a>
     <canvas id="scene" aria-hidden="true"></canvas>
-    <header class="nav" id="nav"></header>
+    <header class="nav site-nav" id="nav"></header>
     <main id="main"></main>
     <footer id="footer"></footer>
     <script type="module">

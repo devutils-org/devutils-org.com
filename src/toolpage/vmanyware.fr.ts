@@ -10,7 +10,7 @@ export default {
   nav: [['L’idée', '#idea'], ['Aujourd’hui', '#today'], ['Définition', '#definition'], ['État', '#status']],
   hero: {
     title: ['Votre homelab.', 'De partout.'],
-    copy: 'Votre homelab Proxmox, depuis l’ordinateur ou le téléphone.<br />Décrivez un environnement Linux une fois. Recréez-le quand il le faut.',
+    copy: 'Gérez votre homelab Proxmox.<br />Décrivez et recréez vos espaces.',
     primary: 'L’essayer en local',
   },
   sections: [

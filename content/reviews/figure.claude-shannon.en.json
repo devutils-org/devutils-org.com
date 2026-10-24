@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "id": "figure.claude-shannon",
+  "locale": "en",
+  "contentHash": "d1da89751f0152cc871946f7e71bfd0bb60f3a3ec8213bbf4e07afced10e20ca",
+  "assessedAt": "2026-10-24",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "life",
+      "section": "article-a-bridge-between-fields",
+      "kind": "historical",
+      "statement": "The profile’s life dates and 1936 bachelor’s degrees follow the cited biographical accounts.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "Obituary paragraphs on death, birth and bachelor’s degrees",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        },
+        {
+          "source": 4,
+          "locator": "Printed p. 8 (PDF page 1), opening memoir",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        },
+        {
+          "source": 2,
+          "locator": "Biographical paragraph",
+          "access": "blocked",
+          "note": "Direct retrieval returned HTTP 403; search excerpts were visible but are not counted as a source read."
+        }
+      ],
+      "note": "The AMS memoir provides a separately authored account for birth/education; the exact death date is supported here by MIT."
+    },
+    {
+      "id": "dates",
+      "section": "article-logic-and-circuits",
+      "kind": "historical",
+      "statement": "1937 work, 1938 publication and 1940 degree award are separate milestones.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Claude Shannon biographical paragraph",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        },
+        {
+          "source": 3,
+          "locator": "SM/PhD degree paragraph",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        },
+        {
+          "source": 4,
+          "locator": "Printed p. 8, opening memoir",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "The profile was clarified to prevent interpreting the thesis-work date as the degree-award date."
+    },
+    {
+      "id": "communication",
+      "section": "article-communication-and-information",
+      "kind": "historical",
+      "statement": "The profile identifies the 1948 communication paper as a separate contribution.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "Opening obituary paragraphs",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        },
+        {
+          "source": 4,
+          "locator": "Printed p. 8, opening memoir",
+          "access": "read",
+          "note": "Source passage read during this assessment."
+        }
+      ],
+      "note": "This introductory profile is not a complete attribution history."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "No independent human historian has reviewed the profile.",
+    "The Michigan page was blocked during direct retrieval; source-access status is recorded rather than hidden.",
+    "Biographical dates and publication claims are not established by arithmetic tests."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}
