@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vite build --ssr src/prerender.ts --outDir .ssr --emptyOutDir && node scripts/prerender.ts && node scripts/seo.ts",
+    "build": "node scripts/contributions-reports.ts && vite build && vite build --ssr src/prerender.ts --outDir .ssr --emptyOutDir && node scripts/prerender.ts && node scripts/seo.ts",
     "preview": "vite preview",
     "book:atfq": "node scripts/atfq-book.ts",
     "chain:runs": "node scripts/chain-runs.ts",
-    "test": "tsc -p . && node --test"
+    "test": "tsc -p . && node --test",
+    "contributions:reports": "node scripts/contributions-reports.ts"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",

@@ -217,7 +217,7 @@ const sections: Renderers = {
       <p class="eyebrow">${s.eyebrow}</p>
       <h2>${s.title[0]}<br />${s.title[1]}</h2>
       <p>${s.text}</p>
-      ${(s.command ? [] : s.installs ?? [{ label: s.installLabel ?? '', code: s.install ?? '' } as Install])
+      ${(s.command ? [] : (s.installs ?? (s.install ? [{ label: s.installLabel ?? '', code: s.install } as Install] : []))).filter(b => b.code.trim())
         .map(
           (b, i) => html`
       <div class="install glass">
@@ -294,6 +294,7 @@ export function toolPageHtml(page: Page) {
     footer: html`
     <a class="logo" href="${homeOf(tool)}"><img class="logo-icon" src="/mark.svg" alt="" /> devutils</a>
     <span>${tool.name} · ${page.footer ?? tool.line}</span>
+    <a href="${route(pageOf('contributions', tool.lang))}">Contributions</a>
     ${repoLink(tool, page.licensePath ?? '', `${tool.license ?? w.repository} ${icon('arrow-up-right')}`)}`,
   }
 }

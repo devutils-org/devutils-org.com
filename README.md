@@ -1,7 +1,8 @@
 # devutils
 
 The site of [devutils-org](https://github.com/devutils-org): the org's home
-page, one landing page per tool, and the Together and Design pages.
+page, one landing page per tool, the Together and Design pages, and bilingual
+open-source contribution records.
 
 Same art direction as the Omniscient site, in frosted glass. The 3D is the
 atfq mark, raymarched in a WebGL shader as a slab of glass: the ball orbits
@@ -181,3 +182,38 @@ Optional Linux Secret Service unlock-secret controls pass the complete owned
 WebView/production IPC/vault/terminal journey, plus backend and browser checks. Existing artifacts
 predate these vault commands. Exact-current Android execution, real homelab/guest behavior and production/platform acceptance
 remain open. Do not infer an audited completion percentage or a release candidate.
+
+
+### Open-source contribution records
+
+`/contributions/` lists the reviewed projects; `/contributions/rug/` is the first
+project record. Both have French equivalents under `/fr/`. The homepage navigation
+and shared footer link to the index. Content uses the existing page renderer and
+pre-rendering, so the project records and report links are readable without JS.
+
+- `src/contributions/projects.ts` is the catalog; add reviewed projects with their
+  localized descriptions and activities here.
+- `src/contributions/content.ts` supplies the index and RUG case. Register each new
+  project in `src/pages.ts`, create both language modules/placeholders, and add its
+  pre-render mapping in `src/prerender.ts`.
+- `src/contributions/rug-evidence.json` records the baseline, environment and a dated
+  GitHub PR status snapshot. It is not queried live in the browser. Refresh statuses
+  against upstream before changing `checkedAt`; do not call an open PR merged.
+- `public/contributions/rug/` serves the performance summaries, measured CSV pairs,
+  environment/snapshot and bilingual Markdown reports. CSVs were copied from the
+  already-public PR commits. No private source tree, absolute local paths or
+  original machine-wide package inventory is included.
+- Measured commit IDs identify the original evidence. If a PR changes, keep those
+  pinned evidence links unless its new code is remeasured. Review the narrative
+  when changing the snapshot, and keep `method.json` in sync with the source data.
+- `npm run contributions:reports` regenerates the English/French reports from the
+  same data as the page; the build runs it automatically. Tests compare generated
+  reports with the sources and recompute published ratios from CSV pairs.
+
+Run `npm test` and `npm run build`. For browser checks, start
+`npm run preview -- --host 127.0.0.1 --port 5178`, then run
+`CHROME_PATH=/path/to/chrome node bench/contributions.ts`.
+`CHECK_BASE_URL` and `CHECK_OUTPUT` override the server and output directory.
+It checks desktop/mobile layouts, report downloads, language navigation, evidence
+links and pre-rendered content without JavaScript. Screenshots use the existing
+`?debug=no3d` fallback to inspect layout independently of GPU availability.

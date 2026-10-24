@@ -1,0 +1,70 @@
+{
+  "parse": {
+    "baseline": {
+      "cpu.instructions": {
+        "median": 54297759538.0,
+        "min": 54297759457.0,
+        "max": 54297759923.0
+      },
+      "cpu.cycles": {
+        "median": 21892633737.0,
+        "min": 21838943760.0,
+        "max": 22571113071.0
+      },
+      "notes": [
+        "this machine would only open `cpu.cycles` for user mode, so kernel-mode events are not in this count",
+        "this machine would only open `cpu.instructions` for user mode, so kernel-mode events are not in this count"
+      ]
+    },
+    "candidate": {
+      "cpu.instructions": {
+        "median": 39910968505.0,
+        "min": 39910968411.0,
+        "max": 39910968789.0
+      },
+      "cpu.cycles": {
+        "median": 17395882014.0,
+        "min": 17371622221.0,
+        "max": 17581443205.0
+      },
+      "notes": [
+        "this machine would only open `cpu.cycles` for user mode, so kernel-mode events are not in this count",
+        "this machine would only open `cpu.instructions` for user mode, so kernel-mode events are not in this count"
+      ]
+    }
+  },
+  "construction": {
+    "baseline": {
+      "cpu.instructions": {
+        "median": 76535026375.0,
+        "min": 76534704029.0,
+        "max": 76535148098.0
+      },
+      "cpu.cycles": {
+        "median": 25669267899.0,
+        "min": 25625031571.0,
+        "max": 25682832288.0
+      },
+      "notes": [
+        "this machine would only open `cpu.cycles` for user mode, so kernel-mode events are not in this count",
+        "this machine would only open `cpu.instructions` for user mode, so kernel-mode events are not in this count"
+      ]
+    },
+    "construction": {
+      "cpu.instructions": {
+        "median": 2470283993.0,
+        "min": 2470051464.0,
+        "max": 2470442260.0
+      },
+      "cpu.cycles": {
+        "median": 849544606.0,
+        "min": 846408331.0,
+        "max": 858522722.0
+      },
+      "notes": [
+        "this machine would only open `cpu.cycles` for user mode, so kernel-mode events are not in this count",
+        "this machine would only open `cpu.instructions` for user mode, so kernel-mode events are not in this count"
+      ]
+    }
+  }
+}

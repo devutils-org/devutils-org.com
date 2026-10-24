@@ -1,0 +1,704 @@
+[
+  {
+    "dataset": "calculator",
+    "chunk": 7,
+    "loops": 800,
+    "pairs": 10,
+    "ratio_candidate_over_baseline": 0.6298522674053292,
+    "ratio_bootstrap_95": [
+      0.6250234385023044,
+      0.6356061791260201
+    ],
+    "paired_ratios": [
+      0.6281469518780156,
+      0.6338683948155532,
+      0.638049668025392,
+      0.6164846009536464,
+      0.6302316741357235,
+      0.6242754943612119,
+      0.6250234385023044,
+      0.6356061791260201,
+      0.6294728606749349,
+      0.6360656566933913
+    ],
+    "baseline": {
+      "parse_median_seconds": 0.20012249999999998,
+      "parse_mad_seconds": 0.0014505000000000073,
+      "parse_min_seconds": 0.197695,
+      "parse_max_seconds": 0.204688,
+      "ns_per_byte": 217.71377284595297,
+      "image_bytes": 13632
+    },
+    "candidate": {
+      "parse_median_seconds": 0.1260965,
+      "parse_mad_seconds": 0.0005755000000000066,
+      "parse_min_seconds": 0.125048,
+      "parse_max_seconds": 0.127154,
+      "ns_per_byte": 137.18070060922543,
+      "image_bytes": 13632
+    }
+  },
+  {
+    "dataset": "medium",
+    "chunk": 4096,
+    "loops": 159307,
+    "pairs": 10,
+    "ratio_candidate_over_baseline": 0.7405691316344549,
+    "ratio_bootstrap_95": [
+      0.7327589683139377,
+      0.7555290028242451
+    ],
+    "paired_ratios": [
+      0.7459637228094301,
+      0.7307114228456913,
+      0.7442528270315494,
+      0.7595535961216223,
+      0.7629220705562069,
+      0.7368854362373604,
+      0.7145572085053353,
+      0.7555290028242451,
+      0.7356107211434194,
+      0.7348065137821842
+    ],
+    "baseline": {
+      "parse_median_seconds": 0.188329,
+      "parse_mad_seconds": 0.003131999999999996,
+      "parse_min_seconds": 0.18412,
+      "parse_max_seconds": 0.192585,
+      "ns_per_byte": 36.94301725599,
+      "image_bytes": 2560
+    },
+    "candidate": {
+      "parse_median_seconds": 0.1397775,
+      "parse_mad_seconds": 0.0004794999999999938,
+      "parse_min_seconds": 0.137613,
+      "parse_max_seconds": 0.141239,
+      "ns_per_byte": 27.419051736584077,
+      "image_bytes": 2560
+    }
+  },
+  {
+    "dataset": "large",
+    "chunk": 4096,
+    "loops": 42821,
+    "pairs": 10,
+    "ratio_candidate_over_baseline": 0.7406254185804684,
+    "ratio_bootstrap_95": [
+      0.7341238890827364,
+      0.7477062222150295
+    ],
+    "paired_ratios": [
+      0.7548106084373889,
+      0.7333346855572346,
+      0.7462540121604343,
+      0.740344709223104,
+      0.7327902365860925,
+      0.7409061279378327,
+      0.7436177324670441,
+      0.751794711963015,
+      0.7341238890827364,
+      0.7365802147989802
+    ],
+    "baseline": {
+      "parse_median_seconds": 0.1933225,
+      "parse_mad_seconds": 0.0015339999999999937,
+      "parse_min_seconds": 0.191244,
+      "parse_max_seconds": 0.197206,
+      "ns_per_byte": 35.270825792251465,
+      "image_bytes": 9856
+    },
+    "candidate": {
+      "parse_median_seconds": 0.1430325,
+      "parse_mad_seconds": 0.0006670000000000009,
+      "parse_min_seconds": 0.142352,
+      "parse_max_seconds": 0.144728,
+      "ns_per_byte": 26.09564013568109,
+      "image_bytes": 9856
+    }
+  },
+  {
+    "dataset": "binary",
+    "chunk": 4096,
+    "loops": 378,
+    "pairs": 10,
+    "ratio_candidate_over_baseline": 0.789304080530979,
+    "ratio_bootstrap_95": [
+      0.7839640368030396,
+      0.8226270752624139
+    ],
+    "paired_ratios": [
+      0.7797648874546512,
+      0.7911912065439674,
+      0.7898983526826142,
+      0.7881631861514279,
+      0.8555807747753275,
+      0.8547633920799582,
+      0.7904907584448694,
+      0.7721972870536605,
+      0.7887098083793439,
+      0.7877884801204267
+    ],
+    "baseline": {
+      "parse_median_seconds": 0.1963435,
+      "parse_mad_seconds": 0.0007190000000000113,
+      "parse_min_seconds": 0.195302,
+      "parse_max_seconds": 0.20052,
+      "ns_per_byte": 126.81329313409391,
+      "image_bytes": 10480
+    },
+    "candidate": {
+      "parse_median_seconds": 0.1551495,
+      "parse_mad_seconds": 0.0003504999999999897,
+      "parse_min_seconds": 0.154439,
+      "parse_max_seconds": 0.167367,
+      "ns_per_byte": 100.20713200644842,
+      "image_bytes": 10480
+    }
+  },
+  {
+    "dataset": "medium",
+    "chunk": 7,
+    "loops": 164963,
+    "pairs": 10,
+    "ratio_candidate_over_baseline": 0.742611080779787,
+    "ratio_bootstrap_95": [
+      0.7248510066117582,
+      0.7497750629823648
+    ],
+    "paired_ratios": [
+      0.7437969384009445,
+      0.7508082430877862,
+      0.7488335034733462,
+      0.7280315574169669,
+      0.7497750629823648,
+      0.7147531374320143,
+      0.750406069299162,
+      0.7414252231586296,
+      0.7210477830350209,
+      0.7286542301884955
+    ],
+    "baseline": {
+      "parse_median_seconds": 0.201633,
+      "parse_mad_seconds": 0.0015605000000000063,
+      "parse_min_seconds": 0.200056,
+      "parse_max_seconds": 0.208132,
+      "ns_per_byte": 38.196633487509324,
+      "image_bytes": 2560
+    },
+    "candidate": {
+      "parse_median_seconds": 0.1497725,
+      "parse_mad_seconds": 0.00032700000000000784,
+      "parse_min_seconds": 0.148678,
+      "parse_max_seconds": 0.151417,
+      "ns_per_byte": 28.37236607602917,
+      "image_bytes": 2560
+    }
+  },
+  {
+    "dataset": "large",
+    "chunk": 1,
+    "loops": 41550,
+    "pairs": 10,
+    "ratio_candidate_over_baseline": 0.7646184376808676,
+    "ratio_bootstrap_95": [
+      0.7592519963917285,
+      0.7689624678167485
+    ],
+    "paired_ratios": [
+      0.7595178575848327,
+      0.7608601744777832,
+      0.766677546511336,
+      0.766124514864162,
+      0.772899154360722,
+      0.7664125434420137,
+      0.7631123604975731,
+      0.7575441524127381,
+      0.7576438183056737,
+      0.771800420769335
+    ],
+    "baseline": {
+      "parse_median_seconds": 0.200646,
+      "parse_mad_seconds": 0.0014279999999999987,
+      "parse_min_seconds": 0.198075,
+      "parse_max_seconds": 0.202582,
+      "ns_per_byte": 37.726759927797836,
+      "image_bytes": 9856
+    },
+    "candidate": {
+      "parse_median_seconds": 0.15321,
+      "parse_mad_seconds": 0.0003879999999999856,
+      "parse_min_seconds": 0.15253,
+      "parse_max_seconds": 0.153919,
+      "ns_per_byte": 28.807536101083034,
+      "image_bytes": 9856
+    }
+  },
+  {
+    "dataset": "large",
+    "chunk": 7,
+    "loops": 42701,
+    "pairs": 10,
+    "ratio_candidate_over_baseline": 0.7388256075992323,
+    "ratio_bootstrap_95": [
+      0.7275204373787918,
+      0.746979777332818
+    ],
+    "paired_ratios": [
+      0.7447998322365466,
+      0.732461628702708,
+      0.7352746330619636,
+      0.7423765821365012,
+      0.7444088658877128,
+      0.7197547501624804,
+      0.7495506887779232,
+      0.71976624169562,
+      0.7515221745493414,
+      0.7347773967555246
+    ],
+    "baseline": {
+      "parse_median_seconds": 0.2022045,
+      "parse_mad_seconds": 0.0019600000000000173,
+      "parse_min_seconds": 0.200183,
+      "parse_max_seconds": 0.209256,
+      "ns_per_byte": 36.99498035760286,
+      "image_bytes": 9856
+    },
+    "candidate": {
+      "parse_median_seconds": 0.149698,
+      "parse_mad_seconds": 0.0007209999999999994,
+      "parse_min_seconds": 0.148536,
+      "parse_max_seconds": 0.150613,
+      "ns_per_byte": 27.388483290789445,
+      "image_bytes": 9856
+    }
+  },
+  {
+    "dataset": "binary",
+    "chunk": 1,
+    "loops": 378,
+    "pairs": 10,
+    "ratio_candidate_over_baseline": 0.7936505645331762,
+    "ratio_bootstrap_95": [
+      0.7924964157043091,
+      0.796053157873685
+    ],
+    "paired_ratios": [
+      0.7938489555862946,
+      0.7931397023284552,
+      0.7934521734800577,
+      0.791853129080163,
+      0.787601841662431,
+      0.7930418199699467,
+      0.796053157873685,
+      0.7953652337605921,
+      0.7965792668002057,
+      0.8016501683131724
+    ],
+    "baseline": {
+      "parse_median_seconds": 0.20048850000000001,
+      "parse_mad_seconds": 0.00028200000000000447,
+      "parse_min_seconds": 0.200008,
+      "parse_max_seconds": 0.202643,
+      "ns_per_byte": 129.49044363839286,
+      "image_bytes": 10480
+    },
+    "candidate": {
+      "parse_median_seconds": 0.15931800000000002,
+      "parse_mad_seconds": 0.00018749999999997935,
+      "parse_min_seconds": 0.158855,
+      "parse_max_seconds": 0.160508,
+      "ns_per_byte": 102.8994605654762,
+      "image_bytes": 10480
+    }
+  },
+  {
+    "dataset": "tiny",
+    "chunk": 7,
+    "loops": 2000000,
+    "pairs": 10,
+    "ratio_candidate_over_baseline": 0.7566028767071302,
+    "ratio_bootstrap_95": [
+      0.7512760810710466,
+      0.7597850223274201
+    ],
+    "paired_ratios": [
+      0.758919094944037,
+      0.759900764333534,
+      0.7507197076694693,
+      0.7517443618114759,
+      0.748625044329172,
+      0.7597850223274201,
+      0.7559135869895018,
+      0.7655786714467248,
+      0.7572921664247585,
+      0.7518324544726238
+    ],
+    "baseline": {
+      "parse_median_seconds": 0.16509000000000001,
+      "parse_mad_seconds": 0.0009500000000000064,
+      "parse_min_seconds": 0.162899,
+      "parse_max_seconds": 0.167262,
+      "ns_per_byte": 82.545,
+      "image_bytes": 200
+    },
+    "candidate": {
+      "parse_median_seconds": 0.12470500000000001,
+      "parse_mad_seconds": 0.00018149999999999417,
+      "parse_min_seconds": 0.124331,
+      "parse_max_seconds": 0.125847,
+      "ns_per_byte": 62.3525,
+      "image_bytes": 200
+    }
+  },
+  {
+    "dataset": "tiny",
+    "chunk": 4096,
+    "loops": 2000000,
+    "pairs": 10,
+    "ratio_candidate_over_baseline": 0.7642197339877776,
+    "ratio_bootstrap_95": [
+      0.7578308928647471,
+      0.7681425622867859
+    ],
+    "paired_ratios": [
+      0.7676982473342322,
+      0.7654653334798375,
+      0.757587070668144,
+      0.7552005205038766,
+      0.7629741344957177,
+      0.7701152262866524,
+      0.7624600258036113,
+      0.7690555714992277,
+      0.767229553074344,
+      0.7578308928647471
+    ],
+    "baseline": {
+      "parse_median_seconds": 0.163657,
+      "parse_mad_seconds": 0.0006339999999999957,
+      "parse_min_seconds": 0.162029,
+      "parse_max_seconds": 0.166072,
+      "ns_per_byte": 81.82849999999999,
+      "image_bytes": 200
+    },
+    "candidate": {
+      "parse_median_seconds": 0.125027,
+      "parse_mad_seconds": 0.0003510000000000041,
+      "parse_min_seconds": 0.124451,
+      "parse_max_seconds": 0.125949,
+      "ns_per_byte": 62.5135,
+      "image_bytes": 200
+    }
+  },
+  {
+    "dataset": "calculator",
+    "chunk": 4096,
+    "loops": 812,
+    "pairs": 10,
+    "ratio_candidate_over_baseline": 0.6296867583586051,
+    "ratio_bootstrap_95": [
+      0.6261066756254694,
+      0.6363870916524432
+    ],
+    "paired_ratios": [
+      0.6259675864741595,
+      0.6371566962948167,
+      0.6363870916524432,
+      0.6368901403950233,
+      0.6128324771479459,
+      0.6294674982010073,
+      0.6261066756254694,
+      0.6278075825276088,
+      0.6316393219929664,
+      0.6299060185162029
+    ],
+    "baseline": {
+      "parse_median_seconds": 0.20052150000000002,
+      "parse_mad_seconds": 0.0006705000000000044,
+      "parse_min_seconds": 0.198759,
+      "parse_max_seconds": 0.203811,
+      "ns_per_byte": 214.92398616059373,
+      "image_bytes": 13632
+    },
+    "candidate": {
+      "parse_median_seconds": 0.126012,
+      "parse_mad_seconds": 0.0005925000000000097,
+      "parse_min_seconds": 0.124902,
+      "parse_max_seconds": 0.12826,
+      "ns_per_byte": 135.06283039010148,
+      "image_bytes": 13632
+    }
+  },
+  {
+    "dataset": "tiny",
+    "chunk": 1,
+    "loops": 2000000,
+    "pairs": 10,
+    "ratio_candidate_over_baseline": 0.7668856493935923,
+    "ratio_bootstrap_95": [
+      0.7579645976486222,
+      0.7690487524025674
+    ],
+    "paired_ratios": [
+      0.7691765973863733,
+      0.7689411735992042,
+      0.7620707391606909,
+      0.7652483946664727,
+      0.7501709022439165,
+      0.7538584561365536,
+      0.7689209074187615,
+      0.7600118354629115,
+      0.7685229041207118,
+      0.8334441671903313
+    ],
+    "baseline": {
+      "parse_median_seconds": 0.164414,
+      "parse_mad_seconds": 0.0011530000000000012,
+      "parse_min_seconds": 0.162569,
+      "parse_max_seconds": 0.166762,
+      "ns_per_byte": 82.20700000000001,
+      "image_bytes": 200
+    },
+    "candidate": {
+      "parse_median_seconds": 0.12573299999999998,
+      "parse_mad_seconds": 0.0003354999999999886,
+      "parse_min_seconds": 0.124938,
+      "parse_max_seconds": 0.136609,
+      "ns_per_byte": 62.86649999999999,
+      "image_bytes": 200
+    }
+  },
+  {
+    "dataset": "ticket",
+    "chunk": 7,
+    "loops": 24871,
+    "pairs": 10,
+    "ratio_candidate_over_baseline": 0.6700835945000839,
+    "ratio_bootstrap_95": [
+      0.6634090136635732,
+      0.6735712762951102
+    ],
+    "paired_ratios": [
+      0.6704800011973837,
+      0.6696871878027841,
+      0.6664298117003017,
+      0.674059336997339,
+      0.6603882156268447,
+      0.6735712762951102,
+      0.6761767829589403,
+      0.6490000730762673,
+      0.6726460518666116,
+      0.6641674260132325
+    ],
+    "baseline": {
+      "parse_median_seconds": 0.20115100000000002,
+      "parse_mad_seconds": 0.0007454999999999962,
+      "parse_min_seconds": 0.199193,
+      "parse_max_seconds": 0.205265,
+      "ns_per_byte": 98.63137692934568,
+      "image_bytes": 36072
+    },
+    "candidate": {
+      "parse_median_seconds": 0.13425150000000002,
+      "parse_mad_seconds": 0.0010530000000000261,
+      "parse_min_seconds": 0.133127,
+      "parse_max_seconds": 0.13586,
+      "ns_per_byte": 65.82821014973852,
+      "image_bytes": 36072
+    }
+  },
+  {
+    "dataset": "ticket",
+    "chunk": 4096,
+    "loops": 24744,
+    "pairs": 10,
+    "ratio_candidate_over_baseline": 0.6696167021680504,
+    "ratio_bootstrap_95": [
+      0.6634599267482174,
+      0.6734960926889403
+    ],
+    "paired_ratios": [
+      0.6802183285373421,
+      0.66159680497988,
+      0.669023357575512,
+      0.6717115569255646,
+      0.6653230485165548,
+      0.673173213922247,
+      0.6767821386172918,
+      0.6638383207283831,
+      0.6580607594936708,
+      0.6702100467605888
+    ],
+    "baseline": {
+      "parse_median_seconds": 0.197695,
+      "parse_mad_seconds": 0.0008179999999999993,
+      "parse_min_seconds": 0.195302,
+      "parse_max_seconds": 0.199527,
+      "ns_per_byte": 97.43431272819033,
+      "image_bytes": 36072
+    },
+    "candidate": {
+      "parse_median_seconds": 0.13219599999999998,
+      "parse_mad_seconds": 0.0006430000000000186,
+      "parse_min_seconds": 0.129967,
+      "parse_max_seconds": 0.133725,
+      "ns_per_byte": 65.15302058937174,
+      "image_bytes": 36072
+    }
+  },
+  {
+    "dataset": "medium",
+    "chunk": 1,
+    "loops": 160447,
+    "pairs": 10,
+    "ratio_candidate_over_baseline": 0.7594576132315156,
+    "ratio_bootstrap_95": [
+      0.7484479847186187,
+      0.7647256699332664
+    ],
+    "paired_ratios": [
+      0.7647256699332664,
+      0.7251870918537585,
+      0.7576931289446373,
+      0.7663391627027625,
+      0.7612220975183939,
+      0.7484479847186187,
+      0.7705929888402484,
+      0.7474975156935457,
+      0.7628929858812767,
+      0.7543843518321365
+    ],
+    "baseline": {
+      "parse_median_seconds": 0.202635,
+      "parse_mad_seconds": 0.001707000000000014,
+      "parse_min_seconds": 0.198878,
+      "parse_max_seconds": 0.20979,
+      "ns_per_byte": 39.46688781965384,
+      "image_bytes": 2560
+    },
+    "candidate": {
+      "parse_median_seconds": 0.1534055,
+      "parse_mad_seconds": 0.0012250000000000039,
+      "parse_min_seconds": 0.152027,
+      "parse_max_seconds": 0.155889,
+      "ns_per_byte": 29.878538551671266,
+      "image_bytes": 2560
+    }
+  },
+  {
+    "dataset": "ticket",
+    "chunk": 1,
+    "loops": 23822,
+    "pairs": 10,
+    "ratio_candidate_over_baseline": 0.6704594085929829,
+    "ratio_bootstrap_95": [
+      0.6665307088438047,
+      0.6733205237688585
+    ],
+    "paired_ratios": [
+      0.6972718403457064,
+      0.6672615406393294,
+      0.6726650223102363,
+      0.6739344378722238,
+      0.6711379172506616,
+      0.6665307088438047,
+      0.6733205237688585,
+      0.6563691142461255,
+      0.6661652119515028,
+      0.6697808999353041
+    ],
+    "baseline": {
+      "parse_median_seconds": 0.197538,
+      "parse_mad_seconds": 0.0009315000000000018,
+      "parse_min_seconds": 0.195773,
+      "parse_max_seconds": 0.202799,
+      "ns_per_byte": 101.12501049450087,
+      "image_bytes": 36072
+    },
+    "candidate": {
+      "parse_median_seconds": 0.132726,
+      "parse_mad_seconds": 0.00037199999999999733,
+      "parse_min_seconds": 0.13148,
+      "parse_max_seconds": 0.136507,
+      "ns_per_byte": 67.94600604892793,
+      "image_bytes": 36072
+    }
+  },
+  {
+    "dataset": "calculator",
+    "chunk": 1,
+    "loops": 798,
+    "pairs": 10,
+    "ratio_candidate_over_baseline": 0.6354411652187906,
+    "ratio_bootstrap_95": [
+      0.6288514754727532,
+      0.6424054515825433
+    ],
+    "paired_ratios": [
+      0.6273935749327425,
+      0.6391716443698475,
+      0.6377489090635503,
+      0.6456392587952391,
+      0.6264091446590461,
+      0.6526978498339668,
+      0.6415487429296081,
+      0.6301178320495212,
+      0.6303093760127639,
+      0.6331334213740307
+    ],
+    "baseline": {
+      "parse_median_seconds": 0.2007645,
+      "parse_mad_seconds": 0.0014190000000000036,
+      "parse_min_seconds": 0.197948,
+      "parse_max_seconds": 0.20296,
+      "ns_per_byte": 218.95960527951735,
+      "image_bytes": 13632
+    },
+    "candidate": {
+      "parse_median_seconds": 0.127317,
+      "parse_mad_seconds": 0.0004694999999999977,
+      "parse_min_seconds": 0.126418,
+      "parse_max_seconds": 0.130317,
+      "ns_per_byte": 138.8556247014403,
+      "image_bytes": 13632
+    }
+  },
+  {
+    "dataset": "binary",
+    "chunk": 7,
+    "loops": 381,
+    "pairs": 10,
+    "ratio_candidate_over_baseline": 0.7913760481394243,
+    "ratio_bootstrap_95": [
+      0.7890638277787564,
+      0.7934892903922974
+    ],
+    "paired_ratios": [
+      0.7913075233745378,
+      0.7787693752935652,
+      0.7919781779161715,
+      0.7906674429576688,
+      0.7950004028684232,
+      0.8052662182077013,
+      0.789791037008867,
+      0.787460212599844,
+      0.7927169180238953,
+      0.7914445729043107
+    ],
+    "baseline": {
+      "parse_median_seconds": 0.1996505,
+      "parse_mad_seconds": 0.0002329999999999971,
+      "parse_min_seconds": 0.198576,
+      "parse_max_seconds": 0.202255,
+      "ns_per_byte": 127.93385262877297,
+      "image_bytes": 10480
+    },
+    "candidate": {
+      "parse_median_seconds": 0.1578565,
+      "parse_mad_seconds": 0.00029999999999998084,
+      "parse_min_seconds": 0.157344,
+      "parse_max_seconds": 0.160649,
+      "ns_per_byte": 101.15271540764437,
+      "image_bytes": 10480
+    }
+  }
+]

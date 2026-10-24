@@ -20,8 +20,17 @@ import vmanywareFr from './toolpage/vmanyware.fr.ts'
 import togetherFr from './toolpage/together.fr.ts'
 import designFr from './toolpage/design.fr.ts'
 
+import contributions from './contributions/index.ts'
+import contributionsFr from './contributions/index.fr.ts'
+import rug from './contributions/rug.ts'
+import rugFr from './contributions/rug.fr.ts'
+
 const content: Record<string, Record<string, string>> = {
   main: homeHtml(),
+  contributions: toolPageHtml(contributions),
+  'contributions-fr': toolPageHtml(contributionsFr),
+  'contributions-rug': toolPageHtml(rug),
+  'contributions-rug-fr': toolPageHtml(rugFr),
   omn: toolPageHtml(omn),
   atfq: toolPageHtml(atfq),
   distroproof: toolPageHtml(distroproof),

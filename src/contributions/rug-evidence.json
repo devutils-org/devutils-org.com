@@ -1,0 +1,51 @@
+{
+  "project": "RUG",
+  "repository": "https://github.com/roman-starcevic/RUG",
+  "baseline": "fe40fab82c61a6fdd95fa49162a289e703644f1c",
+  "checkedAt": "2026-10-23T23:28:23.858943+00:00",
+  "pullRequests": [
+    {
+      "headRefOid": "480323e5a88df9a54b9e43d30d72a1a4972edbba",
+      "mergedAt": null,
+      "number": 1,
+      "state": "OPEN",
+      "title": "Report empty ABNF grammars through structured build diagnostics",
+      "url": "https://github.com/roman-starcevic/RUG/pull/1",
+      "kind": "fix"
+    },
+    {
+      "headRefOid": "ebaf1c0bef6762a5d7db88680c8dd452b9d0e770",
+      "mergedAt": null,
+      "number": 2,
+      "state": "OPEN",
+      "title": "Resolve packed table section addresses once per lookup",
+      "url": "https://github.com/roman-starcevic/RUG/pull/2",
+      "kind": "parsing"
+    },
+    {
+      "headRefOid": "49aabc5596b9898aeed42d59e964d354fc3cf835",
+      "mergedAt": null,
+      "number": 3,
+      "state": "OPEN",
+      "title": "Count default action frequencies once per row",
+      "url": "https://github.com/roman-starcevic/RUG/pull/3",
+      "kind": "construction"
+    }
+  ],
+  "environment": {
+    "cpu": "AMD Ryzen 9 3900X",
+    "compiler": "GCC 16.2.1",
+    "flags": "-Wall -Wextra -Werror -std=c++98 -O2 -g -fno-omit-frame-pointer",
+    "lto": false,
+    "os": "Arch Linux",
+    "kernel": "7.2.9-arch1-1"
+  },
+  "method": {
+    "pairedTrials": 10,
+    "warmupsPerVariant": 2,
+    "seed": 5234,
+    "bootstrapResamples": 5000,
+    "pmuPairs": 5,
+    "constructionCombinedWithParsing": false
+  }
+}

@@ -155,6 +155,32 @@ const written: Page[] = [
     },
   },
   {
+    key: 'contributions',
+    file: 'contributions/index.html',
+    title: 'Open-source contributions — devutils',
+    description: 'Projects investigated with devutils: reproducible analysis, diagnostic fixes, measured optimizations and the status of upstream contributions.',
+    shape: 'mark',
+    css: [...toolCss, '/src/contributions/contributions.css'],
+    content: '/src/contributions/index.ts',
+    fr: {
+      title: 'Contributions open source — devutils',
+      description: 'Les projets analysés avec devutils : analyses reproductibles, correctifs de diagnostic, optimisations mesurées et statut des contributions en amont.',
+    },
+  },
+  {
+    key: 'contributions-rug',
+    file: 'contributions/rug/index.html',
+    title: 'RUG — Analysis, fixes and optimizations · devutils',
+    description: 'The RUG contribution record: a C++98 parser audit, one diagnostic fix and two independently measured optimization proposals, with reports and raw evidence.',
+    shape: 'mark',
+    css: [...toolCss, '/src/contributions/contributions.css'],
+    content: '/src/contributions/rug.ts',
+    fr: {
+      title: 'RUG — Analyse, correctifs et optimisations · devutils',
+      description: 'Le dossier RUG : audit d’un parseur C++98, un correctif de diagnostic et deux propositions d’optimisation mesurées séparément, avec rapports et données brutes.',
+    },
+  },
+  {
     key: 'design',
     file: 'design/index.html',
     title: 'Design — The devutils mark and art direction',

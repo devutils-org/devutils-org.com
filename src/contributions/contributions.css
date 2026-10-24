@@ -1,0 +1,29 @@
+/* Contribution records reuse the site's glass panels and bilingual page shell. */
+.contribution-projects { display: grid; gap: 24px; }
+.contribution-project { padding: clamp(24px, 4vw, 48px); border-radius: var(--radius-panel); }
+.contribution-project-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+.contribution-project-heading .eyebrow { margin: 0; }
+.contribution-project h3 { margin: 28px 0 16px; font-size: clamp(32px, 5vw, 52px); }
+.contribution-project h3 a { color: inherit; text-decoration: none; }
+.contribution-project > p { max-width: 780px; color: var(--muted); line-height: 1.8; }
+.contribution-status { display: inline-block; white-space: nowrap; padding: 6px 10px; border-radius: 999px; font: 11px var(--mono); border: 1px solid #9cc8ff50; color: #b6d5ff; background: #9cc8ff0c; }
+.contribution-status.merged { color: #ccbbff; border-color: #ccbbff55; }
+.contribution-status.closed { color: #d5b7af; border-color: #d5b7af55; }
+.contribution-tags { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 24px 0; }
+.contribution-tags li { padding: 6px 10px; border: 1px solid var(--line); border-radius: 6px; font: 11px var(--mono); color: var(--muted); }
+.contribution-project-actions, .contribution-downloads { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; }
+.contribution-project-actions > a:not(.primary), .contribution-metrics a, .contribution-evidence-links a { color: #b6d5ff; }
+.contribution-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.contribution-metrics article { min-width: 0; padding: clamp(24px, 4vw, 40px); border-radius: var(--radius-panel); }
+.contribution-metrics strong { display: block; font-size: clamp(34px, 4.8vw, 58px); line-height: 1.15; letter-spacing: -2px; margin: 28px 0 20px; font-weight: 500; color: #c4e1ff; font-variant-numeric: tabular-nums; }
+.contribution-metrics h3 { font-size: 20px; line-height: 1.4; }
+.contribution-metrics p:not(.eyebrow) { color: var(--muted); line-height: 1.8; }
+.contribution-metrics a { display: inline-block; margin-top: 16px; line-height: 1.6; }
+.contribution-sha { overflow-wrap: anywhere; font-size: 11px; }
+.contribution-evidence-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 28px; margin-top: 28px; font-size: 13px; line-height: 1.8; }
+.contribution-downloads { justify-content: center; }
+@media (width <= 750px) {
+  .contribution-metrics { grid-template-columns: 1fr; }
+  .contribution-project-actions { align-items: flex-start; flex-direction: column; }
+  .contribution-metrics strong { letter-spacing: -1px; }
+}
