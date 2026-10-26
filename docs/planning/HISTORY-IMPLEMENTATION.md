@@ -56,7 +56,10 @@ Human review remains pending unless a real reviewer supplies a signoff.
   error-model and feedback examples.
 - Electronic computing: published chapter distinguishing relay/tube devices,
   stored programs, semiconductor components, integration and CPU chipsets.
-- Chapters 8–10 remain to be implemented.
+- Software revolution: published chapter covering assembly, compiler work,
+  languages, operating systems, Unix and graphical interaction, with original
+  translation, scheduling and stream-composition checks.
+- Chapters 9–10 remain to be implemented.
 
 The History index links the chapters in the ten-part editorial order. Broad
 chapters are excluded from timeline date filters, preserving the existing event

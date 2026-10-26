@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "id": "history.software-revolution",
+  "locale": "en",
+  "contentHash": "6173a3f1d8194ed681e89df8bf69f0ef9b6fb475571a38a3ba95ae96ae582957",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "fortran",
+      "section": "article-compilers-make-another-level-of-expression-practical",
+      "statement": "The preserved FORTRAN collection documents a team’s proposals, manuals, implementation and 1957 paper.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Documentation; Papers and lecture notes, By FORTRAN project members",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Archive descriptions and bibliography inspected; underlying scans are not claimed to have been read in full. No first-compiler priority claim."
+    },
+    {
+      "id": "hopper",
+      "section": "article-compilers-make-another-level-of-expression-practical",
+      "statement": "The museum’s timeline places Hopper’s A-0 among early 1950s automatic programming work.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 4,
+          "locator": "1952 Grace Hopper completes A-0",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Does not equate its complete semantics with a modern high-level compiler or repeat the timeline’s broad language-priority claims."
+    },
+    {
+      "id": "unix",
+      "section": "article-unix-grows-through-technical-and-social-choices",
+      "statement": "Ritchie describes Unix’s 1969 origins, technical revisions, shell separation and 1973 C kernel rewrite.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Introduction; Origins; Process control; Higher-level languages",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Preserved participant text inspected; old Bell Labs URL was gone and MIT mirror timed out, so neither is counted as read."
+    },
+    {
+      "id": "alto",
+      "section": "article-graphical-interfaces-change-the-interaction-contract",
+      "statement": "PARC’s Alto research combined graphical interaction, a mouse, applications and networking.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "Computers for Regular Folks; A Visual Approach",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "No single inventor or immediate mass-market product claim; original costs and performance numbers not reused."
+    }
+  ],
+  "examples": [
+    {
+      "check": "history-software-exercises",
+      "result": "passed",
+      "scope": "Toy assembler bytes/execution, exact versus bounded expression, single-CPU schedule and original filter/count examples only.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "9d274102e4fc3e23461bffbb0acab4ad2ebbab655adb69884a2f1d0743ed4e93"
+    }
+  ],
+  "limitations": [
+    "No historical compiler, operating system or GUI is emulated.",
+    "Participant memoir and museum summaries have scoped use; examples are modern teaching designs.",
+    "Independent human review remains pending."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}
