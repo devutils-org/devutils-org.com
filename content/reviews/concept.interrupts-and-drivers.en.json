@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "id": "concept.interrupts-and-drivers",
+  "locale": "en",
+  "contentHash": "bbfc12d98970935c97020ceb2dcd7d826a1c09e82ec88f5fe9f99b5c9b9a2026",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "priority",
+      "section": "article-distinguish-the-peripheral-and-interrupt-controller",
+      "kind": "model",
+      "statement": "NVIC exposes enabled, pending and priority state separately; lower numerical priority values mean higher urgency in its configuration.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "NVIC_EnableIRQ, NVIC_ClearPendingIRQ and NVIC_SetPriority",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    },
+    {
+      "id": "context",
+      "section": "article-keep-the-handler-bounded",
+      "kind": "model",
+      "statement": "Interrupt handlers have context restrictions and can offload work to normal threads rather than performing unbounded processing directly.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Concepts and Offloading ISR Work",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "embedded-exercises",
+      "result": "passed",
+      "scope": "Published tables, state traces, worked arithmetic and reading prerequisites under the explicitly stated teaching assumptions.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "d07cb06027aaeea71b584696610b3fe73c1f44bae7dc1482e15ba39d1b927b9b"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review remains pending.",
+    "Numerical costs, timings, addresses and capacities are original stipulated inputs, not measurements or universal properties of a device.",
+    "Model checks do not establish physical implementation, compiler correctness, formal proof or hardware deployment unless separately documented."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

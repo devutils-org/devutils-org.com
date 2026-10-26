@@ -18,6 +18,8 @@ sources:
     url: https://yosyshq.readthedocs.io/projects/sby/en/latest/quickstart.html
   - title: YosysHQ EQY — equivalence checking
     url: https://yosyshq.readthedocs.io/projects/eqy/en/latest/
+  - title: YosysHQ SBY — Formal extensions to Verilog, assume/assert/cover semantics
+    url: https://yosyshq.readthedocs.io/projects/sby/en/latest/verilog.html
 ---
 ## Start with a behavior you can check
 

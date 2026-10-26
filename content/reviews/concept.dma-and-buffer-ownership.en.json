@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "id": "concept.dma-and-buffer-ownership",
+  "locale": "en",
+  "contentHash": "acf09884d652149893c90c16eda69d3141f538e98395214bbaa3a237155edbb8",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "addresses",
+      "section": "article-distinguish-cpu-and-device-addresses",
+      "kind": "model",
+      "statement": "CPU virtual, CPU physical and DMA/bus addresses are distinct concepts and may have different mappings.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "CPU and DMA addresses",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    },
+    {
+      "id": "visibility",
+      "section": "article-define-a-transfer-lifecycle",
+      "kind": "model",
+      "statement": "DMA mapping, direction, synchronization and completion determine when software and devices may use a transferred buffer.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Types of DMA mappings, DMA Direction and Using Streaming DMA mappings",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "embedded-exercises",
+      "result": "passed",
+      "scope": "Published tables, state traces, worked arithmetic and reading prerequisites under the explicitly stated teaching assumptions.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "d07cb06027aaeea71b584696610b3fe73c1f44bae7dc1482e15ba39d1b927b9b"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review remains pending.",
+    "Numerical costs, timings, addresses and capacities are original stipulated inputs, not measurements or universal properties of a device.",
+    "Model checks do not establish physical implementation, compiler correctness, formal proof or hardware deployment unless separately documented."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

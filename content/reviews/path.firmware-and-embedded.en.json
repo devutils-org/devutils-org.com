@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "id": "path.firmware-and-embedded",
+  "locale": "en",
+  "contentHash": "caf9b0e85c05b06937a0dc7e29052361fe1421c6a46cf9898451dd727e86146f",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "lifecycle",
+      "section": "article-follow-the-six-lessons",
+      "kind": "model",
+      "statement": "Startup, device access, interrupt handling and DMA require distinct state and ownership contracts.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Startup File responsibilities; other listed primary references support the respective lessons; progression is editorial",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "embedded-exercises",
+      "result": "passed",
+      "scope": "Published tables, state traces, worked arithmetic and reading prerequisites under the explicitly stated teaching assumptions.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "d07cb06027aaeea71b584696610b3fe73c1f44bae7dc1482e15ba39d1b927b9b"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review remains pending.",
+    "Numerical costs, timings, addresses and capacities are original stipulated inputs, not measurements or universal properties of a device.",
+    "Model checks do not establish physical implementation, compiler correctness, formal proof or hardware deployment unless separately documented."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

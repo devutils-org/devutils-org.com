@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "id": "concept.microcontrollers-and-mmio",
+  "locale": "en",
+  "contentHash": "ece06ab60cb81a79a6de8a766b6c4e29bcab464a3e43b2e7d28a978ded926035",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "mapping",
+      "section": "article-map-a-peripheral-into-the-address-space",
+      "kind": "model",
+      "statement": "Device-specific headers provide peripheral structures and address mapping rather than a universal hardware register layout.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Device Peripheral Access Layer and Peripheral Access",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    },
+    {
+      "id": "access",
+      "section": "article-distinguish-volatile-atomicity-and-ordering",
+      "kind": "model",
+      "statement": "Device accesses require platform-specific mapping and ordering rules; ordinary memory operations are not universally interchangeable with I/O operations.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Memory Mapped IO and Accessing the device",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "embedded-exercises",
+      "result": "passed",
+      "scope": "Published tables, state traces, worked arithmetic and reading prerequisites under the explicitly stated teaching assumptions.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "d07cb06027aaeea71b584696610b3fe73c1f44bae7dc1482e15ba39d1b927b9b"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review remains pending.",
+    "Numerical costs, timings, addresses and capacities are original stipulated inputs, not measurements or universal properties of a device.",
+    "Model checks do not establish physical implementation, compiler correctness, formal proof or hardware deployment unless separately documented."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

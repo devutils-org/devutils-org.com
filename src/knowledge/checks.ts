@@ -1,5 +1,6 @@
 // Stable evidence IDs: records store the digest of the tests and models actually run.
 export const exampleChecks = {
+  'embedded-exercises': {file:'src/knowledge/embedded.test.ts',name:'embedded examples preserve MMIO semantics, boot budgets, event timelines, DMA ownership and bounded schedules with ordered prerequisites',dependencies:[]},
   'architecture-exercises': {file:'src/knowledge/architecture.test.ts',name:'architecture examples execute printed instructions, preserve cache mappings, pipeline accounting and scoped throughput with ordered prerequisites',dependencies:[]},
   'design-continuation-exercises': {file:'src/knowledge/design-continuation.test.ts',name:'design continuation checks finite verification scope, physical budgets, LUT counts and lossless synchronous transfers',dependencies:[]},
   'history-modern-exercises': { file:'src/knowledge/history-modern.test.ts', name:'modern history examples preserve energy budgets, parallel overhead, class imbalance and quantum normalization', dependencies:[] },

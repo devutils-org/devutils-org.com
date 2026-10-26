@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.simulation-and-verification",
   "locale": "en",
-  "contentHash": "6c6229c4c17f17b2f0053cb31a893f90d46f781ab444e246058e956a6fd891d6",
+  "contentHash": "37040a08e990ca8395b47fbe97a044e3162c15b281fdb3e15fd2bc06fc6fcab7",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -17,10 +17,10 @@
       "assessment": "supported",
       "citations": [
         {
-          "source": 1,
-          "locator": "Verification properties, assertions, assumptions and cover statements",
+          "source": 3,
+          "locator": "SystemVerilog Immediate Assertions, assume/assert/cover definitions",
           "access": "read",
-          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+          "note": "Read the direct definitions to assess environment assumptions separately from asserted properties and reachability cover statements."
         }
       ],
       "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."

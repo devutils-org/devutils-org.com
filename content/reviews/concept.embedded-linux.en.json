@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "id": "concept.embedded-linux",
+  "locale": "en",
+  "contentHash": "2a024f9e358009d0d025cdf8ad74caf35159ad7e5cc37f70c0f0be353006c708",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "description",
+      "section": "article-trace-a-representative-boot-chain",
+      "kind": "model",
+      "statement": "A device tree describes hardware for identification, runtime configuration and device population rather than implementing a device driver.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Opening definition and High Level View",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    },
+    {
+      "id": "root",
+      "section": "article-trace-a-representative-boot-chain",
+      "kind": "model",
+      "statement": "Initramfs supplies an early root filesystem from an archive and differs from the older block-device initrd approach.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "What is initramfs? and ramfs and ramdisk",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    },
+    {
+      "id": "boundaries",
+      "section": "article-keep-kernel-and-user-space-responsibilities-separate",
+      "kind": "model",
+      "statement": "Linux provides mapping and accessor interfaces for privileged driver device access; an arbitrary physical address is not a portable user-space pointer.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 4,
+          "locator": "Memory Mapped IO, Getting Access to the Device",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "embedded-exercises",
+      "result": "passed",
+      "scope": "Published tables, state traces, worked arithmetic and reading prerequisites under the explicitly stated teaching assumptions.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "d07cb06027aaeea71b584696610b3fe73c1f44bae7dc1482e15ba39d1b927b9b"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review remains pending.",
+    "Numerical costs, timings, addresses and capacities are original stipulated inputs, not measurements or universal properties of a device.",
+    "Model checks do not establish physical implementation, compiler correctness, formal proof or hardware deployment unless separately documented."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}
