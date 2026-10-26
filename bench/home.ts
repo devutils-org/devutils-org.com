@@ -28,7 +28,7 @@ try {
    if(!(await card.locator('.note').textContent())?.includes(local.statusNote))throw Error(`Scope/status missing ${tool.id}`)
    if(tool.command&&await card.locator('.cmd').textContent()!==tool.command)throw Error(`Command lost ${tool.id}`)
   }
-  if(await page.locator('a[href*="github.com/devutils-org/omniscient"]').count())throw Error('Private repository linked')
+  if(!await page.locator('a[href*="github.com/devutils-org/omniscient"]').count())throw Error('Omniscient repository not linked')
   if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1))throw Error('Tools overflow')
   if(javaScriptEnabled&&width!==320){await page.locator('#overview').scrollIntoViewIfNeeded();await page.screenshot({path:`${out}/catalog-${lang}-${width}.png`})}
   checks.push({lang,width,javaScriptEnabled,home:'situations',tools:'original technical cards'})
