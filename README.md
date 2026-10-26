@@ -226,9 +226,9 @@ links and pre-rendered content without JavaScript. Screenshots use the existing
 
 `/knowledge/` opens the reading library; `/knowledge/computing-stack/` is its full
 editorial table of contents. History, figures, learning paths and labs have
-section overviews. Sixty-nine English-first records include five foundations chapters, five physics
+section overviews. Seventy-five English-first records include five foundations chapters, five physics
 chapters, five chemistry/materials chapters, six manufacturing chapters, six device chapters, seven electronics/PCB chapters, six
-digital-logic concepts extended by an FSM and ALU, three integrated-circuit-design chapters, a profile, two historical events, ten History chapters from origins of information through modern computing, ten learning paths and a
+digital-logic concepts extended by an FSM and ALU, three integrated-circuit-design chapters, a profile, eight historical events, ten History chapters from origins of information through modern computing, ten learning paths and a
 Boolean-gate lab. A timeline, figure filters,
 static full-text search and per-article tables of contents connect them.
 Start from zero with `/learn/computing-foundations/`: mathematical reasoning →
@@ -249,6 +249,11 @@ synthesis/mapping and static timing chapters, connected by
 `/learn/integrated-circuit-design/`. Planned topics are
 shown as labels rather than empty article routes. French overviews link to the
 available English articles explicitly.
+
+`/history/` links ten ordered chapters covering every era in the editorial map,
+from early representation and logic to modern computing. Chapters have previous/next
+links; `/history/timeline/` retains dated milestones as a separate reading view.
+The French History index labels its English chapter destinations explicitly.
 
 Content lives in `content/**/*.md`. `src/knowledge/` validates metadata and links,
 renders Markdown safely, derives routes/backlinks and emits static HTML through

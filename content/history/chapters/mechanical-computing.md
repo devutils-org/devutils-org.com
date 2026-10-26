@@ -3,7 +3,8 @@ id: history.mechanical-computing
 type: history
 history_kind: chapter
 locale: en
-slug: mechanical-computting
+slug: mechanical-computing
+aliases: [/history/mechanical-computting/]
 category: mechanical-computing
 title: Mechanical computing — carrying, sequencing and designing engines
 summary: Compare hand-operated calculators, Jacquard control cards, Babbage's difference and analytical engines, and Lovelace's account of a machine that remained unbuilt.

@@ -63,9 +63,40 @@ Human review remains pending unless a real reviewer supplies a signoff.
   research, ARPANET/TCP-IP, the Web and distributed-state uncertainty.
 - Modern computing: published chapter covering mobile integration, open-source
   history, GPUs, AI, physical scaling constraints and quantum computing.
-- All ten chapters are written. Final navigation, coverage, source and rendered
-  artifact audit remains before completion can be claimed.
+- All ten chapters are published, source-assessed and linked in editorial order.
+  Six new dated milestones supplement the two preserved Shannon events.
+  The requirement-by-requirement audit is in
+  `docs/reviews/history-completion-2026-10-26.md`.
 
 The History index links the chapters in the ten-part editorial order. Broad
 chapters are excluded from timeline date filters, preserving the existing event
 dates and routes. No independent human approval is claimed.
+
+## Final verification
+
+- `npm run verify:content`: 29 example groups recorded for 75 published
+  records; historical source assessments and human-review statuses are separate.
+- `npm test`: 65 tests passed, including all ten chapter routes, index order,
+  previous/next links, eight ordered timeline events and the preserved typo alias.
+- `npm run build`: 91 library pages generated; 270 HTML documents checked for
+  local links/assets/anchors; EN/FR Pagefind bundles and sitemap generated.
+- `bench/history.ts`: 44 desktop/mobile History accessibility/layout checks,
+  all ten search targets, French search fallback, sequential navigation, alias
+  and EN/FR date/category filters passed. Artifacts: `/tmp/devutils-history-check/`.
+- `bench/knowledge.ts`: 182 desktop/mobile library pages verified with
+  JavaScript disabled. Artifacts: `/tmp/devutils-knowledge-check/`.
+
+Browser checks use the production preview at `http://127.0.0.1:5178` with
+`CHROME_PATH` selecting Chromium. The relevant commands are:
+
+```sh
+CHROME_PATH=/path/to/chrome node bench/history.ts
+CHROME_PATH=/path/to/chrome node bench/knowledge.ts
+CHROME_PATH=/path/to/chrome node bench/roadmap.ts
+```
+
+`bench/roadmap.ts` also passed: 182 automated accessibility checks plus
+search, locale handling, filters, gate interactions, path and alias navigation.
+Artifacts: `/tmp/devutils-roadmap-check/`.
+The no-result search scenario uses a quoted exact term so stemming/fuzzy matches
+do not turn a supposed unknown word into matches for individual letters.

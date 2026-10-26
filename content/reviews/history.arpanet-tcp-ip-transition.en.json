@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "history.arpanet-tcp-ip-transition",
+  "locale": "en",
+  "contentHash": "aa3a8ec750a1f1e9bcb08ffd8332cd9c13aa72ae41baf31d0deedd37c30cb117",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "milestone",
+      "section": "article-coordinate-a-protocol-change",
+      "kind": "historical",
+      "statement": "The coordinated 1 January 1983 transition replaced NCP on ARPANET; it was a deployment milestone in a longer internetworking history.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Proving the Ideas, paragraph on the 1 January 1983 NCP/TCP-IP transition",
+          "access": "read",
+          "note": "Named passage inspected during the related chapter assessment in this session."
+        }
+      ],
+      "note": "Selected documented milestone; no unqualified first-ever priority claim."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Publication, experiment and deployment are distinguished; no historical hardware or software was executed for this event.",
+    "Independent human review remains pending."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

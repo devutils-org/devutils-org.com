@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "history.incompleteness-publication",
+  "locale": "en",
+  "contentHash": "df29e16f96573f674b2c0075d535146a5e8ef3c77c9116209378a981be95f9c7",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "milestone",
+      "section": "article-a-result-about-formal-theories",
+      "kind": "historical",
+      "statement": "The 1931 publication limits what suitable formal arithmetic theories can prove, rather than declaring all reasoning impossible.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Introduction; section 2.1; section 5, publication in January 1931",
+          "access": "read",
+          "note": "Named passage inspected during the related chapter assessment in this session."
+        }
+      ],
+      "note": "Selected documented milestone; no unqualified first-ever priority claim."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Publication, experiment and deployment are distinguished; no historical hardware or software was executed for this event.",
+    "Independent human review remains pending."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

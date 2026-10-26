@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "history.fortran-implementation-1957",
+  "locale": "en",
+  "contentHash": "0a4865da2f87766cd4e95d5babda499c1309bc5ab9af6e16188125555e29c25f",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "milestone",
+      "section": "article-follow-the-documents-through-development",
+      "kind": "historical",
+      "statement": "The 1957 paper, manuals and release correspondence document a compiler team’s implementation, beyond the earlier proposal.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Documentation, April 1957 release correspondence; Papers by FORTRAN project members, February 1957",
+          "access": "read",
+          "note": "Named passage inspected during the related chapter assessment in this session."
+        }
+      ],
+      "note": "Selected documented milestone; no unqualified first-ever priority claim."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Publication, experiment and deployment are distinguished; no historical hardware or software was executed for this event.",
+    "Independent human review remains pending."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

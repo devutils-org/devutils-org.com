@@ -2,7 +2,7 @@
   "version": 1,
   "id": "history.mechanical-computing",
   "locale": "en",
-  "contentHash": "2a2d9680fb4a180a54bbdda32ea62f949b97c1896fef45867942e2b12bf71d49",
+  "contentHash": "9c4c11f8aa19edb4e78e57a257fa19be141bb3282ef3ecb025ff09a8bcc8dc92",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -118,7 +118,8 @@
   "limitations": [
     "Selective mechanical history; no first-computer or universal priority claim.",
     "No historical mechanism was simulated or measured; toy arithmetic is explicitly separate from reconstruction.",
-    "Independent human review remains pending."
+    "Independent human review remains pending.",
+    "Canonical slug spelling corrected during navigation audit; the previous mechanical-computting route remains an alias. Teaching prose and source assessments are unchanged."
   ],
   "humanReview": {
     "status": "pending"

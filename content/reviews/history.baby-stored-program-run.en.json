@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "history.baby-stored-program-run",
+  "locale": "en",
+  "contentHash": "e9291cbb6ceb505b129ef5e571a62861fa4794be6507c46c9d5a4888d5b1ad59",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "milestone",
+      "section": "article-an-experimental-memory-system-becomes-a-working-machine",
+      "kind": "historical",
+      "statement": "On 21 June 1948, Manchester’s experimental machine executed a program held in electronic memory.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Main account, 21 June 1948 run and Williams/Kilburn/Tootill test-bed description",
+          "access": "read",
+          "note": "Named passage inspected during the related chapter assessment in this session."
+        }
+      ],
+      "note": "Selected documented milestone; no unqualified first-ever priority claim."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Publication, experiment and deployment are distinguished; no historical hardware or software was executed for this event.",
+    "Independent human review remains pending."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

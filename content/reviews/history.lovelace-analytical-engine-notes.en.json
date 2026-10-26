@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "history.lovelace-analytical-engine-notes",
+  "locale": "en",
+  "contentHash": "1d03c072422d2e1292668505a97d200bda4f7ea367518a679b3e6c0da60a0902",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "milestone",
+      "section": "article-a-publication-about-a-proposed-machine",
+      "kind": "historical",
+      "statement": "The 1843 account with Lovelace’s notes describes computations for Babbage’s unbuilt complete Analytical Engine.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Analytical Engine, 1843 collaboration and Bernoulli calculation diagram captions",
+          "access": "read",
+          "note": "Named passage inspected during the related chapter assessment in this session."
+        }
+      ],
+      "note": "Selected documented milestone; no unqualified first-ever priority claim."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Publication, experiment and deployment are distinguished; no historical hardware or software was executed for this event.",
+    "Independent human review remains pending."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

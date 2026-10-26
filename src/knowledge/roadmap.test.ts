@@ -13,9 +13,11 @@ test('gate model covers every binary combination and NOT ignores B', () => {
 })
 test('aliases are non-indexable and cannot shadow real routes or each other', () => {
   const entries = loadEntries(), pages = knowledgePages(entries), aliases = aliasPages(entries,pages)
-  assert.equal(aliases.length,1)
-  assert.match(aliasHtml(aliases[0]),/name="robots" content="noindex"/)
-  assert.match(aliasHtml(aliases[0]),/http-equiv="refresh"/)
+  assert.equal(aliases.length,2)
+  for(const alias of aliases) {
+    assert.match(aliasHtml(alias),/name="robots" content="noindex"/)
+    assert.match(aliasHtml(alias),/http-equiv="refresh"/)
+  }
   const concept = entries.find(e=>e.id === 'concept.boolean-algebra')!
   assert.throws(()=>aliasPages([{...concept,aliases:['/knowledge/']}],pages),/Conflicting alias/)
   assert.throws(()=>aliasPages([{...concept,aliases:['/tools/omn/']}],pages),/Conflicting alias/)

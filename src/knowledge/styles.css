@@ -189,3 +189,6 @@
 @media (max-width: 360px) {
   .reader-page .reader-header .site-links { gap: 14px; font-size: 11px; }
 }
+
+.history-chapter-nav { margin: 24px 0; padding: 20px; border: 1px solid var(--line, #ffffff24); border-radius: 12px; }
+.history-chapter-nav ul { margin-bottom: 0; }

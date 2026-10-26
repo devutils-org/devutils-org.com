@@ -3,6 +3,7 @@ import { readFile, mkdir, writeFile } from 'node:fs/promises'
 import { knowledgePages } from '../src/knowledge/render.ts'
 import { loadEntries } from '../src/knowledge/load.ts'
 const base=process.env.CHECK_BASE_URL ?? 'http://127.0.0.1:5178'
+const events=loadEntries().filter(e=>e.type==='history' && e.status==='published' && e.history_kind!=='chapter')
 const out=process.env.CHECK_OUTPUT ?? '/tmp/devutils-roadmap-check'
 await mkdir(out,{recursive:true})
 const browser=await chromium.launch({executablePath:process.env.CHROME_PATH,headless:true,args:['--no-sandbox']})
@@ -31,7 +32,7 @@ try {
   await page.locator('form[data-search] button[type=submit]').click()
   await page.locator('[data-search-results] a[href="/knowledge/digital-logic/boolean-algebra/"]').waitFor()
   if(!pagefindRequests) throw Error('Search engine not loaded')
-  await page.locator('[name=query]').fill('zzzzunfindablezzzz')
+  await page.locator('[name=query]').fill('"zzzzunfindablezzzz"')
   await page.locator('form[data-search] button[type=submit]').click()
   await page.locator('[data-search-status]').filter({hasText:'0 result(s)'}).waitFor()
   await page.goto(base+'/fr/knowledge/search/')
@@ -44,11 +45,11 @@ try {
   await page.goto(base+'/history/timeline/')
   await page.locator('[data-discovery]').waitFor({state:'visible'})
   await page.locator('[name=from]').fill('1940')
-  if(await page.locator('[data-record]:visible').count()!==1) throw Error('Year filter failed')
+  if(await page.locator('[data-record]:visible').count()!==events.filter(e=>+(e.date_end??e.date_start!).slice(0,4)>=1940).length) throw Error('Year filter failed')
   await page.locator('[name=to]').fill('1945')
   if(await page.locator('[data-record]:visible').count()!==0) throw Error('Empty timeline filter failed')
   await page.getByRole('button',{name:'Reset',exact:true}).click()
-  await page.waitForFunction(()=>document.querySelectorAll('[data-record]:not([hidden])').length===2)
+  await page.waitForFunction(count=>document.querySelectorAll('[data-record]:not([hidden])').length===count,events.length)
   await page.locator('[name=category]').selectOption('communication')
   if(await page.locator('[data-record]:visible').count()!==1) throw Error('Category filter failed')
   await page.goto(base+'/figures/')
