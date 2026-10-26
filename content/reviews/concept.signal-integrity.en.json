@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "id": "concept.signal-integrity",
+  "locale": "en",
+  "contentHash": "bf453b643c1ff95f04880aa6fda376f338165d38003406c52e6a9d40caecbd39",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "reflection",
+      "section": "article-distinguish-impedance-from-dc-resistance",
+      "kind": "model",
+      "statement": "For the stated real lossless line and resistive load, voltage reflection coefficient is (ZL−Z0)/(ZL+Z0).",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "The Reflection Coefficient: Doing the Math; matched, shorted and open-load cases",
+          "access": "read",
+          "note": "Inspected the general Tektronix signal-integrity tutorial during this correction pass; replaces the optical-module-specific reference."
+        }
+      ],
+      "note": "Selected claim assessed under the stated assumptions; numerical inputs, netlists and worked answers are original and checked separately."
+    },
+    {
+      "id": "reference",
+      "section": "article-preserve-references-and-timing-margins",
+      "kind": "model",
+      "statement": "Interconnect references and return-current geometry matter to signal coupling and waveform quality.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Single Ground Plane and signal/return-current discussion",
+          "access": "read",
+          "note": "Inspected the cited teaching or manufacturer passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "Selected claim assessed under the stated assumptions; numerical inputs, netlists and worked answers are original and checked separately."
+    },
+    {
+      "id": "edges",
+      "section": "article-compare-travel-time-with-edge-time",
+      "kind": "model",
+      "statement": "Fast transitions contain significant frequency components above waveform repetition rate, so clock frequency alone is insufficient.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "Capacitive Loading, square-wave harmonic discussion",
+          "access": "read",
+          "note": "Inspected the cited teaching or manufacturer passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "Selected claim assessed under the stated assumptions; numerical inputs, netlists and worked answers are original and checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "electronics-exercises",
+      "result": "passed",
+      "scope": "Loaded dividers, power balance, logic margins, RC responses, pin/net mappings, conductor geometry, regulator loss, droop, reflections, probe loading and ordered prerequisites.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "0ebe61c0678960e778d6dcdfcb7f4ea1b6bf97bb30f66509ddc95cb99cf306d8"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review remains pending.",
+    "Ideal DC networks, first-order RC responses, uniform conductors and lossless lines are scoped teaching models, not a validated board design or device specification.",
+    "Clearance, capacitance, propagation speed and instrument specifications are supplied exercise inputs. Actual hardware needs its component, stackup, fabrication and measurement constraints."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

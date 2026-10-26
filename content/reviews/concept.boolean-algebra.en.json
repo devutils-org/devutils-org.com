@@ -63,7 +63,7 @@
       "check": "worked-exercises",
       "result": "passed",
       "scope": "Boolean table, access-rule substitutions and distributivity over all inputs.",
-      "checkedAt": "2026-10-24",
+      "checkedAt": "2026-10-26",
       "evidenceHash": "9ec05be3161b8a19b4bfa494a3ae591b82bd9d42b69fd6f32c4df49533a122af"
     }
   ],

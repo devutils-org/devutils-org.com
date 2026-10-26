@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "id": "concept.quantum-basics",
+  "locale": "en",
+  "contentHash": "c74eff3fd1dd4e02164cb290fe892fab79e544f48bb760fc8182143396361b8a",
+  "assessedAt": "2026-10-25",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "claim-1",
+      "section": "article-use-probabilities-with-care",
+      "kind": "definition",
+      "statement": "Quantum event probabilities are obtained from squared magnitudes of amplitudes, rather than treating amplitudes as ordinary probabilities.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Section 2–1, probability wave amplitudes",
+          "access": "read",
+          "note": "Read the cited passage in the source page during preparation on 2026-10-25."
+        }
+      ],
+      "note": "The selected statement is source-supported; numerical inputs and teaching scenarios in this article are original assumptions."
+    },
+    {
+      "id": "claim-2",
+      "section": "article-read-allowed-energy-levels",
+      "kind": "model",
+      "statement": "Bound atomic stationary energies are discrete, and an emitted photon carries the energy difference of a radiative transition.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Section 2–5, energy levels, equations 2.14–2.16",
+          "access": "read",
+          "note": "Read the cited passage in the source page during preparation on 2026-10-25."
+        }
+      ],
+      "note": "The selected statement is source-supported; numerical inputs and teaching scenarios in this article are original assumptions."
+    }
+  ],
+  "examples": [
+    {
+      "check": "physics-exercises",
+      "result": "passed",
+      "scope": "Recompute published resistor, force, flux, probability, level, thermal and lattice examples; check the reading prerequisite order.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "1a60602b9c1f20f0ca08dab2b5fd0fc24eb6940cbea65611fc977a4aa7f84a8b"
+    }
+  ],
+  "limitations": [
+    "Introductory assistant assessment of selected claims; independent human review remains pending.",
+    "All numerical devices, amplitudes, levels and material parameters are stipulated examples, not measured properties or implementation specifications."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

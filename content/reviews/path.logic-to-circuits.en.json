@@ -37,7 +37,7 @@
       "check": "short-path",
       "result": "passed",
       "scope": "Published step references and OR/XOR completion condition.",
-      "checkedAt": "2026-10-24",
+      "checkedAt": "2026-10-26",
       "evidenceHash": "3252388922db21a8ac379d15b90fb1294d5e468b12031638928dab36713eb519"
     }
   ],

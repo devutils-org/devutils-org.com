@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "id": "concept.cmos",
+  "locale": "en",
+  "contentHash": "bc9050435b99d23d3e40e26c1c6d5ab70a876d3acf6b0a0534556df285dd25d7",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "networks",
+      "section": "article-build-a-path-to-each-supply-rail",
+      "kind": "model",
+      "statement": "Complementary pull-up and pull-down networks implement a settled inverter using source-referenced transistor control.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Sections 6.1.1 and 6.2, CMOS inverter",
+          "access": "read",
+          "note": "Inspected the cited primary teaching or manufacturer passage during preparation; numerical exercises are original."
+        }
+      ],
+      "note": "Assessment covers the selected scoped claim, not every sentence."
+    },
+    {
+      "id": "nand",
+      "section": "article-combine-switches-into-a-nand",
+      "kind": "model",
+      "statement": "Series NMOS and parallel PMOS implement a complementary NAND network.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Sections 6.2.1–6.2.3, series/parallel and complementary circuits",
+          "access": "read",
+          "note": "Inspected the cited primary teaching or manufacturer passage during preparation; numerical exercises are original."
+        }
+      ],
+      "note": "Assessment covers the selected scoped claim, not every sentence."
+    },
+    {
+      "id": "energy",
+      "section": "article-account-for-charging-energy",
+      "kind": "model",
+      "statement": "Capacitive switching power depends on switched capacitance, squared supply and transition rate; the stated alpha counts only rising transitions.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "CMOS Power Consumption and Cpd Calculation, printed pages 4–28 through 4–29, capacitive-load power; energy accounting is derived in the text",
+          "access": "read",
+          "note": "Inspected the cited primary teaching or manufacturer passage during preparation; numerical exercises are original."
+        }
+      ],
+      "note": "Assessment covers the selected scoped claim, not every sentence."
+    }
+  ],
+  "examples": [
+    {
+      "check": "devices-exercises",
+      "result": "passed",
+      "scope": "Published charge-balance, diode, gate-bias, NAND, density and power tables; worked energy and duty-cycle answers; prerequisite ordering.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "bc30215ca245609230e279cd8f529ebed4b7be2ed0629b7fbcdf20d278614f00"
+    }
+  ],
+  "limitations": [
+    "Independent human review remains pending.",
+    "Abrupt depletion, ideal exponential diodes, switch resistances, lumped capacitance and independent standby blocks are teaching models with supplied inputs, not validated device specifications.",
+    "Leakage mechanisms and scaling outcomes depend on technology and operating conditions; no universal quantitative process trend is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

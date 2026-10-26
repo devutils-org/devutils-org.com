@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "id": "concept.power-and-decoupling",
+  "locale": "en",
+  "contentHash": "3ba67c7fcc9bda3e8d1b194df6b5403fb51c7efc4166ad6dab818e9b60db5259",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "linear",
+      "section": "article-account-for-a-linear-regulator",
+      "kind": "model",
+      "statement": "Neglecting regulator ground current gives linear-regulator efficiency Vout/Vin and loss (Vin−Vout)Iout while regulation holds.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Efficiency and Dropout Voltage",
+          "access": "read",
+          "note": "Inspected the cited teaching or manufacturer passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "Selected claim assessed under the stated assumptions; numerical inputs, netlists and worked answers are original and checked separately."
+    },
+    {
+      "id": "parasitics",
+      "section": "article-add-resistance-and-inductance",
+      "kind": "model",
+      "statement": "Real capacitors and their connections have series resistance and inductance, limiting decoupling effectiveness.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "PDF pages 2–3, local charge and real capacitor equivalent circuit; page 6, short low-inductance paths",
+          "access": "read",
+          "note": "Inspected the cited teaching or manufacturer passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "Selected claim assessed under the stated assumptions; numerical inputs, netlists and worked answers are original and checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "electronics-exercises",
+      "result": "passed",
+      "scope": "Loaded dividers, power balance, logic margins, RC responses, pin/net mappings, conductor geometry, regulator loss, droop, reflections, probe loading and ordered prerequisites.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "0ebe61c0678960e778d6dcdfcb7f4ea1b6bf97bb30f66509ddc95cb99cf306d8"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review remains pending.",
+    "Ideal DC networks, first-order RC responses, uniform conductors and lossless lines are scoped teaching models, not a validated board design or device specification.",
+    "Clearance, capacitance, propagation speed and instrument specifications are supplied exercise inputs. Actual hardware needs its component, stackup, fabrication and measurement constraints."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

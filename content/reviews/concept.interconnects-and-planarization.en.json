@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "id": "concept.interconnects-and-planarization",
+  "locale": "en",
+  "contentHash": "d9ed4f30210c24bb88803a21b6763b8b673f425088b77fe86f79afa131682bae",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "stack",
+      "section": "article-follow-a-damascene-style-sequence",
+      "kind": "definition",
+      "statement": "A damascene-style interconnect flow patterns dielectric trenches/vias, adds barriers and copper fill, and removes excess material with CMP.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "PDF page 2, Copper Interconnect Dual Damascene Process",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    },
+    {
+      "id": "clearing",
+      "section": "article-distinguish-clearing-from-over-removal",
+      "kind": "interpretation",
+      "statement": "CMP clears copper overfill and must control dishing and erosion; the uniform-rate arithmetic is a separate teaching assumption.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Overview, copper overfill removal and low dishing/erosion; source 1 page 3 distinguishes the geometric effects",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        },
+        {
+          "source": 1,
+          "locator": "PDF page 3: Copper Interconnect Problems, dishing and oxide erosion.",
+          "access": "read",
+          "note": "Inspected this complementary passage to distinguish the separate parts of the selected claim."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    },
+    {
+      "id": "resistance",
+      "section": "article-reuse-the-sample-resistance-model",
+      "kind": "model",
+      "statement": "The rectangular-line example uses uniform ohmic resistance rho L/A with area equal to width times thickness.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 4,
+          "locator": "Resistance subsection, equation 9.9; line dimensions and resistivity are original inputs",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    },
+    {
+      "id": "connection",
+      "section": "article-read-connectivity-before-counting-material",
+      "kind": "interpretation",
+      "statement": "Insulating separation and selected vias determine interlevel connectivity; a top-view crossing alone does not establish connection.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "PDF page 2, cross-section of copper lines/vias embedded in dielectric; original A–D network example",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "manufacturing-exercises",
+      "result": "passed",
+      "scope": "Wafer area ratios, resist polarity and overlay margins, film growth and piecewise removal, dose/depth/activation bookkeeping, line/via resistance, conditional yield and the ordered prerequisite chain.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "f43eded416fb1e2c9d71f7c5eae8120dc768d27dc69a9b5ae7044540770429bb"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review is pending.",
+    "Constant rates, uniform profiles, ideal masks and stated acceptance populations are models, not validated tool settings, measured process results or a complete device flow. Historical teaching sources illustrate principles rather than current technology-node capabilities."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

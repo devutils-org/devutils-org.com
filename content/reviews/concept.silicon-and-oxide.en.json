@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "id": "concept.silicon-and-oxide",
+  "locale": "en",
+  "contentHash": "d073e615d73b934f2e64d89337c1be2c7e063032c759af42822a098c53cb3b85",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "neighbors",
+      "section": "article-follow-silicon-s-four-neighbors",
+      "kind": "definition",
+      "statement": "Bulk crystalline silicon has diamond structure with four tetrahedrally arranged nearest neighbors.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Section 14–1, opening silicon/germanium structure paragraph",
+          "access": "read",
+          "note": "Read the specified source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The claim is scoped to the introductory model. Worked values and synthesis scenarios are original; checks recompute the stated examples rather than certify an actual material."
+    },
+    {
+      "id": "silica",
+      "section": "article-read-the-oxide-network",
+      "kind": "model",
+      "statement": "The ideal silica coordination model links four oxygens to each silicon and shares bridging oxygens, consistent with SiO2.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Covalent Network Solid, figure 10.41; composition and forms in figure 10.38",
+          "access": "read",
+          "note": "Read the specified source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The claim is scoped to the introductory model. Worked values and synthesis scenarios are original; checks recompute the stated examples rather than certify an actual material."
+    },
+    {
+      "id": "oxidation",
+      "section": "article-understand-a-simple-oxidation-balance",
+      "kind": "definition",
+      "statement": "Thermal oxidation consumes substrate silicon and can follow the overall balance Si + O2 → SiO2.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "Oxidation overview, dry oxidation reaction and substrate-consumption paragraph",
+          "access": "read",
+          "note": "Read the specified source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The claim is scoped to the introductory model. Worked values and synthesis scenarios are original; checks recompute the stated examples rather than certify an actual material."
+    },
+    {
+      "id": "insulation",
+      "section": "article-connect-composition-to-electrical-roles",
+      "kind": "interpretation",
+      "statement": "Thermal silicon oxide is classified as an electrical insulator; this classification is not a universal zero-leakage guarantee.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 4,
+          "locator": "Electrical conductivity row; no breakdown or thin-film leakage result is inferred",
+          "access": "read",
+          "note": "Read the specified source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The claim is scoped to the introductory model. Worked values and synthesis scenarios are original; checks recompute the stated examples rather than certify an actual material."
+    }
+  ],
+  "examples": [
+    {
+      "check": "materials-exercises",
+      "result": "passed",
+      "scope": "Atomic charge and isotope counts, bond-energy changes, cubic cell sharing, site populations, network stoichiometry, dopant concentration and neutrality, sample resistance, unit conversion and path prerequisite order.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "c7e8bc167b0ce762f7be3ba463f475df4960d2261ece4271c7cd845945710fc1"
+    }
+  ],
+  "limitations": [
+    "Selected claims assessed by an assistant; independent human review remains pending.",
+    "Numerical sample dimensions, resistivities, defect populations and candidate constraints are teaching inputs. Doping approximations require the stated activation, equilibrium and bulk assumptions; no fabrication process or real device has been validated."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "id": "concept.semiconductor-doping",
+  "locale": "en",
+  "contentHash": "dac02a6f58769f13a75391a0755f83665d5cc8e2485cf94e6b63121af09a77f3",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "dopants",
+      "section": "article-follow-a-donor-and-an-acceptor",
+      "kind": "definition",
+      "statement": "Phosphorus and boron illustrate donor and acceptor doping in silicon; majority carrier type distinguishes n-type and p-type.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Overview, valence discussion and n-type/p-type comparison table",
+          "access": "read",
+          "note": "Read the specified source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The claim is scoped to the introductory model. Worked values and synthesis scenarios are original; checks recompute the stated examples rather than certify an actual material."
+    },
+    {
+      "id": "neutrality",
+      "section": "article-check-charge-neutrality",
+      "kind": "model",
+      "statement": "Ionized donors are positive and ionized acceptors negative, allowing mobile carriers and fixed sites to balance in a neutral bulk region.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Section 14–2, donor neutrality paragraph and acceptor charge discussion",
+          "access": "read",
+          "note": "Read the specified source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The claim is scoped to the introductory model. Worked values and synthesis scenarios are original; checks recompute the stated examples rather than certify an actual material."
+    },
+    {
+      "id": "approximation",
+      "section": "article-use-a-stated-activation-approximation",
+      "kind": "model",
+      "statement": "Majority concentration can approximate dopant excess under the stated ionization and large-excess assumptions; equal compensation does not imply zero thermal carriers.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "Equilibrium Carrier Concentration, approximation preceding mass-action law and n0 p0 = ni squared",
+          "access": "read",
+          "note": "Read the specified source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The claim is scoped to the introductory model. Worked values and synthesis scenarios are original; checks recompute the stated examples rather than certify an actual material."
+    },
+    {
+      "id": "transport",
+      "section": "article-distinguish-carrier-concentration-from-conductivity",
+      "kind": "interpretation",
+      "statement": "Dopant activation and carrier scattering limit what can be inferred from introduced impurity counts.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Section 14–2, complete-ionization approximation and impurity/thermal scattering paragraphs",
+          "access": "read",
+          "note": "Read the specified source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The claim is scoped to the introductory model. Worked values and synthesis scenarios are original; checks recompute the stated examples rather than certify an actual material."
+    }
+  ],
+  "examples": [
+    {
+      "check": "materials-exercises",
+      "result": "passed",
+      "scope": "Atomic charge and isotope counts, bond-energy changes, cubic cell sharing, site populations, network stoichiometry, dopant concentration and neutrality, sample resistance, unit conversion and path prerequisite order.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "c7e8bc167b0ce762f7be3ba463f475df4960d2261ece4271c7cd845945710fc1"
+    }
+  ],
+  "limitations": [
+    "Selected claims assessed by an assistant; independent human review remains pending.",
+    "Numerical sample dimensions, resistivities, defect populations and candidate constraints are teaching inputs. Doping approximations require the stated activation, equilibrium and bulk assumptions; no fabrication process or real device has been validated."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "id": "path.semiconductor-devices",
+  "locale": "en",
+  "contentHash": "9901436aba910e013b6ddeb04b89508c95b12fe9386bde860b8d193712a55c1a",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "networks",
+      "section": "article-follow-the-six-lessons",
+      "kind": "model",
+      "statement": "The route builds from semiconductor charge models to complementary switching networks and a separated power budget.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Sections 6.1–6.2, MOSFETs and CMOS networks; learning order is editorial",
+          "access": "read",
+          "note": "Inspected the cited primary teaching or manufacturer passage during preparation; numerical exercises are original."
+        }
+      ],
+      "note": "Assessment covers the selected scoped claim, not every sentence."
+    },
+    {
+      "id": "budget",
+      "section": "article-explain-the-combined-answer",
+      "kind": "model",
+      "statement": "The synthesis separates capacitive switching power from static supply power under explicitly fixed inputs.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "CMOS Power Consumption and Cpd Calculation, printed pages 4–27 through 4–29",
+          "access": "read",
+          "note": "Inspected the cited primary teaching or manufacturer passage during preparation; numerical exercises are original."
+        }
+      ],
+      "note": "Assessment covers the selected scoped claim, not every sentence."
+    }
+  ],
+  "examples": [
+    {
+      "check": "devices-exercises",
+      "result": "passed",
+      "scope": "Published charge-balance, diode, gate-bias, NAND, density and power tables; worked energy and duty-cycle answers; prerequisite ordering.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "bc30215ca245609230e279cd8f529ebed4b7be2ed0629b7fbcdf20d278614f00"
+    }
+  ],
+  "limitations": [
+    "Independent human review remains pending.",
+    "Abrupt depletion, ideal exponential diodes, switch resistances, lumped capacitance and independent standby blocks are teaching models with supplied inputs, not validated device specifications.",
+    "Leakage mechanisms and scaling outcomes depend on technology and operating conditions; no universal quantitative process trend is asserted.",
+    "Continuation link updated to the published electronics-and-PCB route; subject claims and numerical examples are unchanged."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "id": "path.physics-for-computing",
+  "locale": "en",
+  "contentHash": "1fee5662fabc3132b6c8407a14a9e8fe74a751bc06589c62d78463826e864410",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "claim-1",
+      "section": "article-follow-the-five-chapters",
+      "kind": "interpretation",
+      "statement": "The first step uses the voltage and current circuit abstraction.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Sections 4.2–4.3, node voltages, currents and the resistor constraint",
+          "access": "read",
+          "note": "Read the cited passage in the source page during preparation on 2026-10-25."
+        }
+      ],
+      "note": "The selected statement is source-supported; numerical inputs and teaching scenarios in this article are original assumptions."
+    },
+    {
+      "id": "claim-2",
+      "section": "article-answers-and-scope",
+      "kind": "model",
+      "statement": "An outcome probability follows from the squared magnitude of its quantum amplitude.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "Section 2–1, probability wave amplitudes",
+          "access": "read",
+          "note": "Read the cited passage in the source page during preparation on 2026-10-25."
+        }
+      ],
+      "note": "The selected statement is source-supported; numerical inputs and teaching scenarios in this article are original assumptions."
+    }
+  ],
+  "examples": [
+    {
+      "check": "physics-exercises",
+      "result": "passed",
+      "scope": "Recompute published resistor, force, flux, probability, level, thermal and lattice examples; check the reading prerequisite order.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "1a60602b9c1f20f0ca08dab2b5fd0fc24eb6940cbea65611fc977a4aa7f84a8b"
+    }
+  ],
+  "limitations": [
+    "Introductory assistant assessment of selected claims; independent human review remains pending.",
+    "All numerical devices, amplitudes, levels and material parameters are stipulated examples, not measured properties or implementation specifications.",
+    "Follow-up editorial review on 2026-10-26: the continuation now links to the published chemistry/materials route. The worked examples and cited source claims are unchanged."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

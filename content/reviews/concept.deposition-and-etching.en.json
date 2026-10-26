@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "id": "concept.deposition-and-etching",
+  "locale": "en",
+  "contentHash": "34a4526cf12469b4ba46702a11c06eb5b84b2fcbb938366c3abc8e6a8bfabe09",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "films",
+      "section": "article-separate-adding-material-from-removing-it",
+      "kind": "definition",
+      "statement": "Deposition supplies conducting or insulating films, whereas etching selectively removes material.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Opening Creating flawless thin films overview; removal role also supported by source 3",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        },
+        {
+          "source": 3,
+          "locator": "Creating features with atomic precision: etch selectively removes deposited films.",
+          "access": "read",
+          "note": "Inspected this complementary passage to distinguish the separate parts of the selected claim."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    },
+    {
+      "id": "cycles",
+      "section": "article-read-deposition-at-the-level-of-a-model",
+      "kind": "model",
+      "statement": "ALD uses separated surface-controlled reaction cycles; the thickness exercise stipulates a constant growth per cycle.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Atomic Layer Deposition, pulsing/purging and precise-control sections",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    },
+    {
+      "id": "mask",
+      "section": "article-transfer-a-mask-into-a-film",
+      "kind": "model",
+      "statement": "A developed resist pattern can guide an underlying film etch before the resist is stripped.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 4,
+          "locator": "PDF pages 6–8, oxide pattern transfer and resist strip",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    },
+    {
+      "id": "removal",
+      "section": "article-calculate-a-simplified-selectivity-budget",
+      "kind": "model",
+      "statement": "Selectivity and protection constrain target removal and preservation of other materials; the numerical rates are stipulated.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "Creating features with atomic precision and selective material removal; arithmetic is an original piecewise model",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "manufacturing-exercises",
+      "result": "passed",
+      "scope": "Wafer area ratios, resist polarity and overlay margins, film growth and piecewise removal, dose/depth/activation bookkeeping, line/via resistance, conditional yield and the ordered prerequisite chain.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "f43eded416fb1e2c9d71f7c5eae8120dc768d27dc69a9b5ae7044540770429bb"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review is pending.",
+    "Constant rates, uniform profiles, ideal masks and stated acceptance populations are models, not validated tool settings, measured process results or a complete device flow. Historical teaching sources illustrate principles rather than current technology-node capabilities."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

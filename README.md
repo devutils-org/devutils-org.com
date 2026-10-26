@@ -226,10 +226,23 @@ links and pre-rendered content without JavaScript. Screenshots use the existing
 
 `/knowledge/` opens the reading library; `/knowledge/computing-stack/` is its full
 editorial table of contents. History, figures, learning paths and labs have
-section overviews. Twelve English-first records include six digital-logic concepts,
-a profile, two historical events, two learning paths and a Boolean-gate lab. A timeline, figure filters,
+section overviews. Fifty-two English-first records include five foundations chapters, five physics
+chapters, five chemistry/materials chapters, six manufacturing chapters, six device chapters, seven electronics/PCB chapters, six
+digital-logic concepts, a profile, two historical events, eight learning paths and a
+Boolean-gate lab. A timeline, figure filters,
 static full-text search and per-article tables of contents connect them.
-Start with `/learn/digital-logic-foundations/` for the seven-step digital-logic block. Planned topics are
+Start from zero with `/learn/computing-foundations/`: mathematical reasoning →
+units and scale → signals and states → information and representation → models
+and abstraction. Each chapter includes exercises and answers. Continue with
+`/learn/physics-for-computing/` for electricity, electromagnetism, quantum basics,
+thermodynamics and solid-state physics, then `/learn/chemistry-and-materials/`
+for atoms, bonding, crystal structures, silicon, doping and material properties.
+`/learn/semiconductor-manufacturing/` follows with wafers, lithography, deposition
+and etch, implantation, interconnects, testing and packaging.
+`/learn/semiconductor-devices/` continues with junctions, diode models, MOSFETs,
+CMOS, scaling and leakage. `/learn/electronics-and-pcb/` then covers circuits,
+interfaces, schematics, board layout, power, signal integrity and measurement. The available
+`/learn/digital-logic-foundations/` route covers the seven-step digital-logic block. Planned topics are
 shown as labels rather than empty article routes. French overviews link to the
 available English articles explicitly.
 

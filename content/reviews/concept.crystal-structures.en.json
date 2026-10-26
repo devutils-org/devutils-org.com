@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "id": "concept.crystal-structures",
+  "locale": "en",
+  "contentHash": "afa5a9ebfe34be7d09372c62bb73e340b07d9b2ba00d41ce05bd8d07530b82d9",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "cells",
+      "section": "article-count-shared-contributions",
+      "kind": "definition",
+      "statement": "Corner and face sharing give one, two and four atoms per conventional simple-, body-centered- and face-centered-cubic cell.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Unit Cells of Metals, figures 10.49–10.52 and sharing calculations",
+          "access": "read",
+          "note": "Read the specified source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The claim is scoped to the introductory model. Worked values and synthesis scenarios are original; checks recompute the stated examples rather than certify an actual material."
+    },
+    {
+      "id": "defects",
+      "section": "article-introduce-defects-without-treating-every-impurity-alike",
+      "kind": "definition",
+      "statement": "Vacancies, interstitial atoms and substitutional impurities are distinct departures from an ideal structure.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Crystal Defects, figure 10.45",
+          "access": "read",
+          "note": "Read the specified source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The claim is scoped to the introductory model. Worked values and synthesis scenarios are original; checks recompute the stated examples rather than certify an actual material."
+    },
+    {
+      "id": "order",
+      "section": "article-distinguish-crystalline-from-amorphous",
+      "kind": "definition",
+      "statement": "Amorphous and crystalline arrangements differ in long-range order; silica can have either form.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Opening paragraphs and figure 10.38",
+          "access": "read",
+          "note": "Read the specified source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The claim is scoped to the introductory model. Worked values and synthesis scenarios are original; checks recompute the stated examples rather than certify an actual material."
+    }
+  ],
+  "examples": [
+    {
+      "check": "materials-exercises",
+      "result": "passed",
+      "scope": "Atomic charge and isotope counts, bond-energy changes, cubic cell sharing, site populations, network stoichiometry, dopant concentration and neutrality, sample resistance, unit conversion and path prerequisite order.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "c7e8bc167b0ce762f7be3ba463f475df4960d2261ece4271c7cd845945710fc1"
+    }
+  ],
+  "limitations": [
+    "Selected claims assessed by an assistant; independent human review remains pending.",
+    "Numerical sample dimensions, resistivities, defect populations and candidate constraints are teaching inputs. Doping approximations require the stated activation, equilibrium and bulk assumptions; no fabrication process or real device has been validated."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

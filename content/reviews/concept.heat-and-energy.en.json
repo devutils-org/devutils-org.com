@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "id": "concept.heat-and-energy",
+  "locale": "en",
+  "contentHash": "c100eb1667101a504a74883d537cc0c4e6fdb3f666ee861fdb3a48b84192b63d",
+  "assessedAt": "2026-10-25",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "claim-1",
+      "section": "article-draw-the-system-boundary",
+      "kind": "model",
+      "statement": "The first law balances heat and work entering a system with its internal-energy change.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Section 44–1, equations 44.1–44.2; work-on-system sign convention",
+          "access": "read",
+          "note": "Re-read section 44–1, equations 44.1–44.2, on 2026-10-25: Q is heat put into the system and W is work done on it, so the internal-energy change is Q + W."
+        }
+      ],
+      "note": "The selected statement is source-supported; numerical inputs and teaching scenarios in this article are original assumptions."
+    },
+    {
+      "id": "claim-2",
+      "section": "article-distinguish-energy-from-temperature",
+      "kind": "definition",
+      "statement": "Energy and heat use joules, power uses watts and heat capacity uses joules per kelvin.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Chapter 4, tables 3–4, energy, power and heat-capacity rows",
+          "access": "read",
+          "note": "Read the cited passage in the source page during preparation on 2026-10-25."
+        }
+      ],
+      "note": "The selected statement is source-supported; numerical inputs and teaching scenarios in this article are original assumptions."
+    },
+    {
+      "id": "claim-3",
+      "section": "article-keep-the-direction-of-heat-flow",
+      "kind": "model",
+      "statement": "Spontaneous heat transfer is from hotter to colder, and total entropy does not decrease for an isolated whole.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Section 44–6, equations 44.19 and accompanying discussion of irreversible transfer",
+          "access": "read",
+          "note": "Read the cited passage in the source page during preparation on 2026-10-25."
+        }
+      ],
+      "note": "The selected statement is source-supported; numerical inputs and teaching scenarios in this article are original assumptions."
+    }
+  ],
+  "examples": [
+    {
+      "check": "physics-exercises",
+      "result": "passed",
+      "scope": "Recompute published resistor, force, flux, probability, level, thermal and lattice examples; check the reading prerequisite order.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "1a60602b9c1f20f0ca08dab2b5fd0fc24eb6940cbea65611fc977a4aa7f84a8b"
+    }
+  ],
+  "limitations": [
+    "Introductory assistant assessment of selected claims; independent human review remains pending.",
+    "All numerical devices, amplitudes, levels and material parameters are stipulated examples, not measured properties or implementation specifications."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

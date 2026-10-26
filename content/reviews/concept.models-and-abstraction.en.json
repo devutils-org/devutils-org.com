@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "id": "concept.models-and-abstraction",
+  "locale": "en",
+  "contentHash": "d6ade604882cbfc3377a24c8f13da1e5747e83c172e7d19e22b6835086dc046f",
+  "assessedAt": "2026-10-25",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "claim-1",
+      "section": "article-choose-a-question-before-choosing-a-model",
+      "kind": "model",
+      "statement": "Specifications expose component behavior while abstracting implementation details.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Section 5.1.1, Role of Specifications",
+          "access": "read",
+          "note": "Re-read the cited passage and the expanded article during the pedagogical revision on 2026-10-25."
+        }
+      ],
+      "note": "Selected source claim assessed in the expanded explanation. Packing, conversion, signal, codebook and timing values are original teaching scenarios; their arithmetic is checked separately."
+    },
+    {
+      "id": "claim-2",
+      "section": "article-connect-levels-of-description",
+      "kind": "interpretation",
+      "statement": "Checking a finite input domain has a narrower scope than a universal proof or a physical specification.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Section 1.1, printed pp. 5–6",
+          "access": "read",
+          "note": "Re-read the cited passage and the expanded article during the pedagogical revision on 2026-10-25."
+        }
+      ],
+      "note": "Selected source claim assessed in the expanded explanation. Packing, conversion, signal, codebook and timing values are original teaching scenarios; their arithmetic is checked separately."
+    },
+    {
+      "id": "composition",
+      "section": "article-compose-two-small-rules",
+      "kind": "model",
+      "statement": "A composed guarantee requires each component output to meet the next component input assumptions; the example adds two stipulated worst-case delays.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Sections 5.1.1 and 5.3.2, component specifications and combinational composition",
+          "access": "read",
+          "note": "Read the component-specification and combinational-composition passages. The 2 μs plus 3 μs values are original, not quoted component data."
+        }
+      ],
+      "note": "The 5 μs bound is derived for the stated stable-input, compatible-interface model; it is not measured hardware timing."
+    }
+  ],
+  "examples": [
+    {
+      "check": "foundation-exercises",
+      "result": "passed",
+      "scope": "Expanded packing, conversion, binary-capacity and encoding exercises; receiver and missed-pulse tables; interface mismatch, composed delay and capstone decoding; path prerequisite order.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "241da625278ff8491b37330155fc675ab5a65ce273179fcfd078f82e71198493"
+    }
+  ],
+  "limitations": [
+    "Introductory teaching chapters with selected assistant source assessments; independent human review remains pending.",
+    "Worked values, receiver thresholds and timing bounds are stipulated examples. Tests establish only the declared arithmetic and model behavior, not a physical implementation."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "id": "concept.solids-and-energy-bands",
+  "locale": "en",
+  "contentHash": "bbe5135e1d73a10dd23991eef2c53a11b47a6001ff6dea2c04a2d70e6234d724",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "claim-1",
+      "section": "article-begin-with-a-repeating-model",
+      "kind": "model",
+      "statement": "An ideal lattice can be modeled as regularly spaced atomic sites coupled through quantum amplitudes.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Section 13–1, one-dimensional lattice construction and nearest-neighbor assumption",
+          "access": "read",
+          "note": "Read the cited passage in the source page during preparation on 2026-10-25."
+        }
+      ],
+      "note": "The selected statement is source-supported; numerical inputs and teaching scenarios in this article are original assumptions."
+    },
+    {
+      "id": "claim-2",
+      "section": "article-move-from-levels-to-bands",
+      "kind": "model",
+      "statement": "The ideal lattice model has ranges of allowed energies; semiconductors have electron and hole excitations separated by a gap energy.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Sections 13–2 and 13–4, allowed bands; paired with source 2, section 14–1",
+          "access": "read",
+          "note": "Read the cited passage in the source page during preparation on 2026-10-25."
+        },
+        {
+          "source": 2,
+          "locator": "Section 14–1, electron-hole pairs and minimum gap energy",
+          "access": "read",
+          "note": "Read the passage defining gap energy and the accompanying energy-level description."
+        }
+      ],
+      "note": "The selected statement is source-supported; numerical inputs and teaching scenarios in this article are original assumptions."
+    },
+    {
+      "id": "claim-3",
+      "section": "article-identify-carriers-without-predicting-a-chip",
+      "kind": "definition",
+      "statement": "In the semiconductor description, electrons and holes act as negative and positive carriers; holes represent missing electrons rather than protons.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Section 14–1, missing-electron motion and positive and negative carriers",
+          "access": "read",
+          "note": "Read the cited passage in the source page during preparation on 2026-10-25."
+        }
+      ],
+      "note": "The selected statement is source-supported; numerical inputs and teaching scenarios in this article are original assumptions."
+    }
+  ],
+  "examples": [
+    {
+      "check": "physics-exercises",
+      "result": "passed",
+      "scope": "Recompute published resistor, force, flux, probability, level, thermal and lattice examples; check the reading prerequisite order.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "1a60602b9c1f20f0ca08dab2b5fd0fc24eb6940cbea65611fc977a4aa7f84a8b"
+    }
+  ],
+  "limitations": [
+    "Introductory assistant assessment of selected claims; independent human review remains pending.",
+    "All numerical devices, amplitudes, levels and material parameters are stipulated examples, not measured properties or implementation specifications.",
+    "Follow-up editorial review on 2026-10-26: the continuation now links to the published chemistry/materials route. The worked examples and cited source claims are unchanged."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

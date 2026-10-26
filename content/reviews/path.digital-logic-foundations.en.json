@@ -31,14 +31,14 @@
       "check": "path-order",
       "result": "passed",
       "scope": "Each prerequisite appears before its dependent step.",
-      "checkedAt": "2026-10-24",
+      "checkedAt": "2026-10-26",
       "evidenceHash": "68ba1677970775e4d536b26ba7a7e5eb254e531062eacf8dec80b2be06a2e4ca"
     },
     {
       "check": "worked-exercises",
       "result": "passed",
       "scope": "Completion answers for selection, addition, capacity and counter sequence.",
-      "checkedAt": "2026-10-24",
+      "checkedAt": "2026-10-26",
       "evidenceHash": "9ec05be3161b8a19b4bfa494a3ae591b82bd9d42b69fd6f32c4df49533a122af"
     }
   ],

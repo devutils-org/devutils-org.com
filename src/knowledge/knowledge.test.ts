@@ -36,7 +36,7 @@ test('Markdown escapes HTML and rejects executable URLs while giving headings st
 })
 test('published manifest is deterministic, preserves English-only articles and omits drafts', () => {
   const pages = knowledgePages(entries)
-  assert.equal(pages.length, 28)
+  assert.equal(pages.length, 16 + entries.filter(e => e.status === 'published').length)
   assert.deepEqual(pages, knowledgePages([...entries].reverse()))
   assert.ok(pages.some(p => p.route === '/knowledge/computing-stack/'))
   assert.ok(!pages.some(p => p.route === `/fr${entryRoute(concept)}`))

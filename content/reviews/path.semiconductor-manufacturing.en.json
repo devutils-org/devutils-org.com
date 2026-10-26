@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "id": "path.semiconductor-manufacturing",
+  "locale": "en",
+  "contentHash": "1cb039570acb362e622846b76114fbf706b82a91615cf324c00ab9e0a6a2cf97",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "roles",
+      "section": "article-follow-the-six-lessons",
+      "kind": "interpretation",
+      "statement": "The route distinguishes material formation, lithographic definition, modification and later assembly/test rather than equating all operations.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "PDF pages 6–10, pattern transfer and implant sequence; the learning order is editorial",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    },
+    {
+      "id": "assembly",
+      "section": "article-check-the-distinctions-before-continuing",
+      "kind": "interpretation",
+      "statement": "Assembly and final testing have specified acceptance roles; the cohort fractions are original arithmetic, not manufacturing data.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 5,
+          "locator": "Summary and electrical/functional test stages",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "manufacturing-exercises",
+      "result": "passed",
+      "scope": "Wafer area ratios, resist polarity and overlay margins, film growth and piecewise removal, dose/depth/activation bookkeeping, line/via resistance, conditional yield and the ordered prerequisite chain.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "f43eded416fb1e2c9d71f7c5eae8120dc768d27dc69a9b5ae7044540770429bb"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review is pending.",
+    "Constant rates, uniform profiles, ideal masks and stated acceptance populations are models, not validated tool settings, measured process results or a complete device flow. Historical teaching sources illustrate principles rather than current technology-node capabilities.",
+    "Continuation link updated to the published semiconductor-devices route on 2026-10-26; prior subject claims and numerical examples are unchanged."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

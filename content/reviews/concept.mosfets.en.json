@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "id": "concept.mosfets",
+  "locale": "en",
+  "contentHash": "5c5b4aebc1b7254760b91d0b8afb0b145a83498639fb08c9232e93d9a53d429e",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "structure",
+      "section": "article-control-a-channel-with-an-electric-field",
+      "kind": "model",
+      "statement": "A MOSFET has an insulated gate controlling a channel, with a body connection in addition to source, drain and gate.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "MOSFET Physical Structure and Back Gate",
+          "access": "read",
+          "note": "Inspected the cited primary teaching or manufacturer passage during preparation; numerical exercises are original."
+        }
+      ],
+      "note": "Assessment covers the selected scoped claim, not every sentence."
+    },
+    {
+      "id": "regions",
+      "section": "article-separate-threshold-from-strong-conduction",
+      "kind": "model",
+      "statement": "The introductory linear/saturation boundary is VDS = VGS − VTH for the stated NMOS bias assumptions.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "MOSFET On/Off Conditions",
+          "access": "read",
+          "note": "Inspected the cited primary teaching or manufacturer passage during preparation; numerical exercises are original."
+        }
+      ],
+      "note": "Assessment covers the selected scoped claim, not every sentence."
+    },
+    {
+      "id": "threshold",
+      "section": "article-separate-threshold-from-strong-conduction",
+      "kind": "model",
+      "statement": "Threshold and on-resistance specifications have different measurement conditions and do not establish identical conduction quality.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "Introduction, Table 1: VGS(th) at 250 μA versus RDS(on) at specified larger gate voltages",
+          "access": "read",
+          "note": "Inspected the cited primary teaching or manufacturer passage during preparation; numerical exercises are original."
+        }
+      ],
+      "note": "Assessment covers the selected scoped claim, not every sentence."
+    }
+  ],
+  "examples": [
+    {
+      "check": "devices-exercises",
+      "result": "passed",
+      "scope": "Published charge-balance, diode, gate-bias, NAND, density and power tables; worked energy and duty-cycle answers; prerequisite ordering.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "bc30215ca245609230e279cd8f529ebed4b7be2ed0629b7fbcdf20d278614f00"
+    }
+  ],
+  "limitations": [
+    "Independent human review remains pending.",
+    "Abrupt depletion, ideal exponential diodes, switch resistances, lumped capacitance and independent standby blocks are teaching models with supplied inputs, not validated device specifications.",
+    "Leakage mechanisms and scaling outcomes depend on technology and operating conditions; no universal quantitative process trend is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

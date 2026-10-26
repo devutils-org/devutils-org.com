@@ -47,7 +47,7 @@
       "check": "gate-model",
       "result": "passed",
       "scope": "All AND/OR/XOR input combinations and NOT independence from B.",
-      "checkedAt": "2026-10-24",
+      "checkedAt": "2026-10-26",
       "evidenceHash": "5ccfaf37c52ea383e043cf762db441fcda4221ce0477b39941800b26fdd0f251"
     }
   ],

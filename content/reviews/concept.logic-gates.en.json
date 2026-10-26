@@ -63,14 +63,14 @@
       "check": "digital-tables",
       "result": "passed",
       "scope": "Four rows of NAND, NOR and XNOR.",
-      "checkedAt": "2026-10-24",
+      "checkedAt": "2026-10-26",
       "evidenceHash": "0e6506f2b043710ecb5e43e8c91dc89624c549eeca81aa29e855d95a844c0f69"
     },
     {
       "check": "worked-exercises",
       "result": "passed",
       "scope": "NAND reconstruction and indicator-rule substitutions.",
-      "checkedAt": "2026-10-24",
+      "checkedAt": "2026-10-26",
       "evidenceHash": "9ec05be3161b8a19b4bfa494a3ae591b82bd9d42b69fd6f32c4df49533a122af"
     }
   ],

@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "id": "concept.wafers-and-process-flow",
+  "locale": "en",
+  "contentHash": "062bab5c403e7ea11fd1e1dd535accf993979c070d05b326e41ccc99c1cbe764",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "substrate",
+      "section": "article-follow-a-crystal-into-wafer-form",
+      "kind": "definition",
+      "statement": "Czochralski growth produces a single-crystal ingot; slicing, surface finishing, cleaning and inspection prepare polished wafers.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Monocrystalline pulling process and five wafer-forming steps",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    },
+    {
+      "id": "layers",
+      "section": "article-separate-the-repeated-operations",
+      "kind": "interpretation",
+      "statement": "Chip fabrication builds aligned patterned layers through repeated process operations rather than one optical exposure.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Opening description and Tiny skyscrapers; the table is an original introductory organization",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    },
+    {
+      "id": "views",
+      "section": "article-read-a-top-view-and-a-cross-section",
+      "kind": "definition",
+      "statement": "A mask layout is a top view, while a fabrication sequence is interpreted through cross-sections.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "PDF page 6, Pattern Transfer Example, layout and process definitions",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    },
+    {
+      "id": "package",
+      "section": "article-begin-with-a-substrate-rather-than-a-finished-chip",
+      "kind": "definition",
+      "statement": "A package can contain one or more die and provides external mechanical, electrical and thermal interfaces.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 4,
+          "locator": "Summary, Welcome to Assembly and Test, chip attach and lid attach",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "manufacturing-exercises",
+      "result": "passed",
+      "scope": "Wafer area ratios, resist polarity and overlay margins, film growth and piecewise removal, dose/depth/activation bookkeeping, line/via resistance, conditional yield and the ordered prerequisite chain.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "f43eded416fb1e2c9d71f7c5eae8120dc768d27dc69a9b5ae7044540770429bb"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review is pending.",
+    "Constant rates, uniform profiles, ideal masks and stated acceptance populations are models, not validated tool settings, measured process results or a complete device flow. Historical teaching sources illustrate principles rather than current technology-node capabilities."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

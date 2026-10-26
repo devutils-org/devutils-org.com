@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "id": "concept.fields-and-induction",
+  "locale": "en",
+  "contentHash": "2dd212520345d0c58e883519f39672b48f84577a64d357f8292867220123aee0",
+  "assessedAt": "2026-10-25",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "claim-1",
+      "section": "article-describe-a-field",
+      "kind": "definition",
+      "statement": "An electric field assigns a vector to each position and time; the electric force on a stationary charge is q × E.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Sections 1–1 and 1–2, equation 1.1 and definition of a field",
+          "access": "read",
+          "note": "Read the cited passage in the source page during preparation on 2026-10-25."
+        }
+      ],
+      "note": "The selected statement is source-supported; numerical inputs and teaching scenarios in this article are original assumptions."
+    },
+    {
+      "id": "claim-2",
+      "section": "article-let-a-changing-flux-produce-a-voltage",
+      "kind": "model",
+      "statement": "Changing magnetic flux induces an emf; for a fixed loop the circulation of the electric field is minus the flux change rate.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Section 17–1, equations 17.1–17.3 and the fixed-circuit flux rule",
+          "access": "read",
+          "note": "Read the cited passage in the source page during preparation on 2026-10-25."
+        }
+      ],
+      "note": "The selected statement is source-supported; numerical inputs and teaching scenarios in this article are original assumptions."
+    }
+  ],
+  "examples": [
+    {
+      "check": "physics-exercises",
+      "result": "passed",
+      "scope": "Recompute published resistor, force, flux, probability, level, thermal and lattice examples; check the reading prerequisite order.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "1a60602b9c1f20f0ca08dab2b5fd0fc24eb6940cbea65611fc977a4aa7f84a8b"
+    }
+  ],
+  "limitations": [
+    "Introductory assistant assessment of selected claims; independent human review remains pending.",
+    "All numerical devices, amplitudes, levels and material parameters are stipulated examples, not measured properties or implementation specifications."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

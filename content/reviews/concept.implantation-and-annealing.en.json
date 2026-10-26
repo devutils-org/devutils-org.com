@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "id": "concept.implantation-and-annealing",
+  "locale": "en",
+  "contentHash": "71ecb496c7c94d736a8a1d53997fbd26e0d5eda574a31dd4e75a6d12d07c2c66",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "parameters",
+      "section": "article-distinguish-species-dose-and-energy",
+      "kind": "definition",
+      "statement": "Ion implantation introduces selected dopant species; penetration depends on energy, dose counts ions per area, and incidence angle affects channeling.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Slides 28–31: dopant species, accelerator, energy-dependent depth, activation and masking",
+          "access": "read",
+          "note": "Inspected the teaching slides during this correction pass."
+        },
+        {
+          "source": 2,
+          "locator": "PDF page 9: dose as ion flux multiplied by time, units per area",
+          "access": "read",
+          "note": "Rechecked the dose definition in the existing MIT source."
+        },
+        {
+          "source": 4,
+          "locator": "Lecture 28, Minimization of channeling: wafer angle and shadowing",
+          "access": "read",
+          "note": "Inspected the course discussion during this correction pass."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    },
+    {
+      "id": "dose",
+      "section": "article-relate-dose-to-a-uniform-depth-model",
+      "kind": "model",
+      "statement": "Dose is a count per area; dividing retained dose by a stipulated uniform depth gives an average concentration per volume.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "PDF page 9, Doping by Ion Implantation, dose units and Qd/Xd approximation",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    },
+    {
+      "id": "anneal",
+      "section": "article-separate-chemical-presence-from-electrical-activity",
+      "kind": "interpretation",
+      "statement": "Implantation damages the lattice and thermal treatment changes the material; ionization conditions remain distinct from merely counting impurities.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "PDF page 9, damaged region and anneal; source 3 section 14.2 supplies ionization scope",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        },
+        {
+          "source": 3,
+          "locator": "Section 14–2: donor/acceptor ionization and the complete-ionization approximation.",
+          "access": "read",
+          "note": "Inspected this complementary passage to distinguish the separate parts of the selected claim."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    },
+    {
+      "id": "integration",
+      "section": "article-account-for-the-rest-of-the-stack",
+      "kind": "interpretation",
+      "statement": "A subsequent anneal can redistribute dopants, so its effects must be considered in the process history.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "PDF page 9, anneal and diffusion of implanted dopants; no equivalent thermal-budget formula is assumed",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "manufacturing-exercises",
+      "result": "passed",
+      "scope": "Wafer area ratios, resist polarity and overlay margins, film growth and piecewise removal, dose/depth/activation bookkeeping, line/via resistance, conditional yield and the ordered prerequisite chain.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "f43eded416fb1e2c9d71f7c5eae8120dc768d27dc69a9b5ae7044540770429bb"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review is pending.",
+    "Constant rates, uniform profiles, ideal masks and stated acceptance populations are models, not validated tool settings, measured process results or a complete device flow. Historical teaching sources illustrate principles rather than current technology-node capabilities."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

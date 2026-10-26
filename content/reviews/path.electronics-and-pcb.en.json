@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "id": "path.electronics-and-pcb",
+  "locale": "en",
+  "contentHash": "e8cba8c0b09ab80ea168fab7ce26bd8e673497e386632cdf0b7fbf8339fe35d3",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "scope",
+      "section": "article-follow-the-seven-lessons",
+      "kind": "model",
+      "statement": "The route distinguishes logical connectivity from physical layout and measurement loading.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "PCB Design Workflow; measurement loading is covered by source 6",
+          "access": "read",
+          "note": "Inspected the cited teaching or manufacturer passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "Selected claim assessed under the stated assumptions; numerical inputs, netlists and worked answers are original and checked separately."
+    },
+    {
+      "id": "synthesis",
+      "section": "article-explain-the-combined-answer",
+      "kind": "model",
+      "statement": "The line exercise uses a stated real characteristic impedance and open-load voltage reflection model.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 5,
+          "locator": "The Reflection Coefficient: Doing the Math; matched, shorted and open-load cases",
+          "access": "read",
+          "note": "Inspected the general Tektronix signal-integrity tutorial during this correction pass; replaces the optical-module-specific reference."
+        }
+      ],
+      "note": "Selected claim assessed under the stated assumptions; numerical inputs, netlists and worked answers are original and checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "electronics-exercises",
+      "result": "passed",
+      "scope": "Loaded dividers, power balance, logic margins, RC responses, pin/net mappings, conductor geometry, regulator loss, droop, reflections, probe loading and ordered prerequisites.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "0ebe61c0678960e778d6dcdfcb7f4ea1b6bf97bb30f66509ddc95cb99cf306d8"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review remains pending.",
+    "Ideal DC networks, first-order RC responses, uniform conductors and lossless lines are scoped teaching models, not a validated board design or device specification.",
+    "Clearance, capacitance, propagation speed and instrument specifications are supplied exercise inputs. Actual hardware needs its component, stackup, fabrication and measurement constraints."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

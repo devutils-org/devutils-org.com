@@ -79,14 +79,14 @@
       "check": "state-traces",
       "result": "passed",
       "scope": "All six displayed register events.",
-      "checkedAt": "2026-10-24",
+      "checkedAt": "2026-10-26",
       "evidenceHash": "54ca46f11f718f0ce2a87f3ef33d1db2f8e61bc8e666ac841d76d1b747f997ac"
     },
     {
       "check": "worked-exercises",
       "result": "passed",
       "scope": "Word/address counts and payload-byte calculations.",
-      "checkedAt": "2026-10-24",
+      "checkedAt": "2026-10-26",
       "evidenceHash": "9ec05be3161b8a19b4bfa494a3ae591b82bd9d42b69fd6f32c4df49533a122af"
     }
   ],

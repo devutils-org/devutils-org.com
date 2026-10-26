@@ -1,5 +1,11 @@
 // Stable evidence IDs: records store the digest of the tests and models actually run.
 export const exampleChecks = {
+  'electronics-exercises': { file:'src/knowledge/electronics.test.ts', name:'electronics examples preserve network balance, interface and physical models, measurement loading and prerequisite order', dependencies:[] },
+  'devices-exercises': { file:'src/knowledge/devices.test.ts', name:'device examples balance junction charge, terminal biases, complementary networks and energy with ordered prerequisites', dependencies:[] },
+  'manufacturing-exercises': { file:'src/knowledge/manufacturing.test.ts', name:'manufacturing examples preserve pattern polarity, process accounting, geometry and conditional yield with ordered prerequisites', dependencies:[] },
+  'materials-exercises': { file:'src/knowledge/materials.test.ts', name:'materials examples conserve charge, atoms and shared counts and respect sample geometry and prerequisites', dependencies:[] },
+  'physics-exercises': { file:'src/knowledge/physics.test.ts', name:'physics examples respect circuit, field, quantum, energy and lattice models and reading prerequisites', dependencies:[] },
+  'foundation-exercises': { file:'src/knowledge/foundations.test.ts', name:'foundation examples match their stated units, encodings, thresholds and prerequisite order', dependencies:[] },
   'digital-tables': { file:'src/knowledge/editorial.test.ts', name:'published gate, selector and full-adder tables cover all inputs and match their specifications', dependencies:[] },
   'state-traces': { file:'src/knowledge/editorial.test.ts', name:'published storage and counter traces follow the stated edge and enable contracts', dependencies:[] },
   'path-order': { file:'src/knowledge/editorial.test.ts', name:'the digital-logic path teaches every prerequisite before a dependent step', dependencies:[] },

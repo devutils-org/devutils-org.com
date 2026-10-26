@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "id": "concept.electricity-basics",
+  "locale": "en",
+  "contentHash": "460afb781950255d27b967e2cf22f20304dc9a1ea73402ef1b8f4b46f3aa1799",
+  "assessedAt": "2026-10-25",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "claim-1",
+      "section": "article-name-the-quantities",
+      "kind": "definition",
+      "statement": "Electrical charge, potential difference, resistance and power have distinct SI units.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Chapter 4, tables 3–4, coulomb, volt, ohm, watt and joule rows",
+          "access": "read",
+          "note": "Read the cited passage in the source page during preparation on 2026-10-25."
+        }
+      ],
+      "note": "The selected statement is source-supported; numerical inputs and teaching scenarios in this article are original assumptions."
+    },
+    {
+      "id": "claim-2",
+      "section": "article-solve-an-ideal-circuit",
+      "kind": "model",
+      "statement": "The ideal resistor obeys V = R × I; the circuit abstraction replaces spatial fields with node voltages and branch currents.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Sections 4.2–4.3, lumped-element circuit and resistor constraint",
+          "access": "read",
+          "note": "Read the cited passage in the source page during preparation on 2026-10-25."
+        }
+      ],
+      "note": "The selected statement is source-supported; numerical inputs and teaching scenarios in this article are original assumptions."
+    }
+  ],
+  "examples": [
+    {
+      "check": "physics-exercises",
+      "result": "passed",
+      "scope": "Recompute published resistor, force, flux, probability, level, thermal and lattice examples; check the reading prerequisite order.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "1a60602b9c1f20f0ca08dab2b5fd0fc24eb6940cbea65611fc977a4aa7f84a8b"
+    }
+  ],
+  "limitations": [
+    "Introductory assistant assessment of selected claims; independent human review remains pending.",
+    "All numerical devices, amplitudes, levels and material parameters are stipulated examples, not measured properties or implementation specifications."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

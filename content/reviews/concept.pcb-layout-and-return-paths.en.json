@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "id": "concept.pcb-layout-and-return-paths",
+  "locale": "en",
+  "contentHash": "2b4a6d96ad78f5f81fc73b53a64182d8460a7023448cb0480322d5eef9788862",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "geometry",
+      "section": "article-reuse-the-resistance-model-carefully",
+      "kind": "model",
+      "statement": "The uniform DC model uses resistance rho L/A and rectangular area wt; it does not supply a current-capacity rating.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Resistance subsection, equation 9.9",
+          "access": "read",
+          "note": "Inspected the cited teaching or manufacturer passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "Selected claim assessed under the stated assumptions; numerical inputs, netlists and worked answers are original and checked separately."
+    },
+    {
+      "id": "returns",
+      "section": "article-follow-the-return-path",
+      "kind": "model",
+      "statement": "Return current completes the circuit and reference-plane geometry affects its distribution and coupling.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Single Ground Plane and return-current discussion",
+          "access": "read",
+          "note": "Inspected the cited teaching or manufacturer passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "Selected claim assessed under the stated assumptions; numerical inputs, netlists and worked answers are original and checked separately."
+    },
+    {
+      "id": "rules",
+      "section": "article-distinguish-connection-rules-from-performance",
+      "kind": "model",
+      "statement": "PCB rules and checks enforce specified geometric/connectivity constraints rather than all electrical performance.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "Design Rules and Design Rules Check",
+          "access": "read",
+          "note": "Inspected the cited teaching or manufacturer passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "Selected claim assessed under the stated assumptions; numerical inputs, netlists and worked answers are original and checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "electronics-exercises",
+      "result": "passed",
+      "scope": "Loaded dividers, power balance, logic margins, RC responses, pin/net mappings, conductor geometry, regulator loss, droop, reflections, probe loading and ordered prerequisites.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "0ebe61c0678960e778d6dcdfcb7f4ea1b6bf97bb30f66509ddc95cb99cf306d8"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review remains pending.",
+    "Ideal DC networks, first-order RC responses, uniform conductors and lossless lines are scoped teaching models, not a validated board design or device specification.",
+    "Clearance, capacitance, propagation speed and instrument specifications are supplied exercise inputs. Actual hardware needs its component, stackup, fabrication and measurement constraints."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

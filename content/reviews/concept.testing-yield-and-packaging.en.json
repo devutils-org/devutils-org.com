@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "id": "concept.testing-yield-and-packaging",
+  "locale": "en",
+  "contentHash": "fb6d58e27632db534827a0a063650cc40332a41080c40e030bc581937730aa3d",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "screening",
+      "section": "article-follow-screening-and-assembly",
+      "kind": "definition",
+      "statement": "Wafer probing electrically screens individual die before packaging, and assembly/test adds subsequent acceptance operations.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Wafer probing and front-of-line descriptions",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    },
+    {
+      "id": "interfaces",
+      "section": "article-separate-making-a-structure-from-accepting-a-product",
+      "kind": "definition",
+      "statement": "Packages provide connections and protection, while later electrical and thermal tests target the assembled product.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Summary, Chip Attach, Lid Attach, Burn In, Test and Process Platform Validation",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    },
+    {
+      "id": "scope",
+      "section": "article-keep-a-test-result-tied-to-its-conditions",
+      "kind": "interpretation",
+      "statement": "A test compares behavior with specified conditions; the cohort-yield and probability examples are mathematical teaching models, not factory measurements.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Step 5, performance to specifications; Step 6, simulated end-customer conditions",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "manufacturing-exercises",
+      "result": "passed",
+      "scope": "Wafer area ratios, resist polarity and overlay margins, film growth and piecewise removal, dose/depth/activation bookkeeping, line/via resistance, conditional yield and the ordered prerequisite chain.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "f43eded416fb1e2c9d71f7c5eae8120dc768d27dc69a9b5ae7044540770429bb"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review is pending.",
+    "Constant rates, uniform profiles, ideal masks and stated acceptance populations are models, not validated tool settings, measured process results or a complete device flow. Historical teaching sources illustrate principles rather than current technology-node capabilities.",
+    "Continuation link updated to the published semiconductor-devices route on 2026-10-26; prior subject claims and numerical examples are unchanged."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

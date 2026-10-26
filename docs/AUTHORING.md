@@ -5,6 +5,27 @@ complete editorial map; linked articles are published, other subjects are planne
 The section overviews are bilingual. Static search, timeline/figure filters, a complete introductory path and a gate lab
 are available. JavaScript enhances those controls; the content remains readable without it.
 
+## Teaching depth
+
+Write for the declared starting level. A chapter that starts from zero should
+introduce the notation and vocabulary before using them, explain the question a
+model answers, and work through the reasoning rather than jump from a formula to
+its result. Use familiar examples before asking the reader to transfer the idea
+to computing.
+
+Include a worked example with intermediate steps and units where applicable,
+a common mistake or boundary case with an explanation, and exercises whose
+answers explain the method. Connect the conclusion to the next chapter. A
+learning path should also include a synthesis exercise that combines its topics.
+There is no target word count: add detail where an explanation otherwise relies
+on an untaught concept; avoid padding a complete explanation.
+
+Keep necessary assumptions beside the model they qualify. Put source locators
+and audit commentary in the source/verification sections instead of repeating
+assessment narration in the teaching prose. New worked examples need scoped
+reproducible checks where arithmetic or an executable model can verify them;
+those checks do not replace assessment of the explanatory claims.
+
 ## Files and metadata
 
 Add a Markdown file anywhere under `content/`; its location is organizational.

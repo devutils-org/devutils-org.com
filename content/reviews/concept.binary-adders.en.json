@@ -2,8 +2,8 @@
   "version": 1,
   "id": "concept.binary-adders",
   "locale": "en",
-  "contentHash": "9cc45012d2296cb255bdc8deb39dcf14d84867da2e954a734dd4a923000affe1",
-  "assessedAt": "2026-10-24",
+  "contentHash": "bc622873fbdc5790ab62d7eaf9d085222fc61e89f93a228e26f261f795b75de2",
+  "assessedAt": "2026-10-25",
   "assessor": {
     "name": "Codex",
     "kind": "assistant"
@@ -17,16 +17,10 @@
       "assessment": "supported",
       "citations": [
         {
-          "source": 3,
+          "source": 2,
           "locator": "PDF pages 39–42, 1-bit Full Adder and 4-bit Adder",
           "access": "read",
-          "note": "Source passage read during this assessment."
-        },
-        {
-          "source": 1,
-          "locator": "Full-adder/ripple-carry notes",
-          "access": "blocked",
-          "note": "Direct PDF retrieval failed during this audit (HTTP 500); not counted as read."
+          "note": "Re-read the accessible MIT or Cornell passage during the follow-up assessment on 2026-10-25."
         }
       ],
       "note": "An arithmetic invariant independently checks all eight displayed rows."
@@ -39,10 +33,10 @@
       "assessment": "supported",
       "citations": [
         {
-          "source": 3,
+          "source": 2,
           "locator": "PDF pages 41–43, cascaded adder and carry out",
           "access": "read",
-          "note": "Source passage read during this assessment."
+          "note": "Re-read the accessible MIT or Cornell passage during the follow-up assessment on 2026-10-25."
         }
       ],
       "note": "The 13+6 column trace is original and independently recomputed."
@@ -55,10 +49,10 @@
       "assessment": "supported",
       "citations": [
         {
-          "source": 3,
+          "source": 2,
           "locator": "PDF pages 44–48, two’s-complement arithmetic",
           "access": "read",
-          "note": "Source passage read during this assessment."
+          "note": "Re-read the accessible MIT or Cornell passage during the follow-up assessment on 2026-10-25."
         }
       ],
       "note": "The concrete interpretation is derived and recomputed; the cited slides provide the arithmetic context, not this exact worked example."
@@ -71,10 +65,10 @@
       "assessment": "supported",
       "citations": [
         {
-          "source": 2,
+          "source": 1,
           "locator": "Carry-select and carry-lookahead sections",
           "access": "read",
-          "note": "Source passage read during this assessment."
+          "note": "Re-read the accessible MIT or Cornell passage during the follow-up assessment on 2026-10-25."
         }
       ],
       "note": "No measured speedup or technology-specific bound is asserted."
@@ -85,19 +79,19 @@
       "check": "digital-tables",
       "result": "passed",
       "scope": "Full-adder rows and all four carry-propagation columns.",
-      "checkedAt": "2026-10-24",
+      "checkedAt": "2026-10-26",
       "evidenceHash": "0e6506f2b043710ecb5e43e8c91dc89624c549eeca81aa29e855d95a844c0f69"
     },
     {
       "check": "worked-exercises",
       "result": "passed",
       "scope": "Unsigned wrap and four-bit signed interpretation.",
-      "checkedAt": "2026-10-24",
+      "checkedAt": "2026-10-26",
       "evidenceHash": "9ec05be3161b8a19b4bfa494a3ae591b82bd9d42b69fd6f32c4df49533a122af"
     }
   ],
   "limitations": [
-    "The first reference could not be re-read during this audit; accessible Cornell material supports the adder construction.",
+    "The earlier MIT student-notes URL was removed after retrieval failures; the retained MIT OCW and Cornell sources support the selected claims.",
     "No physical adder timing, area or power was measured."
   ],
   "humanReview": {

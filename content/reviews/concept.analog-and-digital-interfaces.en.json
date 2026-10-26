@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "id": "concept.analog-and-digital-interfaces",
+  "locale": "en",
+  "contentHash": "b233bd377d47d1d5defbf2d5affe5c71c46f1393c7efb62cf0ac6d4dbf26b960",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "levels",
+      "section": "article-read-four-logic-level-specifications",
+      "kind": "model",
+      "statement": "Output guarantees must meet receiver input thresholds, with the differences providing static noise margins.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Single-Ended Signals, VOH/VOL/VIH/VIL definitions and compatibility inequalities",
+          "access": "read",
+          "note": "Inspected the cited teaching or manufacturer passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "Selected claim assessed under the stated assumptions; numerical inputs, netlists and worked answers are original and checked separately."
+    },
+    {
+      "id": "settling",
+      "section": "article-follow-a-capacitor-through-a-resistor",
+      "kind": "model",
+      "statement": "An initially uncharged ideal RC network approaches its step input exponentially with time constant RC.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Charging a Capacitor, equations 10.8–10.10",
+          "access": "read",
+          "note": "Inspected the cited teaching or manufacturer passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "Selected claim assessed under the stated assumptions; numerical inputs, netlists and worked answers are original and checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "electronics-exercises",
+      "result": "passed",
+      "scope": "Loaded dividers, power balance, logic margins, RC responses, pin/net mappings, conductor geometry, regulator loss, droop, reflections, probe loading and ordered prerequisites.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "0ebe61c0678960e778d6dcdfcb7f4ea1b6bf97bb30f66509ddc95cb99cf306d8"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review remains pending.",
+    "Ideal DC networks, first-order RC responses, uniform conductors and lossless lines are scoped teaching models, not a validated board design or device specification.",
+    "Clearance, capacitance, propagation speed and instrument specifications are supplied exercise inputs. Actual hardware needs its component, stackup, fabrication and measurement constraints."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

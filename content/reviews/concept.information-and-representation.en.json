@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "id": "concept.information-and-representation",
+  "locale": "en",
+  "contentHash": "9864ac7bd6a4d46f52fe708ad93d294461db6d7adab5df94cb3ad2b23b880dd4",
+  "assessedAt": "2026-10-25",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "claim-1",
+      "section": "article-count-distinguishable-possibilities",
+      "kind": "definition",
+      "statement": "Fixed-width binary codes have a finite number of distinct patterns.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Sections 3.1–3.2, fixed-length encodings",
+          "access": "read",
+          "note": "Re-read the cited passage and the expanded article during the pedagogical revision on 2026-10-25."
+        }
+      ],
+      "note": "Selected source claim assessed in the expanded explanation. Packing, conversion, signal, codebook and timing values are original teaching scenarios; their arithmetic is checked separately."
+    },
+    {
+      "id": "claim-2",
+      "section": "article-read-an-unsigned-binary-number",
+      "kind": "definition",
+      "statement": "Unsigned binary assigns powers-of-two positional weights.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Section 3.2.1.1, Binary Integers",
+          "access": "read",
+          "note": "Re-read the cited passage and the expanded article during the pedagogical revision on 2026-10-25."
+        }
+      ],
+      "note": "Selected source claim assessed in the expanded explanation. Packing, conversion, signal, codebook and timing values are original teaching scenarios; their arithmetic is checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "foundation-exercises",
+      "result": "passed",
+      "scope": "Expanded packing, conversion, binary-capacity and encoding exercises; receiver and missed-pulse tables; interface mismatch, composed delay and capstone decoding; path prerequisite order.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "241da625278ff8491b37330155fc675ab5a65ce273179fcfd078f82e71198493"
+    }
+  ],
+  "limitations": [
+    "Introductory teaching chapters with selected assistant source assessments; independent human review remains pending.",
+    "Worked values, receiver thresholds and timing bounds are stipulated examples. Tests establish only the declared arithmetic and model behavior, not a physical implementation."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

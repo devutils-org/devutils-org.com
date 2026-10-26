@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "id": "concept.photolithography-and-alignment",
+  "locale": "en",
+  "contentHash": "5edc8f4c41a9d6bdab190bf0b83cb36c818a44d221dc9edc978eda5c2891bcd4",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "polarity",
+      "section": "article-state-the-resist-polarity",
+      "kind": "definition",
+      "statement": "Positive and negative resists differ in whether exposure increases or decreases developer solubility.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Photoresist coating, response to ultraviolet light",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    },
+    {
+      "id": "transfer",
+      "section": "article-use-light-to-define-a-temporary-pattern",
+      "kind": "definition",
+      "statement": "Light and development pattern resist; transferring that pattern into an underlying film is a separate operation.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 4,
+          "locator": "PDF pages 6–8, developed photoresist, oxide etch and resist strip",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    },
+    {
+      "id": "overlay",
+      "section": "article-distinguish-feature-size-from-position",
+      "kind": "interpretation",
+      "statement": "Layer-to-layer alignment is a requirement separate from the pattern dimensions.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "Tiny skyscrapers, overlay definition; the interval margins are original calculations",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    },
+    {
+      "id": "optics",
+      "section": "article-include-the-next-process-in-the-requirement",
+      "kind": "interpretation",
+      "statement": "Pattern transfer depends on exposure and process conditions; wavelength alone does not specify the complete process.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "What is chip lithography? and numerical-aperture discussion; no quantitative resolution formula is asserted",
+          "access": "read",
+          "note": "Inspected the specified primary-source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The selected claim is assessed within the introductory scope. Numerical dimensions, rates, profiles and populations are original teaching inputs, checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "manufacturing-exercises",
+      "result": "passed",
+      "scope": "Wafer area ratios, resist polarity and overlay margins, film growth and piecewise removal, dose/depth/activation bookkeeping, line/via resistance, conditional yield and the ordered prerequisite chain.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "f43eded416fb1e2c9d71f7c5eae8120dc768d27dc69a9b5ae7044540770429bb"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review is pending.",
+    "Constant rates, uniform profiles, ideal masks and stated acceptance populations are models, not validated tool settings, measured process results or a complete device flow. Historical teaching sources illustrate principles rather than current technology-node capabilities."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

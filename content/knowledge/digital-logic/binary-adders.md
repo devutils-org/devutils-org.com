@@ -7,12 +7,10 @@ area: digital-logic
 title: Binary adders
 summary: Derive a full adder, follow carries through four bits, and distinguish unsigned carry from signed overflow.
 status: published
-updated: 2026-10-24
+updated: 2026-10-25
 prerequisites: [concept.combinational-logic]
 related: [concept.sequential-logic]
 sources:
-  - title: MIT Computation Structures, student notes — full adders and ripple carry
-    url: https://6191.mit.edu/_static/fall24/resources/references/6004_student_notes_FA20.pdf
   - title: MIT OpenCourseWare, Computation Structures — adder design tradeoffs
     url: https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/pages/c8/c8s1/
   - title: Cornell CS 3410, Gates and Logic — definitions and arithmetic
@@ -84,6 +82,6 @@ A ripple-carry design connects each stage’s carry to the next stage. The logic
 
 ## Exercise and answer
 
-Add four-bit 1111 and 0001 with an initial carry of 0. Every position produces sum 0 and passes carry 1 to the next position after the first stage. The complete unsigned result is 10000; the retained four-bit result is 0000.
+Add four-bit 1111 and 0001 with an initial carry of 0. At position 0, 1 + 1 + 0 produces sum 0 and carry 1. Each higher position then adds 1 + 0 + 1, again producing sum 0 and carry 1. The complete unsigned result is 10000; the retained four-bit result is 0000.
 
-The column traces and numeric examples are original. The references explain the full-adder construction and alternative carry organizations. Continue with [memory and registers](/knowledge/digital-logic/memory-and-registers/) to preserve a computed result between operations.
+Continue with [memory and registers](/knowledge/digital-logic/memory-and-registers/) to preserve a computed result between operations.

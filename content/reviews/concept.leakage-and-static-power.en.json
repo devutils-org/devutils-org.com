@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "id": "concept.leakage-and-static-power",
+  "locale": "en",
+  "contentHash": "62e4d34ee3ca12b61ee0cfefc63d68309f11d2961a2f80313ceff7ca674d8437",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "conditions",
+      "section": "article-replace-the-perfectly-open-switch",
+      "kind": "model",
+      "statement": "Real MOSFETs have gate and drain-source leakage specified under particular voltage and temperature conditions.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Introduction and Table 1, leakage definitions and test conditions",
+          "access": "read",
+          "note": "Inspected the cited primary teaching or manufacturer passage during preparation; numerical exercises are original."
+        }
+      ],
+      "note": "Assessment covers the selected scoped claim, not every sentence."
+    },
+    {
+      "id": "static",
+      "section": "article-convert-a-standby-current-into-power-and-energy",
+      "kind": "model",
+      "statement": "Static supply power is voltage times total supply current, with distinct rail contributions summed as power.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "CMOS Power Consumption and Cpd Calculation, printed page 4–27, equations 2–3",
+          "access": "read",
+          "note": "Inspected the cited primary teaching or manufacturer passage during preparation; numerical exercises are original."
+        }
+      ],
+      "note": "Assessment covers the selected scoped claim, not every sentence."
+    },
+    {
+      "id": "mechanisms",
+      "section": "article-distinguish-the-current-paths",
+      "kind": "model",
+      "statement": "Reverse-biased junction leakage contributes to CMOS static current; it is distinct from charging current.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "CMOS Power Consumption and Cpd Calculation, printed pages 4–26 through 4–28, static and dynamic current descriptions",
+          "access": "read",
+          "note": "Inspected the cited primary teaching or manufacturer passage during preparation; numerical exercises are original."
+        }
+      ],
+      "note": "Assessment covers the selected scoped claim, not every sentence."
+    },
+    {
+      "id": "weak-inversion-and-tunneling",
+      "section": "article-distinguish-the-current-paths",
+      "kind": "model",
+      "statement": "Subthreshold drain current varies approximately exponentially with gate bias in the weak-inversion model; tunneling through gate dielectric is a distinct leakage mechanism.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 4,
+          "locator": "Section 7.2, printed page 263, and section 7.4, printed page 270",
+          "access": "read",
+          "note": "Read the weak-inversion current derivation and gate-tunneling discussion on 2026-10-26. Historical node-specific numbers are not imported into this article."
+        }
+      ],
+      "note": "The lesson identifies mechanisms without asserting a universal dominant path or numerical leakage trend."
+    }
+  ],
+  "examples": [
+    {
+      "check": "devices-exercises",
+      "result": "passed",
+      "scope": "Published charge-balance, diode, gate-bias, NAND, density and power tables; worked energy and duty-cycle answers; prerequisite ordering.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "bc30215ca245609230e279cd8f529ebed4b7be2ed0629b7fbcdf20d278614f00"
+    }
+  ],
+  "limitations": [
+    "Independent human review remains pending.",
+    "Abrupt depletion, ideal exponential diodes, switch resistances, lumped capacitance and independent standby blocks are teaching models with supplied inputs, not validated device specifications.",
+    "Leakage mechanisms and scaling outcomes depend on technology and operating conditions; no universal quantitative process trend is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "id": "concept.atoms-and-bonding",
+  "locale": "en",
+  "contentHash": "575d0cae05852abb5f8359cae13005113d66eb46adb25854a5c87843087db7fd",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "identity",
+      "section": "article-count-a-neutral-atom-and-an-ion",
+      "kind": "definition",
+      "statement": "Atomic number identifies the element; proton and electron counts determine its net charge in units of e.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Opening definitions, table 2.2 and atomic charge equation",
+          "access": "read",
+          "note": "Read the specified source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The claim is scoped to the introductory model. Worked values and synthesis scenarios are original; checks recompute the stated examples rather than certify an actual material."
+    },
+    {
+      "id": "isotopes",
+      "section": "article-distinguish-an-isotope-from-an-ion",
+      "kind": "definition",
+      "statement": "Isotopes share an atomic number but differ in neutron count; mass number counts protons and neutrons.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Atomic number and mass number definitions; Isotopes subsection",
+          "access": "read",
+          "note": "Read the specified source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The claim is scoped to the introductory model. Worked values and synthesis scenarios are original; checks recompute the stated examples rather than certify an actual material."
+    },
+    {
+      "id": "valence",
+      "section": "article-focus-on-the-electrons-involved-in-bonding",
+      "kind": "interpretation",
+      "statement": "Neutral silicon has fourteen electrons, with four in its outer occupied shell in the isolated ground-state configuration.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "Atomic number 14 and Si I ground-state configuration, 3s2 3p2",
+          "access": "read",
+          "note": "Read the specified source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The claim is scoped to the introductory model. Worked values and synthesis scenarios are original; checks recompute the stated examples rather than certify an actual material."
+    },
+    {
+      "id": "bond-energy",
+      "section": "article-connect-bonding-to-energy",
+      "kind": "model",
+      "statement": "Covalent bonding can lower the energy relative to separated atoms; reversing bond formation requires energy input.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Formation of Covalent Bonds, figure 7.4 and energy required for dissociation",
+          "access": "read",
+          "note": "Read the specified source passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "The claim is scoped to the introductory model. Worked values and synthesis scenarios are original; checks recompute the stated examples rather than certify an actual material."
+    }
+  ],
+  "examples": [
+    {
+      "check": "materials-exercises",
+      "result": "passed",
+      "scope": "Atomic charge and isotope counts, bond-energy changes, cubic cell sharing, site populations, network stoichiometry, dopant concentration and neutrality, sample resistance, unit conversion and path prerequisite order.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "c7e8bc167b0ce762f7be3ba463f475df4960d2261ece4271c7cd845945710fc1"
+    }
+  ],
+  "limitations": [
+    "Selected claims assessed by an assistant; independent human review remains pending.",
+    "Numerical sample dimensions, resistivities, defect populations and candidate constraints are teaching inputs. Doping approximations require the stated activation, equilibrium and bulk assumptions; no fabrication process or real device has been validated."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

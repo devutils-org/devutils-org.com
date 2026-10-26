@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "id": "concept.units-and-scale",
+  "locale": "en",
+  "contentHash": "f608b5c845f805229ece1ec90d3004f281fe44c9e18543b78a88e277ce606b77",
+  "assessedAt": "2026-10-25",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "claim-1",
+      "section": "article-a-number-needs-a-meaning",
+      "kind": "definition",
+      "statement": "A quantity value combines a numerical value and unit.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Chapter 7, sections 7.1–7.2",
+          "access": "read",
+          "note": "Re-read the cited passage and the expanded article during the pedagogical revision on 2026-10-25."
+        }
+      ],
+      "note": "Selected source claim assessed in the expanded explanation. Packing, conversion, signal, codebook and timing values are original teaching scenarios; their arithmetic is checked separately."
+    },
+    {
+      "id": "claim-2",
+      "section": "article-move-between-scales",
+      "kind": "definition",
+      "statement": "The displayed SI prefixes denote decimal powers.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Prefixes table, kilo, mega, milli, micro and nano",
+          "access": "read",
+          "note": "Re-read the cited passage and the expanded article during the pedagogical revision on 2026-10-25."
+        }
+      ],
+      "note": "Selected source claim assessed in the expanded explanation. Packing, conversion, signal, codebook and timing values are original teaching scenarios; their arithmetic is checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "foundation-exercises",
+      "result": "passed",
+      "scope": "Expanded packing, conversion, binary-capacity and encoding exercises; receiver and missed-pulse tables; interface mismatch, composed delay and capstone decoding; path prerequisite order.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "241da625278ff8491b37330155fc675ab5a65ce273179fcfd078f82e71198493"
+    }
+  ],
+  "limitations": [
+    "Introductory teaching chapters with selected assistant source assessments; independent human review remains pending.",
+    "Worked values, receiver thresholds and timing bounds are stipulated examples. Tests establish only the declared arithmetic and model behavior, not a physical implementation."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

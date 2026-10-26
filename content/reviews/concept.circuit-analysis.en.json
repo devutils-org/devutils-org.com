@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "id": "concept.circuit-analysis",
+  "locale": "en",
+  "contentHash": "0f3cd01601d2746e65d98f009224d0c893f4b8b5d13d7e7b5e6d0e519ac50b15",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "balance",
+      "section": "article-apply-charge-and-voltage-balance",
+      "kind": "model",
+      "statement": "Kirchhoff current and voltage balance constrain a lumped circuit; the example uses ideal DC elements.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Kirchhoff’s Rules, equations 10.4–10.5 and resistor-loop sign convention",
+          "access": "read",
+          "note": "Inspected the cited teaching or manufacturer passage during preparation on 2026-10-26."
+        }
+      ],
+      "note": "Selected claim assessed under the stated assumptions; numerical inputs, netlists and worked answers are original and checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "electronics-exercises",
+      "result": "passed",
+      "scope": "Loaded dividers, power balance, logic margins, RC responses, pin/net mappings, conductor geometry, regulator loss, droop, reflections, probe loading and ordered prerequisites.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "0ebe61c0678960e778d6dcdfcb7f4ea1b6bf97bb30f66509ddc95cb99cf306d8"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review remains pending.",
+    "Ideal DC networks, first-order RC responses, uniform conductors and lossless lines are scoped teaching models, not a validated board design or device specification.",
+    "Clearance, capacitance, propagation speed and instrument specifications are supplied exercise inputs. Actual hardware needs its component, stackup, fabrication and measurement constraints."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

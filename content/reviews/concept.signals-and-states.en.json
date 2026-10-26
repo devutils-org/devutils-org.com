@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "id": "concept.signals-and-states",
+  "locale": "en",
+  "contentHash": "d5444413142940555ce57662b57158fbbc6e43c5d46069d78727b3e85639ac54",
+  "assessedAt": "2026-10-25",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "claim-1",
+      "section": "article-separate-a-signal-from-its-interpretation",
+      "kind": "model",
+      "statement": "Discrete symbols can be represented by ranges of continuous physical quantities.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Sections 5.1–5.2",
+          "access": "read",
+          "note": "Re-read the cited passage and the expanded article during the pedagogical revision on 2026-10-25."
+        }
+      ],
+      "note": "Selected source claim assessed in the expanded explanation. Packing, conversion, signal, codebook and timing values are original teaching scenarios; their arithmetic is checked separately."
+    },
+    {
+      "id": "claim-2",
+      "section": "article-include-time-in-the-contract",
+      "kind": "definition",
+      "statement": "A combinational device needs functional and timing specifications.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Section 5.3, combinational device definition",
+          "access": "read",
+          "note": "Re-read the cited passage and the expanded article during the pedagogical revision on 2026-10-25."
+        }
+      ],
+      "note": "Selected source claim assessed in the expanded explanation. Packing, conversion, signal, codebook and timing values are original teaching scenarios; their arithmetic is checked separately."
+    },
+    {
+      "id": "undefined-region",
+      "section": "article-understand-an-unspecified-value",
+      "kind": "model",
+      "statement": "The region between valid binary voltage ranges carries no guaranteed binary interpretation under this specification.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Section 5.2, discrete values and the forbidden voltage zone",
+          "access": "read",
+          "note": "Read the passage distinguishing valid binary ranges and invalid voltages during transitions."
+        }
+      ],
+      "note": "The exact thresholds and pulse samples are original examples. An unspecified input is not defined as a third message."
+    }
+  ],
+  "examples": [
+    {
+      "check": "foundation-exercises",
+      "result": "passed",
+      "scope": "Expanded packing, conversion, binary-capacity and encoding exercises; receiver and missed-pulse tables; interface mismatch, composed delay and capstone decoding; path prerequisite order.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "241da625278ff8491b37330155fc675ab5a65ce273179fcfd078f82e71198493"
+    }
+  ],
+  "limitations": [
+    "Introductory teaching chapters with selected assistant source assessments; independent human review remains pending.",
+    "Worked values, receiver thresholds and timing bounds are stipulated examples. Tests establish only the declared arithmetic and model behavior, not a physical implementation."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

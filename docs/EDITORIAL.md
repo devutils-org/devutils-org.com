@@ -1,7 +1,7 @@
 # Editorial verification standard
 
 An audit record is evidence of specific work, not a guarantee of absolute truth.
-The existing twelve published records now have source assessments by Codex. No
+Published records have scoped source assessments by Codex. No
 independent human review has been performed or claimed.
 
 ## AI provenance notice
@@ -89,7 +89,7 @@ npm test
 npm run build
 ```
 
-`verify:content` runs the six allowlisted check groups in `src/knowledge/checks.ts`.
+`verify:content` runs the twelve allowlisted check groups in `src/knowledge/checks.ts`.
 It clears old pass attestations first, requires an actual passing test (zero matches
 are not accepted), and writes results atomically after all groups pass. It never
 changes source findings, content fingerprints or human-review status.
@@ -106,7 +106,7 @@ The browser evidence remains separate:
 CHROME_PATH=/path/to/chrome node bench/reviews.ts
 ```
 
-This opens all twelve records on desktop/mobile, checks their expanded disclosures
+This opens all published records on desktop/mobile, checks their expanded disclosures
 with axe-core and verifies no-JavaScript access. It does not certify factual accuracy.
 
 ## Human signoff
@@ -124,3 +124,21 @@ A later article change invalidates that signoff together with the source assessm
 Retain prior review records for history and set the new version's human status back
 to pending unless the reviewer has reviewed the new version. No external reviewer
 has been contacted and no such signoff currently exists.
+
+## External-source availability
+
+The build's link checker validates local pages, files and anchors; it does not
+request external URLs. External timeouts therefore do not currently fail CI.
+
+Automated access to these electronics references has been reported to time out
+intermittently, even when browser access works:
+
+- https://www.analog.com/en/resources/analog-dialogue/articles/understand-ldo-concepts.html
+- https://www.analog.com/en/resources/analog-dialogue/articles/what-are-the-basic-guidelines-for-layout-design-of-mixed-signal-pcbs.html
+- https://www.analog.com/media/en/training-seminars/tutorials/mt-101.pdf
+
+If an external-link checker is introduced, track these exact URLs for manual
+availability review on timeout or access denial. Do not treat that transport
+failure as proof of a broken reference, automatically claim successful access,
+or exclude the entire domain from review. A confirmed missing page still needs
+a corrected URL or replacement source.
