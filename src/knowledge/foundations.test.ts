@@ -2,7 +2,7 @@ import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { loadEntries } from './load.ts'
 const entries=loadEntries(undefined,{allowStaleChecks:true})
-const entry=(id:string)=>{const e=entries.find(e=>e.id===id);assert.ok(e,`Missing ${id}`);return e}
+const entry=(id:string)=>{const e=entries.find(e=>e.id===id && e.locale==='en');assert.ok(e,`Missing ${id}`);return e}
 function table(id:string,header:string){
  const body=entry(id).body
  const start=body.indexOf(header)

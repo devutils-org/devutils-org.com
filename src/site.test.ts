@@ -33,7 +33,7 @@ test('the home page keeps its own body; a tool page is all generated', () => {
 test('the head carries the page, escaped, and its address', () => {
   const page = pages.find((p) => p.name === 'atfq')!
   const html = head(page)
-  assert.match(html, /<title>ATFQ — Ask the question\. Read your machine\.<\/title>/)
+  assert.match(html, /<title>ATFQ — Understand your Linux system from the terminal<\/title>/)
   assert.match(html, /content="A Linux companion for the terminal: short answers first, your machine’s real state second/)
   assert.match(html, new RegExp(`<link rel="canonical" href="https://[^"]+${route(page)}" />`))
   assert.match(html, /og\/atfq\.png/)

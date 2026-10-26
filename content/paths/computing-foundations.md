@@ -7,7 +7,7 @@ title: Computing foundations — start from zero
 summary: Five introductory chapters on reasoning, units, signals, information
   and models, before studying circuits or software.
 status: published
-updated: 2026-10-25
+updated: 2026-10-26
 prerequisites: []
 related:
   - path.physics-for-computing
@@ -32,7 +32,7 @@ sources:
 ---
 ## Start here
 
-This is the first reading route for someone beginning the computing stack from zero. You need basic addition, multiplication and division. No code editor, electronics kit or previous knowledge of circuits is required. Articles are in English, following the library's current editorial policy.
+This is the first reading route for someone beginning the computing stack from zero. You need basic addition, multiplication and division. No code editor, electronics kit or previous knowledge of circuits is required. All five chapters are available in English and French; use the language switch to follow the translated route.
 
 Allow yourself to pause at each example. Write the calculation, predict an answer, then compare it with the explanation. The sequence below is an editorial choice, not an externally certified curriculum.
 

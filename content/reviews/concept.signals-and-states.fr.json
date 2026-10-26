@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "id": "concept.signals-and-states",
+  "locale": "fr",
+  "contentHash": "b9b7bde0ffdb3f93a0087ba62f1ea18dd440a40c0dd8e0046d4d90ef3eeb3d02",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "claim-1",
+      "section": "article-d-finir-un-r-cepteur-fictif",
+      "kind": "model",
+      "statement": "Des plages de tension spécifiées représentent des symboles discrets ; les seuils numériques sont propres à cet exemple.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Sections 5.2 et 5.3, représentation et spécifications",
+          "access": "read",
+          "note": "Passage source consulté le 26 octobre 2026 et adaptation française relue dans cette campagne."
+        }
+      ],
+      "note": "Évaluation limitée à cette affirmation. Les données numériques sont des exemples pédagogiques choisis, sans mesure de matériel réel."
+    },
+    {
+      "id": "claim-2",
+      "section": "article-ajouter-une-garantie-de-temps",
+      "kind": "definition",
+      "statement": "Une garantie temporelle complète la règle fonctionnelle du composant.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Section 5.3, Combinational Devices",
+          "access": "read",
+          "note": "Passage source consulté le 26 octobre 2026 et adaptation française relue dans cette campagne."
+        }
+      ],
+      "note": "Évaluation limitée à cette affirmation. Les données numériques sont des exemples pédagogiques choisis, sans mesure de matériel réel."
+    }
+  ],
+  "examples": [
+    {
+      "check": "foundation-fr-exercises",
+      "result": "passed",
+      "scope": "Tables françaises : cartes, conversions, motifs binaires, décodage de tensions, impulsion manquée, règle logique, délais et ordre des prérequis.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "705012551dbf831277d5b8e16e67a604b91b194ebd0bad11fd0cd6bfccecbff3"
+    }
+  ],
+  "limitations": [
+    "Adaptation française par un assistant ; les passages sources restent en anglais. La relecture humaine indépendante reste à effectuer.",
+    "Les vérifications numériques portent sur les valeurs et modèles explicitement testés, pas sur chaque phrase ni sur une réalisation physique."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

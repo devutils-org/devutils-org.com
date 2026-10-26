@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "id": "concept.units-and-scale",
+  "locale": "fr",
+  "contentHash": "c32d5229e37954c4fb4dc20240edc2699516964ccd074b4baf61d0aecb745bef",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "claim-1",
+      "section": "article-donner-un-sens-au-nombre",
+      "kind": "definition",
+      "statement": "La valeur d’une grandeur associe une valeur numérique à une unité.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Chapitre 7, sections 7.1–7.2",
+          "access": "read",
+          "note": "Passage source consulté le 26 octobre 2026 et adaptation française relue dans cette campagne."
+        }
+      ],
+      "note": "Évaluation limitée à cette affirmation. Les données numériques sont des exemples pédagogiques choisis, sans mesure de matériel réel."
+    },
+    {
+      "id": "claim-2",
+      "section": "article-changer-d-chelle",
+      "kind": "definition",
+      "statement": "Les préfixes SI du tableau correspondent à des puissances de dix.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Metric (SI) Prefixes, tableau des préfixes",
+          "access": "read",
+          "note": "Passage source consulté le 26 octobre 2026 et adaptation française relue dans cette campagne."
+        }
+      ],
+      "note": "Évaluation limitée à cette affirmation. Les données numériques sont des exemples pédagogiques choisis, sans mesure de matériel réel."
+    }
+  ],
+  "examples": [
+    {
+      "check": "foundation-fr-exercises",
+      "result": "passed",
+      "scope": "Tables françaises : cartes, conversions, motifs binaires, décodage de tensions, impulsion manquée, règle logique, délais et ordre des prérequis.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "705012551dbf831277d5b8e16e67a604b91b194ebd0bad11fd0cd6bfccecbff3"
+    }
+  ],
+  "limitations": [
+    "Adaptation française par un assistant ; les passages sources restent en anglais. La relecture humaine indépendante reste à effectuer.",
+    "Les vérifications numériques portent sur les valeurs et modèles explicitement testés, pas sur chaque phrase ni sur une réalisation physique."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

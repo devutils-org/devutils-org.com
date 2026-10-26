@@ -1,5 +1,34 @@
 # SEO audit and publishing
 
+## Improvement campaign (26 October 2026)
+
+The implemented campaign, local measurements, limitations and four-week
+Search Console follow-up are recorded in
+[the campaign report](docs/reviews/seo-campaign-2026-10-26.md).
+
+The build now checks all exported HTML, canonical URLs, reciprocal language
+alternates, unique titles/descriptions, H1, social metadata, JSON-LD and sitemap
+coverage. Search utility pages and aliases are deliberately excluded from the
+sitemap. Six French foundation records provide a complete introductory route.
+The five tool pages link to relevant explanations and those explanations link
+back to investigation tools. Existing public routes are preserved.
+
+```sh
+npm run verify:content
+npm test
+npm run build
+npm run check:seo -- --report /tmp/devutils-seo-report.json
+# With the production build served on port 5179 and Chrome available:
+CHROME_PATH=/path/to/chrome npm run check:seo:browser
+# After publishing the changes:
+npm run check:seo:live
+```
+
+`CHECK_BASE_URL` and `CHECK_OUTPUT` configure the browser checks. `SITE_URL`
+configures the expected origin for build and live checks. Live verification is
+read-only and is intended to run after deployment. A local pass is not evidence
+that the production site has already received the changes.
+
 ## Audit (24 October 2026)
 
 GitHub Pages API confirms https://devutils-org.com/ as the production domain.

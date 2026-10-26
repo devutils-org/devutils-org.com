@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "id": "concept.information-and-representation",
+  "locale": "fr",
+  "contentHash": "9e27262046a2c036cfc5b2ef142c37a1cd69608b85962768c6241ba2f1ab3483",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "claim-1",
+      "section": "article-compter-les-possibilit-s",
+      "kind": "definition",
+      "statement": "Une suite de n bits possède 2^n motifs possibles.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Sections 3.1–3.2.1, codes de longueur fixe",
+          "access": "read",
+          "note": "Passage source consulté le 26 octobre 2026 et adaptation française relue dans cette campagne."
+        }
+      ],
+      "note": "Évaluation limitée à cette affirmation. Les données numériques sont des exemples pédagogiques choisis, sans mesure de matériel réel."
+    },
+    {
+      "id": "claim-2",
+      "section": "article-lire-un-entier-binaire-non-sign",
+      "kind": "definition",
+      "statement": "Une représentation binaire non signée attribue des poids positionnels en puissances de deux.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Section 3.2.1.1, Binary Integers",
+          "access": "read",
+          "note": "Passage source consulté le 26 octobre 2026 et adaptation française relue dans cette campagne."
+        }
+      ],
+      "note": "Évaluation limitée à cette affirmation. Les données numériques sont des exemples pédagogiques choisis, sans mesure de matériel réel."
+    }
+  ],
+  "examples": [
+    {
+      "check": "foundation-fr-exercises",
+      "result": "passed",
+      "scope": "Tables françaises : cartes, conversions, motifs binaires, décodage de tensions, impulsion manquée, règle logique, délais et ordre des prérequis.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "705012551dbf831277d5b8e16e67a604b91b194ebd0bad11fd0cd6bfccecbff3"
+    }
+  ],
+  "limitations": [
+    "Adaptation française par un assistant ; les passages sources restent en anglais. La relecture humaine indépendante reste à effectuer.",
+    "Les vérifications numériques portent sur les valeurs et modèles explicitement testés, pas sur chaque phrase ni sur une réalisation physique."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

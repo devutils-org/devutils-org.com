@@ -11,8 +11,11 @@ AI-generated, intended as an initial foundation and overview, and subject to err
 omissions and progressive corrections. Planned subjects remain distinct from
 published articles. The note points to a GitHub issue form prefilled with the page
 URL and prompts for the passage, proposed correction and supporting reference.
-Opening that link does not publish a report automatically. It is excluded from
-search indexing and remains visible without JavaScript.
+Opening that link does not publish a report automatically. The repeated note is
+excluded from the internal Pagefind index and marked with `data-nosnippet` on a
+supported `div` so it does not replace the article subject in Google snippets.
+This does not exclude the page from Google indexing. The full provenance notice
+remains visible without JavaScript.
 
 ## What a reader sees
 

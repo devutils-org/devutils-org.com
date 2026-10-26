@@ -1,4 +1,5 @@
 import { renderPractice, initPractice } from '../practice/practice.ts'
+import { toolReadingHtml } from '../reading.ts'
 import { tools, repoUrl, inLang } from '../tools.ts'
 import { pageOf, route, translation } from '../pages.ts'
 import { initSectionNavigation } from '../section-navigation.ts'
@@ -297,7 +298,7 @@ export function toolPageHtml(page: Page) {
     <a class="lang-switch" href="${route(other)}" hreflang="${other.lang}" lang="${other.lang}" title="${w.other.title}">${w.other.label}</a>
     ${repoLink(tool, '', `GitHub <span>${icon('arrow-up-right')}</span>`, 'github')}`,
 
-    main: contents + hero(page.hero) + mobileContents + page.sections.map((s) => (s.type === 'start' && !placed ? renderPractice(tool.id, tool.lang) : '') + render(s, tool)).join(''),
+    main: contents + hero(page.hero) + mobileContents + page.sections.map((s) => (s.type === 'start' ? toolReadingHtml(tool.id, tool.lang) + (!placed ? renderPractice(tool.id, tool.lang) : '') : '') + render(s, tool)).join(''),
 
     footer: html`
     <a class="logo" href="${homeOf(tool)}"><img class="logo-icon" src="/mark.svg" alt="" /> devutils</a>
