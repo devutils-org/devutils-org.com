@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "id": "concept.static-timing-analysis",
+  "locale": "en",
+  "contentHash": "73c2f1bb27c4d8cd3fb89de3e15d9f052f7b74d5badad9542f253028efa51339",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "constraints",
+      "section": "article-establish-the-edge-references",
+      "kind": "model",
+      "statement": "Both maximum-delay setup and minimum-delay hold conditions must be satisfied.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "D-Register Timing; Timing in a Single-clock System",
+          "access": "read",
+          "note": "Read propagation/contamination bounds, setup/hold inequalities and clock skew caveat."
+        }
+      ],
+      "note": "Signed skew formulas are derived from the explicit original launch/capture edge references; all numeric values are fictional."
+    },
+    {
+      "id": "inputs",
+      "section": "article-know-what-a-report-depends-on",
+      "kind": "definition",
+      "statement": "Static timing uses a netlist, libraries, constraints and interconnect models; clocks and exceptions must be specified.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Parallax Static Timing Analyzer; Clocks; Exception paths; Analysis",
+          "access": "read",
+          "note": "Read supported input formats, clock properties and path exceptions."
+        }
+      ],
+      "note": "No OpenSTA execution or signoff is claimed."
+    }
+  ],
+  "examples": [
+    {
+      "check": "timing-exercises",
+      "result": "passed",
+      "scope": "Four printed timing scenarios, setup-only period bound and negative-skew exercise.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "e7224996773b34d9f7dad7e06d3e83d853f0ac35adbb71c2777ead0344e6df35"
+    }
+  ],
+  "limitations": [
+    "No cell-library, corner, extraction or tool-based timing analysis was performed.",
+    "Simplified single-cycle same-frequency model omits uncertainty and external I/O constraints."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

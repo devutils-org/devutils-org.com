@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "id": "concept.synthesis-and-technology-mapping",
+  "locale": "en",
+  "contentHash": "4ad597a06aab10a2d596b32bfd9bfd925ff5b41bfb8c41155a4029c7edb694e2",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "mapping",
+      "section": "article-turn-a-description-into-connected-elements",
+      "kind": "definition",
+      "statement": "Synthesis lowers representations and technology mapping selects target implementation elements.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Levels of abstraction; Technology mapping",
+          "access": "read",
+          "note": "Read definitions of synthesis, netlist and target mapping."
+        }
+      ],
+      "note": "Resource costs are original hypothetical values, not measurements."
+    },
+    {
+      "id": "flow",
+      "section": "article-follow-the-implementation-evidence",
+      "kind": "model",
+      "statement": "Reproducible flows retain settings and scripts and reverify changed representations.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Script-based synthesis flows",
+          "access": "read",
+          "note": "Read reproducibility and repeated verification discussion."
+        }
+      ],
+      "note": "The chapter explicitly reports that no synthesis run was performed."
+    }
+  ],
+  "examples": [
+    {
+      "check": "synthesis-exercises",
+      "result": "passed",
+      "scope": "Printed truth table, all four-bit input pairs for the sharing identity with both select values, hypothetical cost equations.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "11c029e4f000b64be39e641bd1c3c23c906804835fc2c42510bcf2ab07651ba1"
+    }
+  ],
+  "limitations": [
+    "No generated netlist, physical cost, timing or synthesis optimization is certified.",
+    "The simplification exercise assumes binary values."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

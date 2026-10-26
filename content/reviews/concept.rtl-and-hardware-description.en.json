@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "id": "concept.rtl-and-hardware-description",
+  "locale": "en",
+  "contentHash": "c6f799b51fe16e6d95726d16ac292323f700ae0920ad14e103864c396d3ddb3c",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "rtl",
+      "section": "article-describe-a-circuit-across-clock-edges",
+      "kind": "model",
+      "statement": "RTL describes registers and combinational datapaths; HDL is a representation language.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Levels of abstraction, Behavioural level and Register-Transfer Level (RTL)",
+          "access": "read",
+          "note": "Read the named primer sections, including the swap example for nonblocking assignments."
+        }
+      ],
+      "note": "Accumulator source, trace and exercises are original teaching examples; executable evidence is limited to the integer transition model."
+    },
+    {
+      "id": "clock",
+      "section": "article-express-storage-and-wiring-separately",
+      "kind": "model",
+      "statement": "A rising-edge process with synchronous reset models clocked storage; nonblocking assignments use values evaluated before their updates.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Behavioural modelling, synchronous logic and blocking/non-blocking assignment discussion",
+          "access": "read",
+          "note": "Read the named primer sections, including the swap example for nonblocking assignments."
+        }
+      ],
+      "note": "Accumulator source, trace and exercises are original teaching examples; executable evidence is limited to the integer transition model."
+    },
+    {
+      "id": "synthesis",
+      "section": "article-understand-what-the-tools-must-establish",
+      "kind": "model",
+      "statement": "Synthesis lowers a supported circuit representation; implementation timing requires additional analysis.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Levels of abstraction; Script-based synthesis flows, iterations for timing requirements",
+          "access": "read",
+          "note": "Read the named primer sections, including the swap example for nonblocking assignments."
+        }
+      ],
+      "note": "Accumulator source, trace and exercises are original teaching examples; executable evidence is limited to the integer transition model."
+    }
+  ],
+  "examples": [
+    {
+      "check": "rtl-exercises",
+      "result": "passed",
+      "scope": "Accumulator mathematical transitions, reset/enable combinations, old-state capture, six printed edges and exercise arithmetic; not HDL execution.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "c52b61335b8ab8319ccd3dc94457b07ccd0817c99481eb362588471063776b62"
+    }
+  ],
+  "limitations": [
+    "No HDL simulator, elaborator or synthesis tool was run.",
+    "No physical timing, power-up guarantee or hardware fault behavior is verified."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

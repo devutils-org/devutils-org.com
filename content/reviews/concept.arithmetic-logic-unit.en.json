@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "id": "concept.arithmetic-logic-unit",
+  "locale": "en",
+  "contentHash": "dae357f3d1ef8d06b7830441ac8a622b49f1992f8dc12729829ad55a0ed9618b",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "interface",
+      "section": "article-choose-a-computation",
+      "kind": "model",
+      "statement": "An ALU computes a selected operation on operands.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "ALU Instructions; ALU Op Datapath I",
+          "access": "read",
+          "note": "Annotated source prose inspected on 2026-10-26."
+        }
+      ],
+      "note": "The four-bit interface and flags are original choices, not Beta ISA requirements."
+    },
+    {
+      "id": "datapath",
+      "section": "article-connect-datapath-and-controller",
+      "kind": "model",
+      "statement": "Control selects the ALU operation and enables register writeback.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "ALU Op Datapath I and II",
+          "access": "read",
+          "note": "Annotated source prose inspected on 2026-10-26."
+        }
+      ],
+      "note": "Read operand routing, ALUFN decoding and WERF-controlled writeback."
+    }
+  ],
+  "examples": [
+    {
+      "check": "alu-exercises",
+      "result": "passed",
+      "scope": "All four operations and 256 operand pairs, arithmetic and logical flags, signed comparison, printed table and exercises.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "3eb19e704076fe137ce5913462446022c688d5482567d4b149885217ee54fec6"
+    }
+  ],
+  "limitations": [
+    "Functional examples do not establish physical timing, HDL synthesis or hardware behavior.",
+    "Independent human review remains pending."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

@@ -89,7 +89,7 @@ npm test
 npm run build
 ```
 
-`verify:content` runs the twelve allowlisted check groups in `src/knowledge/checks.ts`.
+`verify:content` runs the allowlisted check groups in `src/knowledge/checks.ts`.
 It clears old pass attestations first, requires an actual passing test (zero matches
 are not accepted), and writes results atomically after all groups pass. It never
 changes source findings, content fingerprints or human-review status.

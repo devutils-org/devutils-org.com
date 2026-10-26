@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "id": "concept.finite-state-machines",
+  "locale": "en",
+  "contentHash": "6ca2cacf794adafb2327cd2ae5ca12e5d345419082f1ddef9ea94868cf02547f",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "fsm",
+      "section": "article-remember-only-what-matters",
+      "kind": "definition",
+      "statement": "Finite state records relevant input history and separates next-state logic from storage.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "L06, Our New Machine; Abstraction du jour: Finite State Machines",
+          "access": "read",
+          "note": "Read annotated prose describing stored history and next-state logic."
+        }
+      ],
+      "note": "The 101 detector is an original example, distinct from the source combination lock."
+    },
+    {
+      "id": "outputs",
+      "section": "article-give-each-state-a-meaning",
+      "kind": "definition",
+      "statement": "Moore outputs depend on state; Mealy outputs can also depend on inputs.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Valid State Diagrams",
+          "access": "read",
+          "note": "Read definitions of the two output contracts."
+        }
+      ],
+      "note": "Reset priority and edge reporting are explicit original design choices."
+    },
+    {
+      "id": "complete",
+      "section": "article-derive-all-transitions",
+      "kind": "model",
+      "statement": "Each state/input pair requires exactly one transition.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Valid State Diagrams; State Transition Diagram as a Truth Table",
+          "access": "read",
+          "note": "Read mutually exclusive and collectively exhaustive requirements."
+        }
+      ],
+      "note": "Transitions for 101 are derived from suffixes and independently tested."
+    },
+    {
+      "id": "encoding",
+      "section": "article-encode-the-behavior-in-hardware",
+      "kind": "model",
+      "statement": "Binary encoding uses enough bits to distinguish the states, with reset initialization and a policy for unused states.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "State Transition Diagram as a Truth Table; Housekeeping Issues",
+          "access": "read",
+          "note": "Read state encoding capacity, reset and unused-state discussion."
+        }
+      ],
+      "note": "Area and timing outcomes are not claimed; the four-state example has no unused binary code."
+    }
+  ],
+  "examples": [
+    {
+      "check": "fsm-exercises",
+      "result": "passed",
+      "scope": "All streams through ten bits against independent suffix oracle, published trace, exercise and reset priority.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "352367161b01a25fd14b70d32cb3a57656b9cbfa794726e46860e885295af1ed"
+    }
+  ],
+  "limitations": [
+    "Bounded functional simulation does not validate hardware timing, metastability or fault recovery.",
+    "Independent human review remains pending."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}
