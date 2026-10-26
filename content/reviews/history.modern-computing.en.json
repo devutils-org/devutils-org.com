@@ -1,0 +1,158 @@
+{
+  "version": 1,
+  "id": "history.modern-computing",
+  "locale": "en",
+  "contentHash": "23f24f4b28953702fe994a3ec1f19df4cb9e9bc6d31af2aec03d2f3d402e1f15",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "mobile",
+      "section": "article-mobile-systems-integrate-a-computer-into-everyday-communication",
+      "statement": "Apple’s January 2007 announcement describes integrated phone, media, Internet and touch functions.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Announcement heading, opening paragraphs, Internet features and expected availability",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Corporate announcement is not used to establish first-smartphone priority or current product specifications."
+    },
+    {
+      "id": "open-source",
+      "section": "article-open-source-makes-collaboration-and-permissions-explicit",
+      "statement": "OSI dates its organization and label to 1998 and describes earlier shared-source history and DFSG origins.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Opening; Coining Open Source; Assessing Licenses",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Historical account, not legal advice on any project’s license. GNU page timed out and is not counted as inspected."
+    },
+    {
+      "id": "gpu",
+      "section": "article-gpus-expose-parallel-work-beyond-graphics",
+      "statement": "NVIDIA’s corporate history places the CUDA architecture milestone in 2006.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "2006 CUDA entry",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Only the dated CUDA entry is used, not corporate claims to invent all GPUs or modern AI."
+    },
+    {
+      "id": "dartmouth",
+      "section": "article-ai-combines-methods-data-and-computation",
+      "statement": "The 1955 Dartmouth proposal named four proposers and planned a 1956 summer project.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 4,
+          "locator": "Article title, author list and abstract",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "AAAI archival republication read; garbled extraction of the original PDF is not claimed to have been read."
+    },
+    {
+      "id": "network",
+      "section": "article-ai-combines-methods-data-and-computation",
+      "statement": "The 2012 ImageNet paper reports a convolutional network and GPU implementation.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 5,
+          "locator": "Title, authors, NIPS 2012 proceedings and abstract",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Original classification scenarios are not presented as paper results; no universal-intelligence claim."
+    },
+    {
+      "id": "scaling",
+      "section": "article-semiconductor-progress-has-physical-assumptions",
+      "statement": "Dennard and colleagues’ 1974 paper treats device scaling, fabrication and characterization.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 6,
+          "locator": "Title, abstract and authors",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Read publication record and abstract, not the entire paywalled paper; no universal scaling promise inferred."
+    },
+    {
+      "id": "quantum",
+      "section": "article-quantum-computing-changes-the-computational-model",
+      "statement": "Shor’s algorithmic result concerns factoring and discrete logarithms on a hypothetical quantum computer.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 7,
+          "locator": "Abstract, comments and submission history",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "1994 conference work distinguished from 1995 submission and 1996 revision; no hardware execution claim."
+    },
+    {
+      "id": "measurement",
+      "section": "article-quantum-computing-changes-the-computational-model",
+      "statement": "Normalized quantum amplitudes yield standard-basis probabilities by squared absolute values.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 8,
+          "locator": "Quantum state vectors; Measuring quantum states",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Original real-amplitude exercise is a probability check, not a quantum experiment."
+    }
+  ],
+  "examples": [
+    {
+      "check": "history-modern-exercises",
+      "result": "passed",
+      "scope": "Original battery/operation-energy accounting, parallel-lane overhead, class-imbalance scenarios and amplitude normalization only.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "7d90c02e626891e68dbcc34ef51ef958e1cd839cf402e35b32c751a280d3ad77"
+    }
+  ],
+  "limitations": [
+    "Selected historical milestones, not product recommendations, market leadership claims or forecasts.",
+    "No GPU, AI benchmark, semiconductor scaling experiment or quantum computation is performed.",
+    "Independent human review remains pending."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

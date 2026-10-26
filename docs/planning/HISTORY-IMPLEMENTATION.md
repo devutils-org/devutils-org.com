@@ -61,7 +61,10 @@ Human review remains pending unless a real reviewer supplies a signoff.
   translation, scheduling and stream-composition checks.
 - Connected world: published chapter covering telegraphy, parallel packet
   research, ARPANET/TCP-IP, the Web and distributed-state uncertainty.
-- Chapter 10 remains to be implemented.
+- Modern computing: published chapter covering mobile integration, open-source
+  history, GPUs, AI, physical scaling constraints and quantum computing.
+- All ten chapters are written. Final navigation, coverage, source and rendered
+  artifact audit remains before completion can be claimed.
 
 The History index links the chapters in the ten-part editorial order. Broad
 chapters are excluded from timeline date filters, preserving the existing event
