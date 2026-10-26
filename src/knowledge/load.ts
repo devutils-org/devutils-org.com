@@ -12,6 +12,7 @@ export interface Entry {
   sources: Source[]; related: string[]; prerequisites: string[]; body: string
   aliases?: string[]; category?: string; widget?: 'boolean-gates'
   steps?: string[]; requirements?: string[]; expected_results?: string[]; contributions?: string[]
+  history_kind?: 'event' | 'chapter'
   date_start?: string; date_end?: string; date_precision?: 'year' | 'month' | 'day'; born?: string; died?: string
 }
 const sections = { concept: 'knowledge', history: 'history', figure: 'figures', path: 'learn', lab: 'labs' }
@@ -30,7 +31,7 @@ export function parseEntry(text: string, file: string): Entry {
   try { data = parse(match[1]) as Record<string, unknown> }
   catch (error) { return fail(`invalid YAML: ${error instanceof Error ? error.message : String(error)}`) }
   if (!data || typeof data !== 'object' || Array.isArray(data)) return fail('expected metadata object')
-  const allowed = new Set(['id', 'type', 'locale', 'slug', 'area', 'title', 'summary', 'status', 'updated', 'sources', 'related', 'prerequisites', 'date_start', 'date_end', 'date_precision', 'born', 'died', 'steps', 'requirements', 'expected_results', 'contributions', 'aliases', 'category', 'widget'])
+  const allowed = new Set(['id', 'type', 'locale', 'slug', 'area', 'title', 'summary', 'status', 'updated', 'sources', 'related', 'prerequisites', 'date_start', 'date_end', 'date_precision', 'born', 'died', 'steps', 'requirements', 'expected_results', 'contributions', 'aliases', 'category', 'widget', 'history_kind'])
   for (const key of Object.keys(data)) if (!allowed.has(key)) fail(`unknown field ${key}`)
   for (const key of ['id', 'type', 'locale', 'slug', 'title', 'summary', 'status', 'updated']) {
     if (typeof data[key] !== 'string' || !(data[key] as string).trim()) fail(`missing or invalid ${key}`)
@@ -42,7 +43,9 @@ export function parseEntry(text: string, file: string): Entry {
   for (const key of ['slug', 'area']) if (data[key] !== undefined && (typeof data[key] !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(data[key] as string))) fail(`invalid ${key}`)
   if (!validDate(data.updated) || (data.updated as string).length !== 10) fail('updated must be YYYY-MM-DD')
   for (const key of ['born', 'died', 'date_start', 'date_end']) if (data[key] !== undefined && !validDate(data[key])) fail(`invalid ${key}`)
-  if (data.type === 'history') {
+  if (data.history_kind !== undefined && (data.type !== 'history' || !['event','chapter'].includes(String(data.history_kind)))) fail('invalid history_kind')
+  if (data.history_kind === 'chapter' && ['date_start','date_end','date_precision'].some(key => data[key] !== undefined)) fail('history chapters must not carry event dates')
+  if (data.type === 'history' && data.history_kind !== 'chapter') {
     if (!validDate(data.date_start) || !['year', 'month', 'day'].includes(data.date_precision as string)) fail('history requires date_start and date_precision')
     const length = { year: 4, month: 7, day: 10 }[data.date_precision as string]
     if ((data.date_start as string).length !== length || (data.date_end && (data.date_end as string).length !== length)) fail('date precision mismatch')

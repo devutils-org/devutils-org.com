@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "id": "history.origins-of-information",
+  "locale": "en",
+  "contentHash": "193e94fb9dd4724d2940d8b4bb620e031dbb11a3f4fe32dc3d8e0ba945367842",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "tokens",
+      "section": "article-counting-goods-before-recording-sentences",
+      "kind": "interpretation",
+      "statement": "Schmandt-Besserat interprets Near Eastern token shapes and counts as accounting representations connected to later writing.",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Before Writing: Accounting with Tokens, ca. 7500–3350 BC",
+          "access": "read",
+          "note": "Read the shapes/goods correspondence and the distinction between number of tokens and kind of goods."
+        }
+      ],
+      "note": "Attributed archaeological interpretation; invented triangle/disc exercise is not presented as an excavated record.",
+      "assessment": "supported"
+    },
+    {
+      "id": "writing",
+      "section": "article-writing-expands-the-possible-message",
+      "kind": "historical",
+      "statement": "Uruk administrative tablets and later phonetic uses of signs illustrate changes in what written records could express.",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "The Origins of Writing, paragraphs on Uruk administration, complexity of origins, and rebus principle; object captions ca. 3100–2900 BCE",
+          "access": "read",
+          "note": "Inspected museum narrative and approximate object dates."
+        }
+      ],
+      "note": "No single birthday for writing or universal progression to alphabets is claimed.",
+      "assessment": "supported"
+    },
+    {
+      "id": "zero",
+      "section": "article-zero-has-more-than-one-history",
+      "kind": "historical",
+      "statement": "A placeholder, zero as a number, its name and its notation have distinct histories; Indian work includes Brahmagupta’s seventh-century rules.",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "A history of Zero, opening distinctions and Brahmagupta arithmetic rules",
+          "access": "read",
+          "note": "Read placeholder/number distinction, Babylonian notation and Indian arithmetic discussion."
+        }
+      ],
+      "note": "No unique inventor or first-ever date is assigned; modern division argument is explanatory, not attributed to Brahmagupta.",
+      "assessment": "supported"
+    }
+  ],
+  "examples": [
+    {
+      "check": "history-information-exercises",
+      "result": "passed",
+      "scope": "Original token record, positional-value examples and arithmetic answers only; not historical verification.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "de39cc5511c8c28c9dac67e462c06999ec942c61d71768e8bf482005b415ec0b"
+    }
+  ],
+  "limitations": [
+    "Selective Near Eastern and numerical history; not a worldwide writing survey or a date for the origin of speech.",
+    "Archaeological interpretation is attributed; modern codes and arithmetic are teaching examples, not ancient transcriptions.",
+    "Independent human review remains pending."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

@@ -59,13 +59,17 @@ Supported types and routes:
 | Type | Route (optional area shown in brackets) | Additional fields |
 |---|---|---|
 | `concept` | `/knowledge/[area/]<slug>/` | — |
-| `history` | `/history/[area/]<slug>/` | `date_start`, optional `date_end`, `date_precision` |
+| `history` | `/history/[area/]<slug>/` | Events: `date_start`, optional `date_end`, `date_precision`; chapters: `history_kind: chapter` without event dates |
 | `figure` | `/figures/[area/]<slug>/` | Optional `born`, `died`, `contributions` |
 | `path` | `/learn/[area/]<slug>/` | `steps`: ordered entity IDs |
 | `lab` | `/labs/[area/]<slug>/` | `requirements`, `steps`, `expected_results`: nonempty string lists; optional `widget: boolean-gates` |
 
 Dates are strings: quote year-only dates such as `'1937'`. Partial dates are
 allowed for historical and life dates. `updated` is a full `YYYY-MM-DD` date.
+History entries default to dated events. Broad historical chapters use
+`history_kind: chapter` and omit event dates; they appear in the History chapter
+index, while the timeline contains only dated events. This avoids attaching an
+invented milestone date to ancient or long-running developments.
 History precision is `year`, `month` or `day`, matching both endpoints. Status is
 `draft`, `review` or `published`. Draft/review entries produce no public page.
 Optional `category` is a lowercase hyphenated label for timeline or figure filters.

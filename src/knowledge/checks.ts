@@ -1,5 +1,6 @@
 // Stable evidence IDs: records store the digest of the tests and models actually run.
 export const exampleChecks = {
+  'history-information-exercises': { file:'src/knowledge/history.test.ts', name:'origins of information examples preserve quantities, positional values and codebook distinctions', dependencies:[] },
   'ic-path-exercises': { file:'src/knowledge/ic-path.test.ts', name:'IC reading route teaches prerequisites and reproduces its combined accumulator and timing exercise', dependencies:[] },
   'timing-exercises': { file:'src/knowledge/timing.test.ts', name:'timing examples derive setup and hold slack from explicit launch and capture edges', dependencies:[] },
   'synthesis-exercises': { file:'src/knowledge/synthesis.test.ts', name:'synthesis examples preserve binary truth table and shared arithmetic for every operand and select', dependencies:[] },
