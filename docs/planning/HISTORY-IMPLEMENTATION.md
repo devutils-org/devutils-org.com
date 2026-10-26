@@ -48,8 +48,11 @@ Human review remains pending unless a real reviewer supplies a signoff.
   assessments and checked GCD, binary, algebra and proof-assumption examples.
 - Mechanical computing: published chapter distinguishing original devices,
   replicas, designs and execution, with checked original arithmetic examples.
-- Chapters 5–10 remain to be implemented; the two existing event articles do
-  not count as complete chapters 5 or 6.
+- Birth of computer science: published chapter separating consistency,
+  incompleteness, decision procedures and switching circuits, with checked
+  toy-machine and timeout examples.
+- Chapters 6–10 remain to be implemented; the 1948 event article does not
+  count as the complete information-revolution chapter.
 
 The History index links the chapters in the ten-part editorial order. Broad
 chapters are excluded from timeline date filters, preserving the existing event

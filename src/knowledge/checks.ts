@@ -1,5 +1,6 @@
 // Stable evidence IDs: records store the digest of the tests and models actually run.
 export const exampleChecks = {
+  'history-computability-exercises': { file:'src/knowledge/history-computability.test.ts', name:'computability history toy machine follows its published rules and finite timeout remains inconclusive', dependencies:[] },
   'history-mechanical-exercises': { file:'src/knowledge/history-mechanical.test.ts', name:'mechanical history teaching examples preserve decimal carries and finite-difference update ordering', dependencies:[] },
   'history-mathematics-exercises': { file:'src/knowledge/history-mathematics.test.ts', name:'history mathematics examples preserve remainder invariants, binary values and explicitly scoped algebra', dependencies:[] },
   'history-logic-exercises': { file:'src/knowledge/history-logic.test.ts', name:'history logic examples distinguish valid inference from counterexamples under their modern interpretations', dependencies:[] },

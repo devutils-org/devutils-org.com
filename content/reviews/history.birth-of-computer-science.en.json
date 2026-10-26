@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "id": "history.birth-of-computer-science",
+  "locale": "en",
+  "contentHash": "8c6300eac7ad5904d7b56299c446ea91bc60302a9995433f3fe23224793ea467",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "hilbert",
+      "section": "article-hilbert-asks-for-a-secure-foundation",
+      "statement": "Hilbert’s early-1920s program sought axiomatization and finitary consistency justification.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Introduction",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Distinguishes program from the Entscheidungsproblem; acknowledges collaborators."
+    },
+    {
+      "id": "goedel",
+      "section": "article-g-del-limits-provability-in-a-theory",
+      "statement": "Gödel’s incompleteness results restrict provability in suitable effective arithmetic theories.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Introduction; section 2.1; History and Early Reception, publication in January 1931",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Modern strengthened formulation distinguished from original stronger consistency assumption; no claims about universal human superiority."
+    },
+    {
+      "id": "church-turing",
+      "section": "article-church-and-turing-make-procedures-precise",
+      "statement": "Church and Turing used different models and independently obtained negative decision-problem results in 1936.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "Introduction; sections 1.5, 1.7 and 4.3.2",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Toy table and timeout are original illustrations, not proofs of undecidability."
+    },
+    {
+      "id": "shannon",
+      "section": "article-shannon-links-logic-to-a-different-kind-of-machine",
+      "statement": "The MIT retrospective dates Shannon’s thesis work applying Boolean reasoning to switching to 1937.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 4,
+          "locator": "Claude Shannon paragraph",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "1938 paper chronology remains in the separately audited existing event."
+    }
+  ],
+  "examples": [
+    {
+      "check": "history-computability-exercises",
+      "result": "passed",
+      "scope": "Toy tape rules for unary inputs of length 0–20 and finite counter timeout only; does not verify incompleteness or undecidability theorems.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "abd67079d1a10eb58f60127c206ce5d22f004cea7fc87e590f7b361a472cd920"
+    }
+  ],
+  "limitations": [
+    "Selective foundational history; formal theorem hypotheses are essential.",
+    "No universal-machine implementation or executable proof of the cited theorems is claimed.",
+    "Independent human review remains pending."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}
