@@ -44,7 +44,9 @@ Human review remains pending unless a real reviewer supplies a signoff.
   assessment and checked original representation exercises; commit 70938b7.
 - Origins of logic: published chapter with scoped scholarly source assessments
   and checked modern inference examples.
-- Chapters 3–10 remain to be implemented; the two existing event articles do
+- Mathematics of computation: published chapter with scoped textual
+  assessments and checked GCD, binary, algebra and proof-assumption examples.
+- Chapters 4–10 remain to be implemented; the two existing event articles do
   not count as complete chapters 5 or 6.
 
 The History index links the chapters in the ten-part editorial order. Broad

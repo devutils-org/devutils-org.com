@@ -1,5 +1,6 @@
 // Stable evidence IDs: records store the digest of the tests and models actually run.
 export const exampleChecks = {
+  'history-mathematics-exercises': { file:'src/knowledge/history-mathematics.test.ts', name:'history mathematics examples preserve remainder invariants, binary values and explicitly scoped algebra', dependencies:[] },
   'history-logic-exercises': { file:'src/knowledge/history-logic.test.ts', name:'history logic examples distinguish valid inference from counterexamples under their modern interpretations', dependencies:[] },
   'history-information-exercises': { file:'src/knowledge/history.test.ts', name:'origins of information examples preserve quantities, positional values and codebook distinctions', dependencies:[] },
   'ic-path-exercises': { file:'src/knowledge/ic-path.test.ts', name:'IC reading route teaches prerequisites and reproduces its combined accumulator and timing exercise', dependencies:[] },

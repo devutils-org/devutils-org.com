@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "id": "history.mathematics-of-computation",
+  "locale": "en",
+  "contentHash": "49ae2213836ab871341283a6282f4de96d3dd8d32f49a282fd89d9c169a51a40",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "euclid",
+      "section": "article-historical-procedures-before-the-modern-word",
+      "statement": "Elements VII.2 treats a greatest common measure using repeated subtraction.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Proposition 2 and Joyce’s Guide, Euclidean algorithm",
+          "access": "read",
+          "note": "Read the identified passage in the cited source."
+        }
+      ],
+      "note": "The table and remainder invariant are original modern explanations, not a transcription."
+    },
+    {
+      "id": "khwarizmi",
+      "section": "article-al-khwarizmi-and-transmitted-arithmetic",
+      "statement": "Al-Khwarizmi’s arithmetic transmission connects his name to algorithm; the Arabic original is lost and Latin witnesses changed.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Biography, paragraph beginning “Al-Khwarizmi also wrote a treatise on Hindu-Arabic numerals”",
+          "access": "read",
+          "note": "Read the identified passage in the cited source."
+        }
+      ],
+      "note": "Etymology is not priority over all calculation procedures."
+    },
+    {
+      "id": "binary",
+      "section": "article-binary-is-a-representation-not-a-complete-machine",
+      "statement": "Leibniz developed binary arithmetic in the late seventeenth century and later communicated work to the Paris Academy.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "Biography, paragraph beginning “Another of Leibniz’s great achievements”",
+          "access": "read",
+          "note": "Read the identified passage in the cited source."
+        }
+      ],
+      "note": "No disputed exact publication date or first-ever priority is asserted."
+    },
+    {
+      "id": "boole",
+      "section": "article-boole-makes-logical-problems-algebraic",
+      "statement": "Boole’s major logic works appeared in 1847 and 1854 and used algebraic methods.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 4,
+          "locator": "Introduction",
+          "access": "read",
+          "note": "Read the identified passage in the cited source."
+        }
+      ],
+      "note": "Modern examples are explicitly distinguished from the full historical calculus."
+    },
+    {
+      "id": "formal",
+      "section": "article-from-running-examples-to-formal-methods",
+      "statement": "Modern verification discourse includes Hoare’s 1969 axiomatic approach and limits of correctness claims.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 5,
+          "locator": "Verification discussion and section 8.1; bibliography entry Hoare 1969",
+          "access": "read",
+          "note": "Read the identified passage in the cited source."
+        }
+      ],
+      "note": "The increment example is original and explicitly varies the arithmetic model."
+    }
+  ],
+  "examples": [
+    {
+      "check": "history-mathematics-exercises",
+      "result": "passed",
+      "scope": "Printed remainder trace, independent GCD reference, binary conversions, Boolean domain and increment wrap examples only.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "08b8cd9dea126b7621ccad6c2b59e3e808a6b6c1a357b51e9962d8ebb2d8000b"
+    }
+  ],
+  "limitations": [
+    "Selective mathematical history, not a universal priority claim or complete history of formal methods.",
+    "Examples use modern notation and do not reconstruct every historical author’s semantics.",
+    "Independent human review remains pending."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}
