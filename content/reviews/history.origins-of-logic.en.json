@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "id": "history.origins-of-logic",
+  "locale": "en",
+  "contentHash": "c36182adc14e911f3f21ec041dd0142e11d99b71ba48d1fdb26b5502bbeece2f",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "aristotle",
+      "section": "article-aristotle-studies-relations-between-terms",
+      "statement": "Aristotle developed term-centered systematic inference in the fourth century BCE.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Ancient Logic, introduction, paragraphs on Aristotle and term logic",
+          "access": "read",
+          "note": "Read the identified scholarly encyclopedia discussion."
+        }
+      ],
+      "note": "The set interpretation is explicitly modern and scoped to the example."
+    },
+    {
+      "id": "stoics",
+      "section": "article-stoic-arguments-connect-complete-propositions",
+      "statement": "Chrysippus developed Stoic propositional reasoning including the conditional/antecedent argument pattern.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Ancient Logic, introduction and sections 5.3–5.4",
+          "access": "read",
+          "note": "Read the identified scholarly encyclopedia discussion."
+        }
+      ],
+      "note": "Modern implication semantics are not asserted to reproduce all historical conditional theories."
+    },
+    {
+      "id": "medieval",
+      "section": "article-medieval-traditions-preserve-and-change-the-questions",
+      "statement": "Medieval Latin and Arabic syllogistic traditions involved textual transmission, revisions and modal developments.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Introduction, paragraphs on logica vetus/nova, modal reasoning, Buridan and the Arabic tradition",
+          "access": "read",
+          "note": "Read the identified scholarly encyclopedia discussion."
+        }
+      ],
+      "note": "Selected traditions only; not a worldwide survey."
+    },
+    {
+      "id": "leibniz",
+      "section": "article-leibniz-imagines-symbolic-reasoning",
+      "statement": "Leibniz’s symbolic projects and their later reception require distinguishing unpublished work from documented influence.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "Introduction; section 4 on characteristic language; section 5 on reception",
+          "access": "read",
+          "note": "Read the identified scholarly encyclopedia discussion."
+        }
+      ],
+      "note": "No inevitable causal chain from Leibniz to nineteenth-century logic is claimed."
+    }
+  ],
+  "examples": [
+    {
+      "check": "history-logic-exercises",
+      "result": "passed",
+      "scope": "Modern subset-transitivity and propositional-inference examples and counterexamples only; not historical validation.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "cfc0f91233740956988e061fe142ca740bd642bcdef3fe3b29bd7546313f4f84"
+    }
+  ],
+  "limitations": [
+    "Selective Greek, Arabic, Latin and European traditions; not a universal origin claim.",
+    "Modern examples are identified as such and do not reconstruct the full semantics of ancient or medieval systems.",
+    "Independent human review remains pending."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

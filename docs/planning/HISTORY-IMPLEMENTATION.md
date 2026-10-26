@@ -37,3 +37,16 @@ Validate examples where computational, source locators and claim coverage,
 bilingual indexes, timeline filters, internal links, search indexing and rendered
 navigation. Run content verification, tests and build. Commit each validated step.
 Human review remains pending unless a real reviewer supplies a signoff.
+
+## Current evidence
+
+- Origins of information: published chapter, scoped Met/UT/MacTutor source
+  assessment and checked original representation exercises; commit 70938b7.
+- Origins of logic: published chapter with scoped scholarly source assessments
+  and checked modern inference examples.
+- Chapters 3–10 remain to be implemented; the two existing event articles do
+  not count as complete chapters 5 or 6.
+
+The History index links the chapters in the ten-part editorial order. Broad
+chapters are excluded from timeline date filters, preserving the existing event
+dates and routes. No independent human approval is claimed.
