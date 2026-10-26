@@ -51,8 +51,10 @@ Human review remains pending unless a real reviewer supplies a signoff.
 - Birth of computer science: published chapter separating consistency,
   incompleteness, decision procedures and switching circuits, with checked
   toy-machine and timeout examples.
-- Chapters 6–10 remain to be implemented; the 1948 event article does not
-  count as the complete information-revolution chapter.
+- Information revolution: published chapter with visually inspected Hartley
+  and Shannon equations, scoped Wiener sources and checked original coding,
+  error-model and feedback examples.
+- Chapters 7–10 remain to be implemented.
 
 The History index links the chapters in the ten-part editorial order. Broad
 chapters are excluded from timeline date filters, preserving the existing event

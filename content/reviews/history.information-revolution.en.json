@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "id": "history.information-revolution",
+  "locale": "en",
+  "contentHash": "f14c4a3c9b5661bc14972beea558a2a4469923617b853c344aa78e992dc697ed",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "hartley",
+      "section": "article-hartley-counts-possibilities-logarithmically",
+      "statement": "Hartley’s 1928 paper derives a logarithmic count of possible symbol sequences.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Printed p. 540, equations 4–10; scanned page 6",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Page visually inspected using a locally rendered scan after web screenshot failure; example alphabet is original."
+    },
+    {
+      "id": "entropy",
+      "section": "article-shannon-brings-in-probabilities",
+      "statement": "Shannon’s 1948 corrected reprint defines entropy from the probability distribution.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Reprint p. 11, Theorem 2, entropy definition and Fig. 7; publication note p. 1",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Equation and negative sign visually inspected; the probability table is an original example."
+    },
+    {
+      "id": "channel",
+      "section": "article-noise-creates-a-coding-problem-and-a-limit",
+      "statement": "Shannon’s noisy-channel theorem provides an asymptotic coding result under a specified channel model.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Reprint p. 22, section 13 and Theorem 11",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Visually inspected; teaching statement uses rates below capacity and makes no finite-block error-free claim."
+    },
+    {
+      "id": "wiener",
+      "section": "article-wiener-asks-how-feedback-controls-behavior",
+      "statement": "Wiener’s 1948 Cybernetics addresses control, feedback and communication.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "Publication entry and opening discussion of the book",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Use is restricted to the publication and feedback framing; the source’s unrelated final chess anecdote is not used."
+    },
+    {
+      "id": "publication",
+      "section": "article-wiener-asks-how-feedback-controls-behavior",
+      "statement": "Wellcome independently catalogues Wiener’s Cybernetics as a 1948 publication.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 4,
+          "locator": "Date and Publication/Creation fields",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Catalogue entry corroborates date, not the correctness of every technical claim."
+    }
+  ],
+  "examples": [
+    {
+      "check": "history-communication-exercises",
+      "result": "passed",
+      "scope": "Original entropy table, prefix-code round trips, three-bit majority error enumeration and feedback recurrences; not a verification of coding theorems.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "44d7dcfdb723153fc3b4371bee58972bc2127b4de94b719e93fbfb39b1ea74c2"
+    }
+  ],
+  "limitations": [
+    "Independent-symbol, independent-bit-error and instantaneous-feedback assumptions are explicit.",
+    "No practical code, channel measurement or physical feedback controller is evaluated.",
+    "Independent human review remains pending."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}
