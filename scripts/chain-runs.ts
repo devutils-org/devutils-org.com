@@ -6,7 +6,7 @@
 //
 // Per target: the day of the run, its kernel, the chain's checks, the reference
 // tools' packages (witnesses.json) and the tally of Omniscient's reference
-// pairs (reference.log). Omniscient is private, so the page reads this copy.
+// pairs (reference.log). The collected runs are not in the repository, so the page reads this copy.
 
 import { readdir, readFile, stat, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'

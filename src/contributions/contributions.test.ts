@@ -42,7 +42,7 @@ test('the RUG record distinguishes submitted PRs, independent results and measur
   assert.match(en, /no RUG maintainer endorsement/)
   assert.match(fr, /aucune approbation du mainteneur/)
   assert.match(en, /missing permissions/)
-  assert.doesNotMatch(en + fr, /\/home\/moha|file:\/\/|github\.com\/devutils-org\/omniscient/)
+  assert.doesNotMatch(en + fr, /\/home\/moha|file:\/\//)
 })
 
 test('published summaries cover every benchmark shape and agree with measured raw pairs', () => {

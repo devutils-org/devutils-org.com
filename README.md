@@ -156,7 +156,7 @@ Each entry names the target, type of evidence, problem, finding, result,
 limits and source document. Documented demonstrations and sandbox checks
 are labelled as such; they are not customer deployments. VMAnyware currently
 has one documented integration case. Add a target only when its evidence is
-available. Private Omniscient sources are cited by path without public links.
+available.
 
 `src/practice/practice.ts` renders the shared section and handles its tabs;
 `practice.css` stacks the story on narrow screens. The old Distroproof

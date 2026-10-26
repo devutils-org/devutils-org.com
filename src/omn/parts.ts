@@ -43,7 +43,7 @@ const story = (f: Family, i: number, lang: Lang) => {
       <div class="story-proof">
         <pre><code>${esc(f.example)}</code></pre>
         <p class="story-limit"><small>${w.limit}</small>${f.limit}</p>
-        ${repoLink(omn, `/blob/main/docs/families/${f.id}.md`, omn.repoPrivate ? w.guidePrivate(f.id) : `${w.guide(f.id)} ${icon('arrow-up-right')}`, 'family-guide')}
+        ${repoLink(omn, `/blob/main/docs/how-to-use/${f.id}.md`, omn.repoPrivate ? w.guidePrivate(f.id) : `${w.guide(f.id)} ${icon('arrow-up-right')}`, 'family-guide')}
       </div>
     </div>`
 }
