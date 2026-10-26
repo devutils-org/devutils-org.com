@@ -29,7 +29,7 @@ test('review validation rejects unsupported citations, stale checks and fictitio
   assert.throws(()=>validateReview(fake,entry,'review.json'),/missing or empty/)
 })
 test('every published record exposes scoped evidence and keeps human approval pending',()=>{
-  assert.equal(entries.filter(e=>e.status==='published').length,62)
+  assert.equal(entries.filter(e=>e.status==='published').length,63)
   for(const e of entries) {
     const record=e.verification!
     assert.ok(record.claims.length>0)

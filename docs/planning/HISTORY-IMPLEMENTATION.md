@@ -46,7 +46,9 @@ Human review remains pending unless a real reviewer supplies a signoff.
   and checked modern inference examples.
 - Mathematics of computation: published chapter with scoped textual
   assessments and checked GCD, binary, algebra and proof-assumption examples.
-- Chapters 4–10 remain to be implemented; the two existing event articles do
+- Mechanical computing: published chapter distinguishing original devices,
+  replicas, designs and execution, with checked original arithmetic examples.
+- Chapters 5–10 remain to be implemented; the two existing event articles do
   not count as complete chapters 5 or 6.
 
 The History index links the chapters in the ten-part editorial order. Broad
