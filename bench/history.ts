@@ -28,7 +28,9 @@ try{
   }
   for(const prefix of ['', '/fr']){
    await page.goto(base+prefix+'/history/')
-   assert.equal(await page.locator('.scope-list a').count(),10)
+   assert.equal(await page.locator('.history-map a.history-chapter-card').count(),10)
+   await page.locator('.history-map a.history-chapter-card').first().locator('p').click()
+   assert.equal(new URL(page.url()).pathname,'/history/origins-of-information/')
    await page.goto(base+prefix+'/history/timeline/')
    await page.locator('[data-discovery]').waitFor({state:'visible'})
    assert.equal(await page.locator('[data-record]:visible').count(),8)

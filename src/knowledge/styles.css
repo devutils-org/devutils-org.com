@@ -192,3 +192,17 @@
 
 .history-chapter-nav { margin: 24px 0; padding: 20px; border: 1px solid var(--line, #ffffff24); border-radius: 12px; }
 .history-chapter-nav ul { margin-bottom: 0; }
+
+/* The complete History chapter card is a native link, including its summary. */
+.reader-page .history-map > li { display: block; padding: 0; overflow: hidden; }
+.history-chapter-card { display: flex; align-items: flex-start; gap: 24px; padding: 28px; color: var(--fg); text-decoration: none; }
+.history-chapter-card > div { flex: 1; min-width: 0; }
+.reader-page .history-chapter-card h3 { margin: 0; font-size: 24px; line-height: 1.4; font-weight: 500; }
+.reader-page .history-chapter-card p { margin: 12px 0 0; }
+.history-card-arrow { flex-shrink: 0; color: #b9caff; }
+.history-map > li:hover, .history-map > li:focus-within { border-color: #a3b6ff88; }
+.history-chapter-card:focus-visible { outline: 2px solid #b9caff; outline-offset: -4px; }
+@media (max-width: 600px) {
+  .history-chapter-card { gap: 14px; padding: 20px; }
+  .reader-page .history-chapter-card h3 { font-size: 20px; }
+}

@@ -64,7 +64,7 @@
       "result": "passed",
       "scope": "Original token record, positional-value examples and arithmetic answers only; not historical verification.",
       "checkedAt": "2026-10-26",
-      "evidenceHash": "9fb5b292c29ed1c5d7ae93a5cf2d6904006af0d15ee070aab375b8fae0758135"
+      "evidenceHash": "8d022b851c8d2c2db66cd7cd2647cff4eed77865d1f95367274fb6692adc690b"
     }
   ],
   "limitations": [

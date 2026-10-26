@@ -43,6 +43,8 @@ test('all ten History chapters are published, ordered, linked and distinct from 
  const pages=knowledgePages(entries)
  for(const prefix of ['', '/fr']){
   const index=pages.find(p=>p.route===`${prefix}/history/`)!
+  assert.equal((index.body.match(/class="history-chapter-card" href=/g)??[]).length,10)
+  assert.match(index.body,/<a class="history-chapter-card" href="\/history\/origins-of-information\/"[^>]*>[\s\S]*?<h3>[\s\S]*?<p>[\s\S]*?<\/a>/)
   let position=-1
   for(const slug of slugs){const next=index.body.indexOf(`href="/history/${slug}/"`);assert.ok(next>position,slug);position=next}
   assert.doesNotMatch(index.body,/<small>— (planned|prévu)<\/small>/)
