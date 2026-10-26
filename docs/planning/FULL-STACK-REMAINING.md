@@ -10,13 +10,12 @@ Digital logic has Boolean algebra, gates, combinational logic, adders,
 registers/memory, sequential logic, finite-state machines and an ALU. A continuation path combines the controller
 and datapath with a checked simultaneous-register exercise. Integrated circuit
 design now has RTL/HDL, synthesis/technology-mapping and static timing
-chapters.
+chapters connected by `/learn/integrated-circuit-design/`.
 
 Still to implement and verify:
 
 - Integrated circuit design: simulation, verification, physical design,
-  ASIC versus FPGA, and a progressive reading path connecting these chapters
-  with the published RTL/HDL, synthesis and timing lessons.
+  ASIC versus FPGA; expand the introductory path as those chapters become available.
 - Computer architecture: ISA versus microarchitecture, instruction execution,
   pipelines, caches, CPU/GPU, buses, RISC-V and x86-64, with a reading path.
 - Firmware and embedded: bare metal, boot, microcontrollers, interrupts, DMA,

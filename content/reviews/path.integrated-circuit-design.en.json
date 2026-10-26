@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "id": "path.integrated-circuit-design",
+  "locale": "en",
+  "contentHash": "d82e10c7ec429c3a82585641f87774b0a7361f31578c9113db42a509066e060f",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "representations",
+      "section": "article-start-with-digital-behavior",
+      "kind": "model",
+      "statement": "A hardware description, an implementation graph and implementation analysis describe distinct aspects of circuit design.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Levels of abstraction; Script-based synthesis flows",
+          "access": "read",
+          "note": "Read abstraction levels, simulation comparisons and iterative implementation analysis."
+        }
+      ],
+      "note": "The chapter ordering and combined exercise are original teaching material, not a claim of a complete tool flow."
+    }
+  ],
+  "examples": [
+    {
+      "check": "ic-path-exercises",
+      "result": "passed",
+      "scope": "Ordered published prerequisites, two accumulator edges, setup/hold arithmetic and changing period.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "0b38046af2109e49f2eff5b28348ff723c51eb62046e6b807e9709f3188bb49f"
+    }
+  ],
+  "limitations": [
+    "Introductory route covers only its three published chapters; other IC topics remain planned.",
+    "Fictional timing values are independent of the accumulator implementation."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}
