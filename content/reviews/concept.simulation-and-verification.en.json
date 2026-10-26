@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "id": "concept.simulation-and-verification",
+  "locale": "en",
+  "contentHash": "6c6229c4c17f17b2f0053cb31a893f90d46f781ab444e246058e956a6fd891d6",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "properties",
+      "section": "article-write-properties-and-assumptions-separately",
+      "kind": "model",
+      "statement": "Verification properties and environment assumptions are distinct; coverage helps establish that interesting situations are reachable.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Verification properties, assertions, assumptions and cover statements",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    },
+    {
+      "id": "equivalence",
+      "section": "article-understand-formal-and-equivalence-checks",
+      "kind": "model",
+      "statement": "Equivalence checking compares descriptions under a defined relationship; it is different from checking the original specification.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Introduction and equivalence/X-propagation documentation",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "design-continuation-exercises",
+      "result": "passed",
+      "scope": "Published tables, state traces, worked arithmetic and reading prerequisites under the explicitly stated teaching assumptions.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "2693b45f91122a0d0610b1739cb067f6e927be14956bd1c30c6a5f3a3564fbec"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review remains pending.",
+    "Numerical costs, timings, addresses and capacities are original stipulated inputs, not measurements or universal properties of a device.",
+    "Model checks do not establish physical implementation, compiler correctness, formal proof or hardware deployment unless separately documented."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

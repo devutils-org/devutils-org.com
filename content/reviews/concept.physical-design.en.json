@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "id": "concept.physical-design",
+  "locale": "en",
+  "contentHash": "bcbece6dfc169ea1474a0d6e14d6eca8eb75b536a4e2ca31513a9e63e18c6811",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "flow",
+      "section": "article-place-legalize-and-distribute-the-clock",
+      "kind": "model",
+      "statement": "Physical design includes cell placement, legalization and clock-distribution implementation.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Main flow: global/detailed placement and clock tree synthesis",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    },
+    {
+      "id": "wires",
+      "section": "article-route-and-extract-the-connections",
+      "kind": "model",
+      "statement": "Routing and parasitic extraction provide interconnect information for later timing verification.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Main flow: global/detailed routing and chip finishing",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "design-continuation-exercises",
+      "result": "passed",
+      "scope": "Published tables, state traces, worked arithmetic and reading prerequisites under the explicitly stated teaching assumptions.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "2693b45f91122a0d0610b1739cb067f6e927be14956bd1c30c6a5f3a3564fbec"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review remains pending.",
+    "Numerical costs, timings, addresses and capacities are original stipulated inputs, not measurements or universal properties of a device.",
+    "Model checks do not establish physical implementation, compiler correctness, formal proof or hardware deployment unless separately documented."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

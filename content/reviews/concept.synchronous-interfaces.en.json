@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "id": "concept.synchronous-interfaces",
+  "locale": "en",
+  "contentHash": "94720c390ea5317d11973a29ac4b9ceed9fa63c4f234dc4983c87e455761487c",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "acceptance",
+      "section": "article-follow-a-backpressured-stream",
+      "kind": "model",
+      "statement": "A ready/valid handshake accepts an offered value when both signals are asserted; held valid prevents loss during backpressure.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Handshake Procedure, Avoiding Deadlocks and Livelocks",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    },
+    {
+      "id": "timing",
+      "section": "article-keep-reset-and-timing-explicit",
+      "kind": "model",
+      "statement": "Combinational interface paths, reset and internal state updates affect composability and correctness.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Loops, Reset and Internal State",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "design-continuation-exercises",
+      "result": "passed",
+      "scope": "Published tables, state traces, worked arithmetic and reading prerequisites under the explicitly stated teaching assumptions.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "2693b45f91122a0d0610b1739cb067f6e927be14956bd1c30c6a5f3a3564fbec"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review remains pending.",
+    "Numerical costs, timings, addresses and capacities are original stipulated inputs, not measurements or universal properties of a device.",
+    "Model checks do not establish physical implementation, compiler correctness, formal proof or hardware deployment unless separately documented."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

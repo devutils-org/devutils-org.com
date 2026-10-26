@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "id": "concept.asic-and-fpga",
+  "locale": "en",
+  "contentHash": "6c661a4944852dfe6f5828434a7299a8c9a764896ca28d2f35b88df2455797ca",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "resources",
+      "section": "article-understand-what-a-lookup-table-does",
+      "kind": "model",
+      "statement": "The cited FPGA family supplies configurable LUTs, registers, carry logic and routing resources.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "CLB Overview and LUT6/LUT5 modes",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    },
+    {
+      "id": "implementation",
+      "section": "article-distinguish-the-function-from-its-implementation-fabric",
+      "kind": "model",
+      "statement": "A cell-based physical implementation involves placement, clock distribution and routed geometry, beyond an HDL description.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Main physical-design flow",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "design-continuation-exercises",
+      "result": "passed",
+      "scope": "Published tables, state traces, worked arithmetic and reading prerequisites under the explicitly stated teaching assumptions.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "2693b45f91122a0d0610b1739cb067f6e927be14956bd1c30c6a5f3a3564fbec"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review remains pending.",
+    "Numerical costs, timings, addresses and capacities are original stipulated inputs, not measurements or universal properties of a device.",
+    "Model checks do not establish physical implementation, compiler correctness, formal proof or hardware deployment unless separately documented."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

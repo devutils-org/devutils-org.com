@@ -8,7 +8,7 @@ test('control and datapath path respects prerequisite order and simultaneous reg
  const path=get('path.digital-control-and-datapaths')
  assert.deepEqual(path.prerequisites,['path.digital-logic-foundations'])
  const completed=new Set(['path.digital-logic-foundations',...get('path.digital-logic-foundations').steps!])
- assert.equal(path.steps!.length,2)
+ assert.equal(path.steps!.length,3)
  for(const id of path.steps!){const e=get(id);assert.equal(e.status,'published');for(const p of e.prerequisites)assert.ok(completed.has(p));completed.add(id)}
  const transitions=new Map([...get('concept.finite-state-machines').body.matchAll(/^\| ([ABCD]) \| ([ABCD]) \| ([ABCD]) \|$/gm)].map(r=>[r[1],[r[2],r[3]]]))
  const rows=[...path.body.matchAll(/^\| (\d) \| ([01]) \| ([ABCD]) \| ([ABCD]) \| ([01]) \| ([01]{4}) \|$/gm)]

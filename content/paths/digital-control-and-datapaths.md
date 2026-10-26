@@ -4,11 +4,11 @@ type: path
 locale: en
 slug: digital-control-and-datapaths
 title: Digital control and datapaths
-summary: Extend digital logic with a pattern-detecting controller and a four-bit ALU, then reason about a registered computation.
+summary: Extend digital logic with an FSM, a four-bit ALU and a ready/valid interface, then reason about registered computation.
 status: published
 updated: 2026-10-26
 prerequisites: [path.digital-logic-foundations]
-steps: [concept.finite-state-machines, concept.arithmetic-logic-unit]
+steps: [concept.finite-state-machines, concept.arithmetic-logic-unit, concept.synchronous-interfaces]
 related: [path.digital-logic-foundations]
 sources:
   - title: MIT Computation Structures — Building the Beta, ALU Op Datapath
@@ -20,10 +20,12 @@ Complete [digital logic foundations](/learn/digital-logic-foundations/) first. I
 
 A controller remembers which stage of work is active and selects actions. A datapath carries and transforms the values used by those actions. These chapters introduce each responsibility with a small explicit contract. They prepare for processor organization without assuming an instruction set already exists.
 
-## Follow the two chapters
+## Follow the three lessons
 
 1. **Finite-state machines:** choose states by the history that matters; derive a complete transition table and preserve overlapping matches. Predict the output before following the trace.
 2. **Arithmetic logic unit:** select arithmetic or Boolean operations, reuse addition for subtraction, distinguish carry from signed overflow and connect results to an enabled register.
+
+3. **Synchronous interfaces:** trace ready/valid transfers, hold pending data and reason about buffering and backpressure.
 
 The linked chapters provide the canonical explanations. The examples are original teaching designs. The source demonstrates a larger instruction-driven datapath; this path does not reproduce its processor or claim hardware construction is complete.
 

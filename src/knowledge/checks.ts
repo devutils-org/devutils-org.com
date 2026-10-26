@@ -1,5 +1,6 @@
 // Stable evidence IDs: records store the digest of the tests and models actually run.
 export const exampleChecks = {
+  'design-continuation-exercises': {file:'src/knowledge/design-continuation.test.ts',name:'design continuation checks finite verification scope, physical budgets, LUT counts and lossless synchronous transfers',dependencies:[]},
   'history-modern-exercises': { file:'src/knowledge/history-modern.test.ts', name:'modern history examples preserve energy budgets, parallel overhead, class imbalance and quantum normalization', dependencies:[] },
   'history-network-exercises': { file:'src/knowledge/history-network.test.ts', name:'network history examples preserve serialization accounting, request identity and causal order', dependencies:[] },
   'history-software-exercises': { file:'src/knowledge/history-software.test.ts', name:'software history examples preserve toy instruction bytes, bounded arithmetic, interleaved jobs and stream composition', dependencies:[] },

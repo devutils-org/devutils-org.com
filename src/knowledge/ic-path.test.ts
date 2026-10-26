@@ -5,7 +5,7 @@ test('IC reading route teaches prerequisites and reproduces its combined accumul
  const entries=loadEntries(undefined,{allowStaleChecks:true})
  const get=(id:string)=>{const entry=entries.find(e=>e.id===id);assert.ok(entry);return entry}
  const path=get('path.integrated-circuit-design')
- assert.deepEqual(path.steps,['concept.rtl-and-hardware-description','concept.synthesis-and-technology-mapping','concept.static-timing-analysis'])
+ assert.deepEqual(path.steps,['concept.rtl-and-hardware-description','concept.simulation-and-verification','concept.synthesis-and-technology-mapping','concept.static-timing-analysis','concept.physical-design','concept.asic-and-fpga'])
  const completed=new Set<string>()
  for(const id of path.prerequisites){const prerequisite=get(id);for(const p of prerequisite.prerequisites)assert.ok(completed.has(p));for(const step of prerequisite.steps??[])completed.add(step);completed.add(id)}
  for(const id of path.steps!){const chapter=get(id);assert.equal(chapter.status,'published');for(const p of chapter.prerequisites)assert.ok(completed.has(p),`${id} needs ${p}`);completed.add(id)}

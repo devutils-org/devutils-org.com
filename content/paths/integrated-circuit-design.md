@@ -4,11 +4,11 @@ type: path
 locale: en
 slug: integrated-circuit-design
 title: Integrated circuit design — from RTL to timing
-summary: Connect a clocked HDL description, synthesis and static timing in a three-chapter introduction, with an explicit boundary before physical implementation.
+summary: Six lessons connect RTL, verification, synthesis, timing, physical design and ASIC/FPGA targets, with scoped exercises.
 status: published
 updated: 2026-10-26
 prerequisites: [path.digital-logic-foundations, path.digital-control-and-datapaths]
-steps: [concept.rtl-and-hardware-description, concept.synthesis-and-technology-mapping, concept.static-timing-analysis]
+steps: [concept.rtl-and-hardware-description, concept.simulation-and-verification, concept.synthesis-and-technology-mapping, concept.static-timing-analysis, concept.physical-design, concept.asic-and-fpga]
 related: [path.electronics-and-pcb, path.semiconductor-manufacturing]
 sources:
   - title: Yosys documentation — abstraction levels and synthesis flow
@@ -20,13 +20,17 @@ Complete [digital logic foundations](/learn/digital-logic-foundations/) and [dig
 
 You can follow the reasoning on paper. Executing HDL examples additionally requires a simulator. A source listing, a simulation result, a mapped netlist and a timing report answer different questions; keep that distinction while reading.
 
-## Follow the three available chapters
+## Follow the six lessons
 
 1. **RTL and hardware description:** express a four-bit accumulator in Verilog, distinguish continuous computation from clocked storage and trace two registers that capture old-state values together.
-2. **Synthesis and technology mapping:** understand connected implementation elements, simplify a Boolean expression and compare shared versus duplicated arithmetic without changing the cycle contract.
-3. **Static timing analysis:** calculate setup and hold slack from explicit clock edges, including the sign of skew, and explain why reducing frequency does not repair a same-edge hold violation.
+2. **Simulation and verification:** compare against an independent contract, check coverage and distinguish bounded checks from proof.
+3. **Synthesis and technology mapping:** understand connected implementation elements, simplify a Boolean expression and compare shared versus duplicated arithmetic without changing the cycle contract.
+4. **Static timing analysis:** calculate setup and hold slack from explicit clock edges, including the sign of skew, and explain why reducing frequency does not repair a same-edge hold violation.
 
-The source provides context for moving between representations. The chapters' accumulator, resource costs and timing values are original teaching examples. This route introduces the published part of the domain; it does not claim that the complete design flow has been implemented.
+5. **Physical design:** place cells, distribute clocks, route connections and revisit timing using extracted wiring.
+6. **ASIC and FPGA:** compare implementation resources and calculate a deliberately simplified cost crossover.
+
+The source provides context for moving between representations. The chapters' accumulator, resource costs and timing values are original teaching examples. The lessons teach the complete introductory flow; physical implementation and formal-tool execution are not claimed for the teaching examples.
 
 ## Combine behavior and timing
 
@@ -42,6 +46,6 @@ Latest arrival is 0.4 + 2.8 = 3.2 ns and setup requires arrival by 4.0 - 0.3 = 3
 
 These timing values are not measurements of the accumulator. Simulation and the integer model also do not establish a mapped implementation, extracted wiring or manufacturing readiness.
 
-## What remains in this domain
+## Continue from implementation to architecture
 
-Dedicated simulation/verification, physical-design and ASIC-versus-FPGA lessons remain planned. Physical placement and routing are the next implementation stages after a logical netlist; they are not covered by a promised but missing linked page. Use the [full computing stack](/knowledge/computing-stack/) to find currently published chapters across the domains.
+Complete the additional [synchronous interface lesson](/knowledge/digital-logic/synchronous-interfaces/) in the digital-logic continuation, then explore processor architecture. The six IC lessons explain implementation responsibilities; they do not represent a fabricated chip or a completed FPGA deployment. Use the [full computing stack](/knowledge/computing-stack/) to find the published routes.

@@ -2,7 +2,7 @@
   "version": 1,
   "id": "path.integrated-circuit-design",
   "locale": "en",
-  "contentHash": "d82e10c7ec429c3a82585641f87774b0a7361f31578c9113db42a509066e060f",
+  "contentHash": "5999b69f6c9e136c44118966b7d334181119b4df75757a5e68f2f0f8ad2481b8",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -32,7 +32,7 @@
       "result": "passed",
       "scope": "Ordered published prerequisites, two accumulator edges, setup/hold arithmetic and changing period.",
       "checkedAt": "2026-10-26",
-      "evidenceHash": "0b38046af2109e49f2eff5b28348ff723c51eb62046e6b807e9709f3188bb49f"
+      "evidenceHash": "42d659f4aa1ad399e863e4206f07db45518d60946e36019896246acc45d374fe"
     }
   ],
   "limitations": [

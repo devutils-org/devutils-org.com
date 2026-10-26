@@ -2,7 +2,7 @@
   "version": 1,
   "id": "path.digital-control-and-datapaths",
   "locale": "en",
-  "contentHash": "af9cf07c7ed3eb7d87bc62a7c0e432ed95fc35abe1dcd78df590b500268a2cd7",
+  "contentHash": "ea0c564988edfa7df13c9ff410b34e76e828d56b18f4400a23d30e75504461a1",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -32,7 +32,7 @@
       "result": "passed",
       "scope": "Path prerequisites, five-edge published composition and simultaneous capture using old state.",
       "checkedAt": "2026-10-26",
-      "evidenceHash": "f6ec4aa9a1691ee5403ea96c491ccb6c2ec4e265f068c8042f1194f1c77bfead"
+      "evidenceHash": "b1b44eecaffe5a9467595704875afb67bfe73ed8eeaf34fb887fcda73f9b7adc"
     }
   ],
   "limitations": [

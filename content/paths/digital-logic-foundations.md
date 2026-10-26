@@ -47,4 +47,4 @@ The distinguishing gate is XOR: its result for 11 is 0. The selector returns 011
 
 You should also be able to name a limit of each model: a gate table omits electrical behavior, a combinational equation omits settling time, a register trace assumes valid timing, and a synchronous counter needs a clocking contract.
 
-This completes the first digital-logic block, not the full planned “Build a computer from scratch” curriculum. Finite-state machines, an ALU, processor organization and hardware construction remain further lessons. The source course is a reference for the subject progression; these articles, worked values and completion exercises are original.
+This completes the first digital-logic block, not the full planned “Build a computer from scratch” curriculum. Continue with [digital control and datapaths](/learn/digital-control-and-datapaths/) for finite-state machines, an ALU and synchronous interfaces. Processor organization builds on those contracts; hardware construction requires additional implementation work. The source course is a reference for the subject progression; these articles, worked values and completion exercises are original.
