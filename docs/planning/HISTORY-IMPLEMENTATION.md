@@ -54,7 +54,9 @@ Human review remains pending unless a real reviewer supplies a signoff.
 - Information revolution: published chapter with visually inspected Hartley
   and Shannon equations, scoped Wiener sources and checked original coding,
   error-model and feedback examples.
-- Chapters 7–10 remain to be implemented.
+- Electronic computing: published chapter distinguishing relay/tube devices,
+  stored programs, semiconductor components, integration and CPU chipsets.
+- Chapters 8–10 remain to be implemented.
 
 The History index links the chapters in the ten-part editorial order. Broad
 chapters are excluded from timeline date filters, preserving the existing event

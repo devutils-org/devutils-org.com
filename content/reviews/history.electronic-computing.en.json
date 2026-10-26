@@ -1,0 +1,142 @@
+{
+  "version": 1,
+  "id": "history.electronic-computing",
+  "locale": "en",
+  "contentHash": "771b0549211ff1923a7a6fecc79a9fe3c3fc22bfea25bc8d4470608b70c62587",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "relays",
+      "section": "article-relays-make-the-electrical-and-mechanical-meet",
+      "statement": "Zuse’s retrospective describes testing relay-based designs leading to the Z3.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Autobiographical discussion of Z2 and conversion to relay operation",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Inventor testimony is attributed, not used as neutral priority adjudication."
+    },
+    {
+      "id": "eniac",
+      "section": "article-vacuum-tubes-change-the-switching-technology",
+      "statement": "ENIAC’s operation involved programmers, configuration and maintaining a large tube-based machine.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "ENIAC programmers; tube change; ENIAC being set up",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "No performance comparison or exclusive credit to named designers."
+    },
+    {
+      "id": "baby",
+      "section": "article-stored-programs-change-how-work-is-specified",
+      "statement": "Manchester dates Baby’s stored-program execution to 21 June 1948 and names Williams, Kilburn and Tootill.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "University celebrates Baby’s 65th birthday, main account",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Institutional history; no broad first-computer claim adopted. Toy ISA is explicitly invented."
+    },
+    {
+      "id": "transistor",
+      "section": "article-transistors-emerge-from-research-and-fabrication",
+      "statement": "Bardeen and Brattain achieved point-contact transistor action at Bell Labs in December 1947.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 4,
+          "locator": "Opening milestone and paragraphs on group, experiment and announcement",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "No inaccessible Nobel page counted as read; no transistor performance number reused."
+    },
+    {
+      "id": "kilby",
+      "section": "article-integrated-circuits-include-the-interconnections",
+      "statement": "Kilby’s 1958 circuit demonstration used semiconductor elements and fine wire interconnections.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 5,
+          "locator": "September 12, 1958 circuit and subsequent announcement paragraphs",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Demonstration is distinguished from commercial offering."
+    },
+    {
+      "id": "noyce",
+      "section": "article-integrated-circuits-include-the-interconnections",
+      "statement": "Noyce’s planar IC approach used metal-over-oxide interconnections and built on Hoerni’s process.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 6,
+          "locator": "Main account of interconnections, 1959 filing and later devices",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Inventive and manufacturing contributions are distinguished; no single exclusive inventor claim."
+    },
+    {
+      "id": "cpu",
+      "section": "article-microprocessors-integrate-cpu-functions",
+      "statement": "The 4004 was part of MCS-4 and integrated CPU functions while requiring system support.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 7,
+          "locator": "Main account of CPU slices, MCS-4, 4004 team and peripheral functions",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Avoids disputed unqualified first-microprocessor claim; inaccessible Intel page not used."
+    }
+  ],
+  "examples": [
+    {
+      "check": "history-electronics-exercises",
+      "result": "passed",
+      "scope": "Original toy stored-program trace and modified literal, Boolean contacts and simplified external interconnection accounting only.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "a6811689b7836815f499fc45c24376d569bda4bfd0f02cc8d6cd7db71ff67537"
+    }
+  ],
+  "limitations": [
+    "No historical machine emulation, device measurements or complete invention-priority adjudication.",
+    "Toy ISA and pin accounting are not specifications of the Baby or a particular IC.",
+    "Independent human review remains pending."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}
