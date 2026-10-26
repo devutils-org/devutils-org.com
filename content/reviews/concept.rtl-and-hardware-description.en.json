@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.rtl-and-hardware-description",
   "locale": "en",
-  "contentHash": "c6f799b51fe16e6d95726d16ac292323f700ae0920ad14e103864c396d3ddb3c",
+  "contentHash": "86c6b8827e3178008b984536e70a240c521117ffb6419b6c99b49e80162c7808",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -23,7 +23,7 @@
           "note": "Read the named primer sections, including the swap example for nonblocking assignments."
         }
       ],
-      "note": "Accumulator source, trace and exercises are original teaching examples; executable evidence is limited to the integer transition model."
+      "note": "Accumulator source, trace and exercises are original teaching examples. Integer-model evidence is recorded below; a separate HDL simulation is documented in docs/reviews/rtl-simulation-2026-10-26.md."
     },
     {
       "id": "clock",
@@ -39,7 +39,7 @@
           "note": "Read the named primer sections, including the swap example for nonblocking assignments."
         }
       ],
-      "note": "Accumulator source, trace and exercises are original teaching examples; executable evidence is limited to the integer transition model."
+      "note": "Accumulator source, trace and exercises are original teaching examples. Integer-model evidence is recorded below; a separate HDL simulation is documented in docs/reviews/rtl-simulation-2026-10-26.md."
     },
     {
       "id": "synthesis",
@@ -55,7 +55,23 @@
           "note": "Read the named primer sections, including the swap example for nonblocking assignments."
         }
       ],
-      "note": "Accumulator source, trace and exercises are original teaching examples; executable evidence is limited to the integer transition model."
+      "note": "Accumulator source, trace and exercises are original teaching examples. Integer-model evidence is recorded below; a separate HDL simulation is documented in docs/reviews/rtl-simulation-2026-10-26.md."
+    },
+    {
+      "id": "simulation",
+      "section": "article-reproduce-the-hdl-check",
+      "kind": "model",
+      "statement": "Icarus compiles HDL with iverilog and executes the compiled model with vvp.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Getting Started, hello.v compilation and vvp execution; multi-file designs",
+          "access": "read",
+          "note": "Read compiler/runtime separation and testbench examples."
+        }
+      ],
+      "note": "The accumulator simulation was executed locally; exact tool, artifact hashes, result and limitations are recorded in docs/reviews/rtl-simulation-2026-10-26.md."
     }
   ],
   "examples": [
@@ -64,12 +80,12 @@
       "result": "passed",
       "scope": "Accumulator mathematical transitions, reset/enable combinations, old-state capture, six printed edges and exercise arithmetic; not HDL execution.",
       "checkedAt": "2026-10-26",
-      "evidenceHash": "c52b61335b8ab8319ccd3dc94457b07ccd0817c99481eb362588471063776b62"
+      "evidenceHash": "c8ad120b045066ab190cf8499529124f09ed86c11c1f88cbc62d749bff2e8bf5"
     }
   ],
   "limitations": [
-    "No HDL simulator, elaborator or synthesis tool was run.",
-    "No physical timing, power-up guarantee or hardware fault behavior is verified."
+    "The recorded example group checks the integer model; separate HDL execution is documented in docs/reviews/rtl-simulation-2026-10-26.md and reproduced by npm run verify:rtl.",
+    "No synthesis, physical timing, power-up guarantee or hardware fault behavior is verified."
   ],
   "humanReview": {
     "status": "pending"

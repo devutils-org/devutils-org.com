@@ -25,5 +25,5 @@ test('RTL accumulator model preserves reset priority, hold, modulo sum and simul
  let state=transition(0,0,15,0,1);assert.deepEqual(state,[15,0])
  state=transition(state[0],state[1],15,0,1);assert.deepEqual(state,[14,15])
  assert.match(entry.body,/q = 1110 and prior = 1111/)
- assert.match(entry.body,/No HDL simulator or synthesis tool was run/)
+ assert.match(entry.body,/No synthesis tool was run/)
 })

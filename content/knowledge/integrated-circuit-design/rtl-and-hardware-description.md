@@ -13,6 +13,8 @@ related: [concept.finite-state-machines]
 sources:
   - title: Yosys documentation — A primer on digital circuit synthesis
     url: https://yosyshq.readthedocs.io/projects/yosys/en/latest/appendix/primer.html
+  - title: Icarus Verilog — compile and execute a simulation
+    url: https://steveicarus.github.io/iverilog/usage/getting_started.html
 ---
 ## Describe a circuit across clock edges
 
@@ -91,7 +93,17 @@ A common mistake is to read q <= ... followed by prior <= q as an ordinary seque
 
 Simulation evaluates the HDL model for a chosen stimulus. Synthesis converts a supported description into connected implementation elements. Neither a plausible waveform nor successful synthesis establishes that manufactured hardware meets its timing constraints. Physical design, libraries, clock constraints and implementation checks remain necessary.
 
-For this example, expect eight state bits, an addition function and logic implementing reset and enable choices before optimization. This is a conceptual inventory, not a measured netlist: a tool may transform the logic or use cells with dedicated enable/reset features. No HDL simulator or synthesis tool was run for this chapter's published check. The executable check covers the stated integer transition model and printed trace, and must not be presented as Verilog validation.
+For this example, expect eight state bits, an addition function and logic implementing reset and enable choices before optimization. This is a conceptual inventory, not a measured netlist: a tool may transform the logic or use cells with dedicated enable/reset features. The mathematical example check covers the integer transition model and printed trace. A separate HDL check was also executed with Icarus Verilog 12.0: it compiled the exact module printed above and passed 3083 clocked checks, including the six printed edges, every four-bit starting q and input d with both reset and enable values, and the exercises. Two deliberate faults—capturing the new sum in prior and making reset asynchronous—were rejected by that checker. No synthesis tool was run.
+
+## Reproduce the HDL check
+
+With Icarus Verilog installed, run this repository command:
+
+```sh
+npm run verify:rtl
+```
+
+The command uses iverilog to compile the module and vvp to execute a generated testbench. Set IVERILOG and VVP to executable paths if they are not on PATH. The checker extracts the module and trace from this page, drives inputs while the clock is low, confirms the registers hold before the rising edge, then samples after nonblocking updates settle. It exits with an error if a check fails or the tools are unavailable. It remains separate from the tool-independent mathematical checks. Simulation does not establish physical timing, synthesis or manufacturing readiness.
 
 ## Exercises and answers
 

@@ -34,5 +34,6 @@ published content at the end; empty headings and roadmap labels do not count.
 
 The original seven-step digital-logic foundations path remains introductory;
 `/learn/digital-control-and-datapaths/` explicitly continues it with the FSM and
-ALU lessons. HDL examples currently have mathematical model checks only: no
-HDL simulation or synthesis run is claimed.
+ALU lessons. The RTL accumulator now has a separately reproducible Icarus Verilog 12.0
+simulation check (`npm run verify:rtl`), covering the published module and trace.
+No synthesis or tool-based static timing run is claimed.
