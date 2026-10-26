@@ -75,7 +75,7 @@ export const cases: Record<string, Case[]> = {
       finding: 'A loopback server declared request identities through USDT and carried them into downstream work. A deliberately injected lock delay appeared in the request’s own row: 40.06 ms, with the holder thread named.',
       outcome: 'The measurement attributed the wait using propagated identity. The injected delay supplied a known value to check the result against.',
       limit: 'A controlled server scenario; this is not a production incident or the planned Suzanne rendering integration.',
-      evidence: 'Omniscient · STATE.md, vertical case · docs/briefs/wave-9-vertical.md',
+      evidence: 'Omniscient · docs/dev/STATE.md, vertical case · docs/dev/briefs/wave-9-vertical.md',
       fr: {
         target: 'Serveur HTTP',
         kind: 'Charge de validation contrôlée',
@@ -84,7 +84,7 @@ export const cases: Record<string, Case[]> = {
         finding: 'Un serveur local déclarait l’identité de ses requêtes par USDT et la transmettait au travail qui en découlait. Un délai de verrou injecté volontairement est apparu sur la ligne de la requête elle-même : 40,06 ms, avec le nom du thread qui tenait le verrou.',
         outcome: 'La mesure a attribué l’attente grâce à l’identité transmise. Le délai injecté donnait une valeur connue pour vérifier le résultat.',
         limit: 'Un scénario de serveur contrôlé : ce n’est ni un incident de production, ni l’intégration de rendu Suzanne prévue.',
-        evidence: 'Omniscient · STATE.md, cas vertical · docs/briefs/wave-9-vertical.md',
+        evidence: 'Omniscient · docs/dev/STATE.md, cas vertical · docs/dev/briefs/wave-9-vertical.md',
       },
     },
     {
@@ -94,7 +94,7 @@ export const cases: Record<string, Case[]> = {
       finding: 'Omniscient decomposed a task into 198.60 ms on CPU, 1.48 ms runnable and 161.68 ms blocked, against the program’s independently measured lifetime.',
       outcome: 'The parts totalled 361.76 ms against 361.21 ms of lifetime. The −550.68 µs residue lay within the stated ±1.58 ms resolution.',
       limit: 'These are the documented workload’s measurements, not accuracy guarantees for arbitrary programs.',
-      evidence: 'Omniscient · STATE.md, task wall-clock decomposition',
+      evidence: 'Omniscient · docs/dev/STATE.md, task wall-clock decomposition',
       fr: {
         target: 'Charge processeur',
         kind: 'Charge de validation contrôlée',
@@ -103,7 +103,7 @@ export const cases: Record<string, Case[]> = {
         finding: 'Omniscient a décomposé une tâche en 198,60 ms sur le processeur, 1,48 ms en attente de son tour et 161,68 ms bloquée, face à la durée de vie du programme mesurée de façon indépendante.',
         outcome: 'Les parties totalisaient 361,76 ms pour 361,21 ms de durée de vie. Le reste de −550,68 µs tenait dans la résolution annoncée de ±1,58 ms.',
         limit: 'Ce sont les mesures de la charge documentée, pas une garantie de précision pour n’importe quel programme.',
-        evidence: 'Omniscient · STATE.md, décomposition du temps réel d’une tâche',
+        evidence: 'Omniscient · docs/dev/STATE.md, décomposition du temps réel d’une tâche',
       },
     },
   ],

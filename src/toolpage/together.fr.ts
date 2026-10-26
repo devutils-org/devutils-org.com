@@ -163,7 +163,7 @@ export default {
       scene: 'start',
       eyebrow: 'LANCER LA CHAÎNE',
       title: ['Quatre outils,', 'une commande.'],
-      text: 'La chaîne se trouve dans le dépôt d’Omniscient, privé pour l’instant. Voici les commandes qu’elle lance.',
+      text: 'La chaîne se trouve dans <a href="https://github.com/devutils-org/omniscient">le dépôt d’Omniscient</a>. Voici les commandes qu’elle lance.',
       installLabel: 'DEPUIS UNE COPIE D’OMNISCIENT, AVEC XPAC, ATFQ ET VMANYWARE À CÔTÉ',
       install: `sh scripts/distroproof/reference-build.sh
 sh scripts/distroproof/devutils-build.sh
@@ -171,7 +171,7 @@ distroproof up -f distroproof-devutils.toml --no-tui --pin-cache --jobs 4 \\
   --json target/matrix/devutils.json`,
       actions: `<a class="primary" href="/fr/tools/distroproof/">Commencer par distroproof <span>${arrow}</span></a>
         <a class="secondary" href="/fr/">Tous les outils devutils</a>`,
-      small: `${summary} · Omniscient est privé pour l’instant · MIT / Apache-2.0`,
+      small: `${summary} · MIT / Apache-2.0`,
     },
   ],
 } satisfies Page

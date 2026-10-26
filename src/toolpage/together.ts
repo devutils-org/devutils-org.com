@@ -3,7 +3,7 @@
 // omniscient/.distroproof/collect/chain-*/ (the latest run on each target,
 // copied into chain-runs.json by scripts/chain-runs.ts),
 // xpac/docs/distroproof.md, xpac/REFERENCE.md, atfq/docs/DECISIONS.md.
-// Omniscient is private: its sources are cited by path, never linked.
+// The paths above are in github.com/devutils-org/omniscient.
 
 import { icon } from '../html.ts'
 import { chainResults } from './chain-results.ts'
@@ -164,7 +164,7 @@ export default {
       scene: 'start',
       eyebrow: 'RUN THE CHAIN',
       title: ['Four tools,', 'one command.'],
-      text: 'The chain lives in Omniscient’s repository, which is private for now. These are the commands it runs.',
+      text: 'The chain lives in <a href="https://github.com/devutils-org/omniscient">Omniscient’s repository</a>. These are the commands it runs.',
       installLabel: 'FROM AN OMNISCIENT CHECKOUT, WITH XPAC, ATFQ AND VMANYWARE BESIDE IT',
       install: `sh scripts/distroproof/reference-build.sh
 sh scripts/distroproof/devutils-build.sh
@@ -172,7 +172,7 @@ distroproof up -f distroproof-devutils.toml --no-tui --pin-cache --jobs 4 \\
   --json target/matrix/devutils.json`,
       actions: `<a class="primary" href="/tools/distroproof/">Start with distroproof <span>${arrow}</span></a>
         <a class="secondary" href="/">All devutils tools</a>`,
-      small: `${summary} · Omniscient is private for now · MIT / Apache-2.0`,
+      small: `${summary} · MIT / Apache-2.0`,
     },
   ],
 } satisfies Page

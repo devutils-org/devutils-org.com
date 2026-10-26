@@ -77,7 +77,7 @@ export default {
         <div class="evidence-scale"><span>IDENTITY</span><i></i><span>KEY</span><i></i><span>WAKEUP</span><i></i><span>TEMPORAL</span></div>
         <h3>Correlation, with receipts.</h3>
         <p>A propagated identity and two events close in time are different kinds of evidence. Omniscient tells you which one supports the connection.</p>
-        ${more('#the-number-no-single-source-can-give', `Understand the evidence ${icon('arrow-up-right')}`)}
+        ${more('/blob/main/REFERENCE.md#the-number-no-single-source-can-give', `Understand the evidence ${icon('arrow-up-right')}`)}
       </article>
       <article>
         <div class="mini-symbol">[ kernel ]<br /><span>↓</span><br />[ omn ]</div>

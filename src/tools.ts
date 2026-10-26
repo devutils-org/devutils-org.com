@@ -49,7 +49,6 @@ export const tools: Tool[] = [
     license: 'MIT / Apache-2.0',
     command: 'omn top -- ./your-program',
     repo: 'omniscient',
-    repoPrivate: true,
     fr: {
       verb: 'Observer',
       line: 'L’observation de Linux, directement depuis le noyau.',

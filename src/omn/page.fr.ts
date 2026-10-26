@@ -77,7 +77,7 @@ export default {
         <div class="evidence-scale"><span>IDENTITÉ</span><i></i><span>CLÉ</span><i></i><span>RÉVEIL</span><i></i><span>TEMPS</span></div>
         <h3>Des liens, avec leurs preuves.</h3>
         <p>Une identité transmise et deux événements proches dans le temps ne sont pas le même genre de preuve. Omniscient vous dit lequel justifie le lien.</p>
-        ${more('#the-number-no-single-source-can-give', `Comprendre les preuves ${icon('arrow-up-right')}`)}
+        ${more('/blob/main/REFERENCE.md#the-number-no-single-source-can-give', `Comprendre les preuves ${icon('arrow-up-right')}`)}
       </article>
       <article>
         <div class="mini-symbol">[ kernel ]<br /><span>↓</span><br />[ omn ]</div>

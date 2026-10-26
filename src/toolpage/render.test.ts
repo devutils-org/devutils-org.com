@@ -62,11 +62,11 @@ test('a page without a tool links its own repository, and has no stories', () =>
   assert.match(html.footer, /How the tools check each other\./)
 })
 
-test('a private repository is named, never linked', () => {
+test('a public repository is linked from its page', () => {
   const html = toolPageHtml({ ...minimal([]), meta: undefined, id: 'omn', nav: [['Docs', { repo: '/tree/main/docs' }]] })
-  assert.doesNotMatch(html.nav + html.footer, /github\.com\/devutils-org\/omniscient/)
-  assert.match(html.main, /<span class="repo-unavailable" aria-disabled="true"[^>]*>Docs /)
-  assert.match(html.nav, /<span class="github repo-unavailable"/)
+  assert.match(html.nav, /<a class="github" href="https:\/\/github\.com\/devutils-org\/omniscient">/)
+  assert.match(html.main, /href="https:\/\/github\.com\/devutils-org\/omniscient\/tree\/main\/docs"/)
+  assert.doesNotMatch(html.nav + html.main, /repo-unavailable/)
 })
 
 test('a start section with a command shows it, escaped, instead of install blocks', () => {
