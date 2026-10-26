@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "id": "concept.pipelines-and-hazards",
+  "locale": "en",
+  "contentHash": "5ed343b74b4dc5fd54043977ccf416b7e41e67e8e86d9fab58c717bf719a1fc4",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "hazards",
+      "section": "article-preserve-data-dependencies",
+      "kind": "model",
+      "statement": "Overlapped instruction execution requires dependency handling through stalls or suitable bypass paths.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Data Hazards, bypassing and load-to-use discussion",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    },
+    {
+      "id": "control",
+      "section": "article-resolve-control-hazards",
+      "kind": "model",
+      "statement": "Branches affect which instructions may proceed, and incorrect-path work must not change architectural results.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Control Hazards and inserted bubbles",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "architecture-exercises",
+      "result": "passed",
+      "scope": "Published tables, state traces, worked arithmetic and reading prerequisites under the explicitly stated teaching assumptions.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "366eabdad48de911f76413a5bec005c967ef1436ae2d3db637be3f43f8964276"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review remains pending.",
+    "Numerical costs, timings, addresses and capacities are original stipulated inputs, not measurements or universal properties of a device.",
+    "Model checks do not establish physical implementation, compiler correctness, formal proof or hardware deployment unless separately documented."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

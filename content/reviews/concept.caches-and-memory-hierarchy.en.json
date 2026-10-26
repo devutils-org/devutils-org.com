@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "id": "concept.caches-and-memory-hierarchy",
+  "locale": "en",
+  "contentHash": "a7a3c959cbce5cf75011fb94b56d9d449db0dc4c4ffbc33db6789d6e903f2c72",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "mapping",
+      "section": "article-split-a-byte-address-into-fields",
+      "kind": "model",
+      "statement": "A direct-mapped cache maps each block to one line and distinguishes competing blocks with tags and validity.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Direct-Mapped Caches and Cache Access",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    },
+    {
+      "id": "writes",
+      "section": "article-decide-what-writes-mean",
+      "kind": "model",
+      "statement": "Write-through and write-back change how modified values reach lower memory; replacement and locality affect misses.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Replacement Strategies and Handling Writes",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "architecture-exercises",
+      "result": "passed",
+      "scope": "Published tables, state traces, worked arithmetic and reading prerequisites under the explicitly stated teaching assumptions.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "366eabdad48de911f76413a5bec005c967ef1436ae2d3db637be3f43f8964276"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review remains pending.",
+    "Numerical costs, timings, addresses and capacities are original stipulated inputs, not measurements or universal properties of a device.",
+    "Model checks do not establish physical implementation, compiler correctness, formal proof or hardware deployment unless separately documented."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

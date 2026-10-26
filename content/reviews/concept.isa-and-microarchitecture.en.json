@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "id": "concept.isa-and-microarchitecture",
+  "locale": "en",
+  "contentHash": "d8633c0bcc1486463dea14b5348e6113c0cd2141b53aaa10c1bcc044d9363a32",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "registers",
+      "section": "article-name-architectural-state",
+      "kind": "model",
+      "statement": "RV32I has 32 integer register names, each 32 bits wide, with x0 fixed at zero.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Programmers’ Model for Base Integer ISA",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    },
+    {
+      "id": "scope",
+      "section": "article-compare-risc-v-and-x86-64-carefully",
+      "kind": "model",
+      "statement": "Intel architecture documentation separates programming environment, instruction reference and system-level behavior.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Combined Volume Set, descriptions of volumes 1–3",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "architecture-exercises",
+      "result": "passed",
+      "scope": "Published tables, state traces, worked arithmetic and reading prerequisites under the explicitly stated teaching assumptions.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "366eabdad48de911f76413a5bec005c967ef1436ae2d3db637be3f43f8964276"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review remains pending.",
+    "Numerical costs, timings, addresses and capacities are original stipulated inputs, not measurements or universal properties of a device.",
+    "Model checks do not establish physical implementation, compiler correctness, formal proof or hardware deployment unless separately documented."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

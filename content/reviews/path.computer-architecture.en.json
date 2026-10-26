@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "id": "path.computer-architecture",
+  "locale": "en",
+  "contentHash": "24395a886edd0b9bc0f8a29f906eab4cb17195b2583dae19710ce46226ea7dc6",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "scope",
+      "section": "article-follow-the-six-lessons",
+      "kind": "model",
+      "statement": "The route separates instruction behavior from pipelined execution and memory-system implementation.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Building the Beta, datapath responsibilities; route order is editorial",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "architecture-exercises",
+      "result": "passed",
+      "scope": "Published tables, state traces, worked arithmetic and reading prerequisites under the explicitly stated teaching assumptions.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "366eabdad48de911f76413a5bec005c967ef1436ae2d3db637be3f43f8964276"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review remains pending.",
+    "Numerical costs, timings, addresses and capacities are original stipulated inputs, not measurements or universal properties of a device.",
+    "Model checks do not establish physical implementation, compiler correctness, formal proof or hardware deployment unless separately documented."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

@@ -50,3 +50,5 @@ A match becomes visible after edge 3, enabling T to capture the ALU result at ed
 The ALU produces R = 1000, C = 0, V = 1, Z = 0, N = 1. As unsigned arithmetic this is 8. Interpreting 1000 as signed yields -8, while the exact signed computation 7 + 1 is +8 and cannot fit. V warns that the retained signed interpretation does not represent the exact sum.
 
 The wiring is a teaching composition, not a recommended handshake protocol. Real systems must specify operand stability, backpressure, reset behavior and the timing of capture. Next, processor architecture adds an instruction contract to organize such state changes.
+
+Continue with [computer architecture](/learn/computer-architecture/) to connect these components and implementation choices to instruction execution, memory and I/O.

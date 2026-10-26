@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "id": "concept.instruction-execution",
+  "locale": "en",
+  "contentHash": "acd1b1485b76922ae17d169103694075c4b718cf0eef8bb9fa174dcb420e63ea",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "execution",
+      "section": "article-connect-the-trace-to-a-datapath",
+      "kind": "model",
+      "statement": "Instruction execution coordinates instruction fetch, decoded control, operand selection and architectural writes.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "ALU Op Datapath, fetch/decode steps and PC selection",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    },
+    {
+      "id": "boundary",
+      "section": "article-specify-the-teaching-machine",
+      "kind": "model",
+      "statement": "The toy deliberately separates instruction-slot indices from actual ISA byte-address and load/store semantics.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Load and Store Instructions; the toy ISA and addresses are original definitions",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "architecture-exercises",
+      "result": "passed",
+      "scope": "Published tables, state traces, worked arithmetic and reading prerequisites under the explicitly stated teaching assumptions.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "366eabdad48de911f76413a5bec005c967ef1436ae2d3db637be3f43f8964276"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review remains pending.",
+    "Numerical costs, timings, addresses and capacities are original stipulated inputs, not measurements or universal properties of a device.",
+    "Model checks do not establish physical implementation, compiler correctness, formal proof or hardware deployment unless separately documented."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

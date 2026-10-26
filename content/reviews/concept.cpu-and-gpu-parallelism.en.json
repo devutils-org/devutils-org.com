@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "id": "concept.cpu-and-gpu-parallelism",
+  "locale": "en",
+  "contentHash": "2030f59abac1575f0e3a903a967869e75ada0fa6b7466388c36a0135c0366ba9",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "groups",
+      "section": "article-separate-tasks-data-parallelism-and-dependencies",
+      "kind": "model",
+      "statement": "CUDA organizes threads into blocks and grids with constraints on cooperation and block scheduling.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Thread Blocks and Grids",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    },
+    {
+      "id": "simt",
+      "section": "article-count-useful-lane-work",
+      "kind": "model",
+      "statement": "CUDA warps group 32 threads and SIMT masking handles divergent control paths.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Warps and SIMT; the eight-lane arithmetic example is an original simplified model",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "architecture-exercises",
+      "result": "passed",
+      "scope": "Published tables, state traces, worked arithmetic and reading prerequisites under the explicitly stated teaching assumptions.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "366eabdad48de911f76413a5bec005c967ef1436ae2d3db637be3f43f8964276"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review remains pending.",
+    "Numerical costs, timings, addresses and capacities are original stipulated inputs, not measurements or universal properties of a device.",
+    "Model checks do not establish physical implementation, compiler correctness, formal proof or hardware deployment unless separately documented."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

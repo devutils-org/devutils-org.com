@@ -49,3 +49,5 @@ These timing values are not measurements of the accumulator. Simulation and the 
 ## Continue from implementation to architecture
 
 Complete the additional [synchronous interface lesson](/knowledge/digital-logic/synchronous-interfaces/) in the digital-logic continuation, then explore processor architecture. The six IC lessons explain implementation responsibilities; they do not represent a fabricated chip or a completed FPGA deployment. Use the [full computing stack](/knowledge/computing-stack/) to find the published routes.
+
+Continue with [computer architecture](/learn/computer-architecture/) to connect these components and implementation choices to instruction execution, memory and I/O.

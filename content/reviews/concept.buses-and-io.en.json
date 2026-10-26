@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "id": "concept.buses-and-io",
+  "locale": "en",
+  "contentHash": "d9e6cca0da872c095426ba94f94296e42edda560730a1c1c2e93a07a86a843c0",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "mmio",
+      "section": "article-address-memory-and-devices-differently",
+      "kind": "model",
+      "statement": "Memory-mapped I/O addresses device registers with access rules distinct from ordinary RAM.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Memory Mapped IO, Getting Access and Accessing the device",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    },
+    {
+      "id": "completion",
+      "section": "article-coordinate-multiple-outstanding-operations",
+      "kind": "model",
+      "statement": "Posted writes may require documented synchronization before device-side effects can be assumed complete.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Posted-write discussion and device readback example",
+          "access": "read",
+          "note": "Inspected the specified primary documentation or teaching passage during this authoring pass."
+        }
+      ],
+      "note": "Assessment is limited to this selected claim under the article’s stated model; original exercise inputs are checked separately."
+    }
+  ],
+  "examples": [
+    {
+      "check": "architecture-exercises",
+      "result": "passed",
+      "scope": "Published tables, state traces, worked arithmetic and reading prerequisites under the explicitly stated teaching assumptions.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "366eabdad48de911f76413a5bec005c967ef1436ae2d3db637be3f43f8964276"
+    }
+  ],
+  "limitations": [
+    "Assistant assessment of selected claims; independent human review remains pending.",
+    "Numerical costs, timings, addresses and capacities are original stipulated inputs, not measurements or universal properties of a device.",
+    "Model checks do not establish physical implementation, compiler correctness, formal proof or hardware deployment unless separately documented."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}
