@@ -8,7 +8,8 @@ chapters are the starting point, not a reduced definition of completion.
 As of 2026-10-26, domains 1–10 have introductory published coverage and
 connected reading routes. The latest extension adds three IC-design lessons,
 one digital-interface lesson, six architecture lessons and six embedded lessons:
-16 concepts and two paths, bringing the published-record total to 93.
+16 concepts and two paths, bringing English coverage to 93 records. Together with the six French
+foundation translations delivered independently, the published-record total is 99.
 
 - Integrated circuit design: RTL, simulation/verification, synthesis, timing,
   physical design and ASIC/FPGA target choices (six lessons).

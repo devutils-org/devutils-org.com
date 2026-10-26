@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/contributions-reports.ts && vite build && vite build --ssr src/prerender.ts --outDir .ssr --emptyOutDir && node scripts/prerender.ts && node scripts/seo.ts && node scripts/search.ts && node scripts/check-links.ts",
+    "build": "node scripts/contributions-reports.ts && vite build && vite build --ssr src/prerender.ts --outDir .ssr --emptyOutDir && node scripts/prerender.ts && node scripts/seo.ts && node scripts/search.ts && node scripts/check-links.ts && node scripts/audit-seo.ts",
     "preview": "vite preview",
     "book:atfq": "node scripts/atfq-book.ts",
     "chain:runs": "node scripts/chain-runs.ts",
@@ -13,7 +13,10 @@
     "contributions:reports": "node scripts/contributions-reports.ts",
     "check:links": "node scripts/check-links.ts",
     "verify:content": "node scripts/verify-content.ts",
-    "verify:rtl": "node scripts/check-rtl.ts"
+    "verify:rtl": "node scripts/check-rtl.ts",
+    "check:seo": "node scripts/audit-seo.ts",
+    "check:seo:live": "node scripts/verify-live-seo.ts",
+    "check:seo:browser": "node bench/seo.ts"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",

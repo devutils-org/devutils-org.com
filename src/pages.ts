@@ -65,7 +65,7 @@ const written: Page[] = [
   {
     key: 'main',
     file: 'index.html',
-    title: 'devutils — Small tools. Honest answers.',
+    title: 'devutils — Linux tools and computing library',
     description: 'Understand what your Linux computer is doing: explore slowdowns, make sense of its numbers and prepare software changes.',
     ogDescription: 'Small Linux tools that show their work.',
     shape: 'mark',
@@ -73,7 +73,7 @@ const written: Page[] = [
     preview: 'main',
     brand: 'devutils',
     fr: {
-      title: 'devutils — Petits outils. Réponses honnêtes.',
+      title: 'devutils — Outils Linux et bibliothèque informatique',
       description: 'Comprendre ce que fait votre ordinateur Linux : explorer les ralentissements, donner du sens aux chiffres et préparer les changements logiciels.',
       ogDescription: 'De petits outils Linux qui montrent leur travail.',
     },
@@ -81,7 +81,7 @@ const written: Page[] = [
   {
     key: 'omn',
     file: 'tools/omn/index.html',
-    title: 'Omniscient — See beyond the surface.',
+    title: 'Omniscient — Linux CPU, GPU and memory observability',
     description: 'Observe Linux workloads across CPU, GPU, memory, network and disk, with the evidence beside every number.',
     ogDescription: 'Linux observability, direct from the kernel, with the evidence beside every number.',
     shape: 'omn',
@@ -90,7 +90,7 @@ const written: Page[] = [
     preview: 'omniscient',
     brand: 'Omniscient',
     fr: {
-      title: 'Omniscient — Voir au-delà de la surface.',
+      title: 'Omniscient — Observer CPU, GPU et mémoire sous Linux',
       description: 'Observer ce que font les programmes sous Linux, du processeur au disque, avec la preuve à côté de chaque chiffre.',
       ogDescription: 'L’observation de Linux, directement depuis le noyau, avec la preuve à côté de chaque chiffre.',
     },
@@ -98,7 +98,7 @@ const written: Page[] = [
   {
     key: 'atfq',
     file: 'tools/atfq/index.html',
-    title: 'ATFQ — Ask the question. Read your machine.',
+    title: 'ATFQ — Understand your Linux system from the terminal',
     description: 'A Linux companion for the terminal: short answers first, your machine’s real state second, the deep why only if you want it. Read-only.',
     shape: 'mark',
     css: toolCss,
@@ -106,14 +106,14 @@ const written: Page[] = [
     preview: 'atfq',
     brand: 'ATFQ',
     fr: {
-      title: 'ATFQ — Posez la question. Lisez votre machine.',
+      title: 'ATFQ — Comprendre son système Linux depuis le terminal',
       description: 'Un compagnon Linux pour le terminal : la réponse courte d’abord, l’état réel de votre machine ensuite, le pourquoi détaillé seulement si vous le voulez. En lecture seule.',
     },
   },
   {
     key: 'distroproof',
     file: 'tools/distroproof/index.html',
-    title: 'distroproof — Works on my machine. Proven on theirs.',
+    title: 'distroproof — Test software across Linux distributions',
     description: 'Test your program on 20 distro images with their own kernels. Compare failures using environment facts, as demonstrated by the Omniscient case study.',
     shape: 'distroproof',
     css: toolCss,
@@ -121,14 +121,14 @@ const written: Page[] = [
     preview: 'distroproof',
     brand: 'distroproof',
     fr: {
-      title: 'distroproof — Ça marche chez moi. Prouvé chez eux.',
-      description: 'Testez votre programme sur 20 images de distributions, chacune avec son propre noyau. Comparez les échecs grâce aux faits de l’environnement, comme l’a montré l’étude de cas d’Omniscient.',
+      title: 'distroproof — Tester sur plusieurs distributions Linux',
+      description: 'Testez un programme sur 20 images de distributions Linux avec leurs noyaux. Comparez les échecs et leur environnement dans l’étude de cas Omniscient.',
     },
   },
   {
     key: 'xpac',
     file: 'tools/xpac/index.html',
-    title: 'xpac — Every package. Every reason.',
+    title: 'xpac — Linux package inventory and dependency planning',
     description: 'Native package inventory, provenance, conservative plans and declarative TOML reconciliation across APT, Pacman, RPM/DNF, Flatpak, Homebrew, apk and Portage.',
     shape: 'xpac',
     css: toolCss,
@@ -136,14 +136,14 @@ const written: Page[] = [
     preview: 'xpac',
     brand: 'xpac',
     fr: {
-      title: 'xpac — Chaque paquet. Chaque raison.',
+      title: 'xpac — Inventaire des paquets Linux et de leurs dépendances',
       description: 'L’inventaire des paquets installés, leur provenance, des plans prudents et une mise en conformité déclarative en TOML, pour APT, Pacman, RPM/DNF, Flatpak, Homebrew, apk et Portage.',
     },
   },
   {
     key: 'vmanyware',
     file: 'tools/vmanyware/index.html',
-    title: 'VMAnyware — Your homelab. From anywhere.',
+    title: 'VMAnyware — Proxmox Linux environments for your homelab',
     description: 'Define a Linux environment once, provision it on your own Proxmox, and reach it from desktop or phone. In development. Local lifecycle validated; provisioning in progress.',
     shape: 'vmanyware',
     css: toolCss,
@@ -151,21 +151,21 @@ const written: Page[] = [
     preview: 'vmanyware',
     brand: 'VMAnyware',
     fr: {
-      title: 'VMAnyware — Votre homelab. De partout.',
-      description: 'Décrivez un environnement Linux une fois, créez-le sur votre propre serveur Proxmox, et accédez-y depuis votre ordinateur ou votre téléphone. En développement : cycle de vie validé en local, création des machines en cours.',
+      title: 'VMAnyware — Environnements Linux sur Proxmox pour votre homelab',
+      description: 'Un projet d’environnements Linux sur Proxmox, accessibles depuis ordinateur ou téléphone. Cycle de vie validé en local ; provisionnement en développement.',
     },
   },
   {
     key: 'together',
     file: 'together/index.html',
     title: 'Together — How the devutils tools check each other',
-    description: 'Five independent Linux tools that test each other: distroproof proves Omniscient and xpac on real kernels, xpac installs reference tools, Omniscient measures VMAnyware, atfq is held to procfs.',
+    description: 'How five Linux tools check each other: cross-distribution tests, package plans, workload measurements and comparisons with procfs, with results and limits.',
     shape: 'mark',
     css: toolCss,
     content: '/src/toolpage/together.ts',
     fr: {
       title: 'Ensemble — Comment les outils devutils se vérifient entre eux',
-      description: 'Cinq outils Linux indépendants qui se testent les uns les autres : distroproof éprouve Omniscient et xpac sur de vrais noyaux, xpac installe les outils de référence, Omniscient mesure VMAnyware, atfq est confronté à procfs.',
+      description: 'Comment cinq outils Linux se vérifient entre eux : tests multi-distributions, paquets, mesures et comparaisons avec procfs, avec résultats et limites.',
     },
   },
   {

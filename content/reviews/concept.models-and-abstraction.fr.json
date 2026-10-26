@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "id": "concept.models-and-abstraction",
+  "locale": "fr",
+  "contentHash": "c201fe43d1df60885649115cbf20497b795e0869e4ffad5e48d1ac561b76c2cc",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "claim-1",
+      "section": "article-choisir-la-question-et-le-mod-le",
+      "kind": "interpretation",
+      "statement": "Une spécification expose des garanties sous hypothèses en masquant certains détails de réalisation.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Section 5.1.1, Role of Specifications",
+          "access": "read",
+          "note": "Passage source consulté le 26 octobre 2026 et adaptation française relue dans cette campagne."
+        }
+      ],
+      "note": "Évaluation limitée à cette affirmation. Les données numériques sont des exemples pédagogiques choisis, sans mesure de matériel réel."
+    },
+    {
+      "id": "claim-2",
+      "section": "article-composer-deux-garanties",
+      "kind": "model",
+      "statement": "Des bornes de délai peuvent être composées le long d’un chemin combinatoire sous les hypothèses d’interface annoncées.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Sections 5.3.1–5.3.2, discipline statique et composition",
+          "access": "read",
+          "note": "Passage source consulté le 26 octobre 2026 et adaptation française relue dans cette campagne."
+        }
+      ],
+      "note": "Évaluation limitée à cette affirmation. Les données numériques sont des exemples pédagogiques choisis, sans mesure de matériel réel."
+    }
+  ],
+  "examples": [
+    {
+      "check": "foundation-fr-exercises",
+      "result": "passed",
+      "scope": "Tables françaises : cartes, conversions, motifs binaires, décodage de tensions, impulsion manquée, règle logique, délais et ordre des prérequis.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "705012551dbf831277d5b8e16e67a604b91b194ebd0bad11fd0cd6bfccecbff3"
+    }
+  ],
+  "limitations": [
+    "Adaptation française par un assistant ; les passages sources restent en anglais. La relecture humaine indépendante reste à effectuer.",
+    "Les vérifications numériques portent sur les valeurs et modèles explicitement testés, pas sur chaque phrase ni sur une réalisation physique."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

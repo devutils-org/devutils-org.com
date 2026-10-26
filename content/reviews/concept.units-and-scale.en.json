@@ -48,7 +48,7 @@
       "result": "passed",
       "scope": "Expanded packing, conversion, binary-capacity and encoding exercises; receiver and missed-pulse tables; interface mismatch, composed delay and capstone decoding; path prerequisite order.",
       "checkedAt": "2026-10-26",
-      "evidenceHash": "241da625278ff8491b37330155fc675ab5a65ce273179fcfd078f82e71198493"
+      "evidenceHash": "e3ff492e92a9385751153f995ca6acb9e58e0921ddef9354fe7f12b4a5d6bfb8"
     }
   ],
   "limitations": [

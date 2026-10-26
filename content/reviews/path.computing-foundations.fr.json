@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "id": "path.computing-foundations",
+  "locale": "fr",
+  "contentHash": "16e09ecc1cf87edb582045f0bc90845b60431fb9d099f23be92004750b755997",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "claim-1",
+      "section": "article-commencer-ici",
+      "kind": "interpretation",
+      "statement": "L’ordre de lecture est une proposition éditoriale ; les références appuient les notions et ne certifient pas ce parcours.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Sections 1.1–1.4, portée de la référence aux notions de preuve",
+          "access": "read",
+          "note": "Passage source consulté le 26 octobre 2026 et adaptation française relue dans cette campagne."
+        }
+      ],
+      "note": "Évaluation limitée à cette affirmation. Les données numériques sont des exemples pédagogiques choisis, sans mesure de matériel réel."
+    },
+    {
+      "id": "claim-2",
+      "section": "article-r-ponses-et-port-e",
+      "kind": "model",
+      "statement": "Une table logique ne spécifie pas à elle seule un délai physique.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "Section 5.3, spécifications fonctionnelles et temporelles",
+          "access": "read",
+          "note": "Passage source consulté le 26 octobre 2026 et adaptation française relue dans cette campagne."
+        }
+      ],
+      "note": "Évaluation limitée à cette affirmation. Les données numériques sont des exemples pédagogiques choisis, sans mesure de matériel réel."
+    }
+  ],
+  "examples": [
+    {
+      "check": "foundation-fr-exercises",
+      "result": "passed",
+      "scope": "Tables françaises : cartes, conversions, motifs binaires, décodage de tensions, impulsion manquée, règle logique, délais et ordre des prérequis.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "705012551dbf831277d5b8e16e67a604b91b194ebd0bad11fd0cd6bfccecbff3"
+    }
+  ],
+  "limitations": [
+    "Adaptation française par un assistant ; les passages sources restent en anglais. La relecture humaine indépendante reste à effectuer.",
+    "Les vérifications numériques portent sur les valeurs et modèles explicitement testés, pas sur chaque phrase ni sur une réalisation physique."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

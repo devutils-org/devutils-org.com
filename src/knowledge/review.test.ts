@@ -29,15 +29,15 @@ test('review validation rejects unsupported citations, stale checks and fictitio
   assert.throws(()=>validateReview(fake,entry,'review.json'),/missing or empty/)
 })
 test('every published record exposes scoped evidence and keeps human approval pending',()=>{
-  assert.equal(entries.filter(e=>e.status==='published').length,93)
+  assert.equal(entries.filter(e=>e.status==='published').length,99)
   for(const e of entries) {
     const record=e.verification!
     assert.ok(record.claims.length>0)
     assert.equal(record.humanReview.status,'pending')
     for(const result of record.examples) if(result.result==='passed') assert.equal(result.evidenceHash,checkHash(result.check))
     const html=verificationHtml(e)
-    assert.match(html,/Independent human review pending/)
-    assert.match(html,/does not certify every sentence/)
+    assert.match(html,e.locale === 'fr' ? /Relecture humaine indépendante en attente/ : /Independent human review pending/)
+    assert.match(html,e.locale === 'fr' ? /ne certifie pas chaque phrase/ : /does not certify every sentence/)
     assert.doesNotMatch(html,/100% correct|Human review recorded:/)
   }
 })

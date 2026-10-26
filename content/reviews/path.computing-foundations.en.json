@@ -2,8 +2,8 @@
   "version": 1,
   "id": "path.computing-foundations",
   "locale": "en",
-  "contentHash": "75eaaa068a234c3d72a67409fd39bcfe47803c5d55f8f793ac7183d96afe5332",
-  "assessedAt": "2026-10-25",
+  "contentHash": "e988afd80a5af91411b1480c674c25d4758fa9438988753b28eadf746451bda3",
+  "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
     "kind": "assistant"
@@ -48,12 +48,13 @@
       "result": "passed",
       "scope": "Expanded packing, conversion, binary-capacity and encoding exercises; receiver and missed-pulse tables; interface mismatch, composed delay and capstone decoding; path prerequisite order.",
       "checkedAt": "2026-10-26",
-      "evidenceHash": "241da625278ff8491b37330155fc675ab5a65ce273179fcfd078f82e71198493"
+      "evidenceHash": "e3ff492e92a9385751153f995ca6acb9e58e0921ddef9354fe7f12b4a5d6bfb8"
     }
   ],
   "limitations": [
     "Introductory teaching chapters with selected assistant source assessments; independent human review remains pending.",
-    "Worked values, receiver thresholds and timing bounds are stipulated examples. Tests establish only the declared arithmetic and model behavior, not a physical implementation."
+    "Worked values, receiver thresholds and timing bounds are stipulated examples. Tests establish only the declared arithmetic and model behavior, not a physical implementation.",
+    "French availability was updated after checking all five translated chapter routes on 2026-10-26. This change does not imply independent human review."
   ],
   "humanReview": {
     "status": "pending"

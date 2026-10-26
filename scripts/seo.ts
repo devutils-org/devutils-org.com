@@ -3,9 +3,10 @@ import { resolve } from 'node:path'
 import { pages, route, translation } from '../src/pages.ts'
 import { SITE } from '../src/site.ts'
 import { esc } from '../src/html.ts'
+import { seoDocument, bookDescription } from '../src/seo-audit.ts'
 
 import { loadEntries } from '../src/knowledge/load.ts'
-import { knowledgePages } from '../src/knowledge/render.ts'
+import { knowledgePages, knowledgeTitle } from '../src/knowledge/render.ts'
 
 const dist = resolve(import.meta.dirname, '../dist')
 const urls = new Set<string>()
@@ -27,20 +28,23 @@ const bookDir = resolve(dist, 'tools/atfq/book')
 for (const file of (await readdir(bookDir)).filter(file => file.endsWith('.html')).sort()) {
   const path = resolve(bookDir, file)
   let html = await readFile(path, 'utf8')
-  const title = html.match(/<title>([\s\S]*?)<\/title>/)?.[1]
+  const title = seoDocument(html).title
   if (!title) throw new Error(`Book page has no title: ${file}`)
   const url = `${SITE}/tools/atfq/book/${file === 'index.html' ? '' : file}`
-  const attributeTitle = title.replace(/"/g, '&quot;')
+  const attributeTitle = esc(title)
+  const description = bookDescription(html) ?? `${title} — ATFQ Linux reference book.`
+  const structured = JSON.stringify({ '@context': 'https://schema.org', '@type': 'WebPage', name: title, description, url, inLanguage: 'en', isPartOf: { '@type': 'Book', name: 'The atfq book', url: `${SITE}/tools/atfq/book/` }, publisher: { '@type': 'Organization', name: 'devutils', url: `${SITE}/` } }).replace(/</g, '\\u003c')
   html = html.replace(/<!-- generated-seo:start -->[\s\S]*?<!-- generated-seo:end -->\n?/g, '')
   html = html.replace('</head>', `<!-- generated-seo:start -->
 <link rel="canonical" href="${esc(url)}" />
-<meta name="description" content="${attributeTitle} — ATFQ Linux reference book." />
+<meta name="description" content="${esc(description)}" />
 <meta property="og:title" content="${attributeTitle}" />
-<meta property="og:description" content="${attributeTitle} — ATFQ Linux reference book." />
+<meta property="og:description" content="${esc(description)}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="${esc(url)}" />
 <meta property="og:image" content="${SITE}/og/atfq.png" />
 <meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">${structured}</script>
 <!-- generated-seo:end -->
 </head>`)
   await writeFile(path, html)
@@ -54,14 +58,14 @@ for (const page of knowledge) {
   urls.add(url)
   const html = await readFile(resolve(dist, `${page.route.slice(1)}index.html`), 'utf8')
   if (!html.includes(`<link rel="canonical" href="${esc(url)}"`) || !html.includes('<h1')) throw new Error(`Missing generated content: ${page.route}`)
-  if (titles.has(`${page.title} — devutils`)) throw new Error(`Duplicate knowledge title: ${page.title}`)
-  titles.add(`${page.title} — devutils`)
+  if (titles.has(knowledgeTitle(page))) throw new Error(`Duplicate knowledge title: ${page.title}`)
+  titles.add(knowledgeTitle(page))
   const counterpart = page.entity ? knowledge.find(p=>p.entity === page.entity && p.locale !== page.locale) : knowledge.find(p=>p.route === (page.locale === 'fr' ? page.route.slice(3) : `/fr${page.route}`))
   const alternates = counterpart ? [page,counterpart] : [page]
   const english = alternates.find(p=>p.locale === 'en') ?? page
   for (const p of alternates) if (!html.includes(`hreflang="${p.locale}" href="${SITE}${p.route}"`)) throw new Error(`Missing alternate for ${page.route}`)
   if (!html.includes('application/ld+json') || !html.includes(`property="og:url" content="${url}"`)) throw new Error(`Missing discovery metadata: ${page.route}`)
-  knowledgeEntries.push(`  <url><loc>${esc(url)}</loc>${page.updated ? `<lastmod>${page.updated}</lastmod>` : ''}${alternates.map(p=>`<xhtml:link rel="alternate" hreflang="${p.locale}" href="${SITE}${p.route}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${SITE}${english.route}"/></url>`)
+  if (!page.noindex) knowledgeEntries.push(`  <url><loc>${esc(url)}</loc>${page.updated ? `<lastmod>${page.updated}</lastmod>` : ''}${alternates.map(p=>`<xhtml:link rel="alternate" hreflang="${p.locale}" href="${SITE}${p.route}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${SITE}${english.route}"/></url>`)
 }
 const entries = pages.map(page => {
   const other = translation(page)
