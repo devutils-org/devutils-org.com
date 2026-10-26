@@ -1,5 +1,6 @@
 // Stable evidence IDs: records store the digest of the tests and models actually run.
 export const exampleChecks = {
+  'history-network-exercises': { file:'src/knowledge/history-network.test.ts', name:'network history examples preserve serialization accounting, request identity and causal order', dependencies:[] },
   'history-software-exercises': { file:'src/knowledge/history-software.test.ts', name:'software history examples preserve toy instruction bytes, bounded arithmetic, interleaved jobs and stream composition', dependencies:[] },
   'history-electronics-exercises': { file:'src/knowledge/history-electronics.test.ts', name:'electronic history toy program and interconnection counts follow their declared contracts', dependencies:[] },
   'history-communication-exercises': { file:'src/knowledge/history-communication.test.ts', name:'information history examples match entropy, prefix decoding, independent bit errors and feedback assumptions', dependencies:[] },

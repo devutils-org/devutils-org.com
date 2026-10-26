@@ -1,0 +1,126 @@
+{
+  "version": 1,
+  "id": "history.connected-world",
+  "locale": "en",
+  "contentHash": "04d07194f5b7eb13a2d863804b62fb5219b1f361ee2d6b6b2d957d443ae95599",
+  "assessedAt": "2026-10-26",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "telegraph",
+      "section": "article-telegraph-systems-separate-movement-from-message-delivery",
+      "statement": "Telegraphy involved multiple contributors, the 1844 Washington–Baltimore line and differing code conventions.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Telegraphs Before Electricity; Cooke-Wheatstone; Morse Code; first long-distance line",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Avoids unsupported universal priority claims. LOC and Smithsonian direct access failed, so those are not counted as inspected."
+    },
+    {
+      "id": "baran",
+      "section": "article-packet-switching-shares-the-transport",
+      "statement": "Baran’s 1964 memorandum addresses survivability, message blocks and adaptive store-and-forward networks.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 2,
+          "locator": "Publication metadata, abstract and introduction",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Military survivability motivation is not attributed to every later packet network."
+    },
+    {
+      "id": "davies",
+      "section": "article-packet-switching-shares-the-transport",
+      "statement": "NPL records Davies and team’s packet-switching development in 1965.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 3,
+          "locator": "1965 entry",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Institutional priority wording is not reproduced as an exclusive-inventor claim."
+    },
+    {
+      "id": "internet",
+      "section": "article-arpanet-and-tcp-ip-solve-related-but-different-problems",
+      "statement": "The participant history describes ARPANET’s 1969 hosts, internetworking and 1 January 1983 protocol transition.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 4,
+          "locator": "Origins of the Internet; Proving the Ideas, paragraph on NCP to TCP/IP",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "A community-specific transition is not presented as the birth of every networking practice."
+    },
+    {
+      "id": "web",
+      "section": "article-the-web-uses-the-network-rather-than-replacing-it",
+      "statement": "CERN distinguishes 1989 Web work, a 1990 browser and 30 April 1993 distribution of software.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 5,
+          "locator": "The birth of the Web, main text and browser description",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Web and Internet remain distinct; no claim of complete global adoption on those dates."
+    },
+    {
+      "id": "distributed",
+      "section": "article-distributed-work-adds-partial-failure",
+      "statement": "Lamport’s 1978 work connects causal ordering and distributed state machines.",
+      "kind": "historical",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 6,
+          "locator": "Publication metadata and author commentary on causality, ordering and state machines",
+          "access": "read",
+          "note": "Read the identified source passage during this assessment."
+        }
+      ],
+      "note": "Retry and deduplication example is original, scoped to explicitly atomic recording; no exactly-once delivery claim."
+    }
+  ],
+  "examples": [
+    {
+      "check": "history-network-exercises",
+      "result": "passed",
+      "scope": "Original codebook, packet serialization and overhead, duplicate increment with lost deduplication state, and causal-edge ordering only.",
+      "checkedAt": "2026-10-26",
+      "evidenceHash": "fed7c12acc7c3ed5d8324097f42db108672562ad6f5f2c80c0c8d220f8450158"
+    }
+  ],
+  "limitations": [
+    "Simplified packet accounting omits propagation, queueing and processing.",
+    "No historical network emulation, full protocol implementation or production distributed-system guarantee.",
+    "Independent human review remains pending."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

@@ -226,9 +226,9 @@ links and pre-rendered content without JavaScript. Screenshots use the existing
 
 `/knowledge/` opens the reading library; `/knowledge/computing-stack/` is its full
 editorial table of contents. History, figures, learning paths and labs have
-section overviews. Sixty-seven English-first records include five foundations chapters, five physics
+section overviews. Sixty-eight English-first records include five foundations chapters, five physics
 chapters, five chemistry/materials chapters, six manufacturing chapters, six device chapters, seven electronics/PCB chapters, six
-digital-logic concepts extended by an FSM and ALU, three integrated-circuit-design chapters, a profile, two historical events, eight History chapters from origins of information through the software revolution, ten learning paths and a
+digital-logic concepts extended by an FSM and ALU, three integrated-circuit-design chapters, a profile, two historical events, nine History chapters from origins of information through the connected world, ten learning paths and a
 Boolean-gate lab. A timeline, figure filters,
 static full-text search and per-article tables of contents connect them.
 Start from zero with `/learn/computing-foundations/`: mathematical reasoning →

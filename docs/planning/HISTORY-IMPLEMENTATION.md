@@ -59,7 +59,9 @@ Human review remains pending unless a real reviewer supplies a signoff.
 - Software revolution: published chapter covering assembly, compiler work,
   languages, operating systems, Unix and graphical interaction, with original
   translation, scheduling and stream-composition checks.
-- Chapters 9–10 remain to be implemented.
+- Connected world: published chapter covering telegraphy, parallel packet
+  research, ARPANET/TCP-IP, the Web and distributed-state uncertainty.
+- Chapter 10 remains to be implemented.
 
 The History index links the chapters in the ten-part editorial order. Broad
 chapters are excluded from timeline date filters, preserving the existing event
