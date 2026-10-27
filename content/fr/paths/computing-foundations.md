@@ -82,4 +82,4 @@ Cet exercice relie un énoncé précis, des quantités avec unités, une règle 
 
 ## Continuer le parcours
 
-Le [sommaire de la bibliothèque](/fr/knowledge/computing-stack/) distingue les articles disponibles des domaines prévus. Pour continuer après ces fondements, les parcours de [physique pour l’informatique](/learn/physics-for-computing/) et de [logique numérique](/learn/digital-logic-foundations/) sont actuellement en anglais.
+Le [sommaire de la bibliothèque](/fr/library/computing-stack/) distingue les articles disponibles des domaines prévus. Pour continuer après ces fondements, les parcours de [physique pour l’informatique](/learn/physics-for-computing/) et de [logique numérique](/learn/digital-logic-foundations/) sont actuellement en anglais.

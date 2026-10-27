@@ -2,7 +2,7 @@
   "version": 1,
   "id": "path.computer-architecture",
   "locale": "en",
-  "contentHash": "fbcc7fe24a779c255611d0c8cd758673ccb522a95342ae33d69e08e9171e7dd5",
+  "contentHash": "11dba38ffbeff55fb0ca587cadb4e4c1b51b8161319b04267df920e0ce51dee1",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -31,8 +31,8 @@
       "check": "architecture-exercises",
       "result": "passed",
       "scope": "Published tables, state traces, worked arithmetic and reading prerequisites under the explicitly stated teaching assumptions.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "366eabdad48de911f76413a5bec005c967ef1436ae2d3db637be3f43f8964276"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "42f7e320eaaaafc04614c302ecd78c817176525ff8315237622816f5396f1b9f"
     }
   ],
   "limitations": [

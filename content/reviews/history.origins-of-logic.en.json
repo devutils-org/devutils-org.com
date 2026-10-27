@@ -2,7 +2,7 @@
   "version": 1,
   "id": "history.origins-of-logic",
   "locale": "en",
-  "contentHash": "c36182adc14e911f3f21ec041dd0142e11d99b71ba48d1fdb26b5502bbeece2f",
+  "contentHash": "889d0b0b5009a4f1c561cfc0176c83e5501129cec33499d629d1377d0f3b6fd1",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -79,8 +79,8 @@
       "check": "history-logic-exercises",
       "result": "passed",
       "scope": "Modern subset-transitivity and propositional-inference examples and counterexamples only; not historical validation.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "cfc0f91233740956988e061fe142ca740bd642bcdef3fe3b29bd7546313f4f84"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "de1887dfffc675d86ff54a5ac630e0badb9e56ae0985b71c02171eb19db82e18"
     }
   ],
   "limitations": [

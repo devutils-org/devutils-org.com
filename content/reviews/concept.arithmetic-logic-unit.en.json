@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.arithmetic-logic-unit",
   "locale": "en",
-  "contentHash": "dae357f3d1ef8d06b7830441ac8a622b49f1992f8dc12729829ad55a0ed9618b",
+  "contentHash": "b6efa003d3999617033725849ebc0ec4dba9e77c9affa83448c9681400b6cce7",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -47,8 +47,8 @@
       "check": "alu-exercises",
       "result": "passed",
       "scope": "All four operations and 256 operand pairs, arithmetic and logical flags, signed comparison, printed table and exercises.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "3eb19e704076fe137ce5913462446022c688d5482567d4b149885217ee54fec6"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "cb27eaa3479c3c0cadc8d0c181e6ebdef1babff52be7de68aeee38447c7fa6b2"
     }
   ],
   "limitations": [

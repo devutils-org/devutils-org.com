@@ -1,11 +1,11 @@
 import { chromium } from 'playwright-core'
 import { readFile, mkdir, writeFile } from 'node:fs/promises'
-import { loadEntries, entryRoute } from '../src/knowledge/load.ts'
+import { loadEntries, entryRoute } from '../src/library/load.ts'
 
 const base = process.env.CHECK_BASE_URL ?? 'http://127.0.0.1:5179'
 const output = process.env.CHECK_OUTPUT ?? '/tmp/devutils-seo-browser'
 const translations = loadEntries().filter(e => e.locale === 'fr')
-const routes = ['/', '/fr/', '/knowledge/', '/fr/knowledge/', '/tools/omn/', '/fr/tools/omn/', ...translations.map(entryRoute)]
+const routes = ['/', '/fr/', '/library/', '/fr/library/', '/tools/omn/', '/fr/tools/omn/', ...translations.map(entryRoute)]
 const axe = await readFile(new URL('../node_modules/axe-core/axe.min.js', import.meta.url), 'utf8')
 const results: unknown[] = []
 await mkdir(output, { recursive: true })
@@ -28,7 +28,7 @@ try {
     await page.goto(`${base}/tools/omn/`)
     await page.locator('#related-reading').getByRole('link', { name: 'Units and scale', exact: true }).click()
     await page.getByRole('link', { name: 'Français', exact: true }).click()
-    if (!page.url().endsWith('/fr/knowledge/foundations/unites-et-ordres-de-grandeur/')) throw Error('Translation switch did not preserve the article')
+    if (!page.url().endsWith('/fr/library/foundations/unites-et-ordres-de-grandeur/')) throw Error('Translation switch did not preserve the article')
     await page.locator('#in-practice-tools').getByRole('link', { name: 'Omniscient', exact: true }).click()
     if (!page.url().endsWith('/fr/tools/omn/')) throw Error('Article-to-tool link lost the locale')
     await page.goto(`${base}/fr/learn/fondements-informatique/`)
@@ -50,14 +50,14 @@ try {
   }
   // Exercise the actual French Pagefind index, rather than just checking that
   // search assets exist. No query data is sent to an external service.
-  await page.goto(`${base}/fr/knowledge/search/`)
+  await page.goto(`${base}/fr/library/search/`)
   const matches = await page.evaluate(async () => {
     const indexUrl = '/pagefind/fr/pagefind.js'
     const search = await import(/* @vite-ignore */ indexUrl)
     const result = await search.search('unités')
     return Promise.all(result.results.map((r: { data(): Promise<{ url: string }> }) => r.data()))
   })
-  if (!matches.some(m => m.url.includes('/fr/knowledge/foundations/unites-et-ordres-de-grandeur/'))) throw Error('French lesson missing from the French search index')
+  if (!matches.some(m => m.url.includes('/fr/library/foundations/unites-et-ordres-de-grandeur/'))) throw Error('French lesson missing from the French search index')
   await context.close()
   await writeFile(`${output}/checks.json`, JSON.stringify(results, null, 2) + '\n')
   console.log(`SEO browser: ${routes.length * 2} mobile/desktop pages without JavaScript, 6 expanded accessibility checks, bilingual tool/article navigation and French search passed. Evidence: ${output}`)

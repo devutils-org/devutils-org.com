@@ -111,8 +111,8 @@
       "check": "history-mechanical-exercises",
       "result": "passed",
       "scope": "Original decimal carry, repeated addition, toy card choices and finite-difference table/update ordering only.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "4c4a41cbf508677a8b6720b71ec964f153440a815ce4b84f46de55632d692249"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "0822d8bf28ceaa80fe4b834f330dcc7c15d1c1104d6af99581892084e3b69e26"
     }
   ],
   "limitations": [

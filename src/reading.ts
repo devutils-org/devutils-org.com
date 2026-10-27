@@ -4,8 +4,8 @@ import type { Lang } from './i18n.ts'
 // Curated connections: these lessons explain how to interpret evidence; they
 // do not claim that a teaching circuit describes a particular Linux machine.
 const lessons = [
-  { id: 'concept.units-and-scale', en: '/knowledge/foundations/units-and-scale/', fr: '/fr/knowledge/foundations/unites-et-ordres-de-grandeur/', title: ['Units and scale', 'Unités et ordres de grandeur'], reason: ['Distinguish elapsed time from throughput before comparing measurements.', 'Distinguer durée et débit avant de comparer des mesures.'], tools: ['omn', 'atfq', 'distroproof'] },
-  { id: 'concept.models-and-abstraction', en: '/knowledge/foundations/models-and-abstraction/', fr: '/fr/knowledge/foundations/modeles-et-abstraction/', title: ['Models and abstraction', 'Modèles et abstraction'], reason: ['Identify the assumptions behind a result and what a test actually establishes.', 'Identifier les hypothèses derrière un résultat et ce qu’un test établit réellement.'], tools: ['omn', 'atfq', 'distroproof', 'xpac', 'vmanyware'] },
+  { id: 'concept.units-and-scale', en: '/library/foundations/units-and-scale/', fr: '/fr/library/foundations/unites-et-ordres-de-grandeur/', title: ['Units and scale', 'Unités et ordres de grandeur'], reason: ['Distinguish elapsed time from throughput before comparing measurements.', 'Distinguer durée et débit avant de comparer des mesures.'], tools: ['omn', 'atfq', 'distroproof'] },
+  { id: 'concept.models-and-abstraction', en: '/library/foundations/models-and-abstraction/', fr: '/fr/library/foundations/modeles-et-abstraction/', title: ['Models and abstraction', 'Modèles et abstraction'], reason: ['Identify the assumptions behind a result and what a test actually establishes.', 'Identifier les hypothèses derrière un résultat et ce qu’un test établit réellement.'], tools: ['omn', 'atfq', 'distroproof', 'xpac', 'vmanyware'] },
 ] as const
 
 const instruments = [

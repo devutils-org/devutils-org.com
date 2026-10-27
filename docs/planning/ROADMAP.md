@@ -33,7 +33,7 @@ migration are subsequent work, not unfinished roadmap implementation.
 
 ## Phase 2 — Static pages and navigation
 - [x] Integrate route generation into existing Vite/prerender pipeline.
-- [x] Create `/knowledge/`, `/knowledge/computing-stack/`, `/history/`, `/history/timeline/`, `/figures/`, `/learn/`, `/labs/`. The first timeline is static HTML generated from the published, verified event records; filtering comes in Phase 4.
+- [x] Create `/library/`, `/library/computing-stack/`, `/history/`, `/history/timeline/`, `/figures/`, `/learn/`, `/labs/`. The first timeline is static HTML generated from the published, verified event records; filtering comes in Phase 4.
 - [x] Render a real concept, a figure and a historical event, with cross-links.
 - [x] Add breadcrumbs, side navigation, TOC, related content, source list and mobile reading layout.
 - [x] Match devutils design language without expensive per-page 3D effects.

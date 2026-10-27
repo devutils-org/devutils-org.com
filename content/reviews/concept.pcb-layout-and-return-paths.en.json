@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.pcb-layout-and-return-paths",
   "locale": "en",
-  "contentHash": "2b4a6d96ad78f5f81fc73b53a64182d8460a7023448cb0480322d5eef9788862",
+  "contentHash": "d9906cce4ea6ff3ac425b6bef469d6b6353a92dfb164396986269b9e111d65a2",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -63,8 +63,8 @@
       "check": "electronics-exercises",
       "result": "passed",
       "scope": "Loaded dividers, power balance, logic margins, RC responses, pin/net mappings, conductor geometry, regulator loss, droop, reflections, probe loading and ordered prerequisites.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "0ebe61c0678960e778d6dcdfcb7f4ea1b6bf97bb30f66509ddc95cb99cf306d8"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "aea61614f6c01e1fc96212e15a58fd0c1d8a6a6ba7838cbee37fa66f7d5dfe16"
     }
   ],
   "limitations": [

@@ -1,11 +1,11 @@
 import {chromium} from 'playwright-core'
 import {readFile,mkdir,writeFile} from 'node:fs/promises'
 import assert from 'node:assert/strict'
-import {loadEntries} from '../src/knowledge/load.ts'
-import {knowledgePages} from '../src/knowledge/render.ts'
+import {loadEntries} from '../src/library/load.ts'
+import {libraryPages} from '../src/library/render.ts'
 const base=process.env.CHECK_BASE_URL??'http://127.0.0.1:5178'
 const out=process.env.CHECK_OUTPUT??'/tmp/devutils-history-check'
-const pages=knowledgePages(loadEntries()).filter(p=>/^\/(fr\/)?history\//.test(p.route))
+const pages=libraryPages(loadEntries()).filter(p=>/^\/(fr\/)?history\//.test(p.route))
 await mkdir(out,{recursive:true})
 const axe=await readFile('node_modules/axe-core/axe.min.js','utf8')
 const browser=await chromium.launch({executablePath:process.env.CHROME_PATH,headless:true,args:['--no-sandbox']})
@@ -52,10 +52,10 @@ try{
   await page.goto(base+'/history/mechanical-computting/')
   await page.waitForURL('**/history/mechanical-computing/')
   for(const [query,slug] of [['tokens','origins-of-information'],['syllogistic','origins-of-logic'],['remainder','mathematics-of-computation'],['Jacquard','mechanical-computing'],['incompleteness','birth-of-computer-science'],['Hartley','information-revolution'],['transistor','electronic-computing'],['FORTRAN','software-revolution'],['ARPANET','connected-world'],['quantum','modern-computing']]){
-   await page.goto(`${base}/knowledge/search/?q=${query}&locale=en&section=history`)
+   await page.goto(`${base}/library/search/?q=${query}&locale=en&section=history`)
    await page.locator(`[data-search-results] a[href="/history/${slug}/"]`).waitFor()
   }
-  await page.goto(base+'/fr/knowledge/search/?q=quantum&locale=en&section=history')
+  await page.goto(base+'/fr/library/search/?q=quantum&locale=en&section=history')
   await page.locator('[data-search-results] a[href="/history/modern-computing/"]').waitFor()
   await page.goto(base+'/history/')
   await page.screenshot({path:`${out}/contents-${width}.png`,fullPage:true})

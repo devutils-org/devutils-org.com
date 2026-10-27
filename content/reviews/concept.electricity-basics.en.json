@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.electricity-basics",
   "locale": "en",
-  "contentHash": "460afb781950255d27b967e2cf22f20304dc9a1ea73402ef1b8f4b46f3aa1799",
+  "contentHash": "b8f598378a8eb13ca0b7572dd6e32ffa45e62ad26a3d5b431d2e6fc046172f3a",
   "assessedAt": "2026-10-25",
   "assessor": {
     "name": "Codex",
@@ -47,8 +47,8 @@
       "check": "physics-exercises",
       "result": "passed",
       "scope": "Recompute published resistor, force, flux, probability, level, thermal and lattice examples; check the reading prerequisite order.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "1a60602b9c1f20f0ca08dab2b5fd0fc24eb6940cbea65611fc977a4aa7f84a8b"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "43feba40328f53511f535dd4bf3c5760288eccdf360dcb18851a6b2a86bbcad0"
     }
   ],
   "limitations": [

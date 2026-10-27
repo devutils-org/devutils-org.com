@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.pipelines-and-hazards",
   "locale": "en",
-  "contentHash": "5ed343b74b4dc5fd54043977ccf416b7e41e67e8e86d9fab58c717bf719a1fc4",
+  "contentHash": "8a4863ee5c9e1b6be56a2dba4c705a6f5fbf3cbfa99524f0e22e5d2df1c007be",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -47,8 +47,8 @@
       "check": "architecture-exercises",
       "result": "passed",
       "scope": "Published tables, state traces, worked arithmetic and reading prerequisites under the explicitly stated teaching assumptions.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "366eabdad48de911f76413a5bec005c967ef1436ae2d3db637be3f43f8964276"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "42f7e320eaaaafc04614c302ecd78c817176525ff8315237622816f5396f1b9f"
     }
   ],
   "limitations": [

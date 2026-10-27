@@ -303,7 +303,7 @@ export function toolPageHtml(page: Page) {
     footer: html`
     <a class="logo" href="${homeOf(tool)}"><img class="logo-icon" src="/mark.svg" alt="" /> devutils</a>
     <span>${tool.name} · ${page.footer ?? tool.line}</span>
-    <a href="${tool.lang === 'fr' ? '/fr' : ''}/knowledge/">${tool.lang === 'fr' ? 'Bibliothèque' : 'Library'}</a>
+    <a href="${tool.lang === 'fr' ? '/fr' : ''}/library/">${tool.lang === 'fr' ? 'Bibliothèque' : 'Library'}</a>
     <a href="${route(pageOf('contributions', tool.lang))}">Contributions</a>
     ${repoLink(tool, page.licensePath ?? '', `${tool.license ?? w.repository} ${icon('arrow-up-right')}`)}`,
   }

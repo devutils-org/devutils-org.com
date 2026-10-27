@@ -31,8 +31,8 @@
       "check": "control-datapath-exercises",
       "result": "passed",
       "scope": "Path prerequisites, five-edge published composition and simultaneous capture using old state.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "b1b44eecaffe5a9467595704875afb67bfe73ed8eeaf34fb887fcda73f9b7adc"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "5adbcc6659046f8e54e362c4c2d876552798e744484341832702ecbff06ea134"
     }
   ],
   "limitations": [

@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.asic-and-fpga",
   "locale": "en",
-  "contentHash": "6c661a4944852dfe6f5828434a7299a8c9a764896ca28d2f35b88df2455797ca",
+  "contentHash": "7fc2875abb3e780288a43029cf5eadc513aec1e9489027d1bbc7563649a187a4",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -47,8 +47,8 @@
       "check": "design-continuation-exercises",
       "result": "passed",
       "scope": "Published tables, state traces, worked arithmetic and reading prerequisites under the explicitly stated teaching assumptions.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "2693b45f91122a0d0610b1739cb067f6e927be14956bd1c30c6a5f3a3564fbec"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "a3aa48bb952c1d74e0950d69e620af734e63b9f9c5d46db88e80de1efc2afae2"
     }
   ],
   "limitations": [

@@ -2,7 +2,7 @@
   "version": 1,
   "id": "path.computing-foundations",
   "locale": "fr",
-  "contentHash": "16e09ecc1cf87edb582045f0bc90845b60431fb9d099f23be92004750b755997",
+  "contentHash": "530876dbd9284d0ae46f0e6c1dbc57533331d9ad86af9083100f3c1fb0041f57",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -47,8 +47,8 @@
       "check": "foundation-fr-exercises",
       "result": "passed",
       "scope": "Tables françaises : cartes, conversions, motifs binaires, décodage de tensions, impulsion manquée, règle logique, délais et ordre des prérequis.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "705012551dbf831277d5b8e16e67a604b91b194ebd0bad11fd0cd6bfccecbff3"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "223ce09fa727b58e0a39677080f41c51deca1bcea68cf09122ad95578ea88177"
     }
   ],
   "limitations": [

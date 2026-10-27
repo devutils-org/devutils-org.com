@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.logic-gates",
   "locale": "en",
-  "contentHash": "29a634bc34ac4fcc3e6b91878f5ab149ffef7b766e7aa3b1d0e924512bbcc91e",
+  "contentHash": "2b3275f0c30813f34d7d6b6b60acf51015db59375938ae392c34b9a5a9cea419",
   "assessedAt": "2026-10-24",
   "assessor": {
     "name": "Codex",
@@ -63,15 +63,15 @@
       "check": "digital-tables",
       "result": "passed",
       "scope": "Four rows of NAND, NOR and XNOR.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "0e6506f2b043710ecb5e43e8c91dc89624c549eeca81aa29e855d95a844c0f69"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "d2b0e66b1c641a17c8db03b2840a2b8501ab832214f6e9abcf997624f99d19c2"
     },
     {
       "check": "worked-exercises",
       "result": "passed",
       "scope": "NAND reconstruction and indicator-rule substitutions.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "9ec05be3161b8a19b4bfa494a3ae591b82bd9d42b69fd6f32c4df49533a122af"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "63c1010281a084829805f733fbc305b8ce65c1e1bcfaf34c481ef12dc0cc50e7"
     }
   ],
   "limitations": [

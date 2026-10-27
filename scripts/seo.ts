@@ -5,8 +5,8 @@ import { SITE } from '../src/site.ts'
 import { esc } from '../src/html.ts'
 import { seoDocument, bookDescription } from '../src/seo-audit.ts'
 
-import { loadEntries } from '../src/knowledge/load.ts'
-import { knowledgePages, knowledgeTitle } from '../src/knowledge/render.ts'
+import { loadEntries } from '../src/library/load.ts'
+import { libraryPages, libraryTitle } from '../src/library/render.ts'
 
 const dist = resolve(import.meta.dirname, '../dist')
 const urls = new Set<string>()
@@ -50,28 +50,28 @@ for (const file of (await readdir(bookDir)).filter(file => file.endsWith('.html'
   await writeFile(path, html)
   bookEntries.push(`  <url><loc>${esc(url)}</loc></url>`)
 }
-const knowledge = knowledgePages(loadEntries())
-const knowledgeEntries = []
-for (const page of knowledge) {
+const library = libraryPages(loadEntries())
+const libraryEntries = []
+for (const page of library) {
   const url = `${SITE}${page.route}`
   if (urls.has(url)) throw new Error(`Duplicate generated route: ${page.route}`)
   urls.add(url)
   const html = await readFile(resolve(dist, `${page.route.slice(1)}index.html`), 'utf8')
   if (!html.includes(`<link rel="canonical" href="${esc(url)}"`) || !html.includes('<h1')) throw new Error(`Missing generated content: ${page.route}`)
-  if (titles.has(knowledgeTitle(page))) throw new Error(`Duplicate knowledge title: ${page.title}`)
-  titles.add(knowledgeTitle(page))
-  const counterpart = page.entity ? knowledge.find(p=>p.entity === page.entity && p.locale !== page.locale) : knowledge.find(p=>p.route === (page.locale === 'fr' ? page.route.slice(3) : `/fr${page.route}`))
+  if (titles.has(libraryTitle(page))) throw new Error(`Duplicate library title: ${page.title}`)
+  titles.add(libraryTitle(page))
+  const counterpart = page.entity ? library.find(p=>p.entity === page.entity && p.locale !== page.locale) : library.find(p=>p.route === (page.locale === 'fr' ? page.route.slice(3) : `/fr${page.route}`))
   const alternates = counterpart ? [page,counterpart] : [page]
   const english = alternates.find(p=>p.locale === 'en') ?? page
   for (const p of alternates) if (!html.includes(`hreflang="${p.locale}" href="${SITE}${p.route}"`)) throw new Error(`Missing alternate for ${page.route}`)
   if (!html.includes('application/ld+json') || !html.includes(`property="og:url" content="${url}"`)) throw new Error(`Missing discovery metadata: ${page.route}`)
-  if (!page.noindex) knowledgeEntries.push(`  <url><loc>${esc(url)}</loc>${page.updated ? `<lastmod>${page.updated}</lastmod>` : ''}${alternates.map(p=>`<xhtml:link rel="alternate" hreflang="${p.locale}" href="${SITE}${p.route}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${SITE}${english.route}"/></url>`)
+  if (!page.noindex) libraryEntries.push(`  <url><loc>${esc(url)}</loc>${page.updated ? `<lastmod>${page.updated}</lastmod>` : ''}${alternates.map(p=>`<xhtml:link rel="alternate" hreflang="${p.locale}" href="${SITE}${p.route}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${SITE}${english.route}"/></url>`)
 }
 const entries = pages.map(page => {
   const other = translation(page)
   const english = page.lang === 'en' ? page : other
   return `  <url><loc>${esc(`${SITE}${route(page)}`)}</loc>${[page, other].map(p => `<xhtml:link rel="alternate" hreflang="${p.lang}" href="${esc(`${SITE}${route(p)}`)}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${esc(`${SITE}${route(english)}`)}"/></url>`
 })
-await writeFile(resolve(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${[...entries, ...knowledgeEntries, ...bookEntries].join('\n')}\n</urlset>\n`)
+await writeFile(resolve(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${[...entries, ...libraryEntries, ...bookEntries].join('\n')}\n</urlset>\n`)
 await writeFile(resolve(dist, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`)
-console.log(`SEO: verified ${pages.length} existing pages, ${knowledge.length} knowledge pages and enriched ${bookEntries.length} book pages; generated sitemap.xml and robots.txt for ${SITE}`)
+console.log(`SEO: verified ${pages.length} existing pages, ${library.length} library pages and enriched ${bookEntries.length} book pages; generated sitemap.xml and robots.txt for ${SITE}`)

@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.crystal-structures",
   "locale": "en",
-  "contentHash": "afa5a9ebfe34be7d09372c62bb73e340b07d9b2ba00d41ce05bd8d07530b82d9",
+  "contentHash": "f96e0cabc305c31ea7f57a9c27303505acbe48db4953aa9abd52e8b5d9bdaac0",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -63,8 +63,8 @@
       "check": "materials-exercises",
       "result": "passed",
       "scope": "Atomic charge and isotope counts, bond-energy changes, cubic cell sharing, site populations, network stoichiometry, dopant concentration and neutrality, sample resistance, unit conversion and path prerequisite order.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "c7e8bc167b0ce762f7be3ba463f475df4960d2261ece4271c7cd845945710fc1"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "2a1d103cc0cd9c75788230c2d03eb31a8436ae5502bfdd634f3d72cc4fee5493"
     }
   ],
   "limitations": [

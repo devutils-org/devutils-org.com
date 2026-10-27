@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.combinational-logic",
   "locale": "en",
-  "contentHash": "3fd247688fc1410097f9390ab88d8d09c2333ce101254d8cb25b5b600fa5e84f",
+  "contentHash": "2b3ad64d9a5f18daf61295b0fa874b1da9378d374f257f036e654d3be43cdf66",
   "assessedAt": "2026-10-24",
   "assessor": {
     "name": "Codex",
@@ -63,15 +63,15 @@
       "check": "digital-tables",
       "result": "passed",
       "scope": "All eight selector input combinations.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "0e6506f2b043710ecb5e43e8c91dc89624c549eeca81aa29e855d95a844c0f69"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "d2b0e66b1c641a17c8db03b2840a2b8501ab832214f6e9abcf997624f99d19c2"
     },
     {
       "check": "worked-exercises",
       "result": "passed",
       "scope": "Four-bit selector values and constant-input exercises.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "9ec05be3161b8a19b4bfa494a3ae591b82bd9d42b69fd6f32c4df49533a122af"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "63c1010281a084829805f733fbc305b8ce65c1e1bcfaf34c481ef12dc0cc50e7"
     }
   ],
   "limitations": [

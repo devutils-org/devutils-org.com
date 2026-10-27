@@ -2,7 +2,7 @@
   "version": 1,
   "id": "path.physics-for-computing",
   "locale": "en",
-  "contentHash": "1fee5662fabc3132b6c8407a14a9e8fe74a751bc06589c62d78463826e864410",
+  "contentHash": "351b9e5cc2ee581cc6cc2489fdf4664ec7ea5c3f5c55a028205cef4f01ea0917",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -47,8 +47,8 @@
       "check": "physics-exercises",
       "result": "passed",
       "scope": "Recompute published resistor, force, flux, probability, level, thermal and lattice examples; check the reading prerequisite order.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "1a60602b9c1f20f0ca08dab2b5fd0fc24eb6940cbea65611fc977a4aa7f84a8b"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "43feba40328f53511f535dd4bf3c5760288eccdf360dcb18851a6b2a86bbcad0"
     }
   ],
   "limitations": [

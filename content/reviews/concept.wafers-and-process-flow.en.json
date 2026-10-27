@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.wafers-and-process-flow",
   "locale": "en",
-  "contentHash": "062bab5c403e7ea11fd1e1dd535accf993979c070d05b326e41ccc99c1cbe764",
+  "contentHash": "5659cf048926320b971f940aba906da36db6b1ee0790af40765e240c78e9374e",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -79,8 +79,8 @@
       "check": "manufacturing-exercises",
       "result": "passed",
       "scope": "Wafer area ratios, resist polarity and overlay margins, film growth and piecewise removal, dose/depth/activation bookkeeping, line/via resistance, conditional yield and the ordered prerequisite chain.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "f43eded416fb1e2c9d71f7c5eae8120dc768d27dc69a9b5ae7044540770429bb"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "695be80256147b9363bce1a6eac180f4650f5c3898ab7e21416f771faaf48a52"
     }
   ],
   "limitations": [

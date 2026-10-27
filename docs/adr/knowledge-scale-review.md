@@ -41,7 +41,7 @@ Reference for integration: [Pagefind Node API](https://pagefind.app/docs/node-ap
 
 ## Measurements (initial six-record roadmap corpus)
 
-Measured locally on 2026-10-24 with `bench/knowledge-metrics.ts`. Exact results vary
+Measured locally on 2026-10-24 with `bench/library-metrics.ts`. Exact results vary
 with machine load. Chromium runs headless on localhost at 390×844 with 4× CPU
 throttling; these are lab measurements, not production Core Web Vitals.
 

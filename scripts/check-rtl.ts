@@ -5,7 +5,7 @@ import {tmpdir} from 'node:os'
 import {join} from 'node:path'
 import {spawnSync} from 'node:child_process'
 import assert from 'node:assert/strict'
-const article=readFileSync('content/knowledge/integrated-circuit-design/rtl-and-hardware-description.md','utf8')
+const article=readFileSync('content/library/integrated-circuit-design/rtl-and-hardware-description.md','utf8')
 const modules=[...article.matchAll(/```verilog\n([\s\S]*?)\n```/g)]
 assert.equal(modules.length,1,'Expected exactly one published module')
 const compiler=process.env.IVERILOG??'iverilog',runtime=process.env.VVP??'vvp'

@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.information-and-representation",
   "locale": "en",
-  "contentHash": "9864ac7bd6a4d46f52fe708ad93d294461db6d7adab5df94cb3ad2b23b880dd4",
+  "contentHash": "74bb7493159764080277adcab126fe8763aa2bc174efda13773d11a3a5268aa9",
   "assessedAt": "2026-10-25",
   "assessor": {
     "name": "Codex",
@@ -47,8 +47,8 @@
       "check": "foundation-exercises",
       "result": "passed",
       "scope": "Expanded packing, conversion, binary-capacity and encoding exercises; receiver and missed-pulse tables; interface mismatch, composed delay and capstone decoding; path prerequisite order.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "e3ff492e92a9385751153f995ca6acb9e58e0921ddef9354fe7f12b4a5d6bfb8"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "8f3d2453a76e2d314c9856e500ac65b6858204911f815c744e2ba66c6e1df5bd"
     }
   ],
   "limitations": [

@@ -23,9 +23,9 @@ expanding the corpus. This task adds:
 - `content/reviews/*.json`: twelve version-bound records covering 33 selected claims.
 - Explicit source locators/access notes, assistant identity, limitations and
   independent human review marked pending for every article.
-- `src/knowledge/review.ts`: schema, source/anchor checks, stale content detection,
+- `src/library/review.ts`: schema, source/anchor checks, stale content detection,
   test/model fingerprints and signoff-record requirements.
-- `src/knowledge/verification.ts`: public disclosure in each article, readable
+- `src/library/verification.ts`: public disclosure in each article, readable
   without JavaScript, with exact evidence/check commands and honest status labels.
 - `npm run verify:content`: six allowlisted test groups; clears old attestations,
   requires actual matching tests, atomically records passes, never approves sources
@@ -69,7 +69,7 @@ For browser checks, start preview on port 5178, then:
 
 ```sh
 CHROME_PATH=/path/to/chrome node bench/reviews.ts
-CHROME_PATH=/path/to/chrome node bench/knowledge.ts
+CHROME_PATH=/path/to/chrome node bench/library.ts
 CHROME_PATH=/path/to/chrome node bench/roadmap.ts
 ```
 
@@ -94,7 +94,7 @@ All library pages now display a bilingual editorial note below the introduction:
 AI-generated foundation/overview, possible mistakes and gradual corrections, with
 a prefilled GitHub error-report link. It uses the existing glass style, works
 without JS, and stays outside search indexing. Implementation:
-`src/knowledge/editorial-note.ts`, included by the shared reader renderer.
+`src/library/editorial-note.ts`, included by the shared reader renderer.
 
 
 ## Navigation trial (awaiting user feedback)

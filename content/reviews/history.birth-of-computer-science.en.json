@@ -79,8 +79,8 @@
       "check": "history-computability-exercises",
       "result": "passed",
       "scope": "Toy tape rules for unary inputs of length 0–20 and finite counter timeout only; does not verify incompleteness or undecidability theorems.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "abd67079d1a10eb58f60127c206ce5d22f004cea7fc87e590f7b361a472cd920"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "325eb3626aef4abc2e21d78d414d47339e70d46b945c1e25a897d03e61298a22"
     }
   ],
   "limitations": [

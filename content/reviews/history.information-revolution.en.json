@@ -95,8 +95,8 @@
       "check": "history-communication-exercises",
       "result": "passed",
       "scope": "Original entropy table, prefix-code round trips, three-bit majority error enumeration and feedback recurrences; not a verification of coding theorems.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "44d7dcfdb723153fc3b4371bee58972bc2127b4de94b719e93fbfb39b1ea74c2"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "0ec1af247892bce4b27890979d21fa5a4d5deed53452b9245ac244be8a6041e4"
     }
   ],
   "limitations": [

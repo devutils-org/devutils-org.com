@@ -8,6 +8,6 @@ export function siteSection(key: string): SiteSection | undefined {
 }
 export function globalNavigation(lang: Lang='en', active?:SiteSection) {
   const prefix=lang==='fr'?'/fr':''
-  const links=[['tools','tools','Tools','Outils'],['library','knowledge','Library','Bibliothèque'],['contributions','contributions','Contributions','Contributions'],['about','about','About','À propos']] as const
+  const links=[['tools','tools','Tools','Outils'],['library','library','Library','Bibliothèque'],['contributions','contributions','Contributions','Contributions'],['about','about','About','À propos']] as const
   return `<nav class="site-links" aria-label="${lang==='fr'?'Navigation principale':'Main navigation'}">${links.map(([key,path,en,fr])=>`<a href="${prefix}/${path}/"${key===active?' aria-current="true"':''}>${lang==='fr'?fr:en}</a>`).join('')}</nav>`
 }

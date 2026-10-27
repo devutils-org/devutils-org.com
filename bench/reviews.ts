@@ -1,6 +1,6 @@
 import { chromium } from 'playwright-core'
 import { readFile, mkdir, writeFile } from 'node:fs/promises'
-import { loadEntries, entryRoute } from '../src/knowledge/load.ts'
+import { loadEntries, entryRoute } from '../src/library/load.ts'
 const base=process.env.CHECK_BASE_URL??'http://127.0.0.1:5178'
 const out=process.env.CHECK_OUTPUT??'/tmp/devutils-review-check'
 await mkdir(out,{recursive:true})
@@ -29,7 +29,7 @@ try {
  }
  const context=await browser.newContext({javaScriptEnabled:false,reducedMotion:'reduce',viewport:{width:390,height:1000}})
  const page=await context.newPage()
- await page.goto(base+'/knowledge/digital-logic/boolean-algebra/')
+ await page.goto(base+'/library/digital-logic/boolean-algebra/')
  await page.locator('#verification summary').focus();await page.keyboard.press('Enter')
  if(!await page.locator('.claim-list').isVisible())throw Error('Review requires JavaScript')
  await page.screenshot({path:`${out}/verification-mobile.png`,fullPage:true})

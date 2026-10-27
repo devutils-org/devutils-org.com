@@ -110,7 +110,7 @@ IVERILOG=/tmp/devutils-iverilog/bin/iverilog VVP=/tmp/devutils-iverilog/bin/vvp 
 
 Browser checks use `CHROME_PATH`. Last available Chromium:
 `/home/moha/.cache/ms-playwright/chromium-1248/chrome-linux64/chrome`.
-Suites are `bench/{home,navigation,section-navigation,contributions,knowledge,history,reviews,roadmap,knowledge-metrics}.ts`.
+Suites are `bench/{home,navigation,section-navigation,contributions,library,history,reviews,roadmap,library-metrics}.ts`.
 Run them against preview on port 5178, or set CHECK_BASE_URL.
 Reports/screenshots/logs in `/tmp/devutils-*-check/` and
 `/tmp/devutils-final-*.log` are ephemeral; durable implementation and audit

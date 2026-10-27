@@ -70,6 +70,6 @@ CPU utilization in the separate schedule is 1/5 + 2/10 = 40%. A runs from 0 to 1
 
 ## Continue toward operating systems
 
-The next planned domain is operating systems: kernel interfaces, processes, memory, files, drivers and virtualization. Embedded Linux introduces those boundaries; it does not replace their dedicated explanations. The [computing stack](/knowledge/computing-stack/) shows the available material.
+The next planned domain is operating systems: kernel interfaces, processes, memory, files, drivers and virtualization. Embedded Linux introduces those boundaries; it does not replace their dedicated explanations. The [computing stack](/library/computing-stack/) shows the available material.
 
 Before leaving this route, explain why volatile is not atomicity, a timeout is not hardware cancellation, coherent DMA still needs ordering, utilization is not a complete schedulability proof and two update slots are not a complete recovery design.

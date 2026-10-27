@@ -83,7 +83,7 @@ dates and routes. No independent human approval is claimed.
 - `bench/history.ts`: 44 desktop/mobile History accessibility/layout checks,
   all ten search targets, French search fallback, sequential navigation, alias
   and EN/FR date/category filters passed. Artifacts: `/tmp/devutils-history-check/`.
-- `bench/knowledge.ts`: 182 desktop/mobile library pages verified with
+- `bench/library.ts`: 182 desktop/mobile library pages verified with
   JavaScript disabled. Artifacts: `/tmp/devutils-knowledge-check/`.
 
 Browser checks use the production preview at `http://127.0.0.1:5178` with
@@ -91,7 +91,7 @@ Browser checks use the production preview at `http://127.0.0.1:5178` with
 
 ```sh
 CHROME_PATH=/path/to/chrome node bench/history.ts
-CHROME_PATH=/path/to/chrome node bench/knowledge.ts
+CHROME_PATH=/path/to/chrome node bench/library.ts
 CHROME_PATH=/path/to/chrome node bench/roadmap.ts
 ```
 

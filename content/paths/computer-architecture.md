@@ -71,4 +71,4 @@ The ideal pipeline takes 20 + 3 − 1 = 22 cycles, or 220 ns. The separate accel
 
 ## Continue toward firmware
 
-Continue with [firmware and embedded](/learn/firmware-and-embedded/) to apply these instruction, memory and I/O contracts to startup and peripherals. You should now be able to explain why a faster clock does not guarantee a faster task, why a cache hit rate does not describe every workload and why an accepted I/O write may still await its physical effect. The [computing stack](/knowledge/computing-stack/) links the next available route.
+Continue with [firmware and embedded](/learn/firmware-and-embedded/) to apply these instruction, memory and I/O contracts to startup and peripherals. You should now be able to explain why a faster clock does not guarantee a faster task, why a cache hit rate does not describe every workload and why an accepted I/O write may still await its physical effect. The [computing stack](/library/computing-stack/) links the next available route.

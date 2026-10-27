@@ -1,6 +1,6 @@
 # Writing Knowledge content
 
-The library is English-first. `/knowledge/computing-stack/` is the
+The library is English-first. `/library/computing-stack/` is the
 complete editorial map; linked articles are published, other subjects are planned.
 The section overviews are bilingual. Static search, timeline/figure filters, a complete introductory path and a gate lab
 are available. JavaScript enhances those controls; the content remains readable without it.
@@ -58,7 +58,7 @@ Supported types and routes:
 
 | Type | Route (optional area shown in brackets) | Additional fields |
 |---|---|---|
-| `concept` | `/knowledge/[area/]<slug>/` | — |
+| `concept` | `/library/[area/]<slug>/` | — |
 | `history` | `/history/[area/]<slug>/` | Events: `date_start`, optional `date_end`, `date_precision`; chapters: `history_kind: chapter` without event dates |
 | `figure` | `/figures/[area/]<slug>/` | Optional `born`, `died`, `contributions` |
 | `path` | `/learn/[area/]<slug>/` | `steps`: ordered entity IDs |
@@ -96,7 +96,7 @@ articles rather than copying them into the path. Write a concrete completion che
 
 For a reproducible lab, provide requirements, procedure and expected results. The
 `boolean-gates` widget is an explicit trusted implementation, not executable Markdown.
-It uses the model in `src/knowledge/lab.ts` and the small shared client module.
+It uses the model in `src/library/lab.ts` and the small shared client module.
 Other labs can publish a static procedure without a widget. Adding a new widget
 requires code, tests and keyboard/no-JavaScript behavior; arbitrary embeds are escaped.
 
@@ -114,14 +114,14 @@ The language switch falls back to the destination language's section overview.
 npm test
 npm run build
 npm run dev -- --host 127.0.0.1
-# Open http://127.0.0.1:5173/knowledge/computing-stack/
+# Open http://127.0.0.1:5173/library/computing-stack/
 ```
 
 For production-like browser verification:
 
 ```sh
 npm run preview -- --host 127.0.0.1 --port 5178
-CHROME_PATH=/path/to/chrome node bench/knowledge.ts
+CHROME_PATH=/path/to/chrome node bench/library.ts
 CHROME_PATH=/path/to/chrome node bench/roadmap.ts
 ```
 

@@ -1,6 +1,6 @@
 import { resolve } from 'node:path'
 import { defineConfig, type Plugin } from 'vite'
-import { knowledgePlugin } from './src/knowledge/plugin.ts'
+import { libraryPlugin } from './src/library/plugin.ts'
 import { globalNavigation } from './src/navigation.ts'
 import { pages } from './src/pages.ts'
 import { head, toolPage } from './src/shell.ts'
@@ -27,7 +27,7 @@ function pageShells(): Plugin {
 // One entry per page of src/pages.ts.
 export default defineConfig(({ isSsrBuild }) => ({
   base: '/',
-  plugins: [pageShells(), knowledgePlugin()],
+  plugins: [pageShells(), libraryPlugin()],
   build: {
     chunkSizeWarningLimit: 800,
     // the SSR build (src/prerender.ts) takes its entry from the command line

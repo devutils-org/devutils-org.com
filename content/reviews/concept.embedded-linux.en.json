@@ -63,8 +63,8 @@
       "check": "embedded-exercises",
       "result": "passed",
       "scope": "Published tables, state traces, worked arithmetic and reading prerequisites under the explicitly stated teaching assumptions.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "d07cb06027aaeea71b584696610b3fe73c1f44bae7dc1482e15ba39d1b927b9b"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "c56821348ad025b0f6e5ec77b6d94c124d11d1e36b439cb6cf9a0faa8e824998"
     }
   ],
   "limitations": [

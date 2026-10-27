@@ -1,9 +1,9 @@
 // Re-run only declared, allowlisted checks. This never changes source or human assessments.
 import { writeFileSync, renameSync } from 'node:fs'
 import { spawnSync } from 'node:child_process'
-import { loadEntries } from '../src/knowledge/load.ts'
-import { exampleChecks, type CheckId } from '../src/knowledge/checks.ts'
-import { checkHash, reviewFile } from '../src/knowledge/review.ts'
+import { loadEntries } from '../src/library/load.ts'
+import { exampleChecks, type CheckId } from '../src/library/checks.ts'
+import { checkHash, reviewFile } from '../src/library/review.ts'
 const save=(file:string,value:unknown)=>{writeFileSync(`${file}.tmp`,JSON.stringify(value,null,2)+'\n');renameSync(`${file}.tmp`,file)}
 const entries=loadEntries(undefined,{allowStaleChecks:true})
 const ids=[...new Set(entries.flatMap(e=>e.verification?.examples.map(x=>x.check) ?? []))]

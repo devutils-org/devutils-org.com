@@ -31,7 +31,7 @@ Relay networks were used to control equipment and connect paths. Their designers
 
 The paper draws its notation from symbolic logic and applies mathematical reasoning to switch networks. Equivalent expressions can describe alternative arrangements. This makes algebra useful for comparing designs rather than relying entirely on an individual drawing.
 
-Our [Boolean-algebra article](/knowledge/digital-logic/boolean-algebra/) introduces a small conducting-path model. It is a modern teaching explanation, not a reproduction of Shannon’s notation or all of the paper’s methods.
+Our [Boolean-algebra article](/library/digital-logic/boolean-algebra/) introduces a small conducting-path model. It is a modern teaching explanation, not a reproduction of Shannon’s notation or all of the paper’s methods.
 
 ## Why two dates appear
 

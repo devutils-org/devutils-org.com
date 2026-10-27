@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.boolean-algebra",
   "locale": "en",
-  "contentHash": "b0c625c73609a24a4b9f08aabbda435f820dd32360927531be7b4a7dcaef9a70",
+  "contentHash": "0e2d691aa15b028faf616b498436515dbefc4e6b6effadaa51b08e313c087fb7",
   "assessedAt": "2026-10-24",
   "assessor": {
     "name": "Codex",
@@ -63,8 +63,8 @@
       "check": "worked-exercises",
       "result": "passed",
       "scope": "Boolean table, access-rule substitutions and distributivity over all inputs.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "9ec05be3161b8a19b4bfa494a3ae591b82bd9d42b69fd6f32c4df49533a122af"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "63c1010281a084829805f733fbc305b8ce65c1e1bcfaf34c481ef12dc0cc50e7"
     }
   ],
   "limitations": [

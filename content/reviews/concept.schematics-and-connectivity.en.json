@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.schematics-and-connectivity",
   "locale": "en",
-  "contentHash": "37d5b8aad59ce7238ab4a596523503d659a577ebbfe6817b79208d97dbd46fc6",
+  "contentHash": "b40743f745477ca13cfc5ea92a49cbee2de91e5cbde155ec1093de4c15254032",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -47,8 +47,8 @@
       "check": "electronics-exercises",
       "result": "passed",
       "scope": "Loaded dividers, power balance, logic margins, RC responses, pin/net mappings, conductor geometry, regulator loss, droop, reflections, probe loading and ordered prerequisites.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "0ebe61c0678960e778d6dcdfcb7f4ea1b6bf97bb30f66509ddc95cb99cf306d8"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "aea61614f6c01e1fc96212e15a58fd0c1d8a6a6ba7838cbee37fa66f7d5dfe16"
     }
   ],
   "limitations": [

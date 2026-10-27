@@ -34,7 +34,7 @@ sources:
 ---
 ## Begin after physics
 
-This route develops the third domain of the [computing stack](/knowledge/computing-stack/). Read [computing foundations](/learn/computing-foundations/) and [physics for computing](/learn/physics-for-computing/) first. You will reuse charge signs, unit conversions, bound electronic energies and the distinction between an allowed state and its occupation.
+This route develops the third domain of the [computing stack](/library/computing-stack/). Read [computing foundations](/learn/computing-foundations/) and [physics for computing](/learn/physics-for-computing/) first. You will reuse charge signs, unit conversions, bound electronic energies and the distinction between an allowed state and its occupation.
 
 The chapters introduce chemical notation as it becomes necessary. Basic arithmetic and powers of ten are enough for the exercises. No laboratory or fabrication equipment is required. Content is in English, like the preceding routes.
 
@@ -78,4 +78,4 @@ The chain of reasoning uses a chemical description, a charge-balance approximati
 
 ## Continue through the stack
 
-Continue with [semiconductor manufacturing — from wafer to package](/learn/semiconductor-manufacturing/). Its six lessons explain wafer preparation, lithography, deposition and etching, implantation and annealing, interconnects, testing and packaging. The [full computing stack](/knowledge/computing-stack/) shows the available lessons and remaining planned domains.
+Continue with [semiconductor manufacturing — from wafer to package](/learn/semiconductor-manufacturing/). Its six lessons explain wafer preparation, lithography, deposition and etching, implantation and annealing, interconnects, testing and packaging. The [full computing stack](/library/computing-stack/) shows the available lessons and remaining planned domains.

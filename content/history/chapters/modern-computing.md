@@ -73,7 +73,7 @@ If 39 cases belong to one class and one to the other, always predicting the majo
 
 Dennard and colleagues' 1974 paper considers reduced MOSFET dimensions and scaling relationships alongside fabrication and device characterization. It illustrates that scaling is an engineering argument with assumptions and measured devices, not a timeless guarantee that every shrink produces free speed or lower total energy.
 
-Integration density, voltage, switching activity, heat, interconnects and manufacturing feasibility answer different questions. The [device-scaling chapter](/knowledge/semiconductor-devices/device-scaling/) develops those models. A growing transistor count alone does not tell us which parts are active at once or how much power a whole system dissipates.
+Integration density, voltage, switching activity, heat, interconnects and manufacturing feasibility answer different questions. The [device-scaling chapter](/library/semiconductor-devices/device-scaling/) develops those models. A growing transistor count alone does not tell us which parts are active at once or how much power a whole system dissipates.
 
 For original unit accounting, take 10 pJ of energy per operation and a sustained rate of 10¹¹ operations per second. Multiplying gives 10 × 10⁻¹² J × 10¹¹ / s = 1 W for the counted operations. Add 2 W of other modeled activity and the total is 3 W. This is not a chip measurement; it shows why both energy per operation and activity rate matter. Memory, communication and idle power cannot be wished away by quoting one compute-efficiency number.
 

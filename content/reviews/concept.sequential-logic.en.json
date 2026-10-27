@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.sequential-logic",
   "locale": "en",
-  "contentHash": "8e62ced9efd6d3cebd27276b7ba22d148b8e11a72530ea65b668ab4ec2e0b235",
+  "contentHash": "b60ef27f0fcb8e7cad18d3dc9c00c525299ce5b8db97648f13fc6ae35d19e621",
   "assessedAt": "2026-10-24",
   "assessor": {
     "name": "Codex",
@@ -79,15 +79,15 @@
       "check": "state-traces",
       "result": "passed",
       "scope": "Five published counter edges and reset/enable priority.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "54ca46f11f718f0ce2a87f3ef33d1db2f8e61bc8e666ac841d76d1b747f997ac"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "686acac4b730a920a978e1cb6899fa738e20dab50c8d757a2e90f2934d0ca05a"
     },
     {
       "check": "worked-exercises",
       "result": "passed",
       "scope": "Modulo wrap, completion sequence and illustrative timing sum.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "9ec05be3161b8a19b4bfa494a3ae591b82bd9d42b69fd6f32c4df49533a122af"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "63c1010281a084829805f733fbc305b8ce65c1e1bcfaf34c481ef12dc0cc50e7"
     }
   ],
   "limitations": [

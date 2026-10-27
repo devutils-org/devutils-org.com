@@ -2,7 +2,7 @@
   "version": 1,
   "id": "history.origins-of-information",
   "locale": "en",
-  "contentHash": "193e94fb9dd4724d2940d8b4bb620e031dbb11a3f4fe32dc3d8e0ba945367842",
+  "contentHash": "7cd446a981c9f5a658001d4c22a94b9ade41b8b7d7dd31922822d3e7aeef88df",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -63,8 +63,8 @@
       "check": "history-information-exercises",
       "result": "passed",
       "scope": "Original token record, positional-value examples and arithmetic answers only; not historical verification.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "8d022b851c8d2c2db66cd7cd2647cff4eed77865d1f95367274fb6692adc690b"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "26ee47f203a9bee8c420fbf6e78e9ee8bdd89b6e245d2318dbd24baee6569d36"
     }
   ],
   "limitations": [

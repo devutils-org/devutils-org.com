@@ -80,4 +80,4 @@ The exercise connects a precise claim, measured quantities with units, a decodin
 
 Continue in the order of the editorial map with [physics for computing — from charge to solids](/learn/physics-for-computing/). Its five introductory chapters reuse the units, representations and modeling habits developed here.
 
-You can also follow [digital logic — from decisions to state](/learn/digital-logic-foundations/) to work through Boolean operations, gates, arithmetic and storage. The [full computing stack](/knowledge/computing-stack/) shows the available articles and the other planned domains.
+You can also follow [digital logic — from decisions to state](/learn/digital-logic-foundations/) to work through Boolean operations, gates, arithmetic and storage. The [full computing stack](/library/computing-stack/) shows the available articles and the other planned domains.

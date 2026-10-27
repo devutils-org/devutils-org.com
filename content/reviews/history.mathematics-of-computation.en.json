@@ -2,7 +2,7 @@
   "version": 1,
   "id": "history.mathematics-of-computation",
   "locale": "en",
-  "contentHash": "49ae2213836ab871341283a6282f4de96d3dd8d32f49a282fd89d9c169a51a40",
+  "contentHash": "805fe9dfa29d468560e195c197c69d3d722fb263501fdc8056cdcbe6794bb155",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -95,8 +95,8 @@
       "check": "history-mathematics-exercises",
       "result": "passed",
       "scope": "Printed remainder trace, independent GCD reference, binary conversions, Boolean domain and increment wrap examples only.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "08b8cd9dea126b7621ccad6c2b59e3e808a6b6c1a357b51e9962d8ebb2d8000b"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "5d14f0f9aa417be46aca3ca5f78e5a0cc347dde8cda1799a934681da9987ce82"
     }
   ],
   "limitations": [

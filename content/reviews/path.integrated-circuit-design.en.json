@@ -2,7 +2,7 @@
   "version": 1,
   "id": "path.integrated-circuit-design",
   "locale": "en",
-  "contentHash": "82790e0be18420576703e02f08dbf701d0fb6596bc8c97777917555651929415",
+  "contentHash": "e8c7f3f2912989a14ef328270b812463ccc9e4f08f04d92c5e9f5fb4bef7465f",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -31,8 +31,8 @@
       "check": "ic-path-exercises",
       "result": "passed",
       "scope": "Ordered published prerequisites, two accumulator edges, setup/hold arithmetic and changing period.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "42d659f4aa1ad399e863e4206f07db45518d60946e36019896246acc45d374fe"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "bb596ca60c293e5f3c0bfa2f9d0605f7d01760ee813b52cfb46cadfebbe66e62"
     }
   ],
   "limitations": [

@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.signal-integrity",
   "locale": "en",
-  "contentHash": "bf453b643c1ff95f04880aa6fda376f338165d38003406c52e6a9d40caecbd39",
+  "contentHash": "7da60a99cab614c8db57c5896ba71744cedea24c89d575b69449bdbd8b441353",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -63,8 +63,8 @@
       "check": "electronics-exercises",
       "result": "passed",
       "scope": "Loaded dividers, power balance, logic margins, RC responses, pin/net mappings, conductor geometry, regulator loss, droop, reflections, probe loading and ordered prerequisites.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "0ebe61c0678960e778d6dcdfcb7f4ea1b6bf97bb30f66509ddc95cb99cf306d8"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "aea61614f6c01e1fc96212e15a58fd0c1d8a6a6ba7838cbee37fa66f7d5dfe16"
     }
   ],
   "limitations": [

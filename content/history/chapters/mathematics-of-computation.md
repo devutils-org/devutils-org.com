@@ -75,7 +75,7 @@ A small modern Boolean example illustrates the attraction of algebraic reasoning
 
 The rule x × x = x also holds for these values. It does not hold for arbitrary integers: 2 × 2 is 4. Importing ordinary algebraic intuitions without the domain restrictions can therefore produce errors. Conversely, the modern OR operation is not ordinary unrestricted addition: 1 OR 1 is 1, while 1 + 1 is 2.
 
-These are present-day teaching conventions, not a transcription of all of Boole's methods. The [Boolean-algebra article](/knowledge/digital-logic/boolean-algebra/) develops a circuit-oriented model. The later [switching-circuit event](/history/birth-of-computer-science/switching-circuit-logic/) documents a specific connection between mathematical logic and relay design.
+These are present-day teaching conventions, not a transcription of all of Boole's methods. The [Boolean-algebra article](/library/digital-logic/boolean-algebra/) develops a circuit-oriented model. The later [switching-circuit event](/history/birth-of-computer-science/switching-circuit-logic/) documents a specific connection between mathematical logic and relay design.
 
 ## From running examples to formal methods
 

@@ -2,7 +2,7 @@
   "version": 1,
   "id": "history.modern-computing",
   "locale": "en",
-  "contentHash": "23f24f4b28953702fe994a3ec1f19df4cb9e9bc6d31af2aec03d2f3d402e1f15",
+  "contentHash": "47352867c30bccfe1947ddbb3697203517b2c545d9306933629a0711dca48dde",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -143,8 +143,8 @@
       "check": "history-modern-exercises",
       "result": "passed",
       "scope": "Original battery/operation-energy accounting, parallel-lane overhead, class-imbalance scenarios and amplitude normalization only.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "7d90c02e626891e68dbcc34ef51ef958e1cd839cf402e35b32c751a280d3ad77"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "7c2cf4854b740a3c27491f180cd61fa5e62a050d5398c279753265091557f8b0"
     }
   ],
   "limitations": [

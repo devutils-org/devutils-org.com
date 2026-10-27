@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.units-and-scale",
   "locale": "en",
-  "contentHash": "f608b5c845f805229ece1ec90d3004f281fe44c9e18543b78a88e277ce606b77",
+  "contentHash": "770dd883b180645ab2e814d866798f32c82217054b219a6a30708ec012516aa1",
   "assessedAt": "2026-10-25",
   "assessor": {
     "name": "Codex",
@@ -47,8 +47,8 @@
       "check": "foundation-exercises",
       "result": "passed",
       "scope": "Expanded packing, conversion, binary-capacity and encoding exercises; receiver and missed-pulse tables; interface mismatch, composed delay and capstone decoding; path prerequisite order.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "e3ff492e92a9385751153f995ca6acb9e58e0921ddef9354fe7f12b4a5d6bfb8"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "8f3d2453a76e2d314c9856e500ac65b6858204911f815c744e2ba66c6e1df5bd"
     }
   ],
   "limitations": [

@@ -68,7 +68,7 @@ copyrighted texts or images into the repository to make an evidence archive.
 ## Files and change detection
 
 Each published `(id, locale)` needs `content/reviews/<id>.<locale>.json`.
-`src/knowledge/review.ts` validates its schema, source indices, article anchors,
+`src/library/review.ts` validates its schema, source indices, article anchors,
 dates, identities and results. A SHA-256 fingerprint covers the normalized article
 metadata, body, sources and relationships. Whitespace in prose is included.
 Changing an article invalidates its assessment and stops the build until a fresh
@@ -81,7 +81,7 @@ and the existing JSON records. Obtain the normalized fingerprint without loading
 an old audit:
 
 ```sh
-node --input-type=module -e 'import {readFileSync} from "node:fs"; import {parseEntry} from "./src/knowledge/load.ts"; import {contentHash} from "./src/knowledge/review.ts"; const file=process.argv[1]; console.log(contentHash(parseEntry(readFileSync(file,"utf8"),file)))' content/knowledge/digital-logic/boolean-algebra.md
+node --input-type=module -e 'import {readFileSync} from "node:fs"; import {parseEntry} from "./src/library/load.ts"; import {contentHash} from "./src/library/review.ts"; const file=process.argv[1]; console.log(contentHash(parseEntry(readFileSync(file,"utf8"),file)))' content/library/digital-logic/boolean-algebra.md
 ```
 
 ## Run reproducible checks
@@ -92,7 +92,7 @@ npm test
 npm run build
 ```
 
-`verify:content` runs the allowlisted check groups in `src/knowledge/checks.ts`.
+`verify:content` runs the allowlisted check groups in `src/library/checks.ts`.
 It clears old pass attestations first, requires an actual passing test (zero matches
 are not accepted), and writes results atomically after all groups pass. It never
 changes source findings, content fingerprints or human-review status.

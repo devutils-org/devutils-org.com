@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.memory-and-registers",
   "locale": "en",
-  "contentHash": "824ca8ed9fe52319ad4c8a902a97e27137d28be6895af69c5d9b26a73c9f3151",
+  "contentHash": "292f1423a539478e401dc8b5f1f21c92d80f149766899457a0fb876ef305baac",
   "assessedAt": "2026-10-24",
   "assessor": {
     "name": "Codex",
@@ -79,15 +79,15 @@
       "check": "state-traces",
       "result": "passed",
       "scope": "All six displayed register events.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "54ca46f11f718f0ce2a87f3ef33d1db2f8e61bc8e666ac841d76d1b747f997ac"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "686acac4b730a920a978e1cb6899fa738e20dab50c8d757a2e90f2934d0ca05a"
     },
     {
       "check": "worked-exercises",
       "result": "passed",
       "scope": "Word/address counts and payload-byte calculations.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "9ec05be3161b8a19b4bfa494a3ae591b82bd9d42b69fd6f32c4df49533a122af"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "63c1010281a084829805f733fbc305b8ce65c1e1bcfaf34c481ef12dc0cc50e7"
     }
   ],
   "limitations": [

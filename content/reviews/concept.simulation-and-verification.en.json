@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.simulation-and-verification",
   "locale": "en",
-  "contentHash": "37040a08e990ca8395b47fbe97a044e3162c15b281fdb3e15fd2bc06fc6fcab7",
+  "contentHash": "584e967174db877d72c02e8a2e816786531c71b813d3a87dd73ddc5a83b994dc",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -47,8 +47,8 @@
       "check": "design-continuation-exercises",
       "result": "passed",
       "scope": "Published tables, state traces, worked arithmetic and reading prerequisites under the explicitly stated teaching assumptions.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "2693b45f91122a0d0610b1739cb067f6e927be14956bd1c30c6a5f3a3564fbec"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "a3aa48bb952c1d74e0950d69e620af734e63b9f9c5d46db88e80de1efc2afae2"
     }
   ],
   "limitations": [

@@ -8,13 +8,13 @@ try {
  for(const javaScriptEnabled of [false,true]) for(const width of [1440,768,390,320]) {
   const context=await browser.newContext({viewport:{width,height:1000},javaScriptEnabled,reducedMotion:'reduce'})
   const page=await context.newPage();page.on('pageerror',error=>errors.push(error.message))
-  for(const route of ['/','/tools/','/about/','/tools/atfq/','/together/','/design/','/knowledge/','/fr/','/fr/tools/','/fr/about/','/fr/knowledge/']) {
+  for(const route of ['/','/tools/','/about/','/tools/atfq/','/together/','/design/','/library/','/fr/','/fr/tools/','/fr/about/','/fr/library/']) {
    const fr=route.startsWith('/fr/'),prefix=fr?'/fr':''
    const response=await page.goto(`${base}${route}?debug=no3d`)
    if(response?.status()!==200)throw Error(`Bad route ${route}`)
    const links=page.locator('header .site-links a')
    const hrefs=await links.evaluateAll(items=>items.map(a=>a.getAttribute('href')))
-   if(JSON.stringify(hrefs)!==JSON.stringify(['tools','knowledge','contributions','about'].map(p=>`${prefix}/${p}/`)))throw Error(`Wrong destinations ${route}: ${hrefs}`)
+   if(JSON.stringify(hrefs)!==JSON.stringify(['tools','library','contributions','about'].map(p=>`${prefix}/${p}/`)))throw Error(`Wrong destinations ${route}: ${hrefs}`)
    const labels=await links.allTextContents()
    if(JSON.stringify(labels)!==JSON.stringify(fr?['Outils','Bibliothèque','Contributions','À propos']:['Tools','Library','Contributions','About']))throw Error(`Wrong labels ${route}`)
    for(const link of await links.all()) {
@@ -23,7 +23,7 @@ try {
     if(!box||box.x<0||box.x+box.width>width+1)throw Error(`Clipped destination ${route} ${width}`)
    }
    if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1))throw Error(`Overflow ${route} ${width}`)
-   if(javaScriptEnabled&&[1440,390].includes(width)&&['/','/tools/','/about/','/knowledge/'].includes(route))await page.screenshot({path:`${out}/${route==='/'?'home':route.split('/')[1]}-${width}.png`})
+   if(javaScriptEnabled&&[1440,390].includes(width)&&['/','/tools/','/about/','/library/'].includes(route))await page.screenshot({path:`${out}/${route==='/'?'home':route.split('/')[1]}-${width}.png`})
    results.push({route,width,javaScriptEnabled})
   }
   await page.goto(base+'/tools/?debug=no3d')

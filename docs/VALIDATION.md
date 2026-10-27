@@ -20,13 +20,13 @@ and GitHub Pages. This is a local build and browser validation, not a deployment
 | Types, schemas, dates, graph, metadata, aliases, safe rendering and gate model | `npm test`: 40 passing tests |
 | Deployment runtime compatibility | `npm test` and `npm run build` pass under Node 22.23.4 |
 | HTML, sitemap, Pagefind and local assets/anchors | `npm run build`: 206 HTML documents checked |
-| Every new route at desktop/mobile widths without JS | `node bench/knowledge.ts`: 56 page checks |
+| Every new route at desktop/mobile widths without JS | `node bench/library.ts`: 56 page checks |
 | Automated WCAG A/AA, desktop/mobile | `node bench/roadmap.ts`: 56 axe-core checks, no violations |
 | Search results, language/section filters, empty query results, timeline/figure filters | Same browser check |
 | All 12 binary-gate cases, NOT, reset, keyboard operation, static truth tables | Unit tests and browser check |
 | Learning path references, alias navigation, reduced motion | Same browser check |
 | Existing bilingual contributions, report downloads and no-JS content | `node bench/contributions.ts`: 8 page checks and navigation |
-| Small-screen performance and 1,000-page index evaluation | `node bench/knowledge-metrics.ts`; measurements in the scale-review ADR |
+| Small-screen performance and 1,000-page index evaluation | `node bench/library-metrics.ts`; measurements in the scale-review ADR |
 
 The build preserves 20 original registered routes and 153 ATFQ book pages, and
 validates their links alongside the new content. The deployment workflow, original
@@ -48,10 +48,10 @@ npm run preview -- --host 127.0.0.1 --port 5178
 In a second terminal:
 
 ```sh
-CHROME_PATH=/path/to/chrome node bench/knowledge.ts
+CHROME_PATH=/path/to/chrome node bench/library.ts
 CHROME_PATH=/path/to/chrome node bench/roadmap.ts
 CHROME_PATH=/path/to/chrome node bench/contributions.ts
-CHROME_PATH=/path/to/chrome node bench/knowledge-metrics.ts
+CHROME_PATH=/path/to/chrome node bench/library-metrics.ts
 ```
 
 `CHECK_BASE_URL` changes the server. Browser checks write reports/screenshots under

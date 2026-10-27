@@ -1,6 +1,6 @@
 import { readdirSync, readFileSync } from 'node:fs'
 import { resolve, relative } from 'node:path'
-import { checkReferences } from '../src/knowledge/links.ts'
+import { checkReferences } from '../src/library/links.ts'
 import { SITE } from '../src/site.ts'
 const root=resolve('dist')
 const walk=(dir:string):string[]=>readdirSync(dir,{withFileTypes:true}).flatMap(f=>f.isDirectory()?walk(resolve(dir,f.name)):[resolve(dir,f.name)])

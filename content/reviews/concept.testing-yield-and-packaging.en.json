@@ -63,8 +63,8 @@
       "check": "manufacturing-exercises",
       "result": "passed",
       "scope": "Wafer area ratios, resist polarity and overlay margins, film growth and piecewise removal, dose/depth/activation bookkeeping, line/via resistance, conditional yield and the ordered prerequisite chain.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "f43eded416fb1e2c9d71f7c5eae8120dc768d27dc69a9b5ae7044540770429bb"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "695be80256147b9363bce1a6eac180f4650f5c3898ab7e21416f771faaf48a52"
     }
   ],
   "limitations": [

@@ -63,8 +63,8 @@
       "check": "materials-exercises",
       "result": "passed",
       "scope": "Atomic charge and isotope counts, bond-energy changes, cubic cell sharing, site populations, network stoichiometry, dopant concentration and neutrality, sample resistance, unit conversion and path prerequisite order.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "c7e8bc167b0ce762f7be3ba463f475df4960d2261ece4271c7cd845945710fc1"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "2a1d103cc0cd9c75788230c2d03eb31a8436ae5502bfdd634f3d72cc4fee5493"
     }
   ],
   "limitations": [

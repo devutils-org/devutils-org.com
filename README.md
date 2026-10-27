@@ -224,7 +224,7 @@ links and pre-rendered content without JavaScript. Screenshots use the existing
 
 ## Knowledge library
 
-`/knowledge/` opens the reading library; `/knowledge/computing-stack/` is its full
+`/library/` opens the reading library; `/library/computing-stack/` is its full
 editorial table of contents. History, figures, learning paths and labs have
 section overviews. Ninety-nine published records include 93 English records and
 six French foundation translations. The English records include five foundations chapters, five physics
@@ -259,11 +259,11 @@ from early representation and logic to modern computing. Chapters have previous/
 links; `/history/timeline/` retains dated milestones as a separate reading view.
 The French History index labels its English chapter destinations explicitly.
 
-Content lives in `content/**/*.md`. `src/knowledge/` validates metadata and links,
+Content lives in `content/**/*.md`. `src/library/` validates metadata and links,
 renders Markdown safely, derives routes/backlinks and emits static HTML through
 a Vite plugin. It serves the same pages in development. Existing tool pages and
 their registry keep their original rendering pipeline. The reader reuses `src/style.css` for the site’s visual identity, with reading
-layouts in `src/knowledge/styles.css`. Ordinary articles need no application JavaScript or WebGL scene. Search loads
+layouts in `src/library/styles.css`. Ordinary articles need no application JavaScript or WebGL scene. Search loads
 Pagefind on demand; the lab and discovery controls use a small client module. The SEO stage includes generated routes in the sitemap.
 
 See [authoring instructions](docs/AUTHORING.md), the
@@ -273,12 +273,12 @@ See [authoring instructions](docs/AUTHORING.md), the
 `npm test` and `npm run build` validate the library, including the complete built
 site’s internal links. See [validation](docs/VALIDATION.md) and the
 [measured architecture review](docs/adr/knowledge-scale-review.md). With the preview server on
-port 5178, `CHROME_PATH=/path/to/chrome node bench/knowledge.ts` checks every new
+port 5178, `CHROME_PATH=/path/to/chrome node bench/library.ts` checks every new
 route on desktop/mobile without JavaScript and writes screenshots to
 `/tmp/devutils-knowledge-check` (override with `CHECK_OUTPUT`).
 
 `bench/roadmap.ts` checks search, filters, the lab, aliases and automated accessibility.
-`bench/knowledge-metrics.ts` records page/index sizes and a synthetic 1,000-page benchmark.
+`bench/library-metrics.ts` records page/index sizes and a synthetic 1,000-page benchmark.
 
 Each article exposes a verification record with selected claims, exact source
 passages, reproducible checks and a separate human-review status. See

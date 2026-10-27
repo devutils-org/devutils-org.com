@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.photolithography-and-alignment",
   "locale": "en",
-  "contentHash": "5edc8f4c41a9d6bdab190bf0b83cb36c818a44d221dc9edc978eda5c2891bcd4",
+  "contentHash": "7f077da5838ca6effea3f6dfd7345b4a7079a62e152c6d037ce3983db9e10f7a",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -79,8 +79,8 @@
       "check": "manufacturing-exercises",
       "result": "passed",
       "scope": "Wafer area ratios, resist polarity and overlay margins, film growth and piecewise removal, dose/depth/activation bookkeeping, line/via resistance, conditional yield and the ordered prerequisite chain.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "f43eded416fb1e2c9d71f7c5eae8120dc768d27dc69a9b5ae7044540770429bb"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "695be80256147b9363bce1a6eac180f4650f5c3898ab7e21416f771faaf48a52"
     }
   ],
   "limitations": [

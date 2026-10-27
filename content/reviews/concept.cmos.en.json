@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.cmos",
   "locale": "en",
-  "contentHash": "bc9050435b99d23d3e40e26c1c6d5ab70a876d3acf6b0a0534556df285dd25d7",
+  "contentHash": "f8eb23b0beed09eda5b8931266cd9f4fd04529b69a9a830638ae194c25105986",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -63,8 +63,8 @@
       "check": "devices-exercises",
       "result": "passed",
       "scope": "Published charge-balance, diode, gate-bias, NAND, density and power tables; worked energy and duty-cycle answers; prerequisite ordering.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "bc30215ca245609230e279cd8f529ebed4b7be2ed0629b7fbcdf20d278614f00"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "f0c364dd3f9ec6880b27c0d40668b1983f408cbee9dcc1bb476c4eb840accb86"
     }
   ],
   "limitations": [

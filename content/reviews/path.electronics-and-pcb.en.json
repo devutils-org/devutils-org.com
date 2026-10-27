@@ -2,7 +2,7 @@
   "version": 1,
   "id": "path.electronics-and-pcb",
   "locale": "en",
-  "contentHash": "e8cba8c0b09ab80ea168fab7ce26bd8e673497e386632cdf0b7fbf8339fe35d3",
+  "contentHash": "c3df983e75fad07de335306b8b5a796c297667cdb5d067c1b3980406425d0357",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -47,8 +47,8 @@
       "check": "electronics-exercises",
       "result": "passed",
       "scope": "Loaded dividers, power balance, logic margins, RC responses, pin/net mappings, conductor geometry, regulator loss, droop, reflections, probe loading and ordered prerequisites.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "0ebe61c0678960e778d6dcdfcb7f4ea1b6bf97bb30f66509ddc95cb99cf306d8"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "aea61614f6c01e1fc96212e15a58fd0c1d8a6a6ba7838cbee37fa66f7d5dfe16"
     }
   ],
   "limitations": [

@@ -35,7 +35,7 @@ A dedicated Vite plugin emits these HTML assets during the client build and serv
 the same renderer through dev middleware. It does not run in the SSR build. This
 avoids a physical placeholder per article and preserves the existing registry and
 its tests. The existing SEO stage consumes the generated route manifest to add
-its published pages to the sitemap. The reader loads `src/style.css` directly in development and an emitted copy in production, reusing its design tokens, logo, navigation, gradient titles, glass panels and controls. `src/knowledge/styles.css` adds the article layout as a separate static asset.
+its published pages to the sitemap. The reader loads `src/style.css` directly in development and an emitted copy in production, reusing its design tokens, logo, navigation, gradient titles, glass panels and controls. `src/library/styles.css` adds the article layout as a separate static asset.
 There is no article JavaScript bundle, WebGL canvas or browser-side content index.
 
 All five section overviews, the computing-stack map and the static timeline are

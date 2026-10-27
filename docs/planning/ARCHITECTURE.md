@@ -32,7 +32,7 @@ content/
   figures/<slug>.md
   paths/<slug>.md
   labs/<slug>.md
-src/knowledge/
+src/library/
   schema.ts           # typed content contracts and validation
   load.ts             # content ingestion
   graph.ts            # ID-based relations and backreferences
@@ -82,14 +82,14 @@ Use typed ID references, not arbitrary embedded URLs: `prerequisite_of`, `relate
 ## 7. Routes and language
 Recommended stable paths:
 ```
-/knowledge/                  /knowledge/computing-stack/
-/knowledge/<area>/<slug>/
+/library/                  /library/computing-stack/
+/library/<area>/<slug>/
 /history/                    /history/timeline/
 /history/<era>/<slug>/
 /figures/                    /figures/<slug>/
 /learn/                      /learn/<slug>/
 /labs/                       /labs/<slug>/
-/fr/knowledge/...            /fr/history/... etc.
+/fr/library/...            /fr/history/... etc.
 ```
 Preserve the site's existing `/fr/` strategy. Do not automatically generate French pages by machine translation or copy English into `/fr/` as if translated. For V1, untranslated articles have no French route: French navigation and related-content lists may link to the published English article with an explicit English-language indicator. The language switch links to a published counterpart when available; otherwise it links to the destination language's section overview and states that the article is unavailable in that language. Provide translated section overviews for this fallback. Emit `hreflang` only for published translations, a self-referencing canonical for each published route, and the correct document `lang`.
 

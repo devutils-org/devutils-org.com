@@ -1,11 +1,11 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { toolReadingHtml, articleToolsHtml } from './reading.ts'
-import { loadEntries } from './knowledge/load.ts'
-import { documentHtml, knowledgePages } from './knowledge/render.ts'
+import { loadEntries } from './library/load.ts'
+import { documentHtml, libraryPages } from './library/render.ts'
 
 test('curated tool links resolve to translated lessons and do not spill into unrelated subjects', () => {
-  const pages = knowledgePages(loadEntries())
+  const pages = libraryPages(loadEntries())
   for (const locale of ['en', 'fr'] as const) {
     for (const tool of ['omn', 'atfq', 'distroproof', 'xpac', 'vmanyware']) {
       const html = toolReadingHtml(tool, locale)

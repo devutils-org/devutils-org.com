@@ -89,7 +89,7 @@ Influence must also be documented. Peckhaus emphasizes that important parts of L
 
 ## Connections and reading checks
 
-Later mathematical logic studies precise languages, proofs and interpretations using new methods. [Boolean algebra](/knowledge/digital-logic/boolean-algebra/) and [Shannon's switching-circuit work](/history/birth-of-computer-science/switching-circuit-logic/) provide a particular later connection to computing. Aristotle's syllogisms, Stoic arguments and Leibniz's projects should not be described as interchangeable versions of a transistor circuit.
+Later mathematical logic studies precise languages, proofs and interpretations using new methods. [Boolean algebra](/library/digital-logic/boolean-algebra/) and [Shannon's switching-circuit work](/history/birth-of-computer-science/switching-circuit-logic/) provide a particular later connection to computing. Aristotle's syllogisms, Stoic arguments and Leibniz's projects should not be described as interchangeable versions of a transistor circuit.
 
 1. If A is contained in B and B in C, may we conclude C is contained in A? No. The sets above give 3 in C but not A.
 2. If P implies Q and Q is true, must P be true? No. P false and Q true is a counterexample in the stated modern interpretation.

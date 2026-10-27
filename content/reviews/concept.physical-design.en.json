@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.physical-design",
   "locale": "en",
-  "contentHash": "bcbece6dfc169ea1474a0d6e14d6eca8eb75b536a4e2ca31513a9e63e18c6811",
+  "contentHash": "87179be4dd98dadb94673db77fa612e3c4729b2cec75effe6fe88b6678ae73b1",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -47,8 +47,8 @@
       "check": "design-continuation-exercises",
       "result": "passed",
       "scope": "Published tables, state traces, worked arithmetic and reading prerequisites under the explicitly stated teaching assumptions.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "2693b45f91122a0d0610b1739cb067f6e927be14956bd1c30c6a5f3a3564fbec"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "a3aa48bb952c1d74e0950d69e620af734e63b9f9c5d46db88e80de1efc2afae2"
     }
   ],
   "limitations": [

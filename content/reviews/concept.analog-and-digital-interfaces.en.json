@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.analog-and-digital-interfaces",
   "locale": "en",
-  "contentHash": "b233bd377d47d1d5defbf2d5affe5c71c46f1393c7efb62cf0ac6d4dbf26b960",
+  "contentHash": "560cd6ba9909ced8f0b6519deb4eb6807568dd7cd394e25c1d70f4ca8c2936c0",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -47,8 +47,8 @@
       "check": "electronics-exercises",
       "result": "passed",
       "scope": "Loaded dividers, power balance, logic margins, RC responses, pin/net mappings, conductor geometry, regulator loss, droop, reflections, probe loading and ordered prerequisites.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "0ebe61c0678960e778d6dcdfcb7f4ea1b6bf97bb30f66509ddc95cb99cf306d8"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "aea61614f6c01e1fc96212e15a58fd0c1d8a6a6ba7838cbee37fa66f7d5dfe16"
     }
   ],
   "limitations": [

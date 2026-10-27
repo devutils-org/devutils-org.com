@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.finite-state-machines",
   "locale": "en",
-  "contentHash": "6ca2cacf794adafb2327cd2ae5ca12e5d345419082f1ddef9ea94868cf02547f",
+  "contentHash": "2297ddc5fb5bf00a90390914a13910e421fa583d2e37e2e128558281f894f91c",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -79,8 +79,8 @@
       "check": "fsm-exercises",
       "result": "passed",
       "scope": "All streams through ten bits against independent suffix oracle, published trace, exercise and reset priority.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "352367161b01a25fd14b70d32cb3a57656b9cbfa794726e46860e885295af1ed"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "2fdd04f297e24a987b067cced7db4a16d5a59de55595f1433d22c03fff852f25"
     }
   ],
   "limitations": [

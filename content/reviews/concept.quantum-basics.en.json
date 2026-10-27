@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.quantum-basics",
   "locale": "en",
-  "contentHash": "c74eff3fd1dd4e02164cb290fe892fab79e544f48bb760fc8182143396361b8a",
+  "contentHash": "95d2d325a350fc8e63db01bf81a20728327d6ed06cc903bb3a19be6321dc8515",
   "assessedAt": "2026-10-25",
   "assessor": {
     "name": "Codex",
@@ -47,8 +47,8 @@
       "check": "physics-exercises",
       "result": "passed",
       "scope": "Recompute published resistor, force, flux, probability, level, thermal and lattice examples; check the reading prerequisite order.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "1a60602b9c1f20f0ca08dab2b5fd0fc24eb6940cbea65611fc977a4aa7f84a8b"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "43feba40328f53511f535dd4bf3c5760288eccdf360dcb18851a6b2a86bbcad0"
     }
   ],
   "limitations": [

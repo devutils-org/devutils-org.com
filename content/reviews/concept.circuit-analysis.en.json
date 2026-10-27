@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.circuit-analysis",
   "locale": "en",
-  "contentHash": "0f3cd01601d2746e65d98f009224d0c893f4b8b5d13d7e7b5e6d0e519ac50b15",
+  "contentHash": "79952f1a386461458ac475e36e4c58451162c69ec51f04b6a1e45aaea08641bd",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -31,8 +31,8 @@
       "check": "electronics-exercises",
       "result": "passed",
       "scope": "Loaded dividers, power balance, logic margins, RC responses, pin/net mappings, conductor geometry, regulator loss, droop, reflections, probe loading and ordered prerequisites.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "0ebe61c0678960e778d6dcdfcb7f4ea1b6bf97bb30f66509ddc95cb99cf306d8"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "aea61614f6c01e1fc96212e15a58fd0c1d8a6a6ba7838cbee37fa66f7d5dfe16"
     }
   ],
   "limitations": [

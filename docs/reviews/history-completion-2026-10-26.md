@@ -46,7 +46,7 @@ not represented as historical hardware runs or benchmark replications.
 - `bench/history.ts` checks all History pages at 1440/390 pixels, automated
   WCAG A/AA, sequential navigation, alias, EN/FR timeline filters and search for
   every chapter, including English search from the French UI.
-- `bench/knowledge.ts` independently checks all generated library pages in both
+- `bench/library.ts` independently checks all generated library pages in both
   viewports with JavaScript disabled, including HTTP status and internal links.
 
 Final command outcomes and artifact paths are recorded in HISTORY-IMPLEMENTATION.md.

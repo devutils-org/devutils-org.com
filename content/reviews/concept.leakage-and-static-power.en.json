@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.leakage-and-static-power",
   "locale": "en",
-  "contentHash": "62e4d34ee3ca12b61ee0cfefc63d68309f11d2961a2f80313ceff7ca674d8437",
+  "contentHash": "c168bfec033333ebab871bb0fdb17149ac08d4cab80d7a2a52b28183c0cfe0aa",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -79,8 +79,8 @@
       "check": "devices-exercises",
       "result": "passed",
       "scope": "Published charge-balance, diode, gate-bias, NAND, density and power tables; worked energy and duty-cycle answers; prerequisite ordering.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "bc30215ca245609230e279cd8f529ebed4b7be2ed0629b7fbcdf20d278614f00"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "f0c364dd3f9ec6880b27c0d40668b1983f408cbee9dcc1bb476c4eb840accb86"
     }
   ],
   "limitations": [

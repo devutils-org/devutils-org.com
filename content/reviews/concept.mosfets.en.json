@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.mosfets",
   "locale": "en",
-  "contentHash": "5c5b4aebc1b7254760b91d0b8afb0b145a83498639fb08c9232e93d9a53d429e",
+  "contentHash": "69f3723dfec7a6a434f07c1a39fdde74c3a48f489eea590c3dbcc94e8842ea82",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -63,8 +63,8 @@
       "check": "devices-exercises",
       "result": "passed",
       "scope": "Published charge-balance, diode, gate-bias, NAND, density and power tables; worked energy and duty-cycle answers; prerequisite ordering.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "bc30215ca245609230e279cd8f529ebed4b7be2ed0629b7fbcdf20d278614f00"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "f0c364dd3f9ec6880b27c0d40668b1983f408cbee9dcc1bb476c4eb840accb86"
     }
   ],
   "limitations": [

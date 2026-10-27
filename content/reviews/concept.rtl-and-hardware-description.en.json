@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.rtl-and-hardware-description",
   "locale": "en",
-  "contentHash": "86c6b8827e3178008b984536e70a240c521117ffb6419b6c99b49e80162c7808",
+  "contentHash": "647e93782b9ba2b658c4e74d7388e50a7eef9cdc525e90bcfc983261ddc8881e",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -79,8 +79,8 @@
       "check": "rtl-exercises",
       "result": "passed",
       "scope": "Accumulator mathematical transitions, reset/enable combinations, old-state capture, six printed edges and exercise arithmetic; not HDL execution.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "c8ad120b045066ab190cf8499529124f09ed86c11c1f88cbc62d749bff2e8bf5"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "07077cf363ef7ab014c3dd90bf6d829d667aa6b5ade214908859eb95e989b939"
     }
   ],
   "limitations": [

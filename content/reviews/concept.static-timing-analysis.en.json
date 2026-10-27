@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.static-timing-analysis",
   "locale": "en",
-  "contentHash": "73c2f1bb27c4d8cd3fb89de3e15d9f052f7b74d5badad9542f253028efa51339",
+  "contentHash": "03c7030b59daec1a5cf0a6a030699e2df1917f507cce8d247abfe050e012b86b",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -47,8 +47,8 @@
       "check": "timing-exercises",
       "result": "passed",
       "scope": "Four printed timing scenarios, setup-only period bound and negative-skew exercise.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "e7224996773b34d9f7dad7e06d3e83d853f0ac35adbb71c2777ead0344e6df35"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "055a450a666b72457e2d638d6f19782a60caf2d3eb41e83975585e663d6ea917"
     }
   ],
   "limitations": [

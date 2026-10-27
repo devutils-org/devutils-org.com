@@ -37,7 +37,7 @@ sources:
 ---
 ## Begin with the material foundations
 
-This route covers the fourth domain of the [computing stack](/knowledge/computing-stack/). Read [chemistry and materials](/learn/chemistry-and-materials/) after the foundations and physics routes. You will reuse unit conversions, shared structures, doping, carrier-population assumptions and sample resistance.
+This route covers the fourth domain of the [computing stack](/library/computing-stack/). Read [chemistry and materials](/learn/chemistry-and-materials/) after the foundations and physics routes. You will reuse unit conversions, shared structures, doping, carrier-population assumptions and sample resistance.
 
 The six lessons explain the roles of manufacturing operations and how to reason about a simplified sequence. They are conceptual lessons with arithmetic exercises, not instructions for running a fabrication tool. The numerical rates, dimensions and acceptance populations are supplied teaching inputs. The articles are in English, like the preceding routes.
 
@@ -80,4 +80,4 @@ A complete device claim would need the correct sequence, geometry, material inte
 
 ## Continue through the stack
 
-Continue with [semiconductor devices](/learn/semiconductor-devices/): PN junctions, diodes, MOSFETs, CMOS, scaling and leakage. Manufacturing describes how selected structures are formed; these device lessons explain how their charge and fields produce electrical behavior. The [full computing stack](/knowledge/computing-stack/) shows the available pages and the remaining planned domains.
+Continue with [semiconductor devices](/learn/semiconductor-devices/): PN junctions, diodes, MOSFETs, CMOS, scaling and leakage. Manufacturing describes how selected structures are formed; these device lessons explain how their charge and fields produce electrical behavior. The [full computing stack](/library/computing-stack/) shows the available pages and the remaining planned domains.

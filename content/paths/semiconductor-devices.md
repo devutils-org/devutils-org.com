@@ -77,4 +77,4 @@ At half frequency, the capacitive term becomes 2.5 μW while the stipulated stat
 
 ## Continue through the stack
 
-Continue with [electronics and PCB](/learn/electronics-and-pcb/): circuits, interfaces, supplies and physical connections around components. You can also explore the already available [digital-logic route](/learn/digital-logic-foundations/) to develop the logical functions introduced by CMOS gates. The [computing stack](/knowledge/computing-stack/) shows which domains have published articles.
+Continue with [electronics and PCB](/learn/electronics-and-pcb/): circuits, interfaces, supplies and physical connections around components. You can also explore the already available [digital-logic route](/learn/digital-logic-foundations/) to develop the logical functions introduced by CMOS gates. The [computing stack](/library/computing-stack/) shows which domains have published articles.

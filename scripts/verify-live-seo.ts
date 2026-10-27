@@ -26,7 +26,7 @@ await Promise.all(Array.from({ length: Math.min(4, urls.length) }, async () => {
     documents.set(new URL(url).pathname, body)
   }
 }))
-for (const path of ['/knowledge/search/', '/fr/knowledge/search/']) {
+for (const path of ['/library/search/', '/fr/library/search/']) {
   const { body } = await get(path)
   if (!seoDocument(body).noindex) throw Error(`${path}: search page must be noindex`)
   documents.set(path, body)

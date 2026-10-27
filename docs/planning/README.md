@@ -31,7 +31,7 @@ These are *README-level facts*, not a substitute for reading current source file
 
 ## Implementation status (2026-10-24)
 Phases 0–6 are implemented and locally verified. Start with
-`/knowledge/computing-stack/` for the editorial map, `/knowledge/search/` for
+`/library/computing-stack/` for the editorial map, `/library/search/` for
 search, `/learn/logic-to-circuits/` for the first complete path and
 `/labs/boolean-gates/` for the interactive lab. The first expanded editorial block
 is `/learn/digital-logic-foundations/`, with six concepts and the existing gate lab. Articles remain English-first,
@@ -43,7 +43,7 @@ adds search, discovery filters and the first path/lab. No deployment was perform
 
 ## First deliverable
 A working, navigable, indexable vertical slice containing:
-- `/knowledge/` and `/knowledge/computing-stack/`
+- `/library/` and `/library/computing-stack/`
 - `/history/` and a static `/history/timeline/` generated from verified event records
 - `/figures/` and one verified profile (Claude Shannon suggested)
 - `/learn/` and `/labs/` overview pages

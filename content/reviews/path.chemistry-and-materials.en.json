@@ -2,7 +2,7 @@
   "version": 1,
   "id": "path.chemistry-and-materials",
   "locale": "en",
-  "contentHash": "c561971789a9f0999f48ca91024ef498baaad0fd7f2e6f0f239bdd4d2a4e0ef7",
+  "contentHash": "6aa4c8d423b6fbb7aacf6f56463d2ffbd4ffc706c54b05636363089b37fca33a",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -47,8 +47,8 @@
       "check": "materials-exercises",
       "result": "passed",
       "scope": "Atomic charge and isotope counts, bond-energy changes, cubic cell sharing, site populations, network stoichiometry, dopant concentration and neutrality, sample resistance, unit conversion and path prerequisite order.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "c7e8bc167b0ce762f7be3ba463f475df4960d2261ece4271c7cd845945710fc1"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "2a1d103cc0cd9c75788230c2d03eb31a8436ae5502bfdd634f3d72cc4fee5493"
     }
   ],
   "limitations": [

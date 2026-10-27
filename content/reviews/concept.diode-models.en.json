@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.diode-models",
   "locale": "en",
-  "contentHash": "df7234e0d7d4eaae5307e21c70e397dedf943a03d1dceb7fcb528682ce39afa8",
+  "contentHash": "74c498ccea299ad9c49a29b5faef4a921d8d46e81c13e34966e76b0a66695e03",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -31,8 +31,8 @@
       "check": "devices-exercises",
       "result": "passed",
       "scope": "Published charge-balance, diode, gate-bias, NAND, density and power tables; worked energy and duty-cycle answers; prerequisite ordering.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "bc30215ca245609230e279cd8f529ebed4b7be2ed0629b7fbcdf20d278614f00"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "f0c364dd3f9ec6880b27c0d40668b1983f408cbee9dcc1bb476c4eb840accb86"
     }
   ],
   "limitations": [

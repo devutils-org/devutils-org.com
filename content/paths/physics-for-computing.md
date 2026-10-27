@@ -70,4 +70,4 @@ To finish, explain why each answer depends on a definition or assumption. Being 
 
 Continue with [chemistry and materials — from atoms to doped silicon](/learn/chemistry-and-materials/). Its five lessons build on these physics models to explain bonding, crystal structures, silicon and oxide, doping and sample properties.
 
-You can also follow [digital logic foundations](/learn/digital-logic-foundations/) for symbolic rules and circuits. The [full computing stack](/knowledge/computing-stack/) shows the available articles and planned domains.
+You can also follow [digital logic foundations](/learn/digital-logic-foundations/) for symbolic rules and circuits. The [full computing stack](/library/computing-stack/) shows the available articles and planned domains.

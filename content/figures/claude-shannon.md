@@ -27,7 +27,7 @@ Claude Elwood Shannon (30 April 1916 – 24 February 2001) was a mathematician a
 
 ## Logic and circuits
 
-MIT’s centenary overview dates Shannon’s master’s thesis work on Boolean algebra and switching circuits to 1937. MIT News dates the award of his SM and PhD degrees to 1940; that is distinct from the earlier thesis work and the 1938 paper. The connection is explored in our [switching-circuit history entry](/history/birth-of-computer-science/switching-circuit-logic/). Start with [Boolean algebra](/knowledge/digital-logic/boolean-algebra/) to work through a small example before reading the historical paper.
+MIT’s centenary overview dates Shannon’s master’s thesis work on Boolean algebra and switching circuits to 1937. MIT News dates the award of his SM and PhD degrees to 1940; that is distinct from the earlier thesis work and the 1938 paper. The connection is explored in our [switching-circuit history entry](/history/birth-of-computer-science/switching-circuit-logic/). Start with [Boolean algebra](/library/digital-logic/boolean-algebra/) to work through a small example before reading the historical paper.
 
 ## Communication and information
 

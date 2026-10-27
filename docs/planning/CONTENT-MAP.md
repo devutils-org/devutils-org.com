@@ -22,7 +22,7 @@ Every area begins with an overview, prerequisites, connections and a progressive
 | Programming & Toolchains | Assembly, C/C++/Rust, compilers, linkers, ELF, ABI, algorithms, debugging |
 | Applications & Systems | UI, APIs, networking, databases, concurrency, distributed systems, operations |
 
-The landing page `/knowledge/computing-stack/` visualizes the full map and provides meaningful entry points for beginners and advanced readers.
+The landing page `/library/computing-stack/` visualizes the full map and provides meaningful entry points for beginners and advanced readers.
 
 ## B. History — ideas before machines
 The story starts before modern computing. Carefully distinguish **historical precursors** from direct technological ancestors.

@@ -2,7 +2,7 @@
   "version": 1,
   "id": "path.computing-foundations",
   "locale": "en",
-  "contentHash": "e988afd80a5af91411b1480c674c25d4758fa9438988753b28eadf746451bda3",
+  "contentHash": "265de30d3359ab552e654194eb1c3a0f821ebc12dbe4973f96851ec15f985ca7",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -47,8 +47,8 @@
       "check": "foundation-exercises",
       "result": "passed",
       "scope": "Expanded packing, conversion, binary-capacity and encoding exercises; receiver and missed-pulse tables; interface mismatch, composed delay and capstone decoding; path prerequisite order.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "e3ff492e92a9385751153f995ca6acb9e58e0921ddef9354fe7f12b4a5d6bfb8"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "8f3d2453a76e2d314c9856e500ac65b6858204911f815c744e2ba66c6e1df5bd"
     }
   ],
   "limitations": [

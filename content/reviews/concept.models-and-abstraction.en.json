@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.models-and-abstraction",
   "locale": "en",
-  "contentHash": "d6ade604882cbfc3377a24c8f13da1e5747e83c172e7d19e22b6835086dc046f",
+  "contentHash": "bcb32ae74090238081aa097879c7407e37a869239956c1eebec6fa7c5843ffb9",
   "assessedAt": "2026-10-25",
   "assessor": {
     "name": "Codex",
@@ -63,8 +63,8 @@
       "check": "foundation-exercises",
       "result": "passed",
       "scope": "Expanded packing, conversion, binary-capacity and encoding exercises; receiver and missed-pulse tables; interface mismatch, composed delay and capstone decoding; path prerequisite order.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "e3ff492e92a9385751153f995ca6acb9e58e0921ddef9354fe7f12b4a5d6bfb8"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "8f3d2453a76e2d314c9856e500ac65b6858204911f815c744e2ba66c6e1df5bd"
     }
   ],
   "limitations": [

@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.signals-and-states",
   "locale": "en",
-  "contentHash": "d5444413142940555ce57662b57158fbbc6e43c5d46069d78727b3e85639ac54",
+  "contentHash": "1bfe989f8a7c10b358de7f1eab9c852f36094ecb386d14c3f447972db0e74181",
   "assessedAt": "2026-10-25",
   "assessor": {
     "name": "Codex",
@@ -63,8 +63,8 @@
       "check": "foundation-exercises",
       "result": "passed",
       "scope": "Expanded packing, conversion, binary-capacity and encoding exercises; receiver and missed-pulse tables; interface mismatch, composed delay and capstone decoding; path prerequisite order.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "e3ff492e92a9385751153f995ca6acb9e58e0921ddef9354fe7f12b4a5d6bfb8"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "8f3d2453a76e2d314c9856e500ac65b6858204911f815c744e2ba66c6e1df5bd"
     }
   ],
   "limitations": [

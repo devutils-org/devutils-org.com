@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.device-scaling",
   "locale": "en",
-  "contentHash": "ff2eb0140355949f2b43de49369cd14c1541ad5871fc8e6a60ddbbf5a451bc0d",
+  "contentHash": "de5b333b43ff91b30bf0c0c7bbe99177e0e70df748bf64c4e8c5639ef84fe3f1",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -47,8 +47,8 @@
       "check": "devices-exercises",
       "result": "passed",
       "scope": "Published charge-balance, diode, gate-bias, NAND, density and power tables; worked energy and duty-cycle answers; prerequisite ordering.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "bc30215ca245609230e279cd8f529ebed4b7be2ed0629b7fbcdf20d278614f00"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "f0c364dd3f9ec6880b27c0d40668b1983f408cbee9dcc1bb476c4eb840accb86"
     }
   ],
   "limitations": [

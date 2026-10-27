@@ -69,7 +69,7 @@ Consider a second original code: G means grain, S means sheep, and a record has 
 
 But the codebook alone does not tell us whose grain, what size a measure is, whether the goods were delivered or merely promised, or whether the record is trustworthy. Those require context and conventions. A physically preserved message may still be ambiguous; an exactly copied message may still be false.
 
-This distinction leads toward [information and representation](/knowledge/foundations/information-and-representation/). Much later, [Shannon's communication work](/history/information-revolution/mathematical-theory-of-communication/) asks a specific engineering question about message selection and transmission. Its mathematical notion of information should not be silently substituted for every earlier use of a sign or record.
+This distinction leads toward [information and representation](/library/foundations/information-and-representation/). Much later, [Shannon's communication work](/history/information-revolution/mathematical-theory-of-communication/) asks a specific engineering question about message selection and transmission. Its mathematical notion of information should not be silently substituted for every earlier use of a sign or record.
 
 ## Reading checks and answers
 

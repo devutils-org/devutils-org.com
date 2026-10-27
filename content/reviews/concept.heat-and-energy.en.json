@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.heat-and-energy",
   "locale": "en",
-  "contentHash": "c100eb1667101a504a74883d537cc0c4e6fdb3f666ee861fdb3a48b84192b63d",
+  "contentHash": "35c5ce9082f63756565c687a0b449a5e22ad5526085fbef0e4b4e216be83787d",
   "assessedAt": "2026-10-25",
   "assessor": {
     "name": "Codex",
@@ -63,8 +63,8 @@
       "check": "physics-exercises",
       "result": "passed",
       "scope": "Recompute published resistor, force, flux, probability, level, thermal and lattice examples; check the reading prerequisite order.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "1a60602b9c1f20f0ca08dab2b5fd0fc24eb6940cbea65611fc977a4aa7f84a8b"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "43feba40328f53511f535dd4bf3c5760288eccdf360dcb18851a6b2a86bbcad0"
     }
   ],
   "limitations": [

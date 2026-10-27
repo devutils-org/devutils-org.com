@@ -1,7 +1,7 @@
 import { chromium } from 'playwright-core'
 import { readFile, mkdir, writeFile } from 'node:fs/promises'
-import { knowledgePages } from '../src/knowledge/render.ts'
-import { loadEntries } from '../src/knowledge/load.ts'
+import { libraryPages } from '../src/library/render.ts'
+import { loadEntries } from '../src/library/load.ts'
 const base=process.env.CHECK_BASE_URL ?? 'http://127.0.0.1:5178'
 const events=loadEntries().filter(e=>e.type==='history' && e.status==='published' && e.history_kind!=='chapter')
 const out=process.env.CHECK_OUTPUT ?? '/tmp/devutils-roadmap-check'
@@ -12,7 +12,7 @@ try {
  for(const width of [1440,390]) {
   const context=await browser.newContext({viewport:{width,height:1000},reducedMotion:'reduce'})
   const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message))
-  for(const entry of knowledgePages(loadEntries())) {
+  for(const entry of libraryPages(loadEntries())) {
    await page.goto(base+entry.route)
    await page.addScriptTag({content:await readFile('node_modules/axe-core/axe.min.js','utf8')})
    const audit=await page.evaluate(async()=>{
@@ -24,22 +24,22 @@ try {
   }
   let pagefindRequests=0
   page.on('request',req=>{if(req.url().includes('/pagefind/')) pagefindRequests++})
-  await page.goto(base+'/knowledge/search/')
+  await page.goto(base+'/library/search/')
   await page.waitForLoadState('networkidle')
   if(pagefindRequests) throw Error('Search eagerly loaded')
   await page.locator('[name=query]').fill('Boolean')
-  await page.locator('[name=section]').selectOption('knowledge')
+  await page.locator('[name=section]').selectOption('library')
   await page.locator('form[data-search] button[type=submit]').click()
-  await page.locator('[data-search-results] a[href="/knowledge/digital-logic/boolean-algebra/"]').waitFor()
+  await page.locator('[data-search-results] a[href="/library/digital-logic/boolean-algebra/"]').waitFor()
   if(!pagefindRequests) throw Error('Search engine not loaded')
   await page.locator('[name=query]').fill('"zzzzunfindablezzzz"')
   await page.locator('form[data-search] button[type=submit]').click()
   await page.locator('[data-search-status]').filter({hasText:'0 result(s)'}).waitFor()
-  await page.goto(base+'/fr/knowledge/search/')
+  await page.goto(base+'/fr/library/search/')
   await page.locator('[name=locale]').selectOption('en')
   await page.locator('[name=query]').fill('Boolean')
   await page.locator('form[data-search] button[type=submit]').click()
-  await page.locator('[data-search-results] a[href="/knowledge/digital-logic/boolean-algebra/"]').waitFor()
+  await page.locator('[data-search-results] a[href="/library/digital-logic/boolean-algebra/"]').waitFor()
   await page.evaluate(()=>{(document.activeElement as HTMLElement)?.blur();window.scrollTo(0,0)})
   await page.screenshot({path:`${out}/search-${width}.png`,fullPage:true})
   await page.goto(base+'/history/timeline/')
@@ -79,7 +79,7 @@ try {
   await page.goto(base+'/learn/logic-to-circuits/')
   if(await page.locator('#reading-steps li').count()!==3) throw Error('Path incomplete')
   await page.goto(base+'/knowledge/boolean-algebra/')
-  await page.waitForURL('**/knowledge/digital-logic/boolean-algebra/')
+  await page.waitForURL('**/library/digital-logic/boolean-algebra/')
   await context.close()
  }
  if(errors.length) throw Error(errors.join('\n'))

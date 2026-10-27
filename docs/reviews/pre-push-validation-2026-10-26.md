@@ -33,11 +33,11 @@ three concurrent processes.
 | bench/navigation.ts | 88 localized navigation layouts |
 | bench/section-navigation.ts | 16 section-navigation layouts and centered content/rail checks |
 | bench/contributions.ts | 8 page checks, report downloads and language/no-JS navigation |
-| bench/knowledge.ts | 182 viewport/page combinations without JavaScript; titles, layout and internal links |
+| bench/library.ts | 182 viewport/page combinations without JavaScript; titles, layout and internal links |
 | bench/history.ts | 44 automated accessibility/layout checks; full-card summary clicks, ten chapter search targets, progression, alias and bilingual filters |
 | bench/reviews.ts | 150 expanded verification panels; automated accessibility, evidence visibility and pending human-review status |
 | bench/roadmap.ts | 182 accessibility checks plus search, languages, filters, gates, keyboard, path and alias interactions |
-| bench/knowledge-metrics.ts | Existing performance/size assertions passed; synthetic 1000-page indexing completed |
+| bench/library-metrics.ts | Existing performance/size assertions passed; synthetic 1000-page indexing completed |
 
 The representative article requested no JavaScript. In this local throttled
 mobile run, search response bodies totaled 240706 bytes, within the existing

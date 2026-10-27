@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.solids-and-energy-bands",
   "locale": "en",
-  "contentHash": "bbe5135e1d73a10dd23991eef2c53a11b47a6001ff6dea2c04a2d70e6234d724",
+  "contentHash": "5de9fcb9e59f039a574100ec5fe01288f1a32806f2cf85a9566b9c8970bf0a57",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -69,8 +69,8 @@
       "check": "physics-exercises",
       "result": "passed",
       "scope": "Recompute published resistor, force, flux, probability, level, thermal and lattice examples; check the reading prerequisite order.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "1a60602b9c1f20f0ca08dab2b5fd0fc24eb6940cbea65611fc977a4aa7f84a8b"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "43feba40328f53511f535dd4bf3c5760288eccdf360dcb18851a6b2a86bbcad0"
     }
   ],
   "limitations": [

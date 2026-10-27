@@ -87,4 +87,4 @@ The line delay is 150/150 = 1 ns. Its initially launched step is 2 × 50/(50 + 5
 
 ## Continue through the stack
 
-The next planned domain is integrated circuit design: hardware description, simulation, verification, synthesis, physical design and timing. The already available [digital-logic route](/learn/digital-logic-foundations/) develops Boolean functions, arithmetic and state, providing useful preparation. Use the [computing stack](/knowledge/computing-stack/) to distinguish published lessons from planned topics.
+The next planned domain is integrated circuit design: hardware description, simulation, verification, synthesis, physical design and timing. The already available [digital-logic route](/learn/digital-logic-foundations/) develops Boolean functions, arithmetic and state, providing useful preparation. Use the [computing stack](/library/computing-stack/) to distinguish published lessons from planned topics.

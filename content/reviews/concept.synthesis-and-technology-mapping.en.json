@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.synthesis-and-technology-mapping",
   "locale": "en",
-  "contentHash": "4ad597a06aab10a2d596b32bfd9bfd925ff5b41bfb8c41155a4029c7edb694e2",
+  "contentHash": "7fbc514889d9228575f323750213086786b50585e094479e4a4a112d294b5d63",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -47,8 +47,8 @@
       "check": "synthesis-exercises",
       "result": "passed",
       "scope": "Printed truth table, all four-bit input pairs for the sharing identity with both select values, hypothetical cost equations.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "11c029e4f000b64be39e641bd1c3c23c906804835fc2c42510bcf2ab07651ba1"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "c002ea6e91c666003f4dd2136288c5b66fcaf6ca5c9add3cb07ab0b6c506dd44"
     }
   ],
   "limitations": [

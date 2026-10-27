@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.signals-and-states",
   "locale": "fr",
-  "contentHash": "b9b7bde0ffdb3f93a0087ba62f1ea18dd440a40c0dd8e0046d4d90ef3eeb3d02",
+  "contentHash": "a7dd4e1b4aba8e748a4274beafc40a41bc40f485bc9c26ed6c0e5be0ec58d560",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -47,8 +47,8 @@
       "check": "foundation-fr-exercises",
       "result": "passed",
       "scope": "Tables françaises : cartes, conversions, motifs binaires, décodage de tensions, impulsion manquée, règle logique, délais et ordre des prérequis.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "705012551dbf831277d5b8e16e67a604b91b194ebd0bad11fd0cd6bfccecbff3"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "223ce09fa727b58e0a39677080f41c51deca1bcea68cf09122ad95578ea88177"
     }
   ],
   "limitations": [

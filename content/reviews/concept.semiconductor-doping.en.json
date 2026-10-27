@@ -2,7 +2,7 @@
   "version": 1,
   "id": "concept.semiconductor-doping",
   "locale": "en",
-  "contentHash": "dac02a6f58769f13a75391a0755f83665d5cc8e2485cf94e6b63121af09a77f3",
+  "contentHash": "9ab257a8fa43c2fe7745bc2064123fc800e216523454748abf7327ff8518e880",
   "assessedAt": "2026-10-26",
   "assessor": {
     "name": "Codex",
@@ -79,8 +79,8 @@
       "check": "materials-exercises",
       "result": "passed",
       "scope": "Atomic charge and isotope counts, bond-energy changes, cubic cell sharing, site populations, network stoichiometry, dopant concentration and neutrality, sample resistance, unit conversion and path prerequisite order.",
-      "checkedAt": "2026-10-26",
-      "evidenceHash": "c7e8bc167b0ce762f7be3ba463f475df4960d2261ece4271c7cd845945710fc1"
+      "checkedAt": "2026-10-27",
+      "evidenceHash": "2a1d103cc0cd9c75788230c2d03eb31a8436ae5502bfdd634f3d72cc4fee5493"
     }
   ],
   "limitations": [
