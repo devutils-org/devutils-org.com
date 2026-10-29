@@ -100,7 +100,7 @@ const sections: Renderers = {
     </div>
     <div class="terminal glass" role="tabpanel" tabindex="0">
       <div class="terminal-header"><span>● ● ●</span><code data-term-label>${s.tabs[0].label}</code><span>${s.size ?? 'LINUX'}</span></div>
-      <div class="terminal-body"><pre class="${s.pre ?? 'tui shell'}" data-term>${s.tabs[0].html ?? shell(s.tabs[0].text ?? '')}</pre></div>
+      <div class="terminal-body" tabindex="0" aria-label="${wordsOf(tool).terminalCaptures}"><pre class="${s.pre ?? 'tui shell'}" data-term>${s.tabs[0].html ?? shell(s.tabs[0].text ?? '')}</pre></div>
       <p class="terminal-caption" data-term-caption>${s.tabs[0].caption}</p>
     </div>
     ${s.fine ? `<p class="fine capture-note">${s.fine}</p>` : ''}
@@ -180,7 +180,7 @@ const sections: Renderers = {
           <small>${pad(i)} / ${l.label}</small>
           <h3>${l.title}</h3>
           <p>${l.text}</p>
-          <pre class="shell">${l.html}</pre>
+          <pre class="shell" tabindex="0">${l.html}</pre>
         </article>`,
         )
         .join('')}
@@ -222,7 +222,7 @@ const sections: Renderers = {
       <div class="install glass">
         <div class="install-head"><span>${b.label}</span><button type="button" data-copy="#install-${i}">${wordsOf(tool).copy}</button></div>
         ${b.note ? `<p class="install-note">${b.note}</p>` : ''}
-        <pre id="install-${i}">${esc(b.code)}</pre>
+        <pre id="install-${i}" tabindex="0" aria-label="${esc(b.label)}">${esc(b.code)}</pre>
       </div>`,
         )
         .join('')}

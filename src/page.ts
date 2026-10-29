@@ -156,7 +156,7 @@ export function initFlowCards(root = document) {
   }
   flowCards.forEach((card) => {
     card.addEventListener('pointerenter', (event: PointerEvent) => {
-      if (event.pointerType === 'mouse') expandFlowCard(card, true)
+      if (event.pointerType === 'mouse' && !flowCards.some(other => other !== card && other.matches(':focus-visible'))) expandFlowCard(card, true)
     })
     card.addEventListener('pointerleave', (event: PointerEvent) => {
       if (event.pointerType === 'mouse' && !card.matches(':focus-visible')) expandFlowCard(card, false)
@@ -177,7 +177,9 @@ export function initFlowCards(root = document) {
   const stacked = matchMedia('(width <= 600px)')
   let top: HTMLElement | null = null
   function followScroll() {
-    if (!stacked.matches) return
+    // Scrolling a focused card into view must not let the automatic mobile
+    // stack close it again. Keyboard focus takes priority over scroll state.
+    if (!stacked.matches || flowCards.some(card => card.matches(':focus-visible'))) return
     const line = innerHeight * 0.55
     const next = flowCards.findLast((card) => {
       const r = card.getBoundingClientRect()

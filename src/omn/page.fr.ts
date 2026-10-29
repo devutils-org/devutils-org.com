@@ -120,7 +120,7 @@ export default {
         <p>Essayez une mesure dans le terminal, puis gardez-la dans un fichier de session. YAML, JSON et TOML décrivent les mêmes requêtes. Le programme fait partie de la requête : le lancer en fait à la fois la cible et l’horloge.</p>
         ${more('/tree/main/examples', `Parcourir les sessions ${icon('arrow-up-right')}`)}
       </div>
-      <pre class="glass"><code><i># omn -f examples/mem-rss-run.yml</i>
+      <pre class="glass" tabindex="0" aria-label="Exemple de session"><code><i># omn -f examples/mem-rss-run.yml</i>
 name: resident memory of a launched program
 requests:
   - label: rss

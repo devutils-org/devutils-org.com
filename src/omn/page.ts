@@ -120,7 +120,7 @@ export default {
         <p>Prototype a measurement in the shell, then keep it in a session file. YAML, JSON and TOML describe the same requests. The program is part of the request: launching it makes it both the target and the clock.</p>
         ${more('/tree/main/examples', `Browse the sessions ${icon('arrow-up-right')}`)}
       </div>
-      <pre class="glass"><code><i># omn -f examples/mem-rss-run.yml</i>
+      <pre class="glass" tabindex="0" aria-label="Example session"><code><i># omn -f examples/mem-rss-run.yml</i>
 name: resident memory of a launched program
 requests:
   - label: rss
