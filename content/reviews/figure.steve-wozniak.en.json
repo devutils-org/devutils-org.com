@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.steve-wozniak",
+  "locale": "en",
+  "contentHash": "b28039e333d69536061792f232c18dc12e5073ea1610b8ff426b79b434e6aac1",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Wozniak designed the Apple I and Apple II and co-founded Apple with Steve Jobs.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Biography, Apple I and Apple II",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

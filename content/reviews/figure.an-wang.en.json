@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.an-wang",
+  "locale": "en",
+  "contentHash": "c0a29fe7f09c665454a71082feff0620aabe9ff524340ea52861c30398294a6c",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Wang patented a pulse-transfer controlling device that contributed to practical magnetic-core memory.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Patent and core-memory account",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.jean-bartik",
+  "locale": "en",
+  "contentHash": "735c25fa8d22717c37d831349f2779b0cbd46f88d84dd55da13f54075efa3aee",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Bartik programmed ENIAC and helped adapt it for instructions stored in memory.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Fellow citation and ENIAC biography",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

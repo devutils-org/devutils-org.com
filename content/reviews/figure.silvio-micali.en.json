@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.silvio-micali",
+  "locale": "en",
+  "contentHash": "53b859f13c21ae641636ded7cbd51f0d2b6bcdb3099d3e9edcfb435959d330b2",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Micali helped establish complexity-based cryptography and methods for efficient proof verification with Shafi Goldwasser.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "2012, Silvio Micali award citation",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

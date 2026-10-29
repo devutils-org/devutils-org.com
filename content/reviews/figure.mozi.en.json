@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.mozi",
+  "locale": "en",
+  "contentHash": "515f72d122c490f2c6b12427076e08b97c617d4f134f0b914d9903f988756f65",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Mozi’s teachings initiated the Mohist tradition of explicit argument, standards of judgment and debate in ancient China.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Introduction and Mozi and the Mohists",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

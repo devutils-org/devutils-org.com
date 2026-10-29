@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.dennis-ritchie",
+  "locale": "en",
+  "contentHash": "8dd728874dcf0362c247a8a5f68631275808da39e03fa5f59f6723f4b133629e",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Ritchie created the C programming language and co-developed Unix with Ken Thompson at Bell Labs.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Fellow citation and biography",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

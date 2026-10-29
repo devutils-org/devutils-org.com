@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.richard-hamming",
+  "locale": "en",
+  "contentHash": "4a1b7d49ddb372e3268c0be08fd5a1e03de40b3cf492ad66faa9c9f0d13baae3",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Hamming is associated with error-correcting codes that bear his name.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Summary",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

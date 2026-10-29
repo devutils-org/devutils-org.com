@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.bob-frankston",
+  "locale": "en",
+  "contentHash": "7279693320084e1afc6ef647c8049e74d859331fa462fc852feb5fd0855df027",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Frankston founded Software Arts with Dan Bricklin to develop and sell the VisiCalc spreadsheet for personal computers.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Biography, Software Arts and VisiCalc",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

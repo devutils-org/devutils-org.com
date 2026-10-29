@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.ken-thompson",
+  "locale": "en",
+  "contentHash": "d0232398854176ec347af0bee7ff6e814cb4936528fd787c5b9cc11cb778354c",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Thompson co-created Unix with Dennis Ritchie at Bell Labs and worked on languages and operating systems including B and Plan 9.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Opening biographical paragraph",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

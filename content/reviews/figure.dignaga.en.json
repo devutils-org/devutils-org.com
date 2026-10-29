@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.dignaga",
+  "locale": "en",
+  "contentHash": "7c18b34652638e00ac518befff0028059c0a959abaad8021b2b9603caa5cf43d",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Dignāga developed accounts of inference and argument in Indian Buddhist philosophy, including the wheel of reasons.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Sections 4 and 4.1",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.richard-stallman",
+  "locale": "en",
+  "contentHash": "3e64e13d3d1297e198e951d3fe9da4c084ab73488a0aa51d02eb67f5cea54de6",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Stallman announced the GNU project to build a free operating system and helped establish the free-software movement.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "GNU announcement, Manifesto and FSF incorporation",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

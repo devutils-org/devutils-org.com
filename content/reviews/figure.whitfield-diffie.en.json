@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.whitfield-diffie",
+  "locale": "en",
+  "contentHash": "69caef360f762e1cf97b25d7ad3211b39cc236582129c85435dca96bb55cf188",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Diffie worked with Martin Hellman and Ralph Merkle on public-key cryptography and co-authored New Directions in Cryptography with Hellman.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Fellow citation and cryptography biography",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.douglas-engelbart",
+  "locale": "en",
+  "contentHash": "d0e18a91fa91cd48161c83dcc88b14138459d77408b47e89de2c006f666ce229",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Engelbart and his laboratory developed interactive tools including the mouse and NLS, combining text, hypertext and collaboration.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Douglas Engelbart and NLS sections",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

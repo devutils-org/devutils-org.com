@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.dorothy-vaughan",
+  "locale": "en",
+  "contentHash": "8d5c2f32da9d7405508d6e80f6df734905425bb1515f89abeb2ed90b282c280c",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Vaughan led the segregated West Area Computing unit at NACA and later became an expert FORTRAN programmer.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "West Computing leadership and Analysis and Computation Division paragraphs",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

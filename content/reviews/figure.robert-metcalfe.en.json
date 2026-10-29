@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.robert-metcalfe",
+  "locale": "en",
+  "contentHash": "bcb2058f0a823a3ce6238b3c66f588f93cac644f59acfc9da64f07c1d2d5f8a1",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Metcalfe developed Ethernet at Xerox PARC in collaboration with David Boggs.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Biography, Ethernet paragraph",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

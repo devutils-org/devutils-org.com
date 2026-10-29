@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.steve-jobs",
+  "locale": "en",
+  "contentHash": "5de857d7bd813395b0206b863f6908201f352096963aabf82994b41ab7a8be46",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Jobs co-founded Apple with Steve Wozniak and later founded NeXT, contributing leadership in personal computing and interface design.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Biography, Apple and NeXT",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

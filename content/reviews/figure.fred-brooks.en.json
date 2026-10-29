@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.fred-brooks",
+  "locale": "en",
+  "contentHash": "658e76b1d4d504d8d7acc1cccc7b5af4d1506e92a1ed18639227d13bea97a0fb",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Brooks contributed to computer architecture, operating systems and software engineering, including management of IBM System/360 work and The Mythical Man-Month.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Biography, IBM and book paragraphs",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

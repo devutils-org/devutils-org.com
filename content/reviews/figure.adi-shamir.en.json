@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.adi-shamir",
+  "locale": "en",
+  "contentHash": "d411693a5312f14a72986873c81b1df5317d4966b29c9cb1a9cd6f1337de9582",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Shamir collaborated with Ronald Rivest and Leonard Adleman on practical public-key cryptography.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "2002, Adi Shamir award citation",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

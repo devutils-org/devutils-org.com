@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.guido-van-rossum",
+  "locale": "en",
+  "contentHash": "bf9c201fdd60e5d7e5c8b0e097bf236499c6c7c5e0f4fcd9c56b6478f8ef6f23",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Van Rossum created Python and guided the development of its language and community.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Fellow citation and opening biography",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

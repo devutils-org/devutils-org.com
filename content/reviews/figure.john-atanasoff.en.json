@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.john-atanasoff",
+  "locale": "en",
+  "contentHash": "6081969f0de51fd06e67e4e5e4a366053df47838dfb3a1afc93b3aad6409f681",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Atanasoff designed and built the Atanasoff-Berry Computer with graduate student Clifford Berry at Iowa State.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "The Atanasoff-Berry Computer entry",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

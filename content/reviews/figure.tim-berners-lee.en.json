@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.tim-berners-lee",
+  "locale": "en",
+  "contentHash": "96f2a56f66086cb156946f52ca00888f610cada4f64f2549b575bf24feb75ac1",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Berners-Lee developed the World Wide Web at CERN by combining hypertext with Internet communication and resource identifiers.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Biography, CERN proposal and Web technologies",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

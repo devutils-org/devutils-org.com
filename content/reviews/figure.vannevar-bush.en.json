@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.vannevar-bush",
+  "locale": "en",
+  "contentHash": "f3045e4330e3e23217b31dd612b68f160222d7f3a7b972c4e4d05570583909e2",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Bush described the Memex, an imagined microfilm-based system for linking and retrieving documents through associative trails.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "1945, Memex concept",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

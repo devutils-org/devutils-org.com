@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.karen-sparck-jones",
+  "locale": "en",
+  "contentHash": "bd345032afb925a0556fd33ce9b8c3d6952d5b14c86843b6c9a8267422ae7c1b",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Spärck Jones researched automatic language processing, document retrieval, summarization and the evaluation of information systems.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Research interests, brief biography and publications",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

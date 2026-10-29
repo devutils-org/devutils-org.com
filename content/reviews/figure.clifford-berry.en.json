@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.clifford-berry",
+  "locale": "en",
+  "contentHash": "22eac07e538ad8cfa36f6e0dbea53780b20c43a5034bd0e5820180e51ac303f8",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Berry collaborated with John Atanasoff to design and build the Atanasoff-Berry Computer at Iowa State.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "The Atanasoff-Berry Computer entry",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

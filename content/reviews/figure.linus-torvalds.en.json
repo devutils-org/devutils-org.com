@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.linus-torvalds",
+  "locale": "en",
+  "contentHash": "3b55c4408a7866fd898e329ad5beaddf33f0913cf5d750bb3ece71576bc6d36e",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Torvalds created the Linux kernel and coordinated its open-source development with a growing community of contributors.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Fellow citation and opening biography",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.jay-forrester",
+  "locale": "en",
+  "contentHash": "9cb0a17cac4d01a6eb5bff6c9b1fb84c699a0c3729c0ca220a0aa3df8d412d19",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Forrester developed coincident-current magnetic-core memory while leading the MIT Whirlwind project.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Biography, Whirlwind and core memory",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

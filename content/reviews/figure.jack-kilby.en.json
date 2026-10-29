@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.jack-kilby",
+  "locale": "en",
+  "contentHash": "919e20b64de670bea1c1dec7db35ac1a879638ba6253f5da7e2c43a90cc2b2ac",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Kilby demonstrated circuits whose active and passive elements were formed from semiconductor material at Texas Instruments.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Milestone, solid circuit and flying-wire limitations",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

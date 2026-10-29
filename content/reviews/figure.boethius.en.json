@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.boethius",
+  "locale": "en",
+  "contentHash": "461985fe2b57f3c33c1e1798d38025ac5992f2ced200aef0669a0bdc964302f8",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Boethius’s Latin logical writings helped transmit ancient logic into medieval intellectual traditions.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Introduction, later antiquity and Latin transmission",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

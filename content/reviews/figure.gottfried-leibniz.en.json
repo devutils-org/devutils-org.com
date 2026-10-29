@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.gottfried-leibniz",
+  "locale": "en",
+  "contentHash": "31bde852b28cccbd286dfe12512b08756c3260c524b938b742817164a94d5c79",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Leibniz worked on mechanical calculation and binary arithmetic, alongside mathematics and philosophy.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Summary and binary arithmetic paragraph",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

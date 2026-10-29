@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.yann-lecun",
+  "locale": "en",
+  "contentHash": "55b4a5d36f1967c458b2c128ab88164c1ec25307c92947eea0aa10c536f59bd5",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "LeCun contributed conceptual and engineering advances in deep neural networks, recognized jointly with Hinton and Bengio.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "2018 award recipients and citation",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

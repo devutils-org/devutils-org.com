@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.charles-babbage",
+  "locale": "en",
+  "contentHash": "1dd81e6e46c8fad19cf3cf3d4091eca190fe51167ac8e5b2e5d90f45b8827fcf",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Babbage designed calculating engines, including the Analytical Engine with instructions represented on cards. His projects connect mechanical engineering with the organization of calculation.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Biography, Analytical Engine and card-program paragraphs",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

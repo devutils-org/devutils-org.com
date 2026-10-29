@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.peter-abelard",
+  "locale": "en",
+  "contentHash": "4ce11201972935bdee0333af24abf1b71db5b170def66c37026ece4a0c3f49d4",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Abelard wrote commentaries and independent works on dialectic, logic and the philosophy of language.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Works, dialectic and logica vetus",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.federico-faggin",
+  "locale": "en",
+  "contentHash": "df4b0b3279181dd27e76330d4c421bac3980739ee0be42202fb931eb33301acb",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Faggin developed silicon-gate technology and led implementation work on Intel’s MCS-4 chips, working with Masatoshi Shima.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Biography, Fairchild and Intel paragraphs",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

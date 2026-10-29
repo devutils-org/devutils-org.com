@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.chrysippus",
+  "locale": "en",
+  "contentHash": "ac3f8769c30fc91bdfa059dbc85456a0bc8d1a25d3905d1fb2494cdb64968acd",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Chrysippus developed Stoic reasoning about whole propositions joined by connectives. This differs from studying only relations between category terms.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Biography, paragraph on propositional logic",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

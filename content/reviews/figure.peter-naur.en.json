@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.peter-naur",
+  "locale": "en",
+  "contentHash": "9f678cad73b5af484d072a5784b91ddec124ccbaf82168910e3dd715e82c37cf",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Naur contributed to ALGOL 60’s definition, programming-language design and compiler design.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "2005, Peter Naur award citation",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

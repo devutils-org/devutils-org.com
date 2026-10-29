@@ -193,6 +193,13 @@
 .history-chapter-nav { margin: 24px 0; padding: 20px; border: 1px solid var(--line, #ffffff24); border-radius: 12px; }
 .history-chapter-nav ul { margin-bottom: 0; }
 
+.figure-period-nav { margin: 24px 0; padding: 16px 24px; border: 1px solid var(--line, #ffffff24); border-radius: 12px; }
+.figure-period-nav ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 28px; padding-left: 20px; }
+.figure-period-nav a { text-underline-offset: 4px; }
+.reader-page .figure-period-label { margin-top: -12px; color: var(--muted); font-family: var(--mono); font-size: 13px; }
+[data-figure-period] { scroll-margin-top: 150px; }
+@media (max-width: 600px) { .figure-period-nav ul { grid-template-columns: 1fr; } }
+
 /* The complete History chapter card is a native link, including its summary. */
 .reader-page .history-map > li { display: block; padding: 0; overflow: hidden; }
 .history-chapter-card { display: flex; align-items: flex-start; gap: 24px; padding: 28px; color: var(--fg); text-decoration: none; }

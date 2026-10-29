@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.yoshua-bengio",
+  "locale": "en",
+  "contentHash": "d8c0a85e90e83e2688a277dad156d77666ca9d746926766e8c8a61cb4708378d",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Bengio contributed conceptual and engineering advances in deep neural networks, recognized jointly with Hinton and LeCun.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "2018 award recipients and citation",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

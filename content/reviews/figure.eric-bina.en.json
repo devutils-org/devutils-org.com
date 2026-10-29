@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.eric-bina",
+  "locale": "en",
+  "contentHash": "1771223bb5dec9ecadf682fd85ff72e23c11733017bb358ef2a7c28f66bef146",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Bina co-created the Mosaic browser with Marc Andreessen at NCSA.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Opening biography, Mosaic co-creation",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

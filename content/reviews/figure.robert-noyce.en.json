@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.robert-noyce",
+  "locale": "en",
+  "contentHash": "2cfc5ee91fc4d59cbfdacb94b9edde12a551aaf4ba568595ff49dea62480597d",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Noyce proposed a monolithic integrated-circuit structure using metal interconnections above an oxide layer, building on Jean Hoerni’s planar process.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Milestone, planar interconnections and Fairchild implementation",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

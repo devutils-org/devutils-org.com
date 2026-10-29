@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.aristotle",
+  "locale": "en",
+  "contentHash": "355970e6d994fc3328df2fe38c3f8fb7ba6025ee87d837482930038223dba238",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Aristotle systematized deductive reasoning by studying relations between terms and the forms of syllogisms.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Summary and opening biography",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

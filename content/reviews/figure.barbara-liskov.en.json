@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.barbara-liskov",
+  "locale": "en",
+  "contentHash": "9be140152be6aa49e812331454395a56d69eb890c75420018e0cae3268a12181",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Liskov developed ideas about data abstraction and modularity and led the team that created CLU.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Opening biography, data abstraction and CLU",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

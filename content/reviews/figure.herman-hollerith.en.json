@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.herman-hollerith",
+  "locale": "en",
+  "contentHash": "489ced91cf4aeaa984857aeb70a26840d70c948764695638ddb5aed0c37563b4",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Hollerith developed the electric punched-card tabulating system used for the United States census.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Technological Advancement section",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

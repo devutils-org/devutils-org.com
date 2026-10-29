@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.bjarne-stroustrup",
+  "locale": "en",
+  "contentHash": "1d78b75c25cbf7cc2e210b83bc6c654efc03bc27e8f53e326474bac7a097d3a9",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Stroustrup designed and implemented C++ at Bell Labs, drawing on C and ideas from Simula.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Biography, C++ design paragraph",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

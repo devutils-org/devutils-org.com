@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.david-hilbert",
+  "locale": "en",
+  "contentHash": "cd113490d62b03de4eb8131be4c891a0c561dcda2b8cfb419577a986aaf7f62c",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Hilbert investigated the foundations of geometry through explicit axioms and their relationships. His research ranged across mathematics and physics.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Summary",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

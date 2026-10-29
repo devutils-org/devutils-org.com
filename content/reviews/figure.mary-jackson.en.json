@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.mary-jackson",
+  "locale": "en",
+  "contentHash": "5661b89cf2ebae72d303788aa5c98e958d4c7f6b8ef4c4768664a0a5d860608d",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Jackson worked in NACA’s West Area Computing section before moving into wind-tunnel research and aeronautical engineering.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Biography, West Area Computing and Supersonic Pressure Tunnel",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

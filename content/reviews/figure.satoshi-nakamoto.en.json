@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.satoshi-nakamoto",
+  "locale": "en",
+  "contentHash": "7d359b0c5230ccc50be028093edf150f0136ca7c861c8017386594fa51071f57",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "The name Satoshi Nakamoto appears on the Bitcoin paper proposing peer-to-peer electronic cash with proof-of-work transaction ordering.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Title, abstract and introduction",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

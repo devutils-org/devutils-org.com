@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.john-mccarthy",
+  "locale": "en",
+  "contentHash": "b1ab7b1ba82976aa53ab26b3a882d20c3aade2de09d168c121b06bd0c2f8256a",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "McCarthy helped establish artificial intelligence as a research field, developed Lisp and proposed ideas for time-sharing.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Biography, Dartmouth, Lisp and time-sharing",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

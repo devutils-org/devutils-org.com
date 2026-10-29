@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.ada-lovelace",
+  "locale": "en",
+  "contentHash": "d4dbe717e1808b3c3824b3a127374eff0f48ec598b68ec7e0b3039a277109569",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Lovelace translated an account of Babbage’s Analytical Engine and expanded it with notes explaining its programming possibilities.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Summary and biography, notes and Babbage collaboration",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

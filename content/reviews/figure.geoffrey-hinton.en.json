@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.geoffrey-hinton",
+  "locale": "en",
+  "contentHash": "c2a3c96902d933cb101c1c6d406e837a56ec2e08a54f9748d7cfceb5e5887200",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Hinton contributed conceptual and engineering advances in deep neural networks, recognized jointly with Bengio and LeCun.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "2018 award recipients and citation",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

@@ -19,6 +19,9 @@ for (const form of document.querySelectorAll<HTMLFormElement>('form[data-discove
       record.hidden = !show
       if (show) count++
     }
+    for (const section of document.querySelectorAll<HTMLElement>('[data-figure-period]')) {
+      section.hidden = !section.querySelector('[data-record]:not([hidden])')
+    }
     status.textContent = french ? `${count} résultat(s)` : `${count} result(s)`
   }
   form.hidden = false; form.addEventListener('input',update); form.addEventListener('submit',e=>e.preventDefault()); form.addEventListener('reset',()=>setTimeout(update)); update()

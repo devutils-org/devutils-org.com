@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.marlyn-meltzer",
+  "locale": "en",
+  "contentHash": "2f3295c0119ac920bfab0f86c0948acdb6312bfdb5dd633be763d4d925c7e6ae",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Meltzer, then Marlyn Wescoff, was one of the six ENIAC programmers.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Operator list and programming account",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.betty-holberton",
+  "locale": "en",
+  "contentHash": "d2d372da1fbd190a03dd9d2ae235b35552b13e21156961ba196fe34448676228",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Holberton, then Betty Snyder, was one of the six ENIAC programmers.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "List of ENIAC operators and configuration work",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

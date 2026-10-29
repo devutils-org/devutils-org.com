@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.gordon-moore",
+  "locale": "en",
+  "contentHash": "55912242691fdc03d412551dc310f5e8ea59d73ac5752bce2a5f65008e5118db",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Moore helped found Fairchild Semiconductor and Intel and described a trend in component integration that became known as Moore’s law.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Biography, Fairchild, 1965 article and Intel",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

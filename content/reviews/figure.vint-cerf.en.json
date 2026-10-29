@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.vint-cerf",
+  "locale": "en",
+  "contentHash": "ab39253fa38fc020a0fafc9f39d09797ea3c0b2870c0d0041f1f8bf6a90ad08f",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Cerf co-developed the TCP/IP protocol suite with Robert Kahn and helped guide the development of internetworking.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Biography, Stanford and TCP/IP",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.walter-brattain",
+  "locale": "en",
+  "contentHash": "ad9381d9dd5f0feabc7b1249dd797c125fb5d1f5d225462b56f988b54025e6eb",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Brattain worked with John Bardeen on the germanium point-contact transistor at Bell Labs.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Milestone, experimental work and demonstration",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

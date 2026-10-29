@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.sergey-brin",
+  "locale": "en",
+  "contentHash": "4e809b3ea5bc720cc3c3522de3830444cdf2bcfe568aa41e03426c99a0b190de",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Brin co-authored the paper describing the Google search prototype with Larry Page, using hyperlink structure in Web search.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Authors and abstract",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

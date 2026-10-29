@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.avicenna",
+  "locale": "en",
+  "contentHash": "d6b20e39aa39bdd399664a47f71c41ba5f3a75debf704eaeecd5117e6b8b6d72",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Avicenna revised syllogistic reasoning, including the treatment of modal propositions and their logical relations.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Discussion of propositions, opposition and modal syllogisms",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

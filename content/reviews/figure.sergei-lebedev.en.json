@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.sergei-lebedev",
+  "locale": "en",
+  "contentHash": "3b2146d951df8b9c549db359bcfe45791ffa73a82b47fbae0549f59e6a88facd",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Lebedev led the team that developed the MESM electronic computer at the Institute of Electrical Engineering in Kyiv.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Preamble, development under Lebedev",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

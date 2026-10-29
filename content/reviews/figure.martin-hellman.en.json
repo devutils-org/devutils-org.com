@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.martin-hellman",
+  "locale": "en",
+  "contentHash": "64a88652ce35b0f42a8804e0bf21da2dbc8c16556e5ae61f185705efe4cad1b1",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Hellman co-authored New Directions in Cryptography with Whitfield Diffie and contributed to public-key cryptography alongside Diffie and Ralph Merkle.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Fellow citation and 1976 paper paragraph",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.ole-johan-dahl",
+  "locale": "en",
+  "contentHash": "6fdd3cf1a502e61f5964c0a2c56e29086f04167f62b022493e2d9a6e37bb710b",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Dahl co-designed Simula with Kristen Nygaard, helping establish object-oriented programming.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "2001, Ole-Johan Dahl award citation",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Introductory assessment of the cited contribution; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}

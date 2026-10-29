@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "id": "figure.howard-aiken",
+  "locale": "en",
+  "contentHash": "20d8b2d22e41887298b334c24e456ddbd6f0f67b3b1314de734f58856be519b1",
+  "assessedAt": "2026-10-29",
+  "assessor": {
+    "name": "Codex",
+    "kind": "assistant"
+  },
+  "claims": [
+    {
+      "id": "contribution",
+      "section": "article-contribution",
+      "kind": "historical",
+      "statement": "Aiken proposed the automatic calculator that became the Harvard Mark I, designed and built with IBM.",
+      "assessment": "supported",
+      "citations": [
+        {
+          "source": 1,
+          "locator": "Howard Aiken and Harvard Mark I sections",
+          "access": "read",
+          "note": "The cited passage was inspected during this assessment; the source title identifies its actual publisher or author."
+        }
+      ],
+      "note": "Scoped assessment of the contribution paragraph; the context section supplies editorial reading guidance."
+    }
+  ],
+  "examples": [],
+  "limitations": [
+    "Concise introductory profile, not a complete biography.",
+    "Single institutional source; no independent confirmation of priority claims is asserted."
+  ],
+  "humanReview": {
+    "status": "pending"
+  }
+}
