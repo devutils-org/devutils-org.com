@@ -85,7 +85,7 @@ fio --name=t --rw=randread --bs=4k --size=1G --direct=1 --iodepth=32
   <span class="b">Pending   </span>1.5 MiB not yet written, 0 B being written; data waits up to 30
             s in RAM</pre></div><p class="note">An example: Alice's laptop, one of the test machines. In your terminal, this block shows your own machine, read live.</p></section><h2>Pitfalls</h2><ul><li><code>%util</code> in iostat is the share of time with any request in flight. An
 NVMe drive at 100 % may still have plenty of capacity left.</li>
-<li><code class="danger" title="Changes or deletes data">⚠ dd</code> with no <code>oflag=direct</code> or <code>conv=fsync</code> measures the page cache,
+<li><code class="danger" title="Changes or deletes data">⚠︎ dd</code> with no <code>oflag=direct</code> or <code>conv=fsync</code> measures the page cache,
 not the disk.</li>
 <li>A process stuck in state <code>D</code> with high <code>wa</code> in <code>top</code> is waiting for the
 disk, not using the CPU (<a class="ref" href="16.1.html">16.1</a>).</li>

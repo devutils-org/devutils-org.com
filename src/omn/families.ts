@@ -141,7 +141,7 @@ io.bytes  via fs:proc  (io.bytes)
     },
   },
   {
-    glyph: '↙', id: 'net', name: 'Network', sources: 20,
+    glyph: '↙\uFE0E', id: 'net', name: 'Network', sources: 20,
     text: 'Inspect connection setup, socket waits, traffic, retransmissions and declared request boundaries.',
     title: 'From the handshake to the drop reason.',
     story: [

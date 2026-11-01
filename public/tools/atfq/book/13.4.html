@@ -82,7 +82,7 @@ ln -s /data/photos photos   # a symbolic link named photos
   <span class="b">sda           </span>   30.0 GiB  rotational · removable · USB DISK 3.0
     (whole disk)             exfat  /media/usb
   <span class="b">zram0         </span>    8.0 GiB  SSD · swap
-  <span class="d">2 loop or empty devices not shown</span></pre></div><p class="note">An example: Alice's laptop, one of the test machines. In your terminal, this block shows your own machine, read live.</p></section><h2>Pitfalls</h2><ul><li><code class="danger" title="Changes or deletes data">⚠ rm</code> removes a name. The space comes back when the last name is gone and
+  <span class="d">2 loop or empty devices not shown</span></pre></div><p class="note">An example: Alice's laptop, one of the test machines. In your terminal, this block shows your own machine, read live.</p></section><h2>Pitfalls</h2><ul><li><code class="danger" title="Changes or deletes data">⚠︎ rm</code> removes a name. The space comes back when the last name is gone and
 no program has the file open: list deleted but open files with
 <code>sudo lsof +L1</code>.</li>
 <li>Millions of tiny files (caches, <code>node_modules</code>, mail) eat inodes. On ext4

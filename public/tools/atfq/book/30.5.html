@@ -84,7 +84,7 @@ git config --list --show-origin     # every setting, and its file
   <span class="b">Aliases   </span>st, lg
   <span class="b">Includes  </span>1 more file, read under conditions (include, includeIf)</pre></div><p class="note">An example: Alice's laptop, one of the test machines. In your terminal, this block shows your own machine, read live.</p></section><h2>Pitfalls</h2><ul><li>A work and a personal email: <code>[includeIf &quot;gitdir:~/work/&quot;]</code> loads a
 second file for repositories under <code>~/work/</code>.</li>
-<li><code>.gitignore</code> doesn't affect files already committed: <code class="danger" title="Changes or deletes data">⚠ git rm --cached FILE</code> stops tracking one, keeping it on disk.</li>
+<li><code>.gitignore</code> doesn't affect files already committed: <code class="danger" title="Changes or deletes data">⚠︎ git rm --cached FILE</code> stops tracking one, keeping it on disk.</li>
 <li><code>credential.helper = store</code> keeps tokens in plain text; use your
 desktop keyring (<code>libsecret</code>) or SSH keys instead.</li>
 <li>On Linux, <code>core.autocrlf</code> should be <code>input</code> or unset; <code>true</code> is for

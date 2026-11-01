@@ -58,7 +58,7 @@ export default {
       title: ['Une requête.', 'Chaque couche en vue.'],
       text: 'Demandez à un moteur de dessiner Suzanne en 3D et d’enregistrer l’image. Suivez chaque passage de relais à travers la machine.',
       steps: [
-        { glyph: '↙', label: 'RÉSEAU', title: 'Recevoir.', code: 'HTTP → render request', text: 'Marquer le début de la requête et transmettre son identité au travail qui en découle.' },
+        { glyph: '↙\uFE0E', label: 'RÉSEAU', title: 'Recevoir.', code: 'HTTP → render request', text: 'Marquer le début de la requête et transmettre son identité au travail qui en découle.' },
         { glyph: '⌘', label: 'PROCESSEUR', title: 'Préparer.', code: 'Suzanne → draw commands', text: 'Examiner l’exécution, les retards de l’ordonnanceur et les threads qui préparent Suzanne.' },
         { glyph: '◇', label: 'CARTE GRAPHIQUE', title: 'Dessiner.', code: 'geometry → frame', text: 'Examiner le rendu à travers ce que la carte et le moteur exposent.' },
         { glyph: '▱', label: 'DISQUE', title: 'Enregistrer.', code: 'frame → suzanne.png', text: 'Suivre suzanne.png jusqu’à write() ; l’écriture effective sur le disque est une mesure à part.' },

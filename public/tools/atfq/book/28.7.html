@@ -76,7 +76,7 @@ rsync -av src/ backup/
 <span class="danger" title="Changes or deletes data">rsync -av --delete src/ backup/     # an exact mirror: removes extra files</span>
 rsync -avz photos/ alice@nas:/data/photos/
 </code></pre>
-</section><h2>Pitfalls</h2><ul><li><code class="danger" title="Changes or deletes data">⚠ --delete</code> removes from the destination what isn't in the source: with a
+</section><h2>Pitfalls</h2><ul><li><code class="danger" title="Changes or deletes data">⚠︎ --delete</code> removes from the destination what isn't in the source: with a
 wrong path, it empties a whole folder. Always run it with <code>-n</code> first.</li>
 <li>The order is source then destination, as with <code>cp</code>: swapping them copies
 the old version over the new one.</li>

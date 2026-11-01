@@ -83,7 +83,7 @@ sudo dmesg | grep -iE 'ext4|xfs|btrfs'   # errors and journal replays
   <span class="b">/home     </span>btrfs on /dev/nvme0n1p2</pre></div><p class="note">An example: Alice's laptop, one of the test machines. In your terminal, this block shows your own machine, read live.</p></section><h2>Pitfalls</h2><ul><li>&quot;Read-only file system&quot; out of the blue: the kernel found an error and
 remounted it read-only (<code>errors=remount-ro</code>). Look at dmesg, then plan a
 check: the disk may be failing.</li>
-<li>Never run <code class="danger" title="Changes or deletes data">⚠ fsck</code> on a mounted filesystem: it can destroy it. Check from
+<li>Never run <code class="danger" title="Changes or deletes data">⚠︎ fsck</code> on a mounted filesystem: it can destroy it. Check from
 a rescue system, or let it run at boot.</li>
 <li><code>fsck -n</code> only reports problems; without it, fsck changes the disk.</li>
 </ul>

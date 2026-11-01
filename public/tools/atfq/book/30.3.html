@@ -85,7 +85,7 @@ git merge --continue           # or: git rebase --continue / --abort
             ~/.git-credentials)
   <span class="b">Aliases   </span>st, lg
   <span class="b">Includes  </span>1 more file, read under conditions (include, includeIf)</pre></div><p class="note">An example: Alice's laptop, one of the test machines. In your terminal, this block shows your own machine, read live.</p></section><h2>Pitfalls</h2><ul><li>After rebasing a branch you already pushed, a plain push is rejected;
-<code class="danger" title="Changes or deletes data">⚠ git push --force-with-lease</code> replaces it, and breaks others' copies.</li>
+<code class="danger" title="Changes or deletes data">⚠︎ git push --force-with-lease</code> replaces it, and breaks others' copies.</li>
 <li><code>git rebase -i main</code> lets you squash, reorder or reword commits before
 sharing them; don't do it on shared history.</li>
 <li>Conflict markers left in a file (<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>) still commit: search for

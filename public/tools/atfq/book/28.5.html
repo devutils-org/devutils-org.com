@@ -77,9 +77,9 @@ to skip it.</li>
 <li><code>-I {}</code> puts the item where you want it (<code>xargs -I {} mv {} {}.bak</code>), but
 then runs the command once per line.</li>
 <li>To see what would run, put <code>echo</code> in front of the command:
-<code class="danger" title="Changes or deletes data">⚠ xargs -0 echo rm</code>.</li>
+<code class="danger" title="Changes or deletes data">⚠︎ xargs -0 echo rm</code>.</li>
 </ul>
-<h2>Deep dive <small>2 questions</small></h2><div class="dive"><details><summary>Why not $(…)?</summary><div><p><code class="danger" title="Changes or deletes data">⚠ rm $(find . -name '*.tmp')</code> also splits names on spaces. And with
+<h2>Deep dive <small>2 questions</small></h2><div class="dive"><details><summary>Why not $(…)?</summary><div><p><code class="danger" title="Changes or deletes data">⚠︎ rm $(find . -name '*.tmp')</code> also splits names on spaces. And with
 thousands of files, the command fails with &quot;Argument list too long&quot;: the
 kernel caps the total size of a command's arguments. xargs splits the list
 into as many runs as needed, each one under the limit.</p>

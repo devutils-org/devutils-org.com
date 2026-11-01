@@ -1,10 +1,10 @@
-import { esc } from '../html.ts'
+import { esc, icon } from '../html.ts'
 import { areas } from './catalog.ts'
 import { entryRoute, type Entry } from './load.ts'
 
 const areaNamesFr = ['Fondements', 'Physique', 'Chimie et matériaux', 'Fabrication des semi-conducteurs', 'Composants semi-conducteurs', 'Électronique et circuits imprimés', 'Conception de circuits intégrés', 'Logique numérique', 'Architecture des ordinateurs', 'Firmware et systèmes embarqués', 'Systèmes d’exploitation', 'Programmation et toolchains', 'Applications et systèmes']
 const areaId = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, '')
-const arrow = '<span class="library-arrow" aria-hidden="true">↗</span>'
+const arrow = `<span class="library-arrow" aria-hidden="true">${icon('arrow-up-right')}</span>`
 
 export function libraryHome(entries: Entry[], locale: 'en' | 'fr') {
   const fr = locale === 'fr', prefix = fr ? '/fr' : ''

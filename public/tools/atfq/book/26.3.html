@@ -104,7 +104,7 @@ reopen (<code>postrotate</code> with a reload), or rotation must use
 runs logrotate daily; each rule decides how often it acts.</p>
 </div></details><details><summary>Why do journald limits sometimes not apply?</summary><div><p>They count only the journal's own files, archived ones first: the file
 being written stays until it's rotated. Limits are checked as it writes,
-so after lowering <code>SystemMaxUse=</code>, run <code class="danger" title="Changes or deletes data">⚠ --vacuum-size</code> or restart
+so after lowering <code>SystemMaxUse=</code>, run <code class="danger" title="Changes or deletes data">⚠︎ --vacuum-size</code> or restart
 journald to shrink at once.</p>
 </div></details></div><dl class="meta"><div><dt>Commands</dt><dd><a href="26.1.html"><code>journalctl</code></a> <code>logrotate</code> <code>lsof</code></dd></div><div><dt>Paths</dt><dd><code>/etc/logrotate.conf</code> <code>/etc/logrotate.d/</code> <code>/etc/systemd/journald.conf</code></dd></div><div><dt>See also</dt><dd><a href="26.html">26. Logs</a><br><a href="26.2.html">26.2 Where logs go: journald, syslog and /var/log</a><br><a href="13.4.html">13.4 Links, inodes and &quot;disk full&quot;</a></dd></div></dl>
 <nav class="pager" aria-label="Pages"><a class="pager-prev" rel="prev" href="26.2.html"><small>Previous</small><span>26.2 Where logs go: journald, syslog and /var/log</span></a><a class="pager-next" rel="next" href="26.4.html"><small>Next</small><span>26.4 Logging from your own programs and services</span></a></nav>

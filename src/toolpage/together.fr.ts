@@ -83,7 +83,7 @@ export default {
           pre: '$ omn mem.rss --pid $SERVER -m poll@100ms -e timeline,summary -d 1s --format json',
         },
         {
-          label: 'ATFQ ↔ PROCFS · MCP',
+          label: 'ATFQ ↔\uFE0E PROCFS · MCP',
           title: 'Une explication confrontée à la machine.',
           text: 'Dans chaque machine, <code>atfq probe mem.summary</code> doit correspondre à <code>/proc/meminfo</code> à l’octet près. La chaîne lance aussi <code>atfq mcp</code> et vérifie que ses cinq outils sont là et déclarent toujours <code>readOnlyHint</code>.',
           pre: '$ atfq probe mem.summary --json\n$ atfq mcp   # lookup, search, toc, run_probe, list_probes',

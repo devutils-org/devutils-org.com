@@ -82,7 +82,7 @@ chmod u+x deploy.sh     # let the owner run it
   <span class="b">Umask     </span>0022: new files 644 (rw-r--r--), new folders 755</pre></div><p class="note">An example: Alice's laptop, one of the test machines. In your terminal, this block shows your own machine, read live.</p></section><h2>Pitfalls</h2><ul><li>On a folder, <code>r</code> lists the names and <code>x</code> lets you open what's inside:
 with <code>r</code> but no <code>x</code>, you see names you can't open.</li>
 <li>Deleting a file depends on the folder's <code>w</code>, not on the file's rights.</li>
-<li><code class="danger" title="Changes or deletes data">⚠ chmod -R 777</code> &quot;fixes&quot; an error by letting everyone write everything. Fix
+<li><code class="danger" title="Changes or deletes data">⚠︎ chmod -R 777</code> &quot;fixes&quot; an error by letting everyone write everything. Fix
 the owner or the group instead.</li>
 <li>Root ignores read and write rights, but still needs some <code>x</code> bit to run a
 file.</li>

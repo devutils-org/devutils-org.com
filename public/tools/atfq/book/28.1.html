@@ -75,8 +75,8 @@ find /var/log -type f -mtime -1        # changed in the last 24 hours
 </code></pre>
 </section><h2>Pitfalls</h2><ul><li>Without quotes, <code>*.log</code> is expanded by your shell before <code>find</code> sees it,
 and you get wrong results or a &quot;paths must precede expression&quot; error.</li>
-<li><code class="danger" title="Changes or deletes data">⚠ -delete</code> has no undo. Run the command without it first and check the
-list. Put it last: <code class="danger" title="Changes or deletes data">⚠ find . -delete -name '*.tmp'</code> deletes everything.</li>
+<li><code class="danger" title="Changes or deletes data">⚠︎ -delete</code> has no undo. Run the command without it first and check the
+list. Put it last: <code class="danger" title="Changes or deletes data">⚠︎ find . -delete -name '*.tmp'</code> deletes everything.</li>
 <li><code>-size -1M</code> matches only empty files, because sizes are rounded up to the
 unit. Use <code>-size -1024k</code> instead.</li>
 <li><code>-name</code> looks at the file name only. Use <code>-path</code> to match the whole path,
@@ -88,10 +88,10 @@ errors too.</li>
 </ul>
 <h2>Deep dive <small>3 questions</small></h2><div class="dive"><details><summary>How does find read its expression?</summary><div><p>For each file, <code>find</code> evaluates your expression from left to right, like a
 condition. Tests such as <code>-name</code> and <code>-type</code> are true or false. Actions such
-as <code>-print</code>, <code class="danger" title="Changes or deletes data">⚠ -delete</code> and <code>-exec</code> do something, and also return true or
+as <code>-print</code>, <code class="danger" title="Changes or deletes data">⚠︎ -delete</code> and <code>-exec</code> do something, and also return true or
 false. Two items next to each other mean AND, and evaluation stops at the
 first false one.</p>
-<p>That's why order matters: <code class="danger" title="Changes or deletes data">⚠ -delete</code> placed before <code>-name</code> runs on every
+<p>That's why order matters: <code class="danger" title="Changes or deletes data">⚠︎ -delete</code> placed before <code>-name</code> runs on every
 file. If you give no action at all, <code>find</code> adds <code>-print</code>. Use <code>-o</code> for OR,
 with escaped parentheses:</p>
 <pre class="code"><code>find . \( -name '*.jpg' -o -name '*.png' \)

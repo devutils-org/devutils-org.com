@@ -74,12 +74,12 @@ git reset --soft HEAD~1       # undo the last commit, keep its changes
 git revert COMMIT             # undo a pushed commit with a new commit
 git reflog                    # where HEAD has been: find lost commits
 </code></pre>
-</section><h2>Pitfalls</h2><ul><li><code class="danger" title="Changes or deletes data">⚠ git reset --hard</code>, <code class="danger" title="Changes or deletes data">⚠ git restore</code>, <code class="danger" title="Changes or deletes data">⚠ git checkout -- FILE</code> and
-<code class="danger" title="Changes or deletes data">⚠ git clean -f</code> throw away uncommitted work: git has no copy of it.</li>
+</section><h2>Pitfalls</h2><ul><li><code class="danger" title="Changes or deletes data">⚠︎ git reset --hard</code>, <code class="danger" title="Changes or deletes data">⚠︎ git restore</code>, <code class="danger" title="Changes or deletes data">⚠︎ git checkout -- FILE</code> and
+<code class="danger" title="Changes or deletes data">⚠︎ git clean -f</code> throw away uncommitted work: git has no copy of it.</li>
 <li>Don't amend or reset commits others already pulled: use <code>git revert</code>,
 which undoes by adding a commit.</li>
 <li><code>git stash</code> before a risky command keeps your edits aside; <code>git stash pop</code> brings them back.</li>
-<li><code>git clean -n</code> lists what <code class="danger" title="Changes or deletes data">⚠ git clean -f</code> would delete.</li>
+<li><code>git clean -n</code> lists what <code class="danger" title="Changes or deletes data">⚠︎ git clean -f</code> would delete.</li>
 </ul>
 <h2>Deep dive <small>2 questions</small></h2><div class="dive"><details><summary>How can the reflog save me?</summary><div><p>Every time <code>HEAD</code> moves (commit, reset, rebase, checkout), git writes the
 old and new positions in the reflog, for 90 days by default. A commit

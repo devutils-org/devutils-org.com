@@ -38,7 +38,9 @@ for (const file of readdirSync(out).filter((f) => f.endsWith('.html'))) {
     html
       .replace(fonts, '<link rel="icon" type="image/svg+xml" href="/favicon.svg">\n<meta name="theme-color" content="#050507">\n')
       .replace(title, crumb)
-      .replace('title="atfq home">home</a>', 'title="ATFQ">ATFQ</a>'),
+      .replace('title="atfq home">home</a>', 'title="ATFQ">ATFQ</a>')
+      // ⚠ as a text sign, not the yellow emoji
+      .replace(/⚠(?!\uFE0E)/g, '⚠\uFE0E'),
   )
   pages++
 }

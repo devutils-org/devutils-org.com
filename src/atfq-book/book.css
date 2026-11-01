@@ -312,7 +312,7 @@ pre.code, .term pre {
 }
 pre.code code { color: inherit; font-size: inherit; overflow-wrap: normal; }
 pre.code .danger { color: var(--t-yellow); }
-pre.code .danger::before { content: "⚠ "; }
+pre.code .danger::before { content: "⚠\FE0E  "; }
 code.danger { color: var(--yellow); }
 
 .machine .term {
