@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { existsSync, readFileSync } from 'node:fs'
+import { existsSync, readFileSync, statSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { loadEntries, parseEntry, validateEntries, entryRoute, target, validDate } from './load.ts'
 import { markdown } from './markdown.ts'
@@ -61,7 +61,7 @@ test('generated documents have unique IDs, working internal links and real no-JS
       const dest = docs.get(url.pathname)
       // an anchor in a generated page, or in a static file such as the icon sprite
       const file = resolve('public', url.pathname.slice(1))
-      const target = dest ?? (existsSync(file) ? readFileSync(file, 'utf8') : undefined)
+      const target = dest ?? (url.hash && existsSync(file) && statSync(file).isFile() ? readFileSync(file, 'utf8') : undefined)
       if (url.hash) assert.ok(target?.includes(`id="${url.hash.slice(1)}"`), `${path}: missing anchor ${href}`)
       else assert.ok(dest || old.has(url.pathname) || existsSync(resolve('public', url.pathname.slice(1))) || existsSync(resolve(url.pathname.slice(1))), `${path}: missing ${href}`)
     }
