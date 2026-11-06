@@ -107,11 +107,13 @@ Conceptually, the example becomes:
 
 There are **two levels of representation**: a tree of logical decisions and a command list for pipeline execution. The second representation is closer to what the executor needs to consume.
 
-### Is this a HIR?
+### Two levels of abstraction
 
-The analogy needs care. A compiler's High-level Intermediate Representation retains structured, high-level program concepts after some syntactic processing. Here, the logical tree preserves high-level structure, while the pipeline command list resembles a **specialized lowering toward execution**.
+The logical tree answers one question: **which part should run, given the previous result?** The command list for a pipeline answers another: **which commands should be connected by pipes?**
 
-It is reasonable to describe separate abstraction levels or a shell-specific IR in a broad sense. It would be misleading to claim a standardized HIR comparable to `rustc`. Some pipeline preparation in this version also happens during execution, rather than in strictly separated compilation phases.
+These structures describe the same program at different levels. One represents decisions and groups; the other organizes the commands the executor must launch. This separation helped me reason about each responsibility using a representation suited to it.
+
+The stages remain connected in this version: some pipeline preparation happens during execution. The abstractions are therefore more clearly separated than the program’s phases.
 
 ### Its limitations
 
@@ -123,7 +125,7 @@ This structure fits the Minishell scope but is not a universal shell grammar rep
 |---|---|---|
 | Construction | Loop over tokens | `_cmd_node` / `_tree_builder` functions |
 | Parentheses | Explicit `scop` stack | Recursion |
-| `&&` / `||` | Promote an operator to root | Join subtrees with `_bt_join` |
+| `&&` / `\|\|` | Promote an operator to root | Join subtrees with `_bt_join` |
 | Pipelines | Already handled separately in parsing | `cmd_line` lists used later by the executor |
 | Strength | Deliberate management of state and subtrees | Clearer code and separation of responsibilities |
 | Limit | Fragile reconnection invariants | Specialized grammar and intertwined phases |

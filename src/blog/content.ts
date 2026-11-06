@@ -4,6 +4,7 @@ import { markdown } from '../library/markdown.ts'
 import { icon } from '../html.ts'
 import french from './minishell.fr.md?raw'
 import english from './minishell.en.md?raw'
+import { workingNotes } from './working-notes.ts'
 
 const sources = { fr: french, en: english }
 const repository = 'https://github.com/devutils-org/devutils-org.com'
@@ -67,7 +68,7 @@ export function minishellPage(lang: Lang): Page {
       type: 'html', id: ids[index], scene: ids[index], class: 'blog-article',
       eyebrow: `${String(index).padStart(2, '0')} / ${labels[lang][index].toUpperCase()}`,
       title: [title, ''], text: '', mark: { opacity: 0.12 },
-      body: `${index === 0 ? `<div class="blog-meta"><span>42 / MINISHELL</span><span>C · ${t('Parsing', 'Parsing')}</span><span>${readingTime(lang)}</span></div>` : ''}<div class="blog-prose">${markdown(body).html}</div>${index === chunks.length - 1 ? `<a class="inline-link blog-back" href="${prefix}/blog/">← ${t('Back to the notebook', 'Retour au carnet')}</a>` : ''}`,
+      body: `${index === 0 ? `<div class="blog-meta"><span>42 / MINISHELL</span><span>C · ${t('Parsing', 'Parsing')}</span><span>${readingTime(lang)}</span></div>` : ''}<div class="blog-prose">${markdown(body).html}</div>${index === 0 ? workingNotes(lang) : ''}${index === chunks.length - 1 ? `<a class="inline-link blog-back" href="${prefix}/blog/">← ${t('Back to the notebook', 'Retour au carnet')}</a>` : ''}`,
     }
   })
   return {

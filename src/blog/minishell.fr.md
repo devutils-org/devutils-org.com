@@ -109,11 +109,13 @@ Une représentation conceptuelle du programme précédent est donc :
 
 On a **deux niveaux de représentation** : un arbre des décisions logiques, puis une liste de commandes pour l'exécution des pipelines. La seconde représentation est plus proche de ce que l'exécuteur doit consommer.
 
-### Est-ce une HIR ?
+### Deux niveaux d’abstraction
 
-C'est une analogie intéressante, mais à manier précisément. Dans un compilateur, une HIR (*High-level Intermediate Representation*) est une représentation structurée du programme, après certains traitements syntaxiques, qui conserve encore des concepts de haut niveau. Ici, l'arbre des opérateurs logiques garde de la structure de haut niveau, tandis que la liste des commandes par pipeline ressemble à un **abaissement spécialisé vers une représentation orientée exécution**.
+L’arbre logique répond à une question : **quelle partie exécuter, selon le résultat de la précédente ?** La liste de commandes d’un pipeline en traite une autre : **quelles commandes relier par des pipes ?**
 
-On peut donc parler d'**une séparation de niveaux d'abstraction** ou d'**une IR propre au shell** au sens large, pas affirmer que Minishell implémente une HIR normalisée comparable à celle de `rustc`. Et contrairement à un pipeline de compilation à phases strictement séparées, une partie de la préparation des pipelines dans cette version intervient au moment de l'exécution.
+Ces deux structures décrivent le même programme à des niveaux différents. L’une porte les décisions et les groupes ; l’autre organise les commandes que l’exécuteur doit lancer. Cette séparation m’a aidé à raisonner sur chaque responsabilité avec une représentation adaptée.
+
+Dans cette version, les étapes restent toutefois liées : une partie de la préparation des pipelines intervient pendant l’exécution. La séparation des abstractions est donc plus nette que celle des phases du programme.
 
 ### Ses imperfections
 
@@ -125,7 +127,7 @@ La structure est adaptée au périmètre de Minishell, mais n'est pas une repré
 |---|---|---|
 | Construction | Boucle sur les tokens | Fonctions `_cmd_node` / `_tree_builder` |
 | Parenthèses | Pile explicite `scop` | Récursion |
-| `&&` / `||` | Promotion d'un opérateur en racine | Fusion de deux sous-arbres par `_bt_join` |
+| `&&` / `\|\|` | Promotion d'un opérateur en racine | Fusion de deux sous-arbres par `_bt_join` |
 | Pipelines | Déjà traités séparément au parsing | Listes `cmd_line`, exploitées plus tard par l'exécuteur |
 | Point fort | Gestion volontaire de l'état et des sous-arbres | Structure de code plus lisible et séparation des responsabilités |
 | Limite | Invariants de raccordement fragiles | Grammaire spécialisée et phases parfois entremêlées |
