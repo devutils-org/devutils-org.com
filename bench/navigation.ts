@@ -14,9 +14,9 @@ try {
    if(response?.status()!==200)throw Error(`Bad route ${route}`)
    const links=page.locator('header .site-links a')
    const hrefs=await links.evaluateAll(items=>items.map(a=>a.getAttribute('href')))
-   if(JSON.stringify(hrefs)!==JSON.stringify(['tools','library','contributions','about'].map(p=>`${prefix}/${p}/`)))throw Error(`Wrong destinations ${route}: ${hrefs}`)
+   if(JSON.stringify(hrefs)!==JSON.stringify(['tools','library','contributions','blog','about'].map(p=>`${prefix}/${p}/`)))throw Error(`Wrong destinations ${route}: ${hrefs}`)
    const labels=await links.allTextContents()
-   if(JSON.stringify(labels)!==JSON.stringify(fr?['Outils','Bibliothèque','Contributions','À propos']:['Tools','Library','Contributions','About']))throw Error(`Wrong labels ${route}`)
+   if(JSON.stringify(labels)!==JSON.stringify(fr?['Outils','Bibliothèque','Contributions','Blog','À propos']:['Tools','Library','Contributions','Blog','About']))throw Error(`Wrong labels ${route}`)
    for(const link of await links.all()) {
     if(!await link.isVisible())throw Error(`Hidden destination ${route} ${width}`)
     const box=await link.boundingBox()
@@ -41,5 +41,5 @@ try {
  }
  if(errors.length)throw Error(errors.join('\n'))
  await writeFile(`${out}/checks.json`,JSON.stringify({results,errors},null,2))
- console.log(`${results.length} navigation layouts pass; all four destinations visible, localized and reachable, with and without JavaScript`)
+ console.log(`${results.length} navigation layouts pass; all five destinations visible, localized and reachable, with and without JavaScript`)
 }finally{await browser.close()}

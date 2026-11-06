@@ -30,7 +30,13 @@ import contributionsFr from './contributions/index.fr.ts'
 import rug from './contributions/rug.ts'
 import rugFr from './contributions/rug.fr.ts'
 
+import { blogPage, minishellPage } from './blog/content.ts'
+
 const content: Record<string, Record<string, string>> = {
+  blog: toolPageHtml(blogPage('en')),
+  'blog-fr': toolPageHtml(blogPage('fr')),
+  'blog-minishell': toolPageHtml(minishellPage('en')),
+  'blog-minishell-fr': toolPageHtml(minishellPage('fr')),
   tools: toolPageHtml(toolsHub),
   'tools-fr': toolPageHtml(toolsHubFr),
   about: toolPageHtml(about),

@@ -49,6 +49,20 @@ const toolCss = ['/src/toolpage/components.css', '/src/toolpage/toolpage.css']
 
 const written: Page[] = [
   {
+    key: 'blog', file: 'blog/index.html', shape: 'mark', css: [...toolCss, '/src/blog/blog.css'],
+    title: 'Blog — Notes from building · devutils',
+    description: 'Development stories, imperfect projects and lessons learned. Starting with two approaches to parsing in a 42 Minishell project.',
+    content: '/src/blog/index.ts',
+    fr: { title: 'Blog — Carnet de développement · devutils', description: 'Retours d’expérience, projets imparfaits et leçons apprises. Premier récit : deux stratégies de parsing pour mon Minishell à 42.' },
+  },
+  {
+    key: 'blog-minishell', file: 'blog/minishell/index.html', shape: 'mark', css: [...toolCss, '/src/blog/blog.css'],
+    title: 'Minishell at 42: two imperfect parsers — devutils',
+    description: 'Learning to reason through parsing at 42, before the AI era: two Minishell strategies, their assumptions, their limits and what they taught me.',
+    content: '/src/blog/minishell.ts',
+    fr: { title: 'Minishell à 42 : deux parsers imparfaits — devutils', description: 'Apprendre à raisonner sur le parsing à mes débuts à 42, avant l’ère de l’IA : deux stratégies Minishell, leurs hypothèses, leurs limites et ma progression.' },
+  },
+  {
     key: 'tools', file: 'tools/index.html', shape: 'mark', css: toolCss,
     title: 'Tools — The devutils Linux toolbox',
     description: 'Explore the devutils Linux tools and see how they work together.',
